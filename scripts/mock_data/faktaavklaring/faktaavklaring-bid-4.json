@@ -1,0 +1,47 @@
+{
+  "behandlingID": 4,
+  "faktaavklaring": {
+    "periode": {
+      "land": [
+        "FR"
+      ],
+      "periodeFraOgMed": "2018-01-01",
+      "periodeTilOgMed": "2019-01-01"
+    },
+    "aktivitet": {
+      "aktivitetLand": [
+        "DE"
+      ]
+    },
+    "sysselsetting": {
+      "sysselsettingType": "ARBEIDSTAKER"
+    },
+    "utsending": {
+      "ansattINorskSelskap": true,
+      "erstatterTidligereUtsendt": false,
+      "utsendingMindreEnn24Mnd": true
+    },
+    "bostedsland": {
+      "bekrefterFamiliebosted": null,
+      "bekrefterDisponering": null,
+      "bostedsLand": []
+    },
+    "sektor": {
+      "ansattISektor": "INGEN_AV_DISSE"
+    },
+    "virksomhet": {
+      "antallLand": "ETT_LAND_IKKE_NORGE",
+      "aktivitetINorge": "OVER_25_PROSENT",
+      "marginaltArbeid": "MARGINALT_JA",
+      "vekslingMellomLand": "EN_ELLER_BEGGE"
+    }
+  },
+  "status": {
+    "periode": "OK",
+    "aktivitet": "OK",
+    "sysselsetting": "OK",
+    "utsending": "OK",
+    "sektor": "OK",
+    "virksomhet": "OK"
+  }
+}

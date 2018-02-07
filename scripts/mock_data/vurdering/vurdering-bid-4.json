@@ -1,0 +1,40 @@
+{
+  "behandlingID": 4,
+  "vurdering": {
+    "lovvalgsbestemmelser": [
+      {
+        "artikkel": "12.1",
+        "betingelser": [
+          {
+            "krav": "Arbeidsgiver har virksomhet i landet arbeidstakeren sendes fra",
+            "resultat": "OPPFYLT"
+          },
+          {
+            "krav": "Arbeidstakeren sendes til en annen medlemsstat for å utføre arbeid for arbeidsgiveren",
+            "resultat": "OPPFYLT"
+          },
+          {
+            "krav": "Utenlandsoppholdet er ikke lengre enn 24 måneder",
+            "resultat": "OPPFYLT"
+          },
+          {
+            "krav": "Arbeidstakeren er utsendt for å erstatte en annen person",
+            "resultat": "OPPFYLT"
+          }
+        ]
+      }
+    ],
+    "feilmeldinger": [
+      {
+        "kategori": "VALIDERINGSFEIL",
+        "alvorlighetsgrad": "FEIL",
+        "feilmelding": "Søkeren kan ikke arbeide på både skip og sokkel."
+      },
+      {
+        "kategori": "VALIDERINGSFEIL",
+        "alvorlighetsgrad": "VARSEL",
+        "feilmelding": "Søkeren er utsendt av arbeidsgiver og må oppgi arbeidssted i utlandet."
+      }
+    ]
+  }
+}
