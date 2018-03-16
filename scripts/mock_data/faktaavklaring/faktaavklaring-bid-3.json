@@ -1,13 +1,14 @@
 {
-  "behandlingID": 3,
   "faktaavklaring": {
-    "periode": {
-      "land": ["FR"],
-      "periodeFraOgMed": "2018-01-01",
-      "periodeTilOgMed": "2019-01-01"
+    "opphold": {
+      "land": ["GB"],
+      "periode": {
+        "fom": "2018-01-01",
+        "tom": "2019-01-01"
+      }
     },
     "aktivitet": {
-      "aktivitetLand": ["DE"]
+      "aktivitetLand": ["GB"]
     },
     "sysselsetting": {
       "sysselsettingType": "ARBEIDSTAKER"
@@ -15,29 +16,31 @@
     "utsending": {
       "ansattINorskSelskap": true,
       "erstatterTidligereUtsendt": false,
-      "utsendingMindreEnn24Mnd": true
+      "utsendingMindreEnn24Mnd": true,
+      "foretakDriverINorge": true,
+      "harForutgaendeMedlemskap": true,
+      "arbeidKnyttetTilVirksomhetUtlandet": null,
+      "sammeTypeVirksomhet": null
     },
     "bostedsland": {
       "bekrefterFamiliebosted": null,
       "bekrefterDisponering": null,
-      "bostedsLand": []
+      "bostedsland": []
     },
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
     },
+    "tjenestemann": {
+      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+    },
+    "valgteArbeidsforhold": [],
+    "yrkesaktivitetFordeling": {
+      "antallLand": "ETT_LAND_IKKE_NORGE"
+    },
     "virksomhet": {
-      "antallLand": "ETT_LAND_IKKE_NORGE",
       "aktivitetINorge": "OVER_25_PROSENT",
       "marginaltArbeid": "MARGINALT_JA",
       "vekslingMellomLand": "EN_ELLER_BEGGE"
     }
-  },
-  "status": {
-    "periode": "OK",
-    "aktivitet": "OK",
-    "sysselsetting": "OK",
-    "utsending": "OK",
-    "sektor": "OK",
-    "virksomhet": "OK"
   }
 }

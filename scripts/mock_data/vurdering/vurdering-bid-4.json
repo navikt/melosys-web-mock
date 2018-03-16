@@ -6,19 +6,23 @@
         "artikkel": "12.1",
         "betingelser": [
           {
-            "krav": "Arbeidsgiver har virksomhet i landet arbeidstakeren sendes fra",
+            "argument": "Arbeidsgiver har virksomhet i landet arbeidstakeren sendes fra",
+            "krav": "er sann",
             "resultat": "OPPFYLT"
           },
           {
-            "krav": "Arbeidstakeren sendes til en annen medlemsstat for å utføre arbeid for arbeidsgiveren",
+            "argument": "Arbeidstakeren sendes til en annen medlemsstat for å utføre arbeid for arbeidsgiveren",
+            "krav": "er sann",
             "resultat": "OPPFYLT"
           },
           {
-            "krav": "Utenlandsoppholdet er ikke lengre enn 24 måneder",
+            "argument": "Utenlandsoppholdet er ikke lengre enn 24 måneder",
+            "krav": "er mindre enn er lik 24",
             "resultat": "OPPFYLT"
           },
           {
-            "krav": "Arbeidstakeren er utsendt for å erstatte en annen person",
+            "argument": "Arbeidstakeren er IKKE utsendt for å erstatte en annen person",
+            "krav": "er sann",
             "resultat": "OPPFYLT"
           }
         ]
@@ -26,14 +30,18 @@
     ],
     "feilmeldinger": [
       {
-        "kategori": "VALIDERINGSFEIL",
-        "alvorlighetsgrad": "FEIL",
-        "feilmelding": "Søkeren kan ikke arbeide på både skip og sokkel."
+        "kategori": {
+          "alvorlighetsgrad": "FEIL",
+          "beskrivelse": "Det er implementert delvis maskinell støtte for denne forespørselen."
+        },
+        "melding": "Søkeren kan ikke arbeide på både skip og sokkel."
       },
       {
-        "kategori": "VALIDERINGSFEIL",
-        "alvorlighetsgrad": "VARSEL",
-        "feilmelding": "Søkeren er utsendt av arbeidsgiver og må oppgi arbeidssted i utlandet."
+        "kategori": {
+          "alvorlighetsgrad": "FEIL",
+          "beskrivelse": "Det er implementert delvis maskinell støtte for denne forespørselen."
+        },
+        "melding": "Søkeren er utsendt av arbeidsgiver og må oppgi arbeidssted i utlandet."
       }
     ]
   }

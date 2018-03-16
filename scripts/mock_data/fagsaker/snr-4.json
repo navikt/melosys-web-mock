@@ -1,15 +1,18 @@
 {
   "saksnummer": 4,
+  "gsakSaksnummer": 1234,
   "type": "A1",
   "status": "OPPRETTET",
   "registrertDato": "2018-02-01T10:09:39.617",
+  "endretDato": "2018-02-01T10:09:39.617",
   "behandlinger": [
     {
       "oppsummering": {
         "behandlingID": 4,
         "status": "OPPRETTET",
         "type": "SØKNAD",
-        "registrertDato": "2018-02-01T10:09:39.617"
+        "registrertDato": "2018-02-01T10:09:39.617",
+        "endretDato": "2018-02-01T10:09:39.617"
       },
       "saksopplysninger": {
         "person": {
@@ -70,6 +73,36 @@
                 "arbeidstidsordning": "Ikke skift",
                 "avloenningstype": "Fastlønn",
                 "yrke": "VIKARBYRÅKONSULENT",
+                "avtaltArbeidstimerPerUke": 37.5,
+                "stillingsprosent": 100.0,
+                "beregnetAntallTimerPrUke": 37.5,
+                "maritimArbeidsavtale": false
+              },
+              {
+                "gyldigTil":"2017-01-01",
+                "arbeidstidsordning": "Ikke skift",
+                "avloenningstype": "Fastlønn",
+                "yrke": "VIKARBYRÅKONSULENT",
+                "avtaltArbeidstimerPerUke": 37.5,
+                "stillingsprosent": 100.0,
+                "beregnetAntallTimerPrUke": 37.5,
+                "maritimArbeidsavtale": false
+              },
+              {
+                "gyldigTil":"2015-03-01",
+                "arbeidstidsordning": "Ikke skift",
+                "avloenningstype": "Fastlønn",
+                "yrke": "VIKARBYRÅKONSULENT",
+                "avtaltArbeidstimerPerUke": 37.5,
+                "stillingsprosent": 100.0,
+                "beregnetAntallTimerPrUke": 37.5,
+                "maritimArbeidsavtale": false
+              },
+              {
+                "gyldigTil":"2015-02-01",
+                "arbeidstidsordning": "Ikke skift",
+                "avloenningstype": "Fastlønn",
+                "yrke": "ASSISTENT",
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
@@ -247,58 +280,135 @@
           "medlemsperiode": [
             {
               "periode": {
-                "fom": "2018-01-01",
-                "tom": "9999-12-31"
+                "fom": "2018-01-01"
               },
-              "type": "PMMEDSKP",
-              "status": "AVST",
-              "grunnlagstype": "MEDEOS",
-              "land": "NOR",
-              "lovvalg": "ENDL",
+              "type": {
+                "kode": "PMMEDSKP",
+                "term": "Periode med medlemskap"
+              },
+              "status": {
+                "kode": "GYLD",
+                "term": "Gyldig"
+              },
+              "grunnlagstype": {
+                "kode": "MEDEOS",
+                "term": "Medlem, EØS-avtalen"
+              },
+              "land": {
+                "kode": "NOR",
+                "term": "Norge"
+              },
+              "lovvalg": {
+                "kode": "ENDL",
+                "term": "Endelig"
+              },
               "trygdedekning": "Full",
               "kildedokumenttype": "E101",
               "kilde": "FS22"
             },
             {
               "periode": {
-                "fom": "2017-12-25",
-                "tom": "2018-01-08"
+                "fom": "2017-01-01",
+                "tom": "2018-12-31"
               },
-              "type": "PMMEDSKP",
-              "status": "AVST",
-              "grunnlagstype": "Osterrike",
-              "land": "NOR",
-              "lovvalg": "ENDL",
+              "type": {
+                "kode": "PMMEDSKP",
+                "term": "Periode med medlemskap"
+              },
+              "status": {
+                "kode": "GYLD",
+                "term": "Gyldig"
+              },
+              "grunnlagstype": {
+                "kode": "MEDEOS",
+                "term": "Medlem, EØS-avtalen"
+              },
+              "land": {
+                "kode": "NOR",
+                "term": "Norge"
+              },
+              "lovvalg": {
+                "kode": "ENDL",
+                "term": "Endelig"
+              },
               "trygdedekning": "Full",
+              "kildedokumenttype": "E101",
+              "kilde": "FS22"
+            },
+            {
+              "periode": {
+                "fom": "2015-04-01",
+                "tom": "2016-12-31"
+              },
+              "type": {
+                "kode": "PUMEDSKP",
+                "term": "Periode uten medlemskap"
+              },
+              "status": {
+                "kode": "UAV",
+                "term": "Uavklart"
+              },
+              "lovvalg": {
+                "kode": "ENDL",
+                "term": "Endelig"
+              },
               "kildedokumenttype": "Henv_Soknad",
               "kilde": "FS22"
             },
             {
               "periode": {
-                "fom": "2017-12-25",
-                "tom": "2018-01-08"
+                "fom": "2015-04-01",
+                "tom": "2016-12-31"
               },
-              "type": "PMMEDSKP",
-              "status": "AVST",
-              "grunnlagstype": "Osterrike",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
+              "type": {
+                "kode": "PUMEDSKP",
+                "term": "Periode uten medlemskap"
+              },
+              "status": {
+                "kode": "UAVK",
+                "term": "Uavklart"
+              },
               "kildedokumenttype": "Henv_Soknad",
               "kilde": "FS22"
             },
             {
               "periode": {
-                "fom": "2015-01-01",
-                "tom": "2015-06-30"
+                "fom": "2014-12-31",
+                "tom": "2015-03-31"
               },
-              "type": "PMMEDSKP",
-              "status": "GYLD",
-              "grunnlagstype": "MED",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "SED",
+              "type": {
+                "kode": "PUMEDSKP",
+                "term": "Periode uten medlemskap"
+              },
+              "status": {
+                "kode": "AVST",
+                "term": "Avvist"
+              },
+              "lovvalg": {
+                "kode": "ENDL",
+                "term": "Endelig"
+              },
+              "kildedokumenttype": "Henv_Soknad",
+              "kilde": "FS22"
+            },
+            {
+              "periode": {
+                "fom": "2013-12-31",
+                "tom": "2014-01-01"
+              },
+              "type": {
+                "kode": "PUMEDSKP",
+                "term": "Periode uten medlemskap"
+              },
+              "status": {
+                "kode": "AVST",
+                "term": "Avvist"
+              },
+              "lovvalg": {
+                "kode": "ENDL",
+                "term": "Endelig"
+              },
+              "kildedokumenttype": "Henv_Soknad",
               "kilde": "FS22"
             }
           ]

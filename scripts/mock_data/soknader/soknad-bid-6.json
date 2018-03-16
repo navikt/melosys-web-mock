@@ -1,0 +1,58 @@
+{
+  "behandlingID": 6,
+  "soknadDokument": {
+    "arbeidUtland": {
+      "arbeidsland": [
+        "ESP"
+      ],
+      "arbeidsperiode": {
+        "fom": "2018-03-01",
+        "tom": "2018-06-01"
+      },
+      "arbeidsandelNorge": 0,
+      "arbeidsandelUtland": 100,
+      "bostedsland": "NOR",
+      "erstatterTidligereUtsendt": false
+    },
+    "foretakUtland": {},
+    "oppholdUtland": {
+      "oppholdsland": "ESP",
+      "oppholdsPeriode": {
+        "fom": "2017-12-01",
+        "tom": "2017-12-31"
+      },
+      "studentIEOS": false,
+      "studentFinansiering": "",
+      "studentSemester": "",
+      "studieLand": ""
+    },
+    "arbeidNorge": {
+      "arbeidsforholdOpprettholdIHelePerioden": true,
+      "selvstendigFortsetterEtterArbeidIUtlandet": false,
+      "brukerErSelvstendigNaeringsdrivende": false,
+      "brukerArbeiderIVikarbyra": false
+    },
+    "juridiskArbeidsgiverNorge": {
+      "antallAnsatte": 350,
+      "antallAdminAnsatte": 250,
+      "andelOmsetningINorge": 78.5,
+      "andelKontrakterINorge": 50.5,
+      "erBemanningsbyra": false,
+      "hattDriftSiste12Mnd": true,
+      "antallUtsendte": 30,
+      "antallAdminAnsatteEOS": 75
+    },
+    "arbeidsinntekt": {
+      "inntektNorskIPerioden": 35000,
+      "inntektUtenlandskIPerioden": 0,
+      "inntektNaeringIPerioden": 0,
+      "inntektNaturalYtelser": [
+        "Fri bolig",
+        "Fri bil"
+      ],
+      "inntektErInnrapporteringspliktig": true,
+      "inntektTrygdeavgiftBlirTrukket": true
+    },
+    "tilleggsopplysninger": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
+  }
+}

@@ -1,0 +1,1419 @@
+{
+  "totaltAntallTreff": "35",
+  "oppgaveListe": [
+    {
+      "oppgaveId": "177057928",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-28+02:00",
+      "aktivTil": "2016-03-30+02:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_OPP" },
+      "beskrivelser": ["Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "dokumentId": "370658114",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-21T08:54:22.895+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T130910"
+        },
+        "endretInfo": {
+          "dato": "2016-03-21T08:54:22.895+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T130910"
+        }
+      }
+    },
+    {
+      "oppgaveId": "175127177",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-07+01:00",
+      "aktivTil": "2016-02-09+01:00",
+      "ansvarligId": "K141478",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "GEN" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_GEN" },
+      "beskrivelser": ["Automatisk generert oppgave 7. februar 2016 04:38 srvdialogstyring"],
+      "prioritet": { "kode": "HOY_GEN" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10003NRSJ",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-07T04:38:46.197+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-02-07T04:38:46.197+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "183545950",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-09-02+02:00",
+      "aktivTil": "2016-09-06+02:00",
+      "ansvarligId": "H140206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_BAR" },
+      "beskrivelser": ["Automatisk generert oppgave 2. september 2016 05:25 srvdialogstyring"],
+      "prioritet": { "kode": "HOY_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10006G8FN",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-09-02T05:25:25.532+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-09-02T05:25:25.532+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "192121803",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-03-09+01:00",
+      "aktivTil": "2017-03-09+01:00",
+      "ansvarligId": "T145754",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "FOR" },
+      "oppgavetype": { "kode": "VUR_FOR" },
+      "beskrivelser": ["09.03.2017 09:47 Danve, Shilpa (T145754, 2990)","Status overnevnte er ikke registrert i UDI sitt datasystem. Reg.dato: 13.03.2014"],
+      "prioritet": { "kode": "HOY_FOR" },
+      "versjon": "2",
+      "lest": "true",
+      "dokumentId": "394616391",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-03-09T09:47:36.714+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        },
+        "endretInfo": {
+          "dato": "2017-03-09T09:47:57.728+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        }
+      }
+    },
+    {
+      "oppgaveId": "174562068",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-01-26+01:00",
+      "aktivTil": "2016-01-28+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "GRU" },
+      "underkategori": { "kode": "GRUNNSTONAD_GRU" },
+      "oppgavetype": { "kode": "KONT_BRUK_GRU" },
+      "beskrivelser": ["07.02.2017 14:28 Holmquist, Mariann Fyhn (H103976, 2990)","Oppgaven er flyttet  fra saksbehandler H103976 til <ingen>","26.01.2016 12:48 Holmquist, Mariann Fyhn (H103976, 2990)","Fra Modia: Test"],
+      "prioritet": { "kode": "NORM_GRU" },
+      "versjon": "2",
+      "lest": "false",
+      "henvendelseId": "100040GV9",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-26T12:48:47.273+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2017-02-07T14:28:44.397+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "201377338",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-10-15+02:00",
+      "aktivTil": "2017-10-17+02:00",
+      "ansvarligId": "H138453",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "UFM" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_UFM" },
+      "beskrivelser": ["Automatisk generert oppgave 15. oktober 2017 04:02 srvdialogstyring"],
+      "prioritet": { "kode": "HOY_UFM" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "1000CWiHA",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-10-15T04:02:31.228+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2017-10-15T04:02:31.228+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "167638828",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2015-08-16+02:00",
+      "aktivTil": "2015-08-18+02:00",
+      "ansvarligId": "E102239",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "ENF" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_ENF" },
+      "beskrivelser": ["Automatisk generert oppgave 16. august 2015 04:00 srvdialogstyring"],
+      "prioritet": { "kode": "NORM_ENF" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10002HC4K",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2015-08-16T04:00:52.648+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2015-08-16T04:00:52.648+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "176314229",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-03+01:00",
+      "aktivTil": "2016-03-03+01:00",
+      "ansvarligId": "W110069",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BID" },
+      "oppgavetype": { "kode": "VURD_HENV_BID" },
+      "beskrivelser": ["07.02.2017 14:28 Holmquist, Mariann Fyhn (H103976, 2990)","Oppgaven er flyttet  fra saksbehandler H103976 til <ingen>","03.03.2016 13:31 Holmquist, Mariann Fyhn (H103976, 2990)","Fra Modia: test oppgave Bidrag"],
+      "prioritet": { "kode": "HOY_BID" },
+      "versjon": "4",
+      "lest": "true",
+      "henvendelseId": "10004EWPG",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-03T13:31:35.176+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2017-03-28T14:43:59.638+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "W110069"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "193220255",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-04-03+02:00",
+      "aktivTil": "2017-04-05+02:00",
+      "ansvarligId": "H140206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_BAR" },
+      "beskrivelser": ["Automatisk generert oppgave 3. april 2017 04:01 srvdialogstyring"],
+      "prioritet": { "kode": "HOY_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10009NEB3",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-04-03T04:01:02.735+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2017-04-03T04:01:02.735+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "174464932",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-01-24+01:00",
+      "aktivTil": "2016-01-26+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "DAG" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_DAG" },
+      "beskrivelser": ["- Automatisk generert oppgave 24. januar 2016 04:17 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_DAG" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10003Y1Y4",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-24T04:17:08.163+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-01-24T04:17:08.163+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "176701002",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-18+01:00",
+      "aktivTil": "2016-03-22+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_OPP" },
+      "beskrivelser": ["Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "dokumentId": "370184904",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-11T13:21:10.433+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2016-03-11T13:21:10.433+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      }
+    },
+    {
+      "oppgaveId": "187676214",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-12-04+01:00",
+      "aktivTil": "2016-12-06+01:00",
+      "ansvarligId": "L143206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_OPP" },
+      "beskrivelser": ["- Automatisk generert oppgave 4. desember 2016 04:07 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10007oLHQ",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-12-04T04:07:04.865+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-12-04T04:07:04.865+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "187677019",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-12-04+01:00",
+      "aktivTil": "2016-12-06+01:00",
+      "ansvarligId": "L143206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_OPP" },
+      "beskrivelser": ["- Automatisk generert oppgave 4. desember 2016 04:07 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10007oLHQ",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-12-04T04:07:46.929+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-12-04T04:07:46.929+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "177054897",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-28+02:00",
+      "aktivTil": "2016-03-30+02:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_OPP" },
+      "beskrivelser": ["Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "dokumentId": "370656672",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-21T08:15:26.269+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T130910"
+        },
+        "endretInfo": {
+          "dato": "2016-03-21T08:15:26.269+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T130910"
+        }
+      }
+    },
+    {
+      "oppgaveId": "176741739",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-21+01:00",
+      "aktivTil": "2016-03-23+01:00",
+      "ansvarligId": "T145754",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_BAR" },
+      "beskrivelser": ["25.04.2017 10:57 Danve, Shilpa (T145754, 2990)","Oppgaven er fordelt til saksbehandler T145754. Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_BAR" },
+      "versjon": "2",
+      "lest": "true",
+      "dokumentId": "370242293",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-14T08:07:03.087+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2017-04-25T10:57:54.171+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        }
+      }
+    },
+    {
+      "oppgaveId": "196323516",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-06-15+02:00",
+      "aktivTil": "2017-06-19+02:00",
+      "ansvarligId": "U109747",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AAP" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_AAP" },
+      "beskrivelser": ["- Automatisk generert oppgave 15. juni 2017 04:01 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_AAP" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "1000ATP8F",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-06-15T04:01:01.519+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2017-06-15T04:01:01.519+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "184590779",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-09-27+02:00",
+      "aktivTil": "2016-09-29+02:00",
+      "ansvarligId": "H140206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_BAR" },
+      "beskrivelser": ["- Automatisk generert oppgave 27. september 2016 04:05 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10006G9H3",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-09-27T04:05:48.499+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-09-27T04:05:48.499+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "175170762",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-08+01:00",
+      "aktivTil": "2016-02-10+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "DAG" },
+      "oppgavetype": { "kode": "KONT_BRUK_DAG" },
+      "beskrivelser": [
+        "07.02.2017 14:28 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet  fra saksbehandler H103976 til <ingen>",
+        "08.02.2016 15:34 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 0709 til 2990, fra saksbehandler V125847 til H103976",
+        "08.02.2016 15:32 Holmquist, Mariann Fyhn (H103976, 2990)","Fra Modia: test"
+      ],
+      "prioritet": { "kode": "NORM_DAG" },
+      "versjon": "4",
+      "lest": "false",
+      "henvendelseId": "100047JSE",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-08T15:32:48.302+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2017-02-07T14:28:44.379+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "172756938",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2015-12-10+01:00",
+      "aktivTil": "2015-12-14+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "DAG" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_DAG" },
+      "beskrivelser": ["- Automatisk generert oppgave 10. desember 2015 04:01 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_DAG" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10003JCS2",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2015-12-10T04:01:16.567+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2015-12-10T04:01:16.567+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "183422335",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-08-31+02:00",
+      "aktivTil": "2016-09-02+02:00",
+      "ansvarligId": "E102227",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_BAR" },
+      "beskrivelser": ["- Automatisk generert oppgave 31. august 2016 04:52 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10006FPA0",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-08-31T04:52:05.479+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-08-31T04:52:05.479+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "174405685",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-01-29+01:00",
+      "aktivTil": "2016-02-02+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "OPP" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_OPP" },
+      "beskrivelser": ["Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_OPP" },
+      "versjon": "0",
+      "lest": "false",
+      "dokumentId": "367204976",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-22T08:58:08.490+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2016-01-22T08:58:08.490+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      }
+    },
+    {
+      "oppgaveId": "175127202",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-07+01:00",
+      "aktivTil": "2016-02-09+01:00",
+      "ansvarligId": "K141478",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "GEN" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_GEN" },
+      "beskrivelser": ["- Automatisk generert oppgave 7. februar 2016 04:40 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_GEN" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10003NRSJ",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-07T04:40:26.910+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-02-07T04:40:26.910+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "204142355",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-12-13+01:00",
+      "aktivTil": "2017-12-15+01:00",
+      "ansvarligEnhetId": "2930",
+      "ansvarligEnhetNavn": "IT forretningspartner",
+      "fagomrade": { "kode": "KOM" },
+      "oppgavetype": { "kode": "KONT_BRUK_KOM" },
+      "beskrivelser": [
+        "13.12.2017 15:09 Metaj, Blerta (M133296, 4101)",
+        "att Arnstein gomo","13.12.2017 15:07 Metaj, Blerta (M133296, 4101)",
+        "test test att ola normann"
+      ],
+      "prioritet": { "kode": "NORM_KOM" },
+      "versjon": "1",
+      "lest": "false",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-12-13T15:07:56.447+01:00",
+          "enhet": {
+            "id": "4101",
+            "navn": "NAV Kontaktsenter Østfold"
+          },
+          "ident": "M133296"
+        },
+        "endretInfo": {
+          "dato": "2017-12-13T15:09:05.345+01:00",
+          "enhet": {
+            "id": "4101",
+            "navn": "NAV Kontaktsenter Østfold"
+          },
+          "ident": "M133296"
+        }
+      }
+    },
+    {
+      "oppgaveId": "174243235",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-01-21+01:00",
+      "aktivTil": "2016-01-21+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "underkategori": { "kode": "ORDINAR_BAR" },
+      "oppgavetype": { "kode": "VUR_BAR" },
+      "beskrivelser": [
+        "19.01.2016 14:01 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "test"],
+      "prioritet": { "kode": "NORM_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-19T14:01:04.334+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2016-01-19T14:01:04.334+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      }
+    },
+    {
+      "oppgaveId": "170835942",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2015-11-04+01:00",
+      "aktivTil": "2015-11-06+01:00",
+      "ansvarligId": "T145754",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AAP" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_AAP" },
+      "beskrivelser": [
+        "02.10.2017 14:11 Danve, Shilpa (T145754, 2990)",
+        "Oppgaven er flyttet  fra saksbehandler <ingen> til T145754",
+        "30.08.2017 09:15 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "dfgdf",
+        "Oppgaven er flyttet fra enhet 2830 til 2990",
+        "fra mappe <ingen> til KINE KINE KINE",
+        "30.08.2017 09:14 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "retger",
+        "Oppgaven er flyttet fra enhet 2990 til 2830, fra saksbehandler H103976 til <ingen>",
+        "30.08.2017 09:11 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 2830 til 2990, fra saksbehandler <ingen> til H103976",
+        "24.08.2017 09:07 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "lkpjølgh,mj",
+        "Oppgaven er flyttet fra enhet 2990 til 2830, fra saksbehandler H103976 til <ingen>,","24.08.2017 09:05 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 2830 til 2990, fra saksbehandler <ingen> til H103976",
+        "16.08.2017 12:25 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "test",
+        "Oppgaven er flyttet fra enhet 2990 til 2830, fra saksbehandler H103976 til <ingen>,",
+        "16.08.2017 12:25 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 2830 til 2990, fra saksbehandler <ingen> til H103976",
+        "Kontroller utgående skannet dokument"
+      ],
+      "prioritet": { "kode": "NORM_AAP" },
+      "versjon": "19",
+      "lest": "true",
+      "dokumentId": "362521997",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2015-10-28T09:44:55.796+01:00",
+          "enhet": {
+            "id": "2830",
+            "navn": "DIR Ytelsesavdelingen"
+          },
+          "ident": "H103620"
+        },
+        "endretInfo": {
+          "dato": "2017-10-02T14:11:38.813+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        }
+      },
+      "mappe": {
+        "mappeId": "100007501",
+        "mappeNavn": "KINE KINE KINE",
+        "enhetId": "2990",
+        "versjon": "0"
+      }
+    },
+    {
+      "oppgaveId": "176190918",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-03-01+01:00",
+      "aktivTil": "2016-03-03+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AAP" },
+      "underkategori": { "kode": "MELDEKORT_AAP" },
+      "oppgavetype": { "kode": "KONT_BRUK_AAP" },
+      "beskrivelser": [
+        "07.02.2017 14:28 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet  fra saksbehandler H103976 til <ingen>",
+        "01.03.2016 15:21 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 1208 til 2990, fra saksbehandler I137400 til H103976",
+        "01.03.2016 15:20 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Fra Modia: test oppgave"
+      ],
+      "prioritet": { "kode": "NORM_AAP" },
+      "versjon": "4",
+      "lest": "false",
+      "henvendelseId": "10004GNWP",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-03-01T15:20:42.054+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2017-02-07T14:28:44.346+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "183240112",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-08-26+02:00",
+      "aktivTil": "2016-08-30+02:00",
+      "ansvarligId": "T145754",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AAP" },
+      "oppgavetype": { "kode": "KONT_BRUK_AAP" },
+      "beskrivelser": [
+        "26.08.2016 00:18 Danve, Shilpa (T145754, 2990)",
+        "testProd"
+      ],
+      "prioritet": { "kode": "NORM_AAP" },
+      "versjon": "0",
+      "lest": "false",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-08-26T00:18:57.167+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        },
+        "endretInfo": {
+          "dato": "2016-08-26T00:18:57.167+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "T145754"
+        }
+      }
+    },
+    {
+      "oppgaveId": "175830175",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-23+01:00",
+      "aktivTil": "2016-02-25+01:00",
+      "ansvarligId": "H140206",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AAP" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_AAP" },
+      "beskrivelser": ["- Automatisk generert oppgave 23. februar 2016 04:17 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_AAP" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10004CF6D",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-23T04:17:45.828+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-02-23T04:17:45.828+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "174945443",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-03+01:00",
+      "aktivTil": "2016-02-03+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "AGR" },
+      "oppgavetype": { "kode": "VURD_HENV_AGR" },
+      "beskrivelser": [
+        "03.02.2016 10:01 Møller-Nilsen, Rolf Sigurd (M131246, 0111)",
+        "Skulle denne test-henvendelsen til Aremark?",
+        "Oppgaven er flyttet fra enhet 0111 til 2990","03.02.2016 08:36 Koroleva, Yulia (K141478, 2990)",
+        "Fra Modia: awtttttaaaert"
+      ],
+      "prioritet": { "kode": "NORM_AGR" },
+      "versjon": "2",
+      "lest": "false",
+      "henvendelseId": "1000451A8",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-03T08:36:01.278+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "K141478"
+        },
+        "endretInfo": {
+          "dato": "2016-02-03T10:01:00.554+01:00",
+          "enhet": {
+            "id": "0111",
+            "navn": "NAV Hvaler"
+          },
+          "ident": "M131246"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "204142438",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-12-13+01:00",
+      "aktivTil": "2017-12-15+01:00",
+      "ansvarligEnhetId": "2930",
+      "ansvarligEnhetNavn": "IT forretningspartner",
+      "fagomrade": { "kode": "KOM" },
+      "oppgavetype": { "kode": "KONT_BRUK_KOM" },
+      "beskrivelser": [
+        "13.12.2017 15:10 Metaj, Blerta (M133296, 4101)",
+        "test",
+        "att Arnstein Gomo"
+      ],
+      "prioritet": { "kode": "NORM_KOM" },
+      "versjon": "0",
+      "lest": "false",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-12-13T15:10:06.753+01:00",
+          "enhet": {
+            "id": "4101",
+            "navn": "NAV Kontaktsenter Østfold"
+          },
+          "ident": "M133296"
+        },
+        "endretInfo": {
+          "dato": "2017-12-13T15:10:06.753+01:00",
+          "enhet": {
+            "id": "4101",
+            "navn": "NAV Kontaktsenter Østfold"
+          },
+          "ident": "M133296"
+        }
+      }
+    },
+    {
+      "oppgaveId": "174632987",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-01-27+01:00",
+      "aktivTil": "2016-01-27+01:00",
+      "ansvarligId": "H103976",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "HJE" },
+      "underkategori": { "kode": "ERS_HJE" },
+      "oppgavetype": { "kode": "BEH_SAK_HJE" },
+      "beskrivelser": [
+        "30.08.2017 09:09 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "test",
+        "30.08.2017 09:09 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 2830 til 2990, fra saksbehandler <ingen> til H103976",
+        "30.08.2017 09:07 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "test",
+        "Oppgaven er flyttet fra enhet 2990 til 2830, fra saksbehandler H103976 til <ingen>,",
+        "30.08.2017 09:06 Holmquist, Mariann Fyhn (H103976, 2990)",
+        "Oppgaven er flyttet fra enhet 2830 til 2990, fra saksbehandler H103620 til H103976",
+        "27.01.2016 13:01 Jensen, Nina (J104463, 4701)",
+        "Mottatt NAV Hjelpemiddelsentral Østfold.<br>",
+        "Test returneres.",
+        "Oppgaven er flyttet fra enhet 4701 til 2830, fra saksbehandler <ingen> til H103620,",
+        "27.01.2016 12:48 Havåg, Tone Kristiansen (H103620, 2830)",
+        "rest\\nSTK2 : IT\\nSakstype : Søknad\\nMottatt dato : 15.01.2016"
+      ],
+      "prioritet": { "kode": "NORM_HJE" },
+      "versjon": "11",
+      "lest": "true",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-27T12:48:49.099+01:00",
+          "enhet": {
+            "id": "2830",
+            "navn": "DIR Ytelsesavdelingen"
+          },
+          "ident": "H103620"
+        },
+        "endretInfo": {
+          "dato": "2017-08-30T09:09:54.621+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      }
+    },
+    {
+      "oppgaveId": "201774036",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-10-24+02:00",
+      "aktivTil": "2017-10-26+02:00",
+      "ansvarligId": "N139039",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "SYK" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_SYK" },
+      "beskrivelser": ["- Automatisk generert oppgave 24. oktober 2017 04:02 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_SYK" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "1000D3Kio",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-10-24T04:02:25.821+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2017-10-24T04:02:25.821+02:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "175127296",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-07+01:00",
+      "aktivTil": "2016-02-09+01:00",
+      "ansvarligId": "K141478",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "GEN" },
+      "oppgavetype": { "kode": "SVAR_IK_MOT_GEN" },
+      "beskrivelser": ["- Automatisk generert oppgave 7. februar 2016 04:47 srvdialogstyring -"],
+      "prioritet": { "kode": "HOY_GEN" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "10003NRSJ",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-02-07T04:47:05.817+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        },
+        "endretInfo": {
+          "dato": "2016-02-07T04:47:05.817+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "srvdialogstyring"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    },
+    {
+      "oppgaveId": "174697422",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2016-02-04+01:00",
+      "aktivTil": "2016-02-08+01:00",
+      "ansvarligEnhetId": "2990",
+      "ansvarligEnhetNavn": "IT applikasjonsutvikling",
+      "fagomrade": { "kode": "BAR" },
+      "oppgavetype": { "kode": "KON_UTG_SCA_DOK_BAR" },
+      "beskrivelser": ["Kontroller utgående skannet dokument"],
+      "prioritet": { "kode": "NORM_BAR" },
+      "versjon": "0",
+      "lest": "false",
+      "dokumentId": "367563342",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2016-01-28T13:06:33.682+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        },
+        "endretInfo": {
+          "dato": "2016-01-28T13:06:33.682+01:00",
+          "enhet": {
+            "id": "2990",
+            "navn": "IT applikasjonsutvikling"
+          },
+          "ident": "H103976"
+        }
+      }
+    },
+    {
+      "oppgaveId": "203530645",
+      "gjelder": {
+        "brukerId": "10108000398",
+        "brukertypeKode": "PERSON"
+      },
+      "status": { "kode": "A" },
+      "aktivFra": "2017-11-30+01:00",
+      "aktivTil": "2017-12-04+01:00",
+      "ansvarligEnhetId": "2930",
+      "ansvarligEnhetNavn": "IT forretningspartner",
+      "fagomrade": { "kode": "GRU" },
+      "oppgavetype": { "kode": "KONT_BRUK_GRU" },
+      "beskrivelser": [
+        "30.11.2017 09:08 Gomo, Arnstein (G110867, 2930)",
+        "Fra Modia:\\nTEST hvordan ser dete ut i gosys"
+      ],
+      "prioritet": { "kode": "NORM_GRU" },
+      "versjon": "0",
+      "lest": "false",
+      "henvendelseId": "1000DV6Y4",
+      "sporing": {
+        "opprettetInfo": {
+          "dato": "2017-11-30T09:08:48.297+01:00",
+          "enhet": {
+            "id": "2930",
+            "navn": "IT forretningspartner"
+          },
+          "ident": "G110867"
+        },
+        "endretInfo": {
+          "dato": "2017-11-30T09:08:48.297+01:00",
+          "enhet": {
+            "id": "2930",
+            "navn": "IT forretningspartner"
+          },
+          "ident": "G110867"
+        }
+      },
+      "henvendelsetype": { "kode": "DIALOG" }
+    }
+  ]
+}

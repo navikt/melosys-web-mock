@@ -1,16 +1,18 @@
 {
   "saksnummer": 3,
+  "gsakSaksnummer": 1234,
   "type": "A1",
   "status": "OPPRETTET",
   "registrertDato": "2017-10-19T12:31:36",
+  "endretDato": "2017-10-19T12:31:36",
   "behandlinger": [
     {
       "oppsummering": {
         "behandlingID": 3,
-        "gsakId": 123,
         "status": "OPPRETTET",
         "type": "SØKNAD",
-        "registrertDato": "2017-10-19T14:35:54"
+        "registrertDato": "2017-10-19T14:35:54",
+        "endretDato": "2017-10-19T14:35:54"
       },
       "saksopplysninger": {
         "person": {

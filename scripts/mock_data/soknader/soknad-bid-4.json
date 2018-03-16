@@ -22,7 +22,7 @@
       "foretakUtlandAdresse": null
     },
     "oppholdUtland": {
-      "oppholdsland": "DE",
+      "oppholdsland": ["DE"],
       "oppholdsPeriode": {
         "fom": "2018-01-01",
         "tom": "2018-06-01"
@@ -34,7 +34,7 @@
       "studieLand": "UK"
     },
     "arbeidNorge": {
-      "valgteArbeidsforhold": ["konvertert_97a38348-1041-4037-9ebe-f00aea12b1a8"],
+      "valgteArbeidsforhold": [44137901],
       "arbeidsforholdOpprettholdIHelePerioden": true,
       "brukerErSelvstendigNaeringsdrivende": true,
       "selvstendigFortsetterEtterArbeidIUtlandet": true,
