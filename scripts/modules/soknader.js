@@ -1,6 +1,7 @@
 const fs = require('fs');
 const _ = require('underscore');
 const ERR = require('./errors');
+const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 exports.getSoknad = (req, res) => {
@@ -25,7 +26,7 @@ exports.getSoknad = (req, res) => {
 exports.postSoknad = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let jsonBody = isJSON(body) ? JSON.parse(body) : body;
+  let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
 
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
 

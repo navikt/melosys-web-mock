@@ -1,5 +1,6 @@
 const fs = require('fs');
 const ERR = require('./errors');
+const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 exports.getFaktaavklaring = (req, res) => {
@@ -23,11 +24,11 @@ exports.getFaktaavklaring = (req, res) => {
 exports.postFaktaavklaring = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  const faktaavklaring = isJSON(body) ? JSON.parse(body) : body;
-  const faktaavklaringen = {
+  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const faktaavklaring = {
     behandlingID,
-    faktaavklaring: { ...faktaavklaring }
+    faktaavklaring: { ...jsonBody.faktaavklaring }
   };
 
-  return res.json(faktaavklaringen);
+  return res.json(faktaavklaring);
 };

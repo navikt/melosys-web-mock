@@ -1,6 +1,7 @@
 const fs = require('fs');
 const ERR = require('./errors');
 const happy = require('./happystatus');
+const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 
@@ -29,7 +30,7 @@ exports.hentVurdering = (req, res) => {
 exports.postVurdering = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let responseBody = isJSON(body) ? JSON.parse(body) : body;
+  let responseBody = utils.isJSON(body) ? JSON.parse(body) : body;
   responseBody.behandlingID = behandlingID;
   return res.json(responseBody);
 };
