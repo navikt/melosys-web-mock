@@ -97,10 +97,10 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 // fagomrade: https://kodeverkviewer.adeo.no/kodeverk/xml/fagomrade.xml
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
-router.post('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.sendPlukkOppgave);
+router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
 router.get('/oppgaver/kodeverk', oppgaver.kodeverk);
-router.get('/oppgaver/hentSaksoversikt', oppgaver.hentMineOppgaver);
-router.get('/oppgaver/hentMineOppgaver', oppgaver.hentMineOppgaver);
+router.get('/oppgaver/hentSaksoversikt', oppgaver.hentMineSaker);
+router.get('/oppgaver/hentMineSaker', oppgaver.hentMineSaker);
 
 app.use(allowCrossDomain);
 app.use('/api', router);

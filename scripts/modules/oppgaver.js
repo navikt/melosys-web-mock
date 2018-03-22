@@ -137,45 +137,52 @@ exports.sendPlukkOppgave = (req, res) => {
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
   const { oppgavetype } = jsonBody;
-  const oppgave = {oppgavetype, oppgaveId:'1', saksnummer:123, dokumentID:"DOK_321" };
+  let oppgave;
+  if (oppgavetype === 'BEH_SAK') {
+    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'123', journalPostID: null };
+  }
+  else { // JFR
+    // saknummer optional
+    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalPostID:"DOK_321" };
+  }
   res.json(oppgave);
 };
 
 exports.kodeverk = (req, res) => {
   const kodeverk = {
     sakstyper: [{
-      kode: "BOSTED_MED",
+      kode: "EU_EOS",
       term: "EU/EØS"
     }, {
-      kode: "MIDL_LOVVALG_MED",
+      kode: "TRYGDAVTALE",
       term: "Trygdeavtale"
     }, {
-      kode: "MIDL_FRANCOIS",
+      kode: "FOLKETRYGD",
       term: "Folketrygd"
     }],
     behandlingstyper: [{
-      kode: "JFR_MED",
+      kode: "ae0034",
       term: "Søknad"
     }, {
-      kode: "UNNTAK_MED",
+      kode: "todo0001",
       term: "Unntak medlemsskap"
     }, {
-      kode: "BEH_KLAGE",
+      kode: "ae0058",
       term: "Klage"
     }, {
-      kode: "BEH_REVURDERING",
+      kode: "ae0028",
       term: "Revurdering"
     }, {
-      kode: "BEH_MELDING",
+      kode: "todo0002",
       term: "Melding fra utenlandsk myndighet"
     }, {
-      kode: "BEH_PASTAND",
+      kode: "todo0003",
       term: "Påstand fra utenlandsk myndighet"
     }]
   };
   res.json(kodeverk);
 };
-exports.hentMineOppgaver = (req, res) => {
+exports.hentMineSaker = (req, res) => {
   try {
     const plukkoppgaver = lesPlukkOppgaver();
     const oppgaveobjekt = lesOppgaveObjekt();

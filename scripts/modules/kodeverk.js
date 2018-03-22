@@ -122,35 +122,34 @@ const landkoder = [
 ];
 const sakstyper = [
   {
-    kode: "BOSTED_MED",
+    kode: "EU_EOS",
     term: "EU/EØS"
   }, {
-    kode: "MIDL_LOVVALG_MED",
+    kode: "AVTALE",
     term: "Trygdeavtale"
   }, {
-    kode: "MIDL_FRANCOIS",
+    kode: "FOLKETRYGD",
     term: "Folketrygd"
   }
 ];
 const behandlingstyper = [
   {
-    kode: "JFR_MED",
+    kode: "ae0034",
     term: "Søknad"
-  },
-  {
-    kode: "UNNTAK_MED",
+  }, {
+    kode: "todo0001",
     term: "Unntak medlemsskap"
   }, {
-    kode: "BEH_KLAGE",
+    kode: "ae0058",
     term: "Klage"
   }, {
-    kode: "BEH_REVURDERING",
+    kode: "ae0028",
     term: "Revurdering"
   }, {
-    kode: "BEH_MELDING",
+    kode: "todo0002",
     term: "Melding fra utenlandsk myndighet"
   }, {
-    kode: "BEH_PASTAND",
+    kode: "todo0003",
     term: "Påstand fra utenlandsk myndighet"
   }
 ];
