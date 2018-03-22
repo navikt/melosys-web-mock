@@ -18,19 +18,17 @@ Test MeloSys mock API server running on http://localhost:3002/api
 
 [GET] http://localhost:3002/api/saksbehandler
 
-*Opprettsak*
+*Sok Fagsaker*
 
-[POST] http://localhost:3002/api/opprettsak/:fnr
-```
-nysak = {
-    fnr: fnr,
-    saksnummer: _.random(100,9999).toString(),
-    kjoenn: 'K',
-    sammensattNavn: 'UNNI FOS KVALUY',
-    registrertDato: moment(),
-    status: 'Ikke påbegynnt'
-  };
-```
+[GET] http://localhost:3002/api/sok/fagsaker?fnr=05056335023
+
+Alle fagsaker
+
+http://localhost:3002/api/sok/fagsaker
+
+*Opprett ny fagsak*
+
+[GET] http://localhost:3002/api/fagsaker/ny/:fnr
 
 *Fagsaker*
 

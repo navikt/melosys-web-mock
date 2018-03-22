@@ -42,9 +42,8 @@ const router = express.Router();
 router.get('/fagsaker/:snr', fagsaker.hentFagsak);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
 
-
-router.get('/sok/fagsaker', sok.sokFagsaker_fnr);
-router.get('/sok/fagsaker/liste', sok.sokFagsakListe);
+// ?fnr=:fnr, or with qparam return all
+router.get('/sok/fagsaker', sok.sokFagsaker);
 
 /**
  * SØKNAD

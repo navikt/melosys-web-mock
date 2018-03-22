@@ -1,4 +1,5 @@
 const fs = require('fs');
+const _ = require('underscore');
 const moment = require('moment');
 const ERR = require('./errors');
 const readableRandom = require('readable-random');
