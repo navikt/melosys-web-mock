@@ -1,4 +1,3 @@
-
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -8,6 +7,7 @@ const oppgaver = require('./modules/oppgaver');
 const sok = require('./modules/sok-fagsaker');
 const soknader = require('./modules/soknader');
 const landkoder = require('./modules/landkoder');
+const kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
@@ -82,10 +82,12 @@ router.get('/vurdering/:behandlingID', vurdering.hentVurdering);
 router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 
 router.get('/saksbehandler', saksbehandler.hentSakbehandler);
+
 router.get('/landkoder', landkoder.hentLandkoder);
+router.get('/kodeverk', kodeverk.hentAlleKodeverk);
 
 /**
- * OPPGAVEBEANDLING
+ * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/hentoppgave/:oppgaveID', oppgaver.hentOppgave);
@@ -94,7 +96,9 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 // Kodeverk: https://kodeverkviewer.adeo.no/kodeverk/xml/index.html
 // fagomrade: https://kodeverkviewer.adeo.no/kodeverk/xml/fagomrade.xml
 //
-router.get('/oppgaver/plukkoppgave/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
+router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
+router.post('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.sendPlukkOppgave);
+router.get('/oppgaver/kodeverk', oppgaver.kodeverk);
 router.get('/oppgaver/hentSaksoversikt', oppgaver.hentMineOppgaver);
 router.get('/oppgaver/hentMineOppgaver', oppgaver.hentMineOppgaver);
 

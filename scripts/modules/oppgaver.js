@@ -1,4 +1,5 @@
 const fs = require('fs');
+const utils = require('./utils');
 const _ = require('underscore');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
@@ -110,6 +111,9 @@ const lesPlukkOppgaver = () => {
 };
 
 exports.hentPlukkOppgave = (req, res) => {
+  // fagomrade = ['MED','UFM']
+  // underkategori = []
+  // oppgavetype = []
   const { fagomrade='F', underkategori='U', oppgavetype='T' } = req.params;
   try {
     const oppgaveobjekt = lesOppgaveObjekt();
@@ -127,8 +131,50 @@ exports.hentPlukkOppgave = (req, res) => {
     console.log(err);
     res.status(500).send(err);
   }
-}
+};
 
+exports.sendPlukkOppgave = (req, res) => {
+  const body = req.body;
+  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const { oppgavetype } = jsonBody;
+  const oppgave = {oppgavetype, oppgaveId:'1', saksnummer:123, dokumentID:"DOK_321" };
+  res.json(oppgave);
+};
+
+exports.kodeverk = (req, res) => {
+  const kodeverk = {
+    sakstyper: [{
+      kode: "BOSTED_MED",
+      term: "EU/EØS"
+    }, {
+      kode: "MIDL_LOVVALG_MED",
+      term: "Trygdeavtale"
+    }, {
+      kode: "MIDL_FRANCOIS",
+      term: "Folketrygd"
+    }],
+    behandlingstyper: [{
+      kode: "JFR_MED",
+      term: "Søknad"
+    }, {
+      kode: "UNNTAK_MED",
+      term: "Unntak medlemsskap"
+    }, {
+      kode: "BEH_KLAGE",
+      term: "Klage"
+    }, {
+      kode: "BEH_REVURDERING",
+      term: "Revurdering"
+    }, {
+      kode: "BEH_MELDING",
+      term: "Melding fra utenlandsk myndighet"
+    }, {
+      kode: "BEH_PASTAND",
+      term: "Påstand fra utenlandsk myndighet"
+    }]
+  };
+  res.json(kodeverk);
+};
 exports.hentMineOppgaver = (req, res) => {
   try {
     const plukkoppgaver = lesPlukkOppgaver();
