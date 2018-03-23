@@ -272,26 +272,80 @@
         "medlemskap": {
           "medlemsperiode": [
             {
-              "periode": {
-                "fom": "2007-11-12",
-                "tom": "2007-11-25"
+              "periode":{
+                "fom":"2018-01-01",
+                "tom":"2018-04-30"
               },
-              "type": "PUMEDSKP",
-              "status": "GYLD",
-              "grunnlagstype": "IMEDFT",
-              "lovvalg": "ENDL",
-              "kilde": "INFOTR"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2009-09-01",
-                "tom": "2009-10-01"
+              "periode":{
+                "fom":"2018-04-30",
+                "tom":"2018-05-05"
               },
-              "type": "PUMEDSKP",
-              "status": "GYLD",
-              "grunnlagstype": "IMEDEOS",
-              "lovvalg": "ENDL",
-              "kilde": "INFOTR"
+              "type":{
+                "kode":"PUMEDSKP",
+                "term":"Periode uten medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"SWE",
+                "term":"SVERIGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Unntatt",
+                "term":"Unntatt"
+              },
+              "kildedokumenttype":{
+                "kode":"PortBlank_A1",
+                "term":"A1"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             }
           ]
         },

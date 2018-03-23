@@ -279,137 +279,270 @@
         "medlemskap": {
           "medlemsperiode": [
             {
-              "periode": {
-                "fom": "2018-01-01"
+              "periode":{
+                "fom":"2018-01-01",
+                "tom":"2018-04-30"
               },
-              "type": {
-                "kode": "PMMEDSKP",
-                "term": "Periode med medlemskap"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
               },
-              "status": {
-                "kode": "GYLD",
-                "term": "Gyldig"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
               },
-              "grunnlagstype": {
-                "kode": "MEDEOS",
-                "term": "Medlem, EØS-avtalen"
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
               },
-              "land": {
-                "kode": "NOR",
-                "term": "Norge"
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
               },
-              "lovvalg": {
-                "kode": "ENDL",
-                "term": "Endelig"
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
               },
-              "trygdedekning": "Full",
-              "kildedokumenttype": "E101",
-              "kilde": "FS22"
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2017-01-01",
-                "tom": "2018-12-31"
+              "periode":{
+                "fom":"2018-04-30",
+                "tom":"2018-05-05"
               },
-              "type": {
-                "kode": "PMMEDSKP",
-                "term": "Periode med medlemskap"
+              "type":{
+                "kode":"PUMEDSKP",
+                "term":"Periode uten medlemskap"
               },
-              "status": {
-                "kode": "GYLD",
-                "term": "Gyldig"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
               },
-              "grunnlagstype": {
-                "kode": "MEDEOS",
-                "term": "Medlem, EØS-avtalen"
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
               },
-              "land": {
-                "kode": "NOR",
-                "term": "Norge"
+              "land":{
+                "kode":"SWE",
+                "term":"SVERIGE"
               },
-              "lovvalg": {
-                "kode": "ENDL",
-                "term": "Endelig"
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
               },
-              "trygdedekning": "Full",
-              "kildedokumenttype": "E101",
-              "kilde": "FS22"
+              "trygdedekning":{
+                "kode":"Unntatt",
+                "term":"Unntatt"
+              },
+              "kildedokumenttype":{
+                "kode":"PortBlank_A1",
+                "term":"A1"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2015-04-01",
-                "tom": "2016-12-31"
+              "periode":{
+                "fom":"2017-01-01",
+                "tom":"2017-12-10"
               },
-              "type": {
-                "kode": "PUMEDSKP",
-                "term": "Periode uten medlemskap"
+              "type":{
+                "kode":"PUMEDSKP",
+                "term":"Periode uten medlemskap"
               },
-              "status": {
-                "kode": "UAV",
-                "term": "Uavklart"
+              "status":{
+                "kode":"UAVK",
+                "term":"Uavklart"
               },
-              "lovvalg": {
-                "kode": "ENDL",
-                "term": "Endelig"
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
               },
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "land":{
+                "kode":"GBR",
+                "term":"STORBRITANNIA"
+              },
+              "lovvalg":{
+                "kode":"UAVK",
+                "term":"Under avklaring"
+              },
+              "trygdedekning":{
+                "kode":"Unntatt",
+                "term":"Unntatt"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2015-04-01",
-                "tom": "2016-12-31"
+              "periode":{
+                "fom":"2018-01-01",
+                "tom":"9999-12-31"
               },
-              "type": {
-                "kode": "PUMEDSKP",
-                "term": "Periode uten medlemskap"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
               },
-              "status": {
-                "kode": "UAVK",
-                "term": "Uavklart"
+              "status":{
+                "kode":"AVST",
+                "term":"Avvist"
               },
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "grunnlagstype":{
+                "kode":"MEDEOS",
+                "term":"Medlem, EØS-avtalen"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"E101",
+                "term":"E101"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2014-12-31",
-                "tom": "2015-03-31"
+              "periode":{
+                "fom":"2017-12-25",
+                "tom":"2018-01-08"
               },
-              "type": {
-                "kode": "PUMEDSKP",
-                "term": "Periode uten medlemskap"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
               },
-              "status": {
-                "kode": "AVST",
-                "term": "Avvist"
+              "status":{
+                "kode":"AVST",
+                "term":"Avvist"
               },
-              "lovvalg": {
-                "kode": "ENDL",
-                "term": "Endelig"
+              "grunnlagstype":{
+                "kode":"Osterrike",
+                "term":"Avtale - Østerrike"
               },
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
-              "periode": {
-                "fom": "2013-12-31",
-                "tom": "2014-01-01"
+              "periode":{
+                "fom":"2017-12-25",
+                "tom":"2018-01-08"
               },
-              "type": {
-                "kode": "PUMEDSKP",
-                "term": "Periode uten medlemskap"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
               },
-              "status": {
-                "kode": "AVST",
-                "term": "Avvist"
+              "status":{
+                "kode":"AVST",
+                "term":"Avvist"
               },
-              "lovvalg": {
-                "kode": "ENDL",
-                "term": "Endelig"
+              "grunnlagstype":{
+                "kode":"Osterrike",
+                "term":"Avtale - Østerrike"
               },
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
+            },
+            {
+              "periode":{
+                "fom":"2015-01-01",
+                "tom":"2015-06-30"
+              },
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"MED",
+                "term":"Medlem"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"SED",
+                "term":"SED"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             }
           ]
         },
