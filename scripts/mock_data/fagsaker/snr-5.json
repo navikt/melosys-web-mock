@@ -176,76 +176,7 @@
           }
         ],
         "medlemskap": {
-          "medlemsperiode": [
-            {
-              "periode": {
-                "fom": "2018-02-01",
-                "tom": "2018-12-31"
-              },
-              "type": {
-                "kode": "PMMEDSKP",
-                "term": "Periode med medlemskap"
-              },
-              "status": "AVST",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Dokument",
-              "kilde": "FS22"
-            },
-            {
-              "periode": {
-                "fom": "2016-02-01",
-                "tom": "2016-12-31"
-              },
-              "type": {
-                "kode": "PMMEDSKP",
-                "term": "Periode med medlemskap"
-              },
-              "status": "UAVK",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "UAVK",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Dokument",
-              "kilde": "FS22"
-            },
-            {
-              "periode": {
-                "fom": "2018-01-01",
-                "tom": "2018-01-31"
-              },
-              "type": {
-                "kode": "PUMEDSKP",
-                "term": "Periode uten medlemskap"
-              },
-              "status": "GYLD",
-              "grunnlagstype": "FO_12_1",
-              "land": "ESP",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Unntatt",
-              "kildedokumenttype": "PortBlank_A1",
-              "kilde": "FS22"
-            },
-            {
-              "periode": {
-                "fom": "2017-12-01",
-                "tom": "2017-12-31"
-              },
-              "type": {
-                "kode": "PMMEDSKP",
-                "term": "Periode med medlemskap"
-              },
-              "status": "GYLD",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Dokument",
-              "kilde": "FS22"
-            }
-          ]
+          "medlemsperiode": []
         },
         "inntekt": {
           "arbeidsInntektMaanedListe": [
