@@ -1,15 +1,16 @@
 const fs = require('fs');
 const utils = require('./utils');
+const kodeverk = require('./kodeverk');
 const _ = require('underscore');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
-
 
 const lesOppgaveObjekt = () => {
   const mockfile = `${MOCK_DATA_DIR}/oppgaver/oppgaveliste.json`;
   const oppgaveobjekt = JSON.parse(fs.readFileSync(mockfile, "utf8"));
   return oppgaveobjekt;
 };
+
 const minesaker = (oppgaveliste) => {
   return oppgaveliste.map(oppgave => {
     const mock = _.sample([{
@@ -19,35 +20,31 @@ const minesaker = (oppgaveliste) => {
       sammensattNavn: 'GLITRENDE HATT',
       saksnummer: 4
     }]);
-    const { status, aktivTil, oppgaveId } = oppgave;
+    const { aktivTil, oppgaveID } = oppgave;
     const { sammensattNavn, saksnummer } = mock;
 
-    return {
-      oppgaveId,
+    const type = _.sample(kodeverk.behandlingstyper);
+    const status = _.sample(kodeverk.behandlingsstatus);
+    const behandling = {
+      type,
+      status,
+    };
+
+    const minsak = {
+      oppgaveID,
       oppgavetype: _.sample(['behandling','journalforing']),
       sammensattNavn,
       saksnummer,
-      sakstype: {
-        behandling: {
-          kode: 'MEDEOS',
-          term: 'Medlem, EØS-avtalen',
-        },
-        fagsak: {
-          kode: 'MEDEOS',
-          term: 'Trygdeavtale',
-        },
-        status: {
-          kode: status.kode,
-          term: 'Oversett kode til display tekst',
-        },
-      },
+      sakstype: _.sample(kodeverk.sakstyper),
+      behandling,
       dokumentID: null,
       aktivTil,
       soknadsperiode: {
         fom: '2016-01-01',
         tom: '2020-01-01',
       },
-    }
+    };
+    return minsak;
   });
 };
 
@@ -106,6 +103,9 @@ const lesPlukkOppgaver = () => {
       const plukkoppgave = JSON.parse(fs.readFileSync(`${mockOppgaverDir}/${file}`, 'UTF-8'));
       plukkOppgaver.push(plukkoppgave);
     }
+    else {
+      console.log('lesPlukkOppgaver(), ingen plukkoppgave funnet!')
+    }
   });
   return plukkOppgaver;
 };
@@ -121,9 +121,8 @@ exports.hentPlukkOppgave = (req, res) => {
     const plukkliste = oppgaveListe.slice(-oppgaveListe.length, -oppgaveListe.length/2);
     const mineoppgaver = minesaker(plukkliste) ;
     let oppgave = _.sample(mineoppgaver);
-    oppgave.sakstype.status.term = 'plukkliste';
 
-    const mockfile = `${MOCK_DATA_DIR}/oppgaver/plukkoppgave-${oppgave.oppgaveId}.json`;
+    const mockfile = `${MOCK_DATA_DIR}/oppgaver/plukkoppgave-${oppgave.oppgaveID}.json`;
     fs.writeFileSync(mockfile, JSON.stringify(oppgave, null, 2));
     return res.json(oppgave);
   }
@@ -146,41 +145,6 @@ exports.sendPlukkOppgave = (req, res) => {
     oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalPostID:"DOK_321" };
   }
   res.json(oppgave);
-};
-
-exports.kodeverk = (req, res) => {
-  const kodeverk = {
-    sakstyper: [{
-      kode: "EU_EOS",
-      term: "EU/EØS"
-    }, {
-      kode: "TRYGDAVTALE",
-      term: "Trygdeavtale"
-    }, {
-      kode: "FOLKETRYGD",
-      term: "Folketrygd"
-    }],
-    behandlingstyper: [{
-      kode: "ae0034",
-      term: "Søknad"
-    }, {
-      kode: "todo0001",
-      term: "Unntak medlemsskap"
-    }, {
-      kode: "ae0058",
-      term: "Klage"
-    }, {
-      kode: "ae0028",
-      term: "Revurdering"
-    }, {
-      kode: "todo0002",
-      term: "Melding fra utenlandsk myndighet"
-    }, {
-      kode: "todo0003",
-      term: "Påstand fra utenlandsk myndighet"
-    }]
-  };
-  res.json(kodeverk);
 };
 exports.hentMineSaker = (req, res) => {
   try {
