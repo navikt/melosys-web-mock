@@ -1,163 +1,193 @@
 const landkoder = [
   {
-    "kode": "BE",
-    "term": "Belgia"
+    kode: 'BE',
+    term: 'Belgia',
   },
   {
-    "kode": "BG",
-    "term": "Bulgaria"
+    kode: 'BG',
+    term: 'Bulgaria',
   },
   {
-    "kode": "DK",
-    "term": "Danmark"
+    kode: 'DK',
+    term: 'Danmark',
   },
   {
-    "kode": "EE",
-    "term": "Estland"
+    kode: 'EE',
+    term: 'Estland',
   },
   {
-    "kode": "FI",
-    "term": "Finland"
+    kode: 'FI',
+    term: 'Finland',
   },
   {
-    "kode": "FR",
-    "term": "Frankrike"
+    kode: 'FR',
+    term: 'Frankrike',
   },
   {
-    "kode": "GR",
-    "term": "Hellas"
+    kode: 'GR',
+    term: 'Hellas',
   },
   {
-    "kode": "IE",
-    "term": "Irland"
+    kode: 'IE',
+    term: 'Irland',
   },
   {
-    "kode": "IS",
-    "term": "Island"
+    kode: 'IS',
+    term: 'Island',
   },
   {
-    "kode": "IT",
-    "term": "Italia"
+    kode: 'IT',
+    term: 'Italia',
   },
   {
-    "kode": "HR",
-    "term": "Kroatia"
+    kode: 'HR',
+    term: 'Kroatia',
   },
   {
-    "kode": "CY",
-    "term": "Kypros"
+    kode: 'CY',
+    term: 'Kypros',
   },
   {
-    "kode": "LV",
-    "term": "Latvia"
+    kode: 'LV',
+    term: 'Latvia',
   },
   {
-    "kode": "LI",
-    "term": "Liechtenstein"
+    kode: 'LI',
+    term: 'Liechtenstein',
   },
   {
-    "kode": "LT",
-    "term": "Litauen"
+    kode: 'LT',
+    term: 'Litauen',
   },
   {
-    "kode": "LU",
-    "term": "Luxembourg"
+    kode: 'LU',
+    term: 'Luxembourg',
   },
   {
-    "kode": "MT",
-    "term": "Malta"
+    kode: 'MT',
+    term: 'Malta',
   },
   {
-    "kode": "NL",
-    "term": "Nederland"
+    kode: 'NL',
+    term: 'Nederland',
   },
   {
-    "kode": "NO",
-    "term": "Norge"
+    kode: 'NO',
+    term: 'Norge',
   },
   {
-    "kode": "PL",
-    "term": "Polen"
+    kode: 'PL',
+    term: 'Polen',
   },
   {
-    "kode": "PT",
-    "term": "Portugal"
+    kode: 'PT',
+    term: 'Portugal',
   },
   {
-    "kode": "RO",
-    "term": "Romania"
+    kode: 'RO',
+    term: 'Romania',
   },
   {
-    "kode": "SK",
-    "term": "Slovakia"
+    kode: 'SK',
+    term: 'Slovakia',
   },
   {
-    "kode": "SI",
-    "term": "Slovenia"
+    kode: 'SI',
+    term: 'Slovenia',
   },
   {
-    "kode": "ES",
-    "term": "Spania"
+    kode: 'ES',
+    term: 'Spania',
   },
   {
-    "kode": "GB",
-    "term": "Storbritannia"
+    kode: 'GB',
+    term: 'Storbritannia',
   },
   {
-    "kode": "SE",
-    "term": "Sverige"
+    kode: 'SE',
+    term: 'Sverige',
   },
   {
-    "kode": "DE",
-    "term": "Tyskland"
+    kode: 'DE',
+    term: 'Tyskland',
   },
   {
-    "kode": "HU",
-    "term": "Ungarn"
+    kode: 'HU',
+    term: 'Ungarn',
   },
   {
-    "kode": "AT",
-    "term": "Østerrike"
-  }
+    kode: 'AT',
+    term: 'Østerrike',
+  },
 ];
+exports.landkoder = landkoder;
+
 const sakstyper = [
   {
-    kode: "EU_EOS",
-    term: "EU/EØS"
-  }, {
-    kode: "AVTALE",
-    term: "Trygdeavtale"
-  }, {
-    kode: "FOLKETRYGD",
-    term: "Folketrygd"
-  }
+    kode: 'EU_EOS',
+    term: 'EU/EØS',
+  },
+  {
+    kode: 'AVTALE',
+    term: 'Trygdeavtale',
+  },
+  {
+    kode: 'FOLKETRYGD',
+    term: 'Folketrygd',
+  },
 ];
+exports.sakstyper = sakstyper;
+
 const behandlingstyper = [
   {
-    kode: "ae0034",
-    term: "Søknad"
+    kode: 'ae0034',
+    term: 'Søknad',
   }, {
-    kode: "todo0001",
-    term: "Unntak medlemsskap"
+    kode: 'todo0001',
+    term: 'Unntak medlemsskap',
   }, {
-    kode: "ae0058",
-    term: "Klage"
+    kode: 'ae0058',
+    term: 'Klage',
   }, {
-    kode: "ae0028",
-    term: "Revurdering"
+    kode: 'ae0028',
+    term: 'Revurdering',
   }, {
-    kode: "todo0002",
-    term: "Melding fra utenlandsk myndighet"
+    kode: 'todo0002',
+    term: 'Melding fra utenlandsk myndighet',
   }, {
-    kode: "todo0003",
-    term: "Påstand fra utenlandsk myndighet"
+    kode: 'todo0003',
+    term: 'Påstand fra utenlandsk myndighet',
   }
 ];
+exports.behandlingstyper = behandlingstyper;
+
+const behandlingsstatus = [
+  {
+    kode: 'OPPR',
+    term: 'Opprettet',
+  },
+  {
+    kode: 'UBEH',
+    term: 'Under behandling',
+  },
+  {
+    kode: 'FORL',
+    term: 'Foreløpig lovvalg',
+  },
+  {
+    kode: 'AVSLU',
+    term: 'Avsluttet',
+  }
+];
+exports.behandlingsstatus = behandlingsstatus;
+
+const kodeverk = {
+  landkoder,
+  sakstyper,
+  behandlingstyper,
+  behandlingsstatus,
+};
+
 exports.hentAlleKodeverk = (req, res) => {
-  const kodeverk = {
-    landkoder,
-    sakstyper,
-    behandlingstyper
-  };
   res.json(kodeverk);
 };

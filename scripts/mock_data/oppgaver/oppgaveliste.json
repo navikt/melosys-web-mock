@@ -2,7 +2,7 @@
   "totaltAntallTreff": "35",
   "oppgaveListe": [
     {
-      "oppgaveId": "177057928",
+      "oppgaveID": "177057928",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -39,7 +39,7 @@
       }
     },
     {
-      "oppgaveId": "175127177",
+      "oppgaveID": "175127177",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -78,7 +78,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "183545950",
+      "oppgaveID": "183545950",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -117,7 +117,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "192121803",
+      "oppgaveID": "192121803",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -155,7 +155,7 @@
       }
     },
     {
-      "oppgaveId": "174562068",
+      "oppgaveID": "174562068",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -194,7 +194,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "201377338",
+      "oppgaveID": "201377338",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -233,7 +233,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "167638828",
+      "oppgaveID": "167638828",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -272,7 +272,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "176314229",
+      "oppgaveID": "176314229",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -311,7 +311,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "193220255",
+      "oppgaveID": "193220255",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -350,7 +350,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "174464932",
+      "oppgaveID": "174464932",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -388,7 +388,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "176701002",
+      "oppgaveID": "176701002",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -425,7 +425,7 @@
       }
     },
     {
-      "oppgaveId": "187676214",
+      "oppgaveID": "187676214",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -464,7 +464,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "187677019",
+      "oppgaveID": "187677019",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -503,7 +503,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "177054897",
+      "oppgaveID": "177054897",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -540,7 +540,7 @@
       }
     },
     {
-      "oppgaveId": "176741739",
+      "oppgaveID": "176741739",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -578,7 +578,7 @@
       }
     },
     {
-      "oppgaveId": "196323516",
+      "oppgaveID": "196323516",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -617,7 +617,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "184590779",
+      "oppgaveID": "184590779",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -656,7 +656,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "175170762",
+      "oppgaveID": "175170762",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -700,7 +700,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "172756938",
+      "oppgaveID": "172756938",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -738,7 +738,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "183422335",
+      "oppgaveID": "183422335",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -777,7 +777,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "174405685",
+      "oppgaveID": "174405685",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -814,7 +814,7 @@
       }
     },
     {
-      "oppgaveId": "175127202",
+      "oppgaveID": "175127202",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -853,7 +853,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "204142355",
+      "oppgaveID": "204142355",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -893,7 +893,7 @@
       }
     },
     {
-      "oppgaveId": "174243235",
+      "oppgaveID": "174243235",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -932,7 +932,7 @@
       }
     },
     {
-      "oppgaveId": "170835942",
+      "oppgaveID": "170835942",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -998,7 +998,7 @@
       }
     },
     {
-      "oppgaveId": "176190918",
+      "oppgaveID": "176190918",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1044,7 +1044,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "183240112",
+      "oppgaveID": "183240112",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1084,7 +1084,7 @@
       }
     },
     {
-      "oppgaveId": "175830175",
+      "oppgaveID": "175830175",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1123,7 +1123,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "174945443",
+      "oppgaveID": "174945443",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1166,7 +1166,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "204142438",
+      "oppgaveID": "204142438",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1206,7 +1206,7 @@
       }
     },
     {
-      "oppgaveId": "174632987",
+      "oppgaveID": "174632987",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1260,7 +1260,7 @@
       }
     },
     {
-      "oppgaveId": "201774036",
+      "oppgaveID": "201774036",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1299,7 +1299,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "175127296",
+      "oppgaveID": "175127296",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1338,7 +1338,7 @@
       "henvendelsetype": { "kode": "DIALOG" }
     },
     {
-      "oppgaveId": "174697422",
+      "oppgaveID": "174697422",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
@@ -1375,7 +1375,7 @@
       }
     },
     {
-      "oppgaveId": "203530645",
+      "oppgaveID": "203530645",
       "gjelder": {
         "brukerId": "10108000398",
         "brukertypeKode": "PERSON"
