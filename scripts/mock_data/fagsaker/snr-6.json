@@ -184,13 +184,34 @@
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
-              "status": "AVST",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
               "periode": {
@@ -201,13 +222,34 @@
                 "kode": "PUMEDSKP",
                 "term": "Periode uten medlemskap"
               },
-              "status": "AVST",
-              "grunnlagstype": "FO_12_1",
-              "land": "SWE",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Unntatt",
-              "kildedokumenttype": "PortBlank_A1",
-              "kilde": "FS22"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
               "periode": {
@@ -218,13 +260,34 @@
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
-              "status": "GYLD",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
               "periode": {
@@ -235,13 +298,34 @@
                 "kode": "PUMEDSKP",
                 "term": "Periode uten medlemskap"
               },
-              "status": "GYLD",
-              "grunnlagstype": "FO_12_1",
-              "land": "SWE",
-              "lovvalg": "ENDL",
-              "trygdedekning": "Unntatt",
-              "kildedokumenttype": "PortBlank_A1",
-              "kilde": "FS22"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
               "periode": {
@@ -252,13 +336,34 @@
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
-              "status": "UAVK",
-              "grunnlagstype": "FO_12_1",
-              "land": "NOR",
-              "lovvalg": "UAVK",
-              "trygdedekning": "Full",
-              "kildedokumenttype": "Henv_Soknad",
-              "kilde": "FS22"
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             }
           ]
         },
