@@ -1,6 +1,7 @@
 const fs = require('fs');
 const utils = require('./utils');
-const kodeverk = require('./kodeverk');
+const Kodeverk = require('./kodeverk');
+const Soknader = require('./soknader');
 const _ = require('underscore');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
@@ -20,11 +21,21 @@ const minesaker = (oppgaveliste) => {
       sammensattNavn: 'GLITRENDE HATT',
       saksnummer: 4
     }]);
+    const bid = 4;
+    const soknaden = Soknader.lesSoknad(bid);
+    const {
+      soknadDokument: {
+        arbeidUtland: {
+            arbeidsland,
+            arbeidsperiode,
+          }
+        },
+    } = soknaden;
     const { aktivTil, oppgaveID } = oppgave;
     const { sammensattNavn, saksnummer } = mock;
 
-    const type = _.sample(kodeverk.behandlingstyper);
-    const status = _.sample(kodeverk.behandlingsstatus);
+    const type = _.sample(Kodeverk.behandlingstyper);
+    const status = _.sample(Kodeverk.behandlingsstatus);
     const behandling = {
       type,
       status,
@@ -35,15 +46,14 @@ const minesaker = (oppgaveliste) => {
       oppgavetype: _.sample(['behandling','journalforing']),
       sammensattNavn,
       saksnummer,
-      sakstype: _.sample(kodeverk.sakstyper),
+      sakstype: _.sample(Kodeverk.sakstyper),
       behandling,
       dokumentID: null,
       aktivTil,
-      soknadsperiode: {
-        fom: '2016-01-01',
-        tom: '2020-01-01',
-      },
+      soknadsperiode: arbeidsperiode,
+      land: arbeidsland,
     };
+    console.log(minsak);
     return minsak;
   });
 };
@@ -103,10 +113,10 @@ const lesPlukkOppgaver = () => {
       const plukkoppgave = JSON.parse(fs.readFileSync(`${mockOppgaverDir}/${file}`, 'UTF-8'));
       plukkOppgaver.push(plukkoppgave);
     }
-    else {
-      console.log('lesPlukkOppgaver(), ingen plukkoppgave funnet!')
-    }
   });
+  if (plukkOppgaver.length === 0) {
+      console.log('lesPlukkOppgaver(), ingen plukkoppgave funnet!')
+  }
   return plukkOppgaver;
 };
 
