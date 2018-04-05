@@ -276,22 +276,76 @@
                 "fom": "2007-11-12",
                 "tom": "2007-11-25"
               },
-              "type": "PUMEDSKP",
-              "status": "GYLD",
-              "grunnlagstype": "IMEDFT",
-              "lovvalg": "ENDL",
-              "kilde": "INFOTR"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             },
             {
               "periode": {
                 "fom": "2009-09-01",
                 "tom": "2009-10-01"
               },
-              "type": "PUMEDSKP",
-              "status": "GYLD",
-              "grunnlagstype": "IMEDEOS",
-              "lovvalg": "ENDL",
-              "kilde": "INFOTR"
+              "type":{
+                "kode":"PMMEDSKP",
+                "term":"Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NOR",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
             }
           ]
         },
