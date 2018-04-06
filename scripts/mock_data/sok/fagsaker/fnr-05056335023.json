@@ -1,11 +1,30 @@
 [
   {
-    "saksnummer": 3,
-    "fnr": "05056335023",
+    "oppgaveId": "175127177",
+    "oppgavetype": "behandling",
     "sammensattNavn": "LILLA HEST",
-    "type": "A1",
-    "status": "OPPRETTET",
-    "registrertDato": "2017-10-19T12:31:36",
-    "kjoenn": "K"
+    "fnr": "05056335023",
+    "saksnummer": 3,
+    "sakstype": {
+      "behandling": {
+        "kode": "MEDEOS",
+        "term": "Medlem, EØS-avtalen"
+      },
+      "fagsak": {
+        "kode": "MEDEOS",
+        "term": "Trygdeavtale"
+      },
+      "status": {
+        "kode": "A",
+        "term": "Oversett kode til display tekst"
+      }
+    },
+    "dokumentID": null,
+    "aktivTil": "2019-02-09+01:00",
+    "registrertDato": "2018-03-06T12:05:59.031",
+    "soknadsperiode": {
+      "fom": "2016-01-01",
+      "tom": "2020-01-01"
+    }
   }
 ]

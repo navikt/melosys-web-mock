@@ -1,11 +1,30 @@
 [
   {
-    "saksnummer": 5,
+    "oppgaveId": "177057928",
+    "oppgavetype": "behandling",
+    "sammensattNavn": "GLITRENDE HATT",
     "fnr": "17117802280",
-    "sammensattNavn": "KAKE ARTIG",
-    "type": "A1",
-    "status": "OPPRETTET",
+    "saksnummer": 4,
+    "sakstype": {
+      "behandling": {
+        "kode": "MEDEOS",
+        "term": "Medlem, EØS-avtalen"
+      },
+      "fagsak": {
+        "kode": "MEDEOS",
+        "term": "Trygdeavtale"
+      },
+      "status": {
+        "kode": "A",
+        "term": "Oversett kode til display tekst"
+      }
+    },
+    "dokumentID": null,
+    "aktivTil": "2019-03-30+02:00",
     "registrertDato": "2018-03-06T12:05:59.031",
-    "kjoenn": "K"
+    "soknadsperiode": {
+      "fom": "2016-01-01",
+      "tom": "2020-01-01"
+    }
   }
 ]

@@ -1,11 +1,30 @@
 [
   {
-    "saksnummer": "10",
-    "fnr": "33333333333",
+    "oppgaveId": "177057928",
+    "oppgavetype": "behandling",
     "sammensattNavn": "VAREK HICITOWU",
-    "type": "A1",
-    "status": "OPPRETTET",
+    "fnr": "33333333333",
+    "saksnummer": 4,
+    "sakstype": {
+      "behandling": {
+        "kode": "MEDEOS",
+        "term": "Medlem, EØS-avtalen"
+      },
+      "fagsak": {
+        "kode": "MEDEOS",
+        "term": "Trygdeavtale"
+      },
+      "status": {
+        "kode": "A",
+        "term": "Oversett kode til display tekst"
+      }
+    },
+    "dokumentID": null,
+    "aktivTil": "2016-03-30+02:00",
     "registrertDato": "2018-03-19T12:26:35.182Z",
-    "kjoenn": "K"
+    "soknadsperiode": {
+      "fom": "2016-01-01",
+      "tom": "2020-01-01"
+    }
   }
 ]
