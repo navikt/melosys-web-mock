@@ -1,30 +1,30 @@
 [
   {
-    "oppgaveId": "177057928",
-    "oppgavetype": "behandling",
+    "oppgaveID":"177057928",
+    "oppgavetype":"journalforing",
     "sammensattNavn": "GLITRENDE HATT",
     "fnr": "17117802280",
     "saksnummer": 4,
-    "sakstype": {
-      "behandling": {
-        "kode": "MEDEOS",
-        "term": "Medlem, EØS-avtalen"
+    "sakstype":{
+      "kode":"AVTALE",
+      "term":"Trygdeavtale"
+    },
+    "behandling":{
+      "type":{
+        "kode":"ae0034",
+        "term":"Søknad"
       },
-      "fagsak": {
-        "kode": "MEDEOS",
-        "term": "Trygdeavtale"
-      },
-      "status": {
-        "kode": "A",
-        "term": "Oversett kode til display tekst"
+      "status":{
+        "kode":"OPPR",
+        "term":"Opprettet"
       }
     },
-    "dokumentID": null,
-    "aktivTil": "2019-03-30+02:00",
+    "dokumentID":null,
+    "aktivTil":"2016-03-30+02:00",
     "registrertDato": "2018-03-06T12:05:59.031",
-    "soknadsperiode": {
-      "fom": "2016-01-01",
-      "tom": "2020-01-01"
+    "soknadsperiode":{
+      "fom":"2016-01-01",
+      "tom":"2020-01-01"
     }
   }
 ]
