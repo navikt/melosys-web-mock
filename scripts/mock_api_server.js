@@ -98,8 +98,7 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/hentSaksoversikt', oppgaver.hentMineSaker);
-router.get('/oppgaver/hentMineSaker', oppgaver.hentMineSaker);
+router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
