@@ -53,7 +53,6 @@ const minesaker = (oppgaveliste) => {
       soknadsperiode: arbeidsperiode,
       land: arbeidsland,
     };
-    console.log(minsak);
     return minsak;
   });
 };
