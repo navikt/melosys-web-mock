@@ -99,7 +99,7 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentOppgave);
+router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
 
 /**
  * JOURNALFORING

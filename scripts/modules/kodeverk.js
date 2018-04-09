@@ -128,11 +128,11 @@ const sakstyper = [
     term: 'EU/EØS',
   },
   {
-    kode: 'AVTALE',
+    kode: 'TRG_AVT',
     term: 'Trygdeavtale',
   },
   {
-    kode: 'FOLKETRYGD',
+    kode: 'FLK_TRG',
     term: 'Folketrygd',
   },
 ];
@@ -140,24 +140,29 @@ exports.sakstyper = sakstyper;
 
 const behandlingstyper = [
   {
-    kode: 'ae0034',
+    kode: 'SKND',
     term: 'Søknad',
-  }, {
-    kode: 'todo0001',
-    term: 'Unntak medlemsskap',
-  }, {
-    kode: 'ae0058',
+  },
+  {
+    kode: 'UFM',
+    term: 'Unntak medlemskap',
+  },
+  {
+    kode: 'KLG',
     term: 'Klage',
-  }, {
-    kode: 'ae0028',
+  },
+  {
+    kode: 'REV',
     term: 'Revurdering',
-  }, {
-    kode: 'todo0002',
+  },
+  {
+    kode: 'ML_U',
     term: 'Melding fra utenlandsk myndighet',
-  }, {
-    kode: 'todo0003',
+  },
+  {
+    kode: 'PS_U',
     term: 'Påstand fra utenlandsk myndighet',
-  }
+  },
 ];
 exports.behandlingstyper = behandlingstyper;
 
@@ -177,7 +182,7 @@ const behandlingsstatus = [
   {
     kode: 'AVSLU',
     term: 'Avsluttet',
-  }
+  },
 ];
 exports.behandlingsstatus = behandlingsstatus;
 
