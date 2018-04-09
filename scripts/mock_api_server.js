@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
+const journalforing = require('./modules/journalforing');
 const sok = require('./modules/sok-fagsaker');
 const soknader = require('./modules/soknader');
 const landkoder = require('./modules/landkoder');
@@ -98,7 +99,13 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
+router.get('/oppgaver/oversikt', oppgaver.hentOppgave);
+
+/**
+ * JOURNALFORING
+ * ---------------------------------------------------------------
+ */
+router.get('/journalforing/oppgave/:journalPostID?', journalforing.hentOppgave);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
