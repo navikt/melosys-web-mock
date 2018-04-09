@@ -3,20 +3,20 @@
     "oppgaveId": "177057928",
     "oppgavetype": "behandling",
     "sammensattNavn":"LILLA HEST",
-    "fnr": "05056335023",
+    "fnr": "28107700300",
     "saksnummer": 3,
-    "sakstype": {
-      "behandling": {
-        "kode": "MEDEOS",
-        "term": "Medlem, EØS-avtalen"
+    "sakstype":{
+      "kode":"AVTALE",
+      "term":"Trygdeavtale"
+    },
+    "behandling":{
+      "type":{
+        "kode":"ae0034",
+        "term":"Søknad"
       },
-      "fagsak": {
-        "kode": "MEDEOS",
-        "term": "Trygdeavtale"
-      },
-      "status": {
-        "kode": "A",
-        "term": "Oversett kode til display tekst"
+      "status":{
+        "kode":"OPPR",
+        "term":"Opprettet"
       }
     },
     "dokumentID": null,
