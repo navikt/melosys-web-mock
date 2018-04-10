@@ -144,10 +144,10 @@ exports.hentPlukkOppgave = (req, res) => {
 exports.sendPlukkOppgave = (req, res) => {
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-  const { oppgavetype } = jsonBody;
+  const { oppgavetype } = jsonBody.behandlingsoppgave;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
-    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'123', journalPostID: null };
+    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalPostID: null };
   }
   else { // JFR
     // saknummer optional
