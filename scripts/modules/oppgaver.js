@@ -43,7 +43,7 @@ const minesaker = (oppgaveliste) => {
 
     const minbehandling = {
       oppgaveID,
-      oppgavetype: 'behandling',
+      oppgavetype: Kodeverk.oppgavetyper[0],
       sammensattNavn,
       saksnummer,
       sakstype: _.sample(Kodeverk.sakstyper),
@@ -54,11 +54,11 @@ const minesaker = (oppgaveliste) => {
     };
     const minjournalforing = {
       oppgaveID,
-      oppgavetype: 'journalforing',
+      oppgavetype: Kodeverk.oppgavetyper[1],
       journalPostID: 'DOK_321',
       aktivTil,
     };
-    return _.sample([minbehandling, minbehandling, minbehandling, minbehandling, minjournalforing]);
+    return _.sample([minbehandling, minjournalforing]);
   });
 };
 

@@ -186,11 +186,24 @@ const behandlingsstatus = [
 ];
 exports.behandlingsstatus = behandlingsstatus;
 
+const oppgavetyper = [
+  {
+    kode: 'BEH_SAK',
+    term: 'Behandling'
+  },
+  {
+    kode: 'JFR',
+    term: 'Journalføring'
+  }
+];
+exports.oppgavetyper = oppgavetyper;
+
 const kodeverk = {
   landkoder,
   sakstyper,
   behandlingstyper,
   behandlingsstatus,
+  oppgavetyper,
 };
 
 exports.hentAlleKodeverk = (req, res) => {
