@@ -152,11 +152,11 @@ exports.sendPlukkOppgave = (req, res) => {
   const { oppgavetype } = jsonBody.behandlingsoppgave;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
-    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalPostID: null };
+    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
   }
   else { // JFR
     // saknummer optional
-    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalPostID:'DOK_321' };
+    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalpostID:'DOK_321' };
   }
   res.json(oppgave);
 };
