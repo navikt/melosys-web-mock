@@ -1,11 +1,15 @@
-exports.errorMessage = (status, error, message, path) => ({
+const moment = require('moment');
+
+const timestamp = moment();
+
+const errorMessage = (status, error, message, path) => ({
   timestamp,
   status,
   error,
   message,
   path,
 });
-
+exports.errorMessage = errorMessage;
 
 exports.badRequest400 = (path) => {
   return errorMessage(400,
