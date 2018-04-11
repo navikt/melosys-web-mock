@@ -55,7 +55,7 @@ const minesaker = (oppgaveliste) => {
     const minjournalforing = {
       oppgaveID,
       oppgavetype: Kodeverk.oppgavetyper[1],
-      journalPostID: 'DOK_321',
+      journalpostID: 'DOK_321',
       aktivTil,
     };
     return _.sample([minbehandling, minjournalforing]);
