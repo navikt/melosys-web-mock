@@ -92,7 +92,7 @@ const oppgave = {
 };
 
 exports.hentOppgave  = (req, res) => {
-  const journalPostID = req.params.journalPostID;
+  const journalpostID = req.params.journalpostID;
   try {
     return res.json(oppgave);
   }
