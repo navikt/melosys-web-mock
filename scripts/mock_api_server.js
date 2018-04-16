@@ -7,7 +7,6 @@ const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
 const sok = require('./modules/sok-fagsaker');
 const soknader = require('./modules/soknader');
-const landkoder = require('./modules/landkoder');
 const kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
@@ -84,7 +83,9 @@ router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 
 router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 
-router.get('/landkoder', landkoder.hentLandkoder);
+/**
+ * KODEVERK
+ */
 router.get('/kodeverk', kodeverk.hentAlleKodeverk);
 
 /**
