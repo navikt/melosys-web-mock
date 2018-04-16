@@ -105,7 +105,7 @@ router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/oppgave/:journalPostID?', journalforing.hentOppgave);
+router.get('/journalforing/:journalPostID', journalforing.hentOppgave);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
