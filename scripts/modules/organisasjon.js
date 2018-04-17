@@ -17,6 +17,6 @@ const organisasjon = {
     }
 };
 exports.hentOrganisasjon = (req, res) => {
-  const orgnr = req.params.orgnr;
+  const orgnr = req.query.orgnr;
   res.json(organisasjon);
 };

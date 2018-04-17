@@ -17,6 +17,6 @@ const person = {
   foedselsdato: '1963-05-05',
 };
 exports.hentPerson = (req, res) => {
-  const fnrdnr = req.params.fnrdnr;
+  const fnrdnr = req.query.fnrdnr;
   res.json(person);
 };

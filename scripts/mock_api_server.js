@@ -94,6 +94,7 @@ router.get('/kodeverk', kodeverk.hentAlleKodeverk);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
+/*
 router.get('/oppgaver/hentoppgave/:oppgaveID', oppgaver.hentOppgave);
 router.get('/oppgaver/finnoppgaveliste', oppgaver.finnoppgaveliste);
 router.get('/oppgaver', oppgaver.hentAlleOppgaver);
@@ -101,8 +102,9 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 // fagomrade: https://kodeverkviewer.adeo.no/kodeverk/xml/fagomrade.xml
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
+*/
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
+router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
 
 /**
  * JOURNALFORING
@@ -114,13 +116,13 @@ router.get('/journalforing/:journalPostID', journalforing.hentOppgave);
  * PERSON
  * ---------------------------------------------------------------
  */
-router.get('/person/:fnrdnr', person.hentPerson);
+router.get('/person', person.hentPerson);
 
 /**
  * ORGANISASJON
  * ---------------------------------------------------------------
  */
-router.get('/organisasjon/:orgnr', organisasjon.hentOrganisasjon);
+router.get('/organisasjon', organisasjon.hentOrganisasjon);
 
 app.use(allowCrossDomain);
 app.use('/api', router);

@@ -160,7 +160,7 @@ exports.sendPlukkOppgave = (req, res) => {
   }
   res.json(oppgave);
 };
-exports.hentMineSaker = (req, res) => {
+exports.hentOversikt = (req, res) => {
   try {
     const plukkoppgaver = lesPlukkOppgaver();
     const oppgaveobjekt = lesOppgaveObjekt();
