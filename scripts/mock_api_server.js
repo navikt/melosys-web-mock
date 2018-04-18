@@ -43,6 +43,7 @@ const router = express.Router();
 
 router.get('/fagsaker/:snr', fagsaker.hentFagsak);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
+router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
 
 // ?fnr=:fnr, or with qparam return all
 router.get('/sok/fagsaker', sok.sokFagsaker);
@@ -88,7 +89,7 @@ router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 /**
  * KODEVERK
  */
-router.get('/kodeverk', kodeverk.hentAlleKodeverk);
+router.get('/kodeverk', kodeverk.hentKodeverk);
 
 /**
  * OPPGAVEBEHANDLING
@@ -110,7 +111,7 @@ router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalPostID', journalforing.hentOppgave);
+router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
 
 /**
  * PERSON

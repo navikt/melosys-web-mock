@@ -186,6 +186,102 @@ const behandlingsstatus = [
 ];
 exports.behandlingsstatus = behandlingsstatus;
 
+const dokumentkategorier = [
+  {
+    kode: 'B',
+    term: 'Brev',
+  },
+  {
+    kode: 'KS',
+    term: 'Konverterte data fra system',
+  },
+  {
+    kode: 'IS',
+    term: 'Ikke tolkbart skjema',
+  },
+  {
+    kode: 'VB',
+    term: 'Vedtaksbrev',
+  },
+  {
+    kode: 'PUBL_BLANKETT_EOS',
+    term: 'Publikumsblankett EØS',
+  },
+  {
+    kode: 'SOK',
+    term: 'Søknad',
+  },
+  {
+    kode: 'ES',
+    term: 'Elektronisk skjema',
+  },
+  {
+    kode: 'SED',
+    term: 'Strukturert elektronisk dokument - EU/EØS',
+  },
+  {
+    kode: 'KA',
+    term: 'Klage eller anke',
+  },
+  {
+    kode: 'IB',
+    term: 'Informasjonsbrev',
+  },
+  {
+    kode: 'KD',
+    term: 'Konvertert fra elektronisk arkiv',
+  },
+  {
+    kode: 'FORVALTNINGSNOTAT',
+    term: 'Forvaltningsnotat',
+  },
+  {
+    kode: 'ELEKTRONISK_DIALOG',
+    term: 'Elektronisk dialog',
+  },
+  {
+    kode: 'TS',
+    term: 'Tolkbart skjema',
+  },
+];
+exports.dokumentkategorier;
+
+const dokumenttitler = [
+  {
+    kode: 'ARBF',
+    term: 'Arbeidsforhold',
+  },
+  {
+    kode: 'BKR_MEDL',
+    term: 'Bekreftelse på medlemskap i folketrygden',
+  },
+  {
+    kode: 'INNT_SKAT',
+    term: 'Inntektsopplysninger',
+  },
+  {
+    kode: 'MERK',
+    term: 'Merknad til sak',
+  },
+  {
+    kode: 'STUDIE_DOKUMENTASJON',
+    term: 'Studiedokumentasjon',
+  },
+  {
+    kode: 'SOK_MED',
+    term: 'Søknad om medlemskap',
+  },
+  {
+    kode: 'BEKR_UNNT_FRA_MEDL',
+    term: 'Unntak',
+  },
+  {
+    kode: 'ANNET',
+    term: 'Annet (=fritekst)',
+  },
+];
+exports.dokumenttitler = dokumenttitler;
+
 const oppgavetyper = [
   {
     kode: 'BEH_SAK',
@@ -198,14 +294,33 @@ const oppgavetyper = [
 ];
 exports.oppgavetyper = oppgavetyper;
 
+const vedleggstitler = [
+  {
+    kode: 'TITTEL_1',
+    term: 'Vedleggstittel 1',
+  },
+  {
+    kode: 'TITTEL_2',
+    term: 'Vedleggstittel 2',
+  },
+  {
+    kode: 'ANNET',
+    term: 'Annet...',
+  },
+];
+exports.vedleggstitler = vedleggstitler;
+
 const kodeverk = {
-  landkoder,
-  sakstyper,
   behandlingstyper,
   behandlingsstatus,
+  dokumentkategorier,
+  dokumenttitler,
+  landkoder,
   oppgavetyper,
+  sakstyper,
+  vedleggstitler
 };
 
-exports.hentAlleKodeverk = (req, res) => {
+exports.hentKodeverk = (req, res) => {
   res.json(kodeverk);
 };
