@@ -88,7 +88,8 @@ const oppgave = {
   },
   behandlingstyper: Kodeverk.behandlingstyper,
   vedleggstittler: tittler,
-  inneholderSensitivInfo: true
+  inneholderSensitivInfo: true,
+  dokumentURL: '/dokumenttest.pdf'
 };
 
 exports.hentOppgave  = (req, res) => {
