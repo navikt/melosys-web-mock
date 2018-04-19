@@ -1,4 +1,8 @@
 // const fs = require('fs');
+const fs = require('fs');
+const Soknader = require('./soknader');
+const _ = require('underscore');
+const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const Kodeverk = require('./kodeverk');
 
 const kategorier = [{
@@ -72,6 +76,63 @@ const tittler = [{
   term: 'Annet...'
 }];
 
+const lesOppgaveObjekt = () => {
+  const mockfile = `${MOCK_DATA_DIR}/oppgaver/oppgaveliste.json`;
+  const oppgaveobjekt = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  return oppgaveobjekt.oppgaveListe;
+};
+
+const byggEksisterendeSakerMock = () => {
+  const oppgaveliste = lesOppgaveObjekt();
+
+  return oppgaveliste
+    .reduce((samling, oppgave) => {
+    const mock = _.sample([{
+      sammensattNavn: 'LILLA HEST',
+      saksnummer: 3
+    }, {
+      sammensattNavn: 'GLITRENDE HATT',
+      saksnummer: 4
+    }]);
+    const bid = 4;
+    const soknaden = Soknader.lesSoknad(bid);
+    const {
+      soknadDokument: {
+        arbeidUtland: {
+          arbeidsland,
+          arbeidsperiode,
+        }
+      },
+    } = soknaden;
+    const { aktivTil, oppgaveID } = oppgave;
+    const { sammensattNavn, saksnummer } = mock;
+
+    const type = _.sample(Kodeverk.behandlingstyper);
+    const status = _.sample(Kodeverk.behandlingsstatus);
+    const behandling = {
+      type,
+      status,
+    };
+
+    const minbehandling = {
+      oppgaveID,
+      oppgavetype: Kodeverk.oppgavetyper[0],
+      sammensattNavn,
+      saksnummer,
+      sakstype: _.sample(Kodeverk.sakstyper),
+      behandling,
+      aktivTil,
+      soknadsperiode: arbeidsperiode,
+      land: arbeidsland,
+    };
+
+    // Ikke gi saker som er avsluttet. Fjern derfor de som har blitt _.sample-plukket og som endte
+    // opp med behandling-status 'AVSLU';
+
+    return minbehandling.behandling.status.kode === 'AVSLU' ? [...samling] : [...samling, minbehandling];
+  }, [])
+};
+
 const oppgave = {
   bruker: {
     fnr: '05056335023',
@@ -89,13 +150,15 @@ const oppgave = {
   behandlingstyper: Kodeverk.behandlingstyper,
   vedleggstittler: tittler,
   inneholderSensitivInfo: true,
-  dokumentURL: '/dokumenttest.pdf'
+  dokumentURL: '/dokumenttest.pdf',
+  saksListe: byggEksisterendeSakerMock(),
 };
 
 exports.hentOppgave  = (req, res) => {
   const journalpostID = req.params.journalpostID;
+  const journalPayload = {...oppgave, saksListe: oppgave.saksListe.slice(0, _.random(0,5))}
   try {
-    return res.json(oppgave);
+    return res.json(journalPayload);
   }
   catch (err) {
     console.log(err);
