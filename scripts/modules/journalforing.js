@@ -11,26 +11,14 @@ const oppgave = {
     navn: 'LILLA HEST',
   },
   dokument: {
-    navn: 'Dokumentes navn',
-    registrertDato: '2018-04-20',
+    navn: 'Dokumentets navn',
+    mottattDato: '2018-04-20',
     tittel: 'SØKNAD_MEDLEMSSKAP',
     vedlegg: [
-      'TODO_1',
-      'TODO_2',
-      'TODO_3'
+      'TITTEL_1',
+      'TITTEL_2'
     ],
     url: '/dokumenttest.pdf'
-  },
-  status: {
-
-  },
-  behandlingsType: {
-    kode: 'SKND',
-    term: 'Søknad'
-  },
-  sakstype: {
-    kode: 'EU/EOS',
-    term: "EU/EØS"
   }
 };
 
