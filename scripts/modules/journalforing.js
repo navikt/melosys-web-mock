@@ -2,21 +2,34 @@
 
 const oppgave = {
   bruker: {
-    id: '05056335023',
     navn: 'LILLA HEST',
+    ID: '05056335023',
   },
   erBrukerAvsender: false,
   avsender: {
-    id: '05056335023',
     navn: 'LILLA HEST',
+    ID: '05056335023',
+  },
+  sakstype: {
+    kode: 'EU_EOS',
+    term: 'EU/EØS'
   },
   dokument: {
     navn: 'Dokumentets navn',
     mottattDato: '2018-04-20',
-    tittel: 'SØKNAD_MEDLEMSSKAP',
-    vedlegg: [
-      'TITTEL_1',
-      'TITTEL_2'
+    tittel: {
+      kode : 'SOK_MED',
+      term : 'Søknad om medlemskap'
+    },
+    vedleggstitler: [
+      {
+        kode: 'TITTEL_1',
+        term: 'Vedleggstittel 1'
+      },
+      {
+        kode: 'TITTEL_2',
+        term: 'Vedleggstittel 2'
+      }
     ],
     url: '/dokumenttest.pdf'
   }
