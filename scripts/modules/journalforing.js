@@ -149,7 +149,6 @@ const oppgave = {
   },
   behandlingstyper: Kodeverk.behandlingstyper,
   vedleggstittler: tittler,
-  inneholderSensitivInfo: true,
   dokumentURL: '/dokumenttest.pdf',
   saksListe: byggEksisterendeSakerMock(),
 };
