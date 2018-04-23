@@ -1,28 +1,41 @@
-const oppgaveDokument = {
+// const fs = require('fs');
+
+const oppgave = {
   bruker: {
-    personnummer: '05056335023',
-    sammensattNavn: 'LILLA HEST',
-  },
-  avsender: {
-    personnummer: '05056335023',
-    sammensattNavn: 'LILLA HEST',
+    navn: 'LILLA HEST',
+    ID: '05056335023',
   },
   erBrukerAvsender: false,
+  avsender: {
+    navn: 'LILLA HEST',
+    ID: '05056335023',
+  },
+  sakstype: {
+    kode: 'EU_EOS',
+    term: 'EU/EØS'
+  },
   dokument: {
-    navn: 'Navn',
-    mottattDato: '2018-04-18',
-    tittel: 'ØKNAD_MEDLEMSSKAP',
-    vedleggstitler: [ "TODO_1", "TODO_2" ],
+    navn: 'Dokumentets navn',
+    mottattDato: '2018-04-20',
+    tittel: {
+      kode : 'SOK_MED',
+      term : 'Søknad om medlemskap'
+    },
+    vedleggstitler: [
+      {
+        kode: 'TITTEL_1',
+        term: 'Vedleggstittel 1'
+      },
+      {
+        kode: 'TITTEL_2',
+        term: 'Vedleggstittel 2'
+      }
+    ],
+    url: '/dokumenttest.pdf'
   }
 };
 
-exports.hentOppgave  = (req, res) => {
-  const journalpostID = req.params.journalpostID;
-  // Triks for å sikre at journalpostID kommmer som forste key og ikke sist
-  const oppgave = {
-    journalpostID,
-    ...oppgaveDokument,
-  };
+exports.hentOppgave = (req, res) => {
   try {
     return res.json(oppgave);
   }
