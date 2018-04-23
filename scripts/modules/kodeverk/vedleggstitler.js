@@ -1,0 +1,15 @@
+const vedleggstitler = [
+  {
+    kode: 'TITTEL_1',
+    term: 'Vedleggstittel 1'
+  },
+  {
+    kode:'TITTEL_2',
+    term: 'Vedleggstittel 2'
+  },
+  {
+    kode: 'ANNET',
+    term: 'Annet...'
+  }
+];
+exports.vedleggstitler = vedleggstitler;
