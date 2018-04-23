@@ -18,3 +18,7 @@ const kodeverk = {
   dokumentkategorier,
 };
 exports.kodeverk = kodeverk;
+
+exports.hentKodeverk = (req, res) => {
+  res.json(kodeverk);
+};
