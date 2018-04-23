@@ -41,19 +41,24 @@ const minesaker = (oppgaveliste) => {
       status,
     };
 
-    const minsak = {
+    const minbehandling = {
       oppgaveID,
-      oppgavetype: _.sample(['behandling','journalforing']),
+      oppgavetype: Kodeverk.oppgavetyper[0],
       sammensattNavn,
       saksnummer,
       sakstype: _.sample(Kodeverk.sakstyper),
       behandling,
-      dokumentID: null,
       aktivTil,
       soknadsperiode: arbeidsperiode,
       land: arbeidsland,
     };
-    return minsak;
+    const minjournalforing = {
+      oppgaveID,
+      oppgavetype: Kodeverk.oppgavetyper[1],
+      journalpostID: 'DOK_321',
+      aktivTil,
+    };
+    return _.sample([minbehandling, minjournalforing]);
   });
 };
 
@@ -147,11 +152,11 @@ exports.sendPlukkOppgave = (req, res) => {
   const { oppgavetype } = jsonBody;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
-    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'123', journalPostID: null };
+    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
   }
   else { // JFR
     // saknummer optional
-    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalPostID:"DOK_321" };
+    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalpostID:'DOK_321' };
   }
   res.json(oppgave);
 };
@@ -162,7 +167,7 @@ exports.hentMineSaker = (req, res) => {
     const { oppgaveListe } = oppgaveobjekt;
     const firstHalf = oppgaveListe.slice(0, 4);
     const mineoppgaver = minesaker(firstHalf);
-    return res.json([...plukkoppgaver, ...mineoppgaver]);
+    return res.json([...mineoppgaver]);
   }
   catch (err) {
     console.log(err);
