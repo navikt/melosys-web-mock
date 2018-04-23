@@ -1,6 +1,6 @@
 const fs = require('fs');
 const utils = require('./utils');
-const Kodeverk = require('./kodeverk');
+const { kodeverk } = require('./kodeverk');
 const Soknader = require('./soknader');
 const _ = require('underscore');
 const ERR = require('./errors');
@@ -16,10 +16,10 @@ const minesaker = (oppgaveliste) => {
   return oppgaveliste.map(oppgave => {
     const mock = _.sample([{
       sammensattNavn: 'LILLA HEST',
-      saksnummer: 3
+      saksnummer: '3'
     }, {
       sammensattNavn: 'GLITRENDE HATT',
-      saksnummer: 4
+      saksnummer: '4'
     }]);
     const bid = 4;
     const soknaden = Soknader.lesSoknad(bid);
@@ -34,8 +34,8 @@ const minesaker = (oppgaveliste) => {
     const { aktivTil, oppgaveID } = oppgave;
     const { sammensattNavn, saksnummer } = mock;
 
-    const type = _.sample(Kodeverk.behandlingstyper);
-    const status = _.sample(Kodeverk.behandlingsstatus);
+    const type = _.sample(kodeverk.behandlingstyper);
+    const status = _.sample(kodeverk.behandlingsstatus);
     const behandling = {
       type,
       status,
@@ -43,10 +43,10 @@ const minesaker = (oppgaveliste) => {
 
     const minbehandling = {
       oppgaveID,
-      oppgavetype: Kodeverk.oppgavetyper[0],
+      oppgavetype: kodeverk.oppgavetyper[0],
       sammensattNavn,
       saksnummer,
-      sakstype: _.sample(Kodeverk.sakstyper),
+      sakstype: _.sample(kodeverk.sakstyper),
       behandling,
       aktivTil,
       soknadsperiode: arbeidsperiode,
@@ -54,7 +54,7 @@ const minesaker = (oppgaveliste) => {
     };
     const minjournalforing = {
       oppgaveID,
-      oppgavetype: Kodeverk.oppgavetyper[1],
+      oppgavetype: kodeverk.oppgavetyper[1],
       journalpostID: 'DOK_321',
       aktivTil,
     };
