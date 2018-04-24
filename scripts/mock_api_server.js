@@ -12,6 +12,7 @@ const kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
+const dokumenter = require('./modules/dokumenter');
 
 const app = express();
 
@@ -106,6 +107,10 @@ router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
  * ---------------------------------------------------------------
  */
 router.get('/journalforing/:journalPostID', journalforing.hentOppgave);
+/**
+* DOKUMENTER
+*/
+router.get('/dokumenter/pdf/:navn', dokumenter.hentPdfDokument);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
