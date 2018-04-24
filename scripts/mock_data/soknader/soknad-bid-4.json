@@ -27,14 +27,13 @@
         "fom": "2018-01-01",
         "tom": "2018-06-01"
       },
-      "studentSkole": "University of The Arts",
       "studentIEOS": true,
       "studentFinansiering": "Har egne midler oppspart, støtte fra familie.",
       "studentSemester": "2018/2019",
       "studieLand": "UK"
     },
     "arbeidNorge": {
-      "valgteArbeidsforhold": [44137901],
+      "valgteArbeidsforhold": ["44137901"],
       "arbeidsforholdOpprettholdIHelePerioden": true,
       "brukerErSelvstendigNaeringsdrivende": true,
       "selvstendigFortsetterEtterArbeidIUtlandet": true,
@@ -78,8 +77,6 @@
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
     },
-    "tilleggsopplysninger": {
-      "fritekstFraSoeker": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
-    }
+    "tilleggsopplysninger": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
   }
 }

@@ -1,11 +1,30 @@
 [
   {
-    "saksnummer": 5,
+    "oppgaveID":"177057928",
+    "oppgavetype":"journalforing",
+    "sammensattNavn": "ARTIG KAKE",
     "fnr": "17117802280",
-    "sammensattNavn": "KAKE ARTIG",
-    "type": "A1",
-    "status": "OPPRETTET",
+    "saksnummer": 5,
+    "sakstype":{
+      "kode":"AVTALE",
+      "term":"Trygdeavtale"
+    },
+    "behandling":{
+      "type":{
+        "kode":"ae0034",
+        "term":"Søknad"
+      },
+      "status":{
+        "kode":"OPPR",
+        "term":"Opprettet"
+      }
+    },
+    "dokumentID":null,
+    "aktivTil":"2016-03-30+02:00",
     "registrertDato": "2018-03-06T12:05:59.031",
-    "kjoenn": "K"
+    "soknadsperiode":{
+      "fom":"2016-01-01",
+      "tom":"2020-01-01"
+    }
   }
 ]
