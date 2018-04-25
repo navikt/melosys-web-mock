@@ -1,4 +1,4 @@
-// const fs = require('fs');
+const utils = require('./utils');
 
 const oppgave = {
   bruker: {
@@ -20,24 +20,27 @@ const oppgave = {
     tittel: {
       kode : 'SOK_MED',
       term : 'Søknad om medlemskap'
-    },
-    vedleggstitler: [
-      {
-        kode: 'TITTEL_1',
-        term: 'Vedleggstittel 1'
-      },
-      {
-        kode: 'TITTEL_2',
-        term: 'Vedleggstittel 2'
-      }
-    ],
-    url: '/dokumenttest.pdf'
+    }
   }
 };
 
 exports.hentOppgave = (req, res) => {
   try {
     return res.json(oppgave);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+};
+
+exports.postOppgave = (req, res) => {
+  const body = req.body;
+  try {
+    /*let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log('jornalforing::postOppgave', jsonBody);*/
+    const response = {};
+    res.json(response);
   }
   catch (err) {
     console.log(err);

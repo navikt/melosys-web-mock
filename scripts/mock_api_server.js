@@ -112,6 +112,7 @@ router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
  * ---------------------------------------------------------------
  */
 router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
+router.post('/journalforing', journalforing.postOppgave);
 
 /**
  * PERSON
