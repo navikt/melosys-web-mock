@@ -46,7 +46,7 @@ router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
 router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
 
 // ?fnr=:fnr, or with qparam return all
-router.get('/sok/fagsaker', sok.sokFagsaker);
+router.get('/fagsaker/sok', sok.sokFagsaker);
 
 /**
  * SØKNAD
