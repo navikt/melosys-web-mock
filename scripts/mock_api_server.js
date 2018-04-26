@@ -12,8 +12,8 @@ const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
-const person = require('./modules/person');
-const organisasjon = require('./modules/organisasjon');
+const personer = require('./modules/personer');
+const organisasjoner = require('./modules/organisasjoner');
 
 const app = express();
 
@@ -122,13 +122,13 @@ router.post('/journalforing', journalforing.postOppgave);
  * PERSON
  * ---------------------------------------------------------------
  */
-router.get('/person', person.hentPerson);
+router.get('/personer', personer.hentPerson);
 
 /**
  * ORGANISASJON
  * ---------------------------------------------------------------
  */
-router.get('/organisasjon', organisasjon.hentOrganisasjon);
+router.get('/organisasjoner', organisasjoner.hentOrganisasjon);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
