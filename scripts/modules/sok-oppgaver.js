@@ -1,9 +1,4 @@
 const fs = require('fs');
-const URL = require('url');
-const _ = require('underscore');
-const ERR = require('./errors');
-const happy = require('./happystatus');
-
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 const lesOppgaver = (fnr) => {
