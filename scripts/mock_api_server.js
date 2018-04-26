@@ -6,6 +6,7 @@ const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
 const sok_fagsaker = require('./modules/sok-fagsaker');
+const sok_oppgaver = require('./modules/sok-oppgaver');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
@@ -106,7 +107,7 @@ router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver
 */
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
 router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
-router.get('/oppgaver/sok');
+router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
 
 /**
  * JOURNALFORING
