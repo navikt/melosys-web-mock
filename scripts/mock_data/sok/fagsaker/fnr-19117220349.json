@@ -1,11 +1,18 @@
 [
   {
-    "saksnummer": 4,
-    "fnr": "19117220349",
-    "sammensattNavn": "HATT GLITRENDE",
-    "type": "A1",
-    "status": "OPPRETTET",
-    "registrertDato": "2018-01-25T11:46:42.27",
-    "kjoenn": "M"
+    "saksnummer": "24",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2018-04-10T11:23:23.944"
   }
 ]

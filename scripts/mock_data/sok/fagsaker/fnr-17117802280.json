@@ -1,11 +1,18 @@
 [
   {
-    "saksnummer": 5,
-    "fnr": "17117802280",
-    "sammensattNavn": "KAKE ARTIG",
-    "type": "A1",
-    "status": "OPPRETTET",
-    "registrertDato": "2018-03-06T12:05:59.031",
-    "kjoenn": "K"
+    "saksnummer": "26",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2018-04-11T12:21:09.838"
   }
 ]

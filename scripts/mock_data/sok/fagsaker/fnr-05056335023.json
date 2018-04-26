@@ -1,11 +1,48 @@
 [
   {
-    "saksnummer": "14",
-    "fnr": "05056335023",
-    "sammensattNavn": "LILLA HEST",
-    "type": "A1",
-    "status": "OPPRETTET",
-    "registrertDato": "2018-04-18T10:21:09.828Z",
-    "kjoenn": "M"
+    "saksnummer": "3",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2017-10-19T12:31:36",
+    "soknadsperiode": {
+    },
+    "land": [
+      "GB"
+    ]
+  },
+  {
+    "saksnummer": "44",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2018-04-25T15:52:52.034",
+    "soknadsperiode": {
+      "fom": "2018-01-01",
+      "tom": "2018-06-01"
+    },
+    "land": [
+      "ES",
+      "DK",
+      "DE"
+    ]
   }
 ]

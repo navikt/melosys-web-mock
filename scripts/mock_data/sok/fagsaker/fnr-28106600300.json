@@ -1,11 +1,18 @@
 [
   {
-    "saksnummer": 6,
-    "fnr": "28106600300",
-    "sammensattNavn": "MASKIN ARTIG",
-    "type": "A1",
-    "status": "OPPRETTET",
-    "registrertDato": "2018-03-12T14:32:37.448",
-    "kjoenn": "M"
+    "saksnummer": "25",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2018-04-11T11:22:45.548"
   }
 ]
