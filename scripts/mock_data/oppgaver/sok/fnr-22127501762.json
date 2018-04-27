@@ -1,0 +1,119 @@
+[
+  {
+    "oppgaveID": "1",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "LILLA HEST",
+    "saksnummer": "3",
+    "aktivTil": "2019-04-25",
+    "soknadsperiode": {
+
+    },
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandling": {
+      "type": {
+        "kode": "SKND",
+        "term": "Søknad"
+      },
+      "status": {
+        "kode": "OPPR",
+        "term": "Opprettet"
+      }
+    },
+    "land": [
+      "GB"
+    ]
+  },
+  {
+    "oppgaveID": "2",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "LILLA HEST",
+    "saksnummer": "3",
+    "aktivTil": "2019-04-25",
+    "soknadsperiode": {
+
+    },
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandling": {
+      "type": {
+        "kode": "SKND",
+        "term": "Søknad"
+      },
+      "status": {
+        "kode": "OPPR",
+        "term": "Opprettet"
+      }
+    },
+    "land": [
+      "GB"
+    ]
+  },
+  {
+    "oppgaveID": "3",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_3789",
+    "aktivTil": "2019-04-25"
+  },
+  {
+    "oppgaveID": "4",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_4987",
+    "aktivTil": "2019-04-25"
+  },
+  {
+    "oppgaveID": "5",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_5678",
+    "aktivTil": "2019-04-25"
+  },
+  {
+    "oppgaveID": "6",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "LILLA HEST",
+    "saksnummer": "3",
+    "aktivTil": "2019-04-25",
+    "soknadsperiode": {
+
+    },
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandling": {
+      "type": {
+        "kode": "SKND",
+        "term": "Søknad"
+      },
+      "status": {
+        "kode": "OPPR",
+        "term": "Opprettet"
+      }
+    },
+    "land": [
+      "GB"
+    ]
+  }
+]
