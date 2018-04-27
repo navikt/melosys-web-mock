@@ -1,22 +1,18 @@
-const organisasjon = {
-    "orgnr":"923609016",
-    "navn":"STATOIL ASA",
-    "forretningsadresse":{
-      "gateadresse":{
-        "gatenavn":"Forusbeen 50"
-      },
-      "postnr":"4035",
-      "land":"NO"
-    },
-    "postadresse":{
-      "gateadresse":{
-        "gatenavn":"Postboks 8500"
-      },
-      "postnr":"4035",
-      "land":"NO"
-    }
+const fs = require('fs');
+const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+
+const lesOrganisasjon = (orgnr) => {
+  const mockfile = `${MOCK_DATA_DIR}/organisasjoner/orgnr-${orgnr}.json`;
+  if (fs.existsSync(mockfile)) {
+    return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  }
+  else {
+    return {};
+  }
 };
+
 exports.hentOrganisasjon = (req, res) => {
   const orgnr = req.query.orgnr;
+  const organisasjon = lesOrganisasjon(orgnr);
   res.json(organisasjon);
 };

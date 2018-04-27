@@ -14,6 +14,7 @@ const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
+const dokumenter = require('./modules/dokumenter');
 
 const app = express();
 
@@ -47,8 +48,6 @@ router.get('/fagsaker/sok/', sok_fagsaker.sokFagsaker);
 router.get('/fagsaker/:snr', fagsaker.hentFagsak);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
 router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
-
-// ?fnr=:fnr, or with qparam return all
 
 
 /**
@@ -129,6 +128,12 @@ router.get('/personer', personer.hentPerson);
  * ---------------------------------------------------------------
  */
 router.get('/organisasjoner', organisasjoner.hentOrganisasjon);
+
+/**
+ * DOKUMENTER
+ *  * ---------------------------------------------------------------
+ */
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdfDokument);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
