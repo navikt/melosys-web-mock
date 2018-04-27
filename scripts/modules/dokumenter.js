@@ -2,7 +2,8 @@ const fs = require('fs');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 exports.hentPdfDokument = (req, res) => {
-  const navn = req.params.navn;
-  const path = `${MOCK_DATA_DIR}/${navn}`;
-  res.download(path);
-}
+  //const journalpostID = req.params.journalpostID;
+  //const dokumentID = req.params.dokumentID;
+  const mockfile = `${MOCK_DATA_DIR}/dokumenter/dokumenttest.pdf`;
+  res.download(mockfile);
+};
