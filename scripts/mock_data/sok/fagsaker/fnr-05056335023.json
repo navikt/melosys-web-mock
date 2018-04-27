@@ -1,30 +1,48 @@
 [
   {
-    "oppgaveID":"177057928",
-    "oppgavetype":"journalforing",
-    "sammensattNavn":"LILLA HEST",
-    "fnr": "05056335023",
-    "saksnummer":3,
-    "sakstype":{
-      "kode":"AVTALE",
-      "term":"Trygdeavtale"
+    "saksnummer": "3",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
     },
-    "behandling":{
-      "type":{
-        "kode":"ae0034",
-        "term":"Søknad"
-      },
-      "status":{
-        "kode":"OPPR",
-        "term":"Opprettet"
-      }
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
     },
-    "dokumentID":null,
-    "aktivTil":"2016-03-30+02:00",
-    "registrertDato": "2018-03-06T12:05:59.031",
-    "soknadsperiode":{
-      "fom":"2016-01-01",
-      "tom":"2020-01-01"
-    }
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2017-10-19T12:31:36",
+    "soknadsperiode": {
+    },
+    "land": [
+      "GB"
+    ]
+  },
+  {
+    "saksnummer": "44",
+    "sakstype": {
+      "kode": "EU_EOS",
+      "term": "EU/EØS"
+    },
+    "behandlingstype": {
+      "kode": "SKND",
+      "term": "Søknad"
+    },
+    "behandlingsstatus": {
+      "kode": "OPPR",
+      "term": "Opprettet"
+    },
+    "registrertDato": "2018-04-25T15:52:52.034",
+    "soknadsperiode": {
+      "fom": "2018-01-01",
+      "tom": "2018-06-01"
+    },
+    "land": [
+      "ES",
+      "DK",
+      "DE"
+    ]
   }
 ]

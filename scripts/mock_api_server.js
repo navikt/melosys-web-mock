@@ -5,13 +5,15 @@ const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
-const sok = require('./modules/sok-fagsaker');
+const sok_fagsaker = require('./modules/sok-fagsaker');
+const sok_oppgaver = require('./modules/sok-oppgaver');
 const soknader = require('./modules/soknader');
-const landkoder = require('./modules/landkoder');
-const kodeverk = require('./modules/kodeverk');
+const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
+const personer = require('./modules/personer');
+const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
 
 const app = express();
@@ -41,11 +43,12 @@ const router = express.Router();
  *
  */
 
+router.get('/fagsaker/sok/', sok_fagsaker.sokFagsaker);
+
 router.get('/fagsaker/:snr', fagsaker.hentFagsak);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
+router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
 
-// ?fnr=:fnr, or with qparam return all
-router.get('/sok/fagsaker', sok.sokFagsaker);
 
 /**
  * SØKNAD
@@ -85,13 +88,16 @@ router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 
 router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 
-router.get('/landkoder', landkoder.hentLandkoder);
-router.get('/kodeverk', kodeverk.hentAlleKodeverk);
+/**
+ * KODEVERK
+ */
+router.get('/kodeverk', Kodeverk.hentKodeverk);
 
 /**
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
+/*
 router.get('/oppgaver/hentoppgave/:oppgaveID', oppgaver.hentOppgave);
 router.get('/oppgaver/finnoppgaveliste', oppgaver.finnoppgaveliste);
 router.get('/oppgaver', oppgaver.hentAlleOppgaver);
@@ -99,17 +105,34 @@ router.get('/oppgaver', oppgaver.hentAlleOppgaver);
 // fagomrade: https://kodeverkviewer.adeo.no/kodeverk/xml/fagomrade.xml
 //
 router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
+*/
+router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentMineSaker);
+router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
 
 /**
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalPostID', journalforing.hentOppgave);
+router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
+router.post('/journalforing', journalforing.postOppgave);
+
 /**
-* DOKUMENTER
-*/
+ * PERSON
+ * ---------------------------------------------------------------
+ */
+router.get('/personer', personer.hentPerson);
+
+/**
+ * ORGANISASJON
+ * ---------------------------------------------------------------
+ */
+router.get('/organisasjoner', organisasjoner.hentOrganisasjon);
+
+/**
+ * DOKUMENTER
+ *  * ---------------------------------------------------------------
+ */
 router.get('/dokumenter/pdf/:navn', dokumenter.hentPdfDokument);
 
 app.use(allowCrossDomain);
