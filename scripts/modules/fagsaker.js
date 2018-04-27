@@ -2,6 +2,8 @@ const fs = require('fs');
 const _ = require('underscore');
 const moment = require('moment');
 const ERR = require('./errors');
+const utils = require('./utils');
+
 const readableRandom = require('readable-random');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const timestamp = moment();
@@ -65,4 +67,11 @@ exports.opprettNyFagsak = (req, res) => {
     console.error(err);
     return res.status(500).send(err);
   }
+};
+
+exports.sendNyFagsak = (req, res) => {
+  const body = req.body;
+  let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  console.log(jsonBody);
+  res.json(jsonBody);
 };
