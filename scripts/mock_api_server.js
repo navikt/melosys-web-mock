@@ -97,15 +97,6 @@ router.get('/kodeverk', Kodeverk.hentKodeverk);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-/*
-router.get('/oppgaver/hentoppgave/:oppgaveID', oppgaver.hentOppgave);
-router.get('/oppgaver/finnoppgaveliste', oppgaver.finnoppgaveliste);
-router.get('/oppgaver', oppgaver.hentAlleOppgaver);
-// Kodeverk: https://kodeverkviewer.adeo.no/kodeverk/xml/index.html
-// fagomrade: https://kodeverkviewer.adeo.no/kodeverk/xml/fagomrade.xml
-//
-router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver.hentPlukkOppgave);
-*/
 router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
 router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
@@ -115,7 +106,8 @@ router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
  * ---------------------------------------------------------------
  */
 router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
-router.post('/journalforing', journalforing.postOppgave);
+router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
+router.post('/jornalforing/tilordne', journalforing.sendTilordneNySak);
 
 /**
  * PERSON

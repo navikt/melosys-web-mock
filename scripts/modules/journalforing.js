@@ -20,11 +20,25 @@ exports.hentOppgave = (req, res) => {
   }
 };
 
-exports.postOppgave = (req, res) => {
+exports.sendOpprettNySak = (req, res) => {
   const body = req.body;
   try {
-    /*let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::postOppgave', jsonBody);*/
+    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log('jornalforing::sendOpprettNySak', jsonBody);
+    const response = {};
+    res.json(response);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+};
+
+exports.sendTilordneNySak = (req, res) => {
+  const body = req.body;
+  try {
+    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log('jornalforing::sendTilordneNySak', jsonBody);
     const response = {};
     res.json(response);
   }
