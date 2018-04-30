@@ -16,6 +16,7 @@ const oppgave = {
   },
   dokument: {
     navn: 'Dokumentets navn',
+    ID: 'dokumentID',
     mottattDato: '2018-04-20',
     tittel: {
       kode : 'SOK_MED',
