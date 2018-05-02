@@ -27,3 +27,7 @@ exports.hentSakbehandler = (req, res) => {
     return res.status(500).send(err);
   }
 };
+
+exports.reset = (req, res) => {
+  res.json({});
+};

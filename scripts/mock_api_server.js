@@ -86,7 +86,11 @@ router.post('/faktaavklaring/:behandlingID', faktaavklaring.postFaktaavklaring);
 router.get('/vurdering/:behandlingID', vurdering.hentVurdering);
 router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 
+/**
+ * SAKSBEHANDLER
+ */
 router.get('/saksbehandler', saksbehandler.hentSakbehandler);
+router.get('/saksbehandler/reset', saksbehandler.reset);
 
 /**
  * KODEVERK
