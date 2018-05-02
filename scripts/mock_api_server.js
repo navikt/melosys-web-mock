@@ -86,6 +86,9 @@ router.post('/faktaavklaring/:behandlingID', faktaavklaring.postFaktaavklaring);
 router.get('/vurdering/:behandlingID', vurdering.hentVurdering);
 router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 
+/**
+ * SAKSBEHANDLER
+ */
 router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 
 /**
@@ -109,6 +112,7 @@ router.get('/oppgaver/plukk/:fagomrade?/:underkategori?/:oppgavetype?', oppgaver
 router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
 router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
+router.get('/oppgaver/reset', oppgaver.reset);
 
 /**
  * JOURNALFORING
