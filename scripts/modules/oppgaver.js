@@ -174,3 +174,7 @@ exports.hentOversikt = (req, res) => {
     res.status(500).send(err);
   }
 };
+
+exports.reset = (req, res) => {
+  res.json({});
+};

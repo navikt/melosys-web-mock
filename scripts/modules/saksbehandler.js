@@ -28,6 +28,3 @@ exports.hentSakbehandler = (req, res) => {
   }
 };
 
-exports.reset = (req, res) => {
-  res.json({});
-};
