@@ -1,4 +1,5 @@
 const fs = require('fs');
+const assert = require('assert');
 const URL = require('url');
 const _ = require('underscore');
 const ERR = require('./errors');
@@ -24,7 +25,10 @@ const lesAlleFagsaker = () => {
     })
   });
   fagsakListe = _.uniq(fagsakListe.sort((a, b) => {
-    return a.saksnummer - b.saksnummer;
+    assert.ok(_.isString(a.saksnummer), 'Saksnummer must be a string');
+    assert.ok(_.isString(b.saksnummer), 'Saksnummer must be a string');
+    return a.saksnummer.localeCompare(b.saksnummer);
+    //return a.saksnummer - b.saksnummer; // For ints
   }), true);
   return fagsakListe;
 };
