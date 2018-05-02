@@ -89,8 +89,8 @@ router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 /**
  * SAKSBEHANDLER
  */
-router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 router.get('/saksbehandler/reset', saksbehandler.reset);
+router.get('/saksbehandler', saksbehandler.hentSakbehandler);
 
 /**
  * KODEVERK
