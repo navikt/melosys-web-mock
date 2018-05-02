@@ -1,32 +1,18 @@
 const utils = require('./utils');
 
-const oppgave = {
-  bruker: {
-    navn: 'LILLA HEST',
-    ID: '05056335023',
-  },
+const journalpost = {
+  brukerID: '05056335023',
   erBrukerAvsender: false,
-  avsender: {
-    navn: 'LILLA HEST',
-    ID: '05056335023',
-  },
-  sakstype: {
-    kode: 'EU_EOS',
-    term: 'EU/EØS'
-  },
+  avsenderID: '05056335023',
   dokument: {
-    navn: 'Dokumentets navn',
+    ID: 'MockDokumentID',
     mottattDato: '2018-04-20',
-    tittel: {
-      kode : 'SOK_MED',
-      term : 'Søknad om medlemskap'
-    }
+    tittel: 'Søknad om medlemskap',
   }
 };
-
 exports.hentOppgave = (req, res) => {
   try {
-    return res.json(oppgave);
+    return res.json(journalpost);
   }
   catch (err) {
     console.log(err);
@@ -34,11 +20,25 @@ exports.hentOppgave = (req, res) => {
   }
 };
 
-exports.postOppgave = (req, res) => {
+exports.sendOpprettNySak = (req, res) => {
   const body = req.body;
   try {
-    /*let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::postOppgave', jsonBody);*/
+    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log('jornalforing::sendOpprettNySak', jsonBody);
+    const response = {};
+    res.json(response);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+};
+
+exports.sendTilordneNySak = (req, res) => {
+  const body = req.body;
+  try {
+    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log('jornalforing::sendTilordneNySak', jsonBody);
     const response = {};
     res.json(response);
   }
