@@ -34,11 +34,11 @@ exports.sendOpprettNySak = (req, res) => {
   }
 };
 
-exports.sendTilordneNySak = (req, res) => {
+exports.sendTilordneSak = (req, res) => {
   const body = req.body;
   try {
     let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::sendTilordneNySak', jsonBody);
+    console.log('jornalforing::sendTilordneSak', jsonBody);
     const response = {};
     res.json(response);
   }

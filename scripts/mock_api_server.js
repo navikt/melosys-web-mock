@@ -111,7 +111,7 @@ router.get('/oppgaver/reset', oppgaver.reset);
  */
 router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
 router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
-router.post('/jornalforing/tilordne', journalforing.sendTilordneNySak);
+router.post('/jornalforing/tilordne', journalforing.sendTilordneSak);
 
 /**
  * PERSON
