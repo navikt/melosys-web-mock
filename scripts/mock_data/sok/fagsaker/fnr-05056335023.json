@@ -13,8 +13,10 @@
       "kode": "OPPR",
       "term": "Opprettet"
     },
-    "registrertDato": "2017-10-19T12:31:36",
-    "soknadsperiode": {
+    "opprettetDato": "2017-10-19T12:31:36",
+    "periode": {
+      "fom": "2018-08-01",
+      "tom": "2018-12-31"
     },
     "land": [
       "GB"
@@ -34,8 +36,8 @@
       "kode": "OPPR",
       "term": "Opprettet"
     },
-    "registrertDato": "2018-04-25T15:52:52.034",
-    "soknadsperiode": {
+    "opprettetDato": "2018-04-25T15:52:52.034",
+    "periode": {
       "fom": "2018-01-01",
       "tom": "2018-06-01"
     },
