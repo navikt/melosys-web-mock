@@ -3,7 +3,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 const lesPerson = (fnr) => {
   const mockfile = `${MOCK_DATA_DIR}/personer/fnr-${fnr}.json`;
-  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
 exports.hentPerson = (req, res) => {
