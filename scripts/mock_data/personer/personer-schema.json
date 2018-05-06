@@ -1,0 +1,71 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "fnr": {
+      "$id": "/properties/fnr",
+      "type": "string",
+      "title": "The Fnr Schema ",
+      "default": "",
+      "examples": [
+        "05056335023"
+      ]
+    },
+    "sivilstand": {
+      "$id": "/properties/sivilstand",
+      "type": "string",
+      "title": "The Sivilstand Schema ",
+      "default": "",
+      "examples": [
+        "Gift"
+      ]
+    },
+    "statsborgerskap": {
+      "$id": "/properties/statsborgerskap",
+      "type": "string",
+      "title": "The Statsborgerskap Schema ",
+      "default": "",
+      "examples": [
+        "NOR"
+      ]
+    },
+    "sammensattNavn": {
+      "$id": "/properties/sammensattNavn",
+      "type": "string",
+      "title": "The Sammensattnavn Schema ",
+      "default": "",
+      "examples": [
+        "HEST LILLA"
+      ]
+    },
+    "personstatus": {
+      "$id": "/properties/personstatus",
+      "type": "string",
+      "title": "The Personstatus Schema ",
+      "default": "",
+      "examples": [
+        "Bosatt"
+      ]
+    },
+    "kjoenn": {
+      "$id": "/properties/kjoenn",
+      "type": "string",
+      "title": "The Kjoenn Schema ",
+      "default": "",
+      "examples": [
+        "K"
+      ]
+    },
+    "foedselsdato": {
+      "$id": "/properties/foedselsdato",
+      "type": "string",
+      "title": "The Foedselsdato Schema ",
+      "default": "",
+      "examples": [
+        "1963-05-05"
+      ]
+    }
+  }
+}
