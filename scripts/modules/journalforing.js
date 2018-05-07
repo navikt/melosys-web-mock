@@ -1,4 +1,6 @@
 const fs = require('fs');
+const utils = require('./utils');
+
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
