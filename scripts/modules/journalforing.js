@@ -1,17 +1,26 @@
-const utils = require('./utils');
+const fs = require('fs');
+const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
-const journalpost = {
-  brukerID: '05056335023',
-  erBrukerAvsender: false,
-  avsenderID: '05056335023',
-  dokument: {
-    ID: 'MockDokumentID',
-    mottattDato: '2018-04-20',
-    tittel: 'Søknad om medlemskap',
-  }
+const finnJournalpostFil = (journalpostID) => {
+  const mockfiles = fs.readdirSync(MOCK_JOURNALFORING_DIR);
+  return mockfiles.find(function (filnavn) {
+    return filnavn.startsWith(journalpostID);
+  });
+  return null;
 };
+const lesOppgave = (journalpostID) => {
+  /* TODO lage flere filer.
+  const filnavn = finnJournalpostFil(journalpostID);
+  return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
+  */
+  return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-05056335023.json`, "utf8"))
+};
+
 exports.hentOppgave = (req, res) => {
   try {
+    const journalpostID = req.params.journalpostID;
+    const journalpost = lesOppgave(journalpostID);
     return res.json(journalpost);
   }
   catch (err) {
@@ -34,11 +43,11 @@ exports.sendOpprettNySak = (req, res) => {
   }
 };
 
-exports.sendTilordneNySak = (req, res) => {
+exports.sendTilordneSak = (req, res) => {
   const body = req.body;
   try {
     let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::sendTilordneNySak', jsonBody);
+    console.log('jornalforing::sendTilordneSak', jsonBody);
     const response = {};
     res.json(response);
   }
