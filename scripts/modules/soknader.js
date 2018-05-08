@@ -22,7 +22,13 @@ const skrivSoknad = (behandlingID, soknadDokument) => {
   return soknad;
 };
 
-exports.getSoknad = (req, res) => {
+/**
+ * Hent soknad
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hent = (req, res) => {
   const behandlingID = req.params.behandlingID;
   try {
     const soknad = lesSoknad(behandlingID);
@@ -33,8 +39,13 @@ exports.getSoknad = (req, res) => {
     return res.status(500).send(err);
   }
 };
-
-exports.postSoknad = (req, res) => {
+/**
+ * Send soknad
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;

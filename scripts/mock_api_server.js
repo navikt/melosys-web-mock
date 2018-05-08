@@ -56,8 +56,8 @@ router.post('/fagsaker/journalforing', fagsaker.send);
  * POST /soknader Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/soknader/:behandlingID', soknader.getSoknad);
-router.post('/soknader/:behandlingID', soknader.postSoknad);
+router.get('/soknader/:behandlingID', soknader.hent);
+router.post('/soknader/:behandlingID', soknader.send);
 
 /**
  * FAKTAVKLARING (FRA STEGVELGEREN ++)
