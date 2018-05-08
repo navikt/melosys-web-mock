@@ -92,7 +92,7 @@ router.get('/saksbehandler', saksbehandler.hent);
 /**
  * KODEVERK
  */
-router.get('/kodeverk', Kodeverk.hentKodeverk);
+router.get('/kodeverk', Kodeverk.hent);
 
 /**
  * OPPGAVEBEHANDLING
