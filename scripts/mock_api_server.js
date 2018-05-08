@@ -81,8 +81,8 @@ router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
  * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
  *
  */
-router.get('/vurdering/:behandlingID', vurdering.hentVurdering);
-router.post('/vurdering/:behandlingID', vurdering.postVurdering);
+router.get('/vurdering/:behandlingID', vurdering.hent);
+router.post('/vurdering/:behandlingID', vurdering.send);
 
 /**
  * SAKSBEHANDLER

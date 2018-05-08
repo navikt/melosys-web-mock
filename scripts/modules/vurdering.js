@@ -4,8 +4,13 @@ const happy = require('./happystatus');
 const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
-
-exports.hentVurdering = (req, res) => {
+/**
+ * Hent vurdering
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hent = (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const mockfile = `${MOCK_DATA_DIR}/vurdering/vurdering-bid-${behandlingID}.json`;
@@ -27,7 +32,13 @@ exports.hentVurdering = (req, res) => {
   }
 };
 
-exports.postVurdering = (req, res) => {
+/**
+ * Send vurdering
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let responseBody = utils.isJSON(body) ? JSON.parse(body) : body;
