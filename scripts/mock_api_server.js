@@ -5,7 +5,6 @@ const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
-const sok_oppgaver = require('./modules/sok-oppgaver');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
@@ -99,7 +98,7 @@ router.get('/kodeverk', Kodeverk.hentKodeverk);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
+router.get('/oppgaver/sok', oppgaver.sokOppgaver);
 router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
 router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
 router.get('/oppgaver/reset', oppgaver.reset);
