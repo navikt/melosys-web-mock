@@ -121,7 +121,7 @@ router.get('/personer', personer.hent);
  * ORGANISASJON
  * ---------------------------------------------------------------
  */
-router.get('/organisasjoner', organisasjoner.hentOrganisasjon);
+router.get('/organisasjoner', organisasjoner.hent);
 
 /**
  * DOKUMENTER

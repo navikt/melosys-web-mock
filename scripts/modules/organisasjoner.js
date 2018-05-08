@@ -6,7 +6,7 @@ const lesOrganisasjon = (orgnr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-exports.hentOrganisasjon = (req, res) => {
+exports.hent = (req, res) => {
   const orgnr = req.query.orgnr;
   const organisasjon = lesOrganisasjon(orgnr);
   res.json(organisasjon);
