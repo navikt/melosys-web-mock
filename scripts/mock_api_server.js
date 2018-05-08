@@ -5,7 +5,6 @@ const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
-const sok_fagsaker = require('./modules/sok-fagsaker');
 const sok_oppgaver = require('./modules/sok-oppgaver');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
@@ -43,7 +42,7 @@ const router = express.Router();
  *
  */
 
-router.get('/fagsaker/sok/', sok_fagsaker.sokFagsaker);
+router.get('/fagsaker/sok/', fagsaker.sokFagsaker);
 
 router.get('/fagsaker/:snr', fagsaker.hentFagsak);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
