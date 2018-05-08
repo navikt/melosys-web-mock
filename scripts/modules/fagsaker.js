@@ -38,8 +38,13 @@ const lesAlleFagsaker = () => {
   }), true);
   return fagsakListe;
 };
-
-exports.sokFagsaker = (req, res) => {
+/**
+ * Sok fagsak; [GET] /api/fagsaker/sok/?:fnr
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.sok = (req, res) => {
   try {
     const fnr = req.query.fnr;
     if (fnr) {
@@ -76,8 +81,13 @@ exports.sokFagsaker = (req, res) => {
     res.status(500).send(err);
   }
 };
-
-exports.hentFagsak = (req, res) => {
+/**
+ * Hent fagsak på saksnr. /api/fagsaker/:snr
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hent = (req, res) => {
   try {
     const snr = req.params.snr && req.params.snr.toString() || '';
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
@@ -96,8 +106,13 @@ exports.hentFagsak = (req, res) => {
     return res.status(500).send(err);
   }
 };
-
-exports.opprettNyFagsak = (req, res) => {
+/**
+ * Opprett ny fagsak. /api/fagsaker/ny/:fnr
+ * @param req
+ * @param res
+ * @returns {*|void}
+ */
+exports.opprett = (req, res) => {
   try {
 
     const fnr = req.params.fnr && req.params.fnr.toString() || '';
@@ -137,8 +152,12 @@ exports.opprettNyFagsak = (req, res) => {
     return res.status(500).send(err);
   }
 };
-
-exports.sendNyFagsak = (req, res) => {
+/**
+ * Send fagsak
+ * @param req
+ * @param res
+ */
+exports.send = (req, res) => {
   const body = req.body;
   let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
   console.log(jsonBody);

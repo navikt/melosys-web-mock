@@ -41,11 +41,11 @@ const router = express.Router();
  *
  */
 
-router.get('/fagsaker/sok/', fagsaker.sokFagsaker);
+router.get('/fagsaker/sok/', fagsaker.sok);
 
-router.get('/fagsaker/:snr', fagsaker.hentFagsak);
-router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
-router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
+router.get('/fagsaker/:snr', fagsaker.hent);
+router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
+router.post('/fagsaker/journalforing', fagsaker.send);
 
 
 /**
