@@ -127,7 +127,7 @@ router.get('/organisasjoner', organisasjoner.hent);
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdfDokument);
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
