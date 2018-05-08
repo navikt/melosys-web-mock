@@ -107,7 +107,7 @@ router.get('/oppgaver/reset', oppgaver.reset);
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
+router.get('/journalforing/:journalpostID', journalforing.hent);
 router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
 router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
 

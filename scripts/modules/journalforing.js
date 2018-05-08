@@ -19,7 +19,7 @@ const lesOppgave = (journalpostID) => {
   return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-05056335023.json`, "utf8"))
 };
 
-exports.hentOppgave = (req, res) => {
+exports.hent = (req, res) => {
   try {
     const journalpostID = req.params.journalpostID;
     const journalpost = lesOppgave(journalpostID);
