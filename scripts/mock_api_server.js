@@ -115,7 +115,7 @@ router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
  * PERSON
  * ---------------------------------------------------------------
  */
-router.get('/personer', personer.hentPerson);
+router.get('/personer', personer.hent);
 
 /**
  * ORGANISASJON

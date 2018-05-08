@@ -6,7 +6,7 @@ const lesPerson = (fnr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-exports.hentPerson = (req, res) => {
+exports.hent = (req, res) => {
   try {
     const fnr = req.query.fnr;
     const person = lesPerson(fnr);
