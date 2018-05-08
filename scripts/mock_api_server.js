@@ -87,7 +87,7 @@ router.post('/vurdering/:behandlingID', vurdering.postVurdering);
 /**
  * SAKSBEHANDLER
  */
-router.get('/saksbehandler', saksbehandler.hentSakbehandler);
+router.get('/saksbehandler', saksbehandler.hent);
 
 /**
  * KODEVERK
