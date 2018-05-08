@@ -98,9 +98,9 @@ router.get('/kodeverk', Kodeverk.hentKodeverk);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', oppgaver.sokOppgaver);
-router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
+router.get('/oppgaver/sok', oppgaver.sok);
+router.post('/oppgaver/plukk', oppgaver.sendPlukk);
+router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.get('/oppgaver/reset', oppgaver.reset);
 
 /**

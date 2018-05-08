@@ -14,8 +14,13 @@ const lesOppgaver = (fnr) => {
   }
   return [];
 };
-
-exports.sokOppgaver = (req, res) => {
+/**
+ * Sok oppgaver
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.sok = (req, res) => {
   try {
     const fnr = req.query.fnr;
     const oppgaver = lesOppgaver(fnr);
@@ -80,8 +85,13 @@ const minesaker = (oppgaveliste) => {
     return _.sample([minbehandling, minjournalforing]);
   });
 };
-
-exports.hentOppgave = (req, res) => {
+/**
+ * Hent oppgave
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hent = (req, res) => {
   try {
     const oppgaveID = req.params.oppgaveID;
     const mockfile = `${MOCK_DATA_DIR}/oppgaver/oppgave-id-${oppgaveID}.json`;
@@ -111,7 +121,7 @@ exports.finnoppgaveliste = (req, res) => {
   }
 };
 
-exports.hentAlleOppgaver = (req, res) => {
+exports.hentAlle = (req, res) => {
   try {
     const oppgaveobjekt = lesOppgaveObjekt();
     const { oppgaveListe } = oppgaveobjekt;
@@ -143,7 +153,7 @@ const lesPlukkOppgaver = () => {
   return plukkOppgaver;
 };
 
-exports.hentPlukkOppgave = (req, res) => {
+exports.hentPlukk = (req, res) => {
   // fagomrade = ['MED','UFM']
   // underkategori = []
   // oppgavetype = []
@@ -165,7 +175,7 @@ exports.hentPlukkOppgave = (req, res) => {
   }
 };
 
-exports.sendPlukkOppgave = (req, res) => {
+exports.sendPlukk = (req, res) => {
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
   const { oppgavetype } = jsonBody;
@@ -179,7 +189,13 @@ exports.sendPlukkOppgave = (req, res) => {
   }
   res.json(oppgave);
 };
-exports.hentOversikt = (req, res) => {
+/**
+ * Oversikt
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.oversikt = (req, res) => {
   try {
     const plukkoppgaver = lesPlukkOppgaver();
     const oppgaveobjekt = lesOppgaveObjekt();
