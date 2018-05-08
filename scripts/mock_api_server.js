@@ -69,8 +69,8 @@ router.post('/soknader/:behandlingID', soknader.send);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/:behandlingID', faktaavklaring.getFaktaavklaring);
-router.post('/faktaavklaring/:behandlingID', faktaavklaring.postFaktaavklaring);
+router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
+router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
 
 /**
  * VURDERING (FRA REGELMOTOREN)

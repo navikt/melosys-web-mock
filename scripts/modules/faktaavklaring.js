@@ -3,7 +3,13 @@ const ERR = require('./errors');
 const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
-exports.getFaktaavklaring = (req, res) => {
+/**
+ * Hent faktavklaring
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hent = (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/faktaavklaring-bid-${behandlingID}.json`;
@@ -20,8 +26,13 @@ exports.getFaktaavklaring = (req, res) => {
     return res.status(500).send(err);
   }
 };
-
-exports.postFaktaavklaring = (req, res) => {
+/**
+ * Send fagktaavklaring
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
