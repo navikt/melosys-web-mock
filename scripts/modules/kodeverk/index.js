@@ -19,6 +19,11 @@ const kodeverk = {
 };
 exports.kodeverk = kodeverk;
 
-exports.hentKodeverk = (req, res) => {
+/**
+ * Hent kodeverk
+ * @param req
+ * @param res
+ */
+exports.hent = (req, res) => {
   res.json(kodeverk);
 };

@@ -4,7 +4,7 @@ const ERR = require('./errors');
 const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
-exports.hentSakbehandler = (req, res) => {
+exports.hent = (req, res) => {
   try {
     const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
     const saksbehandlere =  JSON.parse(fs.readFileSync(mockfile, "utf8"));

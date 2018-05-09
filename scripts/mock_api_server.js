@@ -5,8 +5,6 @@ const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
-const sok_fagsaker = require('./modules/sok-fagsaker');
-const sok_oppgaver = require('./modules/sok-oppgaver');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
@@ -43,11 +41,11 @@ const router = express.Router();
  *
  */
 
-router.get('/fagsaker/sok/', sok_fagsaker.sokFagsaker);
+router.get('/fagsaker/sok/', fagsaker.sok);
 
-router.get('/fagsaker/:snr', fagsaker.hentFagsak);
-router.get('/fagsaker/ny/:fnr', fagsaker.opprettNyFagsak);
-router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
+router.get('/fagsaker/:snr', fagsaker.hent);
+router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
+router.post('/fagsaker/journalforing', fagsaker.send);
 
 
 /**
@@ -58,8 +56,8 @@ router.post('/fagsaker/journalforing', fagsaker.sendNyFagsak);
  * POST /soknader Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/soknader/:behandlingID', soknader.getSoknad);
-router.post('/soknader/:behandlingID', soknader.postSoknad);
+router.get('/soknader/:behandlingID', soknader.hent);
+router.post('/soknader/:behandlingID', soknader.send);
 
 /**
  * FAKTAVKLARING (FRA STEGVELGEREN ++)
@@ -71,8 +69,8 @@ router.post('/soknader/:behandlingID', soknader.postSoknad);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/:behandlingID', faktaavklaring.getFaktaavklaring);
-router.post('/faktaavklaring/:behandlingID', faktaavklaring.postFaktaavklaring);
+router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
+router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
 
 /**
  * VURDERING (FRA REGELMOTOREN)
@@ -83,33 +81,33 @@ router.post('/faktaavklaring/:behandlingID', faktaavklaring.postFaktaavklaring);
  * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
  *
  */
-router.get('/vurdering/:behandlingID', vurdering.hentVurdering);
-router.post('/vurdering/:behandlingID', vurdering.postVurdering);
+router.get('/vurdering/:behandlingID', vurdering.hent);
+router.post('/vurdering/:behandlingID', vurdering.send);
 
 /**
  * SAKSBEHANDLER
  */
-router.get('/saksbehandler', saksbehandler.hentSakbehandler);
+router.get('/saksbehandler', saksbehandler.hent);
 
 /**
  * KODEVERK
  */
-router.get('/kodeverk', Kodeverk.hentKodeverk);
+router.get('/kodeverk', Kodeverk.hent);
 
 /**
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', sok_oppgaver.sokOppgaver);
-router.post('/oppgaver/plukk', oppgaver.sendPlukkOppgave);
-router.get('/oppgaver/oversikt', oppgaver.hentOversikt);
+router.get('/oppgaver/sok', oppgaver.sok);
+router.post('/oppgaver/plukk', oppgaver.sendPlukk);
+router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.get('/oppgaver/reset', oppgaver.reset);
 
 /**
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalpostID', journalforing.hentOppgave);
+router.get('/journalforing/:journalpostID', journalforing.hent);
 router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
 router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
 
@@ -117,19 +115,19 @@ router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
  * PERSON
  * ---------------------------------------------------------------
  */
-router.get('/personer', personer.hentPerson);
+router.get('/personer', personer.hent);
 
 /**
  * ORGANISASJON
  * ---------------------------------------------------------------
  */
-router.get('/organisasjoner', organisasjoner.hentOrganisasjon);
+router.get('/organisasjoner', organisasjoner.hent);
 
 /**
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdfDokument);
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
