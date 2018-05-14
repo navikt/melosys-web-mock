@@ -1,0 +1,110 @@
+{
+  "$id": "/opprett",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "journalpostID": {
+      "$id": "/properties/journalpostID",
+      "type": "string",
+      "title": "The Journalpostid Schema ",
+      "default": "",
+      "examples": [
+        "DOK_321"
+      ]
+    },
+    "oppgaveID": {
+      "$id": "/properties/oppgaveID",
+      "type": "string",
+      "title": "The Oppgaveid Schema ",
+      "default": "",
+      "examples": [
+        "2"
+      ]
+    },
+    "brukerID": {
+      "$id": "/properties/brukerID",
+      "type": "string",
+      "title": "The Brukerid Schema ",
+      "default": "",
+      "examples": [
+        "05056335023"
+      ]
+    },
+    "avsenderID": {
+      "$id": "/properties/avsenderID",
+      "type": "string",
+      "title": "The Avsenderid Schema ",
+      "default": "",
+      "examples": [
+        "05056335023"
+      ]
+    },
+    "dokumenttittel": {
+      "$id": "/properties/dokumenttittel",
+      "type": "string",
+      "title": "The Dokumenttittel Schema ",
+      "default": "",
+      "examples": [
+        "Søknad om medlemskap"
+      ]
+    },
+    "vedleggstitler": {
+      "$id": "/properties/vedleggstitler",
+      "type": "array"
+    },
+    "fagsak": {
+      "$id": "/properties/fagsak",
+      "type": "object",
+      "properties": {
+        "type": {
+          "$id": "/properties/fagsak/properties/type",
+          "type": "string",
+          "title": "The Type Schema ",
+          "default": "",
+          "examples": [
+            "EU_EOS"
+          ]
+        },
+        "soknadsperiode": {
+          "$id": "/properties/fagsak/properties/soknadsperiode",
+          "type": "object",
+          "properties": {
+            "fom": {
+              "$id": "/properties/fagsak/properties/soknadsperiode/properties/fom",
+              "type": "string",
+              "title": "The Fom Schema ",
+              "default": "",
+              "examples": [
+                "02.02.2020"
+              ]
+            },
+            "tom": {
+              "$id": "/properties/fagsak/properties/soknadsperiode/properties/tom",
+              "type": "string",
+              "title": "The Tom Schema ",
+              "default": "",
+              "examples": [
+                "02.02.2020"
+              ]
+            }
+          }
+        },
+        "land": {
+          "$id": "/properties/fagsak/properties/land",
+          "type": "array",
+          "items": {
+            "$id": "/properties/fagsak/properties/land/items",
+            "type": "string",
+            "title": "The 0th Schema ",
+            "default": "",
+            "examples": [
+              "NO",
+              "IS"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

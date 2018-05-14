@@ -1,5 +1,8 @@
 const fs = require('fs');
+const Ajv = require('ajv');
+const ajv = new Ajv({allErrors: true});
 const utils = require('./utils');
+const ERR = require('./errors');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
@@ -32,12 +35,15 @@ exports.hent = (req, res) => {
 };
 
 exports.sendOpprettNySak = (req, res) => {
+  const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
+  const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
+  const validate = ajv.compile(schema);
+
   const body = req.body;
   try {
     let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::sendOpprettNySak', jsonBody);
-    const response = {};
-    res.json(response);
+    const valid = test(validate, jsonBody);
+    return (valid) ? res.json('') : valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
@@ -46,15 +52,31 @@ exports.sendOpprettNySak = (req, res) => {
 };
 
 exports.sendTilordneSak = (req, res) => {
+  const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
+  const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
+  const validate = ajv.compile(schema);
+
   const body = req.body;
   try {
     let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log('jornalforing::sendTilordneSak', jsonBody);
-    const response = {};
-    res.json(response);
+    const valid = test(validate, jsonBody);
+    return (valid) ? res.json('') : valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
 };
+
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+function test(validate, data) {
+  const valid = validate(data);
+  if (valid) console.log('Valid!');
+  else console.log('Invalid: ' + ajv.errorsText(validate.errors));
+  return valid;
+}
