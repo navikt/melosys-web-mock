@@ -77,7 +77,7 @@ router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
  * INNGANG (Første steg i STEGVELGEREN)
  * ----------------------------------------------------------
  */
-router.get('/inngang/:behandlingID', inngang.hent);
+router.get('/inngang/:snr', inngang.hent);
 
 /**
  * VURDERING (FRA REGELMOTOREN)
