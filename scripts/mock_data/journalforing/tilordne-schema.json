@@ -28,7 +28,7 @@
       "title": "The Brukerid Schema ",
       "default": "",
       "examples": [
-        "05056335023"
+        "30098000492"
       ]
     },
     "avsenderID": {
@@ -37,7 +37,7 @@
       "title": "The Avsenderid Schema ",
       "default": "",
       "examples": [
-        "05056335023"
+        "30098000492"
       ]
     },
     "dokumenttittel": {

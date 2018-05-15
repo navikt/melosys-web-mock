@@ -19,7 +19,7 @@ const lesOppgave = (journalpostID) => {
   const filnavn = finnJournalpostFil(journalpostID);
   return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
   */
-  return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-05056335023.json`, "utf8"))
+  return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"))
 };
 
 exports.hent = (req, res) => {
