@@ -10,6 +10,7 @@ const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
 const faktaavklaring = require('./modules/faktaavklaring');
+const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
@@ -71,6 +72,12 @@ router.post('/soknader/:behandlingID', soknader.send);
  */
 router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
 router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
+
+/**
+ * INNGANG (Første steg i STEGVELGEREN)
+ * ----------------------------------------------------------
+ */
+router.get('/inngang/:snr', inngang.hent);
 
 /**
  * VURDERING (FRA REGELMOTOREN)
