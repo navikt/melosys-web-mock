@@ -27,7 +27,7 @@ exports.hent = (req, res) => {
   }
 };
 /**
- * Send fagktaavklaring
+ * Send faktaavklaring
  * @param req
  * @param res
  * @returns {*}
@@ -39,6 +39,23 @@ exports.send = (req, res) => {
   const faktaavklaring = {
     behandlingID,
     faktaavklaring: { ...jsonBody.faktaavklaring }
+  };
+
+  return res.json(faktaavklaring);
+};
+/**
+ * Send faktaavklaring bosted
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.bosted = (req, res) => {
+  const behandlingID = req.params.behandlingID;
+  const body = req.body;
+  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const faktaavklaring = {
+    behandlingID,
+    faktaavklaring: { ...jsonBody }
   };
 
   return res.json(faktaavklaring);

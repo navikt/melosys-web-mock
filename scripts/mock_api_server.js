@@ -72,6 +72,7 @@ router.post('/soknader/:behandlingID', soknader.send);
  */
 router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
 router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
+router.post('/faktaavklaring/bosted/:behandlingID', faktaavklaring.bosted);
 
 /**
  * INNGANG (Første steg i STEGVELGEREN)
@@ -90,6 +91,7 @@ router.get('/inngang/:snr', inngang.hent);
  */
 router.get('/vurdering/:behandlingID', vurdering.hent);
 router.post('/vurdering/:behandlingID', vurdering.send);
+router.post('/vurdering/bosted/:behandlingID', vurdering.bosted);
 
 /**
  * SAKSBEHANDLER
