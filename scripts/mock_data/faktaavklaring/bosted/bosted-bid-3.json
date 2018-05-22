@@ -1,0 +1,11 @@
+{
+  "faktaavklaring": {
+    "bosted": {
+      "fnr_bekrefted": true,
+      "addresse_norge_bekreftet": true,
+      "familie_norge_bekreftet": true,
+      "har_EOS_barnetrygdt": false,
+      "mindre_enn_10_bosatt_adresse": false
+    }
+  }
+}

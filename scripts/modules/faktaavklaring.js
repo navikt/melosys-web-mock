@@ -43,13 +43,37 @@ exports.send = (req, res) => {
 
   return res.json(faktaavklaring);
 };
+
+/**
+ * Hent faktavklaring for bosted
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+exports.hentBosted = (req, res) => {
+  try {
+    const behandlingID = 3; //req.params.behandlingID; // TODO create more mock files with bid 4..7
+    const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
+    if (fs.existsSync(mockfile)) {
+      const faktaavklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+      return res.json(faktaavklaring);
+    }
+    else {
+      return res.status(404).send(ERR.notFound404(req.url));
+    }
+  }
+  catch (err) {
+    console.error(err);
+    return res.status(500).send(err);
+  }
+};
 /**
  * Send faktaavklaring bosted
  * @param req
  * @param res
  * @returns {*}
  */
-exports.bosted = (req, res) => {
+exports.sendBosted = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
