@@ -1,5 +1,5 @@
 {
-  "vurdering": {
+  "avklaringer": {
     "fnr_bekrefted": true,
     "addresse_norge_bekreftet": true,
     "familie_norge_bekreftet": true,
@@ -13,11 +13,9 @@
         "kategori": {
           "alvorlighetsgrad": "FEIL",
           "beskrivelse": "Mangler informasjon fra søknaden om bosted."
-        }
+        },
+        "soknadsfeltID": "arbeidsforholdVikarNavn"
       }
-    ],
-    "seksjonsID": [
-      "arbeidsforholdVikarNavn",
     ]
   }
 }
