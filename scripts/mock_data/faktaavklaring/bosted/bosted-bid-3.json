@@ -6,6 +6,24 @@
       "familie_norge_bekreftet": true,
       "har_EOS_barnetrygdt": false,
       "mindre_enn_10_bosatt_adresse": false
+    },
+    "form": {
+      "feilmeldinger": [
+        {
+          "melding": "Mangler informasjon fra søknaden om bosted.",
+          "kategori": {
+            "alvorlighetsgrad": "FEIL",
+            "beskrivelse": "Mangler informasjon fra søknaden om bosted."
+          }
+        }
+      ],
+      "seksjonsID": [
+        "intensjonOmRetur",
+        "familiesBosted",
+        "oppholdMndINorge"
+      ]
     }
   }
 }
+
+
