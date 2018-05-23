@@ -1,5 +1,6 @@
 {
-  "faktaavklaring": {
+  "behandlingID": "5",
+  "avklaring": {
     "opphold": {
       "land": ["GB"],
       "periode": {
