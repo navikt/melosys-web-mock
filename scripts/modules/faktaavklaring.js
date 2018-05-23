@@ -47,15 +47,15 @@ exports.send = (req, res) => {
 };
 
 
-const mockFeilMeldinger = (behandlingID) => {
+const mockFeilMeldinger = (behandlingID, soknadfeltID) => {
   const soknad = soknader.lesSoknad(behandlingID);
-  const { soknadDokument: { arbeidUtland, foretakUtland, oppholdUtland, arbeidNorge} } = soknad;
-  const feilmeldinger = _.map(_.keys(arbeidNorge), function (key) {
+  const { soknadDokument } = soknad;
+  const feilmeldinger = _.map(_.keys(soknadDokument[soknadfeltID]), function (key) {
     return {
-      "melding": "Mangler informasjon fra søknaden om arbeidNorge.",
+      "melding": "Mangler informasjon fra søknaden om "+soknadfeltID+".",
       "kategori": {
         "alvorlighetsgrad": "FEIL",
-        "beskrivelse": "Mangler informasjon fra søknaden om arbeidNorge."
+        "beskrivelse": "Mangler informasjon fra søknaden om  "+soknadfeltID+"."
       },
       "soknadsfeltID": ""+key
     }
@@ -75,7 +75,8 @@ exports.hentBosted = (req, res) => {
     if (fs.existsSync(mockfile)) {
       const avklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
       if (["3","4"].includes(behandlingID) === false) {
-        avklaring.form.feilmeldinger = mockFeilMeldinger(behandlingID);
+        const soknadfeltID = _.sample(["arbeidUtland", "foretakUtland", "oppholdUtland", "arbeidNorge"]);
+        avklaring.form.feilmeldinger = mockFeilMeldinger(behandlingID, soknadfeltID);
       }
       return res.json(avklaring);
     }
