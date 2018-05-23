@@ -24,7 +24,7 @@
     },
     "bosted": {
       "vurdering": {},
-      "bostedsland": ["DK"]
+      "land": ["DK"]
     },
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
