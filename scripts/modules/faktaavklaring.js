@@ -1,6 +1,8 @@
 const fs = require('fs');
+const _ = require('underscore');
 const ERR = require('./errors');
 const utils = require('./utils');
+const soknader = require('./soknader');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 /**
@@ -44,6 +46,22 @@ exports.send = (req, res) => {
   return res.json(faktaavklaring);
 };
 
+
+const mockFeilMeldinger = (behandlingID) => {
+  const soknad = soknader.lesSoknad(behandlingID);
+  const { soknadDokument: { arbeidUtland, foretakUtland, oppholdUtland, arbeidNorge} } = soknad;
+  const feilmeldinger = _.map(_.keys(arbeidNorge), function (key) {
+    return {
+      "melding": "Mangler informasjon fra søknaden om arbeidNorge.",
+      "kategori": {
+        "alvorlighetsgrad": "FEIL",
+        "beskrivelse": "Mangler informasjon fra søknaden om arbeidNorge."
+      },
+      "soknadsfeltID": ""+key
+    }
+  });
+  return feilmeldinger;
+};
 /**
  * Hent faktavklaring for bosted
  * @param req
@@ -52,11 +70,14 @@ exports.send = (req, res) => {
  */
 exports.hentBosted = (req, res) => {
   try {
-    const behandlingID = 3; //req.params.behandlingID; // TODO create more mock files with bid 4..7
+    const { behandlingID } = req.params;
     const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
     if (fs.existsSync(mockfile)) {
-      const faktaavklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-      return res.json(faktaavklaring);
+      const avklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+      if (["3","4"].includes(behandlingID) === false) {
+        avklaring.form.feilmeldinger = mockFeilMeldinger(behandlingID);
+      }
+      return res.json(avklaring);
     }
     else {
       return res.status(404).send(ERR.notFound404(req.url));
