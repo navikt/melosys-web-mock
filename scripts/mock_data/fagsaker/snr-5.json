@@ -1,14 +1,26 @@
 {
   "saksnummer": "5",
-  "type": "A1",
-  "status": "OPPRETTET",
+  "type":{
+    "kode":"EU_EOS",
+    "term":"EU/EØS"
+  },
+  "status":{
+    "kode":"OPPR",
+    "term":"Opprettet"
+  },
   "registrertDato": "2018-03-06T12:05:59.031",
   "behandlinger": [
     {
       "oppsummering": {
         "behandlingID": 5,
-        "status": "OPPRETTET",
-        "type": "SØKNAD",
+        "type":{
+          "kode":"SKND",
+          "term":"Søknad"
+        },
+        "status":{
+          "kode":"OPPR",
+          "term":"Opprettet"
+        },
         "registrertDato": "2018-03-06T12:05:59.031"
       },
       "saksopplysninger": {
