@@ -279,7 +279,7 @@
           },
           {
             "orgnr":"912499693",
-            "navn":"TOP-TOY NORGE AS",
+            "navn":"TOP-TOY NORGE AS Hovedkontor Oslo",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Pindsleveien 1C"
@@ -609,7 +609,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.911",
                     "utbetaltIPeriode":"2018-01",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -632,7 +632,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.911",
                     "utbetaltIPeriode":"2017-11",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -655,7 +655,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.903",
                     "utbetaltIPeriode":"2017-12",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -678,7 +678,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.91",
                     "utbetaltIPeriode":"2017-03",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -701,7 +701,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.91",
                     "utbetaltIPeriode":"2017-05",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -724,7 +724,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.908",
                     "utbetaltIPeriode":"2017-04",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -747,7 +747,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.909",
                     "utbetaltIPeriode":"2017-07",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -770,7 +770,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.9",
                     "utbetaltIPeriode":"2017-06",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -782,7 +782,7 @@
               }
             },
             {
-              "aarMaaned":"2017-08",
+              "aarMaaned":"2017-10",
               "arbeidsInntektInformasjon":{
                 "inntektListe":[
                   {
@@ -793,7 +793,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.907",
                     "utbetaltIPeriode":"2017-08",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
@@ -816,7 +816,7 @@
                     "inntektsstatus":"LoependeInnrapportert",
                     "levereringstidspunkt":"2018-03-15T16:31:34.909",
                     "utbetaltIPeriode":"2017-09",
-                    "opplysningspliktigID":"912499693",
+                    "opplysningspliktigID":"923609016",
                     "virksomhetID":"912499693",
                     "inntektsmottakerID":"19117220349",
                     "inngaarIGrunnlagForTrekk":true,
