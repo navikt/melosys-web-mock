@@ -1,18 +1,27 @@
 {
   "avklaringer": [
+    {
+      "avklaring": "Fødselsnummer",
+      "erAvklart": true
+    },
+    {
+      "avklaring": "Adresse i Norge",
+      "erAvklart": true
+    },
+    {
+      "avklaring": "Familie i Norge",
+      "erAvklart": true
+    },
+    {
+      "avklaring": "EØS barnetrygd",
+      "erAvklart": false
+    },
+    {
+      "avklaring": "Flere enn 10 bosatt på adressen sin",
+      "erAvklart": false
+    }
   ],
-  "form": {
-    "feilmeldinger": [
-      {
-        "melding": "Mangler informasjon fra søknaden om bosted.",
-        "kategori": {
-          "alvorlighetsgrad": "FEIL",
-          "beskrivelse": "Mangler informasjon fra søknaden om bosted."
-        },
-        "soknadsfeltID": "arbeidsforholdVikarNavn"
-      }
-    ]
-  }
+  "form": {}
 }
 
 

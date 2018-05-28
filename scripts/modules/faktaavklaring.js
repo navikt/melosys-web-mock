@@ -74,9 +74,12 @@ exports.hentBosted = (req, res) => {
     const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
     if (fs.existsSync(mockfile)) {
       const avklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-      if (["3","4"].includes(behandlingID) === false) {
-        const soknadfeltID = _.sample(["arbeidUtland", "foretakUtland", "oppholdUtland", "arbeidNorge"]);
+
+      // 50/50 sjanse for om valideringsfeil inntreffer eller om vurdering kunne gjøres.
+      if (_.random(1,2) === 2) {
+        const soknadfeltID = _.sample(["intensjonOmRetur", "bostedUtenforNorge", "familiesBosted", "antallMaanederINorge"]);
         avklaring.form.feilmeldinger = mockFeilMeldinger(behandlingID, soknadfeltID);
+        avklaring.avklaringer = [];
       }
       return res.json(avklaring);
     }
