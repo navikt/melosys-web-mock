@@ -32,6 +32,12 @@
       "studentSemester": "2018/2019",
       "studieLand": "UK"
     },
+    "bosted": {
+      "intensjonOmRetur": true,
+      "bostedUtenforNorge": true,
+      "familiesBosted": ["SE"],
+      "antallMaanederINorge": 8
+    },
     "arbeidNorge": {
       "valgteArbeidsforhold": ["44137901"],
       "arbeidsforholdOpprettholdIHelePerioden": true,

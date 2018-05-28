@@ -1,5 +1,6 @@
 {
-  "faktaavklaring": {
+  "behandlingID": "7",
+  "avklaring": {
     "opphold": {
       "land": ["GB"],
       "periode": {
@@ -22,11 +23,7 @@
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
-    "bostedsland": {
-      "bekrefterFamiliebosted": null,
-      "bekrefterDisponering": null,
-      "bostedsland": []
-    },
+    "bostedsland": [],
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
     },
