@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Ajv = require('ajv');
+// const URL = require('url');
 const ajv = new Ajv({allErrors: true});
 const utils = require('./utils');
 const ERR = require('./errors');
@@ -27,6 +28,11 @@ exports.hent = (req, res) => {
     const journalpostID = req.params.journalpostID;
     const journalpost = lesOppgave(journalpostID);
     return res.json(journalpost);
+    /*
+    const url = URL.parse(req.url);
+    const melding = ERR.serverError500(`/api${url.pathname}`, 'Request failed');
+    return res.status(500).send(melding);
+    */
   }
   catch (err) {
     console.log(err);
