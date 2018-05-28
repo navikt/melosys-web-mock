@@ -1,27 +1,27 @@
 {
   "avklaringer": [
     {
-      "avklaring": "Fødselsnummer",
-      "erAvklart": true
+      "term": "Fødselsnummer",
+      "status": true
     },
     {
-      "avklaring": "Adresse i Norge",
-      "erAvklart": true
+      "term": "Adresse i Norge",
+      "status": true
     },
     {
-      "avklaring": "Familie i Norge",
-      "erAvklart": true
+      "term": "Familie i Norge",
+      "status": true
     },
     {
-      "avklaring": "EØS barnetrygd",
-      "erAvklart": false
+      "term": "EØS barnetrygd",
+      "status": false
     },
     {
-      "avklaring": "Flere enn 10 bosatt på adressen sin",
-      "erAvklart": false
+      "term": "Flere enn 10 bosatt på adressen sin",
+      "status": false
     }
   ],
-  "form" : {}
+  "form": {}
 }
 
 

@@ -1,23 +1,27 @@
 {
-  "avklaringer": {
-    "fnr_bekrefted": true,
-    "addresse_norge_bekreftet": true,
-    "familie_norge_bekreftet": true,
-    "har_EOS_barnetrygdt": false,
-    "mindre_enn_10_bosatt_adresse": false
-  },
-  "form": {
-    "feilmeldinger": [
-      {
-        "melding": "Mangler informasjon fra søknaden om bosted.",
-        "kategori": {
-          "alvorlighetsgrad": "FEIL",
-          "beskrivelse": "Mangler informasjon fra søknaden om bosted."
-        },
-        "soknadsfeltID": "arbeidsforholdVikarNavn"
-      }
-    ]
-  }
+  "avklaringer": [
+    {
+      "term": "Fødselsnummer",
+      "status": true
+    },
+    {
+      "term": "Adresse i Norge",
+      "status": true
+    },
+    {
+      "term": "Familie i Norge",
+      "status": true
+    },
+    {
+      "term": "EØS barnetrygd",
+      "status": false
+    },
+    {
+      "term": "Flere enn 10 bosatt på adressen sin",
+      "status": false
+    }
+  ],
+  "form": {}
 }
 
 
