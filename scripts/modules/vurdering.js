@@ -45,17 +45,3 @@ exports.send = (req, res) => {
   responseBody.behandlingID = behandlingID;
   return res.json(responseBody);
 };
-
-/**
- * Bosted vurdering
- * @param req
- * @param res
- * @returns {*}
- */
-exports.bosted = (req, res) => {
-  const behandlingID = req.params.behandlingID;
-  const body = req.body;
-  let responseBody = utils.isJSON(body) ? JSON.parse(body) : body;
-  responseBody.behandlingID = behandlingID;
-  return res.json(responseBody);
-};

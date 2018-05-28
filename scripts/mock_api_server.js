@@ -92,7 +92,6 @@ router.get('/inngang/:snr', inngang.hent);
  */
 router.get('/vurdering/:behandlingID', vurdering.hent);
 router.post('/vurdering/:behandlingID', vurdering.send);
-router.post('/vurdering/bosted/:behandlingID', vurdering.bosted);
 
 /**
  * SAKSBEHANDLER
