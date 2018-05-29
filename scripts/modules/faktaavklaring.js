@@ -56,7 +56,7 @@ const mockFeilMeldinger = (felterSomFeiler) => {
         "alvorlighetsgrad": "FEIL",
         "beskrivelse": "Mangler informasjon fra søknaden om  "+felt+"."
       },
-      "soknadsfeltID": ""+felt
+      "skjemaFeltID": ""+felt
     }
   });
   return feilmeldinger;
