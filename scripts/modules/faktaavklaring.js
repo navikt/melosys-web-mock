@@ -51,12 +51,12 @@ const mockFeilMeldinger = (felterSomFeiler) => {
 
   const feilmeldinger = _.map(felterSomFeiler, function (felt) {
     return {
-      "melding": "Mangler informasjon fra søknaden om "+felt+".",
-      "kategori": {
-        "alvorlighetsgrad": "FEIL",
-        "beskrivelse": "Mangler informasjon fra søknaden om  "+felt+"."
+      melding: `Mangler informasjon fra søknaden om ${felt}.`,
+      kategori: {
+        alvorlighetsgrad: 'FEIL',
+        beskrivelse: `Mangler informasjon fra søknaden om ${felt}.`
       },
-      "skjemaFeltID": ""+felt
+      skjemaFeltID: felt
     }
   });
   return feilmeldinger;
@@ -72,11 +72,11 @@ exports.hentBosted = (req, res) => {
     const { behandlingID } = req.params;
     const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
     if (fs.existsSync(mockfile)) {
-      const avklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+      const avklaring = JSON.parse(fs.readFileSync(mockfile, 'utf8'));
 
       // 50/50 sjanse for om valideringsfeil inntreffer eller om vurdering kunne gjøres.
       if (_.random(1,2) === 2) {
-        const felterSomFeiler = ["intensjonOmRetur", "bostedUtenforNorge", "familiesBosted", "antallMaanederINorge"];
+        const felterSomFeiler = ['intensjonOmRetur', 'bostedUtenforNorge', 'familiesBosted', 'antallMaanederINorge'];
         avklaring.form.feilmeldinger = mockFeilMeldinger(felterSomFeiler);
         avklaring.avklaringer = [];
       }
