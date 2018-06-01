@@ -47,17 +47,16 @@ exports.send = (req, res) => {
 };
 
 
-const mockFeilMeldinger = (behandlingID, soknadfeltID) => {
-  const soknad = soknader.lesSoknad(behandlingID);
-  const { soknadDokument } = soknad;
-  const feilmeldinger = _.map(_.keys(soknadDokument[soknadfeltID]), function (key) {
+const mockFeilMeldinger = (felterSomFeiler) => {
+
+  const feilmeldinger = _.map(felterSomFeiler, function (felt) {
     return {
-      "melding": "Mangler informasjon fra søknaden om "+soknadfeltID+".",
-      "kategori": {
-        "alvorlighetsgrad": "FEIL",
-        "beskrivelse": "Mangler informasjon fra søknaden om  "+soknadfeltID+"."
+      melding: `Mangler informasjon fra søknaden om ${felt}.`,
+      kategori: {
+        alvorlighetsgrad: 'FEIL',
+        beskrivelse: `Mangler informasjon fra søknaden om ${felt}.`
       },
-      "soknadsfeltID": ""+key
+      skjemaFeltID: felt
     }
   });
   return feilmeldinger;
@@ -73,12 +72,12 @@ exports.hentBosted = (req, res) => {
     const { behandlingID } = req.params;
     const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
     if (fs.existsSync(mockfile)) {
-      const avklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+      const avklaring = JSON.parse(fs.readFileSync(mockfile, 'utf8'));
 
       // 50/50 sjanse for om valideringsfeil inntreffer eller om vurdering kunne gjøres.
       if (_.random(1,2) === 2) {
-        const soknadfeltID = _.sample(["intensjonOmRetur", "bostedUtenforNorge", "familiesBosted", "antallMaanederINorge"]);
-        avklaring.form.feilmeldinger = mockFeilMeldinger(behandlingID, soknadfeltID);
+        const felterSomFeiler = ['intensjonOmRetur', 'bostedUtenforNorge', 'familiesBosted', 'antallMaanederINorge'];
+        avklaring.form.feilmeldinger = mockFeilMeldinger(felterSomFeiler);
         avklaring.avklaringer = [];
       }
       return res.json(avklaring);
