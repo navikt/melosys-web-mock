@@ -4,10 +4,14 @@ const ERR = require('./errors');
 const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
+const lesSaksbehandlere = () => {
+  const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
+  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+};
+
 exports.hent = (req, res) => {
   try {
-    const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
-    const saksbehandlere =  JSON.parse(fs.readFileSync(mockfile, "utf8"));
+    const saksbehandlere = lesSaksbehandlere();
     const status = happy.happyStatus([200, 200, 200, 401, 500]);
     const url = '/saksbehandler';
     switch (status) {
