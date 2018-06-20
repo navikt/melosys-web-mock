@@ -209,6 +209,11 @@ exports.oversikt = (req, res) => {
     res.status(500).send(err);
   }
 };
+exports.opprett = (req, res) => {
+  const body = req.body;
+  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  res.json(jsonBody);
+};
 
 exports.reset = (req, res) => {
   res.json({});
