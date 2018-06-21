@@ -1,5 +1,5 @@
 {
-  "behandlingID": "4",
+  "behandlingID": 123456789,
   "avklaring": {
     "opphold": {
       "land": ["GB"],
@@ -24,7 +24,6 @@
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "vurdering": {},
       "land": []
     },
     "sektor": {
