@@ -6,6 +6,7 @@ const { dokumentkategorier } = require('./dokumentkategorier');
 const { oppgavetyper } = require('./oppgavetyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { dokumenttitler } = require('./dokumenttitler');
+const { studiefinansiering } = require('./studiefinansiering');
 
 const kodeverk = {
   landkoder,
@@ -16,6 +17,7 @@ const kodeverk = {
   vedleggstitler,
   dokumenttitler,
   dokumentkategorier,
+  studiefinansiering,
 };
 exports.kodeverk = kodeverk;
 
