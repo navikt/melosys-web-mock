@@ -225,7 +225,7 @@
         "organisasjoner":[
           {
             "orgnr":"923609016",
-            "navn":"STATOIL ASA",
+            "navn":"STATOIL ASA ",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Forusbeen 50"
@@ -261,7 +261,7 @@
           },
           {
             "orgnr":"873152362",
-            "navn":"STATOIL ASA",
+            "navn":"STATOIL, Avd Stavanger",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Sandslivegen 90"
