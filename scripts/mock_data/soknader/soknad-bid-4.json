@@ -30,7 +30,7 @@
       "studentIEOS": true,
       "studentFinansiering": "Har egne midler oppspart, støtte fra familie.",
       "studentSemester": "2018/2019",
-      "studieLand": "UK"
+      "studieLand": ["GB"]
     },
     "bosted": {
       "intensjonOmRetur": true,
