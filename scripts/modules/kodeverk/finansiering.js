@@ -1,4 +1,4 @@
-const studiefinansiering = [
+const finansiering = [
   {
     "kode": "LAANEKASSEN",
     "term": "Lånekassen"
@@ -12,4 +12,4 @@ const studiefinansiering = [
     "term": "Egne midler / arv / etc"
   }
 ];
-exports.studiefinansiering = studiefinansiering;
+exports.finansiering = finansiering;
