@@ -29,6 +29,7 @@
       },
       "ektefelleEllerBarn": true,
       "studentIEOS": true,
+      "sammeAdresseSomArbeidsgiver": true,
       "studentFinansiering": "LAANEKASSEN",
       "studentSemester": "2018/2019",
       "studieLand": ["GB"]
