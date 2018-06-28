@@ -1,9 +1,4 @@
 # Lisensiering av NAV sine kodebaser
-
-Alle kodebaser skal ha en lisensfil i rotkatalogen til repositoriet. Denne filen skal hete LICENSE.md.
-
-NAV lisensierer kode under MIT-lisensen:
-
 ```
 # The MIT License
 
