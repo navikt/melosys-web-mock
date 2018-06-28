@@ -11,7 +11,6 @@ const lesPerson = (fnr) => {
 
 exports.hent = (req, res) => {
   const fnr = req.query.fnr;
-  console.log('fnr', fnr);
   if (fnr && fnr.length === 11) {
     const person = lesPerson(fnr);
     return res.json(person);

@@ -2,9 +2,13 @@ const fs = require('fs');
 const _ = require('underscore');
 const ERR = require('./errors');
 const utils = require('./utils');
-const soknader = require('./soknader');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
 
+const lesAvklaring = (behandlingID) => {
+  const mockfile = `${FAKTAAVKLARING_MOCK_DIR}/faktaavklaring-bid-${behandlingID}.json`;
+  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+};
 /**
  * Hent faktavklaring
  * @param req
@@ -14,14 +18,11 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 exports.hent = (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
-    const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/faktaavklaring-bid-${behandlingID}.json`;
-    if (fs.existsSync(mockfile)) {
-      const faktaavklaring = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-      return res.json(faktaavklaring);
-    }
-    else {
+    const avklaring = lesAvklaring(behandlingID);
+    if (_.isEmpty(avklaring)) {
       return res.status(404).send(ERR.notFound404(req.url));
     }
+    return res.json(avklaring);
   }
   catch (err) {
     console.error(err);
@@ -46,11 +47,8 @@ exports.send = (req, res) => {
   return res.json(faktaavklaring);
 };
 
-
 const mockFeilMeldinger = (felterSomFeiler) => {
-
-  const feilmeldinger = _.map(felterSomFeiler, function (felt) {
-    return {
+  return felterSomFeiler.map((felt) => ({
       melding: `Mangler informasjon fra søknaden om ${felt}.`,
       kategori: {
         alvorlighetsgrad: 'FEIL',
@@ -58,9 +56,14 @@ const mockFeilMeldinger = (felterSomFeiler) => {
       },
       skjemaFeltID: felt
     }
-  });
-  return feilmeldinger;
+  ));
 };
+
+const lesBosted = (behandlingID) => {
+  const mockfile = `${FAKTAAVKLARING_MOCK_DIR}/bosted/bosted-bid-${behandlingID}.json`;
+  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+};
+
 /**
  * Hent faktavklaring for bosted
  * @param req
@@ -70,21 +73,17 @@ const mockFeilMeldinger = (felterSomFeiler) => {
 exports.hentBosted = (req, res) => {
   try {
     const { behandlingID } = req.params;
-    const mockfile = `${MOCK_DATA_DIR}/faktaavklaring/bosted/bosted-bid-${behandlingID}.json`;
-    if (fs.existsSync(mockfile)) {
-      const avklaring = JSON.parse(fs.readFileSync(mockfile, 'utf8'));
-
-      // 50/50 sjanse for om valideringsfeil inntreffer eller om vurdering kunne gjøres.
-      if (_.random(1,2) === 2) {
-        const felterSomFeiler = ['intensjonOmRetur', 'bostedUtenforNorge', 'familiesBosted', 'antallMaanederINorge'];
-        avklaring.form.feilmeldinger = mockFeilMeldinger(felterSomFeiler);
-        avklaring.avklaringer = [];
-      }
-      return res.json(avklaring);
-    }
-    else {
+    const bosted = lesBosted(behandlingID);
+    if (_.isEmpty(bosted)){
       return res.status(404).send(ERR.notFound404(req.url));
     }
+    // 50/50 sjanse for om valideringsfeil inntreffer eller om vurdering kunne gjøres.
+    if (_.random(1,2) === 2) {
+      const felterSomFeiler = ['intensjonOmRetur', 'bostedUtenforNorge', 'familiesBosted', 'antallMaanederINorge'];
+      bosted.form.feilmeldinger = mockFeilMeldinger(felterSomFeiler);
+      bosted.avklaringer = [];
+    }
+    return res.json(bosted);
   }
   catch (err) {
     console.error(err);
