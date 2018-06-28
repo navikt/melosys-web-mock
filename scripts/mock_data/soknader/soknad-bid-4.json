@@ -27,16 +27,19 @@
         "fom": "2018-01-01",
         "tom": "2018-06-01"
       },
-      "studentIEOS": true,
-      "studentFinansiering": "Har egne midler oppspart, støtte fra familie.",
+      "ektefelleEllerBarnINorge": true,
+      "sammeAdresseSomArbeidsgiver": true,
+      "studentFinansiering": "LAANEKASSEN",
       "studentSemester": "2018/2019",
-      "studieLand": "UK"
+      "studieLand": ["GB"]
     },
     "bosted": {
       "intensjonOmRetur": true,
       "bostedUtenforNorge": true,
       "familiesBosted": ["SE"],
-      "antallMaanederINorge": 8
+      "antallMaanederINorge": 8,
+      "EOSBarnetrygdFraNAV": true,
+      "adresseIUtlandet": true
     },
     "arbeidNorge": {
       "valgteArbeidsforhold": ["44137901"],
