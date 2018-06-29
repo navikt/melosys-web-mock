@@ -42,11 +42,8 @@
       "vekslingMellomLand": "EN_ELLER_BEGGE"
     },
     "vesentligVirksomhet": {
-      "vesentligVirksomhetINorge": true,
-      "vesentligVirksomhetBegrunnelser": [
-        "foo",
-        "bar"
-      ]
+      "vesentligVirksomhetINorge": null,
+      "vesentligVirksomhetBegrunnelser": []
     }
   }
 }
