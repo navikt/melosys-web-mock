@@ -40,6 +40,10 @@
       "aktivitetINorge": "OVER_25_PROSENT",
       "marginaltArbeid": "MARGINALT_JA",
       "vekslingMellomLand": "EN_ELLER_BEGGE"
+    },
+    "vesentligVirksomhet": {
+      "vesentligVirksomhetINorge": null,
+      "vesentligVirksomhetBegrunnelser": []
     }
   }
 }
