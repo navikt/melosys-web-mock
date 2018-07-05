@@ -84,6 +84,13 @@
       "arbeidsgiverBetalerArbeidsgiveravgift": true,
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
+    },
+    "maritimtArbeid": {
+      "maritimType": "SKIP",
+      "skipsNavn": "Navn på skipet",
+      "fartsomrade": "INNENRIKS",
+      "flaggLand": ["GB"],
+      "installasjonsLand": ["GB"]
     }
   }
 }

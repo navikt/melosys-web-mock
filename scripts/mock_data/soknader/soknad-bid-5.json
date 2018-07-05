@@ -71,6 +71,13 @@
       "arbeidsgiverBetalerArbeidsgiveravgift": true,
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
+    },
+    "maritimtArbeid": {
+      "maritimType": "",
+      "skipsNavn": "",
+      "fartsomrade": "",
+      "flaggLand": [],
+      "installasjonsLand": []
     }
   }
 }
