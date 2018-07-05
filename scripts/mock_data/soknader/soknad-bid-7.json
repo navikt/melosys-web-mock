@@ -5,7 +5,7 @@
       "personUtenlandskID": "123-12-123456789"
     },
     "arbeidUtland": {
-      "arbeidsland": ["ESP"],
+      "arbeidsland": [],
       "arbeidsperiode": {
         "fom": "2018-03-01",
         "tom": "2018-06-01"
@@ -18,15 +18,15 @@
     },
     "foretakUtland": {},
     "oppholdUtland": {
-      "oppholdsland": "ESP",
+      "oppholdsland": [],
       "oppholdsPeriode": {
         "fom": "2017-12-01",
         "tom": "2017-12-31"
       },
-      "studentIEOS": false,
+      "ektefelleEllerBarnINorge": null,
+      "sammeAdresseSomArbeidsgiver": null,
       "studentFinansiering": "",
-      "studentSemester": "",
-      "studieLand": ""
+      "studentSemester": ""
     },
     "arbeidNorge": {
       "valgteArbeidsforhold": ["44137901"],
@@ -79,7 +79,6 @@
       "fartsomrade": "",
       "flaggLand": [],
       "installasjonsLand": []
-    },
-    "tilleggsopplysninger": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
+    }
   }
 }

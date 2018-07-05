@@ -9,7 +9,7 @@
       }
     },
     "aktivitet": {
-      "aktivitetLand": ["GB"]
+      "aktivitetLand": []
     },
     "sysselsetting": {
       "sysselsettingType": "ARBEIDSTAKER"
