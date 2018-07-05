@@ -72,7 +72,6 @@
       "arbeidsgiverBetalerArbeidsgiveravgift": true,
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
-    },
-    "tilleggsopplysninger": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
+    }
   }
 }
