@@ -5,7 +5,7 @@
       "personUtenlandskID":"123-12-123456789"
     },
     "arbeidUtland": {
-      "arbeidsland": ["ES","DK"],
+      "arbeidsland": ["DE"],
       "arbeidsperiode": {
         "fom": "2018-01-01",
         "tom": "2018-06-01"
@@ -30,8 +30,7 @@
       "ektefelleEllerBarnINorge": true,
       "sammeAdresseSomArbeidsgiver": true,
       "studentFinansiering": "LAANEKASSEN",
-      "studentSemester": "2018/2019",
-      "studieLand": ["GB"]
+      "studentSemester": "2018/2019"
     },
     "bosted": {
       "intensjonOmRetur": true,
