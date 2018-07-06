@@ -50,9 +50,9 @@
       "fullmektigFirma": "Advokatfullmektig AS",
       "fullmektigGateadresse": "Adresseveien 123",
       "fullmektigPostnr": "1234",
-      "fullmektigPoststed": "Byen",
-      "fullmektigRegion": "Regionsstedet",
-      "fullmektigLand": []
+      "fullmektigPoststed": "Byensvik",
+      "fullmektigRegion": "Østlandsregionen",
+      "fullmektigLand": ["NO"]
     },
     "selvstendigArbeid": {
       "erSelvstendig": true,
