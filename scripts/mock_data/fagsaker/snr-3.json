@@ -210,6 +210,8 @@
           {
             "orgnr": "910253158",
             "navn": "MULTICONSULT ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Nedre Skøyen vei 2"
@@ -228,6 +230,8 @@
           {
             "orgnr": "982683955",
             "navn": "EXPERIS AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lakkegata 53"
@@ -246,6 +250,8 @@
           {
             "orgnr": "943049467",
             "navn": "SKANSKA NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lakkegata 53"
@@ -264,6 +270,8 @@
           {
             "orgnr": "967032271",
             "navn": "SWECO NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Drammensveien 260"

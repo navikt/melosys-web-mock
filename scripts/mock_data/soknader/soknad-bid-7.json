@@ -35,8 +35,12 @@
       "flyendePersonellHjemmebase": "Flybasen Int. Airport, ....",
       "kontaktNavn": "Ola Nordmann",
       "kontaktEpost": "ola.nordmann@fullmektigfirma.no",
-      "fullmektigFirma": "Advokatfullmektig AS",
-      "fullmektigAdresse": "Adresseveien 123, 1234 Byen"
+      "fullmektigFirma": "",
+      "fullmektigGateadresse": "",
+      "fullmektigPostnr": "",
+      "fullmektigPoststed": "",
+      "fullmektigRegion": "",
+      "fullmektigLand": []
     },
     "selvstendigArbeid": {
       "erSelvstendig": false,
