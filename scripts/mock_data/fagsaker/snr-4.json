@@ -226,7 +226,7 @@
           {
             "orgnr":"923609016",
             "navn":"STATOIL ASA",
-            "opprettet": "1977-01-01",
+            "registrert": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
@@ -246,7 +246,7 @@
           {
             "orgnr":"810072512",
             "navn":"EIKEN OG TORSKEN",
-            "opprettet": "1987-01-01",
+            "registrert": "1987-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse":{
               "gateadresse":{
@@ -266,7 +266,7 @@
           {
             "orgnr":"873152362",
             "navn":"STATOIL, Avd Stavanger",
-            "opprettet": "1977-01-01",
+            "registrert": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
@@ -286,7 +286,7 @@
           {
             "orgnr":"912499693",
             "navn":"TOP-TOY NORGE AS Hovedkontor Oslo",
-            "opprettet": "1977-01-01",
+            "registrert": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
@@ -306,7 +306,7 @@
           {
             "orgnr":"991492704",
             "navn":"TOP-TOY NORGE AS",
-            "opprettet": "1977-01-01",
+            "registrert": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse":{
               "gateadresse":{
@@ -319,7 +319,7 @@
           {
             "orgnr":"910099035",
             "navn":"SKARSVÅG OG VANSE",
-            "opprettet": "2010-01-01",
+            "registrert": "2010-01-01",
             "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse":{
               "gateadresse":{
