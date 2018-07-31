@@ -226,6 +226,8 @@
           {
             "orgnr":"923609016",
             "navn":"STATOIL ASA",
+            "opprettet": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Forusbeen 50"
@@ -244,6 +246,8 @@
           {
             "orgnr":"810072512",
             "navn":"EIKEN OG TORSKEN",
+            "opprettet": "1987-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Lunderhaugen 1"
@@ -262,6 +266,8 @@
           {
             "orgnr":"873152362",
             "navn":"STATOIL, Avd Stavanger",
+            "opprettet": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Sandslivegen 90"
@@ -280,6 +286,8 @@
           {
             "orgnr":"912499693",
             "navn":"TOP-TOY NORGE AS Hovedkontor Oslo",
+            "opprettet": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Pindsleveien 1C"
@@ -298,6 +306,8 @@
           {
             "orgnr":"991492704",
             "navn":"TOP-TOY NORGE AS",
+            "opprettet": "1977-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Klokkergårdveien 32"
@@ -309,6 +319,8 @@
           {
             "orgnr":"910099035",
             "navn":"SKARSVÅG OG VANSE",
+            "opprettet": "2010-01-01",
+            "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse":{
               "gateadresse":{
                 "gatenavn":"Olav Kyrres gate 9"
