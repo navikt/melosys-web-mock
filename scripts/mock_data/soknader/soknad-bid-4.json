@@ -1,6 +1,9 @@
 {
   "behandlingID": 4,
   "soknadDokument": {
+    "personOpplysninger": {
+      "utenlandskID": [{"ID": "123456789", "land": ["DK"]}]
+    },
     "opplysningerOmBrukeren": {
       "personUtenlandskID":"123-12-123456789"
     },
