@@ -29,10 +29,16 @@
         "person":{
           "fnr":"19117220349",
           "sivilstand":"Registrert partner",
-          "statsborgerskap":"NOR",
+          "statsborgerskap":{
+            "kode": "NOR",
+            "term": "Norge"
+          },
           "sammensattNavn":"HATT GLITRENDE",
           "personstatus":"Bosatt",
-          "kjoenn":"M",
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
           "foedselsdato":"1972-11-19"
         },
         "arbeidsforhold":[
