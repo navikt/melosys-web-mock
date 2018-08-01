@@ -8,6 +8,7 @@ properties([[$class: 'BuildDiscarderProperty',
 node {
   def project = "navikt"
   def application = "melosys-web-mock"
+  def zipFile
 
   /* metadata */
   def buildVersion // major.minor.BUILD_NUMBER
@@ -56,30 +57,26 @@ node {
   stage('Build Zip archive') {
     echo('Build Zip archive')
 
-    def zipFile = "${application}-${buildVersion}.zip"
+    zipFile = "${application}-${buildVersion}.zip"
     sh "zip -r ${zipFile} scripts/mock_data/*"
   }
   stage('Copy Zip archive to pickup') {
 
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       def webMockDir = "/var/lib/jenkins/melosys-web-mock"
-      def zipFile = "${application}-${buildVersion}.zip"
       sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
       sh "cp ${zipFile} $webMockDir"
     }
   }
-/*
   stage('Deploy ZIP archive to Maven') {
-    def zipFile = "${application}-${buildVersion}.zip"
     configFileProvider(
       [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
       sh """
      	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
-	            -DgroupId=no.nav.eux -Dversion=${buildVersion} \
-	 	        -Ddescription='Eux-web-app JavaScript resources.' \
+	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
+	 	        -Ddescription='Melosys-web-mock JSON data and schema.' \
 		        -DrepositoryId=m2internal -Durl=http://maven.adeo.no/nexus/content/repositories/m2internal
         """
     }
   }
-*/
 }
