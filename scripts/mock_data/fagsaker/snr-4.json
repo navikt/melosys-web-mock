@@ -60,7 +60,12 @@
             "postnr":"5555",
             "land":"NO"
           },
-          "foedselsdato":"1972-11-19"
+          "foedselsdato":"1972-11-19",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true
         },
         "arbeidsforhold":[
           {
