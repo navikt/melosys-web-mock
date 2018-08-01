@@ -41,8 +41,6 @@ node {
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
     echo("semver=${semVer}")
 
-    sh(returnStdout: true, script: "${npm} run build")
-
     def majorMinor = semVer.split("\\.").take(2).join('.')
     buildVersion ="${majorMinor}.${BUILD_NUMBER}"
     echo("buildVersion=${buildVersion}")
