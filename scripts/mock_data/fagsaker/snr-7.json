@@ -47,7 +47,7 @@
                 "avloenningstype": "Fastlønn",
                 "yrke": "KONSULENT",
                 "avtaltArbeidstimerPerUke": 37.5,
-                "stillingsprosent": 100.0,
+                "stillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false
               }
