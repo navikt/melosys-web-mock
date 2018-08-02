@@ -54,11 +54,11 @@ node {
     sh "${npm} install"
   }
 
-  stage('Build Zip archive') {
-    echo('Build Zip archive')
+  stage('Build Jar archive') {
+    echo('Build Jar archive')
 
-    zipFile = "${application}-${buildVersion}.zip"
-    sh "zip -r ${zipFile} scripts/mock_data/*"
+    zipFile = "${application}-${buildVersion}.jar"
+    sh "zip ${zipFile} `find ./scripts/mock_data -name \"*-schema.json\" -print`"
   }
   stage('Copy Zip archive to pickup') {
 
