@@ -65,7 +65,10 @@
             "kode": "DØD",
             "term": "DØD"
           },
-          "erEgenAnsatt": true
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "Something Dunfjaeder", "fnr": "60056642970"}
+          ]
         },
         "arbeidsforhold":[
           {
