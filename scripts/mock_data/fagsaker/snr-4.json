@@ -67,7 +67,9 @@
           },
           "erEgenAnsatt": true,
           "barn": [
-            {"sammensattNavn": "Something Dunfjaeder", "fnr": "60056642970"}
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
           ]
         },
         "arbeidsforhold":[
