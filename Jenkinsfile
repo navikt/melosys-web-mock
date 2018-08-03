@@ -58,7 +58,8 @@ node {
     echo('Build Jar archive')
 
     zipFile = "${application}-${buildVersion}.jar"
-    sh "zip ${zipFile} `find ./scripts/mock_data -name \"*-schema.json\" -print`"
+    // sh "zip ${zipFile} `find ./scripts/mock_data -name \"*-schema.json\" -print`"
+    sh "zip -r ${zipFile} scripts/schema/*"
   }
   stage('Copy Zip archive to pickup') {
 

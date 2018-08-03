@@ -1,0 +1,122 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "orgnr": {
+      "$id": "/properties/orgnr",
+      "type": "string",
+      "title": "The Orgnr Schema ",
+      "default": "",
+      "examples": [
+        "910253158"
+      ]
+    },
+    "navn": {
+      "$id": "/properties/navn",
+      "type": "string",
+      "title": "The Navn Schema ",
+      "default": "",
+      "examples": [
+        "MULTICONSULT ASA"
+      ]
+    },
+    "forretningsadresse": {
+      "$id": "/properties/forretningsadresse",
+      "type": "object",
+      "properties": {
+        "gateadresse": {
+          "$id": "/properties/forretningsadresse/properties/gateadresse",
+          "type": "object",
+          "properties": {
+            "gatenavn": {
+              "$id": "/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
+              "type": "string",
+              "title": "The Gatenavn Schema ",
+              "default": "",
+              "examples": [
+                "Nedre Skøyen vei 2"
+              ]
+            }
+          }
+        },
+        "postnr": {
+          "$id": "/properties/forretningsadresse/properties/postnr",
+          "type": "string",
+          "title": "The Postnr Schema ",
+          "default": "",
+          "examples": [
+            "0276"
+          ]
+        },
+        "poststed": {
+          "$id": "/properties/forretningsadresse/properties/poststed",
+          "type": "string",
+          "title": "The Poststed Schema ",
+          "default": "",
+          "examples": [
+            "OSLO"
+          ]
+        },
+        "land": {
+          "$id": "/properties/forretningsadresse/properties/land",
+          "type": "string",
+          "title": "The Land Schema ",
+          "default": "",
+          "examples": [
+            "NORGE"
+          ]
+        }
+      }
+    },
+    "postadresse": {
+      "$id": "/properties/postadresse",
+      "type": "object",
+      "properties": {
+        "gateadresse": {
+          "$id": "/properties/postadresse/properties/gateadresse",
+          "type": "object",
+          "properties": {
+            "gatenavn": {
+              "$id": "/properties/postadresse/properties/gateadresse/properties/gatenavn",
+              "type": "string",
+              "title": "The Gatenavn Schema ",
+              "default": "",
+              "examples": [
+                "Postboks 265  Skøyen"
+              ]
+            }
+          }
+        },
+        "postnr": {
+          "$id": "/properties/postadresse/properties/postnr",
+          "type": "string",
+          "title": "The Postnr Schema ",
+          "default": "",
+          "examples": [
+            "0213"
+          ]
+        },
+        "poststed": {
+          "$id": "/properties/postadresse/properties/poststed",
+          "type": "string",
+          "title": "The Poststed Schema ",
+          "default": "",
+          "examples": [
+            "OSLO"
+          ]
+        },
+        "land": {
+          "$id": "/properties/postadresse/properties/land",
+          "type": "string",
+          "title": "The Land Schema ",
+          "default": "",
+          "examples": [
+            "NORGE"
+          ]
+        }
+      }
+    }
+  }
+}
