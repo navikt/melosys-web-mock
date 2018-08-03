@@ -4,7 +4,7 @@
     "personOpplysninger": {
       "utenlandskID": [{"ID": "123456789", "land": ["DK"]}],
       "medfolgendeBarn": ["10100638274"],
-      "medfolgendeAndre": ["28106600300"]
+      "medfolgendeAndre": "28106600300"
     },
     "opplysningerOmBrukeren": {
       "personUtenlandskID":"123-12-123456789"
