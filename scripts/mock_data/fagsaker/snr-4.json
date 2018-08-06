@@ -29,11 +29,48 @@
         "person":{
           "fnr":"19117220349",
           "sivilstand":"Registrert partner",
-          "statsborgerskap":"NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn":"HATT GLITRENDE",
           "personstatus":"Bosatt",
-          "kjoenn":"M",
-          "foedselsdato":"1972-11-19"
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato":"1972-11-19",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold":[
           {
