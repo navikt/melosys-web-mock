@@ -6,9 +6,6 @@
       "medfolgendeBarn": ["10100638274"],
       "medfolgendeAndre": "28106600300"
     },
-    "opplysningerOmBrukeren": {
-      "personUtenlandskID":"123-12-123456789"
-    },
     "arbeidUtland": {
       "arbeidsland": ["DE"],
       "arbeidsperiode": {
@@ -44,7 +41,12 @@
       "antallMaanederINorge": 8,
       "EOSBarnetrygdFraNAV": true,
       "adresseIUtlandet": true,
-      "oppgittAdresse": "Adresseveien 123, 1234 Stedet"
+      "oppgittAdresse": {
+        "gatenavn": "Gateadressen",
+        "postnummer": "12345",
+        "poststed": "Poststeder",
+        "land": ["DE"]
+      }
     },
     "arbeidNorge": {
       "arbeidsforholdOpprettholdIHelePerioden": true,
