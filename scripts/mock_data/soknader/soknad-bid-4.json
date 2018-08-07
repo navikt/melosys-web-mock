@@ -27,7 +27,7 @@
           "gatenavn": "Foobar gatenavn",
           "postnummer": "1234",
           "poststed": "Poststedet",
-          "land":["DE"]
+          "land": ["DE"]
         }
       }
     ],
