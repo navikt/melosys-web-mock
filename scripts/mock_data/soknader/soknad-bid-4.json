@@ -21,12 +21,12 @@
     },
     "foretakUtland": [
       {
-        "navn": "Foobar",
-        "orgnr": "12345678",
+        "navn": "EQUINOR DEUTSCHLAND",
+        "orgnr": "372384726",
         "adresse": {
-          "gatenavn": "Foobar gatenavn",
-          "postnummer": "1234",
-          "poststed": "Poststedet",
+          "gatenavn": "Deutschlandstrasse 123",
+          "postnummer": "3388",
+          "poststed": "Berlin",
           "land": ["DE"]
         }
       }

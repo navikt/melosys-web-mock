@@ -262,7 +262,7 @@
         "organisasjoner":[
           {
             "orgnr":"923609016",
-            "navn":"STATOIL ASA",
+            "navn":"EQUINOR ASA",
             "registrert": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
@@ -302,7 +302,7 @@
           },
           {
             "orgnr":"873152362",
-            "navn":"STATOIL, Avd Stavanger",
+            "navn":"EQUINOR, Avd Stavanger",
             "registrert": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse":{
