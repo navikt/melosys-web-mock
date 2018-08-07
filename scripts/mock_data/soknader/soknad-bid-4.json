@@ -21,11 +21,18 @@
       "bostedsland": "SE",
       "erstatterTidligereUtsendt": false
     },
-    "foretakUtland": {
-      "foretakUtlandNavn": "Volkswagen AG",
-      "foretakUtlandOrgnr": "1122334444",
-      "foretakUtlandAdresse": null
-    },
+    "foretakUtland": [
+      {
+        "navn": "Foobar",
+        "orgnr": "12345678",
+        "postadresse": {
+          "gatenavn": "Foobar gatenavn",
+          "postnummer": "1234",
+          "poststed": "Poststedet",
+          "land":["DE"]
+        }
+      }
+    ],
     "oppholdUtland": {
       "oppholdsland": ["DE"],
       "oppholdsPeriode": {
