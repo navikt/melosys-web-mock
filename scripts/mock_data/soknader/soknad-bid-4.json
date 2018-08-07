@@ -10,16 +10,17 @@
       "personUtenlandskID":"123-12-123456789"
     },
     "arbeidUtland": {
-      "arbeidsland": ["DE"],
-      "arbeidsperiode": {
-        "fom": "2018-01-01",
-        "tom": "2018-06-01"
+      "adresse": {
+        "gatenavn": "Adresseveien 123",
+        "postnummer": "1234",
+        "poststed": "Poststedet",
+        "land": ["DE"]
       },
       "arbeidsandelNorge": 33.3,
       "arbeidsandelUtland": 66.6,
       "arbeidsstedUtland": null,
-      "bostedsland": "SE",
-      "erstatterTidligereUtsendt": false
+      "arbeidUtlandErstatning": false,
+      "arbeidUtlandHjemmekontor": false
     },
     "foretakUtland": {
       "foretakUtlandNavn": "Volkswagen AG",
