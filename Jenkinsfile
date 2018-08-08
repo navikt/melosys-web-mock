@@ -8,6 +8,10 @@ properties([[$class: 'BuildDiscarderProperty',
 node {
   def project = "navikt"
   def application = "melosys-web-mock"
+  // Nexus
+  def nexusHost = "http://maven.adeo.no/nexus/content/repositories/m2internal"
+  def artifactPath = "/no/nav/melosys/melosys-web-mock/maven-metadata.xml"
+  // curl -s http://maven.adeo.no/nexus/content/repositories/m2internal/no/nav/melosys/melosys-web-mock/maven-metadata.xml | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
   def zipFile
 
   /* metadata */
@@ -70,14 +74,23 @@ node {
     }
   }
   stage('Deploy ZIP archive to Maven') {
-    configFileProvider(
-      [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
-      sh """
+    // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
+    def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
+    def nexusLatestVersion = sh "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -"
+    echo("nexusLatestVersion=${nexusLatestVersion}")
+    /*
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+
+      configFileProvider(
+        [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
+        sh """
      	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
 	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
 	 	        -Ddescription='Melosys-web-mock JSON data and schema.' \
 		        -DrepositoryId=m2internal -Durl=http://maven.adeo.no/nexus/content/repositories/m2internal
         """
+      }
     }
+    */
   }
 }
