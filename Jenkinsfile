@@ -76,7 +76,7 @@ node {
   stage('Deploy ZIP archive to Maven') {
     // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
-    def nexusLatestVersion = sh "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -"
+    def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
     /*
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
