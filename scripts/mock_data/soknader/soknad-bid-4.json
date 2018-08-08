@@ -79,14 +79,15 @@
       ]
     },
     "juridiskArbeidsgiverNorge": {
-      "antallAnsatte": 350,
-      "antallAdminAnsatte": 250,
+      "erBemanningsbyra": false,
+      "utsendteNeste12Mnd": 10,
+      "antallAdmAnsatte": 350,
       "antallAdminAnsatteEOS": 75,
       "andelOmsetningINorge": 78.5,
       "andelKontrakterINorge": 50.5,
-      "erBemanningsbyra": false,
-      "hattDriftSiste12Mnd": true,
-      "antallUtsendte": 30
+      "utsendtFortsetterArbeidsforholdIUtlandet": true,
+      "utsendtArbeiderArbeiderMedKlienter": true,
+      "utsendtArbeiderArbeiderMedKontrakter": true
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 5500,
