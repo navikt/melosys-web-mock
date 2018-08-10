@@ -44,7 +44,8 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
-    echo("semver=${semVer}")
+    semver = semVer.trim()
+    echo("semver='${semVer}'")
   }
 
   stage('npm install ') {
@@ -58,7 +59,7 @@ node {
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "${application}-${semVer}.jar"
+    zipFile = "${application}-${semVer}"+".jar"
     echo("zipFile:${zipFile}")
     sh "zip -r $zipFile ./scripts/schema/*"
   }
