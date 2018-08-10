@@ -8,6 +8,7 @@ properties([[$class: 'BuildDiscarderProperty',
 node {
   def project = "navikt"
   def application = "melosys-web-mock"
+  def webMockDir = "/var/lib/jenkins/melosys-web-mock"
   // Nexus
   def nexusHost = "http://maven.adeo.no/nexus/content/repositories/m2internal"
   def artifactPath = "/no/nav/melosys/melosys-web-mock/maven-metadata.xml"
@@ -15,7 +16,6 @@ node {
   def zipFile
 
   /* metadata */
-  def buildVersion // major.minor.BUILD_NUMBER
   def semVer
   def commitHash, commitHashShort, commitUrl, committer
   def scmVars
@@ -43,32 +43,28 @@ node {
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
 
-    semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
-    echo("semver=${semVer}")
-
-    def majorMinor = semVer.split("\\.").take(2).join('.')
-    buildVersion ="${majorMinor}.${BUILD_NUMBER}"
-    echo("buildVersion=${buildVersion}")
+    semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
+    echo("semVer=${semVer}")
   }
 
   stage('npm install ') {
     echo('Step: npm install package depenencies')
     sh "${node} -v"
     sh "${npm} -v"
+    sh "${npm} config ls"
     sh "${npm} install"
   }
 
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "${application}-${buildVersion}.jar"
-    // sh "zip ${zipFile} `find ./scripts/mock_data -name \"*-schema.json\" -print`"
-    sh "zip -r ${zipFile} scripts/schema/*"
+    zipFile = "${application}-${semVer}"+".jar"
+    echo("zipFile:${zipFile}")
+    sh "zip -r $zipFile ./scripts/schema/*"
   }
   stage('Copy Zip archive to pickup') {
 
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      def webMockDir = "/var/lib/jenkins/melosys-web-mock"
       sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
       sh "cp ${zipFile} $webMockDir"
     }
@@ -78,8 +74,9 @@ node {
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
-    /*
-    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+    def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}").trim()
+    echo("currentSemverNewer=*${currentSemverNewer}*")
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {
 
       configFileProvider(
         [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
@@ -91,6 +88,5 @@ node {
         """
       }
     }
-    */
   }
 }
