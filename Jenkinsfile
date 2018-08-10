@@ -7,11 +7,11 @@ properties([[$class: 'BuildDiscarderProperty',
 
 node {
   def project = "navikt"
-  def application = "melosys-web-mock"
+  def application = "melosys-schema"
   def webMockDir = "/var/lib/jenkins/melosys-web-mock"
   // Nexus
   def nexusHost = "http://maven.adeo.no/nexus/content/repositories/m2internal"
-  def artifactPath = "/no/nav/melosys/melosys-web-mock/maven-metadata.xml"
+  def artifactPath = "/no/nav/melosys/${application}/maven-metadata.xml"
   // curl -s http://maven.adeo.no/nexus/content/repositories/m2internal/no/nav/melosys/melosys-web-mock/maven-metadata.xml | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
   def zipFile
 
@@ -71,12 +71,15 @@ node {
   }
   stage('Deploy ZIP archive to Maven') {
     // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
+    /*
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
     def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}").trim()
     echo("currentSemverNewer=*${currentSemverNewer}*")
-    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {
+    */
+    //if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {@
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
 
       configFileProvider(
         [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
