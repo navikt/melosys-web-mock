@@ -44,7 +44,7 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
-    semver = "${semVer.trim()}"
+    semVer = semVer.trim()
     echo("semver=*${semVer}*")
   }
 
