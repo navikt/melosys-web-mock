@@ -43,9 +43,8 @@ node {
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
 
-    semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
-    semVer = semVer.trim()
-    echo("semver=*${semVer}*")
+    semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
+    echo("semVer=${semVer}")
   }
 
   stage('npm install ') {
@@ -75,7 +74,7 @@ node {
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
-    def currentSemverNewer = sh "${npm} run-script semver-comp -- -a $semVer -b $nexusLatestVersion"
+    def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}")
     echo("currentSemverNewer=*${currentSemverNewer}*")
     /*
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
