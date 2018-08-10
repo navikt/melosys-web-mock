@@ -15,7 +15,6 @@ node {
   def zipFile
 
   /* metadata */
-  def buildVersion // major.minor.BUILD_NUMBER
   def semVer
   def commitHash, commitHashShort, commitUrl, committer
   def scmVars
@@ -45,10 +44,6 @@ node {
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"")
     echo("semver=${semVer}")
-
-    def majorMinor = semVer.split("\\.").take(2).join('.')
-    buildVersion ="${majorMinor}.${BUILD_NUMBER}"
-    echo("buildVersion=${buildVersion}")
   }
 
   stage('npm install ') {
@@ -61,8 +56,7 @@ node {
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "${application}-${buildVersion}.jar"
-    // sh "zip ${zipFile} `find ./scripts/mock_data -name \"*-schema.json\" -print`"
+    zipFile = "${application}-${semVer}.jar"
     sh "zip -r ${zipFile} scripts/schema/*"
   }
   stage('Copy Zip archive to pickup') {
@@ -75,7 +69,8 @@ node {
   }
   stage('Deploy ZIP archive to Maven') {
     // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
-    def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
+    //def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
+    def xpath = "'string((//metadata/versioning/release)'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
     /*
