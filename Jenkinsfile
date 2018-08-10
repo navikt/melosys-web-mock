@@ -58,8 +58,8 @@ node {
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "$webMockDir/$application-$semVer.jar"
-    echo("zipFile:$zipFile")
+    zipFile = "${application}-${semVer}.jar"
+    echo("zipFile:${zipFile}")
     sh "zip -r $zipFile ./scripts/schema/*"
   }
   stage('Copy Zip archive to pickup') {
