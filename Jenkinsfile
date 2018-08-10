@@ -72,8 +72,7 @@ node {
   }
   stage('Deploy ZIP archive to Maven') {
     // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
-    //def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
-    def xpath = "'string((//metadata/versioning/release)'"
+    def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
     def currentSemverNewer = sh(returnStdout: true, script: "npm semver-comp -a $semVer -b $nexusLatestVersion");
