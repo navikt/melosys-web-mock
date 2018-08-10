@@ -50,6 +50,7 @@ node {
     echo('Step: npm install package depenencies')
     sh "${node} -v"
     sh "${npm} -v"
+    sh "${npm} config ls -l"
     sh "${npm} install"
   }
 
@@ -73,6 +74,8 @@ node {
     def xpath = "'string((//metadata/versioning/release)'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
+    def currentSemverNewer = sh(returnStdout: true, script: "npm semver-comp -a $semVer -b $nexusLatestVersion");
+    echo("currentSemverNewer=${currentSemverNewer}")
     /*
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
 
