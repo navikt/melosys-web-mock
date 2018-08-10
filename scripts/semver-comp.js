@@ -6,4 +6,3 @@ const b = argv[5];
 // npm run-script semver-comp -- -a 2.0.0 -b 1.0.0
 const comp = semver.gt(a, b);
 console.log(comp.toString());
-return comp ? 1 : 0;

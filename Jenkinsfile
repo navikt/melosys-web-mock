@@ -74,10 +74,9 @@ node {
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
-    def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}")
+    def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}").trim()
     echo("currentSemverNewer=*${currentSemverNewer}*")
-    /*
-    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {
 
       configFileProvider(
         [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
@@ -89,6 +88,5 @@ node {
         """
       }
     }
-    */
   }
 }
