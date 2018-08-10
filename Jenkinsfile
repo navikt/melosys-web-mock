@@ -75,7 +75,7 @@ node {
     def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
     def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
     echo("nexusLatestVersion=${nexusLatestVersion}")
-    def currentSemverNewer = sh(returnStdout: true, script: "${npm} semver-comp -a $semVer -b $nexusLatestVersion");
+    def currentSemverNewer = sh(returnStdout: true, script: "${npm} run-script semver-comp -a $semVer -b $nexusLatestVersion");
     echo("currentSemverNewer=${currentSemverNewer}")
     /*
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
