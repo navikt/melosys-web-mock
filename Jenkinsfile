@@ -8,6 +8,7 @@ properties([[$class: 'BuildDiscarderProperty',
 node {
   def project = "navikt"
   def application = "melosys-web-mock"
+  def webMockDir = "/var/lib/jenkins/melosys-web-mock"
   // Nexus
   def nexusHost = "http://maven.adeo.no/nexus/content/repositories/m2internal"
   def artifactPath = "/no/nav/melosys/melosys-web-mock/maven-metadata.xml"
@@ -50,20 +51,20 @@ node {
     echo('Step: npm install package depenencies')
     sh "${node} -v"
     sh "${npm} -v"
-    sh "${npm} config ls -l"
+    sh "${npm} config ls"
     sh "${npm} install"
   }
 
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "${application}-${semVer}.jar"
-    sh "zip -r ${zipFile} scripts/schema/*"
+    zipFile = "$webMockDir/$application-$semVer.jar"
+    echo("zipFile:$zipFile")
+    sh "zip -r $zipFile ./scripts/schema/*"
   }
   stage('Copy Zip archive to pickup') {
 
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      def webMockDir = "/var/lib/jenkins/melosys-web-mock"
       sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
       sh "cp ${zipFile} $webMockDir"
     }
