@@ -19,11 +19,18 @@
       "arbeidUtlandErstatning": false,
       "arbeidUtlandHjemmekontor": false
     },
-    "foretakUtland": {
-      "foretakUtlandNavn": "Volkswagen AG",
-      "foretakUtlandOrgnr": "1122334444",
-      "foretakUtlandAdresse": null
-    },
+    "foretakUtland": [
+      {
+        "navn": "EQUINOR DEUTSCHLAND",
+        "orgnr": "372384726",
+        "adresse": {
+          "gatenavn": "Deutschlandstrasse 123",
+          "postnummer": "3388",
+          "poststed": "Berlin",
+          "land": ["DE"]
+        }
+      }
+    ],
     "oppholdUtland": {
       "oppholdsland": ["DE"],
       "oppholdsPeriode": {
