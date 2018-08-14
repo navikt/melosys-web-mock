@@ -16,7 +16,7 @@
   "scripts": {
     "happycase": "cross-env HAPPY=true node scripts/mock_api_server.js",
     "amock": "node scripts/mock_api_server.js",
-    "schema" : "node scripts/schema.js",
+    "schema": "node scripts/schema",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp"
   }
