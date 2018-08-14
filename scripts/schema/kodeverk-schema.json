@@ -141,7 +141,10 @@
               "Belgia"
             ]
           }
-        }
+        },
+        "required": [
+          "kode"
+        ]
       }
     },
     "oppgavetyper": {
