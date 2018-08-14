@@ -1,122 +1,122 @@
 const landkoder = [
   {
-    foo: 'BE',
+    kode: 'BE',
     term: 'Belgia',
   },
   {
-    foo: 'BG',
+    kode: 'BG',
     term: 'Bulgaria',
   },
   {
-    foo: 'DK',
+    kode: 'DK',
     term: 'Danmark',
   },
   {
-    foo: 'EE',
+    kode: 'EE',
     term: 'Estland',
   },
   {
-    foo: 'FI',
+    kode: 'FI',
     term: 'Finland',
   },
   {
-    foo: 'FR',
+    kode: 'FR',
     term: 'Frankrike',
   },
   {
-    foo: 'GR',
+    kode: 'GR',
     term: 'Hellas',
   },
   {
-    foo: 'IE',
+    kode: 'IE',
     term: 'Irland',
   },
   {
-    foo: 'IS',
+    kode: 'IS',
     term: 'Island',
   },
   {
-    foo: 'IT',
+    kode: 'IT',
     term: 'Italia',
   },
   {
-    foo: 'HR',
+    kode: 'HR',
     term: 'Kroatia',
   },
   {
-    foo: 'CY',
+    kode: 'CY',
     term: 'Kypros',
   },
   {
-    foo: 'LV',
+    kode: 'LV',
     term: 'Latvia',
   },
   {
-    foo: 'LI',
+    kode: 'LI',
     term: 'Liechtenstein',
   },
   {
-    foo: 'LT',
+    kode: 'LT',
     term: 'Litauen',
   },
   {
-    foo: 'LU',
+    kode: 'LU',
     term: 'Luxembourg',
   },
   {
-    foo: 'MT',
+    kode: 'MT',
     term: 'Malta',
   },
   {
-    foo: 'NL',
+    kode: 'NL',
     term: 'Nederland',
   },
   {
-    foo: 'NO',
+    kode: 'NO',
     term: 'Norge',
   },
   {
-    foo: 'PL',
+    kode: 'PL',
     term: 'Polen',
   },
   {
-    foo: 'PT',
+    kode: 'PT',
     term: 'Portugal',
   },
   {
-    foo: 'RO',
+    kode: 'RO',
     term: 'Romania',
   },
   {
-    foo: 'SK',
+    kode: 'SK',
     term: 'Slovakia',
   },
   {
-    foo: 'SI',
+    kode: 'SI',
     term: 'Slovenia',
   },
   {
-    foo: 'ES',
+    kode: 'ES',
     term: 'Spania',
   },
   {
-    foo: 'GB',
+    kode: 'GB',
     term: 'Storbritannia',
   },
   {
-    foo: 'SE',
+    kode: 'SE',
     term: 'Sverige',
   },
   {
-    foo: 'DE',
+    kode: 'DE',
     term: 'Tyskland',
   },
   {
-    foo: 'HU',
+    kode: 'HU',
     term: 'Ungarn',
   },
   {
-    foo: 'AT',
+    kode: 'AT',
     term: 'Østerrike',
   },
 ];
