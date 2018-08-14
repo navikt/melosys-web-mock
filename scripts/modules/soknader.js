@@ -3,12 +3,21 @@ const _ = require('underscore');
 const ERR = require('./errors');
 const utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-const lesSoknad = (behandlingID) => {
-  const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
+exports.lesSoknad = (behandlingID) => {
+  const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
-exports.lesSoknad = lesSoknad;
+
+exports.lesAlleSoknader = () => {
+    let soknadListe = [];
+    fs.readdirSync(MOCK_SOKNAD_DIR).forEach(file => {
+      const soknad = JSON.parse(fs.readFileSync(`${MOCK_SOKNAD_DIR}/${file}`, 'UTF-8'));
+      soknadListe.push(soknad)
+    });
+    return soknadListe;
+};
 
 const skrivSoknad = (behandlingID, soknadDokument) => {
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
