@@ -2,7 +2,10 @@ const fs = require('fs');
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const MOCK_DATA_DIR = `${process.cwd()}/mock_data`;
+const cwd = process.cwd();
+const SCRIPTS_DIR = cwd.endsWith('scripts') ? cwd : `${cwd}/scripts`;
+
+const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
 const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
 
 const schemajson = `${FAKTAAVKLARING_MOCK_DIR}/faktaavklaring-schema.json`;
