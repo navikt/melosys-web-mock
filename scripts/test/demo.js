@@ -1,5 +1,6 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
+const colors = require('colors/safe');
 
 // Example from; https://jsonschema.net/
 const jsonJS = {
@@ -114,16 +115,17 @@ const validate = ajv.compile(jsonJS);
 function runTest(data) {
   const valid = validate(data);
   if (valid) {
-    console.log('Valid!');
+    console.log(colors.green('\tValid!'));
     return 0;
   }
   else {
-    console.log('Invalid: ' + ajv.errorsText(validate.errors));
+    console.log(colors.red('\tInvalid: ' + ajv.errorsText(validate.errors)));
     return -1;
   }
 }
 
 const test = () => {
+  console.log(colors.blue('Demo'))
   runTest(JSON.stringify(jsonJS));
 };
 

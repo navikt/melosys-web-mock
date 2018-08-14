@@ -1,5 +1,6 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
+const colors = require('colors/safe');
 const fs = require('fs');
 
 const Personer = require('../modules/personer');
@@ -15,15 +16,16 @@ const validate = ajv.compile(schema);
 function runTest(data) {
   const valid = validate(data);
   if (valid) {
-    console.log('Valid!');
+    console.log(colors.green('\tPerson Valid!'));
     return 0;
   }
   else {
-    console.log('Invalid: ' + ajv.errorsText(validate.errors));
+    console.log(colors.red('\tInvalid: '+ ajv.errorsText(validate.errors)));
     return -1;
   }
 }
 const test = () => {
+  console.log(colors.blue('Person'));
   dokumenter.every((document) => runTest(document));
 };
 
