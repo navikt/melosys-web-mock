@@ -17,11 +17,9 @@ function runTest(data) {
   const valid = validate(data);
   if (valid) {
     console.log(colors.green('\tValid!'));
-    return 0;
   }
   else {
     console.log(colors.red('Invalid: ') + ajv.errorsText(validate.errors));
-    return -1;
   }
 }
 const test = () => {

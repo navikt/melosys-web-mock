@@ -17,16 +17,14 @@ function runTest(data) {
   const valid = validate(data);
   if (valid) {
     console.log(colors.green('\tValid!'));
-    return 0;
   }
   else {
     console.log(colors.red('\tInvalid: ' + ajv.errorsText(validate.errors)));
-    return -1;
   }
 }
 const test = () => {
   console.log(colors.blue('Soknad'));
-  dokumenter.every((document) => runTest(document));
+  dokumenter.forEach((elem) => runTest(elem));
 };
 
 const soknad = {
