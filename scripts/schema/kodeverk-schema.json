@@ -29,7 +29,11 @@
               "Søknad"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "behandlingsstatus": {
@@ -57,7 +61,11 @@
               "Opprettet"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "dokumentkategorier": {
@@ -85,7 +93,11 @@
               "Brev"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "dokumenttitler": {
@@ -113,7 +125,11 @@
               "Arbeidsforhold"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "landkoder": {
@@ -141,7 +157,11 @@
               "Belgia"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "oppgavetyper": {
@@ -169,7 +189,11 @@
               "Behandling"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "sakstyper": {
@@ -197,7 +221,11 @@
               "EU/EØS"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     },
     "vedleggstitler": {
@@ -225,8 +253,22 @@
               "Vedleggstittel 1"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ]
       }
     }
-  }
+  },
+  "required": [
+    "behandlingstyper",
+    "behandlingsstatus",
+    "dokumentkategorier",
+    "dokumenttitler",
+    "landkoder",
+    "oppgavetyper",
+    "sakstyper",
+    "vedleggstitler"
+  ]
 }
