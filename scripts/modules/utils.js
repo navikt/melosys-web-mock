@@ -4,11 +4,11 @@ const colors = require('colors/safe');
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
     const { keyword = '', dataPath = '', params = {}, message = '' } = singleError;
-    const { additionalProperty, missingProperty } = params;
+    const { additionalProperty } = params;
     const baseText = `[${keyword.toUpperCase()}] ${dataPath}: ${message}`;
-    const detailedText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
+    const fullText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
 
-    return detailedText;
+    return fullText;
   })
 }
 
