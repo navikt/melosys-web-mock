@@ -10,6 +10,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/person-schema.json`;
 const schema = Utils.lesSchema(schemajson);
+
 const catalog = Personer.lesAllePersoner();
 
 const validate = ajv.compile(schema);

@@ -4,12 +4,12 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 
-exports.lessAlleOppgaveSok = () => {
+exports.lesAlleOppgaveSok = () => {
   return Utils.lesAlleJson(MOCK_DATA_OPPGAVE_SOK_DIR);
 };
 
 const lesOppgave = (fnr) => {
-  const mockfile = `${MOCK_DATA_OPPGAVE_SOK_DIR}fnr-${fnr}.json`;
+  const mockfile = `${MOCK_DATA_OPPGAVE_SOK_DIR}/fnr-${fnr}.json`;
   if (fs.existsSync(mockfile)) {
     return JSON.parse(fs.readFileSync(mockfile, "utf8"));
   }

@@ -10,6 +10,7 @@ const { organisasjon } = require('./test/organsisasjon');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 const { SokOppgaver } = require('./test/sok-oppgaver');
+const { oppgaver } = require('./test/oppgaver');
 
 demo.test();
 kodeverk.test();
@@ -23,5 +24,6 @@ organisasjon.test();
 inngang.test();
 journalforing.test();
 SokOppgaver.test();
+oppgaver.test();
 
 console.log('\nSchema validation completed.');

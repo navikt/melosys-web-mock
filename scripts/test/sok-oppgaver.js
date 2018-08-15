@@ -10,7 +10,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/sok-oppgaver-schema.json`;
 const schema = Utils.lesSchema(schemajson);
-const catalog = sokOppgaver.lessAlleOppgaveSok();
+const catalog = sokOppgaver.lesAlleOppgaveSok();
 
 const validate = ajv.compile(schema);
 
