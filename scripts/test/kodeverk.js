@@ -23,7 +23,7 @@ function runTest(data) {
   }
 }
 const test = () => {
-  console.log(colors.blue('Kodeverk'))
+  console.log(colors.blue('Kodeverk'));
   runTest(dokument);
 };
 

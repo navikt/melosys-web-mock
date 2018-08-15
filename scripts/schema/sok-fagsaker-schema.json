@@ -1,0 +1,139 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "items": {
+    "$id": "http://example.com/example.json/items",
+    "type": "object",
+    "properties": {
+      "saksnummer": {
+        "$id": "http://example.com/example.json/items/properties/saksnummer",
+        "type": "string",
+        "title": "The Saksnummer Schema ",
+        "default": "",
+        "examples": [
+          "4"
+        ]
+      },
+      "sakstype": {
+        "$id": "http://example.com/example.json/items/properties/sakstype",
+        "type": "object",
+        "properties": {
+          "kode": {
+            "$id": "http://example.com/example.json/items/properties/sakstype/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema ",
+            "default": "",
+            "examples": [
+              "EU_EOS"
+            ]
+          },
+          "term": {
+            "$id": "http://example.com/example.json/items/properties/sakstype/properties/term",
+            "type": "string",
+            "title": "The Term Schema ",
+            "default": "",
+            "examples": [
+              "EU/EØS"
+            ]
+          }
+        }
+      },
+      "behandlingstype": {
+        "$id": "http://example.com/example.json/items/properties/behandlingstype",
+        "type": "object",
+        "properties": {
+          "kode": {
+            "$id": "http://example.com/example.json/items/properties/behandlingstype/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema ",
+            "default": "",
+            "examples": [
+              "SKND"
+            ]
+          },
+          "term": {
+            "$id": "http://example.com/example.json/items/properties/behandlingstype/properties/term",
+            "type": "string",
+            "title": "The Term Schema ",
+            "default": "",
+            "examples": [
+              "Søknad"
+            ]
+          }
+        }
+      },
+      "behandlingsstatus": {
+        "$id": "http://example.com/example.json/items/properties/behandlingsstatus",
+        "type": "object",
+        "properties": {
+          "kode": {
+            "$id": "http://example.com/example.json/items/properties/behandlingsstatus/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema ",
+            "default": "",
+            "examples": [
+              "OPPR"
+            ]
+          },
+          "term": {
+            "$id": "http://example.com/example.json/items/properties/behandlingsstatus/properties/term",
+            "type": "string",
+            "title": "The Term Schema ",
+            "default": "",
+            "examples": [
+              "Opprettet"
+            ]
+          }
+        }
+      },
+      "opprettetDato": {
+        "$id": "http://example.com/example.json/items/properties/opprettetDato",
+        "type": "string",
+        "title": "The Opprettetdato Schema ",
+        "default": "",
+        "examples": [
+          "2017-10-19T12:31:36"
+        ]
+      },
+      "soknadsperiode": {
+        "$id": "http://example.com/example.json/items/properties/soknadsperiode",
+        "type": "object",
+        "properties": {
+          "fom": {
+            "$id": "http://example.com/example.json/items/properties/soknadsperiode/properties/fom",
+            "type": "string",
+            "title": "The Fom Schema ",
+            "default": "",
+            "examples": [
+              "2018-08-01"
+            ]
+          },
+          "tom": {
+            "$id": "http://example.com/example.json/items/properties/soknadsperiode/properties/tom",
+            "type": "string",
+            "title": "The Tom Schema ",
+            "default": "",
+            "examples": [
+              "2018-12-31"
+            ]
+          }
+        }
+      },
+      "land": {
+        "$id": "http://example.com/example.json/items/properties/land",
+        "type": "array",
+        "items": {
+          "$id": "http://example.com/example.json/items/properties/land/items",
+          "type": "string",
+          "title": "The 0th Schema ",
+          "default": "",
+          "examples": [
+            "GB"
+          ]
+        }
+      }
+    }
+  }
+}
