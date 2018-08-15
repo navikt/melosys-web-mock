@@ -4,18 +4,25 @@
     "opplysningerOmBrukeren": {
       "personUtenlandskID": "123-12-123456789"
     },
-    "arbeidUtland": {
-      "arbeidsland": ["GB"],
-      "arbeidsperiode": {
-        "fom": "2018-03-01",
-        "tom": "2018-06-01"
-      },
-      "arbeidsandelNorge": 0,
-      "arbeidsandelUtland": 100,
-      "bostedsland": "NOR",
-      "erstatterTidligereUtsendt": false
+    "personOpplysninger": {
+      "utenlandskID": [],
+      "medfolgendeBarn": [],
+      "medfolgendeAndre": ""
     },
-    "foretakUtland": {},
+    "arbeidUtland": {
+      "adresse": {
+        "gatenavn": "Adresseveien 123",
+        "postnummer": "1234",
+        "poststed": "Poststedet",
+        "land": ["DE"]
+      },
+      "arbeidsandelNorge": 20,
+      "arbeidsandelUtland": 80,
+      "arbeidsstedUtland": null,
+      "arbeidUtlandErstatning": false,
+      "arbeidUtlandHjemmekontor": false
+    },
+    "foretakUtland": [],
     "oppholdUtland": {
       "oppholdsland": ["GB"],
       "oppholdsPeriode": {
