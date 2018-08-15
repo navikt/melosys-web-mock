@@ -1,21 +1,18 @@
 const fs = require('fs');
 const Ajv = require('ajv');
-// const URL = require('url');
+
 const ajv = new Ajv({allErrors: true});
-const utils = require('./utils');
+const Utils = require('./utils');
 const ERR = require('./errors');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
-const finnJournalpostFil = (journalpostID) => {
-  const mockfiles = fs.readdirSync(MOCK_JOURNALFORING_DIR);
-  return mockfiles.find(function (filnavn) {
-    return filnavn.startsWith(journalpostID);
-  });
-  return null;
+exports.lesAlleJournalforing = () => {
+  return Utils.lesAlleJson(MOCK_JOURNALFORING_DIR);
 };
-const lesOppgave = (journalpostID) => {
+
+const lesOppgave = () => {
   /* TODO lage flere filer.
   const filnavn = finnJournalpostFil(journalpostID);
   return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
@@ -42,12 +39,12 @@ exports.hent = (req, res) => {
 
 exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
-  const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
+  const schema = Utils.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
   try {
-    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const valid = test(validate, jsonBody);
     return (valid) ? res.json('') : valideringFeil(req, res);
   }
@@ -59,12 +56,12 @@ exports.sendOpprettNySak = (req, res) => {
 
 exports.sendTilordneSak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
-  const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
+  const schema = Utils.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
   try {
-    let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+    let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const valid = test(validate, jsonBody);
     return (valid) ? res.json('') : valideringFeil(req, res);
   }

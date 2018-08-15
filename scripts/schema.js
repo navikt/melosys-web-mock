@@ -8,6 +8,7 @@ const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { inngang } = require('./test/inngang');
+const { journalforing } = require('./test/journalforing');
 const { SokOppgaver } = require('./test/sok-oppgaver');
 
 demo.test();
@@ -20,6 +21,7 @@ SokFagsak.test();
 Saksbehandler.test();
 organisasjon.test();
 inngang.test();
+journalforing.test();
 SokOppgaver.test();
 
 console.log('\nSchema validation completed.');
