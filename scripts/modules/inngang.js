@@ -1,6 +1,12 @@
 const fs = require('fs');
+const Utils = require('./utils');
+
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
+
+exports.lesAlleInngang = () => {
+  return Utils.lesAlleJson(INNGANG_MOCK_DIR);
+};
 
 const lesInngang = (snr) => {
   const mockfile = `${INNGANG_MOCK_DIR}/inngang-snr-${snr}.json`;
