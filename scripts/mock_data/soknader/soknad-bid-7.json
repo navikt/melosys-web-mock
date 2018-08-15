@@ -1,45 +1,62 @@
 {
   "behandlingID": 7,
   "soknadDokument": {
-    "opplysningerOmBrukeren": {
-      "personUtenlandskID": "123-12-123456789"
+    "personOpplysninger": {
+      "utenlandskID": [{"ID": "38288D-A", "land": ["IT"]}],
+      "medfolgendeBarn": [],
+      "medfolgendeAndre": null
     },
     "arbeidUtland": {
-      "arbeidsland": [],
-      "arbeidsperiode": {
-        "fom": "2018-03-01",
-        "tom": "2018-06-01"
+      "adresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "land": []
       },
-      "arbeidsandelNorge": 0,
-      "arbeidsandelUtland": 100,
+      "arbeidsandelNorge": 32,
+      "arbeidsandelUtland": 68,
       "arbeidsstedUtland": null,
-      "bostedsland": "NOR",
-      "erstatterTidligereUtsendt": false
+      "arbeidUtlandErstatning": false,
+      "arbeidUtlandHjemmekontor": false
     },
-    "foretakUtland": {},
+    "foretakUtland": [],
     "oppholdUtland": {
       "oppholdsland": [],
       "oppholdsPeriode": {
-        "fom": "2017-12-01",
-        "tom": "2017-12-31"
+        "fom": null,
+        "tom": null
       },
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,
-      "studentFinansiering": "",
-      "studentSemester": ""
+      "studentFinansiering": null,
+      "studentSemester": null
+    },
+    "bosted": {
+      "intensjonOmRetur": true,
+      "bostedUtenforNorge": true,
+      "familiesBosted": [],
+      "antallMaanederINorge": 8,
+      "EOSBarnetrygdFraNAV": true,
+      "adresseIUtlandet": true,
+      "oppgittAdresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "land": []
+      }
     },
     "arbeidNorge": {
-      "arbeidsforholdOpprettholdIHelePerioden": true,
-      "arbeidsforholdVikarNavn": "Vikarbyrået AS",
-      "vikarOrgnr": "22334455",
-      "flyendePersonellHjemmebase": "Flybasen Int. Airport, ....",
-      "kontaktNavn": "Ola Nordmann",
-      "kontaktEpost": "ola.nordmann@fullmektigfirma.no",
-      "fullmektigFirma": "",
-      "fullmektigGateadresse": "",
-      "fullmektigPostnr": "",
-      "fullmektigPoststed": "",
-      "fullmektigRegion": "",
+      "arbeidsforholdOpprettholdIHelePerioden": null,
+      "arbeidsforholdVikarNavn": null,
+      "vikarOrgnr": null,
+      "flyendePersonellHjemmebase": null,
+      "kontaktNavn": null,
+      "kontaktEpost": null,
+      "fullmektigFirma": null,
+      "fullmektigGateadresse": null,
+      "fullmektigPostnr": null,
+      "fullmektigPoststed": null,
+      "fullmektigRegion": null,
       "fullmektigLand": []
     },
     "selvstendigArbeid": {
@@ -47,36 +64,37 @@
       "selvstendigForetak": []
     },
     "juridiskArbeidsgiverNorge": {
-      "antallAnsatte": 350,
-      "antallAdminAnsatte": 250,
-      "antallAdminAnsatteEOS": 75,
-      "andelOmsetningINorge": 78.5,
-      "andelKontrakterINorge": 50.5,
-      "erBemanningsbyra": false,
-      "hattDriftSiste12Mnd": true,
-      "antallUtsendte": 30
+      "erBemanningsbyra": null,
+      "utsendteNeste12Mnd": null,
+      "antallAdmAnsatte": null,
+      "antallAdminAnsatteEOS": null,
+      "andelOmsetningINorge": null,
+      "andelKontrakterINorge": null,
+      "utsendtFortsetterArbeidsforholdIUtlandet": null,
+      "utsendtArbeiderArbeiderMedKlienter": null,
+      "utsendtArbeiderArbeiderMedKontrakter": null
     },
     "arbeidsinntekt": {
-      "inntektNorskIPerioden": 35000,
-      "inntektUtenlandskIPerioden": 0,
+      "inntektNorskIPerioden": 20000,
+      "inntektUtenlandskIPerioden": 32334,
       "inntektNaeringIPerioden": 0,
-      "inntektNaturalYtelser": ["Fri bolig", "Fri bil"],
-      "inntektErInnrapporteringspliktig": true,
-      "inntektTrygdeavgiftBlirTrukket": true
+      "inntektNaturalYtelser": [],
+      "inntektErInnrapporteringspliktig": null,
+      "inntektTrygdeavgiftBlirTrukket": null
     },
     "arbeidsgiversBekreftelse": {
       "arbeidsgiverBekrefterUtsendelse": true,
       "arbeidstakerAnsattUnderUtsendelsen": true,
-      "erstatterArbeidstakerenUtsendte": false,
-      "arbeidstakerTidligereUtsendt24Mnd": false,
+      "erstatterArbeidstakerenUtsendte": true,
+      "arbeidstakerTidligereUtsendt24Mnd": true,
       "arbeidsgiverBetalerArbeidsgiveravgift": true,
       "trygdeavgiftTrukketGjennomSkatt": true,
-      "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
+      "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
     },
     "maritimtArbeid": {
-      "maritimType": "",
-      "skipsNavn": "",
-      "fartsomrade": "",
+      "maritimType": "SOKKEL",
+      "skipsNavn": null,
+      "fartsomrade": null,
       "flaggLand": [],
       "installasjonsLand": []
     }

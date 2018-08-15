@@ -57,8 +57,7 @@
                   "land": {
                     "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land",
                     "type": [
-                      "array",
-                      "null"
+                      "array"
                     ],
                     "items": {
                       "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land/items",
@@ -172,8 +171,7 @@
                 "land": {
                   "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/land",
                   "type": [
-                    "array",
-                    "null"
+                    "array"
                   ],
                   "items": {
                     "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/land/items",
@@ -268,8 +266,7 @@
         "foretakUtland": {
           "$id": "/properties/soknadDokument/properties/foretakUtland",
           "type": [
-            "array",
-            "null"
+            "array"
           ],
           "items": {
             "$id": "/properties/soknadDokument/properties/foretakUtland/items",
@@ -348,8 +345,7 @@
                   "land": {
                     "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/land",
                     "type": [
-                      "array",
-                      "null"
+                      "array"
                     ],
                     "items": {
                       "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/land/items",
@@ -635,8 +631,7 @@
                 "land": {
                   "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/land",
                   "type": [
-                    "array",
-                    "null"
+                    "array"
                   ],
                   "items": {
                     "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/land/items",
