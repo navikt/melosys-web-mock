@@ -2,16 +2,21 @@ const fs = require('fs');
 const URL = require('url');
 
 const ERR = require('./errors');
+const Utils = require('./utils');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
+exports.lesAlleOrganisasjoner = () => {
+  return Utils.lesAlleJson(MOCK_DATA_ORG_DIR);
+};
 /**
  * Les organisasjon json fil eller returner tom svar
  * @param orgnr
  * @returns {{}}
  */
 const lesOrganisasjon = (orgnr) => {
-  const mockfile = `${MOCK_DATA_DIR}/organisasjoner/orgnr-${orgnr}.json`;
+  const mockfile = `${MOCK_DATA_ORG_DIR}/orgnr-${orgnr}.json`;
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
