@@ -1,0 +1,605 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "soknadDokument": {
+      "$id": "/properties/soknadDokument",
+      "type": "object",
+      "properties": {
+        "opplysningerOmBrukeren": {
+          "$id": "/properties/soknadDokument/properties/opplysningerOmBrukeren",
+          "type": "object",
+          "properties": {
+            "personUtenlandskID": {
+              "$id": "/properties/soknadDokument/properties/opplysningerOmBrukeren/properties/personUtenlandskID",
+              "type": "string",
+              "title": "The Personutenlandskid Schema ",
+              "default": "",
+              "examples": [
+                "123-12-123456789"
+              ]
+            }
+          }
+        },
+        "arbeidUtland": {
+          "$id": "/properties/soknadDokument/properties/arbeidUtland",
+          "type": "object",
+          "properties": {
+            "arbeidsland": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsland",
+              "type": "array",
+              "items": {
+                "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsland/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "ES",
+                  "DK"
+                ]
+              }
+            },
+            "arbeidsperiode": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsperiode",
+              "type": "object",
+              "properties": {
+                "fom": {
+                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsperiode/properties/fom",
+                  "type": "string",
+                  "title": "The Fom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-01-01"
+                  ]
+                },
+                "tom": {
+                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsperiode/properties/tom",
+                  "type": "string",
+                  "title": "The Tom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-06-01"
+                  ]
+                }
+              }
+            },
+            "arbeidsandelNorge": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsandelNorge",
+              "type": "number",
+              "title": "The Arbeidsandelnorge Schema ",
+              "default": 0,
+              "examples": [
+                33.29999923706055
+              ]
+            },
+            "arbeidsandelUtland": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsandelUtland",
+              "type": "number",
+              "title": "The Arbeidsandelutland Schema ",
+              "default": 0,
+              "examples": [
+                66.5999984741211
+              ]
+            },
+            "arbeidsstedUtland": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsstedUtland",
+              "type": "null",
+              "title": "The Arbeidsstedutland Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "bostedsland": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/bostedsland",
+              "type": "string",
+              "title": "The Bostedsland Schema ",
+              "default": "",
+              "examples": [
+                "SE"
+              ]
+            },
+            "erstatterTidligereUtsendt": {
+              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/erstatterTidligereUtsendt",
+              "type": "boolean",
+              "title": "The Erstattertidligereutsendt Schema ",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          }
+        },
+        "foretakUtland": {
+          "$id": "/properties/soknadDokument/properties/foretakUtland",
+          "type": "object",
+          "properties": {
+            "foretakUtlandNavn": {
+              "$id": "/properties/soknadDokument/properties/foretakUtland/properties/foretakUtlandNavn",
+              "type": "string",
+              "title": "The Foretakutlandnavn Schema ",
+              "default": "",
+              "examples": [
+                "Volkswagen AG"
+              ]
+            },
+            "foretakUtlandOrgnr": {
+              "$id": "/properties/soknadDokument/properties/foretakUtland/properties/foretakUtlandOrgnr",
+              "type": "string",
+              "title": "The Foretakutlandorgnr Schema ",
+              "default": "",
+              "examples": [
+                "1122334444"
+              ]
+            },
+            "foretakUtlandAdresse": {
+              "$id": "/properties/soknadDokument/properties/foretakUtland/properties/foretakUtlandAdresse",
+              "type": "null",
+              "title": "The Foretakutlandadresse Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            }
+          }
+        },
+        "oppholdUtland": {
+          "$id": "/properties/soknadDokument/properties/oppholdUtland",
+          "type": "object",
+          "properties": {
+            "oppholdsland": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland",
+              "type": "array",
+              "items": {
+                "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "DE"
+                ]
+              }
+            },
+            "oppholdsPeriode": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
+              "type": "object",
+              "properties": {
+                "fom": {
+                  "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/fom",
+                  "type": "string",
+                  "title": "The Fom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-01-01"
+                  ]
+                },
+                "tom": {
+                  "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/tom",
+                  "type": "string",
+                  "title": "The Tom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-06-01"
+                  ]
+                }
+              }
+            },
+            "studentIEOS": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studentIEOS",
+              "type": "boolean",
+              "title": "The Studentieos Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "studentFinansiering": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studentFinansiering",
+              "type": "string",
+              "title": "The Studentfinansiering Schema ",
+              "default": "",
+              "examples": [
+                "Har egne midler oppspart, støtte fra familie."
+              ]
+            },
+            "studentSemester": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studentSemester",
+              "type": "string",
+              "title": "The Studentsemester Schema ",
+              "default": "",
+              "examples": [
+                "2018/2019"
+              ]
+            },
+            "studieLand": {
+              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studieLand",
+              "type": "string",
+              "title": "The Studieland Schema ",
+              "default": "",
+              "examples": [
+                "UK"
+              ]
+            }
+          }
+        },
+        "arbeidNorge": {
+          "$id": "/properties/soknadDokument/properties/arbeidNorge",
+          "type": "object",
+          "properties": {
+            "valgteArbeidsforhold": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/valgteArbeidsforhold",
+              "type": "array",
+              "items": {
+                "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/valgteArbeidsforhold/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "44137901"
+                ]
+              }
+            },
+            "arbeidsforholdOpprettholdIHelePerioden": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/arbeidsforholdOpprettholdIHelePerioden",
+              "type": "boolean",
+              "title": "The Arbeidsforholdopprettholdiheleperioden Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "brukerErSelvstendigNaeringsdrivende": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/brukerErSelvstendigNaeringsdrivende",
+              "type": "boolean",
+              "title": "The Brukererselvstendignaeringsdrivende Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "selvstendigFortsetterEtterArbeidIUtlandet": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/selvstendigFortsetterEtterArbeidIUtlandet",
+              "type": "boolean",
+              "title": "The Selvstendigfortsetteretterarbeidiutlandet Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "arbeidsforholdVikarNavn": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/arbeidsforholdVikarNavn",
+              "type": "string",
+              "title": "The Arbeidsforholdvikarnavn Schema ",
+              "default": "",
+              "examples": [
+                "Vikarbyrået AS"
+              ]
+            },
+            "vikarOrgnr": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/vikarOrgnr",
+              "type": "string",
+              "title": "The Vikarorgnr Schema ",
+              "default": "",
+              "examples": [
+                "22334455"
+              ]
+            },
+            "flyendePersonellHjemmebase": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/flyendePersonellHjemmebase",
+              "type": "string",
+              "title": "The Flyendepersonellhjemmebase Schema ",
+              "default": "",
+              "examples": [
+                "Flybasen Int. Airport, ...."
+              ]
+            },
+            "ansattPaSokkelEllerSkip": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/ansattPaSokkelEllerSkip",
+              "type": "string",
+              "title": "The Ansattpasokkelellerskip Schema ",
+              "default": "",
+              "examples": [
+                "sokkel | skip"
+              ]
+            },
+            "navnSkipEllerSokkel": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/navnSkipEllerSokkel",
+              "type": "string",
+              "title": "The Navnskipellersokkel Schema ",
+              "default": "",
+              "examples": [
+                "Trym-sokkelen"
+              ]
+            },
+            "sokkelLand": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/sokkelLand",
+              "type": "string",
+              "title": "The Sokkelland Schema ",
+              "default": "",
+              "examples": [
+                "SE"
+              ]
+            },
+            "skipFartsomrade": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/skipFartsomrade",
+              "type": "string",
+              "title": "The Skipfartsomrade Schema ",
+              "default": "",
+              "examples": [
+                "Europeisk fart"
+              ]
+            },
+            "skipFlaggLand": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/skipFlaggLand",
+              "type": "string",
+              "title": "The Skipflaggland Schema ",
+              "default": "",
+              "examples": [
+                "SE"
+              ]
+            },
+            "kontaktNavn": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/kontaktNavn",
+              "type": "string",
+              "title": "The Kontaktnavn Schema ",
+              "default": "",
+              "examples": [
+                "Ola Nordmann"
+              ]
+            },
+            "kontaktEpost": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/kontaktEpost",
+              "type": "string",
+              "title": "The Kontaktepost Schema ",
+              "default": "",
+              "examples": [
+                "ola.nordmann@fullmektigfirma.no"
+              ]
+            },
+            "fullmektigFirma": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigFirma",
+              "type": "string",
+              "title": "The Fullmektigfirma Schema ",
+              "default": "",
+              "examples": [
+                "Advokatfullmektig AS"
+              ]
+            },
+            "fullmektigAdresse": {
+              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigAdresse",
+              "type": "string",
+              "title": "The Fullmektigadresse Schema ",
+              "default": "",
+              "examples": [
+                "Adresseveien 123, 1234 Byen"
+              ]
+            }
+          }
+        },
+        "juridiskArbeidsgiverNorge": {
+          "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge",
+          "type": "object",
+          "properties": {
+            "antallAnsatte": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAnsatte",
+              "type": "integer",
+              "title": "The Antallansatte Schema ",
+              "default": 0,
+              "examples": [
+                350
+              ]
+            },
+            "antallAdminAnsatte": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdminAnsatte",
+              "type": "integer",
+              "title": "The Antalladminansatte Schema ",
+              "default": 0,
+              "examples": [
+                250
+              ]
+            },
+            "antallAdminAnsatteEOS": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdminAnsatteEOS",
+              "type": "integer",
+              "title": "The Antalladminansatteeos Schema ",
+              "default": 0,
+              "examples": [
+                75
+              ]
+            },
+            "andelOmsetningINorge": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelOmsetningINorge",
+              "type": "number",
+              "title": "The Andelomsetninginorge Schema ",
+              "default": 0,
+              "examples": [
+                78.5
+              ]
+            },
+            "andelKontrakterINorge": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelKontrakterINorge",
+              "type": "number",
+              "title": "The Andelkontrakterinorge Schema ",
+              "default": 0,
+              "examples": [
+                50.5
+              ]
+            },
+            "erBemanningsbyra": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/erBemanningsbyra",
+              "type": "boolean",
+              "title": "The Erbemanningsbyra Schema ",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "hattDriftSiste12Mnd": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/hattDriftSiste12Mnd",
+              "type": "boolean",
+              "title": "The Hattdriftsiste12mnd Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "antallUtsendte": {
+              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallUtsendte",
+              "type": "integer",
+              "title": "The Antallutsendte Schema ",
+              "default": 0,
+              "examples": [
+                30
+              ]
+            }
+          }
+        },
+        "arbeidsinntekt": {
+          "$id": "/properties/soknadDokument/properties/arbeidsinntekt",
+          "type": "object",
+          "properties": {
+            "inntektNorskIPerioden": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNorskIPerioden",
+              "type": "integer",
+              "title": "The Inntektnorskiperioden Schema ",
+              "default": 0,
+              "examples": [
+                5500
+              ]
+            },
+            "inntektUtenlandskIPerioden": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektUtenlandskIPerioden",
+              "type": "integer",
+              "title": "The Inntektutenlandskiperioden Schema ",
+              "default": 0,
+              "examples": [
+                2000
+              ]
+            },
+            "inntektNaeringIPerioden": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaeringIPerioden",
+              "type": "integer",
+              "title": "The Inntektnaeringiperioden Schema ",
+              "default": 0,
+              "examples": [
+                0
+              ]
+            },
+            "inntektNaturalYtelser": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser",
+              "type": "array",
+              "items": {
+                "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "Fri bolig",
+                  "Fri bil"
+                ]
+              }
+            },
+            "inntektErInnrapporteringspliktig": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektErInnrapporteringspliktig",
+              "type": "boolean",
+              "title": "The Inntekterinnrapporteringspliktig Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "inntektTrygdeavgiftBlirTrukket": {
+              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektTrygdeavgiftBlirTrukket",
+              "type": "boolean",
+              "title": "The Inntekttrygdeavgiftblirtrukket Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            }
+          }
+        },
+        "arbeidsgiversBekreftelse": {
+          "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse",
+          "type": "object",
+          "properties": {
+            "arbeidsgiverBekrefterUtsendelse": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBekrefterUtsendelse",
+              "type": "boolean",
+              "title": "The Arbeidsgiverbekrefterutsendelse Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "arbeidstakerAnsattUnderUtsendelsen": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerAnsattUnderUtsendelsen",
+              "type": "boolean",
+              "title": "The Arbeidstakeransattunderutsendelsen Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "erstatterArbeidstakerenUtsendte": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/erstatterArbeidstakerenUtsendte",
+              "type": "boolean",
+              "title": "The Erstatterarbeidstakerenutsendte Schema ",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "arbeidstakerTidligereUtsendt24Mnd": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerTidligereUtsendt24Mnd",
+              "type": "boolean",
+              "title": "The Arbeidstakertidligereutsendt24mnd Schema ",
+              "default": false,
+              "examples": [
+                false
+              ]
+            },
+            "arbeidsgiverBetalerArbeidsgiveravgift": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBetalerArbeidsgiveravgift",
+              "type": "boolean",
+              "title": "The Arbeidsgiverbetalerarbeidsgiveravgift Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "trygdeavgiftTrukketGjennomSkatt": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkatt",
+              "type": "boolean",
+              "title": "The Trygdeavgifttrukketgjennomskatt Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "trygdeavgiftTrukketGjennomSkattDato": {
+              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkattDato",
+              "type": "string",
+              "title": "The Trygdeavgifttrukketgjennomskattdato Schema ",
+              "default": "",
+              "examples": [
+                "2018-01-01"
+              ]
+            }
+          }
+        },
+        "tilleggsopplysninger": {
+          "$id": "/properties/soknadDokument/properties/tilleggsopplysninger",
+          "type": "string",
+          "title": "The Tilleggsopplysninger Schema ",
+          "default": "",
+          "examples": [
+            "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "behandlingID": {
+      "$id": "/properties/behandlingID",
+      "type": "integer",
+      "title": "The Behandlingid Schema ",
+      "default": 0,
+      "examples": [
+        3
+      ]
+    },
+    "vurdering": {
+      "$id": "/properties/vurdering",
+      "type": "object",
+      "properties": {
+        "lovvalgsbestemmelser": {
+          "$id": "/properties/vurdering/properties/lovvalgsbestemmelser",
+          "type": "array",
+          "items": {
+            "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items",
+            "type": "object",
+            "properties": {
+              "artikkel": {
+                "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/artikkel",
+                "type": "string",
+                "title": "The Artikkel Schema ",
+                "default": "",
+                "examples": [
+                  "12.1"
+                ]
+              },
+              "betingelser": {
+                "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/betingelser",
+                "type": "array",
+                "items": {
+                  "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/betingelser/items",
+                  "type": "object",
+                  "properties": {
+                    "argument": {
+                      "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/betingelser/items/properties/argument",
+                      "type": "string",
+                      "title": "The Argument Schema ",
+                      "default": "",
+                      "examples": [
+                        "Arbeidsgiver har virksomhet i landet arbeidstakeren sendes fra"
+                      ]
+                    },
+                    "krav": {
+                      "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/betingelser/items/properties/krav",
+                      "type": "string",
+                      "title": "The Krav Schema ",
+                      "default": "",
+                      "examples": [
+                        "er sann"
+                      ]
+                    },
+                    "resultat": {
+                      "$id": "/properties/vurdering/properties/lovvalgsbestemmelser/items/properties/betingelser/items/properties/resultat",
+                      "type": "string",
+                      "title": "The Resultat Schema ",
+                      "default": "",
+                      "examples": [
+                        "OPPFYLT"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "feilmeldinger": {
+          "$id": "/properties/vurdering/properties/feilmeldinger",
+          "type": "array",
+          "items": {
+            "$id": "/properties/vurdering/properties/feilmeldinger/items",
+            "type": "object",
+            "properties": {
+              "kategori": {
+                "$id": "/properties/vurdering/properties/feilmeldinger/items/properties/kategori",
+                "type": "object",
+                "properties": {
+                  "alvorlighetsgrad": {
+                    "$id": "/properties/vurdering/properties/feilmeldinger/items/properties/kategori/properties/alvorlighetsgrad",
+                    "type": "string",
+                    "title": "The Alvorlighetsgrad Schema ",
+                    "default": "",
+                    "examples": [
+                      "FEIL"
+                    ]
+                  },
+                  "beskrivelse": {
+                    "$id": "/properties/vurdering/properties/feilmeldinger/items/properties/kategori/properties/beskrivelse",
+                    "type": "string",
+                    "title": "The Beskrivelse Schema ",
+                    "default": "",
+                    "examples": [
+                      "Det er implementert delvis maskinell støtte for denne forespørselen."
+                    ]
+                  }
+                }
+              },
+              "melding": {
+                "$id": "/properties/vurdering/properties/feilmeldinger/items/properties/melding",
+                "type": "string",
+                "title": "The Melding Schema ",
+                "default": "",
+                "examples": [
+                  "Søkeren kan ikke arbeide på både skip og sokkel."
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

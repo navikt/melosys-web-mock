@@ -1,0 +1,270 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "faktaavklaring": {
+      "$id": "/properties/faktaavklaring",
+      "type": "object",
+      "properties": {
+        "opphold": {
+          "$id": "/properties/faktaavklaring/properties/opphold",
+          "type": "object",
+          "properties": {
+            "land": {
+              "$id": "/properties/faktaavklaring/properties/opphold/properties/land",
+              "type": "array",
+              "items": {
+                "$id": "/properties/faktaavklaring/properties/opphold/properties/land/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "GB"
+                ]
+              }
+            },
+            "periode": {
+              "$id": "/properties/faktaavklaring/properties/opphold/properties/periode",
+              "type": "object",
+              "properties": {
+                "fom": {
+                  "$id": "/properties/faktaavklaring/properties/opphold/properties/periode/properties/fom",
+                  "type": "string",
+                  "title": "The Fom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2018-01-01"
+                  ]
+                },
+                "tom": {
+                  "$id": "/properties/faktaavklaring/properties/opphold/properties/periode/properties/tom",
+                  "type": "string",
+                  "title": "The Tom Schema ",
+                  "default": "",
+                  "examples": [
+                    "2019-01-01"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "aktivitet": {
+          "$id": "/properties/faktaavklaring/properties/aktivitet",
+          "type": "object",
+          "properties": {
+            "aktivitetLand": {
+              "$id": "/properties/faktaavklaring/properties/aktivitet/properties/aktivitetLand",
+              "type": "array",
+              "items": {
+                "$id": "/properties/faktaavklaring/properties/aktivitet/properties/aktivitetLand/items",
+                "type": "string",
+                "title": "The 0th Schema ",
+                "default": "",
+                "examples": [
+                  "GB"
+                ]
+              }
+            }
+          }
+        },
+        "sysselsetting": {
+          "$id": "/properties/faktaavklaring/properties/sysselsetting",
+          "type": "object",
+          "properties": {
+            "sysselsettingType": {
+              "$id": "/properties/faktaavklaring/properties/sysselsetting/properties/sysselsettingType",
+              "type": "string",
+              "title": "The Sysselsettingtype Schema ",
+              "default": "",
+              "examples": [
+                "ARBEIDSTAKER"
+              ]
+            }
+          }
+        },
+        "utsending": {
+          "$id": "/properties/faktaavklaring/properties/utsending",
+          "type": "object",
+          "properties": {
+            "ansattINorskSelskap": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/ansattINorskSelskap",
+              "type": "boolean",
+              "title": "The Ansattinorskselskap Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "erstatterTidligereUtsendt": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/erstatterTidligereUtsendt",
+              "type": "boolean",
+              "title": "The Erstattertidligereutsendt Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "utsendingMindreEnn24Mnd": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/utsendingMindreEnn24Mnd",
+              "type": "null",
+              "title": "The Utsendingmindreenn24mnd Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "foretakDriverINorge": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/foretakDriverINorge",
+              "type": "boolean",
+              "title": "The Foretakdriverinorge Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "harForutgaendeMedlemskap": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/harForutgaendeMedlemskap",
+              "type": "boolean",
+              "title": "The Harforutgaendemedlemskap Schema ",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "arbeidKnyttetTilVirksomhetUtlandet": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/arbeidKnyttetTilVirksomhetUtlandet",
+              "type": "null",
+              "title": "The Arbeidknyttettilvirksomhetutlandet Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "sammeTypeVirksomhet": {
+              "$id": "/properties/faktaavklaring/properties/utsending/properties/sammeTypeVirksomhet",
+              "type": "null",
+              "title": "The Sammetypevirksomhet Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            }
+          }
+        },
+        "bostedsland": {
+          "$id": "/properties/faktaavklaring/properties/bostedsland",
+          "type": "object",
+          "properties": {
+            "bekrefterFamiliebosted": {
+              "$id": "/properties/faktaavklaring/properties/bostedsland/properties/bekrefterFamiliebosted",
+              "type": "null",
+              "title": "The Bekrefterfamiliebosted Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "bekrefterDisponering": {
+              "$id": "/properties/faktaavklaring/properties/bostedsland/properties/bekrefterDisponering",
+              "type": "null",
+              "title": "The Bekrefterdisponering Schema ",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "bostedsland": {
+              "$id": "/properties/faktaavklaring/properties/bostedsland/properties/bostedsland",
+              "type": "array"
+            }
+          }
+        },
+        "sektor": {
+          "$id": "/properties/faktaavklaring/properties/sektor",
+          "type": "object",
+          "properties": {
+            "ansattISektor": {
+              "$id": "/properties/faktaavklaring/properties/sektor/properties/ansattISektor",
+              "type": "string",
+              "title": "The Ansattisektor Schema ",
+              "default": "",
+              "examples": [
+                "INGEN_AV_DISSE"
+              ]
+            }
+          }
+        },
+        "tjenestemann": {
+          "$id": "/properties/faktaavklaring/properties/tjenestemann",
+          "type": "object",
+          "properties": {
+            "tjenestemann": {
+              "$id": "/properties/faktaavklaring/properties/tjenestemann/properties/tjenestemann",
+              "type": "string",
+              "title": "The Tjenestemann Schema ",
+              "default": "",
+              "examples": [
+                "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+              ]
+            }
+          }
+        },
+        "valgteArbeidsforhold": {
+          "$id": "/properties/faktaavklaring/properties/valgteArbeidsforhold",
+          "type": "array"
+        },
+        "yrkesaktivitetFordeling": {
+          "$id": "/properties/faktaavklaring/properties/yrkesaktivitetFordeling",
+          "type": "object",
+          "properties": {
+            "antallLand": {
+              "$id": "/properties/faktaavklaring/properties/yrkesaktivitetFordeling/properties/antallLand",
+              "type": "string",
+              "title": "The Antallland Schema ",
+              "default": "",
+              "examples": [
+                "ETT_LAND_IKKE_NORGE"
+              ]
+            }
+          }
+        },
+        "virksomhet": {
+          "$id": "/properties/faktaavklaring/properties/virksomhet",
+          "type": "object",
+          "properties": {
+            "aktivitetINorge": {
+              "$id": "/properties/faktaavklaring/properties/virksomhet/properties/aktivitetINorge",
+              "type": "string",
+              "title": "The Aktivitetinorge Schema ",
+              "default": "",
+              "examples": [
+                "OVER_25_PROSENT"
+              ]
+            },
+            "marginaltArbeid": {
+              "$id": "/properties/faktaavklaring/properties/virksomhet/properties/marginaltArbeid",
+              "type": "string",
+              "title": "The Marginaltarbeid Schema ",
+              "default": "",
+              "examples": [
+                "MARGINALT_JA"
+              ]
+            },
+            "vekslingMellomLand": {
+              "$id": "/properties/faktaavklaring/properties/virksomhet/properties/vekslingMellomLand",
+              "type": "string",
+              "title": "The Vekslingmellomland Schema ",
+              "default": "",
+              "examples": [
+                "EN_ELLER_BEGGE"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
