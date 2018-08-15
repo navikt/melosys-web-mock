@@ -3,7 +3,7 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-exports.lesSoknad = (behandlingID) => {
+const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
