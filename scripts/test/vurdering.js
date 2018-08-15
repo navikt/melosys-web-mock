@@ -1,7 +1,6 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
-const fs = require('fs');
 
 const Utils = require('../modules/utils');
 const Vurderinger = require('../modules/vurdering');
@@ -9,7 +8,7 @@ const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
-const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
+const schema = Utils.lesSchema(schemajson);
 const dokumenter = Vurderinger.lesAlleVurderinger();
 
 const validate = ajv.compile(schema);
