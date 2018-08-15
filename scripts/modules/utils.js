@@ -1,6 +1,17 @@
 const fs = require('fs');
 const colors = require('colors/safe');
 
+const humanReadableErrors = (allErrors = []) => {
+  return allErrors.map(singleError => {
+    const { keyword = '', dataPath = '', params = {}, message = '' } = singleError;
+    const { additionalProperty } = params;
+    const baseText = `[${keyword.toUpperCase()}] ${dataPath}: ${message}`;
+    const fullText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
+
+    return fullText;
+  })
+}
+
 exports.lesAlleJson = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
@@ -28,8 +39,7 @@ exports.runTest = (data, ajv, validate) => {
   }
   else {
     console.log(colors.red('\tInvalid: '+navn));
-    const texts = ajv.errorsText(validate.errors);
-    texts.split(',').forEach((msg, index) => console.log('\t',index,msg.trim()));
+    humanReadableErrors(validate.errors).forEach((msg, index) => console.log('\t', (index < 10 ? ` ${index}` : index), msg));
   }
 };
 
