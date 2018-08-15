@@ -33,8 +33,7 @@
             "utenlandskID": {
               "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items",
@@ -78,14 +77,14 @@
                 "required": [
                   "ID",
                   "land"
-                ]
+                ],
+                "additionalProperties": false
               }
             },
             "medfolgendeBarn": {
               "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn/items",
@@ -117,7 +116,8 @@
             "utenlandskID",
             "medfolgendeBarn",
             "medfolgendeAndre"
-          ]
+          ],
+          "additionalProperties": false
         },
         "arbeidUtland": {
           "$id": "/properties/soknadDokument/properties/arbeidUtland",
@@ -194,7 +194,8 @@
                 "postnummer",
                 "poststed",
                 "land"
-              ]
+              ],
+              "additionalProperties": false
             },
             "arbeidsandelNorge": {
               "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsandelNorge",
@@ -261,7 +262,8 @@
             "arbeidsstedUtland",
             "arbeidUtlandErstatning",
             "arbeidUtlandHjemmekontor"
-          ]
+          ],
+          "additionalProperties": false
         },
         "foretakUtland": {
           "$id": "/properties/soknadDokument/properties/foretakUtland",
@@ -368,14 +370,16 @@
                   "postnummer",
                   "poststed",
                   "land"
-                ]
+                ],
+                "additionalProperties": false
               }
             },
             "required": [
               "navn",
               "orgnr",
               "adresse"
-            ]
+            ],
+            "additionalProperties": false
           }
         },
         "oppholdUtland": {
@@ -388,8 +392,7 @@
             "oppholdsland": {
               "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
@@ -439,7 +442,8 @@
               "required": [
                 "fom",
                 "tom"
-              ]
+              ],
+              "additionalProperties": false
             },
             "ektefelleEllerBarnINorge": {
               "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
@@ -497,7 +501,8 @@
             "sammeAdresseSomArbeidsgiver",
             "studentFinansiering",
             "studentSemester"
-          ]
+          ],
+          "additionalProperties": false
         },
         "bosted": {
           "$id": "/properties/soknadDokument/properties/bosted",
@@ -533,8 +538,7 @@
             "familiesBosted": {
               "$id": "/properties/soknadDokument/properties/bosted/properties/familiesBosted",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/bosted/properties/familiesBosted/items",
@@ -664,7 +668,8 @@
             "EOSBarnetrygdFraNAV",
             "adresseIUtlandet",
             "oppgittAdresse"
-          ]
+          ],
+          "additionalProperties": false
         },
         "arbeidNorge": {
           "$id": "/properties/soknadDokument/properties/arbeidNorge",
@@ -808,8 +813,7 @@
             "fullmektigLand": {
               "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigLand",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigLand/items",
@@ -838,7 +842,8 @@
             "fullmektigPoststed",
             "fullmektigRegion",
             "fullmektigLand"
-          ]
+          ],
+          "additionalProperties": false
         },
         "selvstendigArbeid": {
           "$id": "/properties/soknadDokument/properties/selvstendigArbeid",
@@ -862,8 +867,7 @@
             "selvstendigForetak": {
               "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items",
@@ -907,7 +911,8 @@
           "required": [
             "erSelvstendig",
             "selvstendigForetak"
-          ]
+          ],
+          "additionalProperties": false
         },
         "juridiskArbeidsgiverNorge": {
           "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge",
@@ -1035,7 +1040,8 @@
             "utsendtFortsetterArbeidsforholdIUtlandet",
             "utsendtArbeiderArbeiderMedKlienter",
             "utsendtArbeiderArbeiderMedKontrakter"
-          ]
+          ],
+          "additionalProperties": false
         },
         "arbeidsinntekt": {
           "$id": "/properties/soknadDokument/properties/arbeidsinntekt",
@@ -1083,8 +1089,7 @@
             "inntektNaturalYtelser": {
               "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser/items",
@@ -1132,7 +1137,8 @@
             "inntektNaturalYtelser",
             "inntektErInnrapporteringspliktig",
             "inntektTrygdeavgiftBlirTrukket"
-          ]
+          ],
+          "additionalProperties": false
         },
         "arbeidsgiversBekreftelse": {
           "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse",
@@ -1234,7 +1240,8 @@
             "arbeidsgiverBetalerArbeidsgiveravgift",
             "trygdeavgiftTrukketGjennomSkatt",
             "trygdeavgiftTrukketGjennomSkattDato"
-          ]
+          ],
+          "additionalProperties": false
         },
         "maritimtArbeid": {
           "$id": "/properties/soknadDokument/properties/maritimtArbeid",
@@ -1282,8 +1289,7 @@
             "flaggLand": {
               "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/flaggLand",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/flaggLand/items",
@@ -1301,8 +1307,7 @@
             "installasjonsLand": {
               "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
               "type": [
-                "array",
-                "null"
+                "array"
               ],
               "items": {
                 "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/installasjonsLand/items",
@@ -1324,7 +1329,8 @@
             "fartsomrade",
             "flaggLand",
             "installasjonsLand"
-          ]
+          ],
+          "additionalProperties": false
         }
       },
       "required": [
@@ -1339,10 +1345,13 @@
         "arbeidsinntekt",
         "arbeidsgiversBekreftelse",
         "maritimtArbeid"
-      ]
-    }
+      ],
+      "additionalProperties": false
+    },
+    "additionalProperties": false
   },
   "required": [
     "behandlingID"
-  ]
+  ],
+  "additionalProperties": false
 }
