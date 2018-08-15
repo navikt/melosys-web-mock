@@ -120,6 +120,7 @@
     }
   },
   "required": [
-    "navn"
+    "navn",
+    "orgnr"
   ]
 }
