@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
+const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
@@ -32,6 +33,11 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
+ * SOK-FAGSAKER basert på fnr
+ */
+router.get('/fagsaker/sok/', sokFagsaker.sok);
+
+/**
  * FAGSAKER
  * ----------------------------------------------------------------------------
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
@@ -41,9 +47,6 @@ const router = express.Router();
  * POST (dette endpointet har ingen POST)
  *
  */
-
-router.get('/fagsaker/sok/', fagsaker.sok);
-
 router.get('/fagsaker/:snr', fagsaker.hent);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
 router.post('/fagsaker/journalforing', fagsaker.send);

@@ -3,7 +3,7 @@ import jenkins.model.*
 
 properties([[$class: 'BuildDiscarderProperty',
              strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '',
-                        daysToKeepStr: '', numToKeepStr: '5']]]);
+                        daysToKeepStr: '', numToKeepStr: '5']]])
 
 node {
   def project = "navikt"

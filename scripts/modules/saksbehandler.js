@@ -1,9 +1,15 @@
 const fs = require('fs');
 const _ = require('underscore');
+
+const Utils = require('./utils');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
+exports.lesAlleSaksbehandlere = () => {
+  return Utils.lesAlleJson(MOCK_DATA_SAKSBEHANDLER_DIR);
+};
 const lesSaksbehandlere = () => {
   const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
