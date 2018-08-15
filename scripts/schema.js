@@ -7,7 +7,7 @@ const { fagsak } = require('./test/fagsak');
 const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
-
+const { inngang } = require('./test/inngang');
 demo.test();
 kodeverk.test();
 person.test();
@@ -17,5 +17,6 @@ fagsak.test();
 SokFagsak.test();
 Saksbehandler.test();
 organisasjon.test();
+inngang.test();
 
 console.log('\nSchema validation completed.');
