@@ -14,7 +14,7 @@
     "underscore": "^1.9.1"
   },
   "scripts": {
-    "happycase": "cross-env HAPPY=true node scripts/mock_api_server.js",
+    "happycase": "cross-env HAPPY=true node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
     "amock": "node scripts/mock_api_server.js",
     "schema": "node scripts/schema",
     "semver": "node_modules/semver/bin/semver",

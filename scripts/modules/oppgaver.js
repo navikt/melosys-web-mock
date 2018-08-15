@@ -1,7 +1,7 @@
 const fs = require('fs');
 const utils = require('./utils');
 const { kodeverk } = require('./kodeverk');
-const Soknader = require('./soknader');
+const { lesSoknad } = require('./soknader');
 const _ = require('underscore');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
@@ -46,7 +46,7 @@ const minesaker = (oppgaveliste) => {
       saksnummer: '4'
     }]);
     const bid = 4;
-    const soknaden = Soknader.lesSoknad(bid);
+    const soknaden = lesSoknad(bid);
     const {
       soknadDokument: {
         arbeidUtland: {
