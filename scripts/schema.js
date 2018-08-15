@@ -9,3 +9,5 @@ kodeverk.test();
 person.test();
 soknad.test();
 vurdering.test();
+
+console.log('\nSchema validation completed.');

@@ -1,7 +1,5 @@
 const fs = require('fs');
-const _ = require('underscore');
-const ERR = require('./errors');
-const utils = require('./utils');
+const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
@@ -11,12 +9,7 @@ exports.lesSoknad = (behandlingID) => {
 };
 
 exports.lesAlleSoknader = () => {
-    let soknadListe = [];
-    fs.readdirSync(MOCK_SOKNAD_DIR).forEach(file => {
-      const soknad = JSON.parse(fs.readFileSync(`${MOCK_SOKNAD_DIR}/${file}`, 'UTF-8'));
-      soknadListe.push(soknad)
-    });
-    return soknadListe;
+  return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soknadDokument) => {
@@ -57,7 +50,7 @@ exports.hent = (req, res) => {
 exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
 
   try {

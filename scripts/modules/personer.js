@@ -1,6 +1,6 @@
 const fs = require('fs');
 const URL = require('url');
-
+const Utils  = require('./utils');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
@@ -11,13 +11,7 @@ const lesPerson = (fnr) => {
 };
 
 exports.lesAllePersoner = () => {
-  let personer = [];
-  fs.readdirSync(PERSON_MOCK_DATA_DIR).forEach(file => {
-    const mockfile = `${PERSON_MOCK_DATA_DIR}/${file}`;
-    const person = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-    personer.push(person);
-  });
-  return personer;
+  return Utils.lesAlleJson(PERSON_MOCK_DATA_DIR)
 };
 
 exports.hent = (req, res) => {
