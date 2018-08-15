@@ -1,0 +1,26 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "brukernavn": {
+      "$id": "/properties/brukernavn",
+      "type": "string",
+      "title": "The Brukernavn Schema ",
+      "default": "",
+      "examples": [
+        "Z991001"
+      ]
+    },
+    "navn": {
+      "$id": "/properties/navn",
+      "type": "string",
+      "title": "The Navn Schema ",
+      "default": "",
+      "examples": [
+        "F_Z991001 E_Z991001"
+      ]
+    }
+  }
+}

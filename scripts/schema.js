@@ -5,6 +5,7 @@ const { soknad } = require('./test/soknad');
 const { vurdering } = require('./test/vurdering');
 const { fagsak } = require('./test/fagsak');
 const { SokFagsak } = require('./test/sok-fagsak');
+const { Saksbehandler } = require('./test/saksbehandler');
 
 demo.test();
 kodeverk.test();
@@ -13,5 +14,6 @@ soknad.test();
 vurdering.test();
 fagsak.test();
 SokFagsak.test();
+Saksbehandler.test();
 
 console.log('\nSchema validation completed.');
