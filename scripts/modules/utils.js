@@ -14,6 +14,10 @@ exports.lesAlleJson = dirpath => {
   return catalog;
 };
 
+exports.lesSchema = schemapath => {
+  return JSON.parse(fs.readFileSync(schemapath, "utf8"));
+};
+
 exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
