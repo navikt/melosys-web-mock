@@ -22,5 +22,5 @@ const test = () => {
 const vurdering = {
   test,
 };
-exports.vurdering = vurdering;
+module.exports.vurdering = vurdering;
 

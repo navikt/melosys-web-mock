@@ -5,7 +5,7 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const VURDERING__MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
-exports.lesAlleVurderinger = () => {
+module.exports.lesAlleVurderinger = () => {
   /*
   let vurderingListe = [];
   fs.readdirSync(VURDERING__MOCK_DATA_DIR).forEach(file => {
@@ -22,7 +22,7 @@ exports.lesAlleVurderinger = () => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const mockfile = `${MOCK_DATA_DIR}/vurdering/vurdering-bid-${behandlingID}.json`;
@@ -50,7 +50,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let responseBody = Utils.isJSON(body) ? JSON.parse(body) : body;

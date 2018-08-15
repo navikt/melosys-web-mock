@@ -23,5 +23,5 @@ const test = () => {
 const inngang = {
   test,
 };
-exports.inngang = inngang;
+module.exports.inngang = inngang;
 

@@ -7,7 +7,7 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
-exports.lesAlleOrganisasjoner = () => {
+module.exports.lesAlleOrganisasjoner = () => {
   return Utils.lesAlleJson(MOCK_DATA_ORG_DIR);
 };
 /**
@@ -26,7 +26,7 @@ const lesOrganisasjon = (orgnr) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const orgnr = req.query.orgnr;
   if (orgnr && orgnr.length === 9) {
     const organisasjon = lesOrganisasjon(orgnr);

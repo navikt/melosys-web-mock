@@ -10,7 +10,7 @@ const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
-exports.lesAlleSokFagsaker = () => {
+module.exports.lesAlleSokFagsaker = () => {
   return Utils.lesAlleJson(MOCK_SOK_FAGFSAKER_DIR);
 };
 const lesSokFagsak = (fnr) => {
@@ -44,7 +44,7 @@ const lesSokFagsakListe = () => {
  * @param res
  * @returns {*}
  */
-exports.sok = (req, res) => {
+module.exports.sok = (req, res) => {
   try {
     const fnr = req.query.fnr;
     if (fnr) {

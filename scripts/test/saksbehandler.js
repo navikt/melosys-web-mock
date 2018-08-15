@@ -24,5 +24,5 @@ const test = () => {
 const Saksbehandler = {
   test,
 };
-exports.Saksbehandler = Saksbehandler;
+module.exports.Saksbehandler = Saksbehandler;
 

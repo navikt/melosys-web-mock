@@ -21,5 +21,5 @@ const test = () => {
 const soknad = {
   test,
 };
-exports.soknad = soknad;
+module.exports.soknad = soknad;
 

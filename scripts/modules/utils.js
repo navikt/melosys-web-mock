@@ -6,13 +6,11 @@ const humanReadableErrors = (allErrors = []) => {
     const { keyword = '', dataPath = '', params = {}, message = '' } = singleError;
     const { additionalProperty } = params;
     const baseText = `[${keyword.toUpperCase()}] ${dataPath}: ${message}`;
-    const fullText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
-
-    return fullText;
+    return additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
   })
-}
+};
 
-exports.lesAlleJson = dirpath => {
+module.exports.lesAlleJson = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
@@ -27,11 +25,11 @@ exports.lesAlleJson = dirpath => {
   return catalog;
 };
 
-exports.lesSchema = schemapath => {
+module.exports.lesSchema = schemapath => {
   return JSON.parse(fs.readFileSync(schemapath, "utf8"));
 };
 
-exports.runTest = (data, ajv, validate) => {
+module.exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
@@ -43,7 +41,7 @@ exports.runTest = (data, ajv, validate) => {
   }
 };
 
-exports.isJSON = (str) => {
+module.exports.isJSON = (str) => {
   try {
     return (JSON.parse(str) && !!str);
   } catch (e) {

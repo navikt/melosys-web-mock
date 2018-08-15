@@ -23,5 +23,5 @@ const test = () => {
 const organisasjon = {
   test,
 };
-exports.organisasjon = organisasjon;
+module.exports.organisasjon = organisasjon;
 

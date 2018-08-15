@@ -1,7 +1,6 @@
-const fs = require('fs');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
-exports.hentPdf = (req, res) => {
+module.exports.hentPdf = (req, res) => {
   const mockfile = `${MOCK_DATA_DIR}/dokumenter/dokumenttest.pdf`;
 
   res.type('application/pdf');

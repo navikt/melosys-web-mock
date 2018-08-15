@@ -12,11 +12,11 @@ const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 const timestamp = moment();
 
-exports.lesAlleFagsaker = () => {
+module.exports.lesAlleFagsaker = () => {
   return Utils.lesAlleJson(MOCK_DATA_FAGSAK_DIR);
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const snr = req.params.snr && req.params.snr.toString() || '';
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
@@ -41,7 +41,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*|void}
  */
-exports.opprett = (req, res) => {
+module.exports.opprett = (req, res) => {
   try {
 
     const fnr = req.params.fnr && req.params.fnr.toString() || '';
@@ -71,7 +71,7 @@ exports.opprett = (req, res) => {
       kjoenn: _.sample(['M','K']),
     };
     const mockfile = `${MOCK_DATA_DIR}/sok/fagsaker/fnr-${fnr}.json`;
-    mockfagsaker = [mockfagsak];
+    const mockfagsaker = [...mockfagsak];
     fs.writeFileSync(mockfile, JSON.stringify(mockfagsaker, null, 2));
     return res.status(201).send(mockfagsak);
   }
@@ -85,9 +85,9 @@ exports.opprett = (req, res) => {
  * @param req
  * @param res
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const body = req.body;
-  let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   console.log(jsonBody);
   res.json(jsonBody);
 };

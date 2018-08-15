@@ -24,5 +24,5 @@ const test = () => {
 const SokFagsak = {
   test,
 };
-exports.SokFagsak = SokFagsak;
+module.exports.SokFagsak = SokFagsak;
 

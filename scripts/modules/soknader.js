@@ -8,7 +8,7 @@ const lesSoknad = (behandlingID) => {
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
 
-exports.lesAlleSoknader = () => {
+module.exports.lesAlleSoknader = () => {
   return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
 };
 
@@ -30,7 +30,7 @@ const skrivSoknad = (behandlingID, soknadDokument) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const behandlingID = req.params.behandlingID;
   try {
     const soknad = lesSoknad(behandlingID);
@@ -47,7 +47,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;

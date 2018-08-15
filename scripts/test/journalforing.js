@@ -23,5 +23,5 @@ const test = () => {
 const journalforing = {
   test,
 };
-exports.journalforing = journalforing;
+module.exports.journalforing = journalforing;
 

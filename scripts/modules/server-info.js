@@ -14,7 +14,7 @@ function platformNIC() {
 }
 
 
-exports.getIpAdress = () => {
+module.exports.getIpAdress = () => {
   const nic = platformNIC();
   const ipv4 = _.find(nic, function(item){
     return item.family === 'IPv4';

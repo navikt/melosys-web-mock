@@ -56,4 +56,4 @@ const dokumentkategorier = [
     term: 'Tolkbart skjema',
   },
 ];
-exports.dokumentkategorier = dokumentkategorier;
+module.exports.dokumentkategorier = dokumentkategorier;

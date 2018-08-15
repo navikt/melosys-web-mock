@@ -121,4 +121,4 @@ const test = () => {
 const demo = {
   test,
 };
-exports.demo = demo;
+module.exports.demo = demo;
