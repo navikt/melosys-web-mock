@@ -5,11 +5,13 @@ exports.lesAlleJson = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
-    const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
-    catalog.push({
-      navn,
-      document
-    });
+    if (!filepath.endsWith('-schema.json')) {
+      const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
+      catalog.push({
+        navn,
+        document
+      });
+    }
   });
   return catalog;
 };
