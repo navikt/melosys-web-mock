@@ -1,12 +1,13 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
+const { demo } = require('./test/demo');
 const { kodeverk } = require('./test/kodeverk');
+const { person } = require('./test/person');
+const { soknad } = require('./test/soknad');
+const { vurdering } = require('./test/vurdering');
 
-let validate = ajv.compile(kodeverk.schema);
-test(kodeverk.dokument);
+demo.test();
+kodeverk.test();
+person.test();
+soknad.test();
+vurdering.test();
 
-function test(data) {
-  const valid = validate(data);
-  if (valid) console.log('Valid!');
-  else console.log('Invalid: ' + ajv.errorsText(validate.errors));
-}
+console.log('\nSchema validation completed.');
