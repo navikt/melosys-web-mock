@@ -1,8 +1,6 @@
 {
   "$id": "http://example.com/example.json",
   "type": "object",
-  "definitions": {},
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "brukernavn": {
       "$id": "/properties/brukernavn",
@@ -22,5 +20,9 @@
         "F_Z991001 E_Z991001"
       ]
     }
-  }
+  },
+  "required": [
+    "brukernavn",
+    "navn"
+  ]
 }
