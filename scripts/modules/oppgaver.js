@@ -63,7 +63,7 @@ const mineOppgaver = (oppgaveliste) => {
   });
 };
 
-exports.lesOppgaver = () => {
+exports.lesKatalog = () => {
   const navn = 'oppgaver.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
   const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));

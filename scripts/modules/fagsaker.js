@@ -13,7 +13,7 @@ const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 const timestamp = moment();
 
 exports.lesAlleFagsaker = () => {
-  return Utils.lesAlleJson(MOCK_DATA_FAGSAK_DIR);
+  return Utils.lesKatalog(MOCK_DATA_FAGSAK_DIR);
 };
 
 exports.hent = (req, res) => {

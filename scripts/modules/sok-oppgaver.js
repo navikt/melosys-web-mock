@@ -5,7 +5,7 @@ const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 
 exports.lesAlleOppgaveSok = () => {
-  return Utils.lesAlleJson(MOCK_DATA_OPPGAVE_SOK_DIR);
+  return Utils.lesKatalog(MOCK_DATA_OPPGAVE_SOK_DIR);
 };
 
 const lesOppgave = (fnr) => {
