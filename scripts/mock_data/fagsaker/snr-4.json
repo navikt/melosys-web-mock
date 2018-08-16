@@ -86,7 +86,7 @@
                 "avloenningstype":"Fastlønn",
                 "yrke":"MATROS",
                 "avtaltArbeidstimerPerUke":37.5,
-                "stillingsprosent":100.0,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
                 "skipsregister":"NOR",
                 "skipstype":"Annet",
@@ -122,7 +122,12 @@
                 "avloenningstype":"",
                 "yrke":"ALTMULIGMANN (PRIVATHJEM)",
                 "beregnetAntallTimerPrUke":0.0,
-                "maritimArbeidsavtale":false
+                "maritimArbeidsavtale":false,
+                "avtaltArbeidstimerPerUke": 0,
+                "stillingsprosent": 100,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering":[
@@ -144,8 +149,7 @@
             "arbeidsforholdID":"2",
             "arbeidsforholdIDnav":44137902,
             "ansettelsesPeriode":{
-              "fom":"2017-01-01",
-              "tom":"2017-12-31"
+              "fom":"2017-01-01"
             },
             "arbeidsforholdstype":"Ordinært arbeidsforhold",
             "arbeidsavtaler":[
@@ -154,9 +158,12 @@
                 "avloenningstype":"Fastlønn",
                 "yrke":"VIKARBYRÅKONSULENT",
                 "avtaltArbeidstimerPerUke":37.5,
-                "stillingsprosent":100.0,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
-                "maritimArbeidsavtale":false
+                "maritimArbeidsavtale":false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering":[
@@ -180,25 +187,7 @@
             "opplysningspliktigID":"991492704",
             "opprettelsestidspunkt":"2018-01-24T14:32:57.043+01:00",
             "sistBekreftet":"2018-01-24T14:37:23+01:00",
-            "Aordning":true,
-            "timerTimelonnet":[
-              {
-                "antallTimer":75.0,
-                "rapporteringsperiode":"2017-01",
-                "timelonnetPeriode":{
-                  "fom":"2017-01-01",
-                  "tom":"2017-01-31"
-                }
-              },
-              {
-                "antallTimer":75.0,
-                "rapporteringsperiode":"2017-02",
-                "timelonnetPeriode":{
-                  "fom":"2017-02-01",
-                  "tom":"2017-02-28"
-                }
-              }
-            ]
+            "Aordning":true
           },
           {
             "arbeidsforholdID":"",
@@ -213,9 +202,12 @@
                 "avloenningstype":"Fastlønn",
                 "yrke":"KONSULENT",
                 "avtaltArbeidstimerPerUke":37.5,
-                "stillingsprosent":100.0,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
-                "maritimArbeidsavtale":false
+                "maritimArbeidsavtale":false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering":[
@@ -246,17 +238,7 @@
             "opplysningspliktigID":"991492704",
             "opprettelsestidspunkt":"2018-01-23T14:19:59.388+01:00",
             "sistBekreftet":"2018-01-24T14:28:21+01:00",
-            "Aordning":true,
-            "timerTimelonnet":[
-              {
-                "antallTimer":30.0,
-                "rapporteringsperiode":"2018-01",
-                "timelonnetPeriode":{
-                  "fom":"2018-01-01",
-                  "tom":"2018-01-31"
-                }
-              }
-            ]
+            "Aordning":true
           }
         ],
         "organisasjoner":[
@@ -351,6 +333,13 @@
               },
               "postnr":"1711",
               "land":"NO"
+            },
+            "postadresse": {
+              "gateadresse": {
+                "gatenavn": null
+              },
+              "postnr": null,
+              "land": null
             }
           },
           {

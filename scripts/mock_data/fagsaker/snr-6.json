@@ -9,6 +9,7 @@
     "term":"Opprettet"
   },
   "registrertDato": "2018-03-12T14:32:37.448",
+  "endretDato":"2018-03-15T16:31:35.845",
   "behandlinger": [
     {
       "oppsummering": {
@@ -21,17 +22,55 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-12T14:32:37.448"
+        "registrertDato": "2018-03-12T14:32:37.448",
+        "endretDato":"2018-03-15T16:31:35.845"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "28106600300",
           "sivilstand": "Ugift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "MASKIN ARTIG",
           "personstatus": "Bosatt",
-          "kjoenn": "M",
-          "foedselsdato": "1966-10-28"
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato": "1966-10-28",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold": [
           {
@@ -49,7 +88,10 @@
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "skipsregister":"NOR",
+                "skipstype":"Annet",
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [],
@@ -78,7 +120,10 @@
                 "avtaltArbeidstimerPerUke": 20.0,
                 "stillingsprosent": 30.0,
                 "beregnetAntallTimerPrUke": 6.0,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [],
@@ -97,6 +142,8 @@
           {
             "orgnr": "973063804",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz' gate 16"
@@ -115,6 +162,8 @@
           {
             "orgnr": "935333156",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1987-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz gate 16"
@@ -133,6 +182,8 @@
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Sandslivegen 90"
@@ -151,6 +202,8 @@
           {
             "orgnr": "910099035",
             "navn": "SKARSVÅG OG VANSE",
+            "registrert": "2010-01-01",
+            "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Olav Kyrres gate 9"
@@ -169,6 +222,8 @@
           {
             "orgnr": "810072512",
             "navn": "EIKEN OG TORSKEN",
+            "registrert": "2010-01-01",
+            "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lunderhaugen 1"
@@ -431,10 +486,6 @@
                     "inntektsperiodetype": "Maaned",
                     "inntektsstatus": "LoependeInnrapportert",
                     "levereringstidspunkt": "2018-03-12T14:32:35.798",
-                    "opptjeningsperiode": {
-                      "fom": "2018-02-01",
-                      "tom": "2018-03-31"
-                    },
                     "utbetaltIPeriode": "2018-02",
                     "opplysningspliktigID": "873152362",
                     "virksomhetID": "873152362",

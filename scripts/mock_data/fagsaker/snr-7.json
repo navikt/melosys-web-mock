@@ -9,6 +9,7 @@
     "term":"Opprettet"
   },
   "registrertDato": "2018-03-12T16:23:42.122",
+  "endretDato":"2018-03-15T16:31:35.845",
   "behandlinger": [
     {
       "oppsummering": {
@@ -21,17 +22,55 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-12T16:23:42.122"
+        "registrertDato": "2018-03-12T16:23:42.122",
+        "endretDato":"2018-03-15T16:31:35.845"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "22127501762",
           "sivilstand": "Ugift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "KAFFI RASK",
           "personstatus": "Bosatt",
-          "kjoenn": "M",
-          "foedselsdato": "1975-12-22"
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato": "1975-12-22",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold": [
           {
@@ -47,9 +86,12 @@
                 "avloenningstype": "Fastlønn",
                 "yrke": "KONSULENT",
                 "avtaltArbeidstimerPerUke": 37.5,
-                "stillingsprosent": 100.0,
+                "stillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale":false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [],
@@ -68,6 +110,8 @@
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Sandslivegen 90"
@@ -86,6 +130,8 @@
           {
             "orgnr": "923609016",
             "navn": "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Forusbeen 50"

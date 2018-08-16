@@ -9,6 +9,7 @@
     "term":"Opprettet"
   },
   "registrertDato": "2018-03-06T12:05:59.031",
+  "endretDato": null,
   "behandlinger": [
     {
       "oppsummering": {
@@ -21,17 +22,55 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-06T12:05:59.031"
+        "registrertDato": "2018-03-06T12:05:59.031",
+        "endretDato":"2018-03-15T16:31:35.845"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "17117802280",
           "sivilstand": "Ugift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "KAKE ARTIG",
           "personstatus": "Bosatt",
-          "kjoenn": "K",
-          "foedselsdato": "1978-11-17"
+          "kjoenn":{
+            "kode": "F",
+            "term": "Kvinne"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato": "1978-11-17",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold": [
           {
@@ -49,7 +88,10 @@
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [],
@@ -67,8 +109,7 @@
             "arbeidsforholdID": "",
             "arbeidsforholdIDnav": 44138021,
             "ansettelsesPeriode": {
-              "fom": "2017-10-01",
-              "tom": "2018-01-31"
+              "fom": "2017-10-01"
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
@@ -79,7 +120,10 @@
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [
@@ -116,7 +160,9 @@
         "organisasjoner": [
           {
             "orgnr": "923609016",
-            "navn": "STATOIL ASA",
+            "navn":"EQUINOR ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Forusbeen 50"
@@ -135,6 +181,8 @@
           {
             "orgnr": "973063804",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1987-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz' gate 16"
@@ -153,6 +201,8 @@
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Sandslivegen 90"
@@ -171,6 +221,8 @@
           {
             "orgnr": "935333156",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz gate 16"
@@ -418,10 +470,6 @@
                     "inntektsperiodetype": "Maaned",
                     "inntektsstatus": "LoependeInnrapportert",
                     "levereringstidspunkt": "2018-03-06T12:05:57.489",
-                    "opptjeningsperiode": {
-                      "fom": "2018-02-01",
-                      "tom": "2018-02-15"
-                    },
                     "utbetaltIPeriode": "2018-02",
                     "opplysningspliktigID": "873152362",
                     "virksomhetID": "873152362",

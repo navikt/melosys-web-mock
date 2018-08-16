@@ -396,22 +396,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "Periode",
-                      "tilleggsinformasjonDetaljer": {
-                        "etterbetalingsperiode": {
-                          "fom": "2017-03-01",
-                          "tom": "2017-03-31"
-                        },
-                        "periode": {
-                          "fom": "2017-03-01",
-                          "tom": "2017-03-31"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -424,22 +412,10 @@
                     "utbetaltIPeriode": "2017-09",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -452,22 +428,10 @@
                     "utbetaltIPeriode": "2017-09",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -480,22 +444,10 @@
                     "utbetaltIPeriode": "2017-08",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -508,22 +460,10 @@
                     "utbetaltIPeriode": "2017-08",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -536,22 +476,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -564,22 +492,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -592,22 +508,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -620,22 +524,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -648,22 +540,10 @@
                     "utbetaltIPeriode": "2017-05",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -676,22 +556,10 @@
                     "utbetaltIPeriode": "2017-05",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -704,22 +572,10 @@
                     "utbetaltIPeriode": "2017-04",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -732,22 +588,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -760,22 +604,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
                 ]
