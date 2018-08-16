@@ -91,10 +91,6 @@ module.exports.hentAlle = (req, res) => {
 };
 
 module.exports.hentPlukk = (req, res) => {
-  // fagomrade = ['MED','UFM']
-  // underkategori = []
-  // oppgavetype = []
-  const { fagomrade='F', underkategori='U', oppgavetype='T' } = req.params; // eslint-disable-line no-unused-vars
   try {
     const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
