@@ -5,6 +5,7 @@ const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
+const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
@@ -44,13 +45,10 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  * GET /f/:snr
- * POST (dette endpointet har ingen POST)
  *
  */
 router.get('/fagsaker/:snr', fagsaker.hent);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/journalforing', fagsaker.send);
-
 
 /**
  * SØKNAD
@@ -110,11 +108,12 @@ router.get('/kodeverk', Kodeverk.hent);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', oppgaver.sok);
+router.get('/oppgaver/sok', sokOppgaver.sok);
 router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
 router.get('/oppgaver/reset', oppgaver.reset);
+router.get('/oppgaver/alle', oppgaver.hentAlle);
 
 /**
  * JOURNALFORING

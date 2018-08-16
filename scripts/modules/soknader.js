@@ -7,9 +7,10 @@ const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
+module.exports.lesSoknad = lesSoknad;
 
 module.exports.lesAlleSoknader = () => {
-  return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
+  return Utils.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soknadDokument) => {

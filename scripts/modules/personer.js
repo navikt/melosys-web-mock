@@ -11,7 +11,7 @@ const lesPerson = (fnr) => {
 };
 
 module.exports.lesAllePersoner = () => {
-  return Utils.lesAlleJson(PERSON_MOCK_DATA_DIR)
+  return Utils.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 
 module.exports.hent = (req, res) => {

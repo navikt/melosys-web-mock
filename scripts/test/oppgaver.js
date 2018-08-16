@@ -3,26 +3,23 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const Personer = require('../modules/personer');
+const { lesKatalog } = require('../modules/oppgaver');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemajson = `${SCHEMA_DIR}/person-schema.json`;
+const schemajson = `${SCHEMA_DIR}/oppgaver-schema.json`;
 const schema = Utils.lesSchema(schemajson);
 
-const catalog = Personer.lesAllePersoner();
-
+const catalog = lesKatalog();
 const validate = ajv.compile(schema);
 
-
 const test = () => {
-  console.log(colors.blue('Person'));
+  console.log(colors.blue('Oppgaver'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
-const person = {
+const oppgaver = {
   test,
 };
-module.exports.person = person;
-
+exports.oppgaver = oppgaver;
