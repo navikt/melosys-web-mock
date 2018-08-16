@@ -9,7 +9,7 @@ const lesSoknad = (behandlingID) => {
 };
 module.exports.lesSoknad = lesSoknad;
 
-module.exports.lesAlleSoknader = () => {
+module.exports.lesSoknadKatalog = () => {
   return Utils.lesKatalog(MOCK_SOKNAD_DIR);
 };
 

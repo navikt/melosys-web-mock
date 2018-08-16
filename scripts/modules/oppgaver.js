@@ -63,7 +63,7 @@ const mineOppgaver = (oppgaveliste) => {
   });
 };
 
-module.exports.lesKatalog = () => {
+module.exports.lesOppgaveKatalog = () => {
   const navn = 'oppgaver.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
   const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));
@@ -90,16 +90,16 @@ module.exports.hentAlle = (req, res) => {
   }
 };
 
-exports.hentPlukk = (req, res) => {
+module.exports.hentPlukk = (req, res) => {
   // fagomrade = ['MED','UFM']
   // underkategori = []
   // oppgavetype = []
-  const { fagomrade='F', underkategori='U', oppgavetype='T' } = req.params;
+  const { fagomrade='F', underkategori='U', oppgavetype='T' } = req.params; // eslint-disable-line no-unused-vars
   try {
-    const oppgaveobjekt = lesOppgaveObjekt();
+    const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
     const plukkliste = oppgaveListe.slice(-oppgaveListe.length, -oppgaveListe.length/2);
-    const mineoppgaver = minesaker(plukkliste) ;
+    const mineoppgaver = mineOppgaver(plukkliste) ;
     let oppgave = _.sample(mineoppgaver);
 
     const mockfile = `${MOCK_DATA_DIR}/oppgaver/plukkoppgave-${oppgave.oppgaveID}.json`;

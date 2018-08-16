@@ -9,14 +9,14 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
 const schema = Utils.lesSchema(schemajson);
-const dokumenter = Vurderinger.lesAlleVurderinger();
+const katalog = Vurderinger.lesVurderingsKatalog();
 
 const validate = ajv.compile(schema);
 
 
 const test = () => {
   console.log(colors.blue('Vurdering'));
-  dokumenter.forEach((elem) => Utils.runTest(elem, ajv, validate));
+  katalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const vurdering = {

@@ -7,7 +7,7 @@ const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
-module.exports.lesAlleSaksbehandlere = () => {
+module.exports.lesSaksbehandlerKatalog = () => {
   return Utils.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
 };
 const lesSaksbehandlere = () => {

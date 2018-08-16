@@ -7,7 +7,7 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
-module.exports.lesAlleOrganisasjoner = () => {
+module.exports.lesOrganisasjonsKatalog = () => {
   return Utils.lesKatalog(MOCK_DATA_ORG_DIR);
 };
 /**

@@ -10,7 +10,7 @@ const humanReadableErrors = (allErrors = []) => {
   })
 };
 
-module.exports.lesAlleJson = dirpath => {
+module.exports.lesKatalog = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
     const filepath = `${dirpath}/${navn}`;

@@ -10,7 +10,7 @@ const lesPerson = (fnr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-module.exports.lesAllePersoner = () => {
+module.exports.lesPersonKatalog = () => {
   return Utils.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 

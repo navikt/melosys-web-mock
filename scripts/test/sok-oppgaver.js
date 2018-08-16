@@ -3,14 +3,14 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const sokOppgaver = require('../modules/sok-oppgaver');
+const { lesSokOppgaveKatalog} = require('../modules/sok-oppgaver');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/sok-oppgaver-schema.json`;
 const schema = Utils.lesSchema(schemajson);
-const catalog = sokOppgaver.lesAlleOppgaveSok();
+const catalog = lesSokOppgaveKatalog();
 
 const validate = ajv.compile(schema);
 
@@ -23,5 +23,5 @@ const test = () => {
 const SokOppgaver = {
   test,
 };
-exports.SokOppgaver = SokOppgaver;
+module.exports.SokOppgaver = SokOppgaver;
 

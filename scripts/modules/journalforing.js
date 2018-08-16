@@ -8,8 +8,8 @@ const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
-module.exports.lesAlleJournalforing = () => {
-  return Utils.lesAlleJson(MOCK_JOURNALFORING_DIR);
+module.exports.lesJournalforingKatalog = () => {
+  return Utils.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
 const lesOppgave = () => {

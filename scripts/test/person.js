@@ -3,7 +3,7 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const Personer = require('../modules/personer');
+const { lesPersonKatalog } = require('../modules/personer');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
@@ -11,7 +11,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const schemajson = `${SCHEMA_DIR}/person-schema.json`;
 const schema = Utils.lesSchema(schemajson);
 
-const catalog = Personer.lesAllePersoner();
+const catalog = lesPersonKatalog();
 
 const validate = ajv.compile(schema);
 

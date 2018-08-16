@@ -4,7 +4,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 
-exports.lesAlleOppgaveSok = () => {
+module.exports.lesSokOppgaveKatalog = () => {
   return Utils.lesKatalog(MOCK_DATA_OPPGAVE_SOK_DIR);
 };
 
@@ -21,7 +21,7 @@ const lesOppgave = (fnr) => {
  * @param res
  * @returns {*}
  */
-exports.sok = (req, res) => {
+module.exports.sok = (req, res) => {
   try {
     const fnr = req.query.fnr;
     const oppgaver = lesOppgave(fnr);

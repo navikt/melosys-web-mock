@@ -3,7 +3,7 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const { lesKatalog } = require('../modules/oppgaver');
+const { lesOppgaveKatalog } = require('../modules/oppgaver');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
@@ -11,7 +11,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const schemajson = `${SCHEMA_DIR}/oppgaver-schema.json`;
 const schema = Utils.lesSchema(schemajson);
 
-const catalog = lesKatalog();
+const catalog = lesOppgaveKatalog();
 const validate = ajv.compile(schema);
 
 const test = () => {
@@ -22,4 +22,4 @@ const test = () => {
 const oppgaver = {
   test,
 };
-exports.oppgaver = oppgaver;
+module.exports.oppgaver = oppgaver;

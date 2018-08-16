@@ -5,16 +5,8 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const VURDERING__MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
-module.exports.lesAlleVurderinger = () => {
-  /*
-  let vurderingListe = [];
-  fs.readdirSync(VURDERING__MOCK_DATA_DIR).forEach(file => {
-    const document = JSON.parse(fs.readFileSync(`${VURDERING__MOCK_DATA_DIR}/${file}`, 'UTF-8'));
-    vurderingListe.push(document)
-  });
-  return vurderingListe;
-  */
-  return Utils.lesKatalog(VURDERING__MOCK_DATA_DIR)
+module.exports.lesVurderingsKatalog = () => {
+  return Utils.lesKatalog(VURDERING__MOCK_DATA_DIR);
 };
 /**
  * Hent vurdering
