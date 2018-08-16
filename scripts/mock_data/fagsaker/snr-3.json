@@ -29,28 +29,55 @@
         "person": {
           "fnr": "30098000492",
           "sivilstand": "Gift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "LILLA HEST",
+          "personstatus":"Bosatt",
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
           "bostedsadresse": {
             "gateadresse": {
-              "gatenavn": "ANDEBYVEIEN",
-              "gatenummer": 0,
-              "husnummer": 123,
-              "husbokstav": "A"
+              "gatenavn": "ANDEBYVEIEN"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
             },
             "postnr": "5081",
-            "land": "NOR"
+            "land": "NO"
           },
-          "kjoenn": "K",
-          "foedselsdato": "1963-05-05"
+          "foedselsdato":"1972-11-19",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold": [
           {
             "arbeidsforholdID": "konvertert_97a38348-1041-4037-9ebe-f00aea12b1a8",
             "arbeidsforholdIDnav": 12498433,
             "ansettelsesPeriode": {
-              "fom": "1978-08-19",
-              "tom": "1979-07-15"
+              "fom": "1978-08-19"
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
@@ -58,9 +85,13 @@
                 "arbeidstidsordning": "",
                 "avloenningstype": "",
                 "yrke": "",
+                "avtaltArbeidstimerPerUke":37.5,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 19.0,
-                "endringsdatoStillingsprosent": "1978-08-19",
-                "maritimArbeidsavtale": false
+                "skipsregister": null,
+                "skipstype": null,
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [
@@ -82,8 +113,7 @@
             "arbeidsforholdID": "konvertert_8d5297c3-a409-4fcf-a41f-6a8c95b42dce",
             "arbeidsforholdIDnav": 12498435,
             "ansettelsesPeriode": {
-              "fom": "1980-06-23",
-              "tom": "1980-08-01"
+              "fom": "1980-06-23"
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
@@ -91,9 +121,13 @@
                 "arbeidstidsordning": "",
                 "avloenningstype": "",
                 "yrke": "",
+                "avtaltArbeidstimerPerUke": null,
+                "stillingsprosent": null,
                 "beregnetAntallTimerPrUke": 37.5,
-                "endringsdatoStillingsprosent": "1980-06-23",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [
@@ -115,8 +149,7 @@
             "arbeidsforholdID": "konvertert_9936a0a6-f990-40bb-92a4-cb8509686d6c",
             "arbeidsforholdIDnav": 12498436,
             "ansettelsesPeriode": {
-              "fom": "1981-06-22",
-              "tom": "1981-07-31"
+              "fom": "1981-06-22"
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
@@ -124,9 +157,13 @@
                 "arbeidstidsordning": "",
                 "avloenningstype": "",
                 "yrke": "",
+                "avtaltArbeidstimerPerUke":37.5,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 37.5,
-                "endringsdatoStillingsprosent": "1981-06-22",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null
               }
             ],
             "permisjonOgPermittering": [
@@ -153,15 +190,16 @@
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "Døgnkontinuerlig skiftarbeid og\n                    turnusarbeid (35,5 t/u)\n                ",
+                "arbeidstidsordning": "Døgnkontinuerlig skiftarbeid og\nturnusarbeid (35,5 t/u)\n       ",
                 "avloenningstype": "Fastlønn",
                 "yrke": "HJELPEPLEIER",
                 "avtaltArbeidstimerPerUke": 35.5,
-                "stillingsprosent": 62.44,
-                "sisteLoennsendringsdato": "2014-05-01",
+                "stillingsprosent": 62,
                 "beregnetAntallTimerPrUke": 22.1662,
-                "endringsdatoStillingsprosent": "2013-11-01",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null,
+                "skipsregister": null,
+                "skipstype": null
               }
             ],
             "permisjonOgPermittering": [
@@ -177,33 +215,7 @@
             "opplysningspliktigID": "951237116",
             "opprettelsestidspunkt": "2015-02-02T14:31:53.927+01:00",
             "sistBekreftet": "2017-06-28T14:01:30+02:00",
-            "Aordning": true,
-            "timerTimelonnet": [
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2015-06",
-                "timelonnetPeriode": {
-                  "fom": "2015-04-30",
-                  "tom": "2015-04-30"
-                }
-              },
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2015-07",
-                "timelonnetPeriode": {
-                  "fom": "2015-06-16",
-                  "tom": "2015-06-16"
-                }
-              },
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2016-05",
-                "timelonnetPeriode": {
-                  "fom": "2016-04-18",
-                  "tom": "2016-04-18"
-                }
-              }
-            ]
+            "Aordning": true
           }
         ],
         "organisasjoner": [

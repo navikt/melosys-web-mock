@@ -1,4 +1,5 @@
 const fs = require('fs');
+const glob = require('glob');
 const colors = require('colors/safe');
 
 const humanReadableErrors = (allErrors = []) => {
@@ -12,15 +13,17 @@ const humanReadableErrors = (allErrors = []) => {
 
 module.exports.lesKatalog = dirpath => {
   let catalog = [];
-  fs.readdirSync(dirpath).forEach(navn => {
+  const files = glob.sync('*.json', {
+    cwd: dirpath,
+    ignore: 'schema.json$'
+  });
+  files.forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
-    if (!filepath.endsWith('-schema.json')) {
-      const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
-      catalog.push({
-        navn,
-        document
-      });
-    }
+    const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
+    catalog.push({
+      navn,
+      document
+    });
   });
   return catalog;
 };
