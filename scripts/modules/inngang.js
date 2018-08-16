@@ -5,7 +5,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
 exports.lesAlleInngang = () => {
-  return Utils.lesAlleJson(INNGANG_MOCK_DIR);
+  return Utils.lesKatalog(INNGANG_MOCK_DIR);
 };
 
 const lesInngang = (snr) => {

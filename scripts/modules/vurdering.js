@@ -14,7 +14,7 @@ exports.lesAlleVurderinger = () => {
   });
   return vurderingListe;
   */
-  return Utils.lesAlleJson(VURDERING__MOCK_DATA_DIR)
+  return Utils.lesKatalog(VURDERING__MOCK_DATA_DIR)
 };
 /**
  * Hent vurdering

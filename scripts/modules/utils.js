@@ -6,13 +6,11 @@ const humanReadableErrors = (allErrors = []) => {
     const { keyword = '', dataPath = '', params = {}, message = '' } = singleError;
     const { additionalProperty } = params;
     const baseText = `[${keyword.toUpperCase()}] ${dataPath}: ${message}`;
-    const fullText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
-
-    return fullText;
+    return additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
   })
-}
+};
 
-exports.lesAlleJson = dirpath => {
+exports.lesKatalog = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
     const filepath = `${dirpath}/${navn}`;

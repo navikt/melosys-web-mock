@@ -9,7 +9,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 exports.lesAlleJournalforing = () => {
-  return Utils.lesAlleJson(MOCK_JOURNALFORING_DIR);
+  return Utils.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
 const lesOppgave = () => {

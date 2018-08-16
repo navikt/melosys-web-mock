@@ -10,7 +10,7 @@ const lesSoknad = (behandlingID) => {
 exports.lesSoknad = lesSoknad;
 
 exports.lesAlleSoknader = () => {
-  return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
+  return Utils.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soknadDokument) => {

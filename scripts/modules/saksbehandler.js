@@ -8,7 +8,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 exports.lesAlleSaksbehandlere = () => {
-  return Utils.lesAlleJson(MOCK_DATA_SAKSBEHANDLER_DIR);
+  return Utils.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
 };
 const lesSaksbehandlere = () => {
   const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;

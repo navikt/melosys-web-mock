@@ -8,7 +8,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
 exports.lesAlleOrganisasjoner = () => {
-  return Utils.lesAlleJson(MOCK_DATA_ORG_DIR);
+  return Utils.lesKatalog(MOCK_DATA_ORG_DIR);
 };
 /**
  * Les organisasjon json fil eller returner tom svar
