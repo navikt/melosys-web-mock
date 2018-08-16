@@ -13,6 +13,7 @@
     "moment": "^2.22.2",
     "readable-random": "^0.1.3",
     "semver": "^5.5.0",
+    "swagger-jsdoc": "^3.0.2",
     "underscore": "^1.9.1"
   },
   "scripts": {
@@ -20,6 +21,8 @@
     "amock": "node scripts/mock_api_server.js",
     "schema": "node scripts/schema",
     "semver": "node_modules/semver/bin/semver",
-    "semver-comp": "node scripts/semver-comp"
+    "semver-comp": "node scripts/semver-comp",
+    "swagger-jsdoc": "node_modules/swagger-jsdoc/bin/swagger-jsdoc.js",
+    "swagger": "npm run swagger -d swaggerDef.js scripts/modules/*.js"
   }
 }

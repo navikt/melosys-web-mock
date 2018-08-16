@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/finansiering
+ * @module
+ */
 const finansiering = [
   {
     kode: "LAANEKASSEN",

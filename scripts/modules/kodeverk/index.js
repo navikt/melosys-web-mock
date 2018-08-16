@@ -1,3 +1,7 @@
+/**
+ * Kodeverk.
+ * @module
+ */
 const { landkoder } = require('./landkoder');
 const { sakstyper } = require('./sakstyper');
 const { behandlingstyper } = require('./behandlingstyper');

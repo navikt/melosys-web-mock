@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/oppgavetyper
+ * @module
+ */
 const oppgavetyper = [
   {
     kode: 'BEH_SAK',

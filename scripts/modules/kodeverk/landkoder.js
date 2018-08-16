@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/landkoder
+ * @module
+ */
 const landkoder = [
   {
     kode: 'BE',

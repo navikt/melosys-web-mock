@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/dokumenttitler
+ * @module
+ */
 const dokumenttitler = [
   {
     kode:'ARBF',

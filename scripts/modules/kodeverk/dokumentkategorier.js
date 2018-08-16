@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/dokumentkategorier
+ * @module
+ */
 const dokumentkategorier = [
   {
     kode: 'B',

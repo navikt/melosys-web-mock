@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/begrunnelser
+ * @module
+ */
 const begrunnelser = {
   vesentligVirksomhet: [
   {

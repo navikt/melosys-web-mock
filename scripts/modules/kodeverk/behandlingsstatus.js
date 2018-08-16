@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/behandlingsstatus
+ * @module
+ */
 const behandlingsstatus = [
   {
     kode: 'OPPR',

@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/vedleggstitler
+ * @module
+ */
 const vedleggstitler = [
   {
     kode: 'TITTEL_1',
