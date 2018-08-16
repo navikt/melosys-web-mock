@@ -63,7 +63,7 @@ const mineOppgaver = (oppgaveliste) => {
   });
 };
 
-exports.lesKatalog = () => {
+module.exports.lesOppgaveKatalog = () => {
   const navn = 'oppgaver.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
   const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));
@@ -73,7 +73,7 @@ exports.lesKatalog = () => {
   }];
 };
 
-exports.hentAlle = (req, res) => {
+module.exports.hentAlle = (req, res) => {
   try {
     const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
@@ -89,7 +89,26 @@ exports.hentAlle = (req, res) => {
     res.status(500).send(err);
   }
 };
-exports.sendPlukk = (req, res) => {
+
+module.exports.hentPlukk = (req, res) => {
+  try {
+    const oppgaveobjekt = lesOppgaveListe();
+    const { oppgaveListe } = oppgaveobjekt;
+    const plukkliste = oppgaveListe.slice(-oppgaveListe.length, -oppgaveListe.length/2);
+    const mineoppgaver = mineOppgaver(plukkliste) ;
+    let oppgave = _.sample(mineoppgaver);
+
+    const mockfile = `${MOCK_DATA_DIR}/oppgaver/plukkoppgave-${oppgave.oppgaveID}.json`;
+    fs.writeFileSync(mockfile, JSON.stringify(oppgave, null, 2));
+    return res.json(oppgave);
+  }
+  catch (err) {
+    console.log(err);
+    res.status(500).send(err);
+  }
+};
+
+module.exports.sendPlukk = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const { oppgavetype } = jsonBody;
@@ -109,7 +128,7 @@ exports.sendPlukk = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.oversikt = (req, res) => {
+module.exports.oversikt = (req, res) => {
   try {
     const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
@@ -122,12 +141,12 @@ exports.oversikt = (req, res) => {
     res.status(500).send(err);
   }
 };
-exports.opprett = (req, res) => {
+module.exports.opprett = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   res.json(jsonBody);
 };
 
-exports.reset = (req, res) => {
+module.exports.reset = (req, res) => {
   res.json({});
 };

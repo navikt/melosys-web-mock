@@ -15,7 +15,7 @@ const lesAvklaring = (behandlingID) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const avklaring = lesAvklaring(behandlingID);
@@ -35,7 +35,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
@@ -70,7 +70,7 @@ const lesBosted = (behandlingID) => {
  * @param res
  * @returns {*}
  */
-exports.hentBosted = (req, res) => {
+module.exports.hentBosted = (req, res) => {
   try {
     const { behandlingID } = req.params;
     const bosted = lesBosted(behandlingID);
@@ -96,7 +96,7 @@ exports.hentBosted = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.sendBosted = (req, res) => {
+module.exports.sendBosted = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;

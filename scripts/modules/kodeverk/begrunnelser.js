@@ -26,4 +26,4 @@ const begrunnelser = {
   },
 ]}
 ;
-exports.begrunnelser = begrunnelser;
+module.exports.begrunnelser = begrunnelser;

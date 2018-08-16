@@ -8,7 +8,7 @@ const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
-exports.lesAlleJournalforing = () => {
+module.exports.lesJournalforingKatalog = () => {
   return Utils.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
@@ -20,7 +20,7 @@ const lesOppgave = () => {
   return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"))
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const journalpostID = req.params.journalpostID;
     const journalpost = lesOppgave(journalpostID);
@@ -37,7 +37,7 @@ exports.hent = (req, res) => {
   }
 };
 
-exports.sendOpprettNySak = (req, res) => {
+module.exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
   const schema = Utils.lesSchema(schemajson);
   const validate = ajv.compile(schema);
@@ -54,7 +54,7 @@ exports.sendOpprettNySak = (req, res) => {
   }
 };
 
-exports.sendTilordneSak = (req, res) => {
+module.exports.sendTilordneSak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
   const schema = Utils.lesSchema(schemajson);
   const validate = ajv.compile(schema);

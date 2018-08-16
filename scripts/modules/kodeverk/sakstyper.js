@@ -12,4 +12,4 @@ const sakstyper = [
     term: 'Folketrygd',
   },
 ];
-exports.sakstyper = sakstyper;
+module.exports.sakstyper = sakstyper;

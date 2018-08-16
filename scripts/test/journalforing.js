@@ -3,14 +3,14 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const Journalforing = require('../modules/journalforing');
+const { lesJournalforingKatalog } = require('../modules/journalforing');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/person-schema.json`;
 const schema = Utils.lesSchema(schemajson);
-const catalog = Journalforing.lesAlleJournalforing();
+const catalog = lesJournalforingKatalog();
 
 const validate = ajv.compile(schema);
 
@@ -23,5 +23,5 @@ const test = () => {
 const journalforing = {
   test,
 };
-exports.journalforing = journalforing;
+module.exports.journalforing = journalforing;
 

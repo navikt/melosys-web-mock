@@ -30,5 +30,5 @@ const test = () => {
 const kodeverk = {
   test,
 };
-exports.kodeverk = kodeverk;
+module.exports.kodeverk = kodeverk;
 

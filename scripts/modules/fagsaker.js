@@ -12,11 +12,11 @@ const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 const timestamp = moment();
 
-exports.lesAlleFagsaker = () => {
+module.exports.lesFagsakerKatalog = () => {
   return Utils.lesKatalog(MOCK_DATA_FAGSAK_DIR);
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     let { snr } = req.params;
     snr = snr && snr.toString() || '';
@@ -42,7 +42,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*|void}
  */
-exports.opprett = (req, res) => {
+module.exports.opprett = (req, res) => {
   try {
 
     const fnr = req.params.fnr && req.params.fnr.toString() || '';

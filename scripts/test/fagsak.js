@@ -4,14 +4,14 @@ const colors = require('colors/safe');
 const fs = require('fs');
 
 const Utils = require('../modules/utils');
-const Fagsaker = require('../modules/fagsaker');
+const { lesFagsakerKatalog } = require('../modules/fagsaker');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/fagsaker-schema.json`;
 const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
-const catalog = Fagsaker.lesAlleFagsaker();
+const catalog = lesFagsakerKatalog();
 
 const validate = ajv.compile(schema);
 
@@ -24,5 +24,5 @@ const test = () => {
 const fagsak = {
   test,
 };
-exports.fagsak = fagsak;
+module.exports.fagsak = fagsak;
 

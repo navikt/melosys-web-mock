@@ -10,7 +10,7 @@ const humanReadableErrors = (allErrors = []) => {
   })
 };
 
-exports.lesKatalog = dirpath => {
+module.exports.lesKatalog = dirpath => {
   let catalog = [];
   fs.readdirSync(dirpath).forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
@@ -25,11 +25,11 @@ exports.lesKatalog = dirpath => {
   return catalog;
 };
 
-exports.lesSchema = schemapath => {
+module.exports.lesSchema = schemapath => {
   return JSON.parse(fs.readFileSync(schemapath, "utf8"));
 };
 
-exports.runTest = (data, ajv, validate) => {
+module.exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
@@ -41,7 +41,7 @@ exports.runTest = (data, ajv, validate) => {
   }
 };
 
-exports.isJSON = (str) => {
+module.exports.isJSON = (str) => {
   try {
     return (JSON.parse(str) && !!str);
   } catch (e) {
