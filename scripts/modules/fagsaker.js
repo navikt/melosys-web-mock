@@ -18,7 +18,8 @@ exports.lesAlleFagsaker = () => {
 
 exports.hent = (req, res) => {
   try {
-    const snr = req.params.snr && req.params.snr.toString() || '';
+    let { snr } = req.params;
+    snr = snr && snr.toString() || '';
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
     if (fs.existsSync(mockfile)) {
       const fagsaker = JSON.parse(fs.readFileSync(mockfile, "utf8"));
@@ -48,7 +49,9 @@ exports.opprett = (req, res) => {
 
     fs.readdirSync(MOCK_DATA_FAGSAK_DIR).forEach(file => {
       const fagsak = JSON.parse(fs.readFileSync(`${MOCK_DATA_FAGSAK_DIR}/${file}`, 'UTF-8'));
-      if (fagsak.behandlinger[0].saksopplysninger.person.fnr === fnr) {
+      const { behandlinger } = fagsak;
+      const { saksopplysninger } = behandlinger[0];
+      if (saksopplysninger.person.fnr === fnr) {
         return res.json(fagsak);
       }
     });
@@ -71,7 +74,7 @@ exports.opprett = (req, res) => {
       kjoenn: _.sample(['M','K']),
     };
     const mockfile = `${MOCK_DATA_DIR}/sok/fagsaker/fnr-${fnr}.json`;
-    mockfagsaker = [mockfagsak];
+    const mockfagsaker = [...mockfagsak];
     fs.writeFileSync(mockfile, JSON.stringify(mockfagsaker, null, 2));
     return res.status(201).send(mockfagsak);
   }
@@ -80,14 +83,4 @@ exports.opprett = (req, res) => {
     return res.status(500).send(err);
   }
 };
-/**
- * Send fagsak
- * @param req
- * @param res
- */
-exports.send = (req, res) => {
-  const body = req.body;
-  let jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
-  console.log(jsonBody);
-  res.json(jsonBody);
-};
+

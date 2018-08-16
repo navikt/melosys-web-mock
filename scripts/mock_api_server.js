@@ -45,13 +45,10 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  * GET /f/:snr
- * POST (dette endpointet har ingen POST)
  *
  */
 router.get('/fagsaker/:snr', fagsaker.hent);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/journalforing', fagsaker.send);
-
 
 /**
  * SØKNAD
