@@ -871,14 +871,39 @@
                           "skipsregister": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
                             "type": [
-                              "string",
+                              "object",
                               "null"
                             ],
-                            "title": "The Skipsregister Schema ",
-                            "default": "",
-                            "examples": [
-                              "NOR"
-                            ]
+                            "properties": {
+                              "kode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
+                                "type": [
+                                  "string"
+                                ],
+                                "title": "The Kode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "NOR"
+                                ]
+                              },
+                              "term": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/term",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Term Schema ",
+                                "default": "",
+                                "examples": [
+                                  "NOR"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false
                           },
                           "skipstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
@@ -892,6 +917,80 @@
                               "Annet"
                             ]
                           },
+                          "skipstype": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
+                            "properties": {
+                              "kode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
+                                "type": [
+                                  "string"
+                                ],
+                                "title": "The Kode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "annet"
+                                ]
+                              },
+                              "term": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/term",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Term Schema ",
+                                "default": "",
+                                "examples": [
+                                  "Annet"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false
+                          },
+                          "fartsomraade": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
+                            "properties": {
+                              "kode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
+                                "type": [
+                                  "string"
+                                ],
+                                "title": "The Kode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "innenriks"
+                                ]
+                              },
+                              "term": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/term",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Term Schema ",
+                                "default": "",
+                                "examples": [
+                                  "Innenriks"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false
+                          },
                           "maritimArbeidsavtale": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/maritimArbeidsavtale",
                             "type": [
@@ -902,18 +1001,6 @@
                             "default": false,
                             "examples": [
                               true
-                            ]
-                          },
-                          "fartsomraade": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
-                            "type": [
-                              "string",
-                              "null"
-                            ],
-                            "title": "The Fartsomraade Schema ",
-                            "default": "",
-                            "examples": [
-                              "Innenriks"
                             ]
                           }
                         },
