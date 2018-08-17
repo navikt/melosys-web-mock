@@ -11,7 +11,6 @@ const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 const { SokOppgaver } = require('./test/sok-oppgaver');
 const { oppgaver } = require('./test/oppgaver');
-
 demo.test();
 kodeverk.test();
 person.test();

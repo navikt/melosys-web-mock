@@ -9,6 +9,7 @@
     "term":"Opprettet"
   },
   "registrertDato": "2018-03-12T14:32:37.448",
+  "endretDato":"2018-03-15T16:31:35.845",
   "behandlinger": [
     {
       "oppsummering": {
@@ -21,38 +22,91 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-12T14:32:37.448"
+        "registrertDato": "2018-03-12T14:32:37.448",
+        "endretDato":"2018-03-15T16:31:35.845"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "28106600300",
           "sivilstand": "Ugift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "MASKIN ARTIG",
           "personstatus": "Bosatt",
-          "kjoenn": "M",
-          "foedselsdato": "1966-10-28"
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresseMidlertidig":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato": "1966-10-28",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "barn": [
+            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
+            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
+            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          ]
         },
         "arbeidsforhold": [
           {
             "arbeidsforholdID": "",
             "arbeidsforholdIDnav": 44137905,
             "ansettelsesPeriode": {
-              "fom": "2017-02-01"
+              "fom": "2017-02-01",
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "Fastlønn",
-                "yrke": "KONSULENT (BANK)",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "KONSULENT (BANK)"
+                },
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "skipsregister":null,
+                "skipstype":null,
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering": [],
+            "timerTimelonnet": [],
             "utenlandsopphold": [],
             "arbeidsgivertype": "Organisasjon",
             "arbeidsgiverID": "910099035",
@@ -67,21 +121,36 @@
             "arbeidsforholdID": "",
             "arbeidsforholdIDnav": 44138024,
             "ansettelsesPeriode": {
-              "fom": "2017-01-01"
+              "fom": "2017-01-01",
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "Fastlønn",
-                "yrke": "KONFERANSEMEDARBEIDER",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "KONFERANSEMEDARBEIDER"
+                },
                 "avtaltArbeidstimerPerUke": 20.0,
                 "stillingsprosent": 30.0,
                 "beregnetAntallTimerPrUke": 6.0,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering": [],
+            "timerTimelonnet": [],
             "utenlandsopphold": [],
             "arbeidsgivertype": "Organisasjon",
             "arbeidsgiverID": "973063804",
@@ -97,11 +166,14 @@
           {
             "orgnr": "973063804",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz' gate 16"
               },
               "postnr": "0160",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -109,17 +181,21 @@
                 "gatenavn": "Postboks 2013 Vika"
               },
               "postnr": "0125",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "935333156",
             "navn": "ADECCO NORGE AS",
+            "registrert": "1987-01-01",
+            "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Rosenkrantz gate 16"
               },
               "postnr": "0160",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -127,17 +203,21 @@
                 "gatenavn": "Postboks 2013 Vika"
               },
               "postnr": "0125",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Sandslivegen 90"
               },
               "postnr": "5254",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -145,17 +225,21 @@
                 "gatenavn": "Postboks 7200"
               },
               "postnr": "5020",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "910099035",
             "navn": "SKARSVÅG OG VANSE",
+            "registrert": "2010-01-01",
+            "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Olav Kyrres gate 9"
               },
               "postnr": "3936",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -163,17 +247,21 @@
                 "gatenavn": "Olav Kyrres gate 9"
               },
               "postnr": "3936",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "810072512",
             "navn": "EIKEN OG TORSKEN",
+            "registrert": "2010-01-01",
+            "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "7081",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -181,6 +269,7 @@
                 "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "7081",
+              "poststed": "OSLO",
               "land": "NO"
             }
           }
@@ -431,10 +520,6 @@
                     "inntektsperiodetype": "Maaned",
                     "inntektsstatus": "LoependeInnrapportert",
                     "levereringstidspunkt": "2018-03-12T14:32:35.798",
-                    "opptjeningsperiode": {
-                      "fom": "2018-02-01",
-                      "tom": "2018-03-31"
-                    },
                     "utbetaltIPeriode": "2018-02",
                     "opplysningspliktigID": "873152362",
                     "virksomhetID": "873152362",
