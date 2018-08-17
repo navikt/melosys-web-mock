@@ -77,14 +77,21 @@
             "arbeidsforholdID":"",
             "arbeidsforholdIDnav":44137901,
             "ansettelsesPeriode":{
-              "fom":"2016-01-01"
+              "fom":"2016-01-01",
+              "tom":null
             },
             "arbeidsforholdstype":"Maritimt arbeidsforhold",
             "arbeidsavtaler":[
               {
-                "arbeidstidsordning":"Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype":"Fastlønn",
-                "yrke":"MATROS",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "MATROS"
+                },
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
@@ -100,12 +107,17 @@
                 "fartsomraade": {
                   "kode": "innenriks",
                   "term": "Innenriks"
+                },
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
                 }
               }
             ],
             "permisjonOgPermittering":[
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold":[
 
             ],
@@ -122,26 +134,38 @@
             "arbeidsforholdID":"",
             "arbeidsforholdIDnav":44138007,
             "ansettelsesPeriode":{
-              "fom":"2016-03-01"
+              "fom":"2016-03-01",
+              "tom":null
             },
             "arbeidsforholdstype":"Forenklet oppgjørsordning",
             "arbeidsavtaler":[
               {
-                "arbeidstidsordning":"",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype":"",
-                "yrke":"ALTMULIGMANN (PRIVATHJEM)",
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "ALTMULIGMANN (PRIVATHJEM)"
+                },
                 "beregnetAntallTimerPrUke":0.0,
                 "maritimArbeidsavtale":false,
                 "avtaltArbeidstimerPerUke": 0,
                 "stillingsprosent": 100,
                 "skipsregister": null,
                 "skipstype": null,
-                "fartsomraade": null
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering":[
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold":[
 
             ],
@@ -158,21 +182,32 @@
             "arbeidsforholdID":"2",
             "arbeidsforholdIDnav":44137902,
             "ansettelsesPeriode":{
-              "fom":"2017-01-01"
+              "fom":"2017-01-01",
+              "tom": null
             },
             "arbeidsforholdstype":"Ordinært arbeidsforhold",
             "arbeidsavtaler":[
               {
-                "arbeidstidsordning":"Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype":"Fastlønn",
-                "yrke":"VIKARBYRÅKONSULENT",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "VIKARKONSULENT"
+                },
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
                 "maritimArbeidsavtale":false,
                 "skipsregister": null,
                 "skipstype": null,
-                "fartsomraade": null
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering":[
@@ -186,6 +221,7 @@
                 "permisjonOgPermittering":"Permisjon"
               }
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold":[
 
             ],
@@ -202,21 +238,32 @@
             "arbeidsforholdID":"",
             "arbeidsforholdIDnav":44137900,
             "ansettelsesPeriode":{
-              "fom":"2017-01-01"
+              "fom":"2017-01-01",
+              "tom": null
             },
             "arbeidsforholdstype":"Ordinært arbeidsforhold",
             "arbeidsavtaler":[
               {
-                "arbeidstidsordning":"Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype":"Fastlønn",
-                "yrke":"KONSULENT",
+                "yrke" : {
+                  "kode": "0023091",
+                  "term": "KONSULENT"
+                },
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke":37.5,
                 "maritimArbeidsavtale":false,
                 "skipsregister": null,
                 "skipstype": null,
-                "fartsomraade": null
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering":[
@@ -230,6 +277,7 @@
                 "permisjonOgPermittering":"Permisjon"
               }
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold":[
               {
                 "periode":{
@@ -261,6 +309,7 @@
                 "gatenavn":"Forusbeen 50"
               },
               "postnr":"4035",
+              "poststed": "STEDET",
               "land":"NO"
             },
             "postadresse":{
@@ -268,6 +317,7 @@
                 "gatenavn":"Postboks 8500"
               },
               "postnr":"4035",
+              "poststed":"OSLO",
               "land":"NO"
             }
           },
@@ -281,6 +331,7 @@
                 "gatenavn":"Lunderhaugen 1"
               },
               "postnr":"7081",
+              "poststed": "STEDET",
               "land":"NO"
             },
             "postadresse":{
@@ -288,6 +339,7 @@
                 "gatenavn":"Lunderhaugen 1"
               },
               "postnr":"7081",
+              "poststed":"OSLO",
               "land":"NO"
             }
           },
@@ -301,6 +353,7 @@
                 "gatenavn":"Sandslivegen 90"
               },
               "postnr":"5254",
+              "poststed": "STEDET",
               "land":"NO"
             },
             "postadresse":{
@@ -308,6 +361,7 @@
                 "gatenavn":"Postboks 7200"
               },
               "postnr":"5020",
+              "poststed":"OSLO",
               "land":"NO"
             }
           },
@@ -321,6 +375,7 @@
                 "gatenavn":"Pindsleveien 1C"
               },
               "postnr":"3221",
+              "poststed": "STEDET",
               "land":"NO"
             },
             "postadresse":{
@@ -328,6 +383,7 @@
                 "gatenavn":"Postboks 2044"
               },
               "postnr":"3202",
+              "poststed":"OSLO",
               "land":"NO"
             }
           },
@@ -341,6 +397,7 @@
                 "gatenavn":"Klokkergårdveien 32"
               },
               "postnr":"1711",
+              "poststed": "STEDET",
               "land":"NO"
             },
             "postadresse": {
@@ -348,6 +405,7 @@
                 "gatenavn": null
               },
               "postnr": null,
+              "poststed":"OSLO",
               "land": null
             }
           },
@@ -361,6 +419,7 @@
                 "gatenavn":"Olav Kyrres gate 9"
               },
               "postnr":"3936",
+              "poststed":"OSLO",
               "land":"NO"
             },
             "postadresse":{
@@ -368,6 +427,7 @@
                 "gatenavn":"Olav Kyrres gate 9"
               },
               "postnr":"3936",
+              "poststed":"OSLO",
               "land":"NO"
             }
           }

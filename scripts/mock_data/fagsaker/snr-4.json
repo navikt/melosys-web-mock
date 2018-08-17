@@ -45,7 +45,8 @@
                 "avtaltArbeidstimerPerUke" : 37.5,
                 "beregnetAntallTimerPrUke" : 37.5,
                 "gyldighetsperiode" : {
-                  "fom" : "2018-01-01"
+                  "fom" : "2018-01-01",
+                  "tom": null
                 },
                 "skipsregister": {
                   "kode": "NOR",
@@ -75,7 +76,8 @@
             "arbeidsgivertype" : "Organisasjon",
             "arbeidsgiverID" : "912499693",
             "ansettelsesPeriode" : {
-              "fom" : "2017-01-01"
+              "fom" : "2017-01-01",
+              "tom" : null
             },
             "arbeidsforholdstype" : "Ordinært arbeidsforhold",
             "arbeidstakerID" : "19117220349",
@@ -104,7 +106,8 @@
             "arbeidsavtaler" : [
               {
                 "gyldighetsperiode" : {
-                  "fom" : "2016-03-01"
+                  "fom" : "2016-03-01",
+                  "tom": null
                 },
                 "beregnetAntallTimerPrUke" : 0,
                 "avtaltArbeidstimerPerUke": null,
@@ -133,10 +136,12 @@
             "permisjonOgPermittering" : [
 
             ],
+            "timerTimelonnet": [],
             "arbeidsgivertype" : "Organisasjon",
             "arbeidsgiverID" : "910099035",
             "ansettelsesPeriode" : {
-              "fom" : "2016-03-01"
+              "fom" : "2016-03-01",
+              "tom": null
             },
             "arbeidsforholdstype" : "Forenklet oppgjørsordning",
             "arbeidstakerID" : "19117220349",
@@ -180,17 +185,20 @@
                   "term": "Innenriks"
                 },
                 "gyldighetsperiode" : {
-                  "fom" : "2016-01-01"
+                  "fom" : "2016-01-01",
+                  "tom": null
                 }
               }
             ],
             "permisjonOgPermittering" : [
 
             ],
+            "timerTimelonnet": [],
             "arbeidsgivertype" : "Organisasjon",
             "arbeidsgiverID" : "873152362",
             "ansettelsesPeriode" : {
-              "fom" : "2016-01-01"
+              "fom": "2016-01-01",
+              "tom": null
             },
             "arbeidsforholdstype" : "Maritimt arbeidsforhold",
             "arbeidstakerID" : "19117220349",
@@ -231,7 +239,8 @@
                 },
                 "fartsomraade":null,
                 "gyldighetsperiode" : {
-                  "fom" : "2017-03-01"
+                  "fom" : "2017-03-01",
+                  "tom": null
                 }
               }
             ],

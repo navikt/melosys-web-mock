@@ -758,10 +758,23 @@
                           "examples": [
                             "2016-01-01"
                           ]
+                        },
+                        "tom": {
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/tom",
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "title": "The Fom Schema ",
+                          "default": "",
+                          "examples": [
+                            "2016-01-01"
+                          ]
                         }
                       },
                       "required": [
-                        "fom"
+                        "fom",
+                        "tom"
                       ],
                       "additionalProperties": false
                     },
@@ -951,18 +964,6 @@
                           "skipstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
                             "type": [
-                              "string",
-                              "null"
-                            ],
-                            "title": "The Skipstype Schema ",
-                            "default": "",
-                            "examples": [
-                              "Annet"
-                            ]
-                          },
-                          "skipstype": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
-                            "type": [
                               "object",
                               "null"
                             ],
@@ -1045,6 +1046,43 @@
                             "examples": [
                               true
                             ]
+                          },
+                          "gyldighetsperiode": {
+                            "$id": "/properties/gyldighetsperiode",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
+                            "properties": {
+                              "fom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Fom Schema ",
+                                "default": "",
+                                "examples": [
+                                  "2018-01-01"
+                                ]
+                              },
+                              "tom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/tom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Tom Schema ",
+                                "default": "",
+                                "examples": [
+                                  "2019-01-01"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "fom",
+                              "tom"
+                            ]
                           }
                         },
                         "required": [
@@ -1057,7 +1095,8 @@
                           "skipsregister",
                           "skipstype",
                           "maritimArbeidsavtale",
-                          "fartsomraade"
+                          "fartsomraade",
+                          "gyldighetsperiode"
                         ],
                         "additionalProperties": false
                       }
@@ -1169,6 +1208,88 @@
                       "examples": [
                         true
                       ]
+                    },
+                    "timerTimelonnet":{
+                      "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet",
+                      "type": [
+                        "array"
+                      ],
+                      "definitions": {},
+                      "$schema": "http://json-schema.org/draft-07/schema#",
+                      "properties": {
+                        "timerTimelonnet": {
+                          "$id": "/properties/timerTimelonnet",
+                          "type": [
+                            "array"
+                          ],
+                          "items": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
+                            "type": [
+                              "object",
+                              "null"
+                            ],
+                            "properties": {
+                              "rapporteringsperiode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/rapporteringsperiode",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Rapporteringsperiode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "2017-01"
+                                ]
+                              },
+                              "antallTimer": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/antallTimer",
+                                "type": [
+                                  "integer",
+                                  "null"
+                                ],
+                                "title": "The Antalltimer Schema ",
+                                "default": 0,
+                                "examples": [
+                                  75
+                                ]
+                              },
+                              "timelonnetPeriode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode",
+                                "type": [
+                                  "object",
+                                  "null"
+                                ],
+                                "properties": {
+                                  "fom": {
+                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/fom",
+                                    "type": [
+                                      "string",
+                                      "null"
+                                    ],
+                                    "title": "The Fom Schema ",
+                                    "default": "",
+                                    "examples": [
+                                      "2017-01-01"
+                                    ]
+                                  },
+                                  "tom": {
+                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/tom",
+                                    "type": [
+                                      "string",
+                                      "null"
+                                    ],
+                                    "title": "The Tom Schema ",
+                                    "default": "",
+                                    "examples": [
+                                      "2017-01-31"
+                                    ]
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -1186,7 +1307,8 @@
                     "opplysningspliktigID",
                     "opprettelsestidspunkt",
                     "sistBekreftet",
-                    "Aordning"
+                    "Aordning",
+                    "timerTimelonnet"
                   ],
                   "additionalProperties": false
                 }
@@ -1295,6 +1417,18 @@
                             "4035"
                           ]
                         },
+                        "poststed": {
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/poststed",
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "title": "The Poststed Schema ",
+                          "default": "",
+                          "examples": [
+                            "OSLO"
+                          ]
+                        },
                         "land": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/land",
                           "type": [
@@ -1311,6 +1445,7 @@
                       "required": [
                         "gateadresse",
                         "postnr",
+                        "poststed",
                         "land"
                       ],
                       "additionalProperties": false
@@ -1359,6 +1494,18 @@
                             "4035"
                           ]
                         },
+                        "poststed": {
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/poststed",
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "title": "The Poststed Schema ",
+                          "default": "",
+                          "examples": [
+                            "OSLO"
+                          ]
+                        },
                         "land": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/land",
                           "type": [
@@ -1375,6 +1522,7 @@
                       "required": [
                         "gateadresse",
                         "postnr",
+                        "poststed",
                         "land"
                       ],
                       "additionalProperties": false
