@@ -1,9 +1,13 @@
 const fs = require('fs');
 const _ = require('underscore');
 const ERR = require('./errors');
-const utils = require('./utils');
+const Utils = require('./utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
+
+module.exports.lesFaktaavklaringKatalog = () => {
+  return Utils.lesKatalog(FAKTAAVKLARING_MOCK_DIR);
+};
 
 const lesAvklaring = (behandlingID) => {
   const mockfile = `${FAKTAAVKLARING_MOCK_DIR}/faktaavklaring-bid-${behandlingID}.json`;
@@ -38,7 +42,7 @@ module.exports.hent = (req, res) => {
 module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const faktaavklaring = {
     behandlingID,
     faktaavklaring: { ...jsonBody.faktaavklaring }
@@ -99,7 +103,7 @@ module.exports.hentBosted = (req, res) => {
 module.exports.sendBosted = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const faktaavklaring = {
     behandlingID,
     faktaavklaring: { ...jsonBody }
