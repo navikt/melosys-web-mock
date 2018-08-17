@@ -792,14 +792,39 @@
                           "arbeidstidsordning": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
                             "type": [
-                              "string",
+                              "object",
                               "null"
                             ],
-                            "title": "The Arbeidstidsordning Schema ",
-                            "default": "",
-                            "examples": [
-                              "Ikke skift"
-                            ]
+                            "properties": {
+                              "kode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
+                                "type": [
+                                  "string"
+                                ],
+                                "title": "The Kode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "ikkeSkift"
+                                ]
+                              },
+                              "term": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/term",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Term Schema ",
+                                "default": "",
+                                "examples": [
+                                  "Ikke skift"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false
                           },
                           "avloenningstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avloenningstype",
@@ -816,14 +841,39 @@
                           "yrke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
                             "type": [
-                              "string",
+                              "object",
                               "null"
                             ],
-                            "title": "The Yrke Schema ",
-                            "default": "",
-                            "examples": [
-                              "MATROS"
-                            ]
+                            "properties": {
+                              "kode": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
+                                "type": [
+                                  "string"
+                                ],
+                                "title": "The Kode Schema ",
+                                "default": "",
+                                "examples": [
+                                  "0020091"
+                                ]
+                              },
+                              "term": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/term",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "title": "The Term Schema ",
+                                "default": "",
+                                "examples": [
+                                  "MATROS"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false
                           },
                           "avtaltArbeidstimerPerUke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avtaltArbeidstimerPerUke",

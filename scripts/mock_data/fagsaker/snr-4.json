@@ -32,8 +32,14 @@
             "arbeidsavtaler" : [
               {
                 "maritimArbeidsavtale" : false,
-                "arbeidstidsordning" : "Ikke skift",
-                "yrke" : "KONSULENT",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
+                "yrke" : {
+                  "kode":"00392393",
+                  "term": "KONSULENT"
+                },
                 "stillingsprosent" : 100,
                 "avloenningstype" : "Fastlønn",
                 "avtaltArbeidstimerPerUke" : 37.5,
@@ -101,10 +107,18 @@
                   "fom" : "2016-03-01"
                 },
                 "beregnetAntallTimerPrUke" : 0,
+                "avtaltArbeidstimerPerUke": null,
+                "stillingsprosent": null,
                 "maritimArbeidsavtale" : false,
                 "avloenningstype" : "",
-                "arbeidstidsordning" : "",
-                "yrke" : "ALTMULIGMANN (PRIVATHJEM)",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "ALTMULIGMANN (PRIVAT)"
+                },
                 "skipsregister": {
                   "kode": "NOR",
                   "term": "NOR"
@@ -140,10 +154,15 @@
             "arbeidsforholdIDnav" : 44137901,
             "arbeidsavtaler" : [
               {
-                "arbeidstidsordning" : "Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "maritimArbeidsavtale" : true,
-                "fartsomraade" : "Innenriks",
-                "yrke" : "MATROS",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "MATROS"
+                },
                 "stillingsprosent" : 100,
                 "avloenningstype" : "Fastlønn",
                 "avtaltArbeidstimerPerUke" : 37.5,
@@ -190,8 +209,14 @@
             "arbeidsavtaler" : [
               {
                 "maritimArbeidsavtale" : false,
-                "arbeidstidsordning" : "Ikke skift",
-                "yrke" : "VIKARBYRÅKONSULENT",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "VIKARBYRÅKONSULENT"
+                },
                 "stillingsprosent" : 100,
                 "avloenningstype" : "Fastlønn",
                 "avtaltArbeidstimerPerUke" : 37.5,
@@ -256,6 +281,16 @@
           {
             "orgnr" : "991492704",
             "navn" : "TOP-TOY NORGE AS",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
+            "postadresse" : {
+              "postnr" : "3936",
+              "gateadresse" : {
+                "gatenavn" : "Olav Kyrres gate 9"
+              },
+              "poststed" : "PORSGRUNN",
+              "land" : "NORGE"
+            },
             "forretningsadresse" : {
               "postnr" : "1711",
               "gateadresse" : {
@@ -283,7 +318,9 @@
               "poststed" : "PORSGRUNN",
               "land" : "NORGE"
             },
-            "navn" : "SKARSVÅG OG VANSE"
+            "navn" : "SKARSVÅG OG VANSE",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)"
           },
           {
             "orgnr" : "873152362",
@@ -303,7 +340,9 @@
               "poststed" : "SANDSLI",
               "land" : "NORGE"
             },
-            "navn" : "STATOIL ASA AVD KONTOR BERGEN"
+            "navn" : "STATOIL ASA AVD KONTOR BERGEN",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)"
           },
           {
             "orgnr" : "912499693",
@@ -323,7 +362,9 @@
               "poststed" : "SANDEFJORD",
               "land" : "NORGE"
             },
-            "navn" : "TOP-TOY NORGE AS AVD HOVEDKONTOR"
+            "navn" : "TOP-TOY NORGE AS AVD HOVEDKONTOR",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)"
           },
           {
             "orgnr" : "810072512",
@@ -343,7 +384,9 @@
               "poststed" : "SJETNEMARKA",
               "land" : "NORGE"
             },
-            "navn" : "EIKEN OG TORSKEN"
+            "navn" : "EIKEN OG TORSKEN",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)"
           },
           {
             "orgnr" : "923609016",
@@ -363,7 +406,9 @@
               "poststed" : "STAVANGER",
               "land" : "NORGE"
             },
-            "navn" : "STATOIL ASA"
+            "navn" : "STATOIL ASA",
+            "registrert": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)"
           }
         ],
         "inntekt" : {
