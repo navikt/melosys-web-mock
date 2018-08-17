@@ -29,8 +29,7 @@
         "kode": {
           "$id": "/properties/type/properties/kode",
           "type": [
-            "string",
-            "null"
+            "string"
           ],
           "title": "The Kode Schema ",
           "default": "",
@@ -67,8 +66,7 @@
         "kode": {
           "$id": "/properties/status/properties/kode",
           "type": [
-            "string",
-            "null"
+            "string"
           ],
           "title": "The Kode Schema ",
           "default": "",
@@ -157,8 +155,7 @@
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
                     "type": [
-                      "string",
-                      "null"
+                      "string"
                     ],
                     "title": "The Kode Schema ",
                     "default": "",
@@ -195,8 +192,7 @@
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
                     "type": [
-                      "string",
-                      "null"
+                      "string"
                     ],
                     "title": "The Kode Schema ",
                     "default": "",
@@ -305,8 +301,7 @@
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
                         "type": [
-                          "string",
-                          "null"
+                          "string"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -367,8 +362,7 @@
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
                         "type": [
-                          "string",
-                          "null"
+                          "string"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -609,8 +603,7 @@
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
                         "type": [
-                          "string",
-                          "null"
+                          "string"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -1415,8 +1408,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/type/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1453,8 +1445,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/status/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1491,8 +1482,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/grunnlagstype/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1529,8 +1519,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/land/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1567,8 +1556,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/lovvalg/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1605,8 +1593,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/trygdedekning/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1643,8 +1630,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kildedokumenttype/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1681,8 +1667,7 @@
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kilde/properties/kode",
                               "type": [
-                                "string",
-                                "null"
+                                "string"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
