@@ -16,7 +16,7 @@ const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-
+const logging = require('./modules/logging');
 const app = express();
 
 const allowCrossDomain = (req, res, next)  => {
@@ -141,8 +141,15 @@ router.get('/organisasjoner', organisasjoner.hent);
  */
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
+//router.post('/logger/trace', logging.trace);
+// router.post('/logger/debug', logging.debug);
+router.post('/logger/info', logging.info);
+router.post('/logger/warn', logging.warn);
+router.post('/logger/error', logging.error);
+
 app.use(allowCrossDomain);
 app.use('/api', router);
+app.use('/frontendlogger/api', express.static('static'));
 
 app.listen(port);
 
