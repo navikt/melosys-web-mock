@@ -52,3 +52,4 @@
   window.frontendlogger.error = function(data) { log('error', data); };
   window.frontendlogger.event = function(name, fields, tags) { reportEvent(name, fields, tags); };
 })();
+//# sourceURL=frontendlogger
