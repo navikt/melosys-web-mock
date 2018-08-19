@@ -149,7 +149,7 @@ router.post('/logger/error', logging.error);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
-app.use('/frontendlogger/api', express.static('static'));
+app.use('/frontendlogger', express.static('static'));
 
 app.listen(port);
 
