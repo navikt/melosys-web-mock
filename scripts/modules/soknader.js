@@ -7,10 +7,10 @@ const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
-exports.lesSoknad = lesSoknad;
+module.exports.lesSoknad = lesSoknad;
 
-exports.lesAlleSoknader = () => {
-  return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
+module.exports.lesSoknadKatalog = () => {
+  return Utils.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soknadDokument) => {
@@ -31,7 +31,7 @@ const skrivSoknad = (behandlingID, soknadDokument) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const behandlingID = req.params.behandlingID;
   try {
     const soknad = lesSoknad(behandlingID);
@@ -48,7 +48,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;

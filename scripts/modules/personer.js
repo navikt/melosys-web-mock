@@ -10,11 +10,11 @@ const lesPerson = (fnr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-exports.lesAllePersoner = () => {
-  return Utils.lesAlleJson(PERSON_MOCK_DATA_DIR)
+module.exports.lesPersonKatalog = () => {
+  return Utils.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const fnr = req.query.fnr;
   if (fnr && fnr.length === 11) {
     const person = lesPerson(fnr);

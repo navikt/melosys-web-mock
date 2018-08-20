@@ -1,4 +1,5 @@
 const fs = require('fs');
+const glob = require('glob');
 const colors = require('colors/safe');
 
 const humanReadableErrors = (allErrors = []) => {
@@ -6,32 +7,32 @@ const humanReadableErrors = (allErrors = []) => {
     const { keyword = '', dataPath = '', params = {}, message = '' } = singleError;
     const { additionalProperty } = params;
     const baseText = `[${keyword.toUpperCase()}] ${dataPath}: ${message}`;
-    const fullText = additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
-
-    return fullText;
+    return additionalProperty ? `${baseText}: ${additionalProperty}` : baseText;
   })
-}
+};
 
-exports.lesAlleJson = dirpath => {
+module.exports.lesKatalog = dirpath => {
   let catalog = [];
-  fs.readdirSync(dirpath).forEach(navn => {
+  const files = glob.sync('*.json', {
+    cwd: dirpath,
+    ignore: 'schema.json$'
+  });
+  files.forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
-    if (!filepath.endsWith('-schema.json')) {
-      const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
-      catalog.push({
-        navn,
-        document
-      });
-    }
+    const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
+    catalog.push({
+      navn,
+      document
+    });
   });
   return catalog;
 };
 
-exports.lesSchema = schemapath => {
+module.exports.lesSchema = schemapath => {
   return JSON.parse(fs.readFileSync(schemapath, "utf8"));
 };
 
-exports.runTest = (data, ajv, validate) => {
+module.exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
@@ -43,7 +44,7 @@ exports.runTest = (data, ajv, validate) => {
   }
 };
 
-exports.isJSON = (str) => {
+module.exports.isJSON = (str) => {
   try {
     return (JSON.parse(str) && !!str);
   } catch (e) {

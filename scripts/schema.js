@@ -10,7 +10,6 @@ const { organisasjon } = require('./test/organsisasjon');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 
-
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
 const watcher = require('chokidar').watch(GLOBBER, {
@@ -30,8 +29,10 @@ const testAll = () => {
   organisasjon.test();
   inngang.test();
   journalforing.test();
+  SokOppgaver.test();
+  oppgaver.test();
+  faktaavklaring.test();
 };
-
 // Something to use when events are received.
 const log = console.log.bind(console);
 // See https://www.npmjs.com/package/chokidar
@@ -51,6 +52,5 @@ watcher
   log(`Touched ${txt}`);
   testAll();
 });
-
 testAll();
 console.log('\nSchema validation completed.');

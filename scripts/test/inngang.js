@@ -3,14 +3,14 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Utils = require('../modules/utils');
-const Inngang = require('../modules/inngang');
+const { lesInngangKatalog } = require('../modules/inngang');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/inngang-schema.json`;
 const schema = Utils.lesSchema(schemajson);
-const catalog = Inngang.lesAlleInngang();
+const catalog = lesInngangKatalog();
 
 const validate = ajv.compile(schema);
 
@@ -23,5 +23,5 @@ const test = () => {
 const inngang = {
   test,
 };
-exports.inngang = inngang;
+module.exports.inngang = inngang;
 

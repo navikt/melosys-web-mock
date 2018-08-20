@@ -12,4 +12,4 @@ const finansiering = [
     term: "Egne midler / arv / etc",
   },
 ];
-exports.finansiering = finansiering;
+module.exports.finansiering = finansiering;
