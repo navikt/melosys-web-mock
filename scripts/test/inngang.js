@@ -15,13 +15,13 @@ const catalog = lesInngangKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Inngang'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const inngang = {
-  test,
+  testAll,
 };
 module.exports.inngang = inngang;
 

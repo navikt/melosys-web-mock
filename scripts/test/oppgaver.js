@@ -14,12 +14,12 @@ const schema = Utils.lesSchema(schemajson);
 const catalog = lesOppgaveKatalog();
 const validate = ajv.compile(schema);
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Oppgaver'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const oppgaver = {
-  test,
+  testAll,
 };
 module.exports.oppgaver = oppgaver;

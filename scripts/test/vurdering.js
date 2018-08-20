@@ -14,13 +14,13 @@ const katalog = Vurderinger.lesVurderingsKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Vurdering'));
   katalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const vurdering = {
-  test,
+  testAll,
 };
 module.exports.vurdering = vurdering;
 

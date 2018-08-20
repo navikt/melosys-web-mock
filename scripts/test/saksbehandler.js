@@ -16,13 +16,13 @@ const catalog = lesSaksbehandlerKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Saksbehandler'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const Saksbehandler = {
-  test,
+  testAll,
 };
 module.exports.Saksbehandler = Saksbehandler;
 

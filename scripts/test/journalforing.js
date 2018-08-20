@@ -15,13 +15,13 @@ const catalog = lesJournalforingKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Journalforing'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const journalforing = {
-  test,
+  testAll,
 };
 module.exports.journalforing = journalforing;
 

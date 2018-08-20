@@ -15,13 +15,13 @@ const catalog = lesOrganisasjonsKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Organisasjon'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const organisasjon = {
-  test,
+  testAll,
 };
 module.exports.organisasjon = organisasjon;
 

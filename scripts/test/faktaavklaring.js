@@ -16,13 +16,13 @@ const catalog = lesFaktaavklaringKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Faktaavklaring'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const faktaavklaring = {
-  test,
+  testAll,
 };
 module.exports.faktaavklaring = faktaavklaring;
 

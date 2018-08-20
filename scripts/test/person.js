@@ -16,13 +16,13 @@ const catalog = lesPersonKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Person'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const person = {
-  test,
+  testAll,
 };
 module.exports.person = person;
 

@@ -13,13 +13,13 @@ const katalog = lesSoknadKatalog();
 
 const validate = ajv.compile(schema);
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Soknad'));
   katalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const soknad = {
-  test,
+  testAll,
 };
 module.exports.soknad = soknad;
 

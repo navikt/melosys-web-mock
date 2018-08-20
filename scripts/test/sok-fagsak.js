@@ -16,13 +16,13 @@ const catalog = lesSokFagsakerKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Sok Fagsak'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const SokFagsak = {
-  test,
+  testAll,
 };
 module.exports.SokFagsak = SokFagsak;
 

@@ -15,13 +15,13 @@ const catalog = lesSokOppgaveKatalog();
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Sok Oppgaver'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
 
 const SokOppgaver = {
-  test,
+  testAll,
 };
 module.exports.SokOppgaver = SokOppgaver;
 
