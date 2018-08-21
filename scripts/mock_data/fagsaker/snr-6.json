@@ -66,10 +66,10 @@
             "term": "DØD"
           },
           "erEgenAnsatt": true,
-          "barn": [
-            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
-            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
-            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          "familiemedlemmer": [
+            {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
+            {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
+            {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
           ]
         },
         "arbeidsforhold": [
@@ -166,7 +166,7 @@
           {
             "orgnr": "973063804",
             "navn": "ADECCO NORGE AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
@@ -188,7 +188,7 @@
           {
             "orgnr": "935333156",
             "navn": "ADECCO NORGE AS",
-            "registrert": "1987-01-01",
+            "oppstartdato": "1987-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
@@ -210,7 +210,7 @@
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
@@ -232,7 +232,7 @@
           {
             "orgnr": "910099035",
             "navn": "SKARSVÅG OG VANSE",
-            "registrert": "2010-01-01",
+            "oppstartdato": "2010-01-01",
             "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {
@@ -254,7 +254,7 @@
           {
             "orgnr": "810072512",
             "navn": "EIKEN OG TORSKEN",
-            "registrert": "2010-01-01",
+            "oppstartdato": "2010-01-01",
             "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
               "gateadresse": {

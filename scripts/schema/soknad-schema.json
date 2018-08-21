@@ -80,16 +80,15 @@
                 "additionalProperties": false
               }
             },
-            "medfolgendeBarn": {
-              "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn",
+            "medfolgendeFamilie": {
+              "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeFamilie",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn/items",
+                "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeFamilie/items",
                 "type": [
-                  "string",
-                  "null"
+                  "string"
                 ],
                 "title": "The 0th Schema ",
                 "default": "",
@@ -113,7 +112,7 @@
           },
           "required": [
             "utenlandskID",
-            "medfolgendeBarn",
+            "medfolgendeFamilie",
             "medfolgendeAndre"
           ],
           "additionalProperties": false
