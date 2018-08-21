@@ -13,6 +13,8 @@ const { SokOppgaver } = require('./test/sok-oppgaver');
 const { oppgaver } = require('./test/oppgaver');
 const { faktaavklaring } = require('./test/faktaavklaring');
 
+const Utils = require('./modules/utils');
+
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
 const watcher = require('chokidar').watch(GLOBBER, {
@@ -36,8 +38,47 @@ const testAll = () => {
   oppgaver.testAll();
   faktaavklaring.testAll();
 };
+const testOne = path => {
+  //console.log(path);
+  const katalog = Utils.katalogNavn(path);
+  switch (katalog) {
+    case 'personer':
+      person.testOne(path);
+      break;
+    case 'soknader':
+      soknad.testOne(path);
+      break;
+    case 'vurdering':
+      vurdering.testOne(path);
+      break;
+    case 'fagsaker':
+      fagsak.testOne(path);
+      break;
+    case 'sok/fagsaker':
+      SokFagsak.testOne(path);
+      break;
+    case 'saksbehandler':
+      Saksbehandler.testOne(path);
+      break;
+    case 'organisasjoner':
+      organisasjon.testOne(path);
+      break;
+    case 'inngang':
+      inngang.testOne(path);
+      break;
+    case 'journalforing':
+      journalforing.testOne(path);
+      break;
+    case 'oppgaver/sok':
+      SokOppgaver.testOne(path);
+      break;
+    default:
+      console.log('Unimplmented testOne',katalog);
+      break;
+  }
+};
 // Something to use when events are received.
-const log = console.log.bind(console);
+//const log = console.log.bind(console);
 // See https://www.npmjs.com/package/chokidar
 /*
 watcher
@@ -47,8 +88,8 @@ watcher
 })
 */
 watcher.on('change', path => {
-  log(`File ${path} has been changed`);
-  testAll();
+  //log(`File ${path} has been changed`);
+  testOne(path);
 });
 /*
 .on('raw', (event, path) => {
@@ -60,4 +101,4 @@ watcher.on('change', path => {
 });
 */
 testAll();
-console.log('\nSchema validation completed.');
+console.log('\nSchema validation completed.\n');

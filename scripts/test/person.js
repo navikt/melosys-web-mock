@@ -15,14 +15,19 @@ const catalog = lesPersonKatalog();
 
 const validate = ajv.compile(schema);
 
-
 const testAll = () => {
   console.log(colors.blue('Person'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
+const testOne = (path) => {
+  console.log(colors.blue('Person'));
+  const elem = Utils.lesKatalogElement(path);
+  return Utils.runTest(elem, ajv, validate);
+};
 
 const person = {
   testAll,
+  testOne,
 };
 module.exports.person = person;
 

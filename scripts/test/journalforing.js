@@ -19,9 +19,16 @@ const testAll = () => {
   console.log(colors.blue('Journalforing'));
   catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
 };
+const testOne = (path) => {
+  const tittel = Utils.katalogTittel(path);
+  console.log(colors.blue(tittel));
+  const elem = Utils.lesKatalogElement(path);
+  return Utils.runTest(elem, ajv, validate);
+};
 
 const journalforing = {
   testAll,
+  testOne,
 };
 module.exports.journalforing = journalforing;
 

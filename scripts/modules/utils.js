@@ -1,6 +1,8 @@
 const fs = require('fs');
 const glob = require('glob');
+
 const colors = require('colors/safe');
+const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
@@ -11,6 +13,16 @@ const humanReadableErrors = (allErrors = []) => {
   })
 };
 
+const katalogNavn = path => {
+  const splits = path.slice(MOCK_DATA_DIR.length+1).split('/');
+  return splits.slice(0,splits.length-1).join('/');
+};
+module.exports.katalogNavn = katalogNavn;
+
+module.exports.katalogTittel = path => {
+  const katalog = katalogNavn(path)
+  return katalog.charAt(0).toLocaleUpperCase() + katalog.slice(1);
+}
 module.exports.lesKatalog = dirpath => {
   let catalog = [];
   const files = glob.sync('*.json', {
@@ -27,9 +39,14 @@ module.exports.lesKatalog = dirpath => {
   });
   return catalog;
 };
-
-module.exports.lesSchema = schemapath => {
-  return JSON.parse(fs.readFileSync(schemapath, "utf8"));
+module.exports.lesKatalogElement = path => {
+  const document =  JSON.parse(fs.readFileSync(path, "utf8"));
+  const dirs = path.split('/');
+  const navn = dirs[dirs.length-1];
+  return {
+    navn,
+    document,
+  };
 };
 
 module.exports.runTest = (data, ajv, validate) => {
@@ -43,6 +60,12 @@ module.exports.runTest = (data, ajv, validate) => {
     humanReadableErrors(validate.errors).forEach((msg, index) => console.log('\t', (index < 10 ? ` ${index}` : index), msg));
   }
 };
+
+
+module.exports.lesSchema = schemapath => {
+  return JSON.parse(fs.readFileSync(schemapath, "utf8"));
+};
+
 
 module.exports.isJSON = (str) => {
   try {
