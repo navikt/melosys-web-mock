@@ -14,7 +14,9 @@
     "eslint-plugin-node": "^7.0.1",
     "express": "^4.16.3",
     "glob": "^7.1.2",
+    "log4js": "^3.0.5",
     "moment": "^2.22.2",
+    "ora": "^3.0.0",
     "readable-random": "^0.1.3",
     "request": "^2.88.0",
     "semver": "^5.5.0",
@@ -28,7 +30,6 @@
     "happycase": "cross-env HAPPY=true node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
     "amock": "node scripts/mock_api_server.js",
     "schema": "node scripts/schema",
-    "schema:watch": "node scripts/schema --watch",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",
     "eslint": "eslint scripts --ext .js"

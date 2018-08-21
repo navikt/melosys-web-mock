@@ -14,7 +14,13 @@ const { SokOppgaver } = require('./test/sok-oppgaver');
 const { oppgaver } = require('./test/oppgaver');
 const { faktaavklaring } = require('./test/faktaavklaring');
 
-const Utils = require('./modules/utils');
+const Schema = require('./test/schema-util');
+
+const log4js = require('log4js');
+log4js.configure({
+  appenders: { schema: { type: 'file', filename: 'schema.log' } },
+  categories: { default: { appenders: ['schema'], level: 'error' } }
+});
 
 const katalogMap = new Map([
   ['demo', demo],
@@ -37,12 +43,14 @@ const testAll = () => {
   katalogMap.forEach((katalog) => katalog.testAll());
 };
 const testOne = path => {
-  const katalog = Utils.katalogNavn(path);
+  const katalog = Schema.katalogNavn(path);
   katalogMap.get(katalog).testOne(path);
 };
 
 if (argv.watch) {
-  console.log('Watching all mock_data files for changes. CTRL-C to quit, monitoring.');
+  const ora = require('ora');
+  ora('Watching all mock_data files for changes. CTRL-C to quit.').start();
+
   const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
   const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
   const watcher = require('chokidar').watch(GLOBBER, {

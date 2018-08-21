@@ -1,14 +1,14 @@
 const fs = require('fs');
 const _ = require('underscore');
 
-const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 module.exports.lesSaksbehandlerKatalog = () => {
-  return Utils.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
+  return Schema.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
 };
 const lesSaksbehandlere = () => {
   const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
