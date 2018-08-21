@@ -1,3 +1,4 @@
+const argv = require('yargs').argv;
 const { demo } = require('./test/demo');
 const { kodeverk } = require('./test/kodeverk');
 const { person } = require('./test/person');
@@ -15,90 +16,43 @@ const { faktaavklaring } = require('./test/faktaavklaring');
 
 const Utils = require('./modules/utils');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
-const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
-const watcher = require('chokidar').watch(GLOBBER, {
-  ignored: /(^|[\/\\])\../,
-  persistent: true
-});
+const katalogMap = new Map([
+  ['demo', demo],
+  ['kodeverk', kodeverk],
+  ['personer', person],
+  ['soknader', soknad],
+  ['vurdering', vurdering],
+  ['fagsaker', fagsak],
+  ['sok/fagsaker', SokFagsak],
+  ['saksbehandler', Saksbehandler],
+  ['organisasjoner', organisasjon],
+  ['inngang', inngang],
+  ['journalforing', journalforing],
+  ['oppgaver/sok', SokOppgaver],
+  ['oppgaver', oppgaver],
+  ['faktaavklaring', faktaavklaring],
+]);
 
 const testAll = () => {
-  demo.test();
-  kodeverk.test();
-  person.testAll();
-  soknad.testAll();
-  vurdering.testAll();
-  fagsak.testAll();
-  SokFagsak.testAll();
-  Saksbehandler.testAll();
-  organisasjon.testAll();
-  inngang.testAll();
-  journalforing.testAll();
-  SokOppgaver.testAll();
-  oppgaver.testAll();
-  faktaavklaring.testAll();
+  katalogMap.forEach((katalog) => katalog.testAll());
 };
 const testOne = path => {
-  //console.log(path);
   const katalog = Utils.katalogNavn(path);
-  switch (katalog) {
-    case 'personer':
-      person.testOne(path);
-      break;
-    case 'soknader':
-      soknad.testOne(path);
-      break;
-    case 'vurdering':
-      vurdering.testOne(path);
-      break;
-    case 'fagsaker':
-      fagsak.testOne(path);
-      break;
-    case 'sok/fagsaker':
-      SokFagsak.testOne(path);
-      break;
-    case 'saksbehandler':
-      Saksbehandler.testOne(path);
-      break;
-    case 'organisasjoner':
-      organisasjon.testOne(path);
-      break;
-    case 'inngang':
-      inngang.testOne(path);
-      break;
-    case 'journalforing':
-      journalforing.testOne(path);
-      break;
-    case 'oppgaver/sok':
-      SokOppgaver.testOne(path);
-      break;
-    default:
-      console.log('Unimplmented testOne',katalog);
-      break;
-  }
+  katalogMap.get(katalog).testOne(path);
 };
-// Something to use when events are received.
-//const log = console.log.bind(console);
-// See https://www.npmjs.com/package/chokidar
-/*
-watcher
-.on('add', path => {
-  const txt = path.slice(MOCK_DATA_DIR.length);
-  log(`Watching ${txt}`);
-})
-*/
-watcher.on('change', path => {
-  //log(`File ${path} has been changed`);
-  testOne(path);
-});
-/*
-.on('raw', (event, path) => {
-  //log('Raw event info:', event, path, details);
-  const txt = path.slice(MOCK_DATA_DIR.length);
-  log('--------------------------------');
-  log(`Touched ${txt}`);
-  testAll();
-});
-*/
+
+if (argv.watch) {
+  console.log('Watching all mock_data files for changes. CTRL-C to quit, monitoring.');
+  const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+  const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
+  const watcher = require('chokidar').watch(GLOBBER, {
+    ignored: /(^|[\/\\])\../,
+    persistent: true
+  });
+  watcher.on('change', path => {
+    testOne(path);
+  });
+}
+
 testAll();
 console.log('\nSchema validation completed.\n');

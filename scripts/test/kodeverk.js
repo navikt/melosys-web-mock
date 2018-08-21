@@ -22,13 +22,13 @@ function runTest(data) {
     console.log(colors.red('Invalid: ') + ajv.errorsText(validate.errors));
   }
 }
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Kodeverk'));
   runTest(dokument);
 };
 
 const kodeverk = {
-  test,
+  testAll,
 };
 module.exports.kodeverk = kodeverk;
 
