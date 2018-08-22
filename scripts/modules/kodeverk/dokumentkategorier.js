@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/dokumentkategorier
+ * @module
+ */
 const dokumentkategorier = [
   {
     kode: 'B',
@@ -56,4 +60,4 @@ const dokumentkategorier = [
     term: 'Tolkbart skjema',
   },
 ];
-exports.dokumentkategorier = dokumentkategorier;
+module.exports.dokumentkategorier = dokumentkategorier;

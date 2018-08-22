@@ -55,7 +55,7 @@
     },
     "saksnummer": {
       "$id": "/properties/saksnummer",
-      "type": "integer",
+      "type": "string",
       "title": "The Saksnummer Schema ",
       "default": 0,
       "examples": [

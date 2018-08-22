@@ -1,15 +1,15 @@
 {
-  "behandlingID": 123456789,
+  "behandlingID": 4,
   "avklaring": {
     "opphold": {
-      "land": ["GB"],
+      "land": ["DE"],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
       }
     },
     "aktivitet": {
-      "aktivitetLand": ["GB"]
+      "aktivitetLand": []
     },
     "sysselsetting": {
       "sysselsettingType": "ARBEIDSTAKER"
@@ -32,7 +32,7 @@
     "tjenestemann": {
       "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
     },
-    "valgteArbeidsforhold": [],
+    "valgteArbeidsgivere": [],
     "yrkesaktivitetFordeling": {
       "antallLand": "ETT_LAND_IKKE_NORGE"
     },
@@ -40,6 +40,10 @@
       "aktivitetINorge": "OVER_25_PROSENT",
       "marginaltArbeid": "MARGINALT_JA",
       "vekslingMellomLand": "EN_ELLER_BEGGE"
+    },
+    "vesentligVirksomhet": {
+      "vesentligVirksomhetINorge": null,
+      "vesentligVirksomhetBegrunnelser": []
     }
   }
 }

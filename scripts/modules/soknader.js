@@ -1,24 +1,26 @@
 const fs = require('fs');
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-exports.lesSoknad = (behandlingID) => {
+const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(fs.readFileSync(mockfileSoknad, "utf8"));
 };
+module.exports.lesSoknad = lesSoknad;
 
-exports.lesAlleSoknader = () => {
-  return Utils.lesAlleJson(MOCK_SOKNAD_DIR);
+module.exports.lesSoknadKatalog = () => {
+  return Schema.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
-const skrivSoknad = (behandlingID, soknadDokument) => {
+const skrivSoknad = (behandlingID, soeknadDokument) => {
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
 
   // Triks for å sikre at behandlingsID kommmer som forste key og ikke sist
   const soknad = {
     behandlingID,
-    soknadDokument,
+    soeknadDokument,
   };
   fs.writeFileSync(mockfileSoknad, JSON.stringify(soknad, null, 2));
   return soknad;
@@ -30,7 +32,7 @@ const skrivSoknad = (behandlingID, soknadDokument) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const behandlingID = req.params.behandlingID;
   try {
     const soknad = lesSoknad(behandlingID);
@@ -47,7 +49,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.send = (req, res) => {
+module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
@@ -59,8 +61,8 @@ exports.send = (req, res) => {
       return res.json(soknad);
     }
     else {
-      const { soknadDokument } = jsonBody;
-      const soknad = skrivSoknad(behandlingID, soknadDokument);
+      const { soeknadDokument } = jsonBody;
+      const soknad = skrivSoknad(behandlingID, soeknadDokument);
       return res.json(soknad);
     }
   }

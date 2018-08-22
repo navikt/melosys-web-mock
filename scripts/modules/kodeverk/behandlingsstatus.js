@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/behandlingsstatus
+ * @module
+ */
 const behandlingsstatus = [
   {
     kode: 'OPPR',
@@ -16,4 +20,4 @@ const behandlingsstatus = [
     term: 'Avsluttet',
   },
 ];
-exports.behandlingsstatus = behandlingsstatus;
+module.exports.behandlingsstatus = behandlingsstatus;

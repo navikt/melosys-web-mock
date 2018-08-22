@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
+const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
+const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
@@ -14,7 +16,7 @@ const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-
+const logging = require('./modules/logging');
 const app = express();
 
 const allowCrossDomain = (req, res, next)  => {
@@ -32,22 +34,21 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
+ * SOK-FAGSAKER basert på fnr
+ */
+router.get('/fagsaker/sok/', sokFagsaker.sok);
+
+/**
  * FAGSAKER
  * ----------------------------------------------------------------------------
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  * GET /f/:snr
- * POST (dette endpointet har ingen POST)
  *
  */
-
-router.get('/fagsaker/sok/', fagsaker.sok);
-
 router.get('/fagsaker/:snr', fagsaker.hent);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/journalforing', fagsaker.send);
-
 
 /**
  * SØKNAD
@@ -70,8 +71,6 @@ router.post('/soknader/:behandlingID', soknader.send);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/bosted/:behandlingID', faktaavklaring.hentBosted);
-router.post('/faktaavklaring/bosted/:behandlingID', faktaavklaring.sendBosted);
 router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
 router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
 
@@ -107,11 +106,12 @@ router.get('/kodeverk', Kodeverk.hent);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', oppgaver.sok);
+router.get('/oppgaver/sok', sokOppgaver.sok);
 router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
 router.get('/oppgaver/reset', oppgaver.reset);
+router.get('/oppgaver/alle', oppgaver.hentAlle);
 
 /**
  * JOURNALFORING
@@ -139,8 +139,15 @@ router.get('/organisasjoner', organisasjoner.hent);
  */
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
+//router.post('/logger/trace', logging.trace);
+// router.post('/logger/debug', logging.debug);
+router.post('/logger/info', logging.info);
+router.post('/logger/warn', logging.warn);
+router.post('/logger/error', logging.error);
+
 app.use(allowCrossDomain);
 app.use('/api', router);
+app.use('/frontendlogger', express.static('static'));
 
 app.listen(port);
 

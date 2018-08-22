@@ -1,28 +1,33 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
-const fs = require('fs');
 
-const Utils = require('../modules/utils');
-const Personer = require('../modules/personer');
+const Schema = require('./schema-util');
+const { lesPersonKatalog } = require('../modules/personer');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/person-schema.json`;
-const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
-const catalog = Personer.lesAllePersoner();
+const schema = Schema.lesSchema(schemajson);
+
+const catalog = lesPersonKatalog();
 
 const validate = ajv.compile(schema);
 
-
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Person'));
-  catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
+  catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+};
+const testOne = (path) => {
+  console.log(colors.blue('Person'));
+  const elem = Schema.lesKatalogElement(path);
+  return Schema.runTest(elem, ajv, validate);
 };
 
 const person = {
-  test,
+  testAll,
+  testOne,
 };
-exports.person = person;
+module.exports.person = person;
 

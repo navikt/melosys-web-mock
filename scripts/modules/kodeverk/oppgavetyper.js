@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/oppgavetyper
+ * @module
+ */
 const oppgavetyper = [
   {
     kode: 'BEH_SAK',
@@ -8,4 +12,4 @@ const oppgavetyper = [
     term: 'Journalføring'
   }
 ];
-exports.oppgavetyper = oppgavetyper;
+module.exports.oppgavetyper = oppgavetyper;

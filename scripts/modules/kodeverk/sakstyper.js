@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/sakstyper
+ * @module
+ */
 const sakstyper = [
   {
     kode: 'EU_EOS',
@@ -12,4 +16,4 @@ const sakstyper = [
     term: 'Folketrygd',
   },
 ];
-exports.sakstyper = sakstyper;
+module.exports.sakstyper = sakstyper;

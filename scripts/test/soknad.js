@@ -1,26 +1,33 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
-const fs = require('fs');
 
-const Utils = require('../modules/utils');
-const Soknader = require('../modules/soknader');
+const Schema = require('./schema-util');
+const { lesSoknadKatalog } = require('../modules/soknader');
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
-const schema = JSON.parse(fs.readFileSync(schemajson, "utf8"));
-const dokumenter = Soknader.lesAlleSoknader();
+const schema = Schema.lesSchema(schemajson);
+const katalog = lesSoknadKatalog();
 
 const validate = ajv.compile(schema);
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Soknad'));
-  dokumenter.forEach((elem) => Utils.runTest(elem, ajv, validate));
+  katalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+};
+
+const testOne = (path) => {
+  const tittel = Schema.katalogTittel(path);
+  console.log(colors.blue(tittel));
+  const elem = Schema.lesKatalogElement(path);
+  return Schema.runTest(elem, ajv, validate);
 };
 
 const soknad = {
-  test,
+  testAll,
+  testOne,
 };
-exports.soknad = soknad;
+module.exports.soknad = soknad;
 

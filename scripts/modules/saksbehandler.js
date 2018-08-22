@@ -1,13 +1,23 @@
 const fs = require('fs');
 const _ = require('underscore');
+
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
-exports.hent = (req, res) => {
+module.exports.lesSaksbehandlerKatalog = () => {
+  return Schema.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
+};
+const lesSaksbehandlere = () => {
+  const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
+  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+};
+
+module.exports.hent = (req, res) => {
   try {
-    const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;
-    const saksbehandlere =  JSON.parse(fs.readFileSync(mockfile, "utf8"));
+    const saksbehandlere = lesSaksbehandlere();
     const status = happy.happyStatus([200, 200, 200, 401, 500]);
     const url = '/saksbehandler';
     switch (status) {

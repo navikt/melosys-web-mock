@@ -1,42 +1,20 @@
 const fs = require('fs');
-const utils = require('./utils');
-const { kodeverk } = require('./kodeverk');
-const Soknader = require('./soknader');
 const _ = require('underscore');
-const ERR = require('./errors');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
+const Utils = require('./utils');
 
-const lesOppgaver = (fnr) => {
-  const mockfile = `${MOCK_DATA_DIR}/oppgaver/sok/fnr-${fnr}.json`;
-  if (fs.existsSync(mockfile)) {
-    return JSON.parse(fs.readFileSync(mockfile, "utf8"));
-  }
-  return [];
-};
-/**
- * Sok oppgaver
- * @param req
- * @param res
- * @returns {*}
- */
-exports.sok = (req, res) => {
-  try {
-    const fnr = req.query.fnr;
-    const oppgaver = lesOppgaver(fnr);
-    return res.json(oppgaver);
-  } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
-  }
-};
-const lesOppgaveObjekt = () => {
-  const mockfile = `${MOCK_DATA_DIR}/oppgaver/oppgaveliste.json`;
-  const oppgaveobjekt = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-  return oppgaveobjekt;
+const { kodeverk } = require('./kodeverk');
+const { lesSoknad } = require('./soknader');
+
+const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
+const MOCK_DATA_OPPGAVRE_DIR = `${MOCK_DATA_DIR}/oppgaver`;
+
+const lesOppgaveListe = () => {
+  const mockfile = `${MOCK_DATA_OPPGAVRE_DIR}/oppgaveliste.json`;
+  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
 };
 
-const minesaker = (oppgaveliste) => {
+const mineOppgaver = (oppgaveliste) => {
   return oppgaveliste.map(oppgave => {
     const mock = _.sample([{
       sammensattNavn: 'LILLA HEST',
@@ -46,9 +24,9 @@ const minesaker = (oppgaveliste) => {
       saksnummer: '4'
     }]);
     const bid = 4;
-    const soknaden = Soknader.lesSoknad(bid);
+    const soknaden = lesSoknad(bid);
     const {
-      soknadDokument: {
+      soeknadDokument: {
         arbeidUtland: {
             arbeidsland,
             arbeidsperiode,
@@ -85,52 +63,27 @@ const minesaker = (oppgaveliste) => {
     return _.sample([minbehandling, minjournalforing]);
   });
 };
-/**
- * Hent oppgave
- * @param req
- * @param res
- * @returns {*}
- */
-exports.hent = (req, res) => {
-  try {
-    const oppgaveID = req.params.oppgaveID;
-    const mockfile = `${MOCK_DATA_DIR}/oppgaver/oppgave-id-${oppgaveID}.json`;
-    if (fs.existsSync(mockfile)) {
-      const oppgave = JSON.parse(fs.readFileSync(mockfile, "utf8"));
-      return res.json(oppgave);
-    }
-    else {
-      console.log("File Not found: "+ mockfile);
-      const melding = ERR.notFound404(req.url);
-      return res.status(404).send(melding);
-    }
-  } catch (err) {
-    console.log(err);
-    res.status(500).send(err);
-  }
+
+module.exports.lesOppgaveKatalog = () => {
+  const navn = 'oppgaver.json';
+  const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
+  const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));
+  return [{
+    navn,
+    document
+  }];
 };
 
-exports.finnoppgaveliste = (req, res) => {
+module.exports.hentAlle = (req, res) => {
   try {
-    const oppgaveobjekt = lesOppgaveObjekt();
-    return res.json(oppgaveobjekt);
-  }
-  catch (err) {
-    console.log(err);
-    return res.status(500).send(err);
-  }
-};
-
-exports.hentAlle = (req, res) => {
-  try {
-    const oppgaveobjekt = lesOppgaveObjekt();
+    const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
 
     //const fnummere = oppgaveListe.reduce((acc, oppgave) => [...acc, oppgave.gjelder.brukerId], []);
     //const fnummere = oppgaveListe.reduce((acc, oppgave) => acc.includes(oppgave.gjelder.brukerId) ? acc : [...acc, oppgave.gjelder.brukerId], []);
     //console.log(fnummere);
-
-    return res.json(oppgaveListe);
+    const mineoppgaver = mineOppgaver(oppgaveListe);
+    return res.json(mineoppgaver);
   }
   catch (err) {
     console.log(err);
@@ -138,31 +91,12 @@ exports.hentAlle = (req, res) => {
   }
 };
 
-const lesPlukkOppgaver = () => {
-  const mockOppgaverDir = `${MOCK_DATA_DIR}/oppgaver`;
-  let plukkOppgaver = [];
-  fs.readdirSync(mockOppgaverDir).forEach(file => {
-    if (file.startsWith('plukkoppgave')) {
-      const plukkoppgave = JSON.parse(fs.readFileSync(`${mockOppgaverDir}/${file}`, 'UTF-8'));
-      plukkOppgaver.push(plukkoppgave);
-    }
-  });
-  if (plukkOppgaver.length === 0) {
-      console.log('lesPlukkOppgaver(), ingen plukkoppgave funnet!')
-  }
-  return plukkOppgaver;
-};
-
-exports.hentPlukk = (req, res) => {
-  // fagomrade = ['MED','UFM']
-  // underkategori = []
-  // oppgavetype = []
-  const { fagomrade='F', underkategori='U', oppgavetype='T' } = req.params;
+module.exports.hentPlukk = (req, res) => {
   try {
-    const oppgaveobjekt = lesOppgaveObjekt();
+    const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
     const plukkliste = oppgaveListe.slice(-oppgaveListe.length, -oppgaveListe.length/2);
-    const mineoppgaver = minesaker(plukkliste) ;
+    const mineoppgaver = mineOppgaver(plukkliste) ;
     let oppgave = _.sample(mineoppgaver);
 
     const mockfile = `${MOCK_DATA_DIR}/oppgaver/plukkoppgave-${oppgave.oppgaveID}.json`;
@@ -175,9 +109,9 @@ exports.hentPlukk = (req, res) => {
   }
 };
 
-exports.sendPlukk = (req, res) => {
+module.exports.sendPlukk = (req, res) => {
   const body = req.body;
-  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const { oppgavetype } = jsonBody;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
@@ -195,13 +129,12 @@ exports.sendPlukk = (req, res) => {
  * @param res
  * @returns {*}
  */
-exports.oversikt = (req, res) => {
+module.exports.oversikt = (req, res) => {
   try {
-    const plukkoppgaver = lesPlukkOppgaver();
-    const oppgaveobjekt = lesOppgaveObjekt();
+    const oppgaveobjekt = lesOppgaveListe();
     const { oppgaveListe } = oppgaveobjekt;
     const firstHalf = oppgaveListe.slice(0, 4);
-    const mineoppgaver = minesaker(firstHalf);
+    const mineoppgaver = mineOppgaver(firstHalf);
     return res.json([...mineoppgaver]);
   }
   catch (err) {
@@ -209,12 +142,12 @@ exports.oversikt = (req, res) => {
     res.status(500).send(err);
   }
 };
-exports.opprett = (req, res) => {
+module.exports.opprett = (req, res) => {
   const body = req.body;
-  const jsonBody = utils.isJSON(body) ? JSON.parse(body) : body;
+  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   res.json(jsonBody);
 };
 
-exports.reset = (req, res) => {
+module.exports.reset = (req, res) => {
   res.json({});
 };

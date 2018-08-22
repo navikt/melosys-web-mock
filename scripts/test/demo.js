@@ -22,16 +22,15 @@ const jsonJS = {
 };
 
 const schemaJS = {
-  definitions: {},
-  $schema: 'http://json-schema.org/draft-06/schema#',
   $id: 'http://example.com/example.json',
   type: 'object',
+  definitions: {},
+  $schema: 'http://json-schema.org/draft-07/schema#',
   properties: {
     checked: {
       $id: '/properties/checked',
       type: 'boolean',
-      title: 'The Checked Schema',
-      description: 'An explanation about the purpose of this instance.',
+      title: 'The Checked Schema ',
       'default': false,
       examples: [
         false,
@@ -44,18 +43,13 @@ const schemaJS = {
         width: {
           $id: '/properties/dimensions/properties/width',
           type: 'integer',
-          title: 'The Width Schema',
-          description: 'An explanation about the purpose of this instance.',
+          title: 'The Width Schema ',
           'default': 0,
-          examples: [
-            5,
-          ],
         },
         height: {
           $id: '/properties/dimensions/properties/height',
           type: 'integer',
-          title: 'The Height Schema',
-          description: 'An explanation about the purpose of this instance.',
+          title: 'The Height Schema ',
           'default': 0,
           examples: [
             10,
@@ -66,8 +60,7 @@ const schemaJS = {
     id: {
       $id: '/properties/id',
       type: 'integer',
-      title: 'The Id Schema',
-      description: 'An explanation about the purpose of this instance.',
+      title: 'The Id Schema ',
       'default': 0,
       examples: [
         1,
@@ -76,8 +69,7 @@ const schemaJS = {
     name: {
       $id: '/properties/name',
       type: 'string',
-      title: 'The Name Schema',
-      description: 'An explanation about the purpose of this instance.',
+      title: 'The Name Schema ',
       'default': '',
       examples: [
         'A green door',
@@ -86,8 +78,7 @@ const schemaJS = {
     price: {
       $id: '/properties/price',
       type: 'number',
-      title: 'The Price Schema',
-      description: 'An explanation about the purpose of this instance.',
+      title: 'The Price Schema ',
       'default': 0,
       examples: [
         12.5,
@@ -99,18 +90,18 @@ const schemaJS = {
       items: {
         $id: '/properties/tags/items',
         type: 'string',
-        title: 'The 0 Schema',
-        description: 'An explanation about the purpose of this instance.',
+        title: 'The 0th Schema ',
         'default': '',
         examples: [
           'home',
+          'green',
         ],
       },
     },
   },
 };
 
-const validate = ajv.compile(jsonJS);
+const validate = ajv.compile(schemaJS);
 
 function runTest(data) {
   const valid = validate(data);
@@ -122,12 +113,12 @@ function runTest(data) {
   }
 }
 
-const test = () => {
-  console.log(colors.blue('Demo'))
-  runTest(JSON.stringify(jsonJS));
+const testAll = () => {
+  console.log(colors.blue('Demo'));
+  runTest(jsonJS);
 };
 
 const demo = {
-  test,
+  testAll,
 };
-exports.demo = demo;
+module.exports.demo = demo;

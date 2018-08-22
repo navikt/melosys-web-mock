@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/landkoder
+ * @module
+ */
 const landkoder = [
   {
     kode: 'BE',
@@ -120,4 +124,4 @@ const landkoder = [
     term: 'Østerrike',
   },
 ];
-exports.landkoder = landkoder;
+module.exports.landkoder = landkoder;

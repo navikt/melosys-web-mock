@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/vedleggstitler
+ * @module
+ */
 const vedleggstitler = [
   {
     kode: 'TITTEL_1',
@@ -12,4 +16,4 @@ const vedleggstitler = [
     term: 'Annet...'
   }
 ];
-exports.vedleggstitler = vedleggstitler;
+module.exports.vedleggstitler = vedleggstitler;

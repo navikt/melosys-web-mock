@@ -1,77 +1,102 @@
 {
   "behandlingID": 5,
-  "soknadDokument": {
-    "opplysningerOmBrukeren": {
-      "personUtenlandskID": "123-12-123456789"
+  "soeknadDokument": {
+    "personOpplysninger": {
+      "utenlandskID": [],
+      "medfolgendeFamilie": [],
+      "medfolgendeAndre": null
     },
     "arbeidUtland": {
-      "arbeidsland": ["ESP"],
-      "arbeidsperiode": {
-        "fom": "2018-03-01",
-        "tom": "2018-06-01"
+      "adresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "land": []
       },
-      "arbeidsandelNorge": 0,
-      "arbeidsandelUtland": 100,
-      "bostedsland": "NOR",
-      "erstatterTidligereUtsendt": false
+      "arbeidsandelNorge": null,
+      "arbeidsandelUtland": null,
+      "arbeidsstedUtland": null,
+      "arbeidUtlandErstatning": false,
+      "arbeidUtlandHjemmekontor": false
     },
-    "foretakUtland": {},
+    "foretakUtland": [],
     "oppholdUtland": {
-      "oppholdsland": ["ESP"],
+      "oppholdsland": [],
       "oppholdsPeriode": {
-        "fom": "2017-12-01",
-        "tom": "2017-12-31"
+        "fom": null,
+        "tom": null
       },
-      "studentIEOS": false,
-      "studentFinansiering": "",
-      "studentSemester": "",
-      "studieLand": ""
+      "ektefelleEllerBarnINorge": null,
+      "sammeAdresseSomArbeidsgiver": null,
+      "studentFinansiering": null,
+      "studentSemester": null
+    },
+    "bosted": {
+      "intensjonOmRetur": true,
+      "bostedUtenforNorge": true,
+      "familiesBosted": [],
+      "antallMaanederINorge": 8,
+      "EOSBarnetrygdFraNAV": true,
+      "adresseIUtlandet": true,
+      "oppgittAdresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "land": []
+      }
     },
     "arbeidNorge": {
-      "valgteArbeidsforhold": ["44137901"],
-      "arbeidsforholdOpprettholdIHelePerioden": true,
-      "brukerErSelvstendigNaeringsdrivende": true,
-      "selvstendigFortsetterEtterArbeidIUtlandet": true,
-      "arbeidsforholdVikarNavn": "Vikarbyrået AS",
-      "vikarOrgnr": "22334455",
-      "flyendePersonellHjemmebase": "Flybasen Int. Airport, ....",
-      "ansattPaSokkelEllerSkip": "sokkel | skip",
-      "navnSkipEllerSokkel": "Trym-sokkelen",
-      "sokkelLand": "SE",
-      "skipFartsomrade": "Europeisk fart",
-      "skipFlaggLand": "SE",
-      "kontaktNavn": "Ola Nordmann",
-      "kontaktEpost": "ola.nordmann@fullmektigfirma.no",
-      "fullmektigFirma": "Advokatfullmektig AS",
-      "fullmektigAdresse": "Adresseveien 123, 1234 Byen"
+      "arbeidsforholdOpprettholdIHelePerioden": null,
+      "arbeidsforholdVikarNavn": null,
+      "vikarOrgnr": null,
+      "flyendePersonellHjemmebase": null,
+      "kontaktNavn": null,
+      "kontaktEpost": null,
+      "fullmektigFirma": null,
+      "fullmektigGateadresse": null,
+      "fullmektigPostnr": null,
+      "fullmektigPoststed": null,
+      "fullmektigRegion": null,
+      "fullmektigLand": []
+    },
+    "selvstendigArbeid": {
+      "erSelvstendig": false,
+      "selvstendigForetak": []
     },
     "juridiskArbeidsgiverNorge": {
-      "antallAnsatte": 350,
-      "antallAdminAnsatte": 250,
-      "antallAdminAnsatteEOS": 75,
-      "andelOmsetningINorge": 78.5,
-      "andelKontrakterINorge": 50.5,
-      "erBemanningsbyra": false,
-      "hattDriftSiste12Mnd": true,
-      "antallUtsendte": 30
+      "erBemanningsbyra": null,
+      "utsendteNeste12Mnd": null,
+      "antallAdmAnsatte": null,
+      "antallAdminAnsatteEOS": null,
+      "andelOmsetningINorge": null,
+      "andelKontrakterINorge": null,
+      "utsendtFortsetterArbeidsforholdIUtlandet": null,
+      "utsendtArbeiderArbeiderMedKlienter": null,
+      "utsendtArbeiderArbeiderMedKontrakter": null
     },
     "arbeidsinntekt": {
-      "inntektNorskIPerioden": 35000,
-      "inntektUtenlandskIPerioden": 0,
-      "inntektNaeringIPerioden": 0,
-      "inntektNaturalYtelser": ["Fri bolig", "Fri bil"],
-      "inntektErInnrapporteringspliktig": true,
-      "inntektTrygdeavgiftBlirTrukket": true
+      "inntektNorskIPerioden": null,
+      "inntektUtenlandskIPerioden": null,
+      "inntektNaeringIPerioden": null,
+      "inntektNaturalYtelser": [],
+      "inntektErInnrapporteringspliktig": null,
+      "inntektTrygdeavgiftBlirTrukket": null
     },
     "arbeidsgiversBekreftelse": {
-      "arbeidsgiverBekrefterUtsendelse": true,
-      "arbeidstakerAnsattUnderUtsendelsen": true,
-      "erstatterArbeidstakerenUtsendte": false,
-      "arbeidstakerTidligereUtsendt24Mnd": false,
-      "arbeidsgiverBetalerArbeidsgiveravgift": true,
-      "trygdeavgiftTrukketGjennomSkatt": true,
-      "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
+      "arbeidsgiverBekrefterUtsendelse": null,
+      "arbeidstakerAnsattUnderUtsendelsen": null,
+      "erstatterArbeidstakerenUtsendte": null,
+      "arbeidstakerTidligereUtsendt24Mnd": null,
+      "arbeidsgiverBetalerArbeidsgiveravgift": null,
+      "trygdeavgiftTrukketGjennomSkatt": null,
+      "trygdeavgiftTrukketGjennomSkattDato": null
     },
-    "tilleggsopplysninger": "Lang utgreiing om utsendelsen som egentlig ikke er relevant for saksbehandlingen..."
+    "maritimtArbeid": {
+      "maritimType": null,
+      "skipsNavn": null,
+      "fartsomrade": null,
+      "flaggLand": [],
+      "installasjonsLand": []
+    }
   }
 }
