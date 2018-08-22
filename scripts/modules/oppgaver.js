@@ -25,7 +25,7 @@ const mineOppgaver = (oppgaveliste) => {
     const bid = 4;
     const soknaden = lesSoknad(bid);
     const {
-      soknadDokument: {
+      soeknadDokument: {
         arbeidUtland: {
             arbeidsland,
             arbeidsperiode,

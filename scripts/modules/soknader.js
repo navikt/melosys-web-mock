@@ -13,13 +13,13 @@ module.exports.lesSoknadKatalog = () => {
   return Utils.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
-const skrivSoknad = (behandlingID, soknadDokument) => {
+const skrivSoknad = (behandlingID, soeknadDokument) => {
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
 
   // Triks for å sikre at behandlingsID kommmer som forste key og ikke sist
   const soknad = {
     behandlingID,
-    soknadDokument,
+    soeknadDokument,
   };
   fs.writeFileSync(mockfileSoknad, JSON.stringify(soknad, null, 2));
   return soknad;
@@ -60,8 +60,8 @@ module.exports.send = (req, res) => {
       return res.json(soknad);
     }
     else {
-      const { soknadDokument } = jsonBody;
-      const soknad = skrivSoknad(behandlingID, soknadDokument);
+      const { soeknadDokument } = jsonBody;
+      const soknad = skrivSoknad(behandlingID, soeknadDokument);
       return res.json(soknad);
     }
   }
