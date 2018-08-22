@@ -1,11 +1,11 @@
 const fs = require('fs');
-const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 
 module.exports.lesSokOppgaveKatalog = () => {
-  return Utils.lesKatalog(MOCK_DATA_OPPGAVE_SOK_DIR);
+  return Schema.lesKatalog(MOCK_DATA_OPPGAVE_SOK_DIR);
 };
 
 const lesOppgave = (fnr) => {

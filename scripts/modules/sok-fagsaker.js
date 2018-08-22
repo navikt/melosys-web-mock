@@ -4,14 +4,14 @@ const URL = require('url');
 const _ = require('underscore');
 
 const ERR = require('./errors');
-const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const happy = require('./happystatus');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {
-  return Utils.lesKatalog(MOCK_SOK_FAGFSAKER_DIR);
+  return Schema.lesKatalog(MOCK_SOK_FAGFSAKER_DIR);
 };
 const lesSokFagsak = (fnr) => {
   const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;

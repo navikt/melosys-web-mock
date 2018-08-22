@@ -2,6 +2,7 @@ const fs = require('fs');
 const _ = require('underscore');
 
 const Utils = require('./utils');
+
 const { kodeverk } = require('./kodeverk');
 const { lesSoknad } = require('./soknader');
 

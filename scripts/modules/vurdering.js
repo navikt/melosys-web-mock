@@ -2,11 +2,12 @@ const fs = require('fs');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const VURDERING__MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
 module.exports.lesVurderingsKatalog = () => {
-  return Utils.lesKatalog(VURDERING__MOCK_DATA_DIR);
+  return Schema.lesKatalog(VURDERING__MOCK_DATA_DIR);
 };
 /**
  * Hent vurdering

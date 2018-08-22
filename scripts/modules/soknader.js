@@ -1,5 +1,6 @@
 const fs = require('fs');
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
@@ -10,7 +11,7 @@ const lesSoknad = (behandlingID) => {
 module.exports.lesSoknad = lesSoknad;
 
 module.exports.lesSoknadKatalog = () => {
-  return Utils.lesKatalog(MOCK_SOKNAD_DIR);
+  return Schema.lesKatalog(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soeknadDokument) => {

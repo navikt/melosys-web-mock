@@ -4,8 +4,7 @@ const moment = require('moment');
 const readableRandom = require('readable-random');
 
 const ERR = require('./errors');
-const Utils = require('./utils');
-
+const Schema = require('../test/schema-util');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
@@ -13,7 +12,7 @@ const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 const timestamp = moment();
 
 module.exports.lesFagsakerKatalog = () => {
-  return Utils.lesKatalog(MOCK_DATA_FAGSAK_DIR);
+  return Schema.lesKatalog(MOCK_DATA_FAGSAK_DIR);
 };
 
 module.exports.hent = (req, res) => {

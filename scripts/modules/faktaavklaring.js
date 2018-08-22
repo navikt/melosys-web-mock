@@ -2,11 +2,13 @@ const fs = require('fs');
 const _ = require('underscore');
 const ERR = require('./errors');
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
+
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
 
 module.exports.lesFaktaavklaringKatalog = () => {
-  return Utils.lesKatalog(FAKTAAVKLARING_MOCK_DIR);
+  return Schema.lesKatalog(FAKTAAVKLARING_MOCK_DIR);
 };
 
 const lesAvklaring = (behandlingID) => {
