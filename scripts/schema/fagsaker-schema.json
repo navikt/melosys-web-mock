@@ -517,22 +517,22 @@
                     ],
                     "additionalProperties": false
                   },
-                  "postadresseMidlertidig": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig",
+                  "midlertidigPostadresse": {
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse",
                     "type": [
                       "object",
                       "null"
                     ],
                     "properties": {
                       "gateadresse": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/gateadresse",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse",
                         "type": [
                           "object",
                           "null"
                         ],
                         "properties": {
                           "gatenavn": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/gateadresse/properties/gatenavn",
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse/properties/gatenavn",
                             "type": [
                               "string",
                               "null"
@@ -550,7 +550,7 @@
                         "additionalProperties": false
                       },
                       "postnr": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/postnr",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/postnr",
                         "type": [
                           "string",
                           "null"
@@ -562,7 +562,7 @@
                         ]
                       },
                       "land": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/land",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/land",
                         "type": [
                           "string",
                           "null"
@@ -709,7 +709,7 @@
                   "kjoenn",
                   "bostedsadresse",
                   "postadresse",
-                  "postadresseMidlertidig",
+                  "midlertidigPostadresse",
                   "foedselsdato",
                   "personStatus",
                   "erEgenAnsatt",
