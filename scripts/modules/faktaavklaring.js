@@ -1,5 +1,8 @@
 const fs = require('fs');
 const _ = require('underscore');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
+
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
@@ -32,6 +35,7 @@ module.exports.hent = (req, res) => {
   }
   catch (err) {
     console.error(err);
+    logger.error(err);
     return res.status(500).send(err);
   }
 };

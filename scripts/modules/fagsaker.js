@@ -2,6 +2,8 @@ const fs = require('fs');
 const _ = require('underscore');
 const moment = require('moment');
 const readableRandom = require('readable-random');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
@@ -20,18 +22,21 @@ module.exports.hent = (req, res) => {
     let { snr } = req.params;
     snr = snr && snr.toString() || '';
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
+    logger.trace(mockfile);
     if (fs.existsSync(mockfile)) {
       const fagsaker = JSON.parse(fs.readFileSync(mockfile, "utf8"));
       return res.json(fagsaker);
     }
     else {
       console.error("File not found:"+ mockfile);
+      logger.error("File not found"+mockfile);
       const melding = ERR.notFound404(req.url);
       return res.status(404).send(melding);
     }
   }
   catch (err) {
     console.error(err);
+    logger.error(err);
     return res.status(500).send(err);
   }
 };
@@ -73,12 +78,14 @@ module.exports.opprett = (req, res) => {
       kjoenn: _.sample(['M','K']),
     };
     const mockfile = `${MOCK_DATA_DIR}/sok/fagsaker/fnr-${fnr}.json`;
+    logger.trace(mockfile);
     const mockfagsaker = [...mockfagsak];
     fs.writeFileSync(mockfile, JSON.stringify(mockfagsaker, null, 2));
     return res.status(201).send(mockfagsak);
   }
   catch (err) {
     console.error(err);
+    logger.error(err);
     return res.status(500).send(err);
   }
 };

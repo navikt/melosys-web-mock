@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const _ = require('underscore');
 
 const Utils = require('./utils');
@@ -87,6 +89,7 @@ module.exports.hentAlle = (req, res) => {
   }
   catch (err) {
     console.log(err);
+    logger.error(err);
     res.status(500).send(err);
   }
 };
@@ -105,6 +108,7 @@ module.exports.hentPlukk = (req, res) => {
   }
   catch (err) {
     console.log(err);
+    logger.error(err);
     res.status(500).send(err);
   }
 };
@@ -139,6 +143,7 @@ module.exports.oversikt = (req, res) => {
   }
   catch (err) {
     console.log(err);
+    logger.error(err);
     res.status(500).send(err);
   }
 };

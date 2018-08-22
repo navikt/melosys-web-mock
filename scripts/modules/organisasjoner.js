@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const URL = require('url');
 
 const ERR = require('./errors');
@@ -38,7 +40,7 @@ module.exports.hent = (req, res) => {
   else if (orgnr.length !== 9) {
     message = 'Orgnr må ha 9 siffer';
   }
-
+  logger.warn(message);
   const url = URL.parse(req.url);
   const melding = ERR.badRequest400(url.pathname, message);
   return res.status(400).send(melding);
