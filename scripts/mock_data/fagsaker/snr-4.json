@@ -53,7 +53,7 @@
             "postnr":"3202",
             "land":"NO"
           },
-          "postadresseMidlertidig":{
+          "midlertidigPostadresse":{
             "gateadresse":{
               "gatenavn":"Postboks 2044"
             },
