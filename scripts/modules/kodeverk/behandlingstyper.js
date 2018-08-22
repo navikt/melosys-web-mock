@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/behandlingstyper
+ * @module
+ */
 const behandlingstyper = [
   {
     kode: 'SKND',
