@@ -2,26 +2,34 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
-const Utils = require('../modules/utils');
-const sokOppgaver = require('../modules/sok-oppgaver');
+const Schema = require('./schema-util');
+const { lesSokOppgaveKatalog} = require('../modules/sok-oppgaver');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/sok-oppgaver-schema.json`;
-const schema = Utils.lesSchema(schemajson);
-const catalog = sokOppgaver.lesAlleOppgaveSok();
+const schema = Schema.lesSchema(schemajson);
+const catalog = lesSokOppgaveKatalog();
 
 const validate = ajv.compile(schema);
 
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Sok Oppgaver'));
-  catalog.forEach((elem) => Utils.runTest(elem, ajv, validate));
+  catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+};
+
+const testOne = (path) => {
+  const tittel = Schema.katalogTittel(path);
+  console.log(colors.blue(tittel));
+  const elem = Schema.lesKatalogElement(path);
+  return Schema.runTest(elem, ajv, validate);
 };
 
 const SokOppgaver = {
-  test,
+  testAll,
+  testOne,
 };
-exports.SokOppgaver = SokOppgaver;
+module.exports.SokOppgaver = SokOppgaver;
 

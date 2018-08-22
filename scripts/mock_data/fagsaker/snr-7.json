@@ -9,6 +9,7 @@
     "term":"Opprettet"
   },
   "registrertDato": "2018-03-12T16:23:42.122",
+  "endretDato":"2018-03-15T16:31:35.845",
   "behandlinger": [
     {
       "oppsummering": {
@@ -21,38 +22,91 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-12T16:23:42.122"
+        "registrertDato": "2018-03-12T16:23:42.122",
+        "endretDato":"2018-03-15T16:31:35.845"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "22127501762",
           "sivilstand": "Ugift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "KAFFI RASK",
           "personstatus": "Bosatt",
-          "kjoenn": "M",
-          "foedselsdato": "1975-12-22"
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
+          "bostedsadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "midlertidigPostadresse":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
+            },
+            "postnr":"5555",
+            "land":"NO"
+          },
+          "foedselsdato": "1975-12-22",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "familiemedlemmer": [
+            {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
+            {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
+            {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
+          ]
         },
         "arbeidsforhold": [
           {
             "arbeidsforholdID": "",
             "arbeidsforholdIDnav": 44137903,
             "ansettelsesPeriode": {
-              "fom": "2016-01-01"
+              "fom": "2016-01-01",
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "Ikke skift",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "Fastlønn",
-                "yrke": "KONSULENT",
+                "yrke" : {
+                  "kode": "0020091",
+                  "term": "KONSULENT"
+                },
                 "avtaltArbeidstimerPerUke": 37.5,
-                "stillingsprosent": 100.0,
+                "stillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale":false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom": "2018-01-01",
+                  "tom": "2019-01-01"
+                }
               }
             ],
             "permisjonOgPermittering": [],
+            "timerTimelonnet": [],
             "utenlandsopphold": [],
             "arbeidsgivertype": "Organisasjon",
             "arbeidsgiverID": "873152362",
@@ -68,11 +122,14 @@
           {
             "orgnr": "873152362",
             "navn": "STATOIL ASA",
+            "oppstartdato": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Sandslivegen 90"
               },
               "postnr": "5254",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -80,17 +137,21 @@
                 "gatenavn": "Postboks 7200"
               },
               "postnr": "5020",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "923609016",
             "navn": "STATOIL ASA",
+            "oppstartdato": "1977-01-01",
+            "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Forusbeen 50"
               },
               "postnr": "4035",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -98,6 +159,7 @@
                 "gatenavn": "Postboks 8500"
               },
               "postnr": "4035",
+              "poststed": "OSLO",
               "land": "NO"
             }
           }

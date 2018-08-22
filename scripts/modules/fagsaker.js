@@ -4,19 +4,18 @@ const moment = require('moment');
 const readableRandom = require('readable-random');
 
 const ERR = require('./errors');
-const Utils = require('./utils');
-
+const Schema = require('../test/schema-util');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 const timestamp = moment();
 
-exports.lesAlleFagsaker = () => {
-  return Utils.lesKatalog(MOCK_DATA_FAGSAK_DIR);
+module.exports.lesFagsakerKatalog = () => {
+  return Schema.lesKatalog(MOCK_DATA_FAGSAK_DIR);
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     let { snr } = req.params;
     snr = snr && snr.toString() || '';
@@ -42,7 +41,7 @@ exports.hent = (req, res) => {
  * @param res
  * @returns {*|void}
  */
-exports.opprett = (req, res) => {
+module.exports.opprett = (req, res) => {
   try {
 
     const fnr = req.params.fnr && req.params.fnr.toString() || '';

@@ -3,13 +3,14 @@ const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
-exports.lesAlleJournalforing = () => {
-  return Utils.lesKatalog(MOCK_JOURNALFORING_DIR);
+module.exports.lesJournalforingKatalog = () => {
+  return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
 const lesOppgave = () => {
@@ -20,7 +21,7 @@ const lesOppgave = () => {
   return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"))
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const journalpostID = req.params.journalpostID;
     const journalpost = lesOppgave(journalpostID);
@@ -37,9 +38,9 @@ exports.hent = (req, res) => {
   }
 };
 
-exports.sendOpprettNySak = (req, res) => {
+module.exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
-  const schema = Utils.lesSchema(schemajson);
+  const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
@@ -54,7 +55,7 @@ exports.sendOpprettNySak = (req, res) => {
   }
 };
 
-exports.sendTilordneSak = (req, res) => {
+module.exports.sendTilordneSak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
   const schema = Utils.lesSchema(schemajson);
   const validate = ajv.compile(schema);

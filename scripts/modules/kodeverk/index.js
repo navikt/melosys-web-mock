@@ -25,13 +25,13 @@ const kodeverk = {
   finansiering,
   begrunnelser,
 };
-exports.kodeverk = kodeverk;
+module.exports.kodeverk = kodeverk;
 
 /**
  * Hent kodeverk
  * @param req
  * @param res
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   res.json(kodeverk);
 };

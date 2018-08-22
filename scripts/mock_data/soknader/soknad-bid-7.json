@@ -1,9 +1,9 @@
 {
   "behandlingID": 7,
-  "soknadDokument": {
+  "soeknadDokument": {
     "personOpplysninger": {
       "utenlandskID": [{"ID": "38288D-A", "land": ["IT"]}],
-      "medfolgendeBarn": [],
+      "medfolgendeFamilie": [],
       "medfolgendeAndre": null
     },
     "arbeidUtland": {

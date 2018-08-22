@@ -2,13 +2,12 @@ const fs = require('fs');
 const URL = require('url');
 
 const ERR = require('./errors');
-const Utils = require('./utils');
-
+const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
-exports.lesAlleOrganisasjoner = () => {
-  return Utils.lesKatalog(MOCK_DATA_ORG_DIR);
+module.exports.lesOrganisasjonsKatalog = () => {
+  return Schema.lesKatalog(MOCK_DATA_ORG_DIR);
 };
 /**
  * Les organisasjon json fil eller returner tom svar
@@ -26,7 +25,7 @@ const lesOrganisasjon = (orgnr) => {
  * @param res
  * @returns {*}
  */
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const orgnr = req.query.orgnr;
   if (orgnr && orgnr.length === 9) {
     const organisasjon = lesOrganisasjon(orgnr);

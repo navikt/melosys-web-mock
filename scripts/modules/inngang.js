@@ -1,11 +1,11 @@
 const fs = require('fs');
-const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
-exports.lesAlleInngang = () => {
-  return Utils.lesKatalog(INNGANG_MOCK_DIR);
+module.exports.lesInngangKatalog = () => {
+  return Schema.lesKatalog(INNGANG_MOCK_DIR);
 };
 
 const lesInngang = (snr) => {
@@ -13,7 +13,7 @@ const lesInngang = (snr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   try {
     const snr = req.params.snr;
     const inngang = lesInngang(snr);

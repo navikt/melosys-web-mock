@@ -29,20 +29,48 @@
         "person": {
           "fnr": "30098000492",
           "sivilstand": "Gift",
-          "statsborgerskap": "NOR",
+          "statsborgerskap":{
+            "kode": "NO",
+            "term": "Norge"
+          },
           "sammensattNavn": "LILLA HEST",
+          "personstatus":"Bosatt",
+          "kjoenn":{
+            "kode": "M",
+            "term": "Mann"
+          },
           "bostedsadresse": {
             "gateadresse": {
-              "gatenavn": "ANDEBYVEIEN",
-              "gatenummer": 0,
-              "husnummer": 123,
-              "husbokstav": "A"
+              "gatenavn": "ANDEBYVEIEN"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "postadresse":{
+            "gateadresse":{
+              "gatenavn":"Gatenavnet 123"
+            },
+            "postnr":"3202",
+            "land":"NO"
+          },
+          "midlertidigPostadresse":{
+            "gateadresse":{
+              "gatenavn":"Postboks 2044"
             },
             "postnr": "5081",
-            "land": "NOR"
+            "land": "NO"
           },
-          "kjoenn": "K",
-          "foedselsdato": "1963-05-05"
+          "foedselsdato":"1972-11-19",
+          "personStatus": {
+            "kode": "DØD",
+            "term": "DØD"
+          },
+          "erEgenAnsatt": true,
+          "familiemedlemmer": [
+            {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
+            {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
+            {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
+          ]
         },
         "arbeidsforhold": [
           {
@@ -50,22 +78,37 @@
             "arbeidsforholdIDnav": 12498433,
             "ansettelsesPeriode": {
               "fom": "1978-08-19",
-              "tom": "1979-07-15"
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "",
-                "yrke": "",
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "ALTMULIGMANN (PRIVAT)"
+                },
+                "avtaltArbeidstimerPerUke":37.5,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 19.0,
-                "endringsdatoStillingsprosent": "1978-08-19",
-                "maritimArbeidsavtale": false
+                "skipsregister": null,
+                "skipstype": null,
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom" : "2018-01-01",
+                  "tom": null
+                }
               }
             ],
             "permisjonOgPermittering": [
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold": [
 
             ],
@@ -83,22 +126,37 @@
             "arbeidsforholdIDnav": 12498435,
             "ansettelsesPeriode": {
               "fom": "1980-06-23",
-              "tom": "1980-08-01"
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "",
-                "yrke": "",
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "ALTMULIGMANN (PRIVAT)"
+                },
+                "avtaltArbeidstimerPerUke": null,
+                "stillingsprosent": null,
                 "beregnetAntallTimerPrUke": 37.5,
-                "endringsdatoStillingsprosent": "1980-06-23",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom" : "2018-01-01",
+                  "tom": null
+                }
               }
             ],
             "permisjonOgPermittering": [
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold": [
 
             ],
@@ -116,22 +174,37 @@
             "arbeidsforholdIDnav": 12498436,
             "ansettelsesPeriode": {
               "fom": "1981-06-22",
-              "tom": "1981-07-31"
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "",
-                "yrke": "",
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "ALTMULIGMANN (PRIVAT)"
+                },
+                "avtaltArbeidstimerPerUke":37.5,
+                "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 37.5,
-                "endringsdatoStillingsprosent": "1981-06-22",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "skipsregister": null,
+                "skipstype": null,
+                "fartsomraade": null,
+                "gyldighetsperiode" : {
+                  "fom" : "2018-01-01",
+                  "tom": null
+                }
               }
             ],
             "permisjonOgPermittering": [
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold": [
 
             ],
@@ -148,25 +221,38 @@
             "arbeidsforholdID": "V995816598R69435S1001L0001",
             "arbeidsforholdIDnav": 34697962,
             "ansettelsesPeriode": {
-              "fom": "2013-11-01"
+              "fom": "2013-11-01",
+              "tom":null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning": "Døgnkontinuerlig skiftarbeid og\n                    turnusarbeid (35,5 t/u)\n                ",
+                "arbeidstidsordning" : {
+                  "kode": "ikkeSkift",
+                  "term": "Ikke skift"
+                },
                 "avloenningstype": "Fastlønn",
-                "yrke": "HJELPEPLEIER",
+                "yrke" : {
+                  "kode":"0039293",
+                  "term": "HJELPEPLEIER"
+                },
                 "avtaltArbeidstimerPerUke": 35.5,
-                "stillingsprosent": 62.44,
-                "sisteLoennsendringsdato": "2014-05-01",
+                "stillingsprosent": 62,
                 "beregnetAntallTimerPrUke": 22.1662,
-                "endringsdatoStillingsprosent": "2013-11-01",
-                "maritimArbeidsavtale": false
+                "maritimArbeidsavtale": false,
+                "fartsomraade": null,
+                "skipsregister": null,
+                "skipstype": null,
+                "gyldighetsperiode" : {
+                  "fom" : "2018-01-01",
+                  "tom": null
+                }
               }
             ],
             "permisjonOgPermittering": [
 
             ],
+            "timerTimelonnet": [],
             "utenlandsopphold": [
 
             ],
@@ -177,46 +263,21 @@
             "opplysningspliktigID": "951237116",
             "opprettelsestidspunkt": "2015-02-02T14:31:53.927+01:00",
             "sistBekreftet": "2017-06-28T14:01:30+02:00",
-            "Aordning": true,
-            "timerTimelonnet": [
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2015-06",
-                "timelonnetPeriode": {
-                  "fom": "2015-04-30",
-                  "tom": "2015-04-30"
-                }
-              },
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2015-07",
-                "timelonnetPeriode": {
-                  "fom": "2015-06-16",
-                  "tom": "2015-06-16"
-                }
-              },
-              {
-                "antallTimer": 2.0,
-                "rapporteringsperiode": "2016-05",
-                "timelonnetPeriode": {
-                  "fom": "2016-04-18",
-                  "tom": "2016-04-18"
-                }
-              }
-            ]
+            "Aordning": true
           }
         ],
         "organisasjoner": [
           {
             "orgnr": "910253158",
             "navn": "MULTICONSULT ASA",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Nedre Skøyen vei 2"
               },
               "postnr": "0276",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -224,19 +285,21 @@
                 "gatenavn": "Postboks 265  Skøyen"
               },
               "postnr": "0213",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "982683955",
             "navn": "EXPERIS AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lakkegata 53"
               },
               "postnr": "0187",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -244,19 +307,21 @@
                 "gatenavn": "Postboks 2506 Solli"
               },
               "postnr": "0202",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "943049467",
             "navn": "SKANSKA NORGE AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Lakkegata 53"
               },
               "postnr": "0187",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -264,19 +329,21 @@
                 "gatenavn": "Postboks 1175 Oslo Sentrum"
               },
               "postnr": "0107",
+              "poststed": "OSLO",
               "land": "NO"
             }
           },
           {
             "orgnr": "967032271",
             "navn": "SWECO NORGE AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
                 "gatenavn": "Drammensveien 260"
               },
               "postnr": "0283",
+              "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
@@ -284,6 +351,7 @@
                 "gatenavn": "Postboks 80   Skøyen"
               },
               "postnr": "0212",
+              "poststed": "OSLO",
               "land": "NO"
             }
           }
@@ -384,22 +452,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "Periode",
-                      "tilleggsinformasjonDetaljer": {
-                        "etterbetalingsperiode": {
-                          "fom": "2017-03-01",
-                          "tom": "2017-03-31"
-                        },
-                        "periode": {
-                          "fom": "2017-03-01",
-                          "tom": "2017-03-31"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -412,22 +468,10 @@
                     "utbetaltIPeriode": "2017-09",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -440,22 +484,10 @@
                     "utbetaltIPeriode": "2017-09",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -468,22 +500,10 @@
                     "utbetaltIPeriode": "2017-08",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -496,22 +516,10 @@
                     "utbetaltIPeriode": "2017-08",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -524,22 +532,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -552,22 +548,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -580,22 +564,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -608,22 +580,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -636,22 +596,10 @@
                     "utbetaltIPeriode": "2017-05",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -664,22 +612,10 @@
                     "utbetaltIPeriode": "2017-05",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -692,22 +628,10 @@
                     "utbetaltIPeriode": "2017-04",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -720,22 +644,10 @@
                     "utbetaltIPeriode": "2017-07",
                     "opplysningspliktigID": "910253158",
                     "virksomhetID": "910253158",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
                   {
@@ -748,22 +660,10 @@
                     "utbetaltIPeriode": "2017-06",
                     "opplysningspliktigID": "982683955",
                     "virksomhetID": "982683955",
-                    "tilleggsinformasjon": {
-                      "kategori": "AldersUfoereEtterlatteAvtalefestetOgKrigspensjon",
-                      "tilleggsinformasjonDetaljer": {
-                        "tidsrom": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        },
-                        "periode": {
-                          "fom": "2017-04-01",
-                          "tom": "2017-04-30"
-                        }
-                      }
-                    },
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
                 ]

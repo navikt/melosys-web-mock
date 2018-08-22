@@ -1,6 +1,6 @@
 const fs = require('fs');
 const URL = require('url');
-const Utils  = require('./utils');
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
@@ -10,11 +10,11 @@ const lesPerson = (fnr) => {
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 
-exports.lesAllePersoner = () => {
-  return Utils.lesKatalog(PERSON_MOCK_DATA_DIR)
+module.exports.lesPersonKatalog = () => {
+  return Schema.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 
-exports.hent = (req, res) => {
+module.exports.hent = (req, res) => {
   const fnr = req.query.fnr;
   if (fnr && fnr.length === 11) {
     const person = lesPerson(fnr);

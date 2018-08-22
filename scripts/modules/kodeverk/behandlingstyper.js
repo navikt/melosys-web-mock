@@ -28,4 +28,4 @@ const behandlingstyper = [
     term: 'Påstand fra utenlandsk myndighet',
   },
 ];
-exports.behandlingstyper = behandlingstyper;
+module.exports.behandlingstyper = behandlingstyper;

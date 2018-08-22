@@ -113,12 +113,12 @@ function runTest(data) {
   }
 }
 
-const test = () => {
+const testAll = () => {
   console.log(colors.blue('Demo'));
   runTest(jsonJS);
 };
 
 const demo = {
-  test,
+  testAll,
 };
-exports.demo = demo;
+module.exports.demo = demo;

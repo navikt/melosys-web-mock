@@ -20,4 +20,4 @@ const behandlingsstatus = [
     term: 'Avsluttet',
   },
 ];
-exports.behandlingsstatus = behandlingsstatus;
+module.exports.behandlingsstatus = behandlingsstatus;
