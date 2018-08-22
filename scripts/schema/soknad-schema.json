@@ -16,34 +16,34 @@
       "title": "The Behandlingid Schema ",
       "default": 0
     },
-    "soknadDokument": {
-      "$id": "/properties/soknadDokument",
+    "soeknadDokument": {
+      "$id": "/properties/soeknadDokument",
       "type": [
         "object",
         "null"
       ],
       "properties": {
         "personOpplysninger": {
-          "$id": "/properties/soknadDokument/properties/personOpplysninger",
+          "$id": "/properties/soeknadDokument/properties/personOpplysninger",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "utenlandskID": {
-              "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID",
+              "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items",
+                "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items",
                 "type": [
                   "object",
                   "null"
                 ],
                 "properties": {
                   "ID": {
-                    "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/ID",
+                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/ID",
                     "type": [
                       "string",
                       "null"
@@ -55,12 +55,12 @@
                     ]
                   },
                   "land": {
-                    "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land",
+                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land",
                     "type": [
                       "array"
                     ],
                     "items": {
-                      "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land/items",
+                      "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land/items",
                       "type": [
                         "string",
                         "null"
@@ -80,16 +80,15 @@
                 "additionalProperties": false
               }
             },
-            "medfolgendeBarn": {
-              "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn",
+            "medfolgendeFamilie": {
+              "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/medfolgendeFamilie",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeBarn/items",
+                "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/medfolgendeFamilie/items",
                 "type": [
-                  "string",
-                  "null"
+                  "string"
                 ],
                 "title": "The 0th Schema ",
                 "default": "",
@@ -99,7 +98,7 @@
               }
             },
             "medfolgendeAndre": {
-              "$id": "/properties/soknadDokument/properties/personOpplysninger/properties/medfolgendeAndre",
+              "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/medfolgendeAndre",
               "type": [
                 "string",
                 "null"
@@ -113,27 +112,27 @@
           },
           "required": [
             "utenlandskID",
-            "medfolgendeBarn",
+            "medfolgendeFamilie",
             "medfolgendeAndre"
           ],
           "additionalProperties": false
         },
         "arbeidUtland": {
-          "$id": "/properties/soknadDokument/properties/arbeidUtland",
+          "$id": "/properties/soeknadDokument/properties/arbeidUtland",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "adresse": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse",
               "type": [
                 "object",
                 "null"
               ],
               "properties": {
                 "gatenavn": {
-                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/gatenavn",
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/gatenavn",
                   "type": [
                     "string",
                     "null"
@@ -145,7 +144,7 @@
                   ]
                 },
                 "postnummer": {
-                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/postnummer",
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/postnummer",
                   "type": [
                     "string",
                     "null"
@@ -157,7 +156,7 @@
                   ]
                 },
                 "poststed": {
-                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/poststed",
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/poststed",
                   "type": [
                     "string",
                     "null"
@@ -169,12 +168,12 @@
                   ]
                 },
                 "land": {
-                  "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/land",
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/land",
                   "type": [
                     "array"
                   ],
                   "items": {
-                    "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/adresse/properties/land/items",
+                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/land/items",
                     "type": [
                       "string",
                       "null"
@@ -196,7 +195,7 @@
               "additionalProperties": false
             },
             "arbeidsandelNorge": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsandelNorge",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsandelNorge",
               "type": [
                 "number",
                 "null"
@@ -208,7 +207,7 @@
               ]
             },
             "arbeidsandelUtland": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsandelUtland",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsandelUtland",
               "type": [
                 "number",
                 "null"
@@ -220,7 +219,7 @@
               ]
             },
             "arbeidsstedUtland": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidsstedUtland",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsstedUtland",
               "type": "null",
               "title": "The Arbeidsstedutland Schema ",
               "default": null,
@@ -229,7 +228,7 @@
               ]
             },
             "arbeidUtlandErstatning": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidUtlandErstatning",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidUtlandErstatning",
               "type": [
                 "boolean",
                 "null"
@@ -241,7 +240,7 @@
               ]
             },
             "arbeidUtlandHjemmekontor": {
-              "$id": "/properties/soknadDokument/properties/arbeidUtland/properties/arbeidUtlandHjemmekontor",
+              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidUtlandHjemmekontor",
               "type": [
                 "boolean",
                 "null"
@@ -264,19 +263,19 @@
           "additionalProperties": false
         },
         "foretakUtland": {
-          "$id": "/properties/soknadDokument/properties/foretakUtland",
+          "$id": "/properties/soeknadDokument/properties/foretakUtland",
           "type": [
             "array"
           ],
           "items": {
-            "$id": "/properties/soknadDokument/properties/foretakUtland/items",
+            "$id": "/properties/soeknadDokument/properties/foretakUtland/items",
             "type": [
               "object",
               "null"
             ],
             "properties": {
               "navn": {
-                "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/navn",
+                "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/navn",
                 "type": [
                   "string",
                   "null"
@@ -288,7 +287,7 @@
                 ]
               },
               "orgnr": {
-                "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/orgnr",
+                "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/orgnr",
                 "type": [
                   "string",
                   "null"
@@ -300,14 +299,14 @@
                 ]
               },
               "adresse": {
-                "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse",
+                "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse",
                 "type": [
                   "object",
                   "null"
                 ],
                 "properties": {
                   "gatenavn": {
-                    "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/gatenavn",
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/gatenavn",
                     "type": [
                       "string",
                       "null"
@@ -319,7 +318,7 @@
                     ]
                   },
                   "postnummer": {
-                    "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/postnummer",
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/postnummer",
                     "type": [
                       "string",
                       "null"
@@ -331,7 +330,7 @@
                     ]
                   },
                   "poststed": {
-                    "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/poststed",
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/poststed",
                     "type": [
                       "string",
                       "null"
@@ -343,12 +342,12 @@
                     ]
                   },
                   "land": {
-                    "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/land",
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land",
                     "type": [
                       "array"
                     ],
                     "items": {
-                      "$id": "/properties/soknadDokument/properties/foretakUtland/items/properties/adresse/properties/land/items",
+                      "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land/items",
                       "type": [
                         "string",
                         "null"
@@ -379,19 +378,19 @@
           }
         },
         "oppholdUtland": {
-          "$id": "/properties/soknadDokument/properties/oppholdUtland",
+          "$id": "/properties/soeknadDokument/properties/oppholdUtland",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "oppholdsland": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
+                "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
                 "type": [
                   "string",
                   "null"
@@ -404,14 +403,14 @@
               }
             },
             "oppholdsPeriode": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
               "type": [
                 "object",
                 "null"
               ],
               "properties": {
                 "fom": {
-                  "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/fom",
+                  "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/fom",
                   "type": [
                     "string",
                     "null"
@@ -423,7 +422,7 @@
                   ]
                 },
                 "tom": {
-                  "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/tom",
+                  "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/tom",
                   "type": [
                     "string",
                     "null"
@@ -442,7 +441,7 @@
               "additionalProperties": false
             },
             "ektefelleEllerBarnINorge": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
               "type": [
                 "boolean",
                 "null"
@@ -454,7 +453,7 @@
               ]
             },
             "sammeAdresseSomArbeidsgiver": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/sammeAdresseSomArbeidsgiver",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/sammeAdresseSomArbeidsgiver",
               "type": [
                 "boolean",
                 "null"
@@ -466,7 +465,7 @@
               ]
             },
             "studentFinansiering": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studentFinansiering",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentFinansiering",
               "type": [
                 "string",
                 "null"
@@ -478,7 +477,7 @@
               ]
             },
             "studentSemester": {
-              "$id": "/properties/soknadDokument/properties/oppholdUtland/properties/studentSemester",
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentSemester",
               "type": [
                 "string",
                 "null"
@@ -501,14 +500,14 @@
           "additionalProperties": false
         },
         "bosted": {
-          "$id": "/properties/soknadDokument/properties/bosted",
+          "$id": "/properties/soeknadDokument/properties/bosted",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "intensjonOmRetur": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/intensjonOmRetur",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/intensjonOmRetur",
               "type": [
                 "boolean",
                 "null"
@@ -520,7 +519,7 @@
               ]
             },
             "bostedUtenforNorge": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/bostedUtenforNorge",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/bostedUtenforNorge",
               "type": [
                 "boolean",
                 "null"
@@ -532,12 +531,12 @@
               ]
             },
             "familiesBosted": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/familiesBosted",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/bosted/properties/familiesBosted/items",
+                "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted/items",
                 "type": [
                   "string",
                   "null"
@@ -550,7 +549,7 @@
               }
             },
             "antallMaanederINorge": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/antallMaanederINorge",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/antallMaanederINorge",
               "type": [
                 "integer",
                 "null"
@@ -562,7 +561,7 @@
               ]
             },
             "EOSBarnetrygdFraNAV": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/EOSBarnetrygdFraNAV",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/EOSBarnetrygdFraNAV",
               "type": [
                 "boolean",
                 "null"
@@ -574,7 +573,7 @@
               ]
             },
             "adresseIUtlandet": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/adresseIUtlandet",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/adresseIUtlandet",
               "type": [
                 "boolean",
                 "null"
@@ -586,14 +585,14 @@
               ]
             },
             "oppgittAdresse": {
-              "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse",
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse",
               "type": [
                 "object",
                 "null"
               ],
               "properties": {
                 "gatenavn": {
-                  "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/gatenavn",
+                  "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/gatenavn",
                   "type": [
                     "string",
                     "null"
@@ -605,7 +604,7 @@
                   ]
                 },
                 "postnummer": {
-                  "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/postnummer",
+                  "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/postnummer",
                   "type": [
                     "string",
                     "null"
@@ -617,7 +616,7 @@
                   ]
                 },
                 "poststed": {
-                  "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/poststed",
+                  "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/poststed",
                   "type": [
                     "string",
                     "null"
@@ -629,12 +628,12 @@
                   ]
                 },
                 "land": {
-                  "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/land",
+                  "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/land",
                   "type": [
                     "array"
                   ],
                   "items": {
-                    "$id": "/properties/soknadDokument/properties/bosted/properties/oppgittAdresse/properties/land/items",
+                    "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/land/items",
                     "type": [
                       "string",
                       "null"
@@ -667,14 +666,14 @@
           "additionalProperties": false
         },
         "arbeidNorge": {
-          "$id": "/properties/soknadDokument/properties/arbeidNorge",
+          "$id": "/properties/soeknadDokument/properties/arbeidNorge",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "arbeidsforholdOpprettholdIHelePerioden": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/arbeidsforholdOpprettholdIHelePerioden",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/arbeidsforholdOpprettholdIHelePerioden",
               "type": [
                 "boolean",
                 "null"
@@ -686,7 +685,7 @@
               ]
             },
             "arbeidsforholdVikarNavn": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/arbeidsforholdVikarNavn",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/arbeidsforholdVikarNavn",
               "type": [
                 "string",
                 "null"
@@ -698,7 +697,7 @@
               ]
             },
             "vikarOrgnr": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/vikarOrgnr",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/vikarOrgnr",
               "type": [
                 "string",
                 "null"
@@ -710,7 +709,7 @@
               ]
             },
             "flyendePersonellHjemmebase": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/flyendePersonellHjemmebase",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/flyendePersonellHjemmebase",
               "type": [
                 "string",
                 "null"
@@ -722,7 +721,7 @@
               ]
             },
             "kontaktNavn": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/kontaktNavn",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/kontaktNavn",
               "type": [
                 "string",
                 "null"
@@ -734,7 +733,7 @@
               ]
             },
             "kontaktEpost": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/kontaktEpost",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/kontaktEpost",
               "type": [
                 "string",
                 "null"
@@ -746,7 +745,7 @@
               ]
             },
             "fullmektigFirma": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigFirma",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigFirma",
               "type": [
                 "string",
                 "null"
@@ -758,7 +757,7 @@
               ]
             },
             "fullmektigGateadresse": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigGateadresse",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigGateadresse",
               "type": [
                 "string",
                 "null"
@@ -770,7 +769,7 @@
               ]
             },
             "fullmektigPostnr": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigPostnr",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigPostnr",
               "type": [
                 "string",
                 "null"
@@ -782,7 +781,7 @@
               ]
             },
             "fullmektigPoststed": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigPoststed",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigPoststed",
               "type": [
                 "string",
                 "null"
@@ -794,7 +793,7 @@
               ]
             },
             "fullmektigRegion": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigRegion",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigRegion",
               "type": [
                 "string",
                 "null"
@@ -806,12 +805,12 @@
               ]
             },
             "fullmektigLand": {
-              "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigLand",
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/arbeidNorge/properties/fullmektigLand/items",
+                "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand/items",
                 "type": [
                   "string",
                   "null"
@@ -841,14 +840,14 @@
           "additionalProperties": false
         },
         "selvstendigArbeid": {
-          "$id": "/properties/soknadDokument/properties/selvstendigArbeid",
+          "$id": "/properties/soeknadDokument/properties/selvstendigArbeid",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "erSelvstendig": {
-              "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/erSelvstendig",
+              "$id": "/properties/soeknadDokument/properties/selvstendigArbeid/properties/erSelvstendig",
               "type": [
                 "boolean",
                 "null"
@@ -860,19 +859,19 @@
               ]
             },
             "selvstendigForetak": {
-              "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak",
+              "$id": "/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items",
+                "$id": "/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items",
                 "type": [
                   "object",
                   "null"
                 ],
                 "properties": {
                   "orgnr": {
-                    "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/orgnr",
+                    "$id": "/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/orgnr",
                     "type": [
                       "string",
                       "null"
@@ -884,7 +883,7 @@
                     ]
                   },
                   "fortsetterEtterArbeidIUtlandet": {
-                    "$id": "/properties/soknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/fortsetterEtterArbeidIUtlandet",
+                    "$id": "/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/fortsetterEtterArbeidIUtlandet",
                     "type": [
                       "boolean",
                       "null"
@@ -910,14 +909,14 @@
           "additionalProperties": false
         },
         "juridiskArbeidsgiverNorge": {
-          "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge",
+          "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "erBemanningsbyra": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/erBemanningsbyra",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/erBemanningsbyra",
               "type": [
                 "boolean",
                 "null"
@@ -929,7 +928,7 @@
               ]
             },
             "utsendteNeste12Mnd": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendteNeste12Mnd",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendteNeste12Mnd",
               "type": [
                 "integer",
                 "null"
@@ -941,7 +940,7 @@
               ]
             },
             "antallAdmAnsatte": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdmAnsatte",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdmAnsatte",
               "type": [
                 "integer",
                 "null"
@@ -953,7 +952,7 @@
               ]
             },
             "antallAdminAnsatteEOS": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdminAnsatteEOS",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdminAnsatteEOS",
               "type": [
                 "integer",
                 "null"
@@ -965,7 +964,7 @@
               ]
             },
             "andelOmsetningINorge": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelOmsetningINorge",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelOmsetningINorge",
               "type": [
                 "number",
                 "null"
@@ -977,7 +976,7 @@
               ]
             },
             "andelKontrakterINorge": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelKontrakterINorge",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelKontrakterINorge",
               "type": [
                 "number",
                 "null"
@@ -989,7 +988,7 @@
               ]
             },
             "utsendtFortsetterArbeidsforholdIUtlandet": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtFortsetterArbeidsforholdIUtlandet",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtFortsetterArbeidsforholdIUtlandet",
               "type": [
                 "boolean",
                 "null"
@@ -1001,7 +1000,7 @@
               ]
             },
             "utsendtArbeiderArbeiderMedKlienter": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKlienter",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKlienter",
               "type": [
                 "boolean",
                 "null"
@@ -1013,7 +1012,7 @@
               ]
             },
             "utsendtArbeiderArbeiderMedKontrakter": {
-              "$id": "/properties/soknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKontrakter",
+              "$id": "/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKontrakter",
               "type": [
                 "boolean",
                 "null"
@@ -1039,14 +1038,14 @@
           "additionalProperties": false
         },
         "arbeidsinntekt": {
-          "$id": "/properties/soknadDokument/properties/arbeidsinntekt",
+          "$id": "/properties/soeknadDokument/properties/arbeidsinntekt",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "inntektNorskIPerioden": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNorskIPerioden",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektNorskIPerioden",
               "type": [
                 "integer",
                 "null"
@@ -1058,7 +1057,7 @@
               ]
             },
             "inntektUtenlandskIPerioden": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektUtenlandskIPerioden",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektUtenlandskIPerioden",
               "type": [
                 "integer",
                 "null"
@@ -1070,7 +1069,7 @@
               ]
             },
             "inntektNaeringIPerioden": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaeringIPerioden",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektNaeringIPerioden",
               "type": [
                 "integer",
                 "null"
@@ -1082,12 +1081,12 @@
               ]
             },
             "inntektNaturalYtelser": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser/items",
+                "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektNaturalYtelser/items",
                 "type": [
                   "string",
                   "null"
@@ -1101,7 +1100,7 @@
               }
             },
             "inntektErInnrapporteringspliktig": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektErInnrapporteringspliktig",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektErInnrapporteringspliktig",
               "type": [
                 "boolean",
                 "null"
@@ -1113,7 +1112,7 @@
               ]
             },
             "inntektTrygdeavgiftBlirTrukket": {
-              "$id": "/properties/soknadDokument/properties/arbeidsinntekt/properties/inntektTrygdeavgiftBlirTrukket",
+              "$id": "/properties/soeknadDokument/properties/arbeidsinntekt/properties/inntektTrygdeavgiftBlirTrukket",
               "type": [
                 "boolean",
                 "null"
@@ -1136,14 +1135,14 @@
           "additionalProperties": false
         },
         "arbeidsgiversBekreftelse": {
-          "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse",
+          "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "arbeidsgiverBekrefterUtsendelse": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBekrefterUtsendelse",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBekrefterUtsendelse",
               "type": [
                 "boolean",
                 "null"
@@ -1155,7 +1154,7 @@
               ]
             },
             "arbeidstakerAnsattUnderUtsendelsen": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerAnsattUnderUtsendelsen",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerAnsattUnderUtsendelsen",
               "type": [
                 "boolean",
                 "null"
@@ -1167,7 +1166,7 @@
               ]
             },
             "erstatterArbeidstakerenUtsendte": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/erstatterArbeidstakerenUtsendte",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/erstatterArbeidstakerenUtsendte",
               "type": [
                 "boolean",
                 "null"
@@ -1179,7 +1178,7 @@
               ]
             },
             "arbeidstakerTidligereUtsendt24Mnd": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerTidligereUtsendt24Mnd",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidstakerTidligereUtsendt24Mnd",
               "type": [
                 "boolean",
                 "null"
@@ -1191,7 +1190,7 @@
               ]
             },
             "arbeidsgiverBetalerArbeidsgiveravgift": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBetalerArbeidsgiveravgift",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/arbeidsgiverBetalerArbeidsgiveravgift",
               "type": [
                 "boolean",
                 "null"
@@ -1203,7 +1202,7 @@
               ]
             },
             "trygdeavgiftTrukketGjennomSkatt": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkatt",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkatt",
               "type": [
                 "boolean",
                 "null"
@@ -1215,7 +1214,7 @@
               ]
             },
             "trygdeavgiftTrukketGjennomSkattDato": {
-              "$id": "/properties/soknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkattDato",
+              "$id": "/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkattDato",
               "type": [
                 "string",
                 "null"
@@ -1239,14 +1238,14 @@
           "additionalProperties": false
         },
         "maritimtArbeid": {
-          "$id": "/properties/soknadDokument/properties/maritimtArbeid",
+          "$id": "/properties/soeknadDokument/properties/maritimtArbeid",
           "type": [
             "object",
             "null"
           ],
           "properties": {
             "maritimType": {
-              "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/maritimType",
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimType",
               "type": [
                 "string",
                 "null"
@@ -1258,7 +1257,7 @@
               ]
             },
             "skipsNavn": {
-              "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/skipsNavn",
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/skipsNavn",
               "type": [
                 "string",
                 "null"
@@ -1270,7 +1269,7 @@
               ]
             },
             "fartsomrade": {
-              "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/fartsomrade",
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomrade",
               "type": [
                 "string",
                 "null"
@@ -1282,12 +1281,12 @@
               ]
             },
             "flaggLand": {
-              "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/flaggLand",
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/flaggLand/items",
+                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand/items",
                 "type": [
                   "string",
                   "null"
@@ -1300,12 +1299,12 @@
               }
             },
             "installasjonsLand": {
-              "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soknadDokument/properties/maritimtArbeid/properties/installasjonsLand/items",
+                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand/items",
                 "type": [
                   "string",
                   "null"

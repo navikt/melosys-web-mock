@@ -2,6 +2,7 @@ const fs = require('fs');
 const _ = require('underscore');
 
 const Utils = require('./utils');
+
 const { kodeverk } = require('./kodeverk');
 const { lesSoknad } = require('./soknader');
 
@@ -25,7 +26,7 @@ const mineOppgaver = (oppgaveliste) => {
     const bid = 4;
     const soknaden = lesSoknad(bid);
     const {
-      soknadDokument: {
+      soeknadDokument: {
         arbeidUtland: {
             arbeidsland,
             arbeidsperiode,

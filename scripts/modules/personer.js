@@ -1,6 +1,6 @@
 const fs = require('fs');
 const URL = require('url');
-const Utils  = require('./utils');
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
@@ -11,7 +11,7 @@ const lesPerson = (fnr) => {
 };
 
 module.exports.lesPersonKatalog = () => {
-  return Utils.lesKatalog(PERSON_MOCK_DATA_DIR);
+  return Schema.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 
 module.exports.hent = (req, res) => {

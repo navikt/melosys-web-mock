@@ -517,22 +517,22 @@
                     ],
                     "additionalProperties": false
                   },
-                  "postadresseMidlertidig": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig",
+                  "midlertidigPostadresse": {
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse",
                     "type": [
                       "object",
                       "null"
                     ],
                     "properties": {
                       "gateadresse": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/gateadresse",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse",
                         "type": [
                           "object",
                           "null"
                         ],
                         "properties": {
                           "gatenavn": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/gateadresse/properties/gatenavn",
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse/properties/gatenavn",
                             "type": [
                               "string",
                               "null"
@@ -550,7 +550,7 @@
                         "additionalProperties": false
                       },
                       "postnr": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/postnr",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/postnr",
                         "type": [
                           "string",
                           "null"
@@ -562,7 +562,7 @@
                         ]
                       },
                       "land": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresseMidlertidig/properties/land",
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/land",
                         "type": [
                           "string",
                           "null"
@@ -642,20 +642,32 @@
                       true
                     ]
                   },
-                  "barn": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/barn",
+                  "familiemedlemmer": {
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
                     "type": [
                       "array"
                     ],
                     "items": {
-                      "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/barn/items",
+                      "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
                       "type": [
                         "object",
                         "null"
                       ],
                       "properties": {
+                        "fnr": {
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
+                          "type": [
+                            "string",
+                            "null"
+                          ],
+                          "title": "The Fnr Schema ",
+                          "default": "",
+                          "examples": [
+                            "10100638274"
+                          ]
+                        },
                         "sammensattNavn": {
-                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/barn/items/properties/sammensattNavn",
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/sammensattNavn",
                           "type": [
                             "string",
                             "null"
@@ -666,22 +678,23 @@
                             "GIRAFF MAGER"
                           ]
                         },
-                        "fnr": {
-                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/barn/items/properties/fnr",
+                        "relasjonstype": {
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
                           "type": [
                             "string",
                             "null"
                           ],
-                          "title": "The Fnr Schema ",
+                          "title": "The Relasjonstype Schema ",
                           "default": "",
                           "examples": [
-                            "10100638274"
+                            "Barn av"
                           ]
                         }
                       },
                       "required": [
+                        "fnr",
                         "sammensattNavn",
-                        "fnr"
+                        "relasjonstype"
                       ],
                       "additionalProperties": false
                     }
@@ -696,11 +709,11 @@
                   "kjoenn",
                   "bostedsadresse",
                   "postadresse",
-                  "postadresseMidlertidig",
+                  "midlertidigPostadresse",
                   "foedselsdato",
                   "personStatus",
                   "erEgenAnsatt",
-                  "barn"
+                  "familiemedlemmer"
                 ],
                 "additionalProperties": false
               },
@@ -1349,13 +1362,13 @@
                         "EQUINOR ASA"
                       ]
                     },
-                    "registrert": {
-                      "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/registrert",
+                    "oppstartdato": {
+                      "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
                       "type": [
                         "string",
                         "null"
                       ],
-                      "title": "The Registrert Schema ",
+                      "title": "The Oppstartdato Schema ",
                       "default": "",
                       "examples": [
                         "1977-01-01"
@@ -1531,7 +1544,7 @@
                   "required": [
                     "orgnr",
                     "navn",
-                    "registrert",
+                    "oppstartdato",
                     "organisasjonsform",
                     "forretningsadresse",
                     "postadresse"

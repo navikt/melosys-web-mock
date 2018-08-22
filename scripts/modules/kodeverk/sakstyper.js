@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/sakstyper
+ * @module
+ */
 const sakstyper = [
   {
     kode: 'EU_EOS',

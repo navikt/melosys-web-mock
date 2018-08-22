@@ -3,20 +3,21 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
-const { lesSaksbehandlerKatalog } = require('../modules/saksbehandler');
+const { lesFaktaavklaringKatalog } = require('../modules/faktaavklaring');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemajson = `${SCHEMA_DIR}/saksbehandler-schema.json`;
-const schema = Schema.lesSchema(schemajson);
-const catalog = lesSaksbehandlerKatalog();
+const schemapath = `${SCHEMA_DIR}/faktaavklaring-schema.json`;
+const schema = Schema.lesSchema(schemapath);
+
+const catalog = lesFaktaavklaringKatalog();
 
 const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('Saksbehandler'));
+  console.log(colors.blue('Faktaavklaring'));
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 
@@ -27,9 +28,9 @@ const testOne = (path) => {
   return Schema.runTest(elem, ajv, validate);
 };
 
-const Saksbehandler = {
+const faktaavklaring = {
   testAll,
   testOne,
 };
-module.exports.Saksbehandler = Saksbehandler;
+module.exports.faktaavklaring = faktaavklaring;
 

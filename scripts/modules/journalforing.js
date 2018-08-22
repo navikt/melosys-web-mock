@@ -3,13 +3,14 @@ const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
 const Utils = require('./utils');
+const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 module.exports.lesJournalforingKatalog = () => {
-  return Utils.lesKatalog(MOCK_JOURNALFORING_DIR);
+  return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
 const lesOppgave = () => {
@@ -39,7 +40,7 @@ module.exports.hent = (req, res) => {
 
 module.exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
-  const schema = Utils.lesSchema(schemajson);
+  const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;

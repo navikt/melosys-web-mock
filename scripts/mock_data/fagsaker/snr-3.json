@@ -53,7 +53,7 @@
             "postnr":"3202",
             "land":"NO"
           },
-          "postadresseMidlertidig":{
+          "midlertidigPostadresse":{
             "gateadresse":{
               "gatenavn":"Postboks 2044"
             },
@@ -66,10 +66,10 @@
             "term": "DØD"
           },
           "erEgenAnsatt": true,
-          "barn": [
-            {"sammensattNavn": "GIRAFF MAGER", "fnr": "10100638274"},
-            {"sammensattNavn": "BUKSE LURVETE", "fnr": "26030537263"},
-            {"sammensattNavn": "UTVIKLER OPTIMISTISK", "fnr": "08029828362"}
+          "familiemedlemmer": [
+            {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
+            {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
+            {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
           ]
         },
         "arbeidsforhold": [
@@ -270,7 +270,7 @@
           {
             "orgnr": "910253158",
             "navn": "MULTICONSULT ASA",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
               "gateadresse": {
@@ -292,7 +292,7 @@
           {
             "orgnr": "982683955",
             "navn": "EXPERIS AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
@@ -314,7 +314,7 @@
           {
             "orgnr": "943049467",
             "navn": "SKANSKA NORGE AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
@@ -336,7 +336,7 @@
           {
             "orgnr": "967032271",
             "navn": "SWECO NORGE AS",
-            "registrert": "1977-01-01",
+            "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
               "gateadresse": {
