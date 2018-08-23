@@ -16,7 +16,7 @@ node {
   def zipFile
 
   /* metadata */
-  def semVer
+  def semVer, buildVersion
   def commitHash, commitHashShort, commitUrl, committer
   def scmVars
 
@@ -45,6 +45,8 @@ node {
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("semVer=${semVer}")
+    buildVersion = "${semver}-${BUILD_NUMBER}"
+    echo("buildVersion=${buildVersion}")
   }
 
   stage('npm install ') {
@@ -79,7 +81,6 @@ node {
     echo("currentSemverNewer=*${currentSemverNewer}*")
     */
     //if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {@
-    buildVersion = "${semver}-${BUILD_NUMBER}"
 
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
 
