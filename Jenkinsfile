@@ -87,7 +87,7 @@ node {
       configFileProvider(
         [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
         sh """
-     	  	mvn -X --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
+     	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
 	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
 	 	        -Ddescription='Melosys-web-mock JSON data and schema.' \
 		        -DrepositoryId=m2internal -Durl=http://maven.adeo.no/nexus/content/repositories/m2internal
