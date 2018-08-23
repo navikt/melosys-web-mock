@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
@@ -18,7 +20,13 @@ const lesOppgave = () => {
   const filnavn = finnJournalpostFil(journalpostID);
   return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
   */
-  return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"))
+  try {
+    return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"));
+  }
+  catch (err) {
+    console.log(err);
+    logger.error(err)
+  }
 };
 
 module.exports.hent = (req, res) => {
@@ -34,6 +42,7 @@ module.exports.hent = (req, res) => {
   }
   catch (err) {
     console.log(err);
+    logger.error(err);
     res.status(500).send(err);
   }
 };

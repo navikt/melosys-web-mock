@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const _ = require('underscore');
 
 const Schema = require('../test/schema-util');
@@ -25,15 +27,18 @@ module.exports.hent = (req, res) => {
         return res.json(_.sample(saksbehandlere));
       case 401: {
         const melding = ERR.unauthorizedRequest401(url);
+        logger.warn(melding);
         return res.status(status).send(melding);
       }
       case 500: {
         const melding = ERR.serverError500(url);
+        logger.error(melding);
         return res.status(status).send(melding);
       }
     }
   } catch (err) {
     console.log(err);
+    logger.error(err);
     return res.status(500).send(err);
   }
 };

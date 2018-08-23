@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const Utils = require('./utils');
@@ -28,11 +30,13 @@ module.exports.hent = (req, res) => {
       return res.json(data);
     }
     else {
+      logger.warn('Not found'+req.url);
       return res.status(404).send(ERR.notFound404(req.url));
     }
   }
   catch (err) {
     console.error(err);
+    logger.error(err);
     return res.status(500).send(err);
   }
 };

@@ -18,7 +18,7 @@ const Schema = require('./test/schema-util');
 
 const log4js = require('log4js');
 log4js.configure({
-  appenders: { schema: { type: 'file', filename: 'schema-errors.log' } },
+  appenders: { schema: { type: 'file', filename: 'logdir/schema-errors.log' } },
   categories: { default: { appenders: ['schema'], level: 'error' } }
 });
 

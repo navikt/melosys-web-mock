@@ -1,4 +1,6 @@
 const fs = require('fs');
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
 const assert = require('assert');
 const URL = require('url');
 const _ = require('underscore');
@@ -63,10 +65,12 @@ module.exports.sok = (req, res) => {
           }
           case 403: {
             const melding = ERR.forbiddenRequest403(url.pathname);
+            logger.warn(melding);
             return res.status(status).send(melding);
           }
           case 500: {
             const melding = ERR.serverError500(url.pathname);
+            logger.error(melding);
             return res.status(status).send(melding);
           }
         }

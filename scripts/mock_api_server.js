@@ -17,6 +17,13 @@ const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
 const logging = require('./modules/logging');
+
+const log4js = require('log4js');
+log4js.configure({
+  appenders: { mock: { type: 'file', filename: 'logdir/mock-errors.log' } },
+  categories: { default: { appenders: ['mock'], level: 'error' } }
+});
+
 const app = express();
 
 const allowCrossDomain = (req, res, next)  => {
@@ -147,9 +154,10 @@ router.post('/logger/error', logging.error);
 
 app.use(allowCrossDomain);
 app.use('/api', router);
+app.use('/melosys/api', router);
 app.use('/frontendlogger', express.static('static'));
 
 app.listen(port);
 
-
+/* eslint-disable-next-line no-console */
 console.log('Test MeloSys mock API server running on http://'+serverinfo.getIpAdress()+':' + port+'/api');
