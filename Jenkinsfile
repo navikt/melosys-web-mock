@@ -45,7 +45,7 @@ node {
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("semVer=${semVer}")
-    buildVersion = "${semver}-${BUILD_NUMBER}"
+    buildVersion = "${semVer}-${BUILD_NUMBER}"
     echo("buildVersion=${buildVersion}")
   }
 
