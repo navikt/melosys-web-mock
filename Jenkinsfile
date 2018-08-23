@@ -60,7 +60,7 @@ node {
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
-    zipFile = "${application}-${semVer}"+".jar"
+    zipFile = "${application}-${buildVersion}"+".jar"
     echo("zipFile:${zipFile}")
     sh "zip -r $zipFile ./scripts/schema/*"
   }
