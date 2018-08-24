@@ -10,6 +10,7 @@
   },
   "registrertDato": "2018-03-12T16:23:42.122",
   "endretDato":"2018-03-15T16:31:35.845",
+  "gsakSaksnummer" : null,
   "behandlinger": [
     {
       "oppsummering": {
@@ -29,33 +30,46 @@
         "person": {
           "fnr": "22127501762",
           "sivilstand": "Ugift",
+          "diskresjonskode" : null,
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
           },
           "sammensattNavn": "KAFFI RASK",
-          "personstatus": "Bosatt",
+          "personStatus" : {
+            "kode" : "BOSA",
+            "term" : "Bosatt"
+          },
           "kjoenn":{
             "kode": "M",
             "term": "Mann"
           },
           "bostedsadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
             "land":"NO"
           },
           "postadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
             "land":"NO"
           },
           "midlertidigPostadresse":{
-            "gateadresse":{
-              "gatenavn":"Postboks 2044"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"5555",
             "land":"NO"
@@ -125,16 +139,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Sandslivegen 90"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "5254",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 7200"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "5020",
               "poststed": "OSLO",
@@ -147,16 +167,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Forusbeen 50"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "4035",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 8500"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "4035",
               "poststed": "OSLO",
@@ -187,7 +213,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -210,7 +237,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -233,7 +261,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -256,7 +285,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -279,7 +309,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -302,7 +333,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -325,7 +357,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -348,7 +381,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -371,7 +405,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -394,7 +429,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
@@ -417,7 +453,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }

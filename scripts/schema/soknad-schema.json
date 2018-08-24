@@ -1,8 +1,7 @@
 {
   "$id": "/api/soknad",
   "type": [
-    "object",
-    "null"
+    "object"
   ],
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -10,8 +9,7 @@
     "behandlingID": {
       "$id": "/properties/behandlingID",
       "type": [
-        "integer",
-        "null"
+        "integer"
       ],
       "title": "The Behandlingid Schema ",
       "default": 0
@@ -218,15 +216,6 @@
                 66.5999984741211
               ]
             },
-            "arbeidsstedUtland": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsstedUtland",
-              "type": "null",
-              "title": "The Arbeidsstedutland Schema ",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
             "arbeidUtlandErstatning": {
               "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidUtlandErstatning",
               "type": [
@@ -256,7 +245,6 @@
             "adresse",
             "arbeidsandelNorge",
             "arbeidsandelUtland",
-            "arbeidsstedUtland",
             "arbeidUtlandErstatning",
             "arbeidUtlandHjemmekontor"
           ],

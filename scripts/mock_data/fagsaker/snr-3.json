@@ -10,6 +10,7 @@
   },
   "registrertDato": "2017-10-19T12:31:36",
   "endretDato": "2017-10-19T12:31:36",
+  "gsakSaksnummer" : null,
   "behandlinger": [
     {
       "oppsummering": {
@@ -29,33 +30,46 @@
         "person": {
           "fnr": "30098000492",
           "sivilstand": "Gift",
+          "diskresjonskode" : null,
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
           },
           "sammensattNavn": "LILLA HEST",
-          "personstatus":"Bosatt",
+          "personStatus" : {
+            "kode" : "BOSA",
+            "term" : "Bosatt"
+          },
           "kjoenn":{
             "kode": "M",
             "term": "Mann"
           },
           "bostedsadresse": {
-            "gateadresse": {
-              "gatenavn": "ANDEBYVEIEN"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
             "land":"NO"
           },
           "postadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
             "land":"NO"
           },
           "midlertidigPostadresse":{
-            "gateadresse":{
-              "gatenavn":"Postboks 2044"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr": "5081",
             "land": "NO"
@@ -273,16 +287,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Nedre Skøyen vei 2"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0276",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 265  Skøyen"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0213",
               "poststed": "OSLO",
@@ -295,16 +315,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Lakkegata 53"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0187",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 2506 Solli"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0202",
               "poststed": "OSLO",
@@ -317,16 +343,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Lakkegata 53"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0187",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 1175 Oslo Sentrum"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0107",
               "poststed": "OSLO",
@@ -339,16 +371,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Drammensveien 260"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0283",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 80   Skøyen"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0212",
               "poststed": "OSLO",
@@ -456,7 +494,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 13000,
@@ -472,7 +511,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 43000,
@@ -488,7 +528,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 43000,
@@ -504,7 +545,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 43000,
@@ -520,7 +562,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 33000,
@@ -536,7 +579,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 43000,
@@ -552,7 +596,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 33000,
@@ -568,7 +613,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 43000,
@@ -584,7 +630,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 23300,
@@ -600,7 +647,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 33000,
@@ -616,7 +664,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 60000,
@@ -632,7 +681,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 50000,
@@ -648,7 +698,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   },
                   {
                     "beloep": 75000,
@@ -664,7 +715,8 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
-                    "beskrivelse": "fastloenn"
+                    "beskrivelse": "fastloenn",
+                    "tilleggsinformasjon": null
                   }
                 ]
               }
