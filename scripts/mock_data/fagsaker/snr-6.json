@@ -30,7 +30,10 @@
         "person": {
           "fnr": "28106600300",
           "sivilstand": "Ugift",
-          "diskresjonskode" : null,
+          "diskresjonskode" :  {
+            "kode": null,
+            "term": null
+          },
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
@@ -110,7 +113,10 @@
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
                 "skipsregister":null,
-                "skipstype":null,
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "maritimArbeidsavtale": false,
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
@@ -155,7 +161,10 @@
                 "beregnetAntallTimerPrUke": 6.0,
                 "maritimArbeidsavtale": false,
                 "skipsregister": null,
-                "skipstype": null,
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",

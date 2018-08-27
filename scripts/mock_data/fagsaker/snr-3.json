@@ -30,7 +30,10 @@
         "person": {
           "fnr": "30098000492",
           "sivilstand": "Gift",
-          "diskresjonskode" : null,
+          "diskresjonskode" :  {
+            "kode": null,
+            "term": null
+          },
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
@@ -109,8 +112,14 @@
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 19.0,
-                "skipsregister": null,
-                "skipstype": null,
+                "skipsregister": {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "maritimArbeidsavtale": false,
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
@@ -158,8 +167,14 @@
                 "stillingsprosent": null,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false,
-                "skipsregister": null,
-                "skipstype": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
@@ -206,8 +221,14 @@
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false,
-                "skipsregister": null,
-                "skipstype": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
@@ -255,8 +276,14 @@
                 "beregnetAntallTimerPrUke": 22.1662,
                 "maritimArbeidsavtale": false,
                 "fartsomraade": null,
-                "skipsregister": null,
-                "skipstype": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null

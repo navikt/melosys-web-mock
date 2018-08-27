@@ -30,7 +30,10 @@
         "person": {
           "fnr": "22127501762",
           "sivilstand": "Ugift",
-          "diskresjonskode" : null,
+          "diskresjonskode" :  {
+            "kode": null,
+            "term": null
+          },
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
@@ -111,7 +114,10 @@
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale":false,
                 "skipsregister": null,
-                "skipstype": null,
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "fartsomraade": null,
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",

@@ -28,7 +28,10 @@
                 "endringsdatoStillingsprosent" : null,
                 "maritimArbeidsavtale" : false,
                 "avloenningstype" : "",
-                "skipsregister" : null,
+                "skipsregister" :  {
+                  "kode": null,
+                  "term": null
+                },
                 "yrke" : {
                   "kode" : "9120105",
                   "term" : "ALTMULIGMANN (PRIVATHJEM)"
@@ -38,7 +41,10 @@
                 "fartsomraade" : null,
                 "beregnetAntallTimerPrUke" : 0,
                 "stillingsprosent" : null,
-                "skipstype" : null,
+                "skipstype" : {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2016-03-01",
                   "tom" : null
@@ -98,7 +104,10 @@
                 "fartsomraade" : null,
                 "beregnetAntallTimerPrUke" : 37.5,
                 "stillingsprosent" : 100,
-                "skipstype" : null,
+                "skipstype" : {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2017-01-01",
                   "tom" : null
@@ -435,7 +444,10 @@
           ]
         },
         "person" : {
-          "diskresjonskode" : null,
+          "diskresjonskode" : {
+            "kode": null,
+            "term": null
+          },
           "erEgenAnsatt" : false,
           "bostedsadresse" : null,
           "postadresse" : null,
