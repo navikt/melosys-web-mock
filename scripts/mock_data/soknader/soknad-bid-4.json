@@ -2,7 +2,7 @@
   "behandlingID": 4,
   "soeknadDokument": {
     "personOpplysninger": {
-      "utenlandskID": [{"ID": "123456789", "land": ["DK"]}],
+      "utenlandskID": [{"ID": "123456789", "landKode": "DK"}],
       "medfolgendeFamilie": ["10100638274"],
       "medfolgendeAndre": "28106600300"
     },

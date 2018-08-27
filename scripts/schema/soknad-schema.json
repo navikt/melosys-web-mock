@@ -47,28 +47,22 @@
                       "123456789"
                     ]
                   },
-                  "land": {
-                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land",
+                  "landKode": {
+                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/landKode",
                     "type": [
-                      "array"
+                      "string",
+                      "null"
                     ],
-                    "items": {
-                      "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land/items",
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "title": "The 0th Schema ",
-                      "default": "",
-                      "examples": [
-                        "DK"
-                      ]
-                    }
+                    "title": "The 0th Schema ",
+                    "default": null,
+                    "examples": [
+                      "DK"
+                    ]
                   }
                 },
                 "required": [
                   "ID",
-                  "land"
+                  "landKode"
                 ],
                 "additionalProperties": false
               }
