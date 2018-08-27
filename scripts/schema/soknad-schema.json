@@ -460,10 +460,7 @@
         },
         "bosted": {
           "$id": "/properties/soeknadDokument/properties/bosted",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
             "intensjonOmRetur": {
               "$id": "/properties/soeknadDokument/properties/bosted/properties/intensjonOmRetur",
@@ -489,23 +486,17 @@
                 true
               ]
             },
-            "familiesBosted": {
-              "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted",
+            "familiesBostedLandKode": {
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBostedLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "SE"
-                ]
-              }
+              "title": "The familiesBostedLandKode Schema ",
+              "default": null,
+              "examples": [
+                "SE"
+              ]
             },
             "antallMaanederINorge": {
               "$id": "/properties/soeknadDokument/properties/bosted/properties/antallMaanederINorge",
@@ -616,7 +607,7 @@
           "required": [
             "intensjonOmRetur",
             "bostedUtenforNorge",
-            "familiesBosted",
+            "familiesBostedLandKode",
             "antallMaanederINorge",
             "EOSBarnetrygdFraNAV",
             "adresseIUtlandet",
