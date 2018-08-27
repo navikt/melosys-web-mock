@@ -1209,14 +1209,14 @@
                 "Navn på skipet"
               ]
             },
-            "fartsomrade": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomrade",
+            "fartsomradeKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomradeKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Fartsomrade Schema ",
-              "default": "",
+              "title": "The FartsomradeKode Schema ",
+              "default": null,
               "examples": [
                 "INNENRIKS"
               ]
@@ -1261,7 +1261,7 @@
           "required": [
             "maritimTypeKode",
             "skipsNavn",
-            "fartsomrade",
+            "fartsomradeKode",
             "flaggLand",
             "installasjonsLand"
           ],
