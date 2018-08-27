@@ -46,7 +46,12 @@ node {
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("semVer=${semVer}")
-    buildVersion = "${semVer}-${BUILD_NUMBER}"
+    if (!scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+      buildVersion = "${semVer}-${BUILD_NUMBER}"
+    }
+    else {
+      buildVersion = "${semVer}-SNAPSHOT"
+    }
     echo("buildVersion=${buildVersion}")
   }
 
@@ -60,10 +65,6 @@ node {
 
   stage('Build Jar archive') {
     echo('Build Jar archive')
-
-    if (!scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      buildVersion = "${semVer}-SNAPSHOT"
-    }
 
     zipFile = "${application}-${buildVersion}"+".jar"
     echo("zipFile:${zipFile}")
