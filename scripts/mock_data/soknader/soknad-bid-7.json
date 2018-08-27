@@ -11,7 +11,7 @@
         "gatenavn": null,
         "postnummer": null,
         "poststed": null,
-        "land": []
+        "landKode": null
       },
       "arbeidsandelNorge": 32,
       "arbeidsandelUtland": 68,
@@ -20,20 +20,20 @@
     },
     "foretakUtland": [],
     "oppholdUtland": {
-      "oppholdsland": [],
+      "oppholdslandKoder": [],
       "oppholdsPeriode": {
         "fom": null,
         "tom": null
       },
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,
-      "studentFinansiering": null,
+      "studentFinansieringKode": null,
       "studentSemester": null
     },
     "bosted": {
       "intensjonOmRetur": true,
       "bostedUtenforNorge": true,
-      "familiesBosted": [],
+      "familiesBostedLandKode": null,
       "antallMaanederINorge": 8,
       "EOSBarnetrygdFraNAV": true,
       "adresseIUtlandet": true,
@@ -41,7 +41,7 @@
         "gatenavn": null,
         "postnummer": null,
         "poststed": null,
-        "land": []
+        "landKode": null
       }
     },
     "arbeidNorge": {
@@ -91,9 +91,9 @@
       "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
     },
     "maritimtArbeid": {
-      "maritimType": "SOKKEL",
+      "maritimTypeKode": "SOKKEL",
       "skipsNavn": null,
-      "fartsomrade": null,
+      "fartsomradeKode": null,
       "flaggLand": [],
       "installasjonsLand": []
     }
