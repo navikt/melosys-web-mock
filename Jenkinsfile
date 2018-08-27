@@ -14,6 +14,7 @@ node {
   def artifactPath = "/no/nav/melosys/${application}/maven-metadata.xml"
   // curl -s http://maven.adeo.no/nexus/content/repositories/m2internal/no/nav/melosys/melosys-web-mock/maven-metadata.xml | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
   def zipFile
+  def repositoryId
 
   /* metadata */
   def semVer, buildVersion
@@ -60,39 +61,36 @@ node {
   stage('Build Jar archive') {
     echo('Build Jar archive')
 
+    if (!scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+      buildVersion = "SNAPSHOT"
+    }
+
     zipFile = "${application}-${buildVersion}"+".jar"
     echo("zipFile:${zipFile}")
     sh "zip -r $zipFile ./scripts/schema/*"
   }
+
   stage('Copy Zip archive to pickup') {
-
-    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
-      sh "cp ${zipFile} $webMockDir"
-    }
+    sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
+    sh "cp ${zipFile} $webMockDir"
   }
+
   stage('Deploy ZIP archive to Maven') {
-    // | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
-    /*
-    def xpath = "'string((//metadata/versioning/versions/version)[last()])'"
-    def nexusLatestVersion = sh(returnStdout: true, script: "curl -s $nexusHost$artifactPath | xmllint --xpath $xpath -")
-    echo("nexusLatestVersion=${nexusLatestVersion}")
-    def currentSemverNewer = sh(returnStdout: true, script: "${node} scripts/semver-comp -a ${semVer} -b ${nexusLatestVersion}").trim()
-    echo("currentSemverNewer=*${currentSemverNewer}*")
-    */
-    //if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop") && currentSemverNewer.toBoolean()) {@
-
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-
-      configFileProvider(
-        [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
-        sh """
+      repositoryId = "m2internal"
+    }
+    else {
+      repositoryId = "m2snapshot"
+    }
+    echo("repositoryId:${repositoryId}")
+    configFileProvider(
+      [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
+      sh """
      	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
 	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
 	 	        -Ddescription='Melosys-web-mock JSON data and schema.' \
-		        -DrepositoryId=m2internal -Durl=http://maven.adeo.no/nexus/content/repositories/m2internal
+		        -DrepositoryId=${repositoryId} -Durl=http://maven.adeo.no/nexus/content/repositories/${repositoryId}
         """
-      }
     }
   }
 }
