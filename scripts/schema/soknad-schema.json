@@ -1183,18 +1183,15 @@
         },
         "maritimtArbeid": {
           "$id": "/properties/soeknadDokument/properties/maritimtArbeid",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
-            "maritimType": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimType",
+            "maritimTypeKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimTypeKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Maritimtype Schema ",
+              "title": "The MaritimTypeKode Schema ",
               "default": "",
               "examples": [
                 "SKIP"
@@ -1262,7 +1259,7 @@
             }
           },
           "required": [
-            "maritimType",
+            "maritimTypeKode",
             "skipsNavn",
             "fartsomrade",
             "flaggLand",
