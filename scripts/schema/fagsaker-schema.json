@@ -1,8 +1,6 @@
 {
   "$id": "http://example.com/example.json",
-  "type": [
-    "object"
-  ],
+  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
@@ -20,10 +18,7 @@
     },
     "type": {
       "$id": "/properties/type",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "kode": {
           "$id": "/properties/type/properties/kode",
@@ -58,10 +53,7 @@
     },
     "status": {
       "$id": "/properties/status",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "kode": {
           "$id": "/properties/status/properties/kode",
@@ -137,17 +129,11 @@
       ],
       "items": {
         "$id": "/properties/behandlinger/items",
-        "type": [
-          "object",
-          "null"
-        ],
+        "type": "object",
         "properties": {
           "oppsummering": {
             "$id": "/properties/behandlinger/items/properties/oppsummering",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "behandlingID": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/behandlingID",
@@ -160,10 +146,7 @@
               },
               "type": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
@@ -198,10 +181,7 @@
               },
               "status": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
@@ -270,17 +250,11 @@
           },
           "saksopplysninger": {
             "$id": "/properties/behandlinger/items/properties/saksopplysninger",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "person": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "fnr": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -308,10 +282,7 @@
                   },
                   "statsborgerskap": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
@@ -358,10 +329,7 @@
                   },
                   "kjoenn": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
@@ -396,17 +364,11 @@
                   },
                   "bostedsadresse": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "gateadresse": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "gatenavn": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenavn",
@@ -499,17 +461,11 @@
                   },
                   "postadresse": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "gateadresse": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "gatenavn": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/gateadresse/properties/gatenavn",
@@ -602,17 +558,11 @@
                   },
                   "midlertidigPostadresse": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "gateadresse": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "gatenavn": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse/properties/gatenavn",
@@ -714,10 +664,7 @@
                   },
                   "personStatus": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
@@ -769,10 +716,7 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "fnr": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
@@ -821,10 +765,7 @@
                   },
                   "diskresjonskode":{
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
@@ -882,10 +823,7 @@
                 ],
                 "items": {
                   "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items",
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "arbeidsforholdID": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdID",
@@ -913,10 +851,7 @@
                     },
                     "ansettelsesPeriode": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "fom": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/fom",
@@ -968,17 +903,11 @@
                       ],
                       "items": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "arbeidstidsordning": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
@@ -1025,10 +954,7 @@
                           },
                           "yrke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
@@ -1135,10 +1061,7 @@
                           },
                           "skipsregister": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
@@ -1173,10 +1096,7 @@
                           },
                           "skipstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
@@ -1211,10 +1131,7 @@
                           },
                           "fartsomraade": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
@@ -1261,10 +1178,7 @@
                           },
                           "gyldighetsperiode": {
                             "$id": "/properties/gyldighetsperiode",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "fom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
@@ -1436,10 +1350,7 @@
                           ],
                           "items": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "rapporteringsperiode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/rapporteringsperiode",
@@ -1467,10 +1378,7 @@
                               },
                               "timelonnetPeriode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode",
-                                "type": [
-                                  "object",
-                                  "null"
-                                ],
+                                "type": "object",
                                 "properties": {
                                   "fom": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/fom",
@@ -1532,10 +1440,7 @@
                 ],
                 "items": {
                   "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items",
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "orgnr": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/orgnr",
@@ -1587,17 +1492,11 @@
                     },
                     "forretningsadresse": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "gateadresse": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "gatenavn": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
@@ -1703,17 +1602,11 @@
                     },
                     "postadresse": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "gateadresse": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "gatenavn": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/gatenavn",
@@ -1831,10 +1724,7 @@
               },
               "medlemskap": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "medlemsperiode": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode",
@@ -1843,17 +1733,11 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "periode": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/periode",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "fom": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/periode/properties/fom",
@@ -1888,10 +1772,7 @@
                         },
                         "type": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/type",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/type/properties/kode",
@@ -1926,10 +1807,7 @@
                         },
                         "status": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/status",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/status/properties/kode",
@@ -1964,10 +1842,7 @@
                         },
                         "grunnlagstype": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/grunnlagstype",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/grunnlagstype/properties/kode",
@@ -2002,10 +1877,7 @@
                         },
                         "land": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/land",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/land/properties/kode",
@@ -2040,10 +1912,7 @@
                         },
                         "lovvalg": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/lovvalg",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/lovvalg/properties/kode",
@@ -2078,10 +1947,7 @@
                         },
                         "trygdedekning": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/trygdedekning",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/trygdedekning/properties/kode",
@@ -2116,10 +1982,7 @@
                         },
                         "kildedokumenttype": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kildedokumenttype",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kildedokumenttype/properties/kode",
@@ -2154,10 +2017,7 @@
                         },
                         "kilde": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kilde",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kilde/properties/kode",
@@ -2213,10 +2073,7 @@
               },
               "inntekt": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "arbeidsInntektMaanedListe": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe",
@@ -2225,10 +2082,7 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "aarMaaned": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/aarMaaned",
@@ -2244,10 +2098,7 @@
                         },
                         "arbeidsInntektInformasjon": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "arbeidsforholdFrilanserListe": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/arbeidsforholdFrilanserListe",
@@ -2262,10 +2113,7 @@
                               ],
                               "items": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items",
-                                "type": [
-                                  "object",
-                                  "null"
-                                ],
+                                "type": "object",
                                 "properties": {
                                   "beloep": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/beloep",
@@ -2437,10 +2285,7 @@
                                   },
                                   "tilleggsinformasjon": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon",
-                                    "type": [
-                                      "object",
-                                      "null"
-                                    ],
+                                    "type": "object",
                                     "properties": {
                                       "kategori": {
                                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/kategori",
@@ -2455,10 +2300,7 @@
                                       },
                                       "tilleggsinformasjonDetaljer": {
                                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/tilleggsinformasjonDetaljer",
-                                        "type": [
-                                          "object",
-                                          "null"
-                                        ],
+                                        "type": "object",
                                         "title": "The TilleggsinformasjonDetaljer Schema",
                                         "default": "",
                                         "examples": [
@@ -2474,10 +2316,7 @@
                                   },
                                   "opptjeningsperiode": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/opptjeningsperiode",
-                                    "type": [
-                                      "object",
-                                      "null"
-                                    ],
+                                    "type": "object",
                                     "properties": {
                                       "fom": {
                                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/opptjeningsperiode/properties/fom",
