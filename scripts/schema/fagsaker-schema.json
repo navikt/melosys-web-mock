@@ -2252,8 +2252,7 @@
                             "arbeidsforholdFrilanserListe": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/arbeidsforholdFrilanserListe",
                               "type": [
-                                "object",
-                                "null"
+                                "array"
                               ]
                             },
                             "inntektListe": {

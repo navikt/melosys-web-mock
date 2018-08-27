@@ -3,8 +3,8 @@
     "kode" : "OPPR",
     "term" : "Opprettet"
   },
-  "registrertDato" : "2018-08-24T07:29:01.297",
-  "endretDato" : "2018-08-24T07:29:01.297",
+  "registrertDato" : "2018-08-27T07:16:03.273",
+  "endretDato" : "2018-08-27T07:16:03.273",
   "gsakSaksnummer" : null,
   "behandlinger" : [
     {
@@ -58,7 +58,9 @@
             "arbeidstakerID" : "19117220349",
             "opplysningspliktigtype" : "Organisasjon",
             "sistBekreftet" : "2018-02-18T07:32:36+01:00",
-            "timerTimelonnet" : [],
+            "timerTimelonnet" : [
+
+            ],
             "arbeidsforholdID" : ""
           },
           {
@@ -147,34 +149,6 @@
         ],
         "organisasjoner" : [
           {
-            "orgnr" : "810072512",
-            "oppstartdato" : null,
-            "postadresse" : {
-              "postnr" : "7081",
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
-              },
-              "poststed" : "SJETNEMARKA",
-              "land" : "NORGE"
-            },
-            "organisasjonsform" : "Aksjeselskap",
-            "navn" : "EIKEN OG TORSKEN",
-            "forretningsadresse" : {
-              "postnr" : "7081",
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
-              },
-              "poststed" : "SJETNEMARKA",
-              "land" : "NORGE"
-            }
-          },
-          {
             "orgnr" : "910099035",
             "oppstartdato" : null,
             "postadresse" : {
@@ -199,24 +173,6 @@
                 "gatenavn" : "Olav Kyrres gate 9"
               },
               "poststed" : "PORSGRUNN",
-              "land" : "NORGE"
-            }
-          },
-          {
-            "orgnr" : "991492704",
-            "oppstartdato" : null,
-            "postadresse" : null,
-            "organisasjonsform" : "Aksjeselskap",
-            "navn" : "TOP-TOY NORGE AS",
-            "forretningsadresse" : {
-              "postnr" : "1711",
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Klokkergårdveien 32"
-              },
-              "poststed" : "SARPSBORG",
               "land" : "NORGE"
             }
           },
@@ -247,18 +203,66 @@
               "poststed" : "SANDEFJORD",
               "land" : "NORGE"
             }
+          },
+          {
+            "orgnr" : "991492704",
+            "oppstartdato" : null,
+            "postadresse" : null,
+            "organisasjonsform" : "Aksjeselskap",
+            "navn" : "TOP-TOY NORGE AS",
+            "forretningsadresse" : {
+              "postnr" : "1711",
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Klokkergårdveien 32"
+              },
+              "poststed" : "SARPSBORG",
+              "land" : "NORGE"
+            }
+          },
+          {
+            "orgnr" : "810072512",
+            "oppstartdato" : null,
+            "postadresse" : {
+              "postnr" : "7081",
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
+              },
+              "poststed" : "SJETNEMARKA",
+              "land" : "NORGE"
+            },
+            "organisasjonsform" : "Aksjeselskap",
+            "navn" : "EIKEN OG TORSKEN",
+            "forretningsadresse" : {
+              "postnr" : "7081",
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
+              },
+              "poststed" : "SJETNEMARKA",
+              "land" : "NORGE"
+            }
           }
         ],
         "inntekt" : {
           "arbeidsInntektMaanedListe" : [
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "912499693",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.434",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-11",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -280,12 +284,14 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "912499693",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.434",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-12",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -307,12 +313,14 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "810072512",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.435",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2018-01",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -334,12 +342,14 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "912499693",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.434",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-08",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -361,12 +371,14 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "912499693",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.434",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-10",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -388,12 +400,14 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : null,
+                "arbeidsforholdFrilanserListe" : [
+
+                ],
                 "inntektListe" : [
                   {
                     "tilleggsinformasjon" : null,
                     "opplysningspliktigID" : "912499693",
-                    "levereringstidspunkt" : "2018-08-24T07:29:11.434",
+                    "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-09",
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
@@ -441,7 +455,9 @@
             "kode" : "NOR",
             "term" : "NORGE"
           },
-          "familiemedlemmer" : [],
+          "familiemedlemmer" : [
+
+          ],
           "midlertidigPostadresse" : null
         }
       },
@@ -449,13 +465,13 @@
 
       ],
       "oppsummering" : {
-        "behandlingID" : 25,
+        "behandlingID" : 4,
         "status" : {
           "kode" : "OPPR",
           "term" : "Opprettet"
         },
-        "registrertDato" : "2018-08-24T07:29:01.297",
-        "endretDato" : "2018-08-24T07:29:01.297",
+        "registrertDato" : "2018-08-27T07:16:03.273",
+        "endretDato" : "2018-08-27T07:16:03.273",
         "type" : {
           "kode" : "SKND",
           "term" : "Søknad"
@@ -463,7 +479,7 @@
       }
     }
   ],
-  "saksnummer" : "MEL-22",
+  "saksnummer" : "MEL-1",
   "type" : {
     "kode" : "EU_EOS",
     "term" : "EU/EØS"
