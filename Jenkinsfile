@@ -46,7 +46,7 @@ node {
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("semVer=${semVer}")
-    if (!scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
     else {
