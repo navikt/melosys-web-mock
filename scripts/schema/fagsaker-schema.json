@@ -2290,19 +2290,23 @@
                                       "kategori": {
                                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/kategori",
                                         "type": [
-                                          "string"
+                                          "string",
+                                          "null"
                                         ],
                                         "title": "The Kategori Schema",
-                                        "default": "",
+                                        "default": null,
                                         "examples": [
                                           "Usikkert"
                                         ]
                                       },
                                       "tilleggsinformasjonDetaljer": {
                                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/tilleggsinformasjonDetaljer",
-                                        "type": "object",
+                                        "type": [
+                                          "string",
+                                          "null"
+                                        ],
                                         "title": "The TilleggsinformasjonDetaljer Schema",
-                                        "default": "",
+                                        "default": null,
                                         "examples": [
                                           "Henvendelse/søknad"
                                         ]

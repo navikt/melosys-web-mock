@@ -530,7 +530,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 13000,
@@ -547,7 +550,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 43000,
@@ -564,7 +570,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 43000,
@@ -581,7 +590,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 43000,
@@ -598,7 +610,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 33000,
@@ -615,7 +630,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 43000,
@@ -632,7 +650,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 33000,
@@ -649,7 +670,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 43000,
@@ -666,7 +690,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 23300,
@@ -683,7 +710,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 33000,
@@ -700,7 +730,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 60000,
@@ -717,7 +750,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 50000,
@@ -734,7 +770,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   },
                   {
                     "beloep": 75000,
@@ -751,7 +790,10 @@
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": null
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    }
                   }
                 ]
               }

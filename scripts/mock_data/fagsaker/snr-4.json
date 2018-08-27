@@ -275,7 +275,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon": {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "912499693",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-11",
@@ -304,7 +307,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon" : {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "912499693",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-12",
@@ -333,7 +339,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon" : {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "810072512",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2018-01",
@@ -362,7 +371,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon" : {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "912499693",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-08",
@@ -391,7 +403,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon" : {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "912499693",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-10",
@@ -420,7 +435,10 @@
                 ],
                 "inntektListe" : [
                   {
-                    "tilleggsinformasjon" : null,
+                    "tilleggsinformasjon" : {
+                      "kategori": null,
+                      "tilleggsinformasjonDetaljer": null
+                    },
                     "opplysningspliktigID" : "912499693",
                     "levereringstidspunkt" : "2018-08-27T07:16:07.08",
                     "utbetaltIPeriode" : "2017-09",
