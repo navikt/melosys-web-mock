@@ -78,10 +78,6 @@
             "land": "NO"
           },
           "foedselsdato":"1972-11-19",
-          "personStatus": {
-            "kode": "DØD",
-            "term": "DØD"
-          },
           "erEgenAnsatt": true,
           "familiemedlemmer": [
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
@@ -121,7 +117,10 @@
                   "term": null
                 },
                 "maritimArbeidsavtale": false,
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -175,7 +174,10 @@
                   "kode": null,
                   "term": null
                 },
-                "fartsomraade": null,
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -229,7 +231,10 @@
                   "kode": null,
                   "term": null
                 },
-                "fartsomraade": null,
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -275,7 +280,10 @@
                 "stillingsprosent": 62,
                 "beregnetAntallTimerPrUke": 22.1662,
                 "maritimArbeidsavtale": false,
-                "fartsomraade": null,
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
                 "skipsregister":  {
                   "kode": null,
                   "term": null

@@ -38,7 +38,10 @@
                 },
                 "antallTimerGammeltAa" : null,
                 "beregnetStillingsprosent" : null,
-                "fartsomraade" : null,
+                "fartsomraade" : {
+                  "kode": null,
+                  "term": null
+                },
                 "beregnetAntallTimerPrUke" : 0,
                 "stillingsprosent" : null,
                 "skipstype" : {
@@ -101,7 +104,10 @@
                 },
                 "antallTimerGammeltAa" : null,
                 "beregnetStillingsprosent" : null,
-                "fartsomraade" : null,
+                "fartsomraade" : {
+                  "kode": null,
+                  "term": null
+                },
                 "beregnetAntallTimerPrUke" : 37.5,
                 "stillingsprosent" : 100,
                 "skipstype" : {

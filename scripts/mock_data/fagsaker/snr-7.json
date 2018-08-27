@@ -78,10 +78,6 @@
             "land":"NO"
           },
           "foedselsdato": "1975-12-22",
-          "personStatus": {
-            "kode": "DØD",
-            "term": "DØD"
-          },
           "erEgenAnsatt": true,
           "familiemedlemmer": [
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
@@ -113,12 +109,18 @@
                 "stillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale":false,
-                "skipsregister": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
                 "skipstype": {
                   "kode": null,
                   "term": null
                 },
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"

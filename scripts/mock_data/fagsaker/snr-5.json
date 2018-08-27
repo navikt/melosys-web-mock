@@ -78,10 +78,6 @@
             "land":"NO"
           },
           "foedselsdato": "1978-11-17",
-          "personStatus": {
-            "kode": "DØD",
-            "term": "DØD"
-          },
           "erEgenAnsatt": true,
           "familiemedlemmer": [
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
@@ -121,7 +117,10 @@
                   "kode": null,
                   "term": null
                 },
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"
@@ -171,7 +170,10 @@
                   "kode": null,
                   "term": null
                 },
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"
