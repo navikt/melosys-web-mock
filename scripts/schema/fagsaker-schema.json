@@ -571,7 +571,7 @@
                               "null"
                             ],
                             "title": "The Gatenavn Schema ",
-                            "default": "",
+                            "default": null,
                             "examples": [
                               "Gatenavnet"
                             ]
@@ -583,7 +583,7 @@
                               "null"
                             ],
                             "title": "The Gatenummer Schema ",
-                            "default": "",
+                            "default": null,
                             "examples": [
                               "123"
                             ]

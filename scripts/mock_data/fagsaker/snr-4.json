@@ -97,7 +97,10 @@
                 "endringsdatoStillingsprosent" : null,
                 "maritimArbeidsavtale" : false,
                 "avloenningstype" : "Fastlønn",
-                "skipsregister" : null,
+                "skipsregister" : {
+                  "kode": null,
+                  "term": null
+                },
                 "yrke" : {
                   "kode" : "3423102",
                   "term" : "VIKARBYRÅKONSULENT"
@@ -512,7 +515,16 @@
           "familiemedlemmer" : [
 
           ],
-          "midlertidigPostadresse" : null
+          "midlertidigPostadresse" : {
+            "gateadresse": {
+              "gatenavn": null,
+              "gatenummer": null,
+              "husnummer": null,
+              "husbokstav": null
+            },
+            "postnr": null,
+            "land": null
+          }
         }
       },
       "behandlingshistorikk" : [
