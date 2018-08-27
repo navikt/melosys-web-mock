@@ -11,7 +11,7 @@
         "gatenavn": "Adresseveien 123",
         "postnummer": "1234",
         "poststed": "Poststedet",
-        "land": ["DE"]
+        "landKode": "DE"
       },
       "arbeidsandelNorge": 33.3,
       "arbeidsandelUtland": 66.6,
@@ -26,25 +26,25 @@
           "gatenavn": "Deutschlandstrasse 123",
           "postnummer": "3388",
           "poststed": "Berlin",
-          "land": ["DE"]
+          "landKode": "DE"
         }
       }
     ],
     "oppholdUtland": {
-      "oppholdsland": ["DE"],
+      "oppholdslandKoder": ["DE", "SE"],
       "oppholdsPeriode": {
         "fom": "2018-01-01",
         "tom": "2018-06-01"
       },
       "ektefelleEllerBarnINorge": true,
       "sammeAdresseSomArbeidsgiver": true,
-      "studentFinansiering": "LAANEKASSEN",
+      "studentFinansieringKode": "LAANEKASSEN",
       "studentSemester": "2018/2019"
     },
     "bosted": {
       "intensjonOmRetur": true,
       "bostedUtenforNorge": true,
-      "familiesBosted": ["SE"],
+      "familiesBostedLandKode": "SE",
       "antallMaanederINorge": 8,
       "EOSBarnetrygdFraNAV": true,
       "adresseIUtlandet": true,
@@ -52,7 +52,7 @@
         "gatenavn": "Gateadressen",
         "postnummer": "12345",
         "poststed": "Poststeder",
-        "land": ["DE"]
+        "landKode": "DE"
       }
     },
     "arbeidNorge": {
@@ -106,11 +106,11 @@
       "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
     },
     "maritimtArbeid": {
-      "maritimType": "SKIP",
+      "maritimTypeKode": "SKIP",
       "skipsNavn": "Navn på skipet",
-      "fartsomrade": "INNENRIKS",
-      "flaggLand": ["GB"],
-      "installasjonsLand": ["GB"]
+      "fartsomradeKode": "INNENRIKS",
+      "flaggLandKode": ["GB"],
+      "installasjonsLandKode": ["GB"]
     }
   }
 }
