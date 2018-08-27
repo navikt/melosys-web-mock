@@ -68,38 +68,6 @@
         ]
       }
     },
-    "dokumentkategorier": {
-      "$id": "/properties/dokumentkategorier",
-      "type": "array",
-      "items": {
-        "$id": "/properties/dokumentkategorier/items",
-        "type": "object",
-        "properties": {
-          "kode": {
-            "$id": "/properties/dokumentkategorier/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema ",
-            "default": "",
-            "examples": [
-              "B"
-            ]
-          },
-          "term": {
-            "$id": "/properties/dokumentkategorier/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema ",
-            "default": "",
-            "examples": [
-              "Brev"
-            ]
-          }
-        },
-        "required": [
-          "kode",
-          "term"
-        ]
-      }
-    },
     "dokumenttitler": {
       "$id": "/properties/dokumenttitler",
       "type": "array",
@@ -264,7 +232,6 @@
   "required": [
     "behandlingstyper",
     "behandlingsstatus",
-    "dokumentkategorier",
     "dokumenttitler",
     "landkoder",
     "oppgavetyper",
