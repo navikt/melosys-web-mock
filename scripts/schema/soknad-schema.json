@@ -14,10 +14,7 @@
     },
     "soeknadDokument": {
       "$id": "/properties/soeknadDokument",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "personOpplysninger": {
           "$id": "/properties/soeknadDokument/properties/personOpplysninger",
@@ -115,17 +112,11 @@
         },
         "arbeidUtland": {
           "$id": "/properties/soeknadDokument/properties/arbeidUtland",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
             "adresse": {
               "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse",
-              "type": [
-                "object",
-                "null"
-              ],
+              "type": "object",
               "properties": {
                 "gatenavn": {
                   "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/gatenavn",
@@ -134,7 +125,7 @@
                     "null"
                   ],
                   "title": "The Gatenavn Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Adresseveien 123"
                   ]
