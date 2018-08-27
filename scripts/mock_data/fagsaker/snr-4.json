@@ -225,7 +225,17 @@
           {
             "orgnr" : "991492704",
             "oppstartdato" : null,
-            "postadresse" : null,
+            "postadresse" : {
+              "postnr": null,
+              "gateadresse": {
+                "gatenavn" : null,
+                "gatenummer" : null,
+                "husnummer" : null,
+                "husbokstav" : null
+              },
+              "poststed": null,
+              "land": null
+            },
             "organisasjonsform" : "Aksjeselskap",
             "navn" : "TOP-TOY NORGE AS",
             "forretningsadresse" : {
