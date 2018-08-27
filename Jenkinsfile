@@ -62,7 +62,7 @@ node {
     echo('Build Jar archive')
 
     if (!scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      buildVersion = "SNAPSHOT"
+      buildVersion = "${semVer}-SNAPSHOT"
     }
 
     zipFile = "${application}-${buildVersion}"+".jar"
