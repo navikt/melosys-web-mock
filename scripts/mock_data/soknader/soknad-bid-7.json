@@ -94,8 +94,8 @@
       "maritimTypeKode": "SOKKEL",
       "skipsNavn": null,
       "fartsomradeKode": null,
-      "flaggLand": [],
-      "installasjonsLand": []
+      "flaggLandKode": null,
+      "installasjonsLandKode": null
     }
   }
 }

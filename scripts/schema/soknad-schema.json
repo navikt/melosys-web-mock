@@ -1233,23 +1233,17 @@
                 "GB"
               ]
             },
-            "installasjonsLand": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
+            "installasjonsLandKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": null,
-                "examples": [
-                  "GB"
-                ]
-              }
+              "title": "The installasjonsLandKode Schema ",
+              "default": null,
+              "examples": [
+                "GB"
+              ]
             }
           },
           "required": [
@@ -1257,7 +1251,7 @@
             "skipsNavn",
             "fartsomradeKode",
             "flaggLandKode",
-            "installasjonsLand"
+            "installasjonsLandKode"
           ],
           "additionalProperties": false
         }
