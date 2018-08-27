@@ -307,7 +307,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
@@ -339,7 +342,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
@@ -371,7 +377,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
@@ -403,7 +412,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
@@ -435,7 +447,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
@@ -467,7 +482,10 @@
                     "beskrivelse" : "fastloenn",
                     "inntektsmottakerID" : "19117220349",
                     "inngaarIGrunnlagForTrekk" : true,
-                    "opptjeningsperiode" : null
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    }
                   }
                 ]
               },
