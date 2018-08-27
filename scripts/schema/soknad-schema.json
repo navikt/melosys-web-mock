@@ -240,10 +240,7 @@
           ],
           "items": {
             "$id": "/properties/soeknadDokument/properties/foretakUtland/items",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "navn": {
                 "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/navn",
@@ -312,30 +309,24 @@
                       "Berlin"
                     ]
                   },
-                  "land": {
-                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land",
+                  "landKode": {
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/landKode",
                     "type": [
-                      "array"
+                      "string",
+                      "null"
                     ],
-                    "items": {
-                      "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land/items",
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "title": "The 0th Schema ",
-                      "default": "",
-                      "examples": [
-                        "DE"
-                      ]
-                    }
+                    "title": "The LandKode Schema ",
+                    "default": null,
+                    "examples": [
+                      "DE"
+                    ]
                   }
                 },
                 "required": [
                   "gatenavn",
                   "postnummer",
                   "poststed",
-                  "land"
+                  "landKode"
                 ],
                 "additionalProperties": false
               }
