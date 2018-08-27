@@ -341,18 +341,15 @@
         },
         "oppholdUtland": {
           "$id": "/properties/soeknadDokument/properties/oppholdUtland",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
-            "oppholdsland": {
-              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland",
+            "oppholdslandKoder": {
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdslandKoder",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
+                "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdslandKoder/items",
                 "type": [
                   "string",
                   "null"
@@ -426,14 +423,14 @@
                 true
               ]
             },
-            "studentFinansiering": {
-              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentFinansiering",
+            "studentFinansieringKode": {
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentFinansieringKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Studentfinansiering Schema ",
-              "default": "",
+              "title": "The studentFinansieringKode Schema",
+              "default": null,
               "examples": [
                 "LAANEKASSEN"
               ]
@@ -452,11 +449,11 @@
             }
           },
           "required": [
-            "oppholdsland",
+            "oppholdslandKoder",
             "oppholdsPeriode",
             "ektefelleEllerBarnINorge",
             "sammeAdresseSomArbeidsgiver",
-            "studentFinansiering",
+            "studentFinansieringKode",
             "studentSemester"
           ],
           "additionalProperties": false
