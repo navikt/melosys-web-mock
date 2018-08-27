@@ -249,7 +249,7 @@
                   "null"
                 ],
                 "title": "The Navn Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "EQUINOR DEUTSCHLAND"
                 ]
@@ -261,7 +261,7 @@
                   "null"
                 ],
                 "title": "The Orgnr Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "372384726"
                 ]
@@ -280,7 +280,7 @@
                       "null"
                     ],
                     "title": "The Gatenavn Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "Deutschlandstrasse 123"
                     ]
@@ -292,7 +292,7 @@
                       "null"
                     ],
                     "title": "The Postnummer Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "3388"
                     ]
@@ -304,7 +304,7 @@
                       "null"
                     ],
                     "title": "The Poststed Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "Berlin"
                     ]
@@ -355,7 +355,7 @@
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "DE"
                 ]
@@ -375,7 +375,7 @@
                     "null"
                   ],
                   "title": "The Fom Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "2018-01-01"
                   ]
@@ -386,8 +386,8 @@
                     "string",
                     "null"
                   ],
-                  "title": "The Tom Schema ",
-                  "default": "",
+                  "title": "The TOM Schema ",
+                  "default": null,
                   "examples": [
                     "2018-06-01"
                   ]
@@ -442,7 +442,7 @@
                 "null"
               ],
               "title": "The Studentsemester Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "2018/2019"
               ]
@@ -548,7 +548,7 @@
                     "null"
                   ],
                   "title": "The Gatenavn Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Gateadressen"
                   ]
@@ -560,7 +560,7 @@
                     "null"
                   ],
                   "title": "The Postnummer Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "12345"
                   ]
@@ -572,7 +572,7 @@
                     "null"
                   ],
                   "title": "The Poststed Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Poststeder"
                   ]
@@ -635,7 +635,7 @@
                 "null"
               ],
               "title": "The Arbeidsforholdvikarnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Vikarbyrået AS"
               ]
@@ -647,7 +647,7 @@
                 "null"
               ],
               "title": "The Vikarorgnr Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "22334455"
               ]
@@ -659,7 +659,7 @@
                 "null"
               ],
               "title": "The Flyendepersonellhjemmebase Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Flybasen Int. Airport, ...."
               ]
@@ -671,7 +671,7 @@
                 "null"
               ],
               "title": "The Kontaktnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Ola Nordmann"
               ]
@@ -683,7 +683,7 @@
                 "null"
               ],
               "title": "The Kontaktepost Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "ola.nordmann@fullmektigfirma.no"
               ]
@@ -695,7 +695,7 @@
                 "null"
               ],
               "title": "The Fullmektigfirma Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Advokatfullmektig AS"
               ]
@@ -707,7 +707,7 @@
                 "null"
               ],
               "title": "The Fullmektiggateadresse Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Adresseveien 123"
               ]
@@ -719,7 +719,7 @@
                 "null"
               ],
               "title": "The Fullmektigpostnr Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "1234"
               ]
@@ -731,7 +731,7 @@
                 "null"
               ],
               "title": "The Fullmektigpoststed Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Byensvik"
               ]
@@ -743,7 +743,7 @@
                 "null"
               ],
               "title": "The Fullmektigregion Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Østlandsregionen"
               ]
@@ -760,7 +760,7 @@
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "NO"
                 ]
@@ -821,7 +821,7 @@
                       "null"
                     ],
                     "title": "The Orgnr Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "910253158"
                     ]
@@ -1036,7 +1036,7 @@
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "Fri bolig",
                   "Fri bil"
@@ -1164,7 +1164,7 @@
                 "null"
               ],
               "title": "The Trygdeavgifttrukketgjennomskattdato Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "2018-01-01"
               ]
@@ -1192,7 +1192,7 @@
                 "null"
               ],
               "title": "The MaritimTypeKode Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "SKIP"
               ]
@@ -1204,7 +1204,7 @@
                 "null"
               ],
               "title": "The Skipsnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Navn på skipet"
               ]
@@ -1221,23 +1221,17 @@
                 "INNENRIKS"
               ]
             },
-            "flaggLand": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand",
+            "flaggLandKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "GB"
-                ]
-              }
+              "title": "The 0th Schema ",
+              "default": null,
+              "examples": [
+                "GB"
+              ]
             },
             "installasjonsLand": {
               "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
@@ -1251,7 +1245,7 @@
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "GB"
                 ]
@@ -1262,7 +1256,7 @@
             "maritimTypeKode",
             "skipsNavn",
             "fartsomradeKode",
-            "flaggLand",
+            "flaggLandKode",
             "installasjonsLand"
           ],
           "additionalProperties": false
