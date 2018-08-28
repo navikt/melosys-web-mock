@@ -56,7 +56,7 @@
       "fullmektigPostnr": null,
       "fullmektigPoststed": null,
       "fullmektigRegion": null,
-      "fullmektigLand": []
+      "fullmektigLandKode": null
     },
     "selvstendigArbeid": {
       "erSelvstendig": false,

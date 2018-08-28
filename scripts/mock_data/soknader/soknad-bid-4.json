@@ -67,7 +67,7 @@
       "fullmektigPostnr": "1234",
       "fullmektigPoststed": "Byensvik",
       "fullmektigRegion": "Østlandsregionen",
-      "fullmektigLand": ["NO"]
+      "fullmektigLandKode": "NO"
     },
     "selvstendigArbeid": {
       "erSelvstendig": true,
