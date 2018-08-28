@@ -10,6 +10,7 @@
   },
   "registrertDato": "2018-03-12T14:32:37.448",
   "endretDato":"2018-03-15T16:31:35.845",
+  "gsakSaksnummer" : null,
   "behandlinger": [
     {
       "oppsummering": {
@@ -29,42 +30,37 @@
         "person": {
           "fnr": "28106600300",
           "sivilstand": "Ugift",
+          "diskresjonskode" :  {
+            "kode": null,
+            "term": null
+          },
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
           },
           "sammensattNavn": "MASKIN ARTIG",
-          "personstatus": "Bosatt",
+          "personStatus" : {
+            "kode" : "BOSA",
+            "term" : "Bosatt"
+          },
           "kjoenn":{
             "kode": "M",
             "term": "Mann"
           },
           "bostedsadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
-            "land":"NO"
-          },
-          "postadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
-            },
-            "postnr":"3202",
-            "land":"NO"
-          },
-          "midlertidigPostadresse":{
-            "gateadresse":{
-              "gatenavn":"Postboks 2044"
-            },
-            "postnr":"5555",
-            "land":"NO"
+            "land": {
+              "kode":"NO",
+              "term":"NORGE"
+            }
           },
           "foedselsdato": "1966-10-28",
-          "personStatus": {
-            "kode": "DØD",
-            "term": "DØD"
-          },
           "erEgenAnsatt": true,
           "familiemedlemmer": [
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
@@ -95,10 +91,19 @@
                 "avtaltArbeidstimerPerUke": 37.5,
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "skipsregister":null,
-                "skipstype":null,
+                "skipsregister": {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "maritimArbeidsavtale": false,
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"
@@ -140,9 +145,18 @@
                 "stillingsprosent": 30.0,
                 "beregnetAntallTimerPrUke": 6.0,
                 "maritimArbeidsavtale": false,
-                "skipsregister": null,
-                "skipstype": null,
-                "fartsomraade": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"
@@ -169,16 +183,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Rosenkrantz' gate 16"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0160",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 2013 Vika"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0125",
               "poststed": "OSLO",
@@ -191,16 +211,22 @@
             "oppstartdato": "1987-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Rosenkrantz gate 16"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0160",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 2013 Vika"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0125",
               "poststed": "OSLO",
@@ -213,16 +239,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Sandslivegen 90"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "5254",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 7200"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "5020",
               "poststed": "OSLO",
@@ -235,16 +267,22 @@
             "oppstartdato": "2010-01-01",
             "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Olav Kyrres gate 9"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "3936",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Olav Kyrres gate 9"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "3936",
               "poststed": "OSLO",
@@ -257,16 +295,22 @@
             "oppstartdato": "2010-01-01",
             "organisasjonsform": "Enkelmannsforetak",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Lunderhaugen 1"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "7081",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Lunderhaugen 1"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "7081",
               "poststed": "OSLO",

@@ -10,6 +10,7 @@
   },
   "registrertDato": "2017-10-19T12:31:36",
   "endretDato": "2017-10-19T12:31:36",
+  "gsakSaksnummer" : null,
   "behandlinger": [
     {
       "oppsummering": {
@@ -29,42 +30,37 @@
         "person": {
           "fnr": "30098000492",
           "sivilstand": "Gift",
+          "diskresjonskode" :  {
+            "kode": null,
+            "term": null
+          },
           "statsborgerskap":{
             "kode": "NO",
             "term": "Norge"
           },
           "sammensattNavn": "LILLA HEST",
-          "personstatus":"Bosatt",
+          "personStatus" : {
+            "kode" : "BOSA",
+            "term" : "Bosatt"
+          },
           "kjoenn":{
             "kode": "M",
             "term": "Mann"
           },
           "bostedsadresse": {
-            "gateadresse": {
-              "gatenavn": "ANDEBYVEIEN"
+            "gateadresse" : {
+              "gatenummer" : null,
+              "husbokstav" : null,
+              "husnummer" : null,
+              "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
-            "land":"NO"
-          },
-          "postadresse":{
-            "gateadresse":{
-              "gatenavn":"Gatenavnet 123"
-            },
-            "postnr":"3202",
-            "land":"NO"
-          },
-          "midlertidigPostadresse":{
-            "gateadresse":{
-              "gatenavn":"Postboks 2044"
-            },
-            "postnr": "5081",
-            "land": "NO"
+            "land": {
+              "kode": "NO",
+              "term": "Norge"
+            }
           },
           "foedselsdato":"1972-11-19",
-          "personStatus": {
-            "kode": "DØD",
-            "term": "DØD"
-          },
           "erEgenAnsatt": true,
           "familiemedlemmer": [
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
@@ -95,10 +91,19 @@
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 19.0,
-                "skipsregister": null,
-                "skipstype": null,
+                "skipsregister": {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "maritimArbeidsavtale": false,
-                "fartsomraade": null,
+                "fartsomraade": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -144,9 +149,18 @@
                 "stillingsprosent": null,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false,
-                "skipsregister": null,
-                "skipstype": null,
-                "fartsomraade": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -192,9 +206,18 @@
                 "stillingsprosent":100,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false,
-                "skipsregister": null,
-                "skipstype": null,
-                "fartsomraade": null,
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -240,9 +263,18 @@
                 "stillingsprosent": 62,
                 "beregnetAntallTimerPrUke": 22.1662,
                 "maritimArbeidsavtale": false,
-                "fartsomraade": null,
-                "skipsregister": null,
-                "skipstype": null,
+                "fartsomraade":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipsregister":  {
+                  "kode": null,
+                  "term": null
+                },
+                "skipstype": {
+                  "kode": null,
+                  "term": null
+                },
                 "gyldighetsperiode" : {
                   "fom" : "2018-01-01",
                   "tom": null
@@ -273,16 +305,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Nedre Skøyen vei 2"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0276",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 265  Skøyen"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0213",
               "poststed": "OSLO",
@@ -295,16 +333,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Lakkegata 53"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0187",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 2506 Solli"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0202",
               "poststed": "OSLO",
@@ -317,16 +361,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Lakkegata 53"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0187",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 1175 Oslo Sentrum"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0107",
               "poststed": "OSLO",
@@ -339,16 +389,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Aksjeselskap (AS)",
             "forretningsadresse": {
-              "gateadresse": {
-                "gatenavn": "Drammensveien 260"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0283",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse": {
-                "gatenavn": "Postboks 80   Skøyen"
+              "gateadresse" : {
+                "gatenummer" : null,
+                "husbokstav" : null,
+                "husnummer" : null,
+                "gatenavn" : "Lunderhaugen 1"
               },
               "postnr": "0212",
               "poststed": "OSLO",
@@ -376,7 +432,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{
@@ -414,7 +470,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{

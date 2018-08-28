@@ -1,9 +1,6 @@
 {
   "$id": "http://example.com/example.json",
-  "type": [
-    "object",
-    "null"
-  ],
+  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
@@ -21,15 +18,13 @@
     },
     "type": {
       "$id": "/properties/type",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "kode": {
           "$id": "/properties/type/properties/kode",
           "type": [
-            "string"
+            "string",
+            "null"
           ],
           "title": "The Kode Schema ",
           "default": "",
@@ -58,15 +53,13 @@
     },
     "status": {
       "$id": "/properties/status",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "kode": {
           "$id": "/properties/status/properties/kode",
           "type": [
-            "string"
+            "string",
+            "null"
           ],
           "title": "The Kode Schema ",
           "default": "",
@@ -117,6 +110,18 @@
         "2018-03-15T16:31:35.845"
       ]
     },
+    "gsakSaksnummer": {
+      "$id": "/properties/gsakSaksnummer",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The gsakSaksnummer Schema ",
+      "default": "",
+      "examples": [
+        "234"
+      ]
+    },
     "behandlinger": {
       "$id": "/properties/behandlinger",
       "type": [
@@ -124,17 +129,11 @@
       ],
       "items": {
         "$id": "/properties/behandlinger/items",
-        "type": [
-          "object",
-          "null"
-        ],
+        "type": "object",
         "properties": {
           "oppsummering": {
             "$id": "/properties/behandlinger/items/properties/oppsummering",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "behandlingID": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/behandlingID",
@@ -147,15 +146,13 @@
               },
               "type": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
                     "type": [
-                      "string"
+                      "string",
+                      "null"
                     ],
                     "title": "The Kode Schema ",
                     "default": "",
@@ -184,15 +181,13 @@
               },
               "status": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
                     "type": [
-                      "string"
+                      "string",
+                      "null"
                     ],
                     "title": "The Kode Schema ",
                     "default": "",
@@ -255,17 +250,11 @@
           },
           "saksopplysninger": {
             "$id": "/properties/behandlinger/items/properties/saksopplysninger",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "person": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "fnr": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -293,15 +282,13 @@
                   },
                   "statsborgerskap": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
                         "type": [
-                          "string"
+                          "string",
+                          "null"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -340,29 +327,15 @@
                       "HATT GLITRENDE"
                     ]
                   },
-                  "personstatus": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personstatus",
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "The Personstatus Schema ",
-                    "default": "",
-                    "examples": [
-                      "Bosatt"
-                    ]
-                  },
                   "kjoenn": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
                         "type": [
-                          "string"
+                          "string",
+                          "null"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -391,17 +364,11 @@
                   },
                   "bostedsadresse": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "gateadresse": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "gatenavn": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenavn",
@@ -412,12 +379,51 @@
                             "title": "The Gatenavn Schema ",
                             "default": "",
                             "examples": [
-                              "Gatenavnet 123"
+                              "Gatenavnet"
+                            ]
+                          },
+                          "gatenummer": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "title": "The Gatenummer Schema ",
+                            "default": "",
+                            "examples": [
+                              "123"
+                            ]
+                          },
+                          "husbokstav": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husbokstav",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The Husbokstav Schema ",
+                            "default": "",
+                            "examples": [
+                              "A"
+                            ]
+                          },
+                          "husnummer": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "title": "The Husnummer Schema ",
+                            "default": "",
+                            "examples": [
+                              "21"
                             ]
                           }
                         },
                         "required": [
-                          "gatenavn"
+                          "gatenavn",
+                          "gatenummer",
+                          "husbokstav",
+                          "husnummer"
                         ],
                         "additionalProperties": false
                       },
@@ -433,145 +439,52 @@
                           "3202"
                         ]
                       },
+                      "poststed": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/poststed",
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "title": "The PostSted Schema ",
+                        "default": "",
+                        "examples": [
+                          "OSLO"
+                        ]
+                      },
                       "land": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": [
-                          "string",
-                          "null"
-                        ],
-                        "title": "The Land Schema ",
-                        "default": "",
-                        "examples": [
-                          "NO"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "gateadresse",
-                      "postnr",
-                      "land"
-                    ],
-                    "additionalProperties": false
-                  },
-                  "postadresse": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
-                    "properties": {
-                      "gateadresse": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
-                          "gatenavn": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/gateadresse/properties/gatenavn",
+                          "kode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
                             "type": [
                               "string",
                               "null"
                             ],
-                            "title": "The Gatenavn Schema ",
+                            "title": "The Kode Schema ",
                             "default": "",
                             "examples": [
-                              "Gatenavnet 123"
+                              "NO"
                             ]
-                          }
-                        },
-                        "required": [
-                          "gatenavn"
-                        ],
-                        "additionalProperties": false
-                      },
-                      "postnr": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/postnr",
-                        "type": [
-                          "string",
-                          "null"
-                        ],
-                        "title": "The Postnr Schema ",
-                        "default": "",
-                        "examples": [
-                          "3202"
-                        ]
-                      },
-                      "land": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/postadresse/properties/land",
-                        "type": [
-                          "string",
-                          "null"
-                        ],
-                        "title": "The Land Schema ",
-                        "default": "",
-                        "examples": [
-                          "NO"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "gateadresse",
-                      "postnr",
-                      "land"
-                    ],
-                    "additionalProperties": false
-                  },
-                  "midlertidigPostadresse": {
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
-                    "properties": {
-                      "gateadresse": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
-                        "properties": {
-                          "gatenavn": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/gateadresse/properties/gatenavn",
+                          },
+                          "term": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
                             "type": [
                               "string",
                               "null"
                             ],
-                            "title": "The Gatenavn Schema ",
+                            "title": "The Term Schema ",
                             "default": "",
                             "examples": [
-                              "Postboks 2044"
+                              "Norge"
                             ]
                           }
                         },
                         "required": [
-                          "gatenavn"
+                          "kode",
+                          "term"
                         ],
                         "additionalProperties": false
-                      },
-                      "postnr": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/postnr",
-                        "type": [
-                          "string",
-                          "null"
-                        ],
-                        "title": "The Postnr Schema ",
-                        "default": "",
-                        "examples": [
-                          "5555"
-                        ]
-                      },
-                      "land": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/midlertidigPostadresse/properties/land",
-                        "type": [
-                          "string",
-                          "null"
-                        ],
-                        "title": "The Land Schema ",
-                        "default": "",
-                        "examples": [
-                          "NO"
-                        ]
                       }
                     },
                     "required": [
@@ -595,15 +508,13 @@
                   },
                   "personStatus": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
-                    "type": [
-                      "object",
-                      "null"
-                    ],
+                    "type": "object",
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
                         "type": [
-                          "string"
+                          "string",
+                          "null"
                         ],
                         "title": "The Kode Schema ",
                         "default": "",
@@ -649,10 +560,7 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "fnr": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
@@ -698,6 +606,41 @@
                       ],
                       "additionalProperties": false
                     }
+                  },
+                  "diskresjonskode":{
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
+                    "type": "object",
+                    "properties": {
+                      "kode": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "title": "The Kode Schema ",
+                        "default": "",
+                        "examples": [
+                          "SPSF"
+                        ]
+                      },
+                      "term": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/term",
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "title": "The Term Schema ",
+                        "default": "",
+                        "examples": [
+                          "Sperret adresse, strengt fortrolig"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kode",
+                      "term"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
@@ -705,15 +648,13 @@
                   "sivilstand",
                   "statsborgerskap",
                   "sammensattNavn",
-                  "personstatus",
                   "kjoenn",
                   "bostedsadresse",
-                  "postadresse",
-                  "midlertidigPostadresse",
                   "foedselsdato",
                   "personStatus",
                   "erEgenAnsatt",
-                  "familiemedlemmer"
+                  "familiemedlemmer",
+                  "diskresjonskode"
                 ],
                 "additionalProperties": false
               },
@@ -724,10 +665,7 @@
                 ],
                 "items": {
                   "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items",
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "arbeidsforholdID": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdID",
@@ -755,10 +693,7 @@
                     },
                     "ansettelsesPeriode": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "fom": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/fom",
@@ -810,22 +745,17 @@
                       ],
                       "items": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items",
-                        "type": [
-                          "object",
-                          "null"
-                        ],
+                        "type": "object",
                         "properties": {
                           "arbeidstidsordning": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
                                 "type": [
-                                  "string"
+                                  "string",
+                                  "null"
                                 ],
                                 "title": "The Kode Schema ",
                                 "default": "",
@@ -866,15 +796,13 @@
                           },
                           "yrke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
                                 "type": [
-                                  "string"
+                                  "string",
+                                  "null"
                                 ],
                                 "title": "The Kode Schema ",
                                 "default": "",
@@ -913,13 +841,37 @@
                               37.5
                             ]
                           },
+                          "endringsdatoStillingsprosent": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The EndringsdatoStillingsprosent Schema ",
+                            "default": 0,
+                            "examples": [
+                              "2018-08-25"
+                            ]
+                          },
                           "stillingsprosent": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/stillingsprosent",
                             "type": [
-                              "integer",
+                              "number",
                               "null"
                             ],
                             "title": "The Stillingsprosent Schema ",
+                            "default": 0,
+                            "examples": [
+                              100
+                            ]
+                          },
+                          "beregnetStillingsprosent": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetStillingsprosent",
+                            "type": [
+                              "number",
+                              "null"
+                            ],
+                            "title": "The BeregnetStillingsprosent Schema ",
                             "default": 0,
                             "examples": [
                               100
@@ -937,17 +889,27 @@
                               37.5
                             ]
                           },
-                          "skipsregister": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
+                          "antallTimerGammeltAa": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
                             "type": [
-                              "object",
+                              "number",
                               "null"
                             ],
+                            "title": "The AntallTimerGammeltAa Schema ",
+                            "default": 0,
+                            "examples": [
+                              37.5
+                            ]
+                          },
+                          "skipsregister": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
                                 "type": [
-                                  "string"
+                                  "string",
+                                  "null"
                                 ],
                                 "title": "The Kode Schema ",
                                 "default": "",
@@ -976,15 +938,13 @@
                           },
                           "skipstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
                                 "type": [
-                                  "string"
+                                  "string",
+                                  "null"
                                 ],
                                 "title": "The Kode Schema ",
                                 "default": "",
@@ -1013,15 +973,13 @@
                           },
                           "fartsomraade": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
                                 "type": [
-                                  "string"
+                                  "string",
+                                  "null"
                                 ],
                                 "title": "The Kode Schema ",
                                 "default": "",
@@ -1062,10 +1020,7 @@
                           },
                           "gyldighetsperiode": {
                             "$id": "/properties/gyldighetsperiode",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "fom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
@@ -1237,10 +1192,7 @@
                           ],
                           "items": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
-                            "type": [
-                              "object",
-                              "null"
-                            ],
+                            "type": "object",
                             "properties": {
                               "rapporteringsperiode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/rapporteringsperiode",
@@ -1268,10 +1220,7 @@
                               },
                               "timelonnetPeriode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode",
-                                "type": [
-                                  "object",
-                                  "null"
-                                ],
+                                "type": "object",
                                 "properties": {
                                   "fom": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/fom",
@@ -1333,10 +1282,7 @@
                 ],
                 "items": {
                   "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items",
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
                   "properties": {
                     "orgnr": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/orgnr",
@@ -1388,17 +1334,11 @@
                     },
                     "forretningsadresse": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "gateadresse": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "gatenavn": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
@@ -1411,10 +1351,49 @@
                               "examples": [
                                 "Forusbeen 50"
                               ]
+                            },
+                            "gatenummer": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenummer",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Gatenummer Schema ",
+                              "default": "",
+                              "examples": [
+                                "123"
+                              ]
+                            },
+                            "husbokstav": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/husbokstav",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Husbokstav Schema ",
+                              "default": "",
+                              "examples": [
+                                "A"
+                              ]
+                            },
+                            "husnummer": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/husnummer",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Husnummer Schema ",
+                              "default": "",
+                              "examples": [
+                                "H0101"
+                              ]
                             }
                           },
                           "required": [
-                            "gatenavn"
+                            "gatenavn",
+                            "gatenummer",
+                            "husbokstav",
+                            "husnummer"
                           ],
                           "additionalProperties": false
                         },
@@ -1465,17 +1444,11 @@
                     },
                     "postadresse": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "gateadresse": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "gatenavn": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/gatenavn",
@@ -1486,17 +1459,56 @@
                               "title": "The Gatenavn Schema ",
                               "default": "",
                               "examples": [
-                                "Postboks 8500"
+                                "Forusbeen 50"
+                              ]
+                            },
+                            "gatenummer": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/gatenummer",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Gatenummer Schema ",
+                              "default": "",
+                              "examples": [
+                                "123"
+                              ]
+                            },
+                            "husbokstav": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/husbokstav",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Husbokstav Schema ",
+                              "default": "",
+                              "examples": [
+                                "A"
+                              ]
+                            },
+                            "husnummer": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/husnummer",
+                              "type": [
+                                "string",
+                                "null"
+                              ],
+                              "title": "The Husnummer Schema ",
+                              "default": "",
+                              "examples": [
+                                "H0101"
                               ]
                             }
                           },
                           "required": [
-                            "gatenavn"
+                            "gatenavn",
+                            "gatenummer",
+                            "husbokstav",
+                            "husnummer"
                           ],
                           "additionalProperties": false
                         },
                         "postnr": {
-                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
                           "type": [
                             "string",
                             "null"
@@ -1508,7 +1520,7 @@
                           ]
                         },
                         "poststed": {
-                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/poststed",
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/poststed",
                           "type": [
                             "string",
                             "null"
@@ -1520,7 +1532,7 @@
                           ]
                         },
                         "land": {
-                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/land",
+                          "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/land",
                           "type": [
                             "string",
                             "null"
@@ -1554,10 +1566,7 @@
               },
               "medlemskap": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "medlemsperiode": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode",
@@ -1566,17 +1575,11 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "periode": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/periode",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "fom": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/periode/properties/fom",
@@ -1611,15 +1614,13 @@
                         },
                         "type": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/type",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/type/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1648,15 +1649,13 @@
                         },
                         "status": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/status",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/status/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1685,15 +1684,13 @@
                         },
                         "grunnlagstype": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/grunnlagstype",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/grunnlagstype/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1722,15 +1719,13 @@
                         },
                         "land": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/land",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/land/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1759,15 +1754,13 @@
                         },
                         "lovvalg": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/lovvalg",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/lovvalg/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1796,15 +1789,13 @@
                         },
                         "trygdedekning": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/trygdedekning",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/trygdedekning/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1833,15 +1824,13 @@
                         },
                         "kildedokumenttype": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kildedokumenttype",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kildedokumenttype/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1870,15 +1859,13 @@
                         },
                         "kilde": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kilde",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
                             "kode": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/properties/kilde/properties/kode",
                               "type": [
-                                "string"
+                                "string",
+                                "null"
                               ],
                               "title": "The Kode Schema ",
                               "default": "",
@@ -1928,10 +1915,7 @@
               },
               "inntekt": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt",
-                "type": [
-                  "object",
-                  "null"
-                ],
+                "type": "object",
                 "properties": {
                   "arbeidsInntektMaanedListe": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe",
@@ -1940,10 +1924,7 @@
                     ],
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items",
-                      "type": [
-                        "object",
-                        "null"
-                      ],
+                      "type": "object",
                       "properties": {
                         "aarMaaned": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/aarMaaned",
@@ -1959,11 +1940,14 @@
                         },
                         "arbeidsInntektInformasjon": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon",
-                          "type": [
-                            "object",
-                            "null"
-                          ],
+                          "type": "object",
                           "properties": {
+                            "arbeidsforholdFrilanserListe": {
+                              "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/arbeidsforholdFrilanserListe",
+                              "type": [
+                                "array"
+                              ]
+                            },
                             "inntektListe": {
                               "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe",
                               "type": [
@@ -1971,10 +1955,7 @@
                               ],
                               "items": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items",
-                                "type": [
-                                  "object",
-                                  "null"
-                                ],
+                                "type": "object",
                                 "properties": {
                                   "beloep": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/beloep",
@@ -2143,6 +2124,53 @@
                                     "examples": [
                                       "fastloenn"
                                     ]
+                                  },
+                                  "opptjeningsperiode": {
+                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/opptjeningsperiode",
+                                    "type": "object",
+                                    "properties": {
+                                      "fom": {
+                                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/opptjeningsperiode/properties/fom",
+                                        "type": [
+                                          "string",
+                                          "null"
+                                        ],
+                                        "title": "The Fom Schema ",
+                                        "default": "",
+                                        "examples": [
+                                          "2016-01-01"
+                                        ]
+                                      },
+                                      "tom": {
+                                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/opptjeningsperiode/properties/tom",
+                                        "type": [
+                                          "string",
+                                          "null"
+                                        ],
+                                        "title": "The Fom Schema ",
+                                        "default": "",
+                                        "examples": [
+                                          "2016-01-01"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "fom",
+                                      "tom"
+                                    ],
+                                    "additionalProperties": false
+                                  },
+                                  "opptjeningsland": {
+                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/opptjeningsland",
+                                    "type": [
+                                      "string",
+                                      "null"
+                                    ],
+                                    "title": "The Informasjonsstatus Schema ",
+                                    "default": "",
+                                    "examples": [
+                                      "NO"
+                                    ]
                                   }
                                 },
                                 "required": [
@@ -2183,6 +2211,29 @@
                   "arbeidsInntektMaanedListe"
                 ],
                 "additionalProperties": false
+              },
+              "sakOgBehandling": {
+                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/sakOgBehandling",
+                "type": "object",
+                "properties": {
+                  "eosBarnetrygd": {
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/sakOgBehandling/eosBarnetrygd",
+                    "type": [
+                      "boolean",
+                      "null"
+                    ],
+                    "title": "The Term Schema ",
+                    "default": null,
+                    "examples": [
+                      true,
+                      false
+                    ]
+                  }
+                },
+                "required": [
+                  "eosBarnetrygd"
+                ],
+                "additionalProperties": false
               }
             },
             "required": [
@@ -2215,6 +2266,7 @@
     "type",
     "status",
     "registrertDato",
+    "gsakSaksnummer",
     "endretDato",
     "behandlinger"
   ],

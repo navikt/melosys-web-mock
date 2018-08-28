@@ -1,27 +1,20 @@
 {
   "$id": "/api/soknad",
-  "type": [
-    "object",
-    "null"
-  ],
+  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
     "behandlingID": {
       "$id": "/properties/behandlingID",
       "type": [
-        "integer",
-        "null"
+        "integer"
       ],
       "title": "The Behandlingid Schema ",
       "default": 0
     },
     "soeknadDokument": {
       "$id": "/properties/soeknadDokument",
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "properties": {
         "personOpplysninger": {
           "$id": "/properties/soeknadDokument/properties/personOpplysninger",
@@ -54,28 +47,22 @@
                       "123456789"
                     ]
                   },
-                  "land": {
-                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land",
+                  "landKode": {
+                    "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/landKode",
                     "type": [
-                      "array"
+                      "string",
+                      "null"
                     ],
-                    "items": {
-                      "$id": "/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/land/items",
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "title": "The 0th Schema ",
-                      "default": "",
-                      "examples": [
-                        "DK"
-                      ]
-                    }
+                    "title": "The 0th Schema ",
+                    "default": null,
+                    "examples": [
+                      "DK"
+                    ]
                   }
                 },
                 "required": [
                   "ID",
-                  "land"
+                  "landKode"
                 ],
                 "additionalProperties": false
               }
@@ -119,17 +106,11 @@
         },
         "arbeidUtland": {
           "$id": "/properties/soeknadDokument/properties/arbeidUtland",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
             "adresse": {
               "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse",
-              "type": [
-                "object",
-                "null"
-              ],
+              "type": "object",
               "properties": {
                 "gatenavn": {
                   "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/gatenavn",
@@ -138,7 +119,7 @@
                     "null"
                   ],
                   "title": "The Gatenavn Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Adresseveien 123"
                   ]
@@ -167,30 +148,24 @@
                     "Poststedet"
                   ]
                 },
-                "land": {
-                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/land",
+                "landKode": {
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/landKode",
                   "type": [
-                    "array"
+                    "string",
+                    "null"
                   ],
-                  "items": {
-                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/land/items",
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "The 0th Schema ",
-                    "default": "",
-                    "examples": [
-                      "DE"
-                    ]
-                  }
+                  "title": "The LandKode Schema",
+                  "default": null,
+                  "examples": [
+                    "DE"
+                  ]
                 }
               },
               "required": [
                 "gatenavn",
                 "postnummer",
                 "poststed",
-                "land"
+                "landKode"
               ],
               "additionalProperties": false
             },
@@ -216,15 +191,6 @@
               "default": 0,
               "examples": [
                 66.5999984741211
-              ]
-            },
-            "arbeidsstedUtland": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsstedUtland",
-              "type": "null",
-              "title": "The Arbeidsstedutland Schema ",
-              "default": null,
-              "examples": [
-                null
               ]
             },
             "arbeidUtlandErstatning": {
@@ -256,7 +222,6 @@
             "adresse",
             "arbeidsandelNorge",
             "arbeidsandelUtland",
-            "arbeidsstedUtland",
             "arbeidUtlandErstatning",
             "arbeidUtlandHjemmekontor"
           ],
@@ -269,10 +234,7 @@
           ],
           "items": {
             "$id": "/properties/soeknadDokument/properties/foretakUtland/items",
-            "type": [
-              "object",
-              "null"
-            ],
+            "type": "object",
             "properties": {
               "navn": {
                 "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/navn",
@@ -281,7 +243,7 @@
                   "null"
                 ],
                 "title": "The Navn Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "EQUINOR DEUTSCHLAND"
                 ]
@@ -293,7 +255,7 @@
                   "null"
                 ],
                 "title": "The Orgnr Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "372384726"
                 ]
@@ -312,7 +274,7 @@
                       "null"
                     ],
                     "title": "The Gatenavn Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "Deutschlandstrasse 123"
                     ]
@@ -324,7 +286,7 @@
                       "null"
                     ],
                     "title": "The Postnummer Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "3388"
                     ]
@@ -336,35 +298,29 @@
                       "null"
                     ],
                     "title": "The Poststed Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "Berlin"
                     ]
                   },
-                  "land": {
-                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land",
+                  "landKode": {
+                    "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/landKode",
                     "type": [
-                      "array"
+                      "string",
+                      "null"
                     ],
-                    "items": {
-                      "$id": "/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/land/items",
-                      "type": [
-                        "string",
-                        "null"
-                      ],
-                      "title": "The 0th Schema ",
-                      "default": "",
-                      "examples": [
-                        "DE"
-                      ]
-                    }
+                    "title": "The LandKode Schema ",
+                    "default": null,
+                    "examples": [
+                      "DE"
+                    ]
                   }
                 },
                 "required": [
                   "gatenavn",
                   "postnummer",
                   "poststed",
-                  "land"
+                  "landKode"
                 ],
                 "additionalProperties": false
               }
@@ -379,24 +335,21 @@
         },
         "oppholdUtland": {
           "$id": "/properties/soeknadDokument/properties/oppholdUtland",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
-            "oppholdsland": {
-              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland",
+            "oppholdslandKoder": {
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdslandKoder",
               "type": [
                 "array"
               ],
               "items": {
-                "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsland/items",
+                "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdslandKoder/items",
                 "type": [
                   "string",
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "DE"
                 ]
@@ -416,7 +369,7 @@
                     "null"
                   ],
                   "title": "The Fom Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "2018-01-01"
                   ]
@@ -427,8 +380,8 @@
                     "string",
                     "null"
                   ],
-                  "title": "The Tom Schema ",
-                  "default": "",
+                  "title": "The TOM Schema ",
+                  "default": null,
                   "examples": [
                     "2018-06-01"
                   ]
@@ -464,14 +417,14 @@
                 true
               ]
             },
-            "studentFinansiering": {
-              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentFinansiering",
+            "studentFinansieringKode": {
+              "$id": "/properties/soeknadDokument/properties/oppholdUtland/properties/studentFinansieringKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Studentfinansiering Schema ",
-              "default": "",
+              "title": "The studentFinansieringKode Schema",
+              "default": null,
               "examples": [
                 "LAANEKASSEN"
               ]
@@ -483,28 +436,25 @@
                 "null"
               ],
               "title": "The Studentsemester Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "2018/2019"
               ]
             }
           },
           "required": [
-            "oppholdsland",
+            "oppholdslandKoder",
             "oppholdsPeriode",
             "ektefelleEllerBarnINorge",
             "sammeAdresseSomArbeidsgiver",
-            "studentFinansiering",
+            "studentFinansieringKode",
             "studentSemester"
           ],
           "additionalProperties": false
         },
         "bosted": {
           "$id": "/properties/soeknadDokument/properties/bosted",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
             "intensjonOmRetur": {
               "$id": "/properties/soeknadDokument/properties/bosted/properties/intensjonOmRetur",
@@ -530,23 +480,17 @@
                 true
               ]
             },
-            "familiesBosted": {
-              "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted",
+            "familiesBostedLandKode": {
+              "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBostedLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/bosted/properties/familiesBosted/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "SE"
-                ]
-              }
+              "title": "The familiesBostedLandKode Schema ",
+              "default": null,
+              "examples": [
+                "SE"
+              ]
             },
             "antallMaanederINorge": {
               "$id": "/properties/soeknadDokument/properties/bosted/properties/antallMaanederINorge",
@@ -598,7 +542,7 @@
                     "null"
                   ],
                   "title": "The Gatenavn Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Gateadressen"
                   ]
@@ -610,7 +554,7 @@
                     "null"
                   ],
                   "title": "The Postnummer Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "12345"
                   ]
@@ -622,42 +566,36 @@
                     "null"
                   ],
                   "title": "The Poststed Schema ",
-                  "default": "",
+                  "default": null,
                   "examples": [
                     "Poststeder"
                   ]
                 },
-                "land": {
-                  "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/land",
+                "landKode": {
+                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/landKode",
                   "type": [
-                    "array"
+                    "string",
+                    "null"
                   ],
-                  "items": {
-                    "$id": "/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/land/items",
-                    "type": [
-                      "string",
-                      "null"
-                    ],
-                    "title": "The 0th Schema ",
-                    "default": "",
-                    "examples": [
-                      "DE"
-                    ]
-                  }
+                  "title": "The LandKode Schema",
+                  "default": null,
+                  "examples": [
+                    "DE"
+                  ]
                 }
               },
               "required": [
                 "gatenavn",
                 "postnummer",
                 "poststed",
-                "land"
+                "landKode"
               ]
             }
           },
           "required": [
             "intensjonOmRetur",
             "bostedUtenforNorge",
-            "familiesBosted",
+            "familiesBostedLandKode",
             "antallMaanederINorge",
             "EOSBarnetrygdFraNAV",
             "adresseIUtlandet",
@@ -691,7 +629,7 @@
                 "null"
               ],
               "title": "The Arbeidsforholdvikarnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Vikarbyrået AS"
               ]
@@ -703,7 +641,7 @@
                 "null"
               ],
               "title": "The Vikarorgnr Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "22334455"
               ]
@@ -715,7 +653,7 @@
                 "null"
               ],
               "title": "The Flyendepersonellhjemmebase Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Flybasen Int. Airport, ...."
               ]
@@ -727,7 +665,7 @@
                 "null"
               ],
               "title": "The Kontaktnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Ola Nordmann"
               ]
@@ -739,7 +677,7 @@
                 "null"
               ],
               "title": "The Kontaktepost Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "ola.nordmann@fullmektigfirma.no"
               ]
@@ -751,7 +689,7 @@
                 "null"
               ],
               "title": "The Fullmektigfirma Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Advokatfullmektig AS"
               ]
@@ -763,7 +701,7 @@
                 "null"
               ],
               "title": "The Fullmektiggateadresse Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Adresseveien 123"
               ]
@@ -775,7 +713,7 @@
                 "null"
               ],
               "title": "The Fullmektigpostnr Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "1234"
               ]
@@ -787,7 +725,7 @@
                 "null"
               ],
               "title": "The Fullmektigpoststed Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Byensvik"
               ]
@@ -799,28 +737,22 @@
                 "null"
               ],
               "title": "The Fullmektigregion Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Østlandsregionen"
               ]
             },
-            "fullmektigLand": {
-              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand",
+            "fullmektigLandKode": {
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "NO"
-                ]
-              }
+              "title": "The FullmektigLandKode Schema ",
+              "default": null,
+              "examples": [
+                "NO"
+              ]
             }
           },
           "required": [
@@ -835,7 +767,7 @@
             "fullmektigPostnr",
             "fullmektigPoststed",
             "fullmektigRegion",
-            "fullmektigLand"
+            "fullmektigLandKode"
           ],
           "additionalProperties": false
         },
@@ -877,7 +809,7 @@
                       "null"
                     ],
                     "title": "The Orgnr Schema ",
-                    "default": "",
+                    "default": null,
                     "examples": [
                       "910253158"
                     ]
@@ -1092,7 +1024,7 @@
                   "null"
                 ],
                 "title": "The 0th Schema ",
-                "default": "",
+                "default": null,
                 "examples": [
                   "Fri bolig",
                   "Fri bil"
@@ -1220,7 +1152,7 @@
                 "null"
               ],
               "title": "The Trygdeavgifttrukketgjennomskattdato Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "2018-01-01"
               ]
@@ -1239,19 +1171,16 @@
         },
         "maritimtArbeid": {
           "$id": "/properties/soeknadDokument/properties/maritimtArbeid",
-          "type": [
-            "object",
-            "null"
-          ],
+          "type": "object",
           "properties": {
-            "maritimType": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimType",
+            "maritimTypeKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimTypeKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Maritimtype Schema ",
-              "default": "",
+              "title": "The MaritimTypeKode Schema ",
+              "default": null,
               "examples": [
                 "SKIP"
               ]
@@ -1263,66 +1192,54 @@
                 "null"
               ],
               "title": "The Skipsnavn Schema ",
-              "default": "",
+              "default": null,
               "examples": [
                 "Navn på skipet"
               ]
             },
-            "fartsomrade": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomrade",
+            "fartsomradeKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomradeKode",
               "type": [
                 "string",
                 "null"
               ],
-              "title": "The Fartsomrade Schema ",
-              "default": "",
+              "title": "The FartsomradeKode Schema ",
+              "default": null,
               "examples": [
                 "INNENRIKS"
               ]
             },
-            "flaggLand": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand",
+            "flaggLandKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "GB"
-                ]
-              }
+              "title": "The 0th Schema ",
+              "default": null,
+              "examples": [
+                "GB"
+              ]
             },
-            "installasjonsLand": {
-              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand",
+            "installasjonsLandKode": {
+              "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": "",
-                "examples": [
-                  "GB"
-                ]
-              }
+              "title": "The installasjonsLandKode Schema ",
+              "default": null,
+              "examples": [
+                "GB"
+              ]
             }
           },
           "required": [
-            "maritimType",
+            "maritimTypeKode",
             "skipsNavn",
-            "fartsomrade",
-            "flaggLand",
-            "installasjonsLand"
+            "fartsomradeKode",
+            "flaggLandKode",
+            "installasjonsLandKode"
           ],
           "additionalProperties": false
         }

@@ -11,30 +11,29 @@
         "gatenavn": null,
         "postnummer": null,
         "poststed": null,
-        "land": []
+        "landKode": null
       },
       "arbeidsandelNorge": null,
       "arbeidsandelUtland": null,
-      "arbeidsstedUtland": null,
       "arbeidUtlandErstatning": false,
       "arbeidUtlandHjemmekontor": false
     },
     "foretakUtland": [],
     "oppholdUtland": {
-      "oppholdsland": [],
+      "oppholdslandKoder": [],
       "oppholdsPeriode": {
         "fom": null,
         "tom": null
       },
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,
-      "studentFinansiering": null,
+      "studentFinansieringKode": null,
       "studentSemester": null
     },
     "bosted": {
       "intensjonOmRetur": true,
       "bostedUtenforNorge": true,
-      "familiesBosted": [],
+      "familiesBostedLandKode": null,
       "antallMaanederINorge": 8,
       "EOSBarnetrygdFraNAV": true,
       "adresseIUtlandet": true,
@@ -42,7 +41,7 @@
         "gatenavn": null,
         "postnummer": null,
         "poststed": null,
-        "land": []
+        "landKode": null
       }
     },
     "arbeidNorge": {
@@ -57,7 +56,7 @@
       "fullmektigPostnr": null,
       "fullmektigPoststed": null,
       "fullmektigRegion": null,
-      "fullmektigLand": []
+      "fullmektigLandKode": null
     },
     "selvstendigArbeid": {
       "erSelvstendig": false,
@@ -92,11 +91,11 @@
       "trygdeavgiftTrukketGjennomSkattDato": null
     },
     "maritimtArbeid": {
-      "maritimType": null,
+      "maritimTypeKode": null,
       "skipsNavn": null,
-      "fartsomrade": null,
-      "flaggLand": [],
-      "installasjonsLand": []
+      "fartsomradeKode": null,
+      "flaggLandKode": null,
+      "installasjonsLandKode": null
     }
   }
 }
