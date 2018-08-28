@@ -491,16 +491,6 @@
               "term": null
             }
           },
-          "postadresse" : {
-            "gateadresse": {
-              "gatenavn": null,
-              "gatenummer": null,
-              "husnummer": null,
-              "husbokstav": null
-            },
-            "postnr": null,
-            "land": null
-          },
           "personStatus" : {
             "kode" : "BOSA",
             "term" : "Bosatt"
@@ -519,17 +509,7 @@
           },
           "familiemedlemmer" : [
 
-          ],
-          "midlertidigPostadresse" : {
-            "gateadresse": {
-              "gatenavn": null,
-              "gatenummer": null,
-              "husnummer": null,
-              "husbokstav": null
-            },
-            "postnr": null,
-            "land": null
-          }
+          ]
         }
       },
       "behandlingshistorikk" : [

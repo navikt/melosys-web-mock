@@ -60,26 +60,6 @@
               "term":"NORGE"
             }
           },
-          "postadresse":{
-            "gateadresse" : {
-              "gatenummer" : null,
-              "husbokstav" : null,
-              "husnummer" : null,
-              "gatenavn" : "Lunderhaugen 1"
-            },
-            "postnr":"3202",
-            "land":"NO"
-          },
-          "midlertidigPostadresse":{
-            "gateadresse" : {
-              "gatenummer" : null,
-              "husbokstav" : null,
-              "husnummer" : null,
-              "gatenavn" : "Lunderhaugen 1"
-            },
-            "postnr":"5555",
-            "land":"NO"
-          },
           "foedselsdato": "1966-10-28",
           "erEgenAnsatt": true,
           "familiemedlemmer": [
