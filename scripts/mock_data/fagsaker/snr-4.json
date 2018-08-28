@@ -486,7 +486,10 @@
               "husbokstav": null
             },
             "postnr": null,
-            "land": null
+            "land": {
+              "kode": null,
+              "term": null
+            }
           },
           "postadresse" : {
             "gateadresse": {

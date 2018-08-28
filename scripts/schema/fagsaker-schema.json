@@ -453,15 +453,38 @@
                       },
                       "land": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": [
-                          "string",
-                          "null"
+                        "type": "object",
+                        "properties": {
+                          "kode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The Kode Schema ",
+                            "default": "",
+                            "examples": [
+                              "NO"
+                            ]
+                          },
+                          "term": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The Term Schema ",
+                            "default": "",
+                            "examples": [
+                              "Norge"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "kode",
+                          "term"
                         ],
-                        "title": "The Land Schema ",
-                        "default": "",
-                        "examples": [
-                          "NO"
-                        ]
+                        "additionalProperties": false
                       }
                     },
                     "required": [

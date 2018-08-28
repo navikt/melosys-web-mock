@@ -55,7 +55,10 @@
               "gatenavn" : "Lunderhaugen 1"
             },
             "postnr":"3202",
-            "land":"NO"
+            "land": {
+              "kode":"NO",
+              "term":"NORGE"
+            }
           },
           "postadresse":{
             "gateadresse" : {
@@ -346,7 +349,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{
@@ -384,7 +387,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{
@@ -422,7 +425,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{
@@ -460,7 +463,7 @@
                 "term":"EØS 883/04 - 12.1"
               },
               "land":{
-                "kode":"NOR",
+                "kode":"NO",
                 "term":"NORGE"
               },
               "lovvalg":{
