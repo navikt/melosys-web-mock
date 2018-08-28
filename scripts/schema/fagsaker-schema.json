@@ -439,6 +439,18 @@
                           "3202"
                         ]
                       },
+                      "poststed": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/poststed",
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "title": "The PostSted Schema ",
+                        "default": "",
+                        "examples": [
+                          "OSLO"
+                        ]
+                      },
                       "land": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
                         "type": [
