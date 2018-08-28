@@ -2295,41 +2295,6 @@
                                       "fastloenn"
                                     ]
                                   },
-                                  "tilleggsinformasjon": {
-                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon",
-                                    "type": "object",
-                                    "properties": {
-                                      "kategori": {
-                                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/kategori",
-                                        "type": [
-                                          "string",
-                                          "null"
-                                        ],
-                                        "title": "The Kategori Schema",
-                                        "default": null,
-                                        "examples": [
-                                          "Usikkert"
-                                        ]
-                                      },
-                                      "tilleggsinformasjonDetaljer": {
-                                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/tilleggsinformasjon/properties/tilleggsinformasjonDetaljer",
-                                        "type": [
-                                          "string",
-                                          "null"
-                                        ],
-                                        "title": "The TilleggsinformasjonDetaljer Schema",
-                                        "default": null,
-                                        "examples": [
-                                          "Henvendelse/søknad"
-                                        ]
-                                      }
-                                    },
-                                    "required": [
-                                      "kategori",
-                                      "tilleggsinformasjonDetaljer"
-                                    ],
-                                    "additionalProperties": false
-                                  },
                                   "opptjeningsperiode": {
                                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/opptjeningsperiode",
                                     "type": "object",
@@ -2392,8 +2357,7 @@
                                   "inngaarIGrunnlagForTrekk",
                                   "utloeserArbeidsgiveravgift",
                                   "informasjonsstatus",
-                                  "beskrivelse",
-                                  "tilleggsinformasjon"
+                                  "beskrivelse"
                                 ],
                                 "additionalProperties": false
                               }

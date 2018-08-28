@@ -502,11 +502,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   }
                 ]
               }
@@ -529,11 +525,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   }
                 ]
               }
@@ -556,11 +548,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "timeloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "timeloenn"
                   },
                   {
                     "beloep": 5000,
@@ -576,11 +564,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "timeloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "timeloenn"
                   },
                   {
                     "beloep": 50000,
@@ -596,11 +580,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "bonus",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "bonus"
                   },
                   {
                     "beloep": 25000,
@@ -616,11 +596,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   },
                   {
                     "beloep": 50000,
@@ -636,11 +612,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "feriepenger",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "feriepenger"
                   }
                 ]
               }
@@ -663,11 +635,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   }
                 ]
               }

@@ -549,11 +549,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   }
                 ]
               }
@@ -576,11 +572,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   },
                   {
                     "beloep": 5000,
@@ -596,11 +588,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   },
                   {
                     "beloep": 5000,
@@ -616,11 +604,7 @@
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
                     "informasjonsstatus": "InngaarAlltid",
-                    "beskrivelse": "fastloenn",
-                    "tilleggsinformasjon": {
-                      "kategori": null,
-                      "tilleggsinformasjonDetaljer": null
-                    }
+                    "beskrivelse": "fastloenn"
                   }
                 ]
               }
