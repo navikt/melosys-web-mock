@@ -68,7 +68,7 @@ node {
 
     zipFile = "${application}-${buildVersion}"+".jar"
     echo("zipFile:${zipFile}")
-    sh "zip -r $zipFile ./scripts/schema/*"
+    sh "cd scripts/; zip -r ../$zipFile ./schema/*; cd .."
   }
 
   stage('Copy Zip archive to pickup') {
