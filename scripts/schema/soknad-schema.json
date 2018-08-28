@@ -742,23 +742,17 @@
                 "Østlandsregionen"
               ]
             },
-            "fullmektigLand": {
-              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand",
+            "fullmektigLandKode": {
+              "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLandKode",
               "type": [
-                "array"
+                "string",
+                "null"
               ],
-              "items": {
-                "$id": "/properties/soeknadDokument/properties/arbeidNorge/properties/fullmektigLand/items",
-                "type": [
-                  "string",
-                  "null"
-                ],
-                "title": "The 0th Schema ",
-                "default": null,
-                "examples": [
-                  "NO"
-                ]
-              }
+              "title": "The FullmektigLandKode Schema ",
+              "default": null,
+              "examples": [
+                "NO"
+              ]
             }
           },
           "required": [
@@ -773,7 +767,7 @@
             "fullmektigPostnr",
             "fullmektigPoststed",
             "fullmektigRegion",
-            "fullmektigLand"
+            "fullmektigLandKode"
           ],
           "additionalProperties": false
         },
