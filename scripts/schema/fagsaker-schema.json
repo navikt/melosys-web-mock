@@ -385,7 +385,7 @@
                           "gatenummer": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
                             "type": [
-                              "string",
+                              "integer",
                               "null"
                             ],
                             "title": "The Gatenummer Schema ",
@@ -409,13 +409,13 @@
                           "husnummer": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
                             "type": [
-                              "string",
+                              "integer",
                               "null"
                             ],
                             "title": "The Husnummer Schema ",
                             "default": "",
                             "examples": [
-                              "H0101"
+                              "21"
                             ]
                           }
                         },
