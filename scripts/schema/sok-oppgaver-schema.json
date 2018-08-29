@@ -1,15 +1,14 @@
-
 {
   "$id": "http://nav.no/melosys/oppgave-sok.json",
   "type": "array",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "items": {
-    "$id": "http://nav.no/melosys/oppgave-sok.json/items",
+    "$id": "/items",
     "type": "object",
     "properties": {
       "oppgaveID": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/oppgaveID",
+        "$id": "/items/properties/oppgaveID",
         "type": "string",
         "title": "The Oppgaveid Schema ",
         "default": "",
@@ -18,20 +17,21 @@
         ]
       },
       "oppgavetype": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/oppgavetype",
+        "$id": "/items/properties/oppgavetype",
         "type": "object",
         "properties": {
           "kode": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/oppgavetype/properties/kode",
+            "$id": "/items/properties/oppgavetype/properties/kode",
             "type": "string",
             "title": "The Kode Schema ",
             "default": "",
             "examples": [
-              "BEH_SAK"
+              "BEH_SAK",
+              "JFR"
             ]
           },
           "term": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/oppgavetype/properties/term",
+            "$id": "/items/properties/oppgavetype/properties/term",
             "type": "string",
             "title": "The Term Schema ",
             "default": "",
@@ -39,11 +39,19 @@
               "Behandling"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ],
+        "additionalProperties": false
       },
       "sammensattNavn": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sammensattNavn",
-        "type": "string",
+        "$id": "/items/properties/sammensattNavn",
+        "type": [
+          "string",
+          "null"
+        ],
         "title": "The Sammensattnavn Schema ",
         "default": "",
         "examples": [
@@ -51,17 +59,28 @@
         ]
       },
       "saksnummer": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/saksnummer",
-        "type": "string",
+        "$id": "/items/properties/saksnummer",
+        "type": [
+          "string",
+          "null"
+        ],
         "title": "The Saksnummer Schema ",
         "default": "",
         "examples": [
           "3"
         ]
       },
+      "journalpostID": {
+        "$id": "/items/properties/journalpostID",
+        "type": [
+          "string",
+          "null"
+        ]
+      },
       "aktivTil": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/aktivTil",
+        "$id": "/items/properties/aktivTil",
         "type": "string",
+        "format": "date",
         "title": "The Aktivtil Schema ",
         "default": "",
         "examples": [
@@ -69,12 +88,48 @@
         ]
       },
       "soknadsperiode": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/soknadsperiode",
-        "type": "object"
+        "$id": "/items/properties/soknadsperiode",
+        "type": "object",
+        "properties": {
+          "fom": {
+            "$id": "/items/properties/soknadsperiode/fom",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "title": "The Fom Schema ",
+            "default": "",
+            "examples": [
+              "2016-01-01"
+            ]
+          },
+          "tom": {
+            "$id": "/items/properties/soknadsperiode/tom",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "title": "The Tom Schema ",
+            "default": "",
+            "examples": [
+              "2016-01-01"
+            ]
+          }
+        },
+        "required": [
+          "fom",
+          "tom"
+        ],
+        "additionalProperties": false
       },
       "sakstype": {
         "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype",
-        "type": "object",
+        "type": [
+          "object",
+          "null"
+        ],
         "properties": {
           "kode": {
             "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype/properties/kode",
@@ -94,18 +149,33 @@
               "EU/EØS"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ],
+        "additionalProperties": false
       },
       "behandling": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling",
+        "$id": "/items/properties/behandling",
         "type": "object",
         "properties": {
-          "type": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/type",
-            "type": "object",
+          "behandlingID": {
+            "$id": "/items/properties/behandling/behandlingID",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "behandlingType": {
+            "$id": "/items/properties/behandling/properties/behandlingType",
+            "type": [
+              "object",
+              "null"
+            ],
             "properties": {
               "kode": {
-                "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/type/properties/kode",
+                "$id": "/items/properties/behandling/properties/type/properties/kode",
                 "type": "string",
                 "title": "The Kode Schema ",
                 "default": "",
@@ -114,7 +184,7 @@
                 ]
               },
               "term": {
-                "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/type/properties/term",
+                "$id": "/items/properties/behandling/properties/type/properties/term",
                 "type": "string",
                 "title": "The Term Schema ",
                 "default": "",
@@ -122,14 +192,22 @@
                   "Søknad"
                 ]
               }
-            }
+            },
+            "required": [
+              "kode",
+              "term"
+            ],
+            "additionalProperties": false
           },
-          "status": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/status",
-            "type": "object",
+          "behandlingStatus": {
+            "$id": "/items/properties/behandling/properties/behandlingStatus",
+            "type": [
+              "object",
+              "null"
+            ],
             "properties": {
               "kode": {
-                "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/status/properties/kode",
+                "$id": "/items/properties/behandling/properties/status/properties/kode",
                 "type": "string",
                 "title": "The Kode Schema ",
                 "default": "",
@@ -138,7 +216,7 @@
                 ]
               },
               "term": {
-                "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/behandling/properties/status/properties/term",
+                "$id": "/items/properties/behandling/properties/status/properties/term",
                 "type": "string",
                 "title": "The Term Schema ",
                 "default": "",
@@ -146,15 +224,42 @@
                   "Opprettet"
                 ]
               }
-            }
+            },
+            "required": [
+              "kode",
+              "term"
+            ],
+            "additionalProperties": false
+          },
+          "endretDato": {
+            "$id": "/items/properties/behandling/properties/endretDato",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
           }
-        }
+        },
+        "required": [
+          "behandlingID",
+          "behandlingType",
+          "behandlingStatus",
+          "endretDato"
+        ],
+        "additionalProperties": false
+      },
+      "prioritet": {
+        "$id": "/items/properties/prioritet",
+        "type": "string"
       },
       "land": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/land",
-        "type": "array",
+        "$id": "/items/properties/land",
+        "type": [
+          "array",
+          "null"
+        ],
         "items": {
-          "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/land/items",
+          "$id": "/items/properties/land/items",
           "type": "string",
           "title": "The 0th Schema ",
           "default": "",
@@ -162,7 +267,32 @@
             "GB"
           ]
         }
+      },
+      "versjon": {
+        "$id": "/items/properties/versjon",
+        "type": "integer"
+      },
+      "ansvarligID": {
+        "$id": "/items/properties/ansvarligId",
+        "type": "string"
       }
-    }
-  }
+    },
+    "required": [
+      "oppgaveID",
+      "oppgavetype",
+      "sammensattNavn",
+      "journalpostID",
+      "saksnummer",
+      "aktivTil",
+      "soknadsperiode",
+      "sakstype",
+      "behandling",
+      "prioritet",
+      "land",
+      "versjon",
+      "ansvarligID"
+    ],
+    "additionalProperties": false
+  },
+  "additionalProperties": false
 }
