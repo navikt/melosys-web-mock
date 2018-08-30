@@ -26,84 +26,6 @@
     "ansvarligID": "Z991001"
   },
   {
-    "oppgaveID": "175127177",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-09",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "183545950",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-09-06",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "192121803",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2017-03-09",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
     "oppgaveID": "174562068",
     "oppgavetype": {
       "kode": "BEH_SAK",
@@ -128,13 +50,54 @@
       "endretDato": null
     },
     "journalpostID": null,
-    "aktivTil": "2016-01-28",
+    "aktivTil": "2018-01-28",
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-09-31"
     },
     "prioritet": "HOY",
-    "land": null,
+    "land": {
+      "kode": "DK",
+      "term": "Danmark"
+    },
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "176701002",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "LILLA HEST",
+    "saksnummer": "3",
+    "sakstype": {
+      "kode": "TRG_AVT",
+      "term": "Trygdeavtale"
+    },
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": {
+        "kode": "ML_U",
+        "term": "Melding fra utenlandsk myndighet"
+      },
+      "behandlingStatus": {
+        "kode": "OPPR",
+        "term": "Opprettet"
+      },
+      "endretDato": "2018-01-01"
+    },
+    "aktivTil": "2016-03-22",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": "2016-05-12",
+      "tom": "2018-01-01"
+    },
+    "prioritet": "HOY",
+    "land": {
+      "kode": "ES",
+      "term": "Spania"
+    },
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
@@ -196,8 +159,8 @@
       "kode": "BEH_SAK",
       "term": "Behandling"
     },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
+    "sammensattNavn": "KAKE ARTIG",
+    "saksnummer": "5",
     "sakstype": {
       "kode": "FLK_TRG",
       "term": "Folketrygd"
@@ -278,102 +241,6 @@
     "ansvarligID": "Z991001"
   },
   {
-    "oppgaveID": "176701002",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "ML_U",
-        "term": "Melding fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-03-22",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "187676214",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-12-06",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "187677019",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "REV",
-        "term": "Revurdering"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-12-06",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
     "oppgaveID": "177054897",
     "oppgavetype": {
       "kode": "JFR",
@@ -405,7 +272,7 @@
       "kode": "BEH_SAK",
       "term": "Behandling"
     },
-    "sammensattNavn": "GLITRENDE HATT",
+    "sammensattNavn": "MASKIN ARTIG",
     "saksnummer": "4",
     "sakstype": {
       "kode": "FLK_TRG",
@@ -424,643 +291,6 @@
       "endretDato": null
     },
     "aktivTil": "2016-03-23",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "196323516",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "REV",
-        "term": "Revurdering"
-      },
-      "behandlingStatus": {
-        "kode": "AVSLU",
-        "term": "Avsluttet"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2017-06-19",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "184590779",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-09-29",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "175170762",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-10",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "172756938",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2015-12-14",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "183422335",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "PS_U",
-        "term": "Påstand fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-09-02",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "174405685",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "PS_U",
-        "term": "Påstand fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-02-02",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "175127202",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "PS_U",
-        "term": "Påstand fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-02-09",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "204142355",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2017-12-15",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "174243235",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "ML_U",
-        "term": "Melding fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "FORL",
-        "term": "Foreløpig lovvalg"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-01-21",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "170835942",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "REV",
-        "term": "Revurdering"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2015-11-06",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "176190918",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "REV",
-        "term": "Revurdering"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-03-03",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "183240112",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "ML_U",
-        "term": "Melding fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "UBEH",
-        "term": "Under behandling"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-08-30",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "175830175",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-25",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "174945443",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "REV",
-        "term": "Revurdering"
-      },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-02-03",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "204142438",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "ML_U",
-        "term": "Melding fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2017-12-15",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "174632987",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-01-27",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "201774036",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "UFM",
-        "term": "Unntak medlemskap"
-      },
-      "behandlingStatus": {
-        "kode": "FORL",
-        "term": "Foreløpig lovvalg"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2017-10-26",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "175127296",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
-    "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-09",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstype": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "174697422",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "ML_U",
-        "term": "Melding fra utenlandsk myndighet"
-      },
-      "behandlingStatus": {
-        "kode": "FORL",
-        "term": "Foreløpig lovvalg"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2016-02-08",
-    "journalpostID": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "203530645",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
-      },
-      "behandlingStatus": {
-        "kode": "FORL",
-        "term": "Foreløpig lovvalg"
-      },
-      "endretDato": null
-    },
-    "aktivTil": "2017-12-04",
     "journalpostID": null,
     "soknadsperiode": {
       "fom": null,
