@@ -56,7 +56,7 @@
       "tom": "2019-09-31"
     },
     "prioritet": "HOY",
-    "land": ["NO"],
+    "land": ["DE"],
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
@@ -91,7 +91,7 @@
       "tom": "2018-01-01"
     },
     "prioritet": "HOY",
-    "land": ["NO"],
+    "land": ["DK"],
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
@@ -178,7 +178,7 @@
       "tom": null
     },
     "prioritet": "HOY",
-    "land": null,
+    "land": ["ES"],
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
