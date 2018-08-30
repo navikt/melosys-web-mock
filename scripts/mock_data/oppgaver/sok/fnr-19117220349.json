@@ -59,7 +59,9 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "3",
@@ -82,7 +84,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "4",
@@ -105,7 +109,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "5",
@@ -128,7 +134,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "6",
@@ -151,7 +159,9 @@
         "kode": "OPPR",
         "term": "Opprettet"
       },
-      "endretDato": null
+      "endretDato": null,
+      "sistOppdatert": "2018-08-10T15:00:00",
+      "erUnderOppdatering": false
     },
     "land": [
       "GB"
@@ -159,6 +169,8 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   }
 ]

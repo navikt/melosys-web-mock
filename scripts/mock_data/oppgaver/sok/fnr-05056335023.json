@@ -28,7 +28,9 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "2",
@@ -59,7 +61,9 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "ansvarligID": "Z991001",
-    "versjon": 1
+    "versjon": 1,
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "3",
@@ -82,7 +86,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "4",
@@ -105,7 +111,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "5",
@@ -128,7 +136,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "6",
@@ -159,6 +169,8 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   }
 ]

@@ -20,7 +20,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "174562068",
@@ -49,7 +51,9 @@
     "prioritet": "HOY",
     "land": ["NO"],
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-07T15:00:00",
+    "erUnderOppdatering": true
   },
   {
     "oppgaveID": "176701002",
@@ -78,7 +82,9 @@
     "prioritet": "HOY",
     "land": ["NO"],
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "201377338",
@@ -101,7 +107,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "167638828",
@@ -124,7 +132,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "176314229",
@@ -153,7 +163,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "193220255",
@@ -176,7 +188,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "174464932",
@@ -199,7 +213,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "177054897",
@@ -222,7 +238,9 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": null,
+    "erUnderOppdatering": null
   },
   {
     "oppgaveID": "176741739",
@@ -251,6 +269,8 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   }
 ]
