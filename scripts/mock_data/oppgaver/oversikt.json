@@ -10,7 +10,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -91,7 +91,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -114,7 +114,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -166,7 +166,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -189,7 +189,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -212,7 +212,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstypeKode": "EU_EOS",
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
