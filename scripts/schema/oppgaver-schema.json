@@ -16,33 +16,12 @@
           "1"
         ]
       },
-      "oppgavetype": {
-        "$id": "/items/properties/oppgavetype",
-        "type": "object",
-        "properties": {
-          "kode": {
-            "$id": "/items/properties/oppgavetype/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema ",
-            "default": "",
-            "examples": [
-              "BEH_SAK",
-              "JFR"
-            ]
-          },
-          "term": {
-            "$id": "/items/properties/oppgavetype/properties/term",
-            "type": "string",
-            "title": "The Term Schema ",
-            "default": "",
-            "examples": [
-              "Behandling"
-            ]
-          }
-        },
-        "required": [
-          "kode",
-          "term"
+      "oppgavetypeKode": {
+        "$id": "/items/properties/oppgavetypeKode",
+        "type": "string",
+        "default": "",
+        "examples": [
+          "JFR", "BEH_SAK"
         ],
         "additionalProperties": false
       },
@@ -124,35 +103,12 @@
         ],
         "additionalProperties": false
       },
-      "sakstype": {
-        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype",
-        "type": [
-          "object",
-          "null"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema ",
-            "default": "",
-            "examples": [
-              "EU_EOS"
-            ]
-          },
-          "term": {
-            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype/properties/term",
-            "type": "string",
-            "title": "The Term Schema ",
-            "default": "",
-            "examples": [
-              "EU/EØS"
-            ]
-          }
-        },
-        "required": [
-          "kode",
-          "term"
+      "sakstypeKode": {
+        "$id": "/items/properties/sakstypeKode",
+        "type": ["string", "null"],
+        "default": "",
+        "examples": [
+          "EOS"
         ],
         "additionalProperties": false
       },
@@ -279,13 +235,13 @@
     },
     "required": [
       "oppgaveID",
-      "oppgavetype",
+      "oppgavetypeKode",
       "sammensattNavn",
       "journalpostID",
       "saksnummer",
       "aktivTil",
       "soknadsperiode",
-      "sakstype",
+      "sakstypeKode",
       "behandling",
       "prioritet",
       "land",

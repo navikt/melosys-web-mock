@@ -1,21 +1,15 @@
 [
   {
     "oppgaveID": "1",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
+    "oppgavetypeKode": "BEH_SAK",
+    "sammensattNavn": "ARTIG KAKE",
     "saksnummer": "3",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
       "tom": null
     },
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
+    "sakstypeKode": "EU_EOS",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -38,21 +32,15 @@
   },
   {
     "oppgaveID": "2",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
+    "oppgavetypeKode": "BEH_SAK",
+    "sammensattNavn": "ARTIG KAKE",
     "saksnummer": "3",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
       "tom": null
     },
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
+    "sakstypeKode": "EU_EOS",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -75,10 +63,7 @@
   },
   {
     "oppgaveID": "3",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_3789",
     "aktivTil": "2019-04-25",
     "sammensattNavn": null,
@@ -87,10 +72,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -110,10 +92,7 @@
   },
   {
     "oppgaveID": "4",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_4987",
     "aktivTil": "2019-04-25",
     "sammensattNavn": null,
@@ -122,7 +101,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -136,10 +115,7 @@
   },
   {
     "oppgaveID": "5",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_5678",
     "aktivTil": "2019-04-25",
     "sammensattNavn": null,
@@ -148,7 +124,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -162,21 +138,15 @@
   },
   {
     "oppgaveID": "6",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
-    "sammensattNavn": "LILLA HEST",
+    "oppgavetypeKode": "BEH_SAK",
+    "sammensattNavn": "ARTIG KAKE",
     "saksnummer": "3",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
       "tom": null
     },
-    "sakstype": {
-      "kode": "EU_EOS",
-      "term": "EU/EØS"
-    },
+    "sakstypeKode": "EU_EOS",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {

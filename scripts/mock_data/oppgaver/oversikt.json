@@ -1,10 +1,7 @@
 [
   {
     "oppgaveID": "177057928",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2016-03-30",
     "sammensattNavn": null,
@@ -13,7 +10,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -27,16 +24,10 @@
   },
   {
     "oppgaveID": "174562068",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
+    "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "GLITRENDE HATT",
     "saksnummer": "4",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
+    "sakstypeKode": "FLK_TRG",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -53,7 +44,7 @@
     "aktivTil": "2018-01-28",
     "soknadsperiode": {
       "fom": "2018-10-01",
-      "tom": "2019-09-31"
+      "tom": "2019-08-31"
     },
     "prioritet": "HOY",
     "land": ["DE"],
@@ -62,16 +53,10 @@
   },
   {
     "oppgaveID": "176701002",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
+    "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "LILLA HEST",
     "saksnummer": "3",
-    "sakstype": {
-      "kode": "TRG_AVT",
-      "term": "Trygdeavtale"
-    },
+    "sakstypeKode": "TRG_AVT",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -97,10 +82,7 @@
   },
   {
     "oppgaveID": "201377338",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2017-10-17",
     "sammensattNavn": null,
@@ -109,7 +91,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -123,10 +105,7 @@
   },
   {
     "oppgaveID": "167638828",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2015-08-18",
     "sammensattNavn": null,
@@ -135,7 +114,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -149,16 +128,10 @@
   },
   {
     "oppgaveID": "176314229",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
+    "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "KAKE ARTIG",
     "saksnummer": "5",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
+    "sakstypeKode": "FLK_TRG",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
@@ -184,10 +157,7 @@
   },
   {
     "oppgaveID": "193220255",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2019-04-25",
     "sammensattNavn": null,
@@ -196,7 +166,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -210,10 +180,7 @@
   },
   {
     "oppgaveID": "174464932",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2016-01-26",
     "sammensattNavn": null,
@@ -222,7 +189,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -236,10 +203,7 @@
   },
   {
     "oppgaveID": "177054897",
-    "oppgavetype": {
-      "kode": "JFR",
-      "term": "Journalføring"
-    },
+    "oppgavetypeKode": "JFR",
     "journalpostID": "DOK_321",
     "aktivTil": "2016-03-30",
     "sammensattNavn": null,
@@ -248,7 +212,7 @@
       "fom": null,
       "tom": null
     },
-    "sakstype": null,
+    "sakstypeKode": null,
     "behandling": {
       "behandlingID": null,
       "behandlingType": null,
@@ -262,16 +226,10 @@
   },
   {
     "oppgaveID": "176741739",
-    "oppgavetype": {
-      "kode": "BEH_SAK",
-      "term": "Behandling"
-    },
+    "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "MASKIN ARTIG",
     "saksnummer": "4",
-    "sakstype": {
-      "kode": "FLK_TRG",
-      "term": "Folketrygd"
-    },
+    "sakstypeKode": "FLK_TRG",
     "behandling": {
       "behandlingID": null,
       "behandlingType": {
