@@ -3,7 +3,7 @@
     "oppgaveID": "1",
     "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "3",
+    "saksnummer": "4",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
@@ -34,7 +34,7 @@
     "oppgaveID": "2",
     "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "3",
+    "saksnummer": "4",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
@@ -62,79 +62,10 @@
     "ansvarligID": "Z991001"
   },
   {
-    "oppgaveID": "3",
-    "oppgavetypeKode": "JFR",
-    "journalpostID": "DOK_3789",
-    "aktivTil": "2019-04-25",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "4",
-    "oppgavetypeKode": "JFR",
-    "journalpostID": "DOK_4987",
-    "aktivTil": "2019-04-25",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "5",
-    "oppgavetypeKode": "JFR",
-    "journalpostID": "DOK_5678",
-    "aktivTil": "2019-04-25",
-    "sammensattNavn": null,
-    "saksnummer": null,
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": null,
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": null,
-      "behandlingStatus": null,
-      "endretDato": null
-    },
-    "prioritet": "HOY",
-    "land": null,
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "6",
+    "oppgaveID": "2",
     "oppgavetypeKode": "BEH_SAK",
     "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "3",
+    "saksnummer": "4",
     "aktivTil": "2019-04-25",
     "soknadsperiode": {
       "fom": null,
