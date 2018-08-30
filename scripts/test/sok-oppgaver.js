@@ -8,7 +8,7 @@ const { lesSokOppgaveKatalog} = require('../modules/sok-oppgaver');
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemajson = `${SCHEMA_DIR}/sok-oppgaver-schema.json`;
+const schemajson = `${SCHEMA_DIR}/oppgaver-schema.json`;
 const schema = Schema.lesSchema(schemajson);
 const catalog = lesSokOppgaveKatalog();
 
