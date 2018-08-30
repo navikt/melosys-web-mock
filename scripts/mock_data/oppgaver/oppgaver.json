@@ -6,7 +6,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-03-30"
+    "aktivTil": "2016-03-30",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "175127177",
@@ -15,7 +32,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-09+01:00"
+    "aktivTil": "2016-02-09",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "183545950",
@@ -24,7 +58,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-09-06"
+    "aktivTil": "2016-09-06",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "192121803",
@@ -33,7 +84,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2017-03-09+01:00"
+    "aktivTil": "2017-03-09",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174562068",
@@ -48,16 +116,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "SKND",
         "term": "Søknad"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-01-28+01:00"
+    "journalpostID": null,
+    "aktivTil": "2016-01-28",
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "201377338",
@@ -66,7 +145,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2017-10-17"
+    "aktivTil": "2017-10-17",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "167638828",
@@ -75,7 +171,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2015-08-18"
+    "aktivTil": "2015-08-18",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176314229",
@@ -90,16 +203,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "UFM",
         "term": "Unntak medlemskap"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-03-03+01:00"
+    "aktivTil": "2016-03-03",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "193220255",
@@ -108,7 +232,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2017-04-05"
+    "aktivTil": "2019-04-25",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174464932",
@@ -117,7 +258,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-01-26+01:00"
+    "aktivTil": "2016-01-26",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176701002",
@@ -132,16 +290,27 @@
       "term": "Trygdeavtale"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "ML_U",
         "term": "Melding fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "OPPR",
         "term": "Opprettet"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-03-22+01:00"
+    "aktivTil": "2016-03-22",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "187676214",
@@ -150,7 +319,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-12-06+01:00"
+    "aktivTil": "2016-12-06",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "187677019",
@@ -165,16 +351,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "REV",
         "term": "Revurdering"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-12-06+01:00"
+    "aktivTil": "2016-12-06",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "177054897",
@@ -183,7 +380,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-03-30"
+    "aktivTil": "2016-03-30",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176741739",
@@ -198,16 +412,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "SKND",
         "term": "Søknad"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-03-23+01:00"
+    "aktivTil": "2016-03-23",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "196323516",
@@ -222,16 +447,27 @@
       "term": "EU/EØS"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "REV",
         "term": "Revurdering"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "AVSLU",
         "term": "Avsluttet"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2017-06-19"
+    "aktivTil": "2017-06-19",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "184590779",
@@ -240,7 +476,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-09-29"
+    "aktivTil": "2016-09-29",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "175170762",
@@ -249,7 +502,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-10+01:00"
+    "aktivTil": "2016-02-10",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "172756938",
@@ -258,7 +528,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2015-12-14+01:00"
+    "aktivTil": "2015-12-14",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "183422335",
@@ -273,16 +560,27 @@
       "term": "EU/EØS"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "PS_U",
         "term": "Påstand fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-09-02"
+    "aktivTil": "2016-09-02",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174405685",
@@ -297,16 +595,27 @@
       "term": "Trygdeavtale"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "PS_U",
         "term": "Påstand fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "OPPR",
         "term": "Opprettet"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-02-02+01:00"
+    "aktivTil": "2016-02-02",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "175127202",
@@ -321,16 +630,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "PS_U",
         "term": "Påstand fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-02-09+01:00"
+    "aktivTil": "2016-02-09",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "204142355",
@@ -339,7 +659,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2017-12-15+01:00"
+    "aktivTil": "2017-12-15",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174243235",
@@ -354,16 +691,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "ML_U",
         "term": "Melding fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-01-21+01:00"
+    "aktivTil": "2016-01-21",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "170835942",
@@ -378,16 +726,27 @@
       "term": "EU/EØS"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "REV",
         "term": "Revurdering"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2015-11-06+01:00"
+    "aktivTil": "2015-11-06",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176190918",
@@ -402,16 +761,27 @@
       "term": "Trygdeavtale"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "REV",
         "term": "Revurdering"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-03-03+01:00"
+    "aktivTil": "2016-03-03",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "183240112",
@@ -426,16 +796,27 @@
       "term": "Trygdeavtale"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "ML_U",
         "term": "Melding fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "UBEH",
         "term": "Under behandling"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-08-30"
+    "aktivTil": "2016-08-30",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "175830175",
@@ -444,7 +825,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-25+01:00"
+    "aktivTil": "2016-02-25",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174945443",
@@ -459,16 +857,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "REV",
         "term": "Revurdering"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "OPPR",
         "term": "Opprettet"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-02-03+01:00"
+    "aktivTil": "2016-02-03",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "204142438",
@@ -483,16 +892,27 @@
       "term": "EU/EØS"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "ML_U",
         "term": "Melding fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "OPPR",
         "term": "Opprettet"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2017-12-15+01:00"
+    "aktivTil": "2017-12-15",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174632987",
@@ -501,7 +921,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-01-27+01:00"
+    "aktivTil": "2016-01-27",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "201774036",
@@ -516,16 +953,27 @@
       "term": "Folketrygd"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "UFM",
         "term": "Unntak medlemskap"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2017-10-26"
+    "aktivTil": "2017-10-26",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "175127296",
@@ -534,7 +982,24 @@
       "term": "Journalføring"
     },
     "journalpostID": "DOK_321",
-    "aktivTil": "2016-02-09+01:00"
+    "aktivTil": "2016-02-09",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174697422",
@@ -549,16 +1014,27 @@
       "term": "Trygdeavtale"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "ML_U",
         "term": "Melding fra utenlandsk myndighet"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2016-02-08+01:00"
+    "aktivTil": "2016-02-08",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "203530645",
@@ -573,15 +1049,26 @@
       "term": "EU/EØS"
     },
     "behandling": {
-      "type": {
+      "behandlingID": null,
+      "behandlingType": {
         "kode": "SKND",
         "term": "Søknad"
       },
-      "status": {
+      "behandlingStatus": {
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
-      }
+      },
+      "endretDato": null
     },
-    "aktivTil": "2017-12-04+01:00"
+    "aktivTil": "2017-12-04",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
   }
 ]
