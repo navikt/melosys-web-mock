@@ -56,10 +56,7 @@
       "tom": "2019-09-31"
     },
     "prioritet": "HOY",
-    "land": {
-      "kode": "DK",
-      "term": "Danmark"
-    },
+    "land": ["NO"],
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
@@ -85,7 +82,7 @@
         "kode": "OPPR",
         "term": "Opprettet"
       },
-      "endretDato": "2018-01-01"
+      "endretDato": null
     },
     "aktivTil": "2016-03-22",
     "journalpostID": null,
@@ -94,10 +91,7 @@
       "tom": "2018-01-01"
     },
     "prioritet": "HOY",
-    "land": {
-      "kode": "ES",
-      "term": "Spania"
-    },
+    "land": ["NO"],
     "versjon": 1,
     "ansvarligID": "Z991001"
   },
