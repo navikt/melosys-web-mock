@@ -1,63 +1,298 @@
 {
-  "$id": "http://example.com/example.json",
+  "$id": "http://nav.no/melosys/oppgave-sok.json",
   "type": "array",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "items": {
-    "$id": "http://example.com/example.json/items",
+    "$id": "/items",
     "type": "object",
     "properties": {
       "oppgaveID": {
-        "$id": "http://example.com/example.json/items/properties/oppgaveID",
+        "$id": "/items/properties/oppgaveID",
         "type": "string",
         "title": "The Oppgaveid Schema ",
         "default": "",
         "examples": [
-          "177057928"
+          "1"
         ]
       },
       "oppgavetype": {
-        "$id": "http://example.com/example.json/items/properties/oppgavetype",
+        "$id": "/items/properties/oppgavetype",
         "type": "object",
         "properties": {
           "kode": {
-            "$id": "http://example.com/example.json/items/properties/oppgavetype/properties/kode",
+            "$id": "/items/properties/oppgavetype/properties/kode",
             "type": "string",
             "title": "The Kode Schema ",
             "default": "",
             "examples": [
+              "BEH_SAK",
               "JFR"
             ]
           },
           "term": {
-            "$id": "http://example.com/example.json/items/properties/oppgavetype/properties/term",
+            "$id": "/items/properties/oppgavetype/properties/term",
             "type": "string",
             "title": "The Term Schema ",
             "default": "",
             "examples": [
-              "Journalføring"
+              "Behandling"
             ]
           }
-        }
+        },
+        "required": [
+          "kode",
+          "term"
+        ],
+        "additionalProperties": false
       },
-      "journalpostID": {
-        "$id": "http://example.com/example.json/items/properties/journalpostID",
-        "type": "string",
-        "title": "The Journalpostid Schema ",
+      "sammensattNavn": {
+        "$id": "/items/properties/sammensattNavn",
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "The Sammensattnavn Schema ",
         "default": "",
         "examples": [
-          "DOK_321"
+          "LILLA HEST"
+        ]
+      },
+      "saksnummer": {
+        "$id": "/items/properties/saksnummer",
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "The Saksnummer Schema ",
+        "default": "",
+        "examples": [
+          "3"
+        ]
+      },
+      "journalpostID": {
+        "$id": "/items/properties/journalpostID",
+        "type": [
+          "string",
+          "null"
         ]
       },
       "aktivTil": {
-        "$id": "http://example.com/example.json/items/properties/aktivTil",
+        "$id": "/items/properties/aktivTil",
         "type": "string",
+        "format": "date",
         "title": "The Aktivtil Schema ",
         "default": "",
         "examples": [
-          "2016-03-30"
+          "2019-04-25"
         ]
+      },
+      "soknadsperiode": {
+        "$id": "/items/properties/soknadsperiode",
+        "type": "object",
+        "properties": {
+          "fom": {
+            "$id": "/items/properties/soknadsperiode/fom",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "title": "The Fom Schema ",
+            "default": "",
+            "examples": [
+              "2016-01-01"
+            ]
+          },
+          "tom": {
+            "$id": "/items/properties/soknadsperiode/tom",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "title": "The Tom Schema ",
+            "default": "",
+            "examples": [
+              "2016-01-01"
+            ]
+          }
+        },
+        "required": [
+          "fom",
+          "tom"
+        ],
+        "additionalProperties": false
+      },
+      "sakstype": {
+        "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema ",
+            "default": "",
+            "examples": [
+              "EU_EOS"
+            ]
+          },
+          "term": {
+            "$id": "http://nav.no/melosys/oppgave-sok.json/items/properties/sakstype/properties/term",
+            "type": "string",
+            "title": "The Term Schema ",
+            "default": "",
+            "examples": [
+              "EU/EØS"
+            ]
+          }
+        },
+        "required": [
+          "kode",
+          "term"
+        ],
+        "additionalProperties": false
+      },
+      "behandling": {
+        "$id": "/items/properties/behandling",
+        "type": "object",
+        "properties": {
+          "behandlingID": {
+            "$id": "/items/properties/behandling/behandlingID",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "behandlingType": {
+            "$id": "/items/properties/behandling/properties/behandlingType",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "kode": {
+                "$id": "/items/properties/behandling/properties/type/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema ",
+                "default": "",
+                "examples": [
+                  "SKND"
+                ]
+              },
+              "term": {
+                "$id": "/items/properties/behandling/properties/type/properties/term",
+                "type": "string",
+                "title": "The Term Schema ",
+                "default": "",
+                "examples": [
+                  "Søknad"
+                ]
+              }
+            },
+            "required": [
+              "kode",
+              "term"
+            ],
+            "additionalProperties": false
+          },
+          "behandlingStatus": {
+            "$id": "/items/properties/behandling/properties/behandlingStatus",
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "kode": {
+                "$id": "/items/properties/behandling/properties/status/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema ",
+                "default": "",
+                "examples": [
+                  "OPPR"
+                ]
+              },
+              "term": {
+                "$id": "/items/properties/behandling/properties/status/properties/term",
+                "type": "string",
+                "title": "The Term Schema ",
+                "default": "",
+                "examples": [
+                  "Opprettet"
+                ]
+              }
+            },
+            "required": [
+              "kode",
+              "term"
+            ],
+            "additionalProperties": false
+          },
+          "endretDato": {
+            "$id": "/items/properties/behandling/properties/endretDato",
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "behandlingID",
+          "behandlingType",
+          "behandlingStatus",
+          "endretDato"
+        ],
+        "additionalProperties": false
+      },
+      "prioritet": {
+        "$id": "/items/properties/prioritet",
+        "type": "string"
+      },
+      "land": {
+        "$id": "/items/properties/land",
+        "type": [
+          "array",
+          "null"
+        ],
+        "items": {
+          "$id": "/items/properties/land/items",
+          "type": "string",
+          "title": "The 0th Schema ",
+          "default": "",
+          "examples": [
+            "GB"
+          ]
+        }
+      },
+      "versjon": {
+        "$id": "/items/properties/versjon",
+        "type": "integer"
+      },
+      "ansvarligID": {
+        "$id": "/items/properties/ansvarligId",
+        "type": "string"
       }
-    }
-  }
+    },
+    "required": [
+      "oppgaveID",
+      "oppgavetype",
+      "sammensattNavn",
+      "journalpostID",
+      "saksnummer",
+      "aktivTil",
+      "soknadsperiode",
+      "sakstype",
+      "behandling",
+      "prioritet",
+      "land",
+      "versjon",
+      "ansvarligID"
+    ],
+    "additionalProperties": false
+  },
+  "additionalProperties": false
 }

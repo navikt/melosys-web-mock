@@ -66,7 +66,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 
 module.exports.sendTilordneSak = (req, res) => {
   const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
-  const schema = Utils.lesSchema(schemajson);
+  const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;

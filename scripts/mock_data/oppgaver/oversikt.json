@@ -1,0 +1,298 @@
+[
+  {
+    "oppgaveID": "177057928",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2016-03-30",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "174562068",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "GLITRENDE HATT",
+    "saksnummer": "4",
+    "sakstype": {
+      "kode": "FLK_TRG",
+      "term": "Folketrygd"
+    },
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": {
+        "kode": "SKND",
+        "term": "Søknad"
+      },
+      "behandlingStatus": {
+        "kode": "UBEH",
+        "term": "Under behandling"
+      },
+      "endretDato": null
+    },
+    "journalpostID": null,
+    "aktivTil": "2018-01-28",
+    "soknadsperiode": {
+      "fom": "2018-10-01",
+      "tom": "2019-09-31"
+    },
+    "prioritet": "HOY",
+    "land": ["NO"],
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "176701002",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "LILLA HEST",
+    "saksnummer": "3",
+    "sakstype": {
+      "kode": "TRG_AVT",
+      "term": "Trygdeavtale"
+    },
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": {
+        "kode": "ML_U",
+        "term": "Melding fra utenlandsk myndighet"
+      },
+      "behandlingStatus": {
+        "kode": "OPPR",
+        "term": "Opprettet"
+      },
+      "endretDato": null
+    },
+    "aktivTil": "2016-03-22",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": "2016-05-12",
+      "tom": "2018-01-01"
+    },
+    "prioritet": "HOY",
+    "land": ["NO"],
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "201377338",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2017-10-17",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "167638828",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2015-08-18",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "176314229",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "KAKE ARTIG",
+    "saksnummer": "5",
+    "sakstype": {
+      "kode": "FLK_TRG",
+      "term": "Folketrygd"
+    },
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": {
+        "kode": "UFM",
+        "term": "Unntak medlemskap"
+      },
+      "behandlingStatus": {
+        "kode": "FORL",
+        "term": "Foreløpig lovvalg"
+      },
+      "endretDato": null
+    },
+    "aktivTil": "2016-03-03",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "193220255",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2019-04-25",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "174464932",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2016-01-26",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "177054897",
+    "oppgavetype": {
+      "kode": "JFR",
+      "term": "Journalføring"
+    },
+    "journalpostID": "DOK_321",
+    "aktivTil": "2016-03-30",
+    "sammensattNavn": null,
+    "saksnummer": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "sakstype": null,
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": null,
+      "behandlingStatus": null,
+      "endretDato": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  },
+  {
+    "oppgaveID": "176741739",
+    "oppgavetype": {
+      "kode": "BEH_SAK",
+      "term": "Behandling"
+    },
+    "sammensattNavn": "MASKIN ARTIG",
+    "saksnummer": "4",
+    "sakstype": {
+      "kode": "FLK_TRG",
+      "term": "Folketrygd"
+    },
+    "behandling": {
+      "behandlingID": null,
+      "behandlingType": {
+        "kode": "SKND",
+        "term": "Søknad"
+      },
+      "behandlingStatus": {
+        "kode": "UBEH",
+        "term": "Under behandling"
+      },
+      "endretDato": null
+    },
+    "aktivTil": "2016-03-23",
+    "journalpostID": null,
+    "soknadsperiode": {
+      "fom": null,
+      "tom": null
+    },
+    "prioritet": "HOY",
+    "land": null,
+    "versjon": 1,
+    "ansvarligID": "Z991001"
+  }
+]
