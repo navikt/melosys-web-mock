@@ -135,11 +135,14 @@ module.exports.sendPlukk = (req, res) => {
  */
 module.exports.oversikt = (req, res) => {
   try {
-    const oppgaveobjekt = lesOppgaveListe();
+    const oppgaveListe = lesOppgaveListe();
+    return res.json(oppgaveListe);
+    /*
     const { oppgaveListe } = oppgaveobjekt;
     const firstHalf = oppgaveListe.slice(0, 4);
     const mineoppgaver = mineOppgaver(firstHalf);
     return res.json([...mineoppgaver]);
+    */
   }
   catch (err) {
     console.log(err);
