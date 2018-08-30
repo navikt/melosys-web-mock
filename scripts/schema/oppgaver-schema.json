@@ -231,6 +231,14 @@
       "ansvarligID": {
         "$id": "/items/properties/ansvarligId",
         "type": "string"
+      },
+      "sistOppdatert": {
+        "$id": "/items/properties/sistOppdatert",
+        "type":["string", "null"]
+      },
+      "erUnderOppdatering": {
+        "$id": "/items/properties/erUnderOppdatering",
+        "type": ["boolean", "null"]
       }
     },
     "required": [
@@ -246,7 +254,9 @@
       "prioritet",
       "land",
       "versjon",
-      "ansvarligID"
+      "ansvarligID",
+      "sistOppdatert",
+      "erUnderOppdatering"
     ],
     "additionalProperties": false
   },

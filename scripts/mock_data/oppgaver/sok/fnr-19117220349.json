@@ -28,7 +28,9 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001"
+    "ansvarligID": "Z991001",
+    "sistOppdatert": "2018-08-10T15:00:00",
+    "erUnderOppdatering": false
   },
   {
     "oppgaveID": "2",
@@ -159,9 +161,7 @@
         "kode": "OPPR",
         "term": "Opprettet"
       },
-      "endretDato": null,
-      "sistOppdatert": "2018-08-10T15:00:00",
-      "erUnderOppdatering": false
+      "endretDato": null
     },
     "land": [
       "GB"
