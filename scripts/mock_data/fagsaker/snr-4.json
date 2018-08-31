@@ -509,7 +509,13 @@
           },
           "familiemedlemmer" : [
 
-          ]
+          ],
+          "historikk": {
+            "statsborgerskap": {
+              "kode": "DE",
+              "term": "Tyskland"
+            }
+          }
         }
       },
       "behandlingshistorikk" : [

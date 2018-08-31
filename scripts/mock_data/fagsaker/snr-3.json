@@ -66,7 +66,13 @@
             {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
             {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
             {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
-          ]
+          ],
+          "historikk": {
+            "statsborgerskap": {
+              "kode": "DK",
+              "term": "Danmark"
+            }
+          }
         },
         "arbeidsforhold": [
           {

@@ -641,6 +641,53 @@
                       "term"
                     ],
                     "additionalProperties": false
+                  },
+                  "historikk":{
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk",
+                    "type": "object",
+                    "properties": {
+                      "statsborgerskap": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap",
+                        "type": [
+                          "object"
+                        ],
+                        "properties": {
+                          "kode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The Kode Schema ",
+                            "default": "",
+                            "examples": [
+                              "SPSF"
+                            ]
+                          },
+                          "term": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/term",
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "title": "The Term Schema ",
+                            "default": "",
+                            "examples": [
+                              "Sperret adresse, strengt fortrolig"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "kode",
+                          "term"
+                        ],
+                        "additionalProperties": false
+                      }
+                    },
+                    "required": [
+                      "statsborgerskap"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
@@ -654,7 +701,8 @@
                   "personStatus",
                   "erEgenAnsatt",
                   "familiemedlemmer",
-                  "diskresjonskode"
+                  "diskresjonskode",
+                  "historikk"
                 ],
                 "additionalProperties": false
               },
