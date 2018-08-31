@@ -653,7 +653,7 @@
                         ],
                         "properties": {
                           "kode": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap/properties/kode",
                             "type": [
                               "string",
                               "null"
@@ -661,11 +661,11 @@
                             "title": "The Kode Schema ",
                             "default": "",
                             "examples": [
-                              "SPSF"
+                              "NO"
                             ]
                           },
                           "term": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/term",
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap/properties/term",
                             "type": [
                               "string",
                               "null"
@@ -673,7 +673,7 @@
                             "title": "The Term Schema ",
                             "default": "",
                             "examples": [
-                              "Sperret adresse, strengt fortrolig"
+                              "Norge"
                             ]
                           }
                         },
