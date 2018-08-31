@@ -11,6 +11,10 @@ const errorMessage = (status, error, message, path) => ({
 });
 module.exports.errorMessage = errorMessage;
 
+module.exports.noContent204 = (path, message = 'No Content success status response code indicates that the request has succeeded, but that the client doesn\'t need to go away from its current page') => {
+  console.log(path, message);
+  return "";
+};
 module.exports.badRequest400 = (path, message = 'The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing).') => {
   return errorMessage(400,
     'Bad Request',
