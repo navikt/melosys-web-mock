@@ -7,8 +7,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
@@ -18,7 +18,7 @@
       "endretDato": null
     },
     "prioritet": "HOY",
-    "land": null,
+    "land": ["DK"],
     "versjon": 1,
     "ansvarligID": "Z991001",
     "sistOppdatert": null,
@@ -94,8 +94,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
@@ -105,7 +105,7 @@
       "endretDato": null
     },
     "prioritet": "HOY",
-    "land": null,
+    "land": ["DE"],
     "versjon": 1,
     "ansvarligID": "Z991001",
     "sistOppdatert": null,
@@ -119,8 +119,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2014-10-01",
+      "tom": "2015-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
@@ -130,7 +130,7 @@
       "endretDato": null
     },
     "prioritet": "HOY",
-    "land": null,
+    "land": ["ES"],
     "versjon": 1,
     "ansvarligID": "Z991001",
     "sistOppdatert": null,
@@ -157,8 +157,8 @@
     "aktivTil": "2016-03-03",
     "journalpostID": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2015-10-01",
+      "tom": "2016-08-31"
     },
     "prioritet": "HOY",
     "land": ["ES"],
@@ -175,8 +175,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
@@ -200,8 +200,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
@@ -225,8 +225,8 @@
     "sammensattNavn": null,
     "saksnummer": null,
     "soknadsperiode": {
-      "fom": null,
-      "tom": null
+      "fom": "2018-10-01",
+      "tom": "2019-08-31"
     },
     "sakstypeKode": null,
     "behandling": {
