@@ -40,6 +40,18 @@ module.exports.hent = (req, res) => {
     return res.status(500).send(err);
   }
 };
+
+module.exports.oppfrisk = (req, res) => {
+  try {
+    return res.status(204).send();
+  }
+  catch (err) {
+    console.error(err);
+    logger.error(err);
+    return res.status(500).send(err);
+  }
+};
+
 /**
  * Opprett ny fagsak. /api/fagsaker/ny/:fnr
  * @param req
