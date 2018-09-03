@@ -11,7 +11,7 @@ const errorMessage = (status, error, message, path) => ({
 });
 module.exports.errorMessage = errorMessage;
 
-module.exports.noContent204 = (path, message = 'No Content success status response code indicates that the request has succeeded, but that the client doesn\'t need to go away from its current page') => {
+module.exports.noContent204 = (path = '/ukjent', message = 'No Content success status response code indicates that the request has succeeded, but that the client doesn\'t need to go away from its current page') => {
   console.log(path, message);
   return "";
 };
