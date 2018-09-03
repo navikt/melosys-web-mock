@@ -106,126 +106,130 @@
         },
         "arbeidUtland": {
           "$id": "/properties/soeknadDokument/properties/arbeidUtland",
-          "type": "object",
-          "properties": {
-            "adresse": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse",
-              "type": "object",
-              "properties": {
-                "gatenavn": {
-                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/gatenavn",
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "title": "The Gatenavn Schema ",
-                  "default": null,
-                  "examples": [
-                    "Adresseveien 123"
-                  ]
+          "type": "array",
+          "items": {
+            "$id": "/properties/soeknadDokument/properties/arbeidUtland/items",
+            "type": "object",
+            "properties": {
+              "adresse": {
+                "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse",
+                "type": "object",
+                "properties": {
+                  "gatenavn": {
+                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/gatenavn",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "The Gatenavn Schema ",
+                    "default": null,
+                    "examples": [
+                      "Adresseveien 123"
+                    ]
+                  },
+                  "postnummer": {
+                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/postnummer",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "The Postnummer Schema ",
+                    "default": "",
+                    "examples": [
+                      "1234"
+                    ]
+                  },
+                  "poststed": {
+                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/poststed",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "The Poststed Schema ",
+                    "default": "",
+                    "examples": [
+                      "Poststedet"
+                    ]
+                  },
+                  "landKode": {
+                    "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/landKode",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "The LandKode Schema",
+                    "default": null,
+                    "examples": [
+                      "DE"
+                    ]
+                  }
                 },
-                "postnummer": {
-                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/postnummer",
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "title": "The Postnummer Schema ",
-                  "default": "",
-                  "examples": [
-                    "1234"
-                  ]
-                },
-                "poststed": {
-                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/poststed",
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "title": "The Poststed Schema ",
-                  "default": "",
-                  "examples": [
-                    "Poststedet"
-                  ]
-                },
-                "landKode": {
-                  "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/adresse/properties/landKode",
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "title": "The LandKode Schema",
-                  "default": null,
-                  "examples": [
-                    "DE"
-                  ]
-                }
+                "required": [
+                  "gatenavn",
+                  "postnummer",
+                  "poststed",
+                  "landKode"
+                ],
+                "additionalProperties": false
               },
-              "required": [
-                "gatenavn",
-                "postnummer",
-                "poststed",
-                "landKode"
-              ],
-              "additionalProperties": false
+              "arbeidsandelNorge": {
+                "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidsandelNorge",
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "title": "The Arbeidsandelnorge Schema ",
+                "default": 0,
+                "examples": [
+                  33.29999923706055
+                ]
+              },
+              "arbeidsandelUtland": {
+                "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidsandelUtland",
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "title": "The Arbeidsandelutland Schema ",
+                "default": 0,
+                "examples": [
+                  66.5999984741211
+                ]
+              },
+              "arbeidUtlandErstatning": {
+                "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidUtlandErstatning",
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "title": "The Arbeidutlanderstatning Schema ",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "arbeidUtlandHjemmekontor": {
+                "$id": "/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidUtlandHjemmekontor",
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "title": "The Arbeidutlandhjemmekontor Schema ",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              }
             },
-            "arbeidsandelNorge": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsandelNorge",
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "The Arbeidsandelnorge Schema ",
-              "default": 0,
-              "examples": [
-                33.29999923706055
-              ]
-            },
-            "arbeidsandelUtland": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidsandelUtland",
-              "type": [
-                "number",
-                "null"
-              ],
-              "title": "The Arbeidsandelutland Schema ",
-              "default": 0,
-              "examples": [
-                66.5999984741211
-              ]
-            },
-            "arbeidUtlandErstatning": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidUtlandErstatning",
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "The Arbeidutlanderstatning Schema ",
-              "default": false,
-              "examples": [
-                false
-              ]
-            },
-            "arbeidUtlandHjemmekontor": {
-              "$id": "/properties/soeknadDokument/properties/arbeidUtland/properties/arbeidUtlandHjemmekontor",
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "The Arbeidutlandhjemmekontor Schema ",
-              "default": false,
-              "examples": [
-                false
-              ]
-            }
-          },
-          "required": [
-            "adresse",
-            "arbeidsandelNorge",
-            "arbeidsandelUtland",
-            "arbeidUtlandErstatning",
-            "arbeidUtlandHjemmekontor"
-          ],
-          "additionalProperties": false
+            "required": [
+              "adresse",
+              "arbeidsandelNorge",
+              "arbeidsandelUtland",
+              "arbeidUtlandErstatning",
+              "arbeidUtlandHjemmekontor"
+            ],
+            "additionalProperties": false
+          }
         },
         "foretakUtland": {
           "$id": "/properties/soeknadDokument/properties/foretakUtland",
