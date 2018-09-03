@@ -440,6 +440,9 @@
               }
             }
           ]
+        },
+        "sakOgBehandling": {
+          "eosBarnetrygd": false
         }
       },
       "behandlingshistorikk": []

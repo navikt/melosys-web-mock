@@ -2241,7 +2241,8 @@
               "arbeidsforhold",
               "organisasjoner",
               "medlemskap",
-              "inntekt"
+              "inntekt",
+              "sakOgBehandling"
             ],
             "additionalProperties": false
           },

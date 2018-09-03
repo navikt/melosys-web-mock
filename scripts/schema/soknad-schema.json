@@ -508,18 +508,6 @@
                 8
               ]
             },
-            "EOSBarnetrygdFraNAV": {
-              "$id": "/properties/soeknadDokument/properties/bosted/properties/EOSBarnetrygdFraNAV",
-              "type": [
-                "boolean",
-                "null"
-              ],
-              "title": "The Eosbarnetrygdfranav Schema ",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
             "adresseIUtlandet": {
               "$id": "/properties/soeknadDokument/properties/bosted/properties/adresseIUtlandet",
               "type": [
@@ -601,7 +589,6 @@
             "bostedUtenforNorge",
             "familiesBostedLandKode",
             "antallMaanederINorge",
-            "EOSBarnetrygdFraNAV",
             "adresseIUtlandet",
             "oppgittAdresse"
           ],
