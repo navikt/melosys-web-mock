@@ -363,14 +363,21 @@
           },
           "land": {
             "$id": "#/properties/saksbehandling/items/properties/land",
-            "type": ["string","null"],
+            "type": "array",
             "title": "The Land Schema",
             "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "NO"
-            ],
-            "pattern": "^(.*)$"
+            "uniqueItems": true,
+            "additionalItems": false,
+            "items": {
+              "$id": "",
+              "type": "string",
+              "title": "The LandKode item Schema",
+              "default": "",
+              "examples": [
+                "NO"
+              ],
+              "pattern": "^(.*)$"
+            }
           },
           "versjon": {
             "$id": "#/properties/saksbehandling/items/properties/versjon",

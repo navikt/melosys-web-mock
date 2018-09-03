@@ -80,7 +80,7 @@
         "tom": "2019-08-31"
       },
       "prioritet": "HOY",
-      "land": "NO",
+      "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
       "sistOppdatert": "2018-08-10T15:00:00.622Z",
@@ -110,7 +110,7 @@
         "tom": "2018-01-01"
       },
       "prioritet": "HOY",
-      "land": "NO",
+      "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
       "sistOppdatert": "2018-08-10T15:00:00.622Z",
@@ -140,7 +140,7 @@
         "tom": "2018-01-01"
       },
       "prioritet": "HOY",
-      "land": null,
+      "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
       "sistOppdatert": "2018-08-10T15:00:00.622Z",
@@ -170,7 +170,7 @@
         "tom": "2018-01-01"
       },
       "prioritet": "HOY",
-      "land": null,
+      "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
       "sistOppdatert": "2018-08-10T15:00:00.622Z",
