@@ -1,254 +1,422 @@
 {
-  "$id": "http://nav.no/melosys/oppgave-sok.json",
-  "type": "array",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "items": {
-    "$id": "/items",
-    "type": "object",
-    "properties": {
-      "oppgaveID": {
-        "$id": "/items/properties/oppgaveID",
-        "type": "string",
-        "title": "The Oppgaveid Schema ",
-        "default": "",
-        "examples": [
-          "1"
-        ]
-      },
-      "oppgavetypeKode": {
-        "$id": "/items/properties/oppgavetypeKode",
-        "type": "string",
-        "default": "",
-        "examples": [
-          "JFR", "BEH_SAK"
-        ],
-        "additionalProperties": false
-      },
-      "sammensattNavn": {
-        "$id": "/items/properties/sammensattNavn",
-        "type": [
-          "string",
-          "null"
-        ],
-        "title": "The Sammensattnavn Schema ",
-        "default": "",
-        "examples": [
-          "LILLA HEST"
-        ]
-      },
-      "saksnummer": {
-        "$id": "/items/properties/saksnummer",
-        "type": [
-          "string",
-          "null"
-        ],
-        "title": "The Saksnummer Schema ",
-        "default": "",
-        "examples": [
-          "3"
-        ]
-      },
-      "journalpostID": {
-        "$id": "/items/properties/journalpostID",
-        "type": [
-          "string",
-          "null"
-        ]
-      },
-      "aktivTil": {
-        "$id": "/items/properties/aktivTil",
-        "type": "string",
-        "format": "date",
-        "title": "The Aktivtil Schema ",
-        "default": "",
-        "examples": [
-          "2019-04-25"
-        ]
-      },
-      "soknadsperiode": {
-        "$id": "/items/properties/soknadsperiode",
+  "$id": "http://nav.no/melosys/oppgaver-oversikt",
+  "type": "object",
+  "title": "The Root Schema",
+  "description": "An explanation about the purpose of this instance.",
+  "additionalProperties": false,
+  "required": [
+    "journalforing",
+    "saksbehandling"
+  ],
+  "properties": {
+    "journalforing": {
+      "$id": "#/properties/journalforing",
+      "type": "array",
+      "title": "The Journalforing Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "uniqueItems": true,
+      "additionalItems": false,
+      "items": {
+        "$id": "#/properties/journalforing/items",
         "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "additionalProperties": false,
+        "required": [
+          "oppgaveID",
+          "oppgavetypeKode",
+          "journalpostID",
+          "aktivTil",
+          "prioritet",
+          "versjon",
+          "ansvarligID"
+        ],
         "properties": {
-          "fom": {
-            "$id": "/items/properties/soknadsperiode/fom",
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date",
-            "title": "The Fom Schema ",
+          "oppgaveID": {
+            "$id": "#/properties/journalforing/items/properties/oppgaveID",
+            "type": "string",
+            "title": "The Oppgaveid Schema",
+            "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
-              "2016-01-01"
-            ]
-          },
-          "tom": {
-            "$id": "/items/properties/soknadsperiode/tom",
-            "type": [
-              "string",
-              "null"
+              "177057928"
             ],
-            "format": "date",
-            "title": "The Tom Schema ",
+            "pattern": "^(.*)$"
+          },
+          "oppgavetypeKode": {
+            "$id": "#/properties/journalforing/items/properties/oppgavetypeKode",
+            "type": "string",
+            "title": "The Oppgavetypekode Schema",
+            "description": "An explanation about the purpose of this instance.",
             "default": "",
             "examples": [
-              "2016-01-01"
+              "JFR"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "journalpostID": {
+            "$id": "#/properties/journalforing/items/properties/journalpostID",
+            "type": "string",
+            "title": "The Journalpostid Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "DOK_321"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "aktivTil": {
+            "$id": "#/properties/journalforing/items/properties/aktivTil",
+            "type": "string",
+            "title": "The Aktivtil Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "2016-03-30"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "prioritet": {
+            "$id": "#/properties/journalforing/items/properties/prioritet",
+            "type": "string",
+            "title": "The Prioritet Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "HOY"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "versjon": {
+            "$id": "#/properties/journalforing/items/properties/versjon",
+            "type": "integer",
+            "title": "The Versjon Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
             ]
+          },
+          "ansvarligID": {
+            "$id": "#/properties/journalforing/items/properties/ansvarligID",
+            "type": "string",
+            "title": "The Ansvarligid Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Z991001"
+            ],
+            "pattern": "^(.*)$"
           }
-        },
-        "required": [
-          "fom",
-          "tom"
-        ],
-        "additionalProperties": false
-      },
-      "sakstypeKode": {
-        "$id": "/items/properties/sakstypeKode",
-        "type": ["string", "null"],
-        "default": "",
-        "examples": [
-          "EOS"
-        ],
-        "additionalProperties": false
-      },
-      "behandling": {
-        "$id": "/items/properties/behandling",
-        "type": "object",
-        "properties": {
-          "behandlingID": {
-            "$id": "/items/properties/behandling/behandlingID",
-            "type": [
-              "integer",
-              "null"
-            ]
-          },
-          "behandlingType": {
-            "$id": "/items/properties/behandling/properties/behandlingType",
-            "type": [
-              "object",
-              "null"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "/items/properties/behandling/properties/type/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema ",
-                "default": "",
-                "examples": [
-                  "SKND"
-                ]
-              },
-              "term": {
-                "$id": "/items/properties/behandling/properties/type/properties/term",
-                "type": "string",
-                "title": "The Term Schema ",
-                "default": "",
-                "examples": [
-                  "Søknad"
-                ]
-              }
-            },
-            "required": [
-              "kode",
-              "term"
-            ],
-            "additionalProperties": false
-          },
-          "behandlingStatus": {
-            "$id": "/items/properties/behandling/properties/behandlingStatus",
-            "type": [
-              "object",
-              "null"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "/items/properties/behandling/properties/status/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema ",
-                "default": "",
-                "examples": [
-                  "OPPR"
-                ]
-              },
-              "term": {
-                "$id": "/items/properties/behandling/properties/status/properties/term",
-                "type": "string",
-                "title": "The Term Schema ",
-                "default": "",
-                "examples": [
-                  "Opprettet"
-                ]
-              }
-            },
-            "required": [
-              "kode",
-              "term"
-            ],
-            "additionalProperties": false
-          },
-          "endretDato": {
-            "$id": "/items/properties/behandling/properties/endretDato",
-            "type": [
-              "string",
-              "null"
-            ],
-            "format": "date-time"
-          }
-        },
-        "required": [
-          "behandlingID",
-          "behandlingType",
-          "behandlingStatus",
-          "endretDato"
-        ],
-        "additionalProperties": false
-      },
-      "prioritet": {
-        "$id": "/items/properties/prioritet",
-        "type": "string"
-      },
-      "land": {
-        "$id": "/items/properties/land",
-        "type": [
-          "array",
-          "null"
-        ],
-        "items": {
-          "$id": "/items/properties/land/items",
-          "type": "string",
-          "title": "The 0th Schema ",
-          "default": "",
-          "examples": [
-            "GB"
-          ]
         }
-      },
-      "versjon": {
-        "$id": "/items/properties/versjon",
-        "type": "integer"
-      },
-      "ansvarligID": {
-        "$id": "/items/properties/ansvarligId",
-        "type": "string"
       }
     },
-    "required": [
-      "oppgaveID",
-      "oppgavetypeKode",
-      "sammensattNavn",
-      "journalpostID",
-      "saksnummer",
-      "aktivTil",
-      "soknadsperiode",
-      "sakstypeKode",
-      "behandling",
-      "prioritet",
-      "land",
-      "versjon",
-      "ansvarligID"
-    ],
-    "additionalProperties": false
-  },
-  "additionalProperties": false
+    "saksbehandling": {
+      "$id": "#/properties/saksbehandling",
+      "type": "array",
+      "title": "The Saksbehandling Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "uniqueItems": true,
+      "additionalItems": false,
+      "items": {
+        "$id": "#/properties/saksbehandling/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "description": "An explanation about the purpose of this instance.",
+        "additionalProperties": false,
+        "required": [
+          "oppgaveID",
+          "oppgavetypeKode",
+          "sammensattNavn",
+          "saksnummer",
+          "sakstypeKode",
+          "behandling",
+          "aktivTil",
+          "soknadsperiode",
+          "prioritet",
+          "land",
+          "versjon",
+          "ansvarligID",
+          "sistOppdatert",
+          "erUnderOppdatering"
+        ],
+        "properties": {
+          "oppgaveID": {
+            "$id": "#/properties/saksbehandling/items/properties/oppgaveID",
+            "type": "string",
+            "title": "The Oppgaveid Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "174562068"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "oppgavetypeKode": {
+            "$id": "#/properties/saksbehandling/items/properties/oppgavetypeKode",
+            "type": "string",
+            "title": "The Oppgavetypekode Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "BEH_SAK"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "sammensattNavn": {
+            "$id": "#/properties/saksbehandling/items/properties/sammensattNavn",
+            "type": "string",
+            "title": "The Sammensattnavn Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "GLITRENDE HATT"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "saksnummer": {
+            "$id": "#/properties/saksbehandling/items/properties/saksnummer",
+            "type": "string",
+            "title": "The Saksnummer Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "4"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "sakstypeKode": {
+            "$id": "#/properties/saksbehandling/items/properties/sakstypeKode",
+            "type": "string",
+            "title": "The Sakstypekode Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "FLK_TRG"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "behandling": {
+            "$id": "#/properties/saksbehandling/items/properties/behandling",
+            "type": "object",
+            "title": "The Behandling Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "additionalProperties": false,
+            "required": [
+              "behandlingID",
+              "behandlingType",
+              "behandlingStatus",
+              "endretDato"
+            ],
+            "properties": {
+              "behandlingID": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingID",
+                "type": ["string","null"],
+                "title": "The Behandlingid Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": null,
+                "examples": [
+                  "4"
+                ]
+              },
+              "behandlingType": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType",
+                "type": "object",
+                "title": "The Behandlingtype Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "additionalProperties": false,
+                "required": [
+                  "kode",
+                  "term"
+                ],
+                "properties": {
+                  "kode": {
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/kode",
+                    "type": "string",
+                    "title": "The Kode Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "SKND"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "term": {
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/term",
+                    "type": "string",
+                    "title": "The Term Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Søknad"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "behandlingStatus": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus",
+                "type": "object",
+                "title": "The Behandlingstatus Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "additionalProperties": false,
+                "required": [
+                  "kode",
+                  "term"
+                ],
+                "properties": {
+                  "kode": {
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/kode",
+                    "type": "string",
+                    "title": "The Kode Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "UBEH"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "term": {
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/term",
+                    "type": "string",
+                    "title": "The Term Schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "Under behandling"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "endretDato": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/endretDato",
+                "type": "string",
+                "format": "date",
+                "title": "The Endretdato Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2016-01-28"
+                ]
+              }
+            }
+          },
+          "aktivTil": {
+            "$id": "#/properties/saksbehandling/items/properties/aktivTil",
+            "type": "string",
+            "format": "date",
+            "title": "The Aktivtil Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "2018-01-28"
+            ]
+          },
+          "soknadsperiode": {
+            "$id": "#/properties/saksbehandling/items/properties/soknadsperiode",
+            "type": "object",
+            "title": "The Soknadsperiode Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "additionalProperties": false,
+            "required": [
+              "fom",
+              "tom"
+            ],
+            "properties": {
+              "fom": {
+                "$id": "#/properties/saksbehandling/items/properties/soknadsperiode/properties/fom",
+                "type": "string",
+                "format": "date",
+                "title": "The Fom Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2018-10-01"
+                ]
+              },
+              "tom": {
+                "$id": "#/properties/saksbehandling/items/properties/soknadsperiode/properties/tom",
+                "type": "string",
+                "format": "date",
+                "title": "The Tom Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2019-08-31"
+                ]
+              }
+            }
+          },
+          "prioritet": {
+            "$id": "#/properties/saksbehandling/items/properties/prioritet",
+            "type": "string",
+            "title": "The Prioritet Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "HOY"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "land": {
+            "$id": "#/properties/saksbehandling/items/properties/land",
+            "type": ["string","null"],
+            "title": "The Land Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "NO"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "versjon": {
+            "$id": "#/properties/saksbehandling/items/properties/versjon",
+            "type": "integer",
+            "title": "The Versjon Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              1
+            ]
+          },
+          "ansvarligID": {
+            "$id": "#/properties/saksbehandling/items/properties/ansvarligID",
+            "type": "string",
+            "title": "The Ansvarligid Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Z991001"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "sistOppdatert":{
+            "$id": "#/properties/saksbehandling/items/properties/sistOppdatert",
+            "type": "string",
+            "format": "date-time",
+            "title": "The SistOppdatert Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Z991001"
+            ]
+          },
+          "erUnderOppdatering": {
+            "$id": "#/properties/saksbehandling/items/properties/erUnderOppdatering",
+            "type": "boolean",
+            "title": "The erUnderOppdatering Schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              false,
+              true
+            ]
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,95 +1,95 @@
-[
-  {
-    "oppgaveID": "1",
-    "oppgavetypeKode": "BEH_SAK",
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "aktivTil": "2019-04-25",
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": "EU_EOS",
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
+{
+  "journalforing": [],
+  "saksbehandling": [
+    {
+      "oppgaveID": "1",
+      "oppgavetypeKode": "BEH_SAK",
+      "sammensattNavn": "GLITRENDE HATT",
+      "saksnummer": "4",
+      "aktivTil": "2019-04-25",
+      "soknadsperiode": {
+        "fom": "2018-10-02",
+        "tom": "2019-09-30"
       },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
+      "sakstypeKode": "EU_EOS",
+      "behandling": {
+        "behandlingID": null,
+        "behandlingType": {
+          "kode": "SKND",
+          "term": "Søknad"
+        },
+        "behandlingStatus": {
+          "kode": "OPPR",
+          "term": "Opprettet"
+        },
+        "endretDato": "2016-01-27"
       },
-      "endretDato": null
+      "land": "GB",
+      "prioritet": "HOY",
+      "versjon": 1,
+      "ansvarligID": "Z991001",
+      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "erUnderOppdatering": false
     },
-    "land": [
-      "GB"
-    ],
-    "journalpostID": null,
-    "prioritet": "HOY",
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "2",
-    "oppgavetypeKode": "BEH_SAK",
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "aktivTil": "2019-04-25",
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": "EU_EOS",
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
+    {
+      "oppgaveID": "2",
+      "oppgavetypeKode": "BEH_SAK",
+      "sammensattNavn": "GLITRENDE HATT",
+      "saksnummer": "4",
+      "aktivTil": "2019-04-25",
+      "soknadsperiode": {
+        "fom": "2018-10-01",
+        "tom": "2019-09-31"
       },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
+      "sakstypeKode": "EU_EOS",
+      "behandling": {
+        "behandlingID": null,
+        "behandlingType": {
+          "kode": "SKND",
+          "term": "Søknad"
+        },
+        "behandlingStatus": {
+          "kode": "OPPR",
+          "term": "Opprettet"
+        },
+        "endretDato": "2016-01-28"
       },
-      "endretDato": null
+      "land": "GB",
+      "prioritet": "HOY",
+      "versjon": 1,
+      "ansvarligID": "Z991001",
+      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "erUnderOppdatering": false
     },
-    "land": [
-      "GB"
-    ],
-    "journalpostID": null,
-    "prioritet": "HOY",
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "2",
-    "oppgavetypeKode": "BEH_SAK",
-    "sammensattNavn": "GLITRENDE HATT",
-    "saksnummer": "4",
-    "aktivTil": "2019-04-25",
-    "soknadsperiode": {
-      "fom": null,
-      "tom": null
-    },
-    "sakstypeKode": "EU_EOS",
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
+    {
+      "oppgaveID": "3",
+      "oppgavetypeKode": "BEH_SAK",
+      "sammensattNavn": "GLITRENDE HATT",
+      "saksnummer": "4",
+      "aktivTil": "2019-04-25",
+      "soknadsperiode": {
+        "fom": "2018-10-01",
+        "tom": "2019-09-31"
       },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
+      "sakstypeKode": "EU_EOS",
+      "behandling": {
+        "behandlingID": null,
+        "behandlingType": {
+          "kode": "SKND",
+          "term": "Søknad"
+        },
+        "behandlingStatus": {
+          "kode": "OPPR",
+          "term": "Opprettet"
+        },
+        "endretDato": "2016-01-28"
       },
-      "endretDato": null
-    },
-    "land": [
-      "GB"
-    ],
-    "journalpostID": null,
-    "prioritet": "HOY",
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  }
-]
+      "land": "GB",
+      "prioritet": "HOY",
+      "versjon": 1,
+      "ansvarligID": "Z991001",
+      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "erUnderOppdatering": false
+    }
+  ]
+}
