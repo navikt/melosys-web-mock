@@ -54,7 +54,7 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * GET /f/:snr
  *
  */
-router.get('/fagsaker/oppfrisk/:snr', fagsaker.oppfrisk);
+router.get('/fagsaker/oppfrisk/:behandlingID', fagsaker.oppfrisk);
 router.get('/fagsaker/:snr', fagsaker.hent);
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
 
