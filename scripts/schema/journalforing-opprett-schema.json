@@ -3,6 +3,16 @@
   "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "journalpostID",
+    "oppgaveID",
+    "brukerID",
+    "dokumenttittel",
+    "vedleggstitler",
+    "fagsak"
+  ],
   "properties": {
     "journalpostID": {
       "$id": "/properties/journalpostID",
@@ -51,11 +61,22 @@
     },
     "vedleggstitler": {
       "$id": "/properties/vedleggstitler",
-      "type": "array"
+      "type": "array",
+      "items": {
+        "$id": "/properties/vedleggstitler/items",
+        "type": "string"
+      }
     },
     "fagsak": {
       "$id": "/properties/fagsak",
       "type": "object",
+      "title": "The Fagsak Schema",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "soknadsperiode",
+        "land"
+      ],
       "properties": {
         "type": {
           "$id": "/properties/fagsak/properties/type",
@@ -69,23 +90,31 @@
         "soknadsperiode": {
           "$id": "/properties/fagsak/properties/soknadsperiode",
           "type": "object",
+          "title": "The Soknadsperiode Schema",
+          "additionalProperties": false,
+          "required": [
+            "fom",
+            "tom"
+          ],
           "properties": {
             "fom": {
               "$id": "/properties/fagsak/properties/soknadsperiode/properties/fom",
               "type": "string",
+              "format": "date",
               "title": "The Fom Schema ",
               "default": "",
               "examples": [
-                "02.02.2020"
+                "2020-02-02"
               ]
             },
             "tom": {
               "$id": "/properties/fagsak/properties/soknadsperiode/properties/tom",
               "type": "string",
+              "format": "date",
               "title": "The Tom Schema ",
               "default": "",
               "examples": [
-                "02.02.2020"
+                "2020-02-02"
               ]
             }
           }
