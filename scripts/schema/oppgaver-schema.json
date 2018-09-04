@@ -70,6 +70,7 @@
           "aktivTil": {
             "$id": "#/properties/journalforing/items/properties/aktivTil",
             "type": "string",
+            "format": "date",
             "title": "The Aktivtil Schema",
             "description": "An explanation about the purpose of this instance.",
             "default": "",
