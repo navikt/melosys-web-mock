@@ -512,7 +512,7 @@
           ]
         },
         "sakOgBehandling": {
-          "eosBarnetrygd": false
+          "eosBarnetrygd": true
         }
       },
       "behandlingshistorikk" : [
