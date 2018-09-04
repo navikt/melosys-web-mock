@@ -1,5 +1,7 @@
 {
-  "definitions": {},
+  "definitions": {
+
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://nav.no/fagsaker.json",
   "type": "object",
@@ -658,7 +660,7 @@
                       }
                     }
                   },
-                  "diskresjonskode":{
+                  "diskresjonskode": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
                     "type": "object",
                     "properties": {
@@ -1155,17 +1157,26 @@
                           "permisjonsPeriode": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode",
                             "type": "object",
-                            "required": ["fom","tom"],
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
                             "additionalProperties": false,
                             "properties": {
                               "fom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode/fom",
-                                "type": ["string", "null"],
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
                                 "format": "date"
                               },
                               "tom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode/fom",
-                                "type": ["string", "null"],
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
                                 "format": "date"
                               }
                             }
@@ -1183,35 +1194,55 @@
                     },
                     "utenlandsopphold": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold",
-                      "type":  "array",
+                      "type": "array",
                       "uniqueItems": true,
                       "items": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items",
                         "type": "object",
-                        "required": ["periode", "land"],
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "periode",
+                          "land"
+                        ],
                         "additionalProperties": false,
                         "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/rapporteringsAarMaaned",
+                            "type": "string"
+                          },
                           "periode": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode",
                             "type": "object",
-                            "required": ["fom","tom"],
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
                             "additionalProperties": false,
                             "properties": {
                               "fom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/fom",
-                                "type": ["string","null"],
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
                                 "format": "date"
                               },
                               "tom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/tom",
-                                "type": ["string","null"],
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
                                 "format": "date"
                               }
                             }
                           },
                           "land": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
-                            "type": ["string","null"]
+                            "type": [
+                              "string",
+                              "null"
+                            ]
                           }
                         }
                       }
@@ -1312,16 +1343,24 @@
                         true
                       ]
                     },
-                    "timerTimelonnet":{
+                    "timerTimelonnet": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet",
                       "type": "array",
                       "uniqueItems": true,
                       "items": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
                         "type": "object",
-                        "required": ["timelonnetPeriode", "antallTimer"],
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "timelonnetPeriode",
+                          "antallTimer"
+                        ],
                         "additionalProperties": false,
                         "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/rapporteringsAarMaaned",
+                            "type": "string"
+                          },
                           "timelonnetPeriode": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode",
                             "type": "object",
@@ -1348,6 +1387,10 @@
                                 "format": "date"
                               }
                             }
+                          },
+                          "antallTimer": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
+                            "type": "integer"
                           }
                         }
                       }
