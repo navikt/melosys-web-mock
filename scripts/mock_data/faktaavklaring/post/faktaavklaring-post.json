@@ -1,0 +1,52 @@
+{
+  "avklaring": {
+    "opphold": {
+      "land": [
+        "DE"
+      ],
+      "periode": {
+        "fom": "2018-01-01",
+        "tom": "2019-01-01"
+      }
+    },
+    "sysselsetting": {
+      "sysselsettingType": "ARBEIDSTAKER"
+    },
+    "aktivitet": {
+      "aktivitetLand": []
+    },
+    "utsending": {
+      "ansattINorskSelskap": true,
+      "erstatterTidligereUtsendt": true,
+      "utsendingMindreEnn24Mnd": null,
+      "foretakDriverINorge": true,
+      "harForutgaendeMedlemskap": true,
+      "arbeidKnyttetTilVirksomhetUtlandet": null,
+      "sammeTypeVirksomhet": null
+    },
+    "valgteArbeidsgivere": [],
+    "sektor": {
+      "ansattISektor": "INGEN_AV_DISSE"
+    },
+    "bosted": {
+      "vurdering": {},
+      "land": []
+    },
+    "yrkesaktivitetFordeling": {
+      "antallLand": "ETT_LAND_IKKE_NORGE"
+    },
+    "virksomhet": {
+      "aktivitetINorge": "OVER_25_PROSENT",
+      "marginaltArbeid": "MARGINALT_JA",
+      "vekslingMellomLand": "EN_ELLER_BEGGE"
+    },
+    "tjenestemann": {
+      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+    },
+    "forretningssted": {},
+    "vesentligVirksomhet": {
+      "vesentligVirksomhetINorge": null,
+      "vesentligVirksomhetBegrunnelser": []
+    }
+  }
+}

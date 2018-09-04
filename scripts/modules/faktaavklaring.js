@@ -1,4 +1,7 @@
 const fs = require('fs');
+const Ajv = require('ajv');
+
+const ajv = new Ajv({allErrors: true});
 const _ = require('underscore');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
@@ -7,7 +10,9 @@ const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
+const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
+const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
 
 module.exports.lesFaktaavklaringKatalog = () => {
@@ -49,6 +54,16 @@ module.exports.send = (req, res) => {
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("faktaavklaring:send", JSON.stringify(jsonBody));
+
+  const schemajson = `${SCHEMA_DIR}/faktaavklaring-schema.json`;
+  const schema = Schema.lesSchema(schemajson);
+  const validate = ajv.compile(schema);
+
+  const valid = test(validate, jsonBody);
+  if (!valid) {
+    return valideringFeil(req, res);
+  }
   const faktaavklaring = {
     behandlingID,
     faktaavklaring: { ...jsonBody.faktaavklaring }
@@ -56,3 +71,23 @@ module.exports.send = (req, res) => {
 
   return res.json(faktaavklaring);
 };
+
+
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+function test(validate, data) {
+  const valid = validate(data);
+  if (valid) {
+    console.log('Faktaavklaring:send Valid!');
+  }
+  else {
+    const ajvErros = ajv.errorsText(validate.errors);
+    console.error('Faktaavklaring:send INVALID: see mock-errors.log');
+    logger.error('Faktaavklaring:send INVALID', ajvErros)
+  }
+  return valid;
+}
