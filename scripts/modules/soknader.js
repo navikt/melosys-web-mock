@@ -77,12 +77,12 @@ module.exports.send = (req, res) => {
     }
     else if (fs.existsSync(mockfileSoknad)) {
       const soknad = lesSoknad(behandlingID);
-      return res.json(soknad);
+      res.json(soknad);
     }
     else {
       const { soeknadDokument } = jsonBody;
       const soknad = skrivSoknad(behandlingID, soeknadDokument);
-      return res.json(soknad);
+      res.json(soknad);
     }
   }
   catch (err) {
