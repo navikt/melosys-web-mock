@@ -726,6 +726,9 @@
               }
             }
           ]
+        },
+        "sakOgBehandling": {
+          "eosBarnetrygd": false
         }
       },
       "behandlingshistorikk": [
