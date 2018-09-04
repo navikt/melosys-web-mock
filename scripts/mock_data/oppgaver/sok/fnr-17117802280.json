@@ -20,7 +20,8 @@
         "kode": "OPPR",
         "term": "Opprettet"
       },
-      "endretDato": null
+      "endretDato": "2018-08-10 15:00:00Z",
+      "erUnderOppdatering": false
     },
     "land": [
       "GB"
@@ -28,8 +29,6 @@
     "journalpostID": null,
     "prioritet": "HOY",
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": "2018-08-10T15:00:00",
-    "erUnderOppdatering": false
+    "ansvarligID": "Z991001"
   }
 ]

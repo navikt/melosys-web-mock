@@ -15,14 +15,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": ["DK"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174562068",
@@ -40,7 +39,8 @@
         "kode": "UBEH",
         "term": "Under behandling"
       },
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "journalpostID": null,
     "aktivTil": "2018-01-28",
@@ -51,9 +51,7 @@
     "prioritet": "HOY",
     "land": ["DE"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": "2018-08-07T15:00:00",
-    "erUnderOppdatering": false
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176701002",
@@ -71,7 +69,8 @@
         "kode": "OPPR",
         "term": "Opprettet"
       },
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": true
     },
     "aktivTil": "2016-03-22",
     "journalpostID": null,
@@ -82,9 +81,7 @@
     "prioritet": "HOY",
     "land": ["DK"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": "2018-08-10T15:00:00",
-    "erUnderOppdatering": true
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "201377338",
@@ -102,14 +99,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": ["DE"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "167638828",
@@ -127,14 +123,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": ["ES"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176314229",
@@ -152,7 +147,8 @@
         "kode": "FORL",
         "term": "Foreløpig lovvalg"
       },
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "aktivTil": "2016-03-03",
     "journalpostID": null,
@@ -163,9 +159,7 @@
     "prioritet": "HOY",
     "land": ["ES"],
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": "2018-08-10T15:00:00",
-    "erUnderOppdatering": false
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "193220255",
@@ -183,14 +177,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "174464932",
@@ -208,14 +201,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "177054897",
@@ -233,14 +225,13 @@
       "behandlingID": null,
       "behandlingType": null,
       "behandlingStatus": null,
-      "endretDato": null
+      "endretDato": "2018-08-10T15:00:00Z",
+      "erUnderOppdatering": false
     },
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": null,
-    "erUnderOppdatering": null
+    "ansvarligID": "Z991001"
   },
   {
     "oppgaveID": "176741739",
@@ -258,7 +249,8 @@
         "kode": "UBEH",
         "term": "Under behandling"
       },
-      "endretDato": null
+      "endretDato": "2018-08-10T00:00:00Z",
+      "erUnderOppdatering": false
     },
     "aktivTil": "2016-03-23",
     "journalpostID": null,
@@ -269,8 +261,6 @@
     "prioritet": "HOY",
     "land": null,
     "versjon": 1,
-    "ansvarligID": "Z991001",
-    "sistOppdatert": "2018-08-10T15:00:00",
-    "erUnderOppdatering": false
+    "ansvarligID": "Z991001"
   }
 ]
