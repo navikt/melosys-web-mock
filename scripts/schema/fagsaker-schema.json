@@ -315,6 +315,19 @@
                     ],
                     "additionalProperties": false
                   },
+                  "statsborgerskapDato": {
+                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "title": "The StatsborgerskapDato Schema ",
+                    "default": "",
+                    "format": "date",
+                    "examples": [
+                      "2018-06-01"
+                    ]
+                  },
                   "sammensattNavn": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sammensattNavn",
                     "type": [
@@ -641,59 +654,13 @@
                       "term"
                     ],
                     "additionalProperties": false
-                  },
-                  "historikk":{
-                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk",
-                    "type": "object",
-                    "properties": {
-                      "statsborgerskap": {
-                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap",
-                        "type": [
-                          "object"
-                        ],
-                        "properties": {
-                          "kode": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap/properties/kode",
-                            "type": [
-                              "string",
-                              "null"
-                            ],
-                            "title": "The Kode Schema ",
-                            "default": "",
-                            "examples": [
-                              "NO"
-                            ]
-                          },
-                          "term": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/historikk/properties/statsborgerskap/properties/term",
-                            "type": [
-                              "string",
-                              "null"
-                            ],
-                            "title": "The Term Schema ",
-                            "default": "",
-                            "examples": [
-                              "Norge"
-                            ]
-                          }
-                        },
-                        "required": [
-                          "kode",
-                          "term"
-                        ],
-                        "additionalProperties": false
-                      }
-                    },
-                    "required": [
-                      "statsborgerskap"
-                    ],
-                    "additionalProperties": false
                   }
                 },
                 "required": [
                   "fnr",
                   "sivilstand",
                   "statsborgerskap",
+                  "statsborgerskapDato",
                   "sammensattNavn",
                   "kjoenn",
                   "bostedsadresse",
@@ -701,8 +668,7 @@
                   "personStatus",
                   "erEgenAnsatt",
                   "familiemedlemmer",
-                  "diskresjonskode",
-                  "historikk"
+                  "diskresjonskode"
                 ],
                 "additionalProperties": false
               },

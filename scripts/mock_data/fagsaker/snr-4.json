@@ -507,15 +507,10 @@
             "kode" : "NOR",
             "term" : "NORGE"
           },
+          "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
 
-          ],
-          "historikk": {
-            "statsborgerskap": {
-              "kode": "DE",
-              "term": "Tyskland"
-            }
-          }
+          ]
         }
       },
       "behandlingshistorikk" : [
