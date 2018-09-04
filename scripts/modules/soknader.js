@@ -1,9 +1,16 @@
 const fs = require('fs');
+const Ajv = require('ajv');
+
+const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const ERR = require('./errors');
+
+const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
+const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
+const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
 const lesSoknad = (behandlingID) => {
@@ -53,13 +60,22 @@ module.exports.hent = (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
+  const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+  const schema = Schema.lesSchema(schemajson);
+  const validate = ajv.compile(schema);
+
   const behandlingID = req.params.behandlingID;
   const body = req.body;
   let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("soknad:send", JSON.stringify(jsonBody));
   const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
 
   try {
-    if (fs.existsSync(mockfileSoknad)) {
+    const valid = test(validate, jsonBody);
+    if (!valid) {
+      valideringFeil(req, res);
+    }
+    else if (fs.existsSync(mockfileSoknad)) {
       const soknad = lesSoknad(behandlingID);
       return res.json(soknad);
     }
@@ -74,3 +90,22 @@ module.exports.send = (req, res) => {
     res.status(500).send(err);
   }
 };
+
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+function test(validate, data) {
+  const valid = validate(data);
+  if (valid) {
+    console.log('Soknad: send Valid!');
+  }
+  else {
+    const ajvErros = ajv.errorsText(validate.errors);
+    console.error('Soknad:send INVALID: see mock-errors.log');
+    logger.error('Soknad:send INVALID', ajvErros)
+  }
+  return valid;
+}
