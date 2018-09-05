@@ -23,8 +23,8 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2018-03-06T12:05:59.031",
-        "endretDato":"2018-03-15T16:31:35.845"
+        "registrertDato": "2018-03-06T12:05:59.031Z",
+        "endretDato":"2018-03-15T16:31:35.845Z"
       },
       "saksopplysninger": {
         "person": {
@@ -89,9 +89,12 @@
                   "kode": "0020091",
                   "term": "KONSTRUKTØR (OLJE"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke": 37.5,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
+                "beregnetStillingsprosent": 100,
                 "maritimArbeidsavtale": false,
                 "skipsregister":  {
                   "kode": null,
@@ -142,8 +145,11 @@
                   "kode": "0020091",
                   "term": "KONSTRUKTØR (OLJE)"
                 },
-                "avtaltArbeidstimerPerUke": 37.5,
+                "antallTimerGammeltAa": null,
+                "avtaltArbeidstimerPerUke":37.5,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent": 100.0,
+                "beregnetStillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 37.5,
                 "maritimArbeidsavtale": false,
                 "skipsregister":  {
@@ -471,6 +477,7 @@
             {
               "aarMaaned": "2017-12",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 30000,
@@ -485,6 +492,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -494,6 +506,7 @@
             {
               "aarMaaned": "2017-11",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -508,6 +521,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -517,6 +535,7 @@
             {
               "aarMaaned": "2018-02",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 2500,
@@ -531,6 +550,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "timeloenn"
                   },
@@ -547,6 +571,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "timeloenn"
                   },
@@ -563,6 +592,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "bonus"
                   },
@@ -579,6 +613,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -595,6 +634,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "feriepenger"
                   }
@@ -604,6 +648,7 @@
             {
               "aarMaaned": "2017-10",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 30000,
@@ -618,6 +663,11 @@
                     "inntektsmottakerID": "17117802280",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }

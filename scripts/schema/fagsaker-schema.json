@@ -59,7 +59,8 @@
     },
     "endretDato": {
       "$id": "#/properties/endretDato",
-      "type": "string",
+      "type": ["string","null"],
+      "format": "date-time",
       "title": "The Endretdato Schema",
       "default": "",
       "examples": [
@@ -537,7 +538,7 @@
                         "properties": {
                           "permisjonsId": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsId",
-                            "type": ["integer","null"]
+                            "type": ["string","null"]
                           },
                           "permisjonsPeriode": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode",
@@ -780,7 +781,7 @@
                       "properties": {
                         "postnr": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
-                          "type": "string",
+                          "type": ["string", "null"],
                           "title": "The Postnr Schema",
                           "default": "",
                           "examples": [
@@ -829,7 +830,7 @@
                             },
                             "gatenavn": {
                               "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/gatenavn",
-                              "type": "string",
+                              "type": ["string","null"],
                               "title": "The Gatenavn Schema",
                               "default": "",
                               "examples": [
@@ -841,7 +842,7 @@
                         },
                         "poststed": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/poststed",
-                          "type": "string",
+                          "type": ["string","null"],
                           "title": "The Poststed Schema",
                           "default": "",
                           "examples": [
@@ -851,7 +852,7 @@
                         },
                         "land": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/land",
-                          "type": "string",
+                          "type": ["string","null"],
                           "title": "The Land Schema",
                           "default": "",
                           "examples": [
@@ -1661,7 +1662,8 @@
               },
               "registrertDato": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
-                "type": "string",
+                "type": ["string","null"],
+                "format": "date-time",
                 "title": "The Registrertdato Schema",
                 "default": "",
                 "examples": [
@@ -1671,7 +1673,8 @@
               },
               "endretDato": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
-                "type": "string",
+                "type": ["string","null"],
+                "format": "date-time",
                 "title": "The Endretdato Schema",
                 "default": "",
                 "examples": [

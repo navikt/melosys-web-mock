@@ -89,10 +89,14 @@
                   "kode": "0020091",
                   "term": "KONSULENT (BANK)"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke": 37.5,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "skipsregister": {
+                "beregnetStillingsprosent": 100,
+                "maritimArbeidsavtale": false,
+                "skipsregister":  {
                   "kode": null,
                   "term": null
                 },
@@ -100,7 +104,6 @@
                   "kode": null,
                   "term": null
                 },
-                "maritimArbeidsavtale": false,
                 "fartsomraade": {
                   "kode": null,
                   "term": null
@@ -142,9 +145,12 @@
                   "kode": "0020091",
                   "term": "KONFERANSEMEDARBEIDER"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke": 20.0,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent": 30.0,
                 "beregnetAntallTimerPrUke": 6.0,
+                "beregnetStillingsprosent": 100,
                 "maritimArbeidsavtale": false,
                 "skipsregister":  {
                   "kode": null,
@@ -518,6 +524,7 @@
             {
               "aarMaaned": "2018-01",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -532,6 +539,11 @@
                     "inntektsmottakerID": "28106600300",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -541,6 +553,7 @@
             {
               "aarMaaned": "2018-02",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -555,6 +568,11 @@
                     "inntektsmottakerID": "28106600300",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -571,6 +589,11 @@
                     "inntektsmottakerID": "28106600300",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -587,6 +610,11 @@
                     "inntektsmottakerID": "28106600300",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
