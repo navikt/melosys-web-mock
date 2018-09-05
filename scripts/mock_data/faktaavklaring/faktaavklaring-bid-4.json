@@ -6,7 +6,11 @@
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
-      }
+      },
+      "ugyldigeLand": [
+        { "landKode": "NO", "begrunnelseskode": "FEIL_LAND_JOURNALFORING" },
+        { "landKode": "SE", "begrunnelseskode": "UGYLDIG_TERRITORIE" }
+      ]
     },
     "aktivitet": {
       "aktivitetLand": []
