@@ -4,6 +4,10 @@
  */
 const landkoder = [
   {
+    kode: 'CH',
+    term: 'Sveits',
+  },
+  {
     kode: 'BE',
     term: 'Belgia',
   },

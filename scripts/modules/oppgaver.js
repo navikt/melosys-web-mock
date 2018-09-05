@@ -38,6 +38,7 @@ module.exports.hentPlukk = (req, res) => {
 module.exports.sendPlukk = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("oppgaver:sendPlukk", JSON.stringify(jsonBody));
   const { oppgavetype } = jsonBody;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
@@ -69,6 +70,7 @@ module.exports.oversikt = (req, res) => {
 module.exports.opprett = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("oppgaver:opprett", JSON.stringify(jsonBody));
   res.json(jsonBody);
 };
 

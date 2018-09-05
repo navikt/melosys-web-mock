@@ -1,18 +1,19 @@
 {
-  "behandlingID": 7,
   "avklaring": {
     "opphold": {
-      "land": ["GB"],
+      "land": [
+        "DE"
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
       }
     },
-    "aktivitet": {
-      "aktivitetLand": ["GB"]
-    },
     "sysselsetting": {
       "sysselsettingType": "ARBEIDSTAKER"
+    },
+    "aktivitet": {
+      "aktivitetLand": []
     },
     "utsending": {
       "ansattINorskSelskap": true,
@@ -23,16 +24,14 @@
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
-    "bosted": {
-      "land": []
-    },
+    "valgteArbeidsgivere": [],
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
     },
-    "tjenestemann": {
-      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+    "bosted": {
+      "vurdering": {},
+      "land": []
     },
-    "valgteArbeidsgivere": [],
     "yrkesaktivitetFordeling": {
       "antallLand": "ETT_LAND_IKKE_NORGE"
     },
@@ -41,6 +40,10 @@
       "marginaltArbeid": "MARGINALT_JA",
       "vekslingMellomLand": "EN_ELLER_BEGGE"
     },
+    "tjenestemann": {
+      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+    },
+    "forretningssted": {},
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,
       "vesentligVirksomhetBegrunnelser": []
