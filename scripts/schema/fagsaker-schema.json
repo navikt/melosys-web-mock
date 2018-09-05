@@ -212,8 +212,7 @@
                           },
                           "land": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
-                            "type": ["string","null"],
-                            "pattern": "^(.*)$"
+                            "type": ["string","null"]
                           }
                         }
                       }
