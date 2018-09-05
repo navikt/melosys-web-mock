@@ -1,64 +1,65 @@
-[
-  {
-    "oppgaveID": "1",
-    "oppgavetypeKode": "BEH_SAK",
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "aktivTil": "2019-04-25",
-    "soknadsperiode": {
-      "fom": "2016-01-01",
-      "tom": "2017-01-01"
-    },
-    "sakstypeKode": "EU_EOS",
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
+{
+  "journalforing": [],
+  "saksbehandling": [
+    {
+      "oppgaveID": "1",
+      "oppgavetypeKode": "BEH_SAK",
+      "sammensattNavn": "LILLA HEST",
+      "saksnummer": "3",
+      "aktivTil": "2019-04-25",
+      "soknadsperiode": {
+        "fom": "2016-01-01",
+        "tom": "2017-01-01"
       },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
+      "sakstypeKode": "EU_EOS",
+      "behandling": {
+        "behandlingID": null,
+        "behandlingType": {
+          "kode": "SKND",
+          "term": "Søknad"
+        },
+        "behandlingStatus": {
+          "kode": "OPPR",
+          "term": "Opprettet"
+        },
+        "endretDato": "2016-01-28"
       },
-      "endretDato": null
+      "land": ["GB"],
+      "prioritet": "HOY",
+      "versjon": 1,
+      "ansvarligID": "Z991001",
+      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "erUnderOppdatering": false
     },
-    "land": [
-      "GB"
-    ],
-    "journalpostID": null,
-    "prioritet": "HOY",
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  },
-  {
-    "oppgaveID": "1",
-    "oppgavetypeKode": "BEH_SAK",
-    "sammensattNavn": "LILLA HEST",
-    "saksnummer": "3",
-    "aktivTil": "2019-04-25",
-    "soknadsperiode": {
-      "fom": "2016-01-01",
-      "tom": "2017-01-01"
-    },
-    "sakstypeKode": "EU_EOS",
-    "behandling": {
-      "behandlingID": null,
-      "behandlingType": {
-        "kode": "SKND",
-        "term": "Søknad"
+    {
+      "oppgaveID": "2",
+      "oppgavetypeKode": "BEH_SAK",
+      "sammensattNavn": "LILLA HEST",
+      "saksnummer": "3",
+      "aktivTil": "2019-04-25",
+      "soknadsperiode": {
+        "fom": "2016-01-01",
+        "tom": "2017-01-01"
       },
-      "behandlingStatus": {
-        "kode": "OPPR",
-        "term": "Opprettet"
+      "sakstypeKode": "EU_EOS",
+      "behandling": {
+        "behandlingID": null,
+        "behandlingType": {
+          "kode": "SKND",
+          "term": "Søknad"
+        },
+        "behandlingStatus": {
+          "kode": "OPPR",
+          "term": "Opprettet"
+        },
+        "endretDato": "2016-01-28"
       },
-      "endretDato": null
-    },
-    "land": [
-      "GB"
-    ],
-    "journalpostID": null,
-    "prioritet": "HOY",
-    "versjon": 1,
-    "ansvarligID": "Z991001"
-  }
-]
+      "land": ["GB"],
+      "prioritet": "HOY",
+      "versjon": 1,
+      "ansvarligID": "Z991001",
+      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "erUnderOppdatering": false
+    }
+  ]
+}
