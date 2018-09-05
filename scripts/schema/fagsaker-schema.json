@@ -537,7 +537,7 @@
                         "properties": {
                           "permisjonsId": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsId",
-                            "type": "integer"
+                            "type": ["integer","null"]
                           },
                           "permisjonsPeriode": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode",
@@ -565,15 +565,15 @@
                                 "format": "date"
                               }
                             }
+                          },
+                          "permisjonsprosent": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
+                            "type": ["integer","null"]
+                          },
+                          "permisjonOgPermittering": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
+                            "type": ["string","null"]
                           }
-                        },
-                        "permisjonsprosent": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
-                          "type": "integer"
-                        },
-                        "permisjonOgPermittering": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
-                          "type": "string"
                         }
                       }
                     },
