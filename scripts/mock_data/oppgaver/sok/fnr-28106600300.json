@@ -3,7 +3,6 @@
   "saksbehandling": [
     {
       "oppgaveID": "1",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "ARTIG MASKIN",
       "saksnummer": "6",
       "aktivTil": "2019-04-25",
@@ -11,7 +10,10 @@
         "fom": "2018-01-01",
         "tom": "2018-06-01"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -33,7 +35,6 @@
     },
     {
       "oppgaveID": "2",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "ARTIG MASKIN",
       "saksnummer": "6",
       "aktivTil": "2019-04-25",
@@ -41,7 +42,10 @@
         "fom": "2016-04-04",
         "tom": "2017-01-01"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {

@@ -3,7 +3,6 @@
   "saksbehandling": [
     {
       "oppgaveID": "1",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "ARTIG KAKE",
       "saksnummer": "5",
       "aktivTil": "2019-04-25",
@@ -11,7 +10,10 @@
         "fom": "2018-10-01",
         "tom": "2019-09-31"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {

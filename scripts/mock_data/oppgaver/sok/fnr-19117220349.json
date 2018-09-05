@@ -3,7 +3,6 @@
   "saksbehandling": [
     {
       "oppgaveID": "1",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "GLITRENDE HATT",
       "saksnummer": "4",
       "aktivTil": "2019-04-25",
@@ -11,7 +10,10 @@
         "fom": "2018-10-02",
         "tom": "2019-09-30"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -33,7 +35,6 @@
     },
     {
       "oppgaveID": "2",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "GLITRENDE HATT",
       "saksnummer": "4",
       "aktivTil": "2019-04-25",
@@ -41,7 +42,10 @@
         "fom": "2018-10-01",
         "tom": "2019-09-31"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -63,7 +67,6 @@
     },
     {
       "oppgaveID": "3",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "GLITRENDE HATT",
       "saksnummer": "4",
       "aktivTil": "2019-04-25",
@@ -71,7 +74,10 @@
         "fom": "2018-10-01",
         "tom": "2019-09-31"
       },
-      "sakstypeKode": "EU_EOS",
+      "sakstype": {
+        "kode": "EU_EOS",
+        "term": "EU/EØS"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
