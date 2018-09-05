@@ -1,0 +1,18 @@
+{
+  "journalpostID": "DOC_123",
+  "oppgaveID": "177057928",
+  "brukerID": "30098000492",
+  "avsenderID": "30098000492",
+  "dokumenttittel": "",
+  "vedleggstitler": [
+    ""
+  ],
+  "fagsak": {
+    "type": "EU_EOS",
+    "soknadsperiode": {
+      "fom": "2018-02-02",
+      "tom": "2018-02-02"
+    },
+    "land": ["NO", "IS"]
+  }
+}

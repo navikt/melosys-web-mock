@@ -1,0 +1,159 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nav.no/journalforing-opprett.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "journalpostID",
+    "oppgaveID",
+    "brukerID",
+    "avsenderID",
+    "dokumenttittel",
+    "vedleggstitler",
+    "fagsak"
+  ],
+  "properties": {
+    "journalpostID": {
+      "$id": "#/properties/journalpostID",
+      "type": "string",
+      "title": "The Journalpostid Schema",
+      "default": "",
+      "examples": [
+        "DOC_123"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "oppgaveID": {
+      "$id": "#/properties/oppgaveID",
+      "type": "string",
+      "title": "The Oppgaveid Schema",
+      "default": "",
+      "examples": [
+        "177057928"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "brukerID": {
+      "$id": "#/properties/brukerID",
+      "type": "string",
+      "title": "The Brukerid Schema",
+      "default": "",
+      "examples": [
+        "30098000492"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "avsenderID": {
+      "$id": "#/properties/avsenderID",
+      "type": "string",
+      "title": "The Avsenderid Schema",
+      "default": "",
+      "examples": [
+        "30098000492"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "dokumenttittel": {
+      "$id": "#/properties/dokumenttittel",
+      "type": "string",
+      "title": "The Dokumenttittel Schema",
+      "default": "",
+      "examples": [
+        ""
+      ],
+      "pattern": "^(.*)$"
+    },
+    "vedleggstitler": {
+      "$id": "#/properties/vedleggstitler",
+      "type": "array",
+      "title": "The Vedleggstitler Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/vedleggstitler/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      }
+    },
+    "fagsak": {
+      "$id": "#/properties/fagsak",
+      "type": "object",
+      "title": "The Fagsak Schema",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "soknadsperiode",
+        "land"
+      ],
+      "properties": {
+        "type": {
+          "$id": "#/properties/fagsak/properties/type",
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": [
+            "EU_EOS"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "soknadsperiode": {
+          "$id": "#/properties/fagsak/properties/soknadsperiode",
+          "type": "object",
+          "title": "The Soknadsperiode Schema",
+          "additionalProperties": false,
+          "required": [
+            "fom",
+            "tom"
+          ],
+          "properties": {
+            "fom": {
+              "$id": "#/properties/fagsak/properties/soknadsperiode/properties/fom",
+              "type": "string",
+              "format": "date",
+              "title": "The Fom Schema",
+              "default": "",
+              "examples": [
+                "2018-02-02"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "tom": {
+              "$id": "#/properties/fagsak/properties/soknadsperiode/properties/tom",
+              "type": "string",
+              "format": "date",
+              "title": "The Tom Schema",
+              "default": "",
+              "examples": [
+                "2018-02-02"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "land": {
+          "$id": "#/properties/fagsak/properties/land",
+          "type": "array",
+          "title": "The Land Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/fagsak/properties/land/items",
+            "type": "string",
+            "title": "The Items Schema",
+            "default": "",
+            "examples": [
+              "NO",
+              "IS"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    }
+  }
+}
