@@ -21,7 +21,7 @@ const logging = require('./modules/logging');
 const log4js = require('log4js');
 log4js.configure({
   appenders: { mock: { type: 'file', filename: 'logdir/mock-errors.log' } },
-  categories: { default: { appenders: ['mock'], level: 'error' } }
+  categories: { default: { appenders: ['mock'], level: 'debug' } }
 });
 
 const app = express();

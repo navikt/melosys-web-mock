@@ -8,8 +8,8 @@
     "kode":"OPPR",
     "term":"Opprettet"
   },
-  "registrertDato": "2017-10-19T12:31:36",
-  "endretDato": "2017-10-19T12:31:36",
+  "registrertDato": "2017-10-19T12:31:36.123Z",
+  "endretDato": "2017-10-19T12:31:36.123Z",
   "gsakSaksnummer" : null,
   "behandlinger": [
     {
@@ -726,6 +726,9 @@
               }
             }
           ]
+        },
+        "sakOgBehandling": {
+          "eosBarnetrygd": false
         }
       },
       "behandlingshistorikk": [
