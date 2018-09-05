@@ -1,126 +1,166 @@
 {
-  "$id": "http://example.com/example.json",
-  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nav.no/organisasjoner.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "orgnr",
+    "navn",
+    "forretningsadresse",
+    "postadresse"
+  ],
   "properties": {
     "orgnr": {
-      "$id": "/properties/orgnr",
+      "$id": "#/properties/orgnr",
       "type": "string",
-      "title": "The Orgnr Schema ",
+      "title": "The Orgnr Schema",
       "default": "",
       "examples": [
-        "910253158"
-      ]
+        "943049467"
+      ],
+      "pattern": "^(.*)$"
     },
     "navn": {
-      "$id": "/properties/navn",
+      "$id": "#/properties/navn",
       "type": "string",
-      "title": "The Navn Schema ",
+      "title": "The Navn Schema",
       "default": "",
       "examples": [
-        "MULTICONSULT ASA"
-      ]
+        "SKANSKA NORGE AS"
+      ],
+      "pattern": "^(.*)$"
     },
     "forretningsadresse": {
-      "$id": "/properties/forretningsadresse",
+      "$id": "#/properties/forretningsadresse",
       "type": "object",
+      "title": "The Forretningsadresse Schema",
+      "additionalProperties": false,
+      "required": [
+        "gateadresse",
+        "postnr",
+        "poststed",
+        "land"
+      ],
       "properties": {
         "gateadresse": {
-          "$id": "/properties/forretningsadresse/properties/gateadresse",
+          "$id": "#/properties/forretningsadresse/properties/gateadresse",
           "type": "object",
+          "title": "The Gateadresse Schema",
+          "additionalProperties": false,
+          "required": [
+            "gatenavn"
+          ],
           "properties": {
             "gatenavn": {
-              "$id": "/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
+              "$id": "#/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
               "type": "string",
-              "title": "The Gatenavn Schema ",
+              "title": "The Gatenavn Schema",
               "default": "",
               "examples": [
-                "Nedre Skøyen vei 2"
-              ]
+                "Lakkegata 53"
+              ],
+              "pattern": "^(.*)$"
             }
           }
         },
         "postnr": {
-          "$id": "/properties/forretningsadresse/properties/postnr",
+          "$id": "#/properties/forretningsadresse/properties/postnr",
           "type": "string",
-          "title": "The Postnr Schema ",
+          "title": "The Postnr Schema",
           "default": "",
           "examples": [
-            "0276"
-          ]
+            "0187"
+          ],
+          "pattern": "^(.*)$"
         },
         "poststed": {
-          "$id": "/properties/forretningsadresse/properties/poststed",
+          "$id": "#/properties/forretningsadresse/properties/poststed",
           "type": "string",
-          "title": "The Poststed Schema ",
+          "title": "The Poststed Schema",
           "default": "",
           "examples": [
             "OSLO"
-          ]
+          ],
+          "pattern": "^(.*)$"
         },
         "land": {
-          "$id": "/properties/forretningsadresse/properties/land",
+          "$id": "#/properties/forretningsadresse/properties/land",
           "type": "string",
-          "title": "The Land Schema ",
+          "title": "The Land Schema",
           "default": "",
           "examples": [
-            "NORGE"
-          ]
+            "NO"
+          ],
+          "pattern": "^(.*)$"
         }
       }
     },
     "postadresse": {
-      "$id": "/properties/postadresse",
+      "$id": "#/properties/postadresse",
       "type": "object",
+      "title": "The Postadresse Schema",
+      "additionalProperties": false,
+      "required": [
+        "gateadresse",
+        "postnr",
+        "poststed",
+        "land"
+      ],
       "properties": {
         "gateadresse": {
-          "$id": "/properties/postadresse/properties/gateadresse",
+          "$id": "#/properties/postadresse/properties/gateadresse",
           "type": "object",
+          "title": "The Gateadresse Schema",
+          "additionalProperties": false,
+          "required": [
+            "gatenavn"
+          ],
           "properties": {
             "gatenavn": {
-              "$id": "/properties/postadresse/properties/gateadresse/properties/gatenavn",
+              "$id": "#/properties/postadresse/properties/gateadresse/properties/gatenavn",
               "type": "string",
-              "title": "The Gatenavn Schema ",
+              "title": "The Gatenavn Schema",
               "default": "",
               "examples": [
-                "Postboks 265  Skøyen"
-              ]
+                "Postboks 1175 Oslo Sentrum"
+              ],
+              "pattern": "^(.*)$"
             }
           }
         },
         "postnr": {
-          "$id": "/properties/postadresse/properties/postnr",
+          "$id": "#/properties/postadresse/properties/postnr",
           "type": "string",
-          "title": "The Postnr Schema ",
+          "title": "The Postnr Schema",
           "default": "",
           "examples": [
-            "0213"
-          ]
+            "0107"
+          ],
+          "pattern": "^(.*)$"
         },
         "poststed": {
-          "$id": "/properties/postadresse/properties/poststed",
+          "$id": "#/properties/postadresse/properties/poststed",
           "type": "string",
-          "title": "The Poststed Schema ",
+          "title": "The Poststed Schema",
           "default": "",
           "examples": [
             "OSLO"
-          ]
+          ],
+          "pattern": "^(.*)$"
         },
         "land": {
-          "$id": "/properties/postadresse/properties/land",
+          "$id": "#/properties/postadresse/properties/land",
           "type": "string",
-          "title": "The Land Schema ",
+          "title": "The Land Schema",
           "default": "",
           "examples": [
-            "NORGE"
-          ]
+            "NO"
+          ],
+          "pattern": "^(.*)$"
         }
       }
     }
-  },
-  "required": [
-    "navn",
-    "orgnr"
-  ]
+  }
 }

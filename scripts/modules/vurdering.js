@@ -1,11 +1,17 @@
 const fs = require('fs');
+const Ajv = require('ajv');
+
+const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+
+const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
+const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
+const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const VURDERING__MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
 module.exports.lesVurderingsKatalog = () => {
@@ -48,9 +54,40 @@ module.exports.hent = (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
+  const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+  const schema = Schema.lesSchema(schemajson);
+  const validate = ajv.compile(schema);
+
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let responseBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  responseBody.behandlingID = behandlingID;
-  return res.json(responseBody);
+  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("vurdering:send", JSON.stringify(jsonBody));
+
+  const valid = test(validate, jsonBody);
+  if (!valid) {
+    valideringFeil(req, res);
+  }
+  else {
+    jsonBody.behandlingID = behandlingID;
+    res.json(jsonBody);
+  }
 };
+
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+function test(validate, data) {
+  const valid = validate(data);
+  if (valid) {
+    console.log('Vurdering:send Valid!');
+  }
+  else {
+    const ajvErros = ajv.errorsText(validate.errors);
+    console.error('Vurdering:send INVALID: see mock-errors.log');
+    logger.error('Vurdering:send INVALID', ajvErros)
+  }
+  return valid;
+}

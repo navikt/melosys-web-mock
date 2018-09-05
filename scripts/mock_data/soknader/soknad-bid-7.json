@@ -6,7 +6,7 @@
       "medfolgendeFamilie": [],
       "medfolgendeAndre": null
     },
-    "arbeidUtland": {
+    "arbeidUtland": [{
       "adresse": {
         "gatenavn": null,
         "postnummer": null,
@@ -17,7 +17,7 @@
       "arbeidsandelUtland": 68,
       "arbeidUtlandErstatning": false,
       "arbeidUtlandHjemmekontor": false
-    },
+    }],
     "foretakUtland": [],
     "oppholdUtland": {
       "oppholdslandKoder": [],

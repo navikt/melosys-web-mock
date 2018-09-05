@@ -3,6 +3,16 @@
   "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "journalpostID",
+    "oppgaveID",
+    "brukerID",
+    "dokumenttittel",
+    "vedleggstitler",
+    "saksnummer"
+  ],
   "properties": {
     "journalpostID": {
       "$id": "/properties/journalpostID",
@@ -51,7 +61,11 @@
     },
     "vedleggstitler": {
       "$id": "/properties/vedleggstitler",
-      "type": "array"
+      "type": "array",
+      "items": {
+        "$id": "/properties/vedleggstitler/items",
+        "type": "string"
+      }
     },
     "saksnummer": {
       "$id": "/properties/saksnummer",
