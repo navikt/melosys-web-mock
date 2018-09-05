@@ -4,30 +4,41 @@
  */
 const begrunnelser = {
   vesentligVirksomhet: [
-  {
-    kode: "MINDRE_ENN_25_PROSENT",
-    term: "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge.",
-  },
-  {
-    kode: "ADMINISTRATIVT_ANDEL_OVER_50_PROSENT",
-    term: "Andelen administrativt ansatte i Norge er mer enn 50%.",
-  },
-  {
-    kode: "ANSATTE_IKKE_REKRUTTERT_I_NORGE",
-    term: "Ansatte blir ikke rekruttert i Norge.",
-  },
-  {
-    kode: "MER_ENN_50_PROSENT_I_NORGE",
-    term: "Utfører mindre enn 50% av oppdrag i Norge.",
-  },
-  {
-    kode: "MER_ENN_50_PROSENT_OPPDRAGSKONTRAKT",
-    term: "Mindre enn 50 prosent oppdragskontrakter inngått i Norge.",
-  },
-  {
-    kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
-    term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
-  },
-]}
+    {
+      kode: "MINDRE_ENN_25_PROSENT",
+      term: "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge.",
+    },
+    {
+      kode: "ADMINISTRATIVT_ANDEL_OVER_50_PROSENT",
+      term: "Andelen administrativt ansatte i Norge er mer enn 50%.",
+    },
+    {
+      kode: "ANSATTE_IKKE_REKRUTTERT_I_NORGE",
+      term: "Ansatte blir ikke rekruttert i Norge.",
+    },
+    {
+      kode: "MER_ENN_50_PROSENT_I_NORGE",
+      term: "Utfører mindre enn 50% av oppdrag i Norge.",
+    },
+    {
+      kode: "MER_ENN_50_PROSENT_OPPDRAGSKONTRAKT",
+      term: "Mindre enn 50 prosent oppdragskontrakter inngått i Norge.",
+    },
+    {
+      kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
+      term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
+    },
+  ],
+  opphold: [
+    {
+      kode: "FEIL_LAND_JOURNALFORING",
+      term: "Feil land oppgitt i journalføringen."
+    },
+    {
+      kode: "UGYLDIG_TERRITORIE",
+      term: "Søker skal til et territorie som ikke er en del av forordningen."
+    }
+  ]
+}
 ;
 module.exports.begrunnelser = begrunnelser;
