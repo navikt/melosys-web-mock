@@ -1,70 +1,88 @@
 {
-  "$id": "http://example.com/example.json",
-  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nav.no/personer.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "fnr",
+    "sivilstand",
+    "statsborgerskap",
+    "sammensattNavn",
+    "personstatus",
+    "kjoenn",
+    "foedselsdato"
+  ],
   "properties": {
     "fnr": {
-      "$id": "/properties/fnr",
+      "$id": "#/properties/fnr",
       "type": "string",
-      "title": "The Fnr Schema ",
+      "title": "The Fnr Schema",
       "default": "",
       "examples": [
-        "17117802280"
-      ]
+        "19117220349"
+      ],
+      "pattern": "^(.*)$"
     },
     "sivilstand": {
-      "$id": "/properties/sivilstand",
+      "$id": "#/properties/sivilstand",
       "type": "string",
-      "title": "The Sivilstand Schema ",
+      "title": "The Sivilstand Schema",
       "default": "",
       "examples": [
-        "Ugift"
-      ]
+        "Registrert partner"
+      ],
+      "pattern": "^(.*)$"
     },
     "statsborgerskap": {
-      "$id": "/properties/statsborgerskap",
+      "$id": "#/properties/statsborgerskap",
       "type": "string",
-      "title": "The Statsborgerskap Schema ",
+      "title": "The Statsborgerskap Schema",
       "default": "",
       "examples": [
         "NOR"
-      ]
+      ],
+      "pattern": "^(.*)$"
     },
     "sammensattNavn": {
-      "$id": "/properties/sammensattNavn",
+      "$id": "#/properties/sammensattNavn",
       "type": "string",
-      "title": "The Sammensattnavn Schema ",
+      "title": "The Sammensattnavn Schema",
       "default": "",
       "examples": [
-        "KAKE ARTIG"
-      ]
+        "HATT GLITRENDE"
+      ],
+      "pattern": "^(.*)$"
     },
     "personstatus": {
-      "$id": "/properties/personstatus",
+      "$id": "#/properties/personstatus",
       "type": "string",
-      "title": "The Personstatus Schema ",
+      "title": "The Personstatus Schema",
       "default": "",
       "examples": [
         "Bosatt"
-      ]
+      ],
+      "pattern": "^(.*)$"
     },
     "kjoenn": {
-      "$id": "/properties/kjoenn",
+      "$id": "#/properties/kjoenn",
       "type": "string",
-      "title": "The Kjoenn Schema ",
+      "title": "The Kjoenn Schema",
       "default": "",
       "examples": [
-        "K"
-      ]
+        "M","K"
+      ],
+      "pattern": "^(.*)$"
     },
     "foedselsdato": {
-      "$id": "/properties/foedselsdato",
+      "$id": "#/properties/foedselsdato",
       "type": "string",
-      "title": "The Foedselsdato Schema ",
+      "format": "date",
+      "title": "The Foedselsdato Schema",
       "default": "",
       "examples": [
-        "1978-11-17"
+        "1972-11-19"
       ]
     }
   }

@@ -2,7 +2,6 @@
   "journalforing": [
     {
       "oppgaveID": "177057928",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2016-03-30",
       "prioritet": "HOY",
@@ -11,7 +10,6 @@
     },
     {
       "oppgaveID": "201377338",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2017-10-17",
       "prioritet": "HOY",
@@ -20,7 +18,6 @@
     },
     {
       "oppgaveID": "167638828",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2015-08-18",
       "prioritet": "HOY",
@@ -29,7 +26,6 @@
     },
     {
       "oppgaveID": "193220255",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2019-04-25",
       "prioritet": "HOY",
@@ -38,7 +34,6 @@
     },
     {
       "oppgaveID": "174464932",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2016-01-26",
       "prioritet": "HOY",
@@ -47,7 +42,6 @@
     },
     {
       "oppgaveID": "177054897",
-      "oppgavetypeKode": "JFR",
       "journalpostID": "DOK_321",
       "aktivTil": "2016-03-30",
       "prioritet": "HOY",
@@ -58,10 +52,12 @@
   "saksbehandling": [
     {
       "oppgaveID": "174562068",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "GLITRENDE HATT",
       "saksnummer": "4",
-      "sakstypeKode": "FLK_TRG",
+      "sakstype": {
+        "kode": "FLK_TRG",
+        "term": "Trygdeavtale"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -88,10 +84,12 @@
     },
     {
       "oppgaveID": "176701002",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "LILLA HEST",
       "saksnummer": "3",
-      "sakstypeKode": "TRG_AVT",
+      "sakstype": {
+        "kode": "TRG_AVT",
+        "term": "Trygdeavtale"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -118,10 +116,12 @@
     },
     {
       "oppgaveID": "176314229",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "KAKE ARTIG",
       "saksnummer": "5",
-      "sakstypeKode": "FLK_TRG",
+      "sakstype": {
+        "kode": "FLK_TRG",
+        "term": "Folketrygd"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {
@@ -148,10 +148,12 @@
     },
     {
       "oppgaveID": "176741739",
-      "oppgavetypeKode": "BEH_SAK",
       "sammensattNavn": "MASKIN ARTIG",
       "saksnummer": "4",
-      "sakstypeKode": "FLK_TRG",
+      "sakstype": {
+        "kode": "FLK_TRG",
+        "term": "Folketrygd"
+      },
       "behandling": {
         "behandlingID": null,
         "behandlingType": {

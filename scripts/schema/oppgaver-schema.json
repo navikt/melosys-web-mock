@@ -26,7 +26,6 @@
         "additionalProperties": false,
         "required": [
           "oppgaveID",
-          "oppgavetypeKode",
           "journalpostID",
           "aktivTil",
           "prioritet",
@@ -42,17 +41,6 @@
             "default": "",
             "examples": [
               "177057928"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "oppgavetypeKode": {
-            "$id": "#/properties/journalforing/items/properties/oppgavetypeKode",
-            "type": "string",
-            "title": "The Oppgavetypekode Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "JFR"
             ],
             "pattern": "^(.*)$"
           },
@@ -129,10 +117,9 @@
         "additionalProperties": false,
         "required": [
           "oppgaveID",
-          "oppgavetypeKode",
           "sammensattNavn",
           "saksnummer",
-          "sakstypeKode",
+          "sakstype",
           "behandling",
           "aktivTil",
           "soknadsperiode",
@@ -152,17 +139,6 @@
             "default": "",
             "examples": [
               "174562068"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "oppgavetypeKode": {
-            "$id": "#/properties/saksbehandling/items/properties/oppgavetypeKode",
-            "type": "string",
-            "title": "The Oppgavetypekode Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "BEH_SAK"
             ],
             "pattern": "^(.*)$"
           },
@@ -188,16 +164,38 @@
             ],
             "pattern": "^(.*)$"
           },
-          "sakstypeKode": {
-            "$id": "#/properties/saksbehandling/items/properties/sakstypeKode",
-            "type": "string",
+          "sakstype": {
+            "$id": "#/properties/saksbehandling/items/properties/sakstype",
+            "type": "object",
             "title": "The Sakstypekode Schema",
             "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "FLK_TRG"
+            "additionalProperties": false,
+            "required": [
+              "kode",
+              "term"
             ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "kode": {
+                "$id": "#/properties/saksbehandling/items/properties/sakstype/kode",
+                "type": "string",
+                "description": "Sakstype kode fra kodeverk",
+                "examples": [
+                  "EU_EOS",
+                  "TRG_AVT",
+                  "FLK_TRG"
+                ]
+              },
+              "term": {
+                "$id": "#/properties/saksbehandling/items/properties/sakstype/term",
+                "type": "string",
+                "description": "Sakstype term fra kodeverk",
+                "examples": [
+                  "EU/EØS",
+                  "Trygdeavtale",
+                  "Folketrygd"
+                ]
+              }
+            }
           },
           "behandling": {
             "$id": "#/properties/saksbehandling/items/properties/behandling",
