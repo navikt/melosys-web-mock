@@ -148,10 +148,11 @@
                     "opprettelsestidspunkt": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/opprettelsestidspunkt",
                       "type": "string",
+                      "format": "date-time",
                       "title": "The Opprettelsestidspunkt Schema",
                       "default": "",
                       "examples": [
-                        "2018-02-18T07:32:45.797+01:00"
+                        "2018-02-18T07:32:45.797Z"
                       ],
                       "pattern": "^(.*)$"
                     },
@@ -169,7 +170,53 @@
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold",
                       "type": "array",
                       "title": "The Utenlandsopphold Schema",
-                      "uniqueItems": true
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items",
+                        "type": "object",
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "periode",
+                          "land"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/rapporteringsAarMaaned",
+                            "type": "string",
+                            "pattern": "^\\d{4}-\\d{2}$",
+                            "examples": [
+                              "2016-12"
+                            ]
+                          },
+                          "periode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode",
+                            "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "fom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/fom",
+                                "type": ["string","null"],
+                                "format": "date"
+                              },
+                              "tom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/tom",
+                                "type": ["string","null"],
+                                "format": "date"
+                              }
+                            }
+                          },
+                          "land": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
+                            "type": ["string","null"],
+                            "pattern": "^(.*)$"
+                          }
+                        }
+                      }
                     },
                     "arbeidsforholdIDnav": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdIDnav",
@@ -199,8 +246,8 @@
                           "skipsregister",
                           "yrke",
                           "antallTimerGammeltAa",
-                          "beregnetStillingsprosent",
                           "fartsomraade",
+                          "beregnetStillingsprosent",
                           "beregnetAntallTimerPrUke",
                           "stillingsprosent",
                           "skipstype",
@@ -351,10 +398,11 @@
                           },
                           "beregnetStillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetStillingsprosent",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Beregnetstillingsprosent Schema",
-                            "default": null,
+                            "default": 100,
                             "examples": [
+                              100,
                               null
                             ]
                           },
@@ -476,7 +524,59 @@
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering",
                       "type": "array",
                       "title": "The Permisjonogpermittering Schema",
-                      "uniqueItems": true
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items",
+                        "type": "object",
+                        "required": [
+                          "permisjonsId",
+                          "permisjonsPeriode",
+                          "permisjonsprosent",
+                          "permisjonOgPermittering"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "permisjonsId": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsId",
+                            "type": "integer"
+                          },
+                          "permisjonsPeriode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode",
+                            "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "fom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/fom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              },
+                              "tom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/tom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              }
+                            }
+                          }
+                        },
+                        "permisjonsprosent": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
+                          "type": "integer"
+                        },
+                        "permisjonOgPermittering": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
+                          "type": "string"
+                        }
+                      }
                     },
                     "arbeidsgivertype": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsgivertype",
@@ -562,18 +662,59 @@
                     "sistBekreftet": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/sistBekreftet",
                       "type": "string",
+                      "format": "date-time",
                       "title": "The Sistbekreftet Schema",
                       "default": "",
                       "examples": [
-                        "2018-02-18T07:32:36+01:00"
-                      ],
-                      "pattern": "^(.*)$"
+                        "2018-02-18T07:32:36.000Z"
+                      ]
                     },
                     "timerTimelonnet": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet",
                       "type": "array",
                       "title": "The Timertimelonnet Schema",
-                      "uniqueItems": true
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "timelonnetPeriode",
+                          "antallTimer"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/rapporteringsAarMaaned",
+                            "type": ["string","null"],
+                            "pattern": "^\\d{4}-\\d{2}$"
+                          },
+                          "timelonnetPeriode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode",
+                            "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "fom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/fom",
+                                "type": ["string","null"],
+                                "format": "date"
+                              },
+                              "tom": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/tom",
+                                "type": ["string","null"],
+                                "format": "date"
+                              }
+                            }
+                          },
+                          "antallTimer": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
+                            "type": ["integer","null"]
+                          }
+                        }
+                      }
                     },
                     "arbeidsforholdID": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdID",
