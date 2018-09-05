@@ -3,8 +3,8 @@
     "kode" : "OPPR",
     "term" : "Opprettet"
   },
-  "registrertDato" : "2018-08-27T07:16:03.273",
-  "endretDato" : "2018-08-27T07:16:03.273",
+  "registrertDato" : "2018-08-27T07:16:03.273Z",
+  "endretDato" : "2018-08-27T07:16:03.273Z",
   "gsakSaksnummer" : null,
   "behandlinger" : [
     {
@@ -83,7 +83,7 @@
                   "tom" : "2017-02-28"
                 },
                 "land" : "STORBRITANNIA",
-                "rapporteringsperiode" : "2017-01"
+                "rapporteringsAarMaaned" : "2017-01"
               }
             ],
             "arbeidsforholdIDnav" : 44138119,
@@ -146,7 +146,7 @@
             "sistBekreftet" : "2018-03-01T09:13:00+01:00",
             "timerTimelonnet" : [
               {
-                "rapporteringsperiode" : "2017-01",
+                "rapporteringsAarMaaned" : "2017-01",
                 "antallTimer" : 75,
                 "timelonnetPeriode" : {
                   "fom" : "2017-01-01",
@@ -154,7 +154,7 @@
                 }
               },
               {
-                "rapporteringsperiode" : "2017-01",
+                "rapporteringsAarMaaned" : "2017-01",
                 "antallTimer" : 75,
                 "timelonnetPeriode" : {
                   "fom" : "2017-02-01",
@@ -469,6 +469,9 @@
             }
           ]
         },
+        "sakOgBehandling": {
+          "eosBarnetrygd": false
+        },
         "medlemskap" : {
           "medlemsperiode" : []
         },
@@ -524,8 +527,8 @@
           "kode" : "OPPR",
           "term" : "Opprettet"
         },
-        "registrertDato" : "2018-08-27T07:16:03.273",
-        "endretDato" : "2018-08-27T07:16:03.273",
+        "registrertDato" : "2018-08-27T07:16:03.273Z",
+        "endretDato" : "2018-08-27T07:16:03.273Z",
         "type" : {
           "kode" : "SKND",
           "term" : "Søknad"

@@ -8,7 +8,9 @@ const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const SCRIPTS_DIR = `${process.cwd()}/scripts`;
+const MOCK_DATA_DIR = `${SCRIPTS_DIR}/journalforing`;
+const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 module.exports.lesJournalforingKatalog = () => {
@@ -48,13 +50,14 @@ module.exports.hent = (req, res) => {
 };
 
 module.exports.sendOpprettNySak = (req, res) => {
-  const schemajson = `${MOCK_JOURNALFORING_DIR}/opprett-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/opprett-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
   try {
     let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    logger.debug("journalforing:sendOpprettNySak", JSON.stringify(jsonBody));
     const valid = test(validate, jsonBody);
     return (valid) ? res.json('') : valideringFeil(req, res);
   }
@@ -65,13 +68,14 @@ module.exports.sendOpprettNySak = (req, res) => {
 };
 
 module.exports.sendTilordneSak = (req, res) => {
-  const schemajson = `${MOCK_JOURNALFORING_DIR}/tilordne-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/tilordne-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
   try {
     let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    logger.debug("journalforing:sendTilordneSak", JSON.stringify(jsonBody));
     const valid = test(validate, jsonBody);
     return (valid) ? res.json('') : valideringFeil(req, res);
   }

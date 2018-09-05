@@ -8,7 +8,7 @@
     "kode":"OPPR",
     "term":"Opprettet"
   },
-  "registrertDato": "2018-03-06T12:05:59.031",
+  "registrertDato": "2018-03-06T12:05:59.031Z",
   "endretDato": null,
   "gsakSaksnummer" : null,
   "behandlinger": [
@@ -182,7 +182,7 @@
                   "tom": "2017-12-31"
                 },
                 "land": "SPANIA",
-                "rapporteringsperiode": "2017-10"
+                "rapporteringsAarMaaned": "2017-10"
               }
             ],
             "arbeidsgivertype": "Organisasjon",
