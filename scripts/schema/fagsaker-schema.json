@@ -1,8 +1,19 @@
 {
-  "$id": "http://example.com/example.json",
-  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nav.no/fagsaker.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "saksnummer",
+    "type",
+    "status",
+    "registrertDato",
+    "endretDato",
+    "gsakSaksnummer",
+    "behandlinger"
+  ],
   "properties": {
     "saksnummer": {
       "$id": "/properties/saksnummer",
@@ -19,6 +30,11 @@
     "type": {
       "$id": "/properties/type",
       "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
       "properties": {
         "kode": {
           "$id": "/properties/type/properties/kode",
@@ -44,16 +60,16 @@
             "EU/EØS"
           ]
         }
-      },
-      "required": [
-        "kode",
-        "term"
-      ],
-      "additionalProperties": false
+      }
     },
     "status": {
       "$id": "/properties/status",
       "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
       "properties": {
         "kode": {
           "$id": "/properties/status/properties/kode",
@@ -79,12 +95,7 @@
             "Opprettet"
           ]
         }
-      },
-      "required": [
-        "kode",
-        "term"
-      ],
-      "additionalProperties": false
+      }
     },
     "registrertDato": {
       "$id": "/properties/registrertDato",
@@ -92,10 +103,11 @@
         "string",
         "null"
       ],
+      "format": "date-time",
       "title": "The Registrertdato Schema ",
       "default": "",
       "examples": [
-        "2018-03-15T16:31:35.845"
+        "2018-03-15T16:31:35.845Z"
       ]
     },
     "endretDato": {
@@ -104,10 +116,11 @@
         "string",
         "null"
       ],
+      "format": "date-time",
       "title": "The Endretdato Schema ",
       "default": "",
       "examples": [
-        "2018-03-15T16:31:35.845"
+        "2018-03-15T16:31:35.845Z"
       ]
     },
     "gsakSaksnummer": {
@@ -127,13 +140,31 @@
       "type": [
         "array"
       ],
+      "title": "The Behandlinger Schema",
+      "uniqueItems": true,
       "items": {
         "$id": "/properties/behandlinger/items",
         "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "oppsummering",
+          "saksopplysninger",
+          "behandlingshistorikk"
+        ],
         "properties": {
           "oppsummering": {
             "$id": "/properties/behandlinger/items/properties/oppsummering",
             "type": "object",
+            "title": "The Oppsummering Schema",
+            "additionalProperties": false,
+            "required": [
+              "behandlingID",
+              "type",
+              "status",
+              "registrertDato",
+              "endretDato"
+            ],
             "properties": {
               "behandlingID": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/behandlingID",
@@ -147,6 +178,12 @@
               "type": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type",
                 "type": "object",
+                "title": "The Type Schema",
+                "additionalProperties": false,
+                "required": [
+                  "kode",
+                  "term"
+                ],
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
@@ -172,16 +209,16 @@
                       "Søknad"
                     ]
                   }
-                },
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "additionalProperties": false
+                }
               },
               "status": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status",
                 "type": "object",
+                "required": [
+                  "kode",
+                  "term"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "kode": {
                     "$id": "/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
@@ -207,12 +244,7 @@
                       "Opprettet"
                     ]
                   }
-                },
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "additionalProperties": false
+                }
               },
               "registrertDato": {
                 "$id": "/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
@@ -238,23 +270,39 @@
                   "2018-03-15T16:31:35.845"
                 ]
               }
-            },
-            "required": [
-              "behandlingID",
-              "type",
-              "status",
-              "registrertDato",
-              "endretDato"
-            ],
-            "additionalProperties": false
+            }
           },
           "saksopplysninger": {
             "$id": "/properties/behandlinger/items/properties/saksopplysninger",
             "type": "object",
+            "required": [
+              "person",
+              "arbeidsforhold",
+              "organisasjoner",
+              "medlemskap",
+              "inntekt",
+              "sakOgBehandling"
+            ],
+            "additionalProperties": false,
             "properties": {
               "person": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person",
                 "type": "object",
+                "required": [
+                  "fnr",
+                  "sivilstand",
+                  "statsborgerskap",
+                  "statsborgerskapDato",
+                  "sammensattNavn",
+                  "kjoenn",
+                  "bostedsadresse",
+                  "foedselsdato",
+                  "personStatus",
+                  "erEgenAnsatt",
+                  "familiemedlemmer",
+                  "diskresjonskode"
+                ],
+                "additionalProperties": false,
                 "properties": {
                   "fnr": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -283,6 +331,12 @@
                   "statsborgerskap": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
                     "type": "object",
+                    "title": "The Statsborgerskap Schema",
+                    "additionalProperties": false,
+                    "required": [
+                      "kode",
+                      "term"
+                    ],
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
@@ -308,12 +362,7 @@
                           "Norge"
                         ]
                       }
-                    },
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "additionalProperties": false
+                    }
                   },
                   "statsborgerskapDato": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
@@ -343,6 +392,11 @@
                   "kjoenn": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
                     "type": "object",
+                    "required": [
+                      "kode",
+                      "term"
+                    ],
+                    "additionalProperties": false,
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
@@ -368,20 +422,28 @@
                           "Mann"
                         ]
                       }
-                    },
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "additionalProperties": false
+                    }
                   },
                   "bostedsadresse": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse",
                     "type": "object",
+                    "required": [
+                      "gateadresse",
+                      "postnr",
+                      "land"
+                    ],
+                    "additionalProperties": false,
                     "properties": {
                       "gateadresse": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse",
                         "type": "object",
+                        "required": [
+                          "gatenavn",
+                          "gatenummer",
+                          "husbokstav",
+                          "husnummer"
+                        ],
+                        "additionalProperties": false,
                         "properties": {
                           "gatenavn": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenavn",
@@ -431,14 +493,7 @@
                               "21"
                             ]
                           }
-                        },
-                        "required": [
-                          "gatenavn",
-                          "gatenummer",
-                          "husbokstav",
-                          "husnummer"
-                        ],
-                        "additionalProperties": false
+                        }
                       },
                       "postnr": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/postnr",
@@ -467,6 +522,11 @@
                       "land": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
                         "type": "object",
+                        "required": [
+                          "kode",
+                          "term"
+                        ],
+                        "additionalProperties": false,
                         "properties": {
                           "kode": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
@@ -492,20 +552,9 @@
                               "Norge"
                             ]
                           }
-                        },
-                        "required": [
-                          "kode",
-                          "term"
-                        ],
-                        "additionalProperties": false
+                        }
                       }
-                    },
-                    "required": [
-                      "gateadresse",
-                      "postnr",
-                      "land"
-                    ],
-                    "additionalProperties": false
+                    }
                   },
                   "foedselsdato": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
@@ -513,6 +562,7 @@
                       "string",
                       "null"
                     ],
+                    "format": "date",
                     "title": "The Foedselsdato Schema ",
                     "default": "",
                     "examples": [
@@ -522,6 +572,11 @@
                   "personStatus": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
                     "type": "object",
+                    "required": [
+                      "kode",
+                      "term"
+                    ],
+                    "additionalProperties": false,
                     "properties": {
                       "kode": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
@@ -547,12 +602,7 @@
                           "DØD"
                         ]
                       }
-                    },
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "additionalProperties": false
+                    }
                   },
                   "erEgenAnsatt": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/erEgenAnsatt",
@@ -571,9 +621,17 @@
                     "type": [
                       "array"
                     ],
+                    "title": "The Familiemedlemmer Schema",
+                    "uniqueItems": true,
                     "items": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
                       "type": "object",
+                      "required": [
+                        "fnr",
+                        "sammensattNavn",
+                        "relasjonstype"
+                      ],
+                      "additionalProperties": false,
                       "properties": {
                         "fnr": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
@@ -611,16 +669,10 @@
                             "Barn av"
                           ]
                         }
-                      },
-                      "required": [
-                        "fnr",
-                        "sammensattNavn",
-                        "relasjonstype"
-                      ],
-                      "additionalProperties": false
+                      }
                     }
                   },
-                  "diskresjonskode":{
+                  "diskresjonskode": {
                     "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
                     "type": "object",
                     "properties": {
@@ -655,31 +707,37 @@
                     ],
                     "additionalProperties": false
                   }
-                },
-                "required": [
-                  "fnr",
-                  "sivilstand",
-                  "statsborgerskap",
-                  "statsborgerskapDato",
-                  "sammensattNavn",
-                  "kjoenn",
-                  "bostedsadresse",
-                  "foedselsdato",
-                  "personStatus",
-                  "erEgenAnsatt",
-                  "familiemedlemmer",
-                  "diskresjonskode"
-                ],
-                "additionalProperties": false
+                }
               },
               "arbeidsforhold": {
                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold",
                 "type": [
                   "array"
                 ],
+                "title": "The Arbeidsforhold Schema",
+                "uniqueItems": true,
                 "items": {
                   "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items",
                   "type": "object",
+                  "required": [
+                    "arbeidsforholdID",
+                    "arbeidsforholdIDnav",
+                    "ansettelsesPeriode",
+                    "arbeidsforholdstype",
+                    "arbeidsavtaler",
+                    "permisjonOgPermittering",
+                    "utenlandsopphold",
+                    "arbeidsgivertype",
+                    "arbeidsgiverID",
+                    "arbeidstakerID",
+                    "opplysningspliktigtype",
+                    "opplysningspliktigID",
+                    "opprettelsestidspunkt",
+                    "sistBekreftet",
+                    "Aordning",
+                    "timerTimelonnet"
+                  ],
+                  "additionalProperties": false,
                   "properties": {
                     "arbeidsforholdID": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdID",
@@ -708,6 +766,11 @@
                     "ansettelsesPeriode": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
                       "type": "object",
+                      "required": [
+                        "fom",
+                        "tom"
+                      ],
+                      "additionalProperties": false,
                       "properties": {
                         "fom": {
                           "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/fom",
@@ -733,12 +796,7 @@
                             "2016-01-01"
                           ]
                         }
-                      },
-                      "required": [
-                        "fom",
-                        "tom"
-                      ],
-                      "additionalProperties": false
+                      }
                     },
                     "arbeidsforholdstype": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdstype",
@@ -757,13 +815,34 @@
                       "type": [
                         "array"
                       ],
+                      "title": "The Arbeidsavtaler Schema",
+                      "uniqueItems": true,
                       "items": {
                         "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items",
                         "type": "object",
+                        "required": [
+                          "arbeidstidsordning",
+                          "avloenningstype",
+                          "yrke",
+                          "avtaltArbeidstimerPerUke",
+                          "stillingsprosent",
+                          "beregnetAntallTimerPrUke",
+                          "skipsregister",
+                          "skipstype",
+                          "maritimArbeidsavtale",
+                          "fartsomraade",
+                          "gyldighetsperiode"
+                        ],
+                        "additionalProperties": false,
                         "properties": {
                           "arbeidstidsordning": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
                             "type": "object",
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
@@ -789,12 +868,7 @@
                                   "Ikke skift"
                                 ]
                               }
-                            },
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "additionalProperties": false
+                            }
                           },
                           "avloenningstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avloenningstype",
@@ -811,6 +885,11 @@
                           "yrke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
                             "type": "object",
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
@@ -836,12 +915,7 @@
                                   "MATROS"
                                 ]
                               }
-                            },
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "additionalProperties": false
+                            }
                           },
                           "avtaltArbeidstimerPerUke": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avtaltArbeidstimerPerUke",
@@ -918,6 +992,11 @@
                           "skipsregister": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
                             "type": "object",
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
@@ -943,16 +1022,16 @@
                                   "NOR"
                                 ]
                               }
-                            },
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "additionalProperties": false
+                            }
                           },
                           "skipstype": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
                             "type": "object",
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
@@ -978,16 +1057,16 @@
                                   "Annet"
                                 ]
                               }
-                            },
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "additionalProperties": false
+                            }
                           },
                           "fartsomraade": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
                             "type": "object",
+                            "required": [
+                              "kode",
+                              "term"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "kode": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
@@ -1013,12 +1092,7 @@
                                   "Innenriks"
                                 ]
                               }
-                            },
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "additionalProperties": false
+                            }
                           },
                           "maritimArbeidsavtale": {
                             "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/maritimArbeidsavtale",
@@ -1035,6 +1109,11 @@
                           "gyldighetsperiode": {
                             "$id": "/properties/gyldighetsperiode",
                             "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
                               "fom": {
                                 "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
@@ -1042,6 +1121,7 @@
                                   "string",
                                   "null"
                                 ],
+                                "format": "date",
                                 "title": "The Fom Schema ",
                                 "default": "",
                                 "examples": [
@@ -1054,46 +1134,130 @@
                                   "string",
                                   "null"
                                 ],
+                                "format": "date",
                                 "title": "The Tom Schema ",
                                 "default": "",
                                 "examples": [
                                   "2019-01-01"
                                 ]
                               }
-                            },
-                            "required": [
-                              "fom",
-                              "tom"
-                            ]
+                            }
                           }
-                        },
-                        "required": [
-                          "arbeidstidsordning",
-                          "avloenningstype",
-                          "yrke",
-                          "avtaltArbeidstimerPerUke",
-                          "stillingsprosent",
-                          "beregnetAntallTimerPrUke",
-                          "skipsregister",
-                          "skipstype",
-                          "maritimArbeidsavtale",
-                          "fartsomraade",
-                          "gyldighetsperiode"
-                        ],
-                        "additionalProperties": false
+                        }
                       }
                     },
                     "permisjonOgPermittering": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering",
-                      "type": [
-                        "array"
-                      ]
+                      "type": "array",
+                      "title": "The Permisjonogpermittering Schema",
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items",
+                        "type": "object",
+                        "required": [
+                          "permisjonsId",
+                          "permisjonsPeriode",
+                          "permisjonsprosent",
+                          "permisjonOgPermittering"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "permisjonsId": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsId",
+                            "type": "string"
+                          },
+                          "permisjonsPeriode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode",
+                            "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "fom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode/fom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              },
+                              "tom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsPeriode/fom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              }
+                            }
+                          },
+                          "permisjonsprosent": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonsprosent",
+                            "type": "number"
+                          },
+                          "permisjonOgPermittering": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/properties/permisjonOgPermittering",
+                            "type": "string"
+                          }
+                        }
+                      }
                     },
                     "utenlandsopphold": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold",
-                      "type": [
-                        "array"
-                      ]
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items",
+                        "type": "object",
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "periode",
+                          "land"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/rapporteringsAarMaaned",
+                            "type": "string"
+                          },
+                          "periode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode",
+                            "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                              "fom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/fom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              },
+                              "tom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/tom",
+                                "type": [
+                                  "string",
+                                  "null"
+                                ],
+                                "format": "date"
+                              }
+                            }
+                          },
+                          "land": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          }
+                        }
+                      }
                     },
                     "arbeidsgivertype": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsgivertype",
@@ -1191,102 +1355,59 @@
                         true
                       ]
                     },
-                    "timerTimelonnet":{
+                    "timerTimelonnet": {
                       "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet",
-                      "type": [
-                        "array"
-                      ],
-                      "definitions": {},
-                      "$schema": "http://json-schema.org/draft-07/schema#",
-                      "properties": {
-                        "timerTimelonnet": {
-                          "$id": "/properties/timerTimelonnet",
-                          "type": [
-                            "array"
-                          ],
-                          "items": {
-                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": {
+                        "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items",
+                        "type": "object",
+                        "required": [
+                          "rapporteringsAarMaaned",
+                          "timelonnetPeriode",
+                          "antallTimer"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                          "rapporteringsAarMaaned": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/rapporteringsAarMaaned",
+                            "type": "string"
+                          },
+                          "timelonnetPeriode": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode",
                             "type": "object",
+                            "required": [
+                              "fom",
+                              "tom"
+                            ],
+                            "additionalProperties": false,
                             "properties": {
-                              "rapporteringsperiode": {
-                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/rapporteringsperiode",
+                              "fom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/fom",
                                 "type": [
                                   "string",
                                   "null"
                                 ],
-                                "title": "The Rapporteringsperiode Schema ",
-                                "default": "",
-                                "examples": [
-                                  "2017-01"
-                                ]
+                                "format": "date"
                               },
-                              "antallTimer": {
-                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/antallTimer",
+                              "tom": {
+                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/tom",
                                 "type": [
-                                  "integer",
+                                  "string",
                                   "null"
                                 ],
-                                "title": "The Antalltimer Schema ",
-                                "default": 0,
-                                "examples": [
-                                  75
-                                ]
-                              },
-                              "timelonnetPeriode": {
-                                "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode",
-                                "type": "object",
-                                "properties": {
-                                  "fom": {
-                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/fom",
-                                    "type": [
-                                      "string",
-                                      "null"
-                                    ],
-                                    "title": "The Fom Schema ",
-                                    "default": "",
-                                    "examples": [
-                                      "2017-01-01"
-                                    ]
-                                  },
-                                  "tom": {
-                                    "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/properties/timelonnetPeriode/properties/tom",
-                                    "type": [
-                                      "string",
-                                      "null"
-                                    ],
-                                    "title": "The Tom Schema ",
-                                    "default": "",
-                                    "examples": [
-                                      "2017-01-31"
-                                    ]
-                                  }
-                                }
+                                "format": "date"
                               }
                             }
+                          },
+                          "antallTimer": {
+                            "$id": "/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
+                            "type": "integer"
                           }
                         }
                       }
                     }
-                  },
-                  "required": [
-                    "arbeidsforholdID",
-                    "arbeidsforholdIDnav",
-                    "ansettelsesPeriode",
-                    "arbeidsforholdstype",
-                    "arbeidsavtaler",
-                    "permisjonOgPermittering",
-                    "utenlandsopphold",
-                    "arbeidsgivertype",
-                    "arbeidsgiverID",
-                    "arbeidstakerID",
-                    "opplysningspliktigtype",
-                    "opplysningspliktigID",
-                    "opprettelsestidspunkt",
-                    "sistBekreftet",
-                    "Aordning",
-                    "timerTimelonnet"
-                  ],
-                  "additionalProperties": false
+                  }
                 }
               },
               "organisasjoner": {
@@ -2249,15 +2370,7 @@
                 ],
                 "additionalProperties": false
               }
-            },
-            "required": [
-              "person",
-              "arbeidsforhold",
-              "organisasjoner",
-              "medlemskap",
-              "inntekt"
-            ],
-            "additionalProperties": false
+            }
           },
           "behandlingshistorikk": {
             "$id": "/properties/behandlinger/items/properties/behandlingshistorikk",
@@ -2265,24 +2378,8 @@
               "array"
             ]
           }
-        },
-        "required": [
-          "oppsummering",
-          "saksopplysninger",
-          "behandlingshistorikk"
-        ],
-        "additionalProperties": false
+        }
       }
     }
-  },
-  "required": [
-    "saksnummer",
-    "type",
-    "status",
-    "registrertDato",
-    "gsakSaksnummer",
-    "endretDato",
-    "behandlinger"
-  ],
-  "additionalProperties": false
+  }
 }
