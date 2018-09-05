@@ -1,11 +1,16 @@
 {
+  "saksnummer": "4",
+  "type": {
+    "kode":"EU_EOS",
+    "term":"EU/EØS"
+  },
   "status" : {
     "kode" : "OPPR",
     "term" : "Opprettet"
   },
   "registrertDato" : "2018-08-27T07:16:03.273Z",
   "endretDato" : "2018-08-27T07:16:03.273Z",
-  "gsakSaksnummer" : null,
+  "gsakSaksnummer" : 131063977,
   "behandlinger" : [
     {
       "saksopplysninger" : {
@@ -510,6 +515,7 @@
             "kode" : "NOR",
             "term" : "NORGE"
           },
+          "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
 
           ]
@@ -532,10 +538,5 @@
         }
       }
     }
-  ],
-  "saksnummer" : "MEL-1",
-  "type" : {
-    "kode" : "EU_EOS",
-    "term" : "EU/EØS"
-  }
+  ]
 }
