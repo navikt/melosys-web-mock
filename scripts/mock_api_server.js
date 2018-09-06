@@ -1,3 +1,4 @@
+const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -18,9 +19,14 @@ const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
 const logging = require('./modules/logging');
 
+const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
+const LOGDIR = `${process.cwd()}/logdir`;
+createLogDirIfnotExists(LOGDIR);
+
+const MOCK_LOG_FILE = `${LOGDIR}/mock-errors.log`;
 const log4js = require('log4js');
 log4js.configure({
-  appenders: { mock: { type: 'file', filename: 'logdir/mock-errors.log' } },
+  appenders: { mock: { type: 'file', filename: MOCK_LOG_FILE } },
   categories: { default: { appenders: ['mock'], level: 'debug' } }
 });
 
