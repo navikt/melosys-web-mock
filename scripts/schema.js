@@ -60,8 +60,9 @@ if (argv.watch) {
 
   const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
   const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
+  const IGNORE_DOT_DIRS_PATTERN = /(^|[/\\])\../;  // Ex: "~/GitHub/.git" or "C:\GitHub\.git"
   const watcher = require('chokidar').watch(GLOBBER, {
-    ignored: /(^|[\/\\])\../,
+    ignored: IGNORE_DOT_DIRS_PATTERN,
     persistent: true
   });
   watcher.on('change', path => {
