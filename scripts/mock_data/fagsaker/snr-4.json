@@ -494,6 +494,7 @@
               "husbokstav": null
             },
             "postnr": null,
+            "poststed":null,
             "land": {
               "kode": null,
               "term": null

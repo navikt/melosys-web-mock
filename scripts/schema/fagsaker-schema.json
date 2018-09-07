@@ -6,12 +6,12 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "status",
-    "registrertDato",
+    "behandlinger",
     "endretDato",
     "gsakSaksnummer",
-    "behandlinger",
+    "registrertDato",
     "saksnummer",
+    "status",
     "type"
   ],
   "properties": {
@@ -1349,6 +1349,7 @@
                     "required": [
                       "gateadresse",
                       "postnr",
+                      "poststed",
                       "land"
                     ],
                     "properties": {
@@ -1407,6 +1408,15 @@
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/postnr",
                         "type": ["string","null"],
                         "title": "The Postnr Schema",
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
+                      },
+                      "poststed": {
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/poststed",
+                        "type": ["string","null"],
+                        "title": "The poststed Schema",
                         "default": null,
                         "examples": [
                           null
