@@ -1424,33 +1424,12 @@
                       },
                       "land": {
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": "object",
+                        "type": ["string","null"],
                         "title": "The Land Schema",
-                        "additionalProperties": false,
-                        "required": [
-                          "kode",
-                          "term"
-                        ],
-                        "properties": {
-                          "kode": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/properties/kode",
-                            "type": ["string","null"],
-                            "title": "The Kode Schema",
-                            "default": null,
-                            "examples": [
-                              null
-                            ]
-                          },
-                          "term": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/properties/term",
-                            "type": ["string","null"],
-                            "title": "The Term Schema",
-                            "default": null,
-                            "examples": [
-                              null
-                            ]
-                          }
-                        }
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
                       }
                     }
                   },

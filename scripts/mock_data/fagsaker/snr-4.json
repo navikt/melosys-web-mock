@@ -495,10 +495,7 @@
             },
             "postnr": null,
             "poststed":null,
-            "land": {
-              "kode": null,
-              "term": null
-            }
+            "land": null
           },
           "personStatus" : {
             "kode" : "BOSA",
