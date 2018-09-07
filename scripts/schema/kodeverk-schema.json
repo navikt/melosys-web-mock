@@ -23,17 +23,17 @@
       "title": "The Begrunnelser Schema",
       "additionalProperties": false,
       "required": [
-        "ikkeSkipBegrunnelser",
+        "ikkeSkip",
         "vesentligVirksomhet"
       ],
       "properties": {
-        "ikkeSkipBegrunnelser": {
-          "$id": "#/properties/begrunnelser/properties/ikkeSkipBegrunnelser",
+        "ikkeSkip": {
+          "$id": "#/properties/begrunnelser/properties/ikkeSkip",
           "type": "array",
           "title": "The Vesentligvirksomhet Schema",
           "uniqueItems": true,
           "items": {
-            "$id": "#/properties/begrunnelser/properties/ikkeSkipBegrunnelser/items",
+            "$id": "#/properties/begrunnelser/properties/ikkeSkip/items",
             "type": "object",
             "title": "The Items Schema",
             "additionalProperties": false,

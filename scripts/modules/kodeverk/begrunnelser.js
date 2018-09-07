@@ -29,7 +29,7 @@ const begrunnelser = {
     term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
   },
 ],
-  ikkeSkipBegrunnelser: [
+  ikkeSkip: [
     {
       kode: "IKKE_EGET_FREMDRIFT",
       term: "Ikke eget fremdrift",
