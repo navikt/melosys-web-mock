@@ -488,14 +488,17 @@
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
             "gateadresse": {
-              "gatenavn": null,
-              "gatenummer": null,
+              "gatenavn": "Waldemar Thranses gate",
+              "gatenummer": "98",
               "husnummer": null,
-              "husbokstav": null
+              "husbokstav": "C"
             },
-            "postnr": null,
-            "poststed":null,
-            "land": null
+            "postnr": "0175",
+            "poststed": "OSLO",
+            "land": {
+              "kode": "NO",
+              "term": "Norge"
+            }
           },
           "personStatus" : {
             "kode" : "BOSA",

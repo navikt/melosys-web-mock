@@ -57,7 +57,10 @@
             },
             "postnr":"3202",
             "poststed":"SANDEFJORD",
-            "land": "NO"
+            "land": {
+              "kode": "NO",
+              "term": "Norge"
+            }
           },
           "foedselsdato": "1966-10-28",
           "erEgenAnsatt": true,
