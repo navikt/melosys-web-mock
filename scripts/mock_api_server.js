@@ -61,7 +61,7 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  *
  */
 router.get('/fagsaker/:snr', fagsaker.hent);
-router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
+router.put('/fagsaker/ny/:fnr', fagsaker.opprett);
 
 /**
  * SØKNAD
