@@ -1424,12 +1424,29 @@
                       },
                       "land": {
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": ["string","null"],
+                        "type": "object",
                         "title": "The Land Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
+                        "additionalProperties": false,
+                        "required": [
+                          "kode",
+                          "term"
+                        ],
+                        "properties": {
+                          "kode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
+                            "type": ["string","null"],
+                            "examples": [
+                              "NO"
+                            ]
+                          },
+                          "term": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
+                            "type": ["string","null"],
+                            "examples": [
+                              "Norge"
+                            ]
+                          }
+                        }
                       }
                     }
                   },
