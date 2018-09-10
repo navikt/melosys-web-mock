@@ -775,6 +775,7 @@
                       "required": [
                         "postnr",
                         "gateadresse",
+                        "postnr",
                         "poststed",
                         "land"
                       ],
@@ -944,7 +945,7 @@
                             },
                             "gatenavn": {
                               "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
-                              "type": "string",
+                              "type": ["string","null"],
                               "title": "The Gatenavn Schema",
                               "default": "",
                               "examples": [
