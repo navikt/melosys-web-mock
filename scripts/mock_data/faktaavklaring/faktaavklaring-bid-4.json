@@ -2,15 +2,15 @@
   "behandlingID": 4,
   "avklaring": {
     "opphold": {
-      "land": ["DE"],
+      "land": [
+        { "landKode": "NO", "erGyldig": true, "begrunnelseKode": null},
+        { "landKode": "SE", "erGyldig": true, "begrunnelseKode": null},
+        { "landKode": "DK", "erGyldig": true, "begrunnelseKode": null}
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
-      },
-      "ugyldigeLand": [
-        { "landKode": "NO", "begrunnelseskode": "FEIL_LAND_JOURNALFORING" },
-        { "landKode": "SE", "begrunnelseskode": "UGYLDIG_TERRITORIE" }
-      ]
+      }
     },
     "aktivitet": {
       "aktivitetLand": []
