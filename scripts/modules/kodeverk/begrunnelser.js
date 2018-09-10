@@ -36,7 +36,7 @@ const begrunnelser = {
     },
     {
       kode: "UGYLDIG_TERRITORIE",
-      term: "Søker skal til et territorie som ikke er en del av forordningen."
+      term: "Søker skal til et territorium som ikke er en del av forordningen."
     }
   ]
 }
