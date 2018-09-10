@@ -773,22 +773,12 @@
                       "title": "The Postadresse Schema",
                       "additionalProperties": false,
                       "required": [
-                        "postnr",
                         "gateadresse",
+                        "postnr",
                         "poststed",
                         "land"
                       ],
                       "properties": {
-                        "postnr": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
-                          "type": ["string", "null"],
-                          "title": "The Postnr Schema",
-                          "default": "",
-                          "examples": [
-                            "3936"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
                         "gateadresse": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse",
                           "type": "object",
@@ -840,6 +830,16 @@
                             }
                           }
                         },
+                        "postnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
+                          "type": ["string", "null"],
+                          "title": "The Postnr Schema",
+                          "default": "",
+                          "examples": [
+                            "3936"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
                         "poststed": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/poststed",
                           "type": ["string","null"],
@@ -887,22 +887,12 @@
                       "title": "The Forretningsadresse Schema",
                       "additionalProperties": false,
                       "required": [
-                        "postnr",
                         "gateadresse",
+                        "postnr",
                         "poststed",
                         "land"
                       ],
                       "properties": {
-                        "postnr": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
-                          "type": "string",
-                          "title": "The Postnr Schema",
-                          "default": "",
-                          "examples": [
-                            "3936"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
                         "gateadresse": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse",
                           "type": "object",
@@ -944,7 +934,7 @@
                             },
                             "gatenavn": {
                               "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
-                              "type": "string",
+                              "type": ["string","null"],
                               "title": "The Gatenavn Schema",
                               "default": "",
                               "examples": [
@@ -954,9 +944,19 @@
                             }
                           }
                         },
+                        "postnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
+                          "type": ["string", "null"],
+                          "title": "The Postnr Schema",
+                          "default": "",
+                          "examples": [
+                            "3936"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
                         "poststed": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/poststed",
-                          "type": "string",
+                          "type": ["string", "null"],
                           "title": "The Poststed Schema",
                           "default": "",
                           "examples": [
@@ -966,7 +966,7 @@
                         },
                         "land": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/land",
-                          "type": "string",
+                          "type": ["string", "null"],
                           "title": "The Land Schema",
                           "default": "",
                           "examples": [
@@ -1424,12 +1424,29 @@
                       },
                       "land": {
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": ["string","null"],
+                        "type": "object",
                         "title": "The Land Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
+                        "additionalProperties": false,
+                        "required": [
+                          "kode",
+                          "term"
+                        ],
+                        "properties": {
+                          "kode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
+                            "type": ["string","null"],
+                            "examples": [
+                              "NO"
+                            ]
+                          },
+                          "term": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
+                            "type": ["string","null"],
+                            "examples": [
+                              "Norge"
+                            ]
+                          }
+                        }
                       }
                     }
                   },
