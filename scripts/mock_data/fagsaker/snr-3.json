@@ -1,6 +1,6 @@
 {
   "saksnummer": "3",
-  "type":{
+  "sakstype":{
     "kode":"EU_EOS",
     "term":"EU/EØS"
   },
@@ -15,7 +15,7 @@
     {
       "oppsummering": {
         "behandlingID": 3,
-        "type":{
+        "behandlingtype":{
           "kode":"SKND",
           "term":"Søknad"
         },
@@ -428,7 +428,7 @@
                 "fom": "2007-11-12",
                 "tom": "2007-11-25"
               },
-              "type":{
+              "medlemtype":{
                 "kode":"PMMEDSKP",
                 "term":"Periode med medlemskap"
               },
@@ -466,7 +466,7 @@
                 "fom": "2009-09-01",
                 "tom": "2009-10-01"
               },
-              "type":{
+              "medlemtype":{
                 "kode":"PMMEDSKP",
                 "term":"Periode med medlemskap"
               },
