@@ -3,7 +3,7 @@
   "avklaring": {
     "opphold": {
       "land": [
-        { "landKode": "NO", "erGyldig": true, "begrunnelseKode": null},
+        { "landKode": "GB", "erGyldig": true, "begrunnelseKode": null},
         { "landKode": "SE", "erGyldig": true, "begrunnelseKode": null},
         { "landKode": "DK", "erGyldig": true, "begrunnelseKode": null}
       ],
