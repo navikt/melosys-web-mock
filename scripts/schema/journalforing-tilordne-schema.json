@@ -50,6 +50,26 @@
         "30098000492"
       ]
     },
+    "avsenderNavn": {
+      "$id": "#/properties/avsenderNavn",
+      "type": "string",
+      "title": "The avsenderNavn Schema",
+      "default": "",
+      "examples": [
+        "30098000492"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "dokumentID": {
+      "$id": "#/properties/dokumentID",
+      "type": "string",
+      "title": "The dokumentID Schema",
+      "default": "",
+      "examples": [
+        "30098000492"
+      ],
+      "pattern": "^(.*)$"
+    },
     "dokumenttittel": {
       "$id": "/properties/dokumenttittel",
       "type": "string",
