@@ -52,7 +52,7 @@
             "gateadresse" : {
               "gatenummer" : null,
               "husbokstav" : null,
-              "husnummer" : "1",
+              "husnummer" : 1,
               "gatenavn" : "Lunderhaugen"
             },
             "postnr":"3202",

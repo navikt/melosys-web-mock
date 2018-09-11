@@ -388,21 +388,21 @@
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Antalltimergammeltaa Schema",
                             "default": null,
                             "examples": [
-                              0,
+                              0.5,
                               null
                             ]
                           },
                           "beregnetStillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetStillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Beregnetstillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -448,11 +448,11 @@
                           },
                           "stillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/stillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Stillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -569,7 +569,10 @@
                           },
                           "permisjonsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
-                            "type": ["integer","null"]
+                            "type": ["number","null"],
+                            "examples": [
+                              "0.33"
+                            ]
                           },
                           "permisjonOgPermittering": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
@@ -711,7 +714,7 @@
                           },
                           "antallTimer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
-                            "type": ["integer","null"]
+                            "type": ["number","null"]
                           }
                         }
                       }
@@ -1110,11 +1113,11 @@
                                   },
                                   "beloep": {
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/beloep",
-                                    "type": "integer",
+                                    "type": "number",
                                     "title": "The Beloep Schema",
-                                    "default": 0,
+                                    "default": 0.0,
                                     "examples": [
-                                      30000
+                                      30000.00
                                     ]
                                   },
                                   "inntektsstatus": {
@@ -1376,7 +1379,7 @@
                           },
                           "gatenummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Gatenummer Schema",
                             "default": null,
                             "examples": [
@@ -1385,7 +1388,7 @@
                           },
                           "husnummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Husnummer Schema",
                             "default": null,
                             "examples": [
