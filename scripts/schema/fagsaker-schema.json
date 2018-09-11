@@ -1589,6 +1589,7 @@
                   "statsborgerskapDato": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
                     "type": "string",
+                    "format": "date",
                     "title": "The Statsborgerskapdato Schema",
                     "default": "",
                     "examples": [
