@@ -1376,7 +1376,7 @@
                           },
                           "gatenummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Gatenummer Schema",
                             "default": null,
                             "examples": [
@@ -1385,7 +1385,7 @@
                           },
                           "husnummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Husnummer Schema",
                             "default": null,
                             "examples": [
