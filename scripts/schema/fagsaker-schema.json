@@ -388,21 +388,21 @@
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Antalltimergammeltaa Schema",
                             "default": null,
                             "examples": [
-                              0,
+                              0.5,
                               null
                             ]
                           },
                           "beregnetStillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetStillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Beregnetstillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -448,11 +448,11 @@
                           },
                           "stillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/stillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Stillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -569,7 +569,10 @@
                           },
                           "permisjonsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
-                            "type": ["integer","null"]
+                            "type": ["number","null"],
+                            "examples": [
+                              "0.33"
+                            ]
                           },
                           "permisjonOgPermittering": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
