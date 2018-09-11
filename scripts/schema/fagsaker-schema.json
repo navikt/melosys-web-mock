@@ -714,7 +714,7 @@
                           },
                           "antallTimer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
-                            "type": ["integer","null"]
+                            "type": ["number","null"]
                           }
                         }
                       }
