@@ -18,8 +18,6 @@ console.log('query testing|\n');
 
 instance.get('/saksbehandler').then(printresult).catch(console.error);
 
-instance.put('/fagsaker/ny/5').then(printresult).catch(console.error);
-
 const soknad4 = require('./mock_data/soknader/soknad-bid-4');
 instance.post('/soknader/4', soknad4).then(printresult).catch(console.error);
 
@@ -29,7 +27,7 @@ instance.post('/faktaavklaring/4', faktaavklaring4).then(printresult).catch(cons
 const vurdering4 = require('./mock_data/vurdering/vurdering-bid-4');
 instance.post('/vurdering/4', vurdering4).then(printresult).catch(console.error);
 
-const oversikt = require('./mock_data/oppgaver/oversikt')
+const oversikt = require('./mock_data/oppgaver/oversikt');
 instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(console.error);
 
 

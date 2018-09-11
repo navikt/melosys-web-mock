@@ -1,7 +1,4 @@
 const fs = require('fs');
-const _ = require('underscore');
-const moment = require('moment');
-const readableRandom = require('readable-random');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
@@ -39,28 +36,15 @@ module.exports.hent = (req, res) => {
   }
 };
 /**
- * Opprett ny fagsak. /api/fagsaker/ny/:fnr
+ * @deprecated Benyttes kun i spark på t5
+ * Opprett ny fagsak. [GET] /api/fagsaker/ny/:fnr
  * @param req
  * @param res
  * @returns {*|void}
  */
 
-let mockFagsakJSON = require('../mock_data/fagsaker/snr-3');
 module.exports.opprett = (req, res) => {
-  // const fnr = req.params.fnr && req.params.fnr.toString() || '';
-  // Use fnr to lookup fagsak and assign new saksnummer
-
-  const fornavn = readableRandom.getString(5).toUpperCase();
-  const etternavn = readableRandom.getString(8).toUpperCase();
-  // const sammensattNavn = `${fornavn} ${etternavn}`;
-  const { saksnummer, registrertDato, gsakSaksnummer, endretDato, ...rest } = mockFagsakJSON;
-  const mockfagsak = {
-    saksnummer: _.random(10,30),
-    registrertDato: moment.utc().format(),
-    endretDato: null,
-    gsakSaksnummer: _.random(10000, 99999),
-    ...rest,
-  };
-  res.status(201).send(mockfagsak);
+  const melding = ERR.gone410(req.uri);
+  res.status(410).send(melding);
 };
 
