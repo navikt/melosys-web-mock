@@ -1113,11 +1113,11 @@
                                   },
                                   "beloep": {
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/beloep",
-                                    "type": "integer",
+                                    "type": "number",
                                     "title": "The Beloep Schema",
-                                    "default": 0,
+                                    "default": 0.0,
                                     "examples": [
-                                      30000
+                                      30000.00
                                     ]
                                   },
                                   "inntektsstatus": {
