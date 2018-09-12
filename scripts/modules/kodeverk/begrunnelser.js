@@ -28,6 +28,16 @@ const begrunnelser = {
     kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
     term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
   },
-]}
+],
+  ikkeSkip: [
+    {
+      kode: "IKKE_EGET_FREMDRIFT",
+      term: "Ikke eget fremdrift",
+    },
+    {
+      kode: "IKKE_ORDINAERT_SKIPSFART",
+      term: "Ikke ordinært skipsfart.",
+    }
+  ]}
 ;
 module.exports.begrunnelser = begrunnelser;

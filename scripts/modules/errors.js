@@ -36,6 +36,12 @@ module.exports.notFound404 = (path, message = 'The requested resource could not 
     message,
     path);
 };
+module.exports.gone410 = (path, message = 'Gone: client error response code indicates that access to the target resource is no longer available at the origin server and that this condition is likely to be permanent') => {
+  return errorMessage(410,
+    'Gone',
+    message,
+    path);
+};
 module.exports.serverError500 = (path, message = 'A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.') => {
   return errorMessage(500, 'Internal Server Error',
     message,

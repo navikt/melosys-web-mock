@@ -1,4 +1,6 @@
 const argv = require('yargs').argv;
+const fs = require('fs');
+
 const { demo } = require('./test/demo');
 const { kodeverk } = require('./test/kodeverk');
 const { person } = require('./test/person');
@@ -16,9 +18,14 @@ const { faktaavklaring } = require('./test/faktaavklaring');
 
 const Schema = require('./test/schema-util');
 
+const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
+const LOGDIR = `${process.cwd()}/logdir`;
+createLogDirIfnotExists(LOGDIR);
+
+const SCHEMA_LOG_FILE = `${LOGDIR}/schema-errors.log`;
 const log4js = require('log4js');
 log4js.configure({
-  appenders: { schema: { type: 'file', filename: 'logdir/schema-errors.log' } },
+  appenders: { schema: { type: 'file', filename: SCHEMA_LOG_FILE } },
   categories: { default: { appenders: ['schema'], level: 'error' } }
 });
 
@@ -53,8 +60,9 @@ if (argv.watch) {
 
   const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
   const GLOBBER = `${MOCK_DATA_DIR}/*/*.json`;
+  const IGNORE_DOT_DIRS_PATTERN = /(^|[/\\])\../;  // Ex: "~/GitHub/.git" or "C:\GitHub\.git"
   const watcher = require('chokidar').watch(GLOBBER, {
-    ignored: /(^|[\/\\])\../,
+    ignored: IGNORE_DOT_DIRS_PATTERN,
     persistent: true
   });
   watcher.on('change', path => {

@@ -10,7 +10,7 @@
   },
   "registrertDato": "2017-10-19T12:31:36.123Z",
   "endretDato": "2017-10-19T12:31:36.123Z",
-  "gsakSaksnummer" : null,
+  "gsakSaksnummer" : 131063977,
   "behandlinger": [
     {
       "oppsummering": {
@@ -23,8 +23,8 @@
           "kode":"OPPR",
           "term":"Opprettet"
         },
-        "registrertDato": "2017-10-19T14:35:54",
-        "endretDato": "2017-10-19T14:35:54"
+        "registrertDato": "2017-10-19T14:35:54.000Z",
+        "endretDato": "2017-10-19T14:35:54.000Z"
       },
       "saksopplysninger": {
         "person": {
@@ -38,6 +38,7 @@
             "kode": "NO",
             "term": "Norge"
           },
+          "statsborgerskapDato": "2018-01-01",
           "sammensattNavn": "LILLA HEST",
           "personStatus" : {
             "kode" : "BOSA",
@@ -51,10 +52,11 @@
             "gateadresse" : {
               "gatenummer" : null,
               "husbokstav" : null,
-              "husnummer" : null,
-              "gatenavn" : "Lunderhaugen 1"
+              "husnummer" : 1,
+              "gatenavn" : "Lunderhaugen"
             },
             "postnr":"3202",
+            "poststed": "SANDEFJORD",
             "land": {
               "kode": "NO",
               "term": "Norge"
@@ -88,8 +90,11 @@
                   "kode":"0039293",
                   "term": "ALTMULIGMANN (PRIVAT)"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke":37.5,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent":100,
+                "beregnetStillingsprosent": 100,
                 "beregnetAntallTimerPrUke": 19.0,
                 "skipsregister": {
                   "kode": null,
@@ -110,9 +115,7 @@
                 }
               }
             ],
-            "permisjonOgPermittering": [
-
-            ],
+            "permisjonOgPermittering": [],
             "timerTimelonnet": [],
             "utenlandsopphold": [
 
@@ -145,9 +148,12 @@
                   "kode":"0039293",
                   "term": "ALTMULIGMANN (PRIVAT)"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke": null,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "stillingsprosent": null,
                 "beregnetAntallTimerPrUke": 37.5,
+                "beregnetStillingsprosent": 100,
                 "maritimArbeidsavtale": false,
                 "skipsregister":  {
                   "kode": null,
@@ -202,9 +208,12 @@
                   "kode":"0039293",
                   "term": "ALTMULIGMANN (PRIVAT)"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke":37.5,
                 "stillingsprosent":100,
+                "endringsdatoStillingsprosent": "2016-01-01",
                 "beregnetAntallTimerPrUke": 37.5,
+                "beregnetStillingsprosent": 100,
                 "maritimArbeidsavtale": false,
                 "skipsregister":  {
                   "kode": null,
@@ -261,7 +270,10 @@
                 },
                 "avtaltArbeidstimerPerUke": 35.5,
                 "stillingsprosent": 62,
-                "beregnetAntallTimerPrUke": 22.1662,
+                "beregnetStillingsprosent": 60,
+                "beregnetAntallTimerPrUke": 22,
+                "endringsdatoStillingsprosent": "2016-01-01",
+                "antallTimerGammeltAa": null,
                 "maritimArbeidsavtale": false,
                 "fartsomraade":  {
                   "kode": null,
@@ -497,6 +509,7 @@
             {
               "aarMaaned": "2017-06",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 45000,
@@ -511,6 +524,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -527,6 +545,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -543,6 +566,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -559,6 +587,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -575,6 +608,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -591,6 +629,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -607,6 +650,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -623,6 +671,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -639,6 +692,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -655,6 +713,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -671,6 +734,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -687,6 +755,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -703,6 +776,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   },
@@ -719,6 +797,11 @@
                     "inntektsmottakerID": "16016939696",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode" : {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus":"InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }

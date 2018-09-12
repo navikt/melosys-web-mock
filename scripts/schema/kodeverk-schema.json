@@ -6,127 +6,101 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "begrunnelser",
+    "behandlingsstatus",
+    "behandlingstyper",
+    "finansiering",
     "landkoder",
     "sakstyper",
-    "behandlingstyper",
-    "behandlingsstatus",
     "oppgavetyper",
-    "vedleggstitler",
     "dokumenttitler",
-    "finansiering",
-    "begrunnelser"
+    "vedleggstitler"
   ],
   "properties": {
-    "landkoder": {
-      "$id": "#/properties/landkoder",
-      "type": "array",
-      "title": "The Landkoder Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/landkoder/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/landkoder/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "CH"
+    "begrunnelser": {
+      "$id": "#/properties/begrunnelser",
+      "type": "object",
+      "title": "The Begrunnelser Schema",
+      "additionalProperties": false,
+      "required": [
+        "ikkeSkip",
+        "vesentligVirksomhet"
+      ],
+      "properties": {
+        "ikkeSkip": {
+          "$id": "#/properties/begrunnelser/properties/ikkeSkip",
+          "type": "array",
+          "title": "The Vesentligvirksomhet Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/ikkeSkip/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "kode",
+              "term"
             ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/landkoder/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Sveits"
-            ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "kode": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema",
+                "default": "",
+                "examples": [
+                  "IKKE_EGET_FREMDRIFT"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "term": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/term",
+                "type": "string",
+                "title": "The Term Schema",
+                "default": "",
+                "examples": [
+                  "Ikke eget fremdrift"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
           }
-        }
-      }
-    },
-    "sakstyper": {
-      "$id": "#/properties/sakstyper",
-      "type": "array",
-      "title": "The Sakstyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/sakstyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/sakstyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "EU_EOS"
+        },
+        "vesentligVirksomhet": {
+          "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet",
+          "type": "array",
+          "title": "The Vesentligvirksomhet Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "kode",
+              "term"
             ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/sakstyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "EU/EØS"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
-      }
-    },
-    "behandlingstyper": {
-      "$id": "#/properties/behandlingstyper",
-      "type": "array",
-      "title": "The Behandlingstyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/behandlingstyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/behandlingstyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "SKND"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/behandlingstyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Søknad"
-            ],
-            "pattern": "^(.*)$"
+            "properties": {
+              "kode": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema",
+                "default": "",
+                "examples": [
+                  "MINDRE_ENN_25_PROSENT"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "term": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/term",
+                "type": "string",
+                "title": "The Term Schema",
+                "default": "",
+                "examples": [
+                  "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge."
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
           }
         }
       }
@@ -169,13 +143,13 @@
         }
       }
     },
-    "oppgavetyper": {
-      "$id": "#/properties/oppgavetyper",
+    "behandlingstyper": {
+      "$id": "#/properties/behandlingstyper",
       "type": "array",
-      "title": "The Oppgavetyper Schema",
+      "title": "The Behandlingstyper Schema",
       "uniqueItems": true,
       "items": {
-        "$id": "#/properties/oppgavetyper/items",
+        "$id": "#/properties/behandlingstyper/items",
         "type": "object",
         "title": "The Items Schema",
         "additionalProperties": false,
@@ -185,60 +159,22 @@
         ],
         "properties": {
           "kode": {
-            "$id": "#/properties/oppgavetyper/items/properties/kode",
+            "$id": "#/properties/behandlingstyper/items/properties/kode",
             "type": "string",
             "title": "The Kode Schema",
             "default": "",
             "examples": [
-              "BEH_SAK"
+              "SKND"
             ],
             "pattern": "^(.*)$"
           },
           "term": {
-            "$id": "#/properties/oppgavetyper/items/properties/term",
+            "$id": "#/properties/behandlingstyper/items/properties/term",
             "type": "string",
             "title": "The Term Schema",
             "default": "",
             "examples": [
-              "Behandling"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
-      }
-    },
-    "vedleggstitler": {
-      "$id": "#/properties/vedleggstitler",
-      "type": "array",
-      "title": "The Vedleggstitler Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/vedleggstitler/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/vedleggstitler/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "TITTEL_1"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/vedleggstitler/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Vedleggstittel 1"
+              "Søknad"
             ],
             "pattern": "^(.*)$"
           }
@@ -321,51 +257,154 @@
         }
       }
     },
-    "begrunnelser": {
-      "$id": "#/properties/begrunnelser",
-      "type": "object",
-      "title": "The Begrunnelser Schema",
-      "additionalProperties": false,
-      "required": [
-        "vesentligVirksomhet"
-      ],
-      "properties": {
-        "vesentligVirksomhet": {
-          "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet",
-          "type": "array",
-          "title": "The Vesentligvirksomhet Schema",
-          "uniqueItems": true,
-          "items": {
-            "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
+    "landkoder": {
+      "$id": "#/properties/landkoder",
+      "type": "array",
+      "title": "The Landkoder Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/landkoder/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/landkoder/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "CH"
             ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "MINDRE_ENN_25_PROSENT"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/landkoder/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "Sveits"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "oppgavetyper": {
+      "$id": "#/properties/oppgavetyper",
+      "type": "array",
+      "title": "The Oppgavetyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/oppgavetyper/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/oppgavetyper/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "BEH_SAK"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/oppgavetyper/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "Behandling"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "sakstyper": {
+      "$id": "#/properties/sakstyper",
+      "type": "array",
+      "title": "The Sakstyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/sakstyper/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/sakstyper/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "EU_EOS"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/sakstyper/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "EU/EØS"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "vedleggstitler": {
+      "$id": "#/properties/vedleggstitler",
+      "type": "array",
+      "title": "The Vedleggstitler Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/vedleggstitler/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/vedleggstitler/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "TITTEL_1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/vedleggstitler/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "Vedleggstittel 1"
+            ],
+            "pattern": "^(.*)$"
           }
         }
       }
