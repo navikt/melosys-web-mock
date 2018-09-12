@@ -1,6 +1,6 @@
 {
   "name": "melosys-web-mock",
-  "version": "0.8.6",
+  "version": "0.9.0",
   "description": "express mock server",
   "author": "Are Bjølseth, Knowit Dataess as",
   "license": "MIT",
