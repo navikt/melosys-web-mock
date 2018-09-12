@@ -1,71 +1,85 @@
 {
   "saksnummer": "7",
-  "type":{
-    "kode":"EU_EOS",
-    "term":"EU/EØS"
+  "type": {
+    "kode": "EU_EOS",
+    "term": "EU/EØS"
   },
-  "status":{
-    "kode":"OPPR",
-    "term":"Opprettet"
+  "status": {
+    "kode": "OPPR",
+    "term": "Opprettet"
   },
   "registrertDato": "2018-03-12T16:23:42.122Z",
-  "endretDato":"2018-03-15T16:31:35.845Z",
-  "gsakSaksnummer" : null,
+  "endretDato": "2018-03-15T16:31:35.845Z",
+  "gsakSaksnummer": null,
   "behandlinger": [
     {
       "oppsummering": {
         "behandlingID": 7,
-        "type":{
-          "kode":"SKND",
-          "term":"Søknad"
+        "type": {
+          "kode": "SKND",
+          "term": "Søknad"
         },
-        "status":{
-          "kode":"OPPR",
-          "term":"Opprettet"
+        "status": {
+          "kode": "OPPR",
+          "term": "Opprettet"
         },
-        "registrertDato": "2018-03-12T16:23:42.122",
-        "endretDato":"2018-03-15T16:31:35.845"
+        "registrertDato": "2018-03-12T16:23:42.122Z",
+        "endretDato": "2018-03-15T16:31:35.845Z"
       },
       "saksopplysninger": {
         "person": {
           "fnr": "22127501762",
           "sivilstand": "Ugift",
-          "diskresjonskode" :  {
+          "diskresjonskode": {
             "kode": null,
             "term": null
           },
-          "statsborgerskap":{
+          "statsborgerskap": {
             "kode": "NO",
             "term": "Norge"
           },
+          "statsborgerskapDato": "2018-01-01",
           "sammensattNavn": "KAFFI RASK",
-          "personStatus" : {
-            "kode" : "BOSA",
-            "term" : "Bosatt"
+          "personStatus": {
+            "kode": "BOSA",
+            "term": "Bosatt"
           },
-          "kjoenn":{
+          "kjoenn": {
             "kode": "M",
             "term": "Mann"
           },
-          "bostedsadresse":{
-            "gateadresse" : {
-              "gatenummer" : null,
-              "husbokstav" : null,
-              "husnummer" : null,
-              "gatenavn" : "Lunderhaugen 1"
+          "bostedsadresse": {
+            "gateadresse": {
+              "gatenummer": null,
+              "husbokstav": null,
+              "husnummer": null,
+              "gatenavn": "Lunderhaugen 1"
             },
-            "postnr":"3202",
+            "postnr": "3202",
+            "poststed":"SANDEFJORD",
             "land": {
-              "kode":"NO",
-              "term":"NORGE"
+              "kode": "NO",
+              "term": "Norge"
             }
           },
           "foedselsdato": "1975-12-22",
           "erEgenAnsatt": true,
           "familiemedlemmer": [
-            {"fnr": "10100638274", "sammensattNavn": "GIRAFF MAGER", "relasjonstype": "Barn av"},
-            {"fnr": "26030537263", "sammensattNavn": "BUKSE LURVETE", "relasjonstype": "Barn av"},
-            {"fnr": "08029828362", "sammensattNavn": "UTVIKLER OPTIMISTISK", "relasjonstype": "Barn av"}
+            {
+              "fnr": "10100638274",
+              "sammensattNavn": "GIRAFF MAGER",
+              "relasjonstype": "Barn av"
+            },
+            {
+              "fnr": "26030537263",
+              "sammensattNavn": "BUKSE LURVETE",
+              "relasjonstype": "Barn av"
+            },
+            {
+              "fnr": "08029828362",
+              "sammensattNavn": "UTVIKLER OPTIMISTISK",
+              "relasjonstype": "Barn av"
+            }
           ]
         },
         "arbeidsforhold": [
@@ -74,25 +88,28 @@
             "arbeidsforholdIDnav": 44137903,
             "ansettelsesPeriode": {
               "fom": "2016-01-01",
-              "tom":null
+              "tom": null
             },
             "arbeidsforholdstype": "Ordinært arbeidsforhold",
             "arbeidsavtaler": [
               {
-                "arbeidstidsordning" : {
+                "arbeidstidsordning": {
                   "kode": "ikkeSkift",
                   "term": "Ikke skift"
                 },
                 "avloenningstype": "Fastlønn",
-                "yrke" : {
+                "yrke": {
                   "kode": "0020091",
                   "term": "KONSULENT"
                 },
+                "antallTimerGammeltAa": null,
                 "avtaltArbeidstimerPerUke": 37.5,
-                "stillingsprosent": 100,
+                "endringsdatoStillingsprosent": "2016-01-01",
+                "stillingsprosent": 100.0,
                 "beregnetAntallTimerPrUke": 37.5,
-                "maritimArbeidsavtale":false,
-                "skipsregister":  {
+                "beregnetStillingsprosent": 100,
+                "maritimArbeidsavtale": false,
+                "skipsregister": {
                   "kode": null,
                   "term": null
                 },
@@ -104,7 +121,7 @@
                   "kode": null,
                   "term": null
                 },
-                "gyldighetsperiode" : {
+                "gyldighetsperiode": {
                   "fom": "2018-01-01",
                   "tom": "2019-01-01"
                 }
@@ -130,22 +147,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
+              "gateadresse": {
+                "gatenummer": null,
+                "husbokstav": null,
+                "husnummer": null,
+                "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "5254",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
+              "gateadresse": {
+                "gatenummer": null,
+                "husbokstav": null,
+                "husnummer": null,
+                "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "5020",
               "poststed": "OSLO",
@@ -158,22 +175,22 @@
             "oppstartdato": "1977-01-01",
             "organisasjonsform": "Allmennaksjeselskap (ASA)",
             "forretningsadresse": {
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
+              "gateadresse": {
+                "gatenummer": null,
+                "husbokstav": null,
+                "husnummer": null,
+                "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "4035",
               "poststed": "OSLO",
               "land": "NO"
             },
             "postadresse": {
-              "gateadresse" : {
-                "gatenummer" : null,
-                "husbokstav" : null,
-                "husnummer" : null,
-                "gatenavn" : "Lunderhaugen 1"
+              "gateadresse": {
+                "gatenummer": null,
+                "husbokstav": null,
+                "husnummer": null,
+                "gatenavn": "Lunderhaugen 1"
               },
               "postnr": "4035",
               "poststed": "OSLO",
@@ -189,6 +206,8 @@
             {
               "aarMaaned": "2018-01",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -203,6 +222,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -212,6 +236,7 @@
             {
               "aarMaaned": "2017-12",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -226,6 +251,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -235,6 +265,7 @@
             {
               "aarMaaned": "2017-11",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -249,6 +280,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -258,6 +294,7 @@
             {
               "aarMaaned": "2017-03",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -272,6 +309,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -281,6 +323,7 @@
             {
               "aarMaaned": "2017-05",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -295,6 +338,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -304,6 +352,8 @@
             {
               "aarMaaned": "2017-04",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -318,6 +368,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -327,6 +382,8 @@
             {
               "aarMaaned": "2017-06",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -341,6 +398,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -350,6 +412,8 @@
             {
               "aarMaaned": "2017-07",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -364,6 +428,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -373,6 +442,8 @@
             {
               "aarMaaned": "2017-08",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -387,6 +458,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -396,6 +472,8 @@
             {
               "aarMaaned": "2017-10",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -410,6 +488,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }
@@ -419,6 +502,8 @@
             {
               "aarMaaned": "2017-09",
               "arbeidsInntektInformasjon": {
+                "arbeidsforholdFrilanserListe": [
+                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -433,6 +518,11 @@
                     "inntektsmottakerID": "22127501762",
                     "inngaarIGrunnlagForTrekk": true,
                     "utloeserArbeidsgiveravgift": true,
+                    "opptjeningsland": null,
+                    "opptjeningsperiode": {
+                      "fom": null,
+                      "tom": null
+                    },
                     "informasjonsstatus": "InngaarAlltid",
                     "beskrivelse": "fastloenn"
                   }

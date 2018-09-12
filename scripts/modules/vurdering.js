@@ -54,7 +54,7 @@ module.exports.hent = (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 

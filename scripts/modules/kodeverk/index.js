@@ -2,26 +2,26 @@
  * Kodeverk.
  * @module
  */
-const { landkoder } = require('./landkoder');
-const { sakstyper } = require('./sakstyper');
-const { behandlingstyper } = require('./behandlingstyper');
 const { behandlingsstatus } = require('./behandlingsstatus');
-const { oppgavetyper } = require('./oppgavetyper');
-const { vedleggstitler } = require('./vedleggstitler');
+const { behandlingstyper } = require('./behandlingstyper');
+const { begrunnelser } = require('./begrunnelser');
 const { dokumenttitler } = require('./dokumenttitler');
 const { finansiering } = require('./finansiering');
-const { begrunnelser } = require('./begrunnelser');
+const { landkoder } = require('./landkoder');
+const { oppgavetyper } = require('./oppgavetyper');
+const { sakstyper } = require('./sakstyper');
+const { vedleggstitler } = require('./vedleggstitler');
 
 const kodeverk = {
+  behandlingsstatus,
+  behandlingstyper,
+  begrunnelser,
   landkoder,
   sakstyper,
-  behandlingstyper,
-  behandlingsstatus,
   oppgavetyper,
   vedleggstitler,
   dokumenttitler,
   finansiering,
-  begrunnelser,
 };
 module.exports.kodeverk = kodeverk;
 
