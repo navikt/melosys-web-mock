@@ -1604,7 +1604,68 @@
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
                     "type": "array",
                     "title": "The Familiemedlemmer Schema",
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "items": {
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
+                      "type": "object",
+                      "title": "The Familie medlem Schema",
+                      "required": [
+                        "fnr",
+                        "sammensattNavn",
+                        "relasjonstype"
+                      ],
+                      "properties": {
+                        "fnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
+                          "type": "string",
+                          "title": "The Fnr schema",
+                          "description": "",
+                          "examples": [
+                            "10100638274"
+                          ]
+                        },
+                        "sammensattNavn": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/sammensattNavn",
+                          "type": "string",
+                          "title": "The sammensattNavn schema",
+                          "description": "",
+                          "examples": [
+                            "GIRAFF MAGER"
+                          ]
+                        },
+                        "relasjonstype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
+                          "type": "object",
+                          "title": "The relasjonstype schema",
+                          "additionalProperties": false,
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/kode",
+                              "type": "string",
+                              "enum": ["EKTE","SAM","FARA","REPA","BARN","MORA"],
+                              "title": "The Kode Schema",
+                              "default": "",
+                              "examples": [
+                                "EKTE","SAM","FARA","REPA","BARN","MORA"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/term",
+                              "type": "string",
+                              "title": "The Term Schema",
+                              "default": "",
+                              "examples": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
