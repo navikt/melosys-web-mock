@@ -299,7 +299,7 @@
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
                     "fordel" : "kontantytelse",
-                    "beloep" : 30000,
+                    "beloep" : 30000.00,
                     "inntektsstatus" : "LoependeInnrapportert",
                     "utloeserArbeidsgiveravgift" : true,
                     "opptjeningsland" : null,
@@ -489,7 +489,7 @@
           "bostedsadresse" : {
             "gateadresse": {
               "gatenavn": "Waldemar Thranses gate",
-              "gatenummer": "98",
+              "gatenummer": 98,
               "husnummer": null,
               "husbokstav": "C"
             },
