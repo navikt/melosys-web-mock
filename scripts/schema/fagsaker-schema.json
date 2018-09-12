@@ -1605,7 +1605,7 @@
                     "items": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
                       "type": "object",
-                      "title": "The Familie meldlem Schema",
+                      "title": "The Familie medlem Schema",
                       "required": [
                         "fnr",
                         "sammensattNavn",
