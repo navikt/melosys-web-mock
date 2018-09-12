@@ -1,7 +1,4 @@
 const fs = require('fs');
-const _ = require('underscore');
-const moment = require('moment');
-const readableRandom = require('readable-random');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
@@ -10,8 +7,6 @@ const Schema = require('../test/schema-util');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
-
-const timestamp = moment();
 
 module.exports.lesFagsakerKatalog = () => {
   return Schema.lesKatalog(MOCK_DATA_FAGSAK_DIR);
@@ -41,52 +36,15 @@ module.exports.hent = (req, res) => {
   }
 };
 /**
- * Opprett ny fagsak. /api/fagsaker/ny/:fnr
+ * @deprecated Benyttes kun i spark på t5
+ * Opprett ny fagsak. [GET] /api/fagsaker/ny/:fnr
  * @param req
  * @param res
  * @returns {*|void}
  */
+
 module.exports.opprett = (req, res) => {
-  try {
-
-    const fnr = req.params.fnr && req.params.fnr.toString() || '';
-
-    fs.readdirSync(MOCK_DATA_FAGSAK_DIR).forEach(file => {
-      const fagsak = JSON.parse(fs.readFileSync(`${MOCK_DATA_FAGSAK_DIR}/${file}`, 'UTF-8'));
-      const { behandlinger } = fagsak;
-      const { saksopplysninger } = behandlinger[0];
-      if (saksopplysninger.person.fnr === fnr) {
-        return res.json(fagsak);
-      }
-    });
-    /*
-    if (!funnet) {
-      console.error(`Ingen fagsak funnet for fnr=${fnr}`);
-      const error404Message = errorMessage(404,'Not Found', req.url);
-      return res.status(404).send(JSON.stringify(error404Message));
-    }
-    */
-    const fornavn = readableRandom.getString(5).toUpperCase();
-    const etternavn = readableRandom.getString(8).toUpperCase();
-    const mockfagsak = {
-      saksnummer: _.random(5,20).toString(),
-      fnr,
-      sammensattNavn: `${fornavn} ${etternavn}`,
-      type: 'A1',
-      status: 'OPPRETTET',
-      registrertDato: timestamp,
-      kjoenn: _.sample(['M','K']),
-    };
-    const mockfile = `${MOCK_DATA_DIR}/sok/fagsaker/fnr-${fnr}.json`;
-    logger.trace(mockfile);
-    const mockfagsaker = [...mockfagsak];
-    fs.writeFileSync(mockfile, JSON.stringify(mockfagsaker, null, 2));
-    return res.status(201).send(mockfagsak);
-  }
-  catch (err) {
-    console.error(err);
-    logger.error(err);
-    return res.status(500).send(err);
-  }
+  const melding = ERR.gone410(req.uri);
+  res.status(410).send(melding);
 };
 

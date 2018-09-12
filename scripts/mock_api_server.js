@@ -61,6 +61,7 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  *
  */
 router.get('/fagsaker/:snr', fagsaker.hent);
+/* @deprecated  - benyttes kun i spark på T5 */
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
 
 /**
