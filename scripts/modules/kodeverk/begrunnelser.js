@@ -37,6 +37,10 @@ const begrunnelser = {
     {
       kode: "UGYLDIG_TERRITORIE",
       term: "Søker skal til et territorium som ikke er en del av forordningen."
+    },
+    {
+      kode: "NYE_OPPLYSNINGER",
+      term: "Nye opplysninger om arbeids/oppholdsland."
     }
   ]
 }
