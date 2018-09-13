@@ -130,7 +130,7 @@ router.get('/oppgaver/reset', oppgaver.reset);
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalpostID', journalforing.hent);
+router.get('/journalforing/:journalpostID/:oppgaveID', journalforing.hent);
 router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
 router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
 
