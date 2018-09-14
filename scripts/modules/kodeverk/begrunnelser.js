@@ -4,31 +4,57 @@
  */
 const begrunnelser = {
   vesentligVirksomhet: [
-  {
-    kode: "MINDRE_ENN_25_PROSENT",
-    term: "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge.",
-  },
-  {
-    kode: "ADMINISTRATIVT_ANDEL_OVER_50_PROSENT",
-    term: "Andelen administrativt ansatte i Norge er mer enn 50%.",
-  },
-  {
-    kode: "ANSATTE_IKKE_REKRUTTERT_I_NORGE",
-    term: "Ansatte blir ikke rekruttert i Norge.",
-  },
-  {
-    kode: "MER_ENN_50_PROSENT_I_NORGE",
-    term: "Utfører mindre enn 50% av oppdrag i Norge.",
-  },
-  {
-    kode: "MER_ENN_50_PROSENT_OPPDRAGSKONTRAKT",
-    term: "Mindre enn 50 prosent oppdragskontrakter inngått i Norge.",
-  },
-  {
-    kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
-    term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
-  },
-],
+    {
+      kode: "MINDRE_ENN_25_PROSENT",
+      term: "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge.",
+    },
+    {
+      kode: "ADMINISTRATIVT_ANDEL_OVER_50_PROSENT",
+      term: "Andelen administrativt ansatte i Norge er mer enn 50%.",
+    },
+    {
+      kode: "ANSATTE_IKKE_REKRUTTERT_I_NORGE",
+      term: "Ansatte blir ikke rekruttert i Norge.",
+    },
+    {
+      kode: "MER_ENN_50_PROSENT_I_NORGE",
+      term: "Utfører mindre enn 50% av oppdrag i Norge.",
+    },
+    {
+      kode: "MER_ENN_50_PROSENT_OPPDRAGSKONTRAKT",
+      term: "Mindre enn 50 prosent oppdragskontrakter inngått i Norge.",
+    },
+    {
+      kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
+      term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
+    },
+  ],
+  bosted: [
+    {
+      kode: "OPPHOLD_MER_ENN_12_MND",
+      term: "Oppholdet er mer enn 12 måneder."
+    },
+    {
+      kode: "HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE",
+      term: "Har ikke forutgående bosted i Norge."
+    },
+    {
+      kode: "IKKE_INTENSJON_OM_RETUR",
+      term: "Har ikke intensjon om retur til Norge."
+    },
+    {
+      kode: "FAMILIE_BOR_IKKE_I_NORGE",
+      term: "Familie bor ikke i Norge."
+    },
+    {
+      kode: "STUDIER_FINANSIERES_IKKE_FRA_NORGE",
+      term: "Studier finansieres ikke fra Norge."
+    },
+    {
+      kode: "HAR_IKKE_STUDIESTED_I_UTLANDET",
+      term: "Har ikke studiested i utlandet."
+    }
+  ],
   ikkeSkip: [
     {
       kode: "IKKE_EGET_FREMDRIFT",
