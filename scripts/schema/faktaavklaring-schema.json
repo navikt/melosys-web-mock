@@ -223,14 +223,31 @@
           "title": "The Bosted Schema",
           "additionalProperties": false,
           "required": [
-            "land"
+            "bostedLand",
+            "bostedBegrunnelser"
           ],
           "properties": {
-            "land": {
+            "bostedLand": {
               "$id": "#/properties/avklaring/properties/bosted/properties/land",
-              "type": "array",
+              "type": ["string", "null"],
               "title": "The Land Schema",
               "uniqueItems": true
+            },
+            "bostedBegrunnelser": {
+              "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser",
+              "type": "array",
+              "title": "The Land Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         },
