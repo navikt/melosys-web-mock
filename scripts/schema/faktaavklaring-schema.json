@@ -231,17 +231,20 @@
               "$id": "#/properties/avklaring/properties/bosted/properties/land",
               "type": ["string", "null"],
               "title": "The Land Schema",
-              "uniqueItems": true
+              "default": null,
+              "examples": [
+                "NO"
+              ]
             },
             "bostedBegrunnelser": {
               "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser",
               "type": "array",
-              "title": "The Land Schema",
+              "title": "The bostedsBegrunnelser Schema",
               "uniqueItems": true,
               "items": {
                 "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser/items",
                 "type": "string",
-                "title": "The Items Schema",
+                "title": "The items Schema",
                 "default": "",
                 "examples": [
                   "HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE"
