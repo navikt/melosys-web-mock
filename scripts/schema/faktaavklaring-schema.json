@@ -30,6 +30,7 @@
         "sysselsetting",
         "utsending",
         "bosted",
+        "forutgaendeMedlemskap",
         "sektor",
         "tjenestemann",
         "valgteArbeidsgivere",
@@ -146,7 +147,6 @@
             "erstatterTidligereUtsendt",
             "utsendingMindreEnn24Mnd",
             "foretakDriverINorge",
-            "harForutgaendeMedlemskap",
             "arbeidKnyttetTilVirksomhetUtlandet",
             "sammeTypeVirksomhet"
           ],
@@ -188,15 +188,6 @@
                 true
               ]
             },
-            "harForutgaendeMedlemskap": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/harForutgaendeMedlemskap",
-              "type": "boolean",
-              "title": "The Harforutgaendemedlemskap Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
             "arbeidKnyttetTilVirksomhetUtlandet": {
               "$id": "#/properties/avklaring/properties/utsending/properties/arbeidKnyttetTilVirksomhetUtlandet",
               "type": "null",
@@ -231,6 +222,43 @@
               "type": "array",
               "title": "The Land Schema",
               "uniqueItems": true
+            }
+          }
+        },
+        "forutgaendeMedlemskap": {
+          "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap",
+          "type": "object",
+          "title": "The ForutgaendeMedlemskap Schema",
+          "additionalProperties": false,
+          "required": [
+            "harForutgaendeMedlemskap",
+            "forutgaendeMedlemskapBegrunnelser"
+          ],
+          "properties": {
+            "harForutgaendeMedlemskap": {
+              "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/harForutgaendeMedlemskap",
+              "type": ["boolean", "null"],
+              "title": "The Vesentligvirksomhetinorge Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "forutgaendeMedlemskapBegrunnelser": {
+              "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/forutgaendeMedlemskapBegrunnelser",
+              "type": "array",
+              "title": "The Vesentligvirksomhetbegrunnelser Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/forutgaendeMedlemskapBegrunnelser/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "MOTTOK_IKKE_LOENN_FRA_UTSENDENDE"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         },
@@ -358,7 +386,7 @@
           "properties": {
             "vesentligVirksomhetINorge": {
               "$id": "#/properties/avklaring/properties/vesentligVirksomhet/properties/vesentligVirksomhetINorge",
-              "type": "null",
+              "type": ["boolean", "null"],
               "title": "The Vesentligvirksomhetinorge Schema",
               "default": null,
               "examples": [

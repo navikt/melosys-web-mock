@@ -19,12 +19,15 @@
       "erstatterTidligereUtsendt": false,
       "utsendingMindreEnn24Mnd": true,
       "foretakDriverINorge": true,
-      "harForutgaendeMedlemskap": true,
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
     "bosted": {
       "land": []
+    },
+    "forutgaendeMedlemskap": {
+      "harForutgaendeMedlemskap": null,
+      "forutgaendeMedlemskapBegrunnelser": []
     },
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
