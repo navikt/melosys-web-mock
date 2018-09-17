@@ -41,7 +41,7 @@ const begrunnelser = {
     ],
     opphold: [
       {
-        kode: "FEIL_LAND_JOURNALFORING",
+        kode: "FEIL_LAND_JOURNALFOERING",
         term: "Feil land oppgitt i journalføringen."
       },
       {

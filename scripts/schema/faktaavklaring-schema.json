@@ -90,7 +90,7 @@
                     "title": "The begrunnelseKode Schema",
                     "default": "",
                     "examples": [
-                      "FEIL_LAND_JOURNALFORING"
+                      "FEIL_LAND_JOURNALFOERING"
                     ],
                     "pattern": "^(.*)$"
                   }
