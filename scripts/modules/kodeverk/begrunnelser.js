@@ -38,6 +38,33 @@ const begrunnelser = {
       kode: "IKKE_ORDINAERT_SKIPSFART",
       term: "Ikke ordinært skipsfart.",
     }
-  ]}
+  ],
+  forutgaendeMedlemskap: [
+    {
+      kode: "MOTTOK_IKKE_LOENN_FRA_UTSENDENDE",
+      term: "Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge forutgående måned.",
+    },
+    {
+      kode: "MOTTOK_IKKE_LOENN_ANNEN",
+      term: "Mottok IKKE lønn fra annen arbeidsgiver opptjent i Norge forutgående måned.",
+    },
+    {
+      kode: "DIREKTE_FORUTGAENDE_MEDLEMSKAP",
+      term: "Har direkte forutgående medlemskap i MEDL.",
+    },
+    {
+      kode: "MOTTOK_LONN_OPPTJENT",
+      term: "Mottok lønn opptjent i annet land forutgående måned.",
+    },
+    {
+      kode: "ER_IKKE_REGISTRERT_I_AAREG",
+      term: "Er IKKE registrert i Aa-registeret hos utsendende arbeidsgiver.",
+    },
+    {
+      kode: "HAR_IKKE_TPS_ADRESSE",
+      term: "Har ikke TPS-adresse i Norge.",
+    }
+  ],
+  }
 ;
 module.exports.begrunnelser = begrunnelser;
