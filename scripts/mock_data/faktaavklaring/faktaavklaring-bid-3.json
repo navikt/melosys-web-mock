@@ -12,7 +12,7 @@
       "aktivitetLand": ["GB"]
     },
     "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
+      "sysselsettingType": "YRKESAKTIV"
     },
     "utsending": {
       "ansattINorskSelskap": true,
