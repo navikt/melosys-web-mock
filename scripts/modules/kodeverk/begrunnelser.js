@@ -29,6 +29,7 @@ const begrunnelser = {
       term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
     },
   ],
+  ikkeSkip: [],
   opphold: [
     {
       kode: "FEIL_LAND_JOURNALFORING",
