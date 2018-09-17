@@ -2,7 +2,8 @@
   "behandlingID": 6,
   "avklaring": {
     "opphold": {
-      "land": ["SE"],
+      "land": [
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
