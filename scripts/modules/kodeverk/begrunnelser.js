@@ -29,7 +29,16 @@ const begrunnelser = {
       term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
     },
   ],
-  ikkeSkip: [],
+  ikkeSkip: [
+    {
+    "kode": "IKKE_EGET_FREMDRIFT",
+    "term": "Ikke eget fremdrift"
+    },
+    {
+      "kode": "IKKE_ORDINAERT_SKIPSFART",
+      "term": "Ikke ordinært skipsfart"
+    }
+  ],
   opphold: [
     {
       kode: "FEIL_LAND_JOURNALFORING",
