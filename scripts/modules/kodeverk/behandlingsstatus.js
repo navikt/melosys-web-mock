@@ -4,20 +4,24 @@
  */
 const behandlingsstatus = [
   {
-    kode: 'OPPR',
+    kode: 'OPPRETTET',
     term: 'Opprettet',
   },
   {
-    kode: 'UBEH',
+    kode: 'UNDER_BEHANDLING',
     term: 'Under behandling',
   },
   {
-    kode: 'FORL',
-    term: 'Foreløpig lovvalg',
-  },
-  {
-    kode: 'AVSLU',
+    kode: 'AVSLUTTET',
     term: 'Avsluttet',
   },
+  {
+    kode: 'AVVENT_DOK_UTL',
+    term: 'AVVENT_DOK_UTL',
+  },
+  {
+    kode: 'AVVENT_DOK_PART',
+    term: 'AVVENT_DOK_PART',
+  }
 ];
 module.exports.behandlingsstatus = behandlingsstatus;
