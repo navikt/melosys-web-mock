@@ -102,7 +102,8 @@
         "bosted",
         "forutgaendeMedlemskap",
         "ikkeSkip",
-        "opphold"
+        "opphold",
+        "vesentligVirksomhet"
       ],
       "properties": {
         "bosted": {
@@ -251,6 +252,44 @@
                 "default": "",
                 "examples": [
                   "Feil land oppgitt i journalføringen."
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "vesentligVirksomhet": {
+          "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet",
+          "type": "array",
+          "title": "The Vesentligvirksomhet Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "kode",
+              "term"
+            ],
+            "properties": {
+              "kode": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema",
+                "default": "",
+                "examples": [
+                  "KUN_ADMIN_ANSATTE"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "term": {
+                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/term",
+                "type": "string",
+                "title": "The Term Schema",
+                "default": "",
+                "examples": [
+                  "Foretaket har kun administrativt ansatte i Norge."
                 ],
                 "pattern": "^(.*)$"
               }
