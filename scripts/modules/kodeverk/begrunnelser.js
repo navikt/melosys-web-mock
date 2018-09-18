@@ -5,29 +5,33 @@
 const begrunnelser = {
   vesentligVirksomhet: [
     {
-      kode: "MINDRE_ENN_25_PROSENT",
-      term: "Foretaket har hatt mindre enn 25% av samlet omsetning i Norge.",
+      kode: "KUN_ADMIN_ANSATTE",
+      term: "Foretaket har kun administrativt ansatte i Norge.",
     },
     {
-      kode: "ADMINISTRATIVT_ANDEL_OVER_50_PROSENT",
-      term: "Andelen administrativt ansatte i Norge er mer enn 50%.",
+      kode: "FORLITE_OMSETNING_NORGE",
+      term: "Foretaket har ikke hatt mer enn 25 % av sin omsetning i Norge de siste 12 månedene.",
     },
     {
-      kode: "ANSATTE_IKKE_REKRUTTERT_I_NORGE",
-      term: "Ansatte blir ikke rekruttert i Norge.",
+      kode: "FORMANGE_ADMIN_ANSATTE",
+      term: "Foretakets andel administrativt ansatte er større enn den totale andel ansatte som utfører sitt arbeid i Norge.",
     },
     {
-      kode: "MER_ENN_50_PROSENT_I_NORGE",
-      term: "Utfører mindre enn 50% av oppdrag i Norge.",
+      kode: "REKRUTTERER_ANSATTE_UTL",
+      term: "Foretaket rekrutterer ikke ansatte i Norge.",
     },
     {
-      kode: "MER_ENN_50_PROSENT_OPPDRAGSKONTRAKT",
-      term: "Mindre enn 50 prosent oppdragskontrakter inngått i Norge.",
+      kode: "FORLITE_OPPDRAG_NORGE",
+      term: "Foretaket utfører mindre enn 50 % av sine oppdrag i Norge.",
     },
     {
-      kode: "NORSK_LOVGIVNING_ER_GJELDENDE",
-      term: "Norsk lovgivning er ikke gjeldende for kontraktene.",
+      kode: "FORLITE_KONTRAKTER_NORGE",
+      term: "Foretaket inngår mindre enn 50 % av sine kontrakter med kunder i Norge.",
     },
+    {
+      kode: "KONTRAKTER_IKKE_NORSKLOV",
+      term: "Det er ikke norsk lovgivning som er gjeldende for kontraktene foretaket inngår med sine kunder",
+    }
   ],
   ikkeSkip: [
     {
@@ -55,28 +59,28 @@ const begrunnelser = {
   ],
   forutgaendeMedlemskap: [
     {
-      kode: "MOTTOK_IKKE_LOENN_FRA_UTSENDENDE",
+      kode: "IKKE_LØNNET_UTSEND_AG",
       term: "Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge forutgående måned.",
     },
     {
-      kode: "MOTTOK_IKKE_LOENN_ANNEN",
+      kode: "IKKE_LOENNET_NORGE",
       term: "Mottok IKKE lønn fra annen arbeidsgiver opptjent i Norge forutgående måned.",
     },
     {
-      kode: "DIREKTE_FORUTGAENDE_MEDLEMSKAP",
+      kode: "UNNTATT_MEDLEMSKAP",
       term: "Har direkte forutgående medlemskap i MEDL.",
     },
     {
-      kode: "MOTTOK_LONN_OPPTJENT",
+      kode: "MOTTAT_LOENN_UTL",
       term: "Mottok lønn opptjent i annet land forutgående måned.",
     },
     {
-      kode: "ER_IKKE_REGISTRERT_I_AAREG",
-      term: "Er IKKE registrert i Aa-registeret hos utsendende arbeidsgiver.",
+      kode: "IKKE_FOLKEREGISTRERT_NORGE",
+      term: "Har ikke TPS-adresse i Norge.",
     },
     {
-      kode: "HAR_IKKE_TPS_ADRESSE",
-      term: "Har ikke TPS-adresse i Norge.",
+      kode: "IKKE_ANSATT_UTSEND_AG",
+      term: "Er IKKE registrert i Aa-registeret hos utsendende arbeidsgiver.",
     }
   ]
 };
