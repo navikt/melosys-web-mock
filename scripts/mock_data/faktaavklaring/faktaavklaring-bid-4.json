@@ -16,14 +16,13 @@
       "aktivitetLand": []
     },
     "sysselsetting": {
-      "sysselsettingType": "YRKESAKTIV"
+      "sysselsettingType": null
     },
     "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
+      "ansattINorskSelskap": null,
+      "erstatterTidligereUtsendt": null,
       "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "harForutgaendeMedlemskap": true,
+      "foretakDriverINorge": null,
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
@@ -31,20 +30,24 @@
       "bostedLand": null,
       "bostedBegrunnelser": []
     },
+    "forutgaendeMedlemskap": {
+      "harForutgaendeMedlemskap": null,
+      "forutgaendeMedlemskapBegrunnelser": []
+    },
     "sektor": {
-      "ansattISektor": "INGEN_AV_DISSE"
+      "ansattISektor": null
     },
     "tjenestemann": {
-      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+      "tjenestemann": null
     },
     "valgteArbeidsgivere": [],
     "yrkesaktivitetFordeling": {
-      "antallLand": "ETT_LAND_IKKE_NORGE"
+      "antallLand": null
     },
     "virksomhet": {
-      "aktivitetINorge": "OVER_25_PROSENT",
-      "marginaltArbeid": "MARGINALT_JA",
-      "vekslingMellomLand": "EN_ELLER_BEGGE"
+      "aktivitetINorge": null,
+      "marginaltArbeid": null,
+      "vekslingMellomLand": null
     },
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,
