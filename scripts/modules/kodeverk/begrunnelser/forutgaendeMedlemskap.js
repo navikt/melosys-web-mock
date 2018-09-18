@@ -1,3 +1,8 @@
+/**
+ * Kodeverk/forutgaendeMedlemskap
+ * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
+ * @module
+ */
 const forutgaendeMedlemskap = [
   {
     kode: 'IKKE_LØNNET_UTSEND_AG',

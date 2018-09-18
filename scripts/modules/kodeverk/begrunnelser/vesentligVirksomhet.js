@@ -1,5 +1,5 @@
 /**
- * Kodeverk/vesentligvirksomhet
+ * Kodeverk/vesentligVirksomhet
  * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
  * @module
  */
