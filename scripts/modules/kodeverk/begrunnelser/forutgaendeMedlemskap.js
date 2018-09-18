@@ -5,7 +5,7 @@
  */
 const forutgaendeMedlemskap = [
   {
-    kode: 'IKKE_LØNNET_UTSEND_AG',
+    kode: 'IKKE_LOENNET_UTSEND_AG',
     term: 'Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge forutgående måned.',
   },
   {
