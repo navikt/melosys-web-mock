@@ -31,7 +31,7 @@
         "utsending",
         "bosted",
         "forutgaendeMedlemskap",
-        "sektor",
+        "yrkesaktivitet",
         "tjenestemann",
         "valgteArbeidsgivere",
         "yrkesaktivitetFordeling",
@@ -315,22 +315,22 @@
             }
           }
         },
-        "sektor": {
-          "$id": "#/properties/avklaring/properties/sektor",
+        "yrkesaktivitet": {
+          "$id": "#/properties/avklaring/properties/yrkesaktivitet",
           "type": "object",
-          "title": "The Sektor Schema",
+          "title": "The Yrkesaktivitet Schema",
           "additionalProperties": false,
           "required": [
-            "ansattISektor"
+            "yrkesaktivitetType"
           ],
           "properties": {
-            "ansattISektor": {
-              "$id": "#/properties/avklaring/properties/sektor/properties/ansattISektor",
+            "yrkesaktivitetType": {
+              "$id": "#/properties/avklaring/properties/yrkesaktivitet/properties/yrkesaktivitetType",
               "type": ["string", "null"],
-              "title": "The Ansattisektor Schema",
+              "title": "The YrkesaktivitetType Schema",
               "default": "",
               "examples": [
-                "INGEN_AV_DISSE"
+                "ORDINAER_ARBEIDSTAKER"
               ],
               "pattern": "^(.*)$"
             }
