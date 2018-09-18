@@ -14,20 +14,22 @@ const { representerer } = require('./representerer');
 const { sakstyper } = require('./sakstyper');
 const { saksstatuser } = require('./saksstatuser');
 const { vedleggstitler } = require('./vedleggstitler');
+const { vesentligvirksomhet } = require('./begrunnelser/vesentligvirksomhet');
 
 const kodeverk = {
   aktoerroller,
   behandlingsstatus,
   behandlingstyper,
   begrunnelser,
+  dokumenttitler,
+  finansiering,
   landkoder,
+  oppgavetyper,
   representerer,
   sakstyper,
   saksstatuser,
-  oppgavetyper,
   vedleggstitler,
-  dokumenttitler,
-  finansiering,
+  vesentligvirksomhet,
 };
 module.exports.kodeverk = kodeverk;
 
