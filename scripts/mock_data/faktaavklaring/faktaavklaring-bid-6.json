@@ -13,7 +13,7 @@
       "aktivitetLand": []
     },
     "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
+      "sysselsettingType": "YRKESAKTIV"
     },
     "utsending": {
       "ansattINorskSelskap": true,
@@ -24,7 +24,8 @@
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": null,
+      "bostedBegrunnelser": []
     },
     "forutgaendeMedlemskap": {
       "harForutgaendeMedlemskap": null,

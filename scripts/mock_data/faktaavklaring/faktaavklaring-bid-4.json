@@ -27,7 +27,8 @@
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": null,
+      "bostedBegrunnelser": []
     },
     "forutgaendeMedlemskap": {
       "harForutgaendeMedlemskap": null,

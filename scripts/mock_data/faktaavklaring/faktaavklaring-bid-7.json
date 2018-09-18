@@ -25,7 +25,8 @@
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": "NO",
+      "bostedBegrunnelser": []
     },
     "forutgaendeMedlemskap": {
       "harForutgaendeMedlemskap": null,
