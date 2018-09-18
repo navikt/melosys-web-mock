@@ -26,7 +26,8 @@
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": null,
+      "bostedBegrunnelser": []
     },
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
