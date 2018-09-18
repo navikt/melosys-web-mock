@@ -165,7 +165,7 @@
                 "title": "The Kode Schema",
                 "default": "",
                 "examples": [
-                  "IKKE_LØNNET_UTSEND_AG"
+                  "IKKE_LOENNET_UTSEND_AG"
                 ],
                 "pattern": "^(.*)$"
               },
