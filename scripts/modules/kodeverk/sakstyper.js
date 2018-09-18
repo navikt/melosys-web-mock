@@ -1,5 +1,7 @@
 /**
  * Kodeverk/sakstyper
+ * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
+ * Dato: 13SEP2018, Marte Okkelmo
  * @module
  */
 const sakstyper = [
@@ -8,12 +10,12 @@ const sakstyper = [
     term: 'EU/EØS',
   },
   {
-    kode: 'TRG_AVT',
-    term: 'Trygdeavtale',
+    kode: 'TRYGDEAVTALE',
+    term: 'Saken skal behandles etter en trygdeavtale',
   },
   {
-    kode: 'FLK_TRG',
-    term: 'Folketrygd',
+    kode: 'FTRL',
+    term: 'Saken skal behandles etter folketrygdloven',
   },
 ];
 module.exports.sakstyper = sakstyper;
