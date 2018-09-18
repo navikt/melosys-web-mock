@@ -1635,13 +1635,34 @@
                         },
                         "relasjonstype": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
-                          "type": "string",
-                          "enum": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
+                          "type": "object",
                           "title": "The relasjonstype schema",
-                          "description": "",
-                          "examples": [
-                            "Barn av"
-                          ]
+                          "additionalProperties": false,
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/kode",
+                              "type": "string",
+                              "enum": ["EKTE","SAM","FARA","REPA","BARN","MORA"],
+                              "title": "The Kode Schema",
+                              "default": "",
+                              "examples": [
+                                "EKTE","SAM","FARA","REPA","BARN","MORA"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/term",
+                              "type": "string",
+                              "title": "The Term Schema",
+                              "default": "",
+                              "examples": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
+                              "pattern": "^(.*)$"
+                            }
+                          }
                         }
                       }
                     }
