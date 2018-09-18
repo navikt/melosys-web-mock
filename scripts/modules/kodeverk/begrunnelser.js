@@ -57,13 +57,28 @@ const begrunnelser = {
   ],
   ikkeSkip: [
     {
-      kode: "IKKE_EGET_FREMDRIFT",
-      term: "Ikke eget fremdrift",
+      "kode": "IKKE_EGET_FREMDRIFT",
+        "term": "Ikke eget fremdrift"
+      },
+      {
+        "kode": "IKKE_ORDINAERT_SKIPSFART",
+        "term": "Ikke ordinært skipsfart"
+      }
+    ],
+  opphold: [
+    {
+      kode: "FEIL_LAND_JOURNALFOERING",
+      term: "Feil land oppgitt i journalføringen."
     },
     {
-      kode: "IKKE_ORDINAERT_SKIPSFART",
-      term: "Ikke ordinært skipsfart.",
+      kode: "UGYLDIG_TERRITORIE",
+      term: "Søker skal til et territorium som ikke er en del av forordningen."
+    },
+    {
+      kode: "NYE_OPPLYSNINGER",
+      term: "Nye opplysninger om arbeids/oppholdsland."
     }
-  ]}
-;
+  ]
+};
+
 module.exports.begrunnelser = begrunnelser;

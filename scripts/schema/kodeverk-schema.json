@@ -23,9 +23,10 @@
       "title": "The Begrunnelser Schema",
       "additionalProperties": false,
       "required": [
+        "ikkeSkip",
         "vesentligVirksomhet",
-        "bosted",
-        "ikkeSkip"
+        "opphold",
+        "bosted"
       ],
       "properties": {
         "vesentligVirksomhet": {
@@ -136,6 +137,44 @@
                 "default": "",
                 "examples": [
                   "Ikke eget fremdrift"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        },
+        "opphold": {
+          "$id": "#/properties/begrunnelser/properties/opphold",
+          "type": "array",
+          "title": "The Opphold Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/opphold/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "kode",
+              "term"
+            ],
+            "properties": {
+              "kode": {
+                "$id": "#/properties/begrunnelser/properties/opphold/items/properties/kode",
+                "type": "string",
+                "title": "The Kode Schema",
+                "default": "",
+                "examples": [
+                  "FEIL_LAND_JOURNALFOERING"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "term": {
+                "$id": "#/properties/begrunnelser/properties/opphold/items/properties/term",
+                "type": "string",
+                "title": "The Term Schema",
+                "default": "",
+                "examples": [
+                  "Feil land oppgitt i journalføringen."
                 ],
                 "pattern": "^(.*)$"
               }

@@ -2,7 +2,9 @@
   "behandlingID": 7,
   "avklaring": {
     "opphold": {
-      "land": ["GB"],
+      "land": [
+        { "landKode": "GB", "erGyldig": true, "begrunnelseKode": null}
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
