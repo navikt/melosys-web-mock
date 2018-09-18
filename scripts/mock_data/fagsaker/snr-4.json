@@ -1,11 +1,16 @@
 {
+  "saksnummer": "4",
+  "type": {
+    "kode":"EU_EOS",
+    "term":"EU/EØS"
+  },
   "status" : {
     "kode" : "OPPR",
     "term" : "Opprettet"
   },
   "registrertDato" : "2018-08-27T07:16:03.273Z",
   "endretDato" : "2018-08-27T07:16:03.273Z",
-  "gsakSaksnummer" : null,
+  "gsakSaksnummer" : 131063977,
   "behandlinger" : [
     {
       "saksopplysninger" : {
@@ -294,7 +299,7 @@
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
                     "fordel" : "kontantytelse",
-                    "beloep" : 30000,
+                    "beloep" : 30000.00,
                     "inntektsstatus" : "LoependeInnrapportert",
                     "utloeserArbeidsgiveravgift" : true,
                     "opptjeningsland" : null,
@@ -483,15 +488,16 @@
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
             "gateadresse": {
-              "gatenavn": null,
-              "gatenummer": null,
+              "gatenavn": "Waldemar Thranses gate",
+              "gatenummer": 98,
               "husnummer": null,
-              "husbokstav": null
+              "husbokstav": "C"
             },
-            "postnr": null,
+            "postnr": "0175",
+            "poststed": "OSLO",
             "land": {
-              "kode": null,
-              "term": null
+              "kode": "NO",
+              "term": "Norge"
             }
           },
           "personStatus" : {
@@ -510,6 +516,7 @@
             "kode" : "NOR",
             "term" : "NORGE"
           },
+          "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
 
           ]
@@ -532,10 +539,5 @@
         }
       }
     }
-  ],
-  "saksnummer" : "MEL-1",
-  "type" : {
-    "kode" : "EU_EOS",
-    "term" : "EU/EØS"
-  }
+  ]
 }

@@ -2,7 +2,11 @@
   "behandlingID": 4,
   "avklaring": {
     "opphold": {
-      "land": ["DE"],
+      "land": [
+        { "landKode": "GB", "erGyldig": true, "begrunnelseKode": null},
+        { "landKode": "SE", "erGyldig": true, "begrunnelseKode": null},
+        { "landKode": "DK", "erGyldig": true, "begrunnelseKode": null}
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
@@ -12,34 +16,38 @@
       "aktivitetLand": []
     },
     "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
+      "sysselsettingType": null
     },
     "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
+      "ansattINorskSelskap": null,
+      "erstatterTidligereUtsendt": null,
       "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "harForutgaendeMedlemskap": true,
+      "foretakDriverINorge": null,
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": null,
+      "bostedBegrunnelser": []
+    },
+    "forutgaendeMedlemskap": {
+      "harForutgaendeMedlemskap": null,
+      "forutgaendeMedlemskapBegrunnelser": []
     },
     "sektor": {
-      "ansattISektor": "INGEN_AV_DISSE"
+      "ansattISektor": null
     },
     "tjenestemann": {
-      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
+      "tjenestemann": null
     },
     "valgteArbeidsgivere": [],
     "yrkesaktivitetFordeling": {
-      "antallLand": "ETT_LAND_IKKE_NORGE"
+      "antallLand": null
     },
     "virksomhet": {
-      "aktivitetINorge": "OVER_25_PROSENT",
-      "marginaltArbeid": "MARGINALT_JA",
-      "vekslingMellomLand": "EN_ELLER_BEGGE"
+      "aktivitetINorge": null,
+      "marginaltArbeid": null,
+      "vekslingMellomLand": null
     },
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,

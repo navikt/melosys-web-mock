@@ -51,7 +51,6 @@ module.exports.hent = (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const behandlingID = req.params.behandlingID;
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug("faktaavklaring:send", JSON.stringify(jsonBody));
@@ -64,9 +63,12 @@ module.exports.send = (req, res) => {
   if (!valid) {
     return valideringFeil(req, res);
   }
+  let behandlingID, rest;
+  ({behandlingID, ...rest} = jsonBody);
+  behandlingID = req.params.behandlingID;
   const faktaavklaring = {
     behandlingID,
-    faktaavklaring: { ...jsonBody.faktaavklaring }
+    rest
   };
 
   return res.json(faktaavklaring);
