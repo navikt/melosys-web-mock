@@ -39,6 +39,20 @@ const begrunnelser = {
       term: "Ikke ordinært skipsfart.",
     }
   ],
+  opphold: [
+    {
+      kode: "FEIL_LAND_JOURNALFOERING",
+      term: "Feil land oppgitt i journalføringen."
+    },
+    {
+      kode: "UGYLDIG_TERRITORIE",
+      term: "Søker skal til et territorium som ikke er en del av forordningen."
+    },
+    {
+      kode: "NYE_OPPLYSNINGER",
+      term: "Nye opplysninger om arbeids/oppholdsland."
+    }
+  ],
   forutgaendeMedlemskap: [
     {
       kode: "MOTTOK_IKKE_LOENN_FRA_UTSENDENDE",
@@ -64,7 +78,6 @@ const begrunnelser = {
       kode: "HAR_IKKE_TPS_ADRESSE",
       term: "Har ikke TPS-adresse i Norge.",
     }
-  ],
-  }
+  ]}
 ;
 module.exports.begrunnelser = begrunnelser;

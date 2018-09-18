@@ -56,13 +56,46 @@
               "uniqueItems": true,
               "items": {
                 "$id": "#/properties/avklaring/properties/opphold/properties/land/items",
-                "type": "string",
+                "type": "object",
                 "title": "The Items Schema",
-                "default": "",
-                "examples": [
-                  "DE"
+                "additionalItems": false,
+                "required": [
+                  "landKode",
+                  "erGyldig",
+                  "begrunnelseKode"
                 ],
-                "pattern": "^(.*)$"
+                "properties": {
+                  "landkode": {
+                    "$id": "#/properties/avklaring/properties/opphold/properties/land/items/properties/landKode",
+                    "type": "string",
+                    "title": "The landKode Schema",
+                    "default": "",
+                    "examples": [
+                      "NO"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "erGyldig": {
+                    "$id": "#/properties/avklaring/properties/opphold/properties/land/items/properties/erGyldig",
+                    "type": "boolean",
+                    "title": "The ErGyldig Schema",
+                    "default": "",
+                    "examples": [
+                      true
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "begrunnelseKode": {
+                    "$id": "#/properties/avklaring/properties/opphold/properties/land/items/properties/begrunnelseKode",
+                    "type": ["string", "null"],
+                    "title": "The begrunnelseKode Schema",
+                    "default": "",
+                    "examples": [
+                      "FEIL_LAND_JOURNALFOERING"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
               }
             },
             "periode": {
