@@ -21,9 +21,10 @@ const katalogNavn = path => {
 module.exports.katalogNavn = katalogNavn;
 
 module.exports.katalogTittel = path => {
-  const katalog = katalogNavn(path)
+  const katalog = katalogNavn(path);
   return katalog.charAt(0).toLocaleUpperCase() + katalog.slice(1);
-}
+};
+
 module.exports.lesKatalog = dirpath => {
   let catalog = [];
   const files = glob.sync('*.json', {
@@ -40,6 +41,7 @@ module.exports.lesKatalog = dirpath => {
   });
   return catalog;
 };
+
 module.exports.lesKatalogElement = path => {
   const document =  JSON.parse(fs.readFileSync(path, "utf8"));
   const dirs = path.split('/');
