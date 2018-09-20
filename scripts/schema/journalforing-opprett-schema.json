@@ -11,6 +11,8 @@
     "brukerID",
     "avsenderID",
     "avsenderNavn",
+    "arbeidsgiverID",
+    "representantID",
     "dokumentID",
     "dokumenttittel",
     "vedleggstitler",
@@ -60,20 +62,40 @@
     "avsenderNavn": {
       "$id": "#/properties/avsenderNavn",
       "type": "string",
-      "title": "The avsenderNavn Schema",
+      "title": "The Avsendernavn Schema",
       "default": "",
       "examples": [
-        "30098000492"
+        "PEN FUL"
       ],
       "pattern": "^(.*)$"
+    },
+    "arbeidsgiverID": {
+      "$id": "#/properties/arbeidsgiverID",
+      "type": "string",
+      "title": "The Arbeidsgiverid Schema",
+      "default": "",
+      "examples": [
+        "171178022"
+      ],
+      "pattern": "^[0-9]{9}$"
+    },
+    "representantID": {
+      "$id": "#/properties/representantID",
+      "type": ["string","null"],
+      "title": "The Representantid Schema",
+      "default": "",
+      "examples": [
+        "300980004"
+      ],
+      "pattern": "^[0-9]{9}$"
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
       "type": "string",
-      "title": "The dokumentID Schema",
+      "title": "The Dokumentid Schema",
       "default": "",
       "examples": [
-        "30098000492"
+        "2434234234"
       ],
       "pattern": "^(.*)$"
     },
@@ -170,7 +192,7 @@
             "default": "",
             "examples": [
               "NO",
-              "IS"
+              "ES"
             ],
             "pattern": "^(.*)$"
           }
