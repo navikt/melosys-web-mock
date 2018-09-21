@@ -15,14 +15,6 @@
     "sysselsetting": {
       "sysselsettingType": "YRKESAKTIV"
     },
-    "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
-      "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "arbeidKnyttetTilVirksomhetUtlandet": null,
-      "sammeTypeVirksomhet": null
-    },
     "bosted": {
       "bostedLand": null,
       "bostedBegrunnelser": []
@@ -49,6 +41,10 @@
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,
       "vesentligVirksomhetBegrunnelser": []
+    },
+    "vurdering": {
+      "artikkel": "ART12_1",
+      "begrunnelser": []
     }
   }
 }
