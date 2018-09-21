@@ -432,7 +432,6 @@
             "bostedUtenforNorge",
             "familiesBostedLandKode",
             "antallMaanederINorge",
-            "EOSBarnetrygdFraNAV",
             "adresseIUtlandet",
             "oppgittAdresse"
           ],
@@ -472,15 +471,6 @@
               "default": 0,
               "examples": [
                 8
-              ]
-            },
-            "EOSBarnetrygdFraNAV": {
-              "$id": "#/properties/soeknadDokument/properties/bosted/properties/EOSBarnetrygdFraNAV",
-              "type": ["boolean","null"],
-              "title": "The Eosbarnetrygdfranav Schema",
-              "default": false,
-              "examples": [
-                true
               ]
             },
             "adresseIUtlandet": {
