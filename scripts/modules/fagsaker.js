@@ -35,6 +35,18 @@ module.exports.hent = (req, res) => {
     return res.status(500).send(err);
   }
 };
+
+module.exports.oppfrisk = (req, res) => {
+  try {
+    return res.status(204).send();
+  }
+  catch (err) {
+    console.error(err);
+    logger.error(err);
+    return res.status(500).send(err);
+  }
+};
+
 /**
  * @deprecated Benyttes kun i spark på t5
  * Opprett ny fagsak. [GET] /api/fagsaker/ny/:fnr

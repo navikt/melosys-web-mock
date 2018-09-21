@@ -28,7 +28,6 @@
         "opphold",
         "aktivitet",
         "sysselsetting",
-        "utsending",
         "bosted",
         "forutgaendeMedlemskap",
         "yrkesaktivitet",
@@ -36,7 +35,8 @@
         "valgteArbeidsgivere",
         "yrkesaktivitetFordeling",
         "virksomhet",
-        "vesentligVirksomhet"
+        "vesentligVirksomhet",
+        "vurdering"
       ],
       "properties": {
         "opphold": {
@@ -167,77 +167,6 @@
                 "ARBEIDSTAKER"
               ],
               "pattern": "^(.*)$"
-            }
-          }
-        },
-        "utsending": {
-          "$id": "#/properties/avklaring/properties/utsending",
-          "type": "object",
-          "title": "The Utsending Schema",
-          "additionalProperties": false,
-          "required": [
-            "ansattINorskSelskap",
-            "erstatterTidligereUtsendt",
-            "utsendingMindreEnn24Mnd",
-            "foretakDriverINorge",
-            "arbeidKnyttetTilVirksomhetUtlandet",
-            "sammeTypeVirksomhet"
-          ],
-          "properties": {
-            "ansattINorskSelskap": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/ansattINorskSelskap",
-              "type": ["boolean", "null"],
-              "title": "The Ansattinorskselskap Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "erstatterTidligereUtsendt": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/erstatterTidligereUtsendt",
-              "type": ["boolean", "null"],
-              "title": "The Erstattertidligereutsendt Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendingMindreEnn24Mnd": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/utsendingMindreEnn24Mnd",
-              "type": ["boolean", "null"],
-              "title": "The Utsendingmindreenn24mnd Schema",
-              "default": false,
-              "examples": [
-                false,
-                true
-              ]
-            },
-            "foretakDriverINorge": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/foretakDriverINorge",
-              "type": ["boolean", "null"],
-              "title": "The Foretakdriverinorge Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "arbeidKnyttetTilVirksomhetUtlandet": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/arbeidKnyttetTilVirksomhetUtlandet",
-              "type": ["boolean", "null"],
-              "title": "The Arbeidknyttettilvirksomhetutlandet Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "sammeTypeVirksomhet": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/sammeTypeVirksomhet",
-              "type": ["boolean", "null"],
-              "title": "The Sammetypevirksomhet Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
             }
           }
         },
@@ -451,6 +380,43 @@
               "type": "array",
               "title": "The Vesentligvirksomhetbegrunnelser Schema",
               "uniqueItems": true
+            }
+          }
+        },
+        "vurdering": {
+          "$id": "#/properties/vurdering/properties/avklaring",
+          "type": "object",
+          "title": "The Avklaring Schema",
+          "additionalProperties": false,
+          "required": [
+            "artikkel",
+            "begrunnelser"
+          ],
+          "properties": {
+            "artikkel": {
+              "$id": "#/properties/avklaring/properties/vurdering/properties/artikkel",
+              "type": ["string", "null"],
+              "title": "The Artikkel Schema",
+              "default": null,
+              "examples": [
+                "ART12_1"
+              ]
+            },
+            "begrunnelser": {
+              "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser",
+              "type": "array",
+              "title": "The Vesentligvirksomhetbegrunnelser Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "IKKE_VESENTLIGVIRKSOMHET"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         }

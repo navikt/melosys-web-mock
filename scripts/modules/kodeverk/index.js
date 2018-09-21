@@ -11,6 +11,7 @@ const { landkoder } = require('./landkoder');
 const { oppgavetyper } = require('./oppgavetyper');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
+const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
 
 const kodeverk = {
   behandlingsstatus,
@@ -22,6 +23,7 @@ const kodeverk = {
   oppgavetyper,
   sakstyper,
   vedleggstitler,
+  lovvalgsbestemmelser,
 };
 module.exports.kodeverk = kodeverk;
 
