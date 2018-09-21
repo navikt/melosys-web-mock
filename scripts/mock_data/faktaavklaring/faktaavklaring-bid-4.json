@@ -34,8 +34,8 @@
       "harForutgaendeMedlemskap": null,
       "forutgaendeMedlemskapBegrunnelser": []
     },
-    "sektor": {
-      "ansattISektor": null
+    "yrkesaktivitet": {
+      "yrkesaktivitetType": null
     },
     "tjenestemann": {
       "tjenestemann": null
