@@ -1,34 +1,49 @@
 const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
-const { lesJournalforingKatalog } = require('../modules/journalforing');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
+const SCRIPTS_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const MOCK_DATA_JOURNALFORING_DIR = `${SCRIPTS_DIR}/mock_data/journalforing`;
 
-const schemajson = `${SCHEMA_DIR}/person-schema.json`;
+const testJournalPost = (postnavn) => {
+  const postPath = `${MOCK_DATA_JOURNALFORING_DIR}/post/${postnavn}.json`;
+  const postSchemaPath = `${SCHEMA_DIR}/journalforing-${postnavn}-schema.json`;
+
+  const elem = Schema.lesKatalogElement(postPath);
+  const postSchema = Schema.lesSchema(postSchemaPath);
+
+  const ajv = new Ajv({allErrors: true});
+  const postValidator = ajv.compile(postSchema);
+
+  Schema.runTest(elem, ajv, postValidator);
+};
+
+const schemajson = `${SCHEMA_DIR}/journalforing-schema.json`;
 const schema = Schema.lesSchema(schemajson);
-const catalog = lesJournalforingKatalog();
+const catalog = Schema.lesKatalog(MOCK_DATA_JOURNALFORING_DIR);
 
+
+const ajv = new Ajv({allErrors: true});
 const validate = ajv.compile(schema);
 
-
-const testAll = () => {
-  console.log(colors.blue('Journalforing'));
-  catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
-};
 const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
   console.log(colors.blue(tittel));
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
+const testAll = () => {
+  console.log(colors.blue('Journalforing'));
+  catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+  console.log(colors.blue(`Journalforing/post`));
+  testJournalPost('opprett');
+  testJournalPost('tilordne');
+};
 
 const journalforing = {
-  testAll,
   testOne,
+  testAll,
 };
 module.exports.journalforing = journalforing;
-
