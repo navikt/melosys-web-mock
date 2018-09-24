@@ -18,18 +18,9 @@ module.exports.lesJournalforingKatalog = () => {
   return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = (journalpostID, oppgaveID) => {
-  /* TODO lage flere filer.
-  const filnavn = finnJournalpostFil(journalpostID);
-  return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
-  */
-  try {
-    return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"));
-  }
-  catch (err) {
-    console.log(err);
-    logger.error(err)
-  }
+const lesJournalOppgave = (journalpostID, oppgaveID) => {
+  const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-${oppgaveID}.json`;
+  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
 };
 
 module.exports.hent = (req, res) => {
@@ -45,7 +36,7 @@ module.exports.hent = (req, res) => {
       const melding = ERR.badRequest400(url, "oppgaveID mangler");
       return res.status(400).send(melding);
     }
-    const journalpost = lesOppgave(journalpostID,oppgaveID);
+    const journalpost = lesJournalOppgave(journalpostID,oppgaveID);
     return res.json(journalpost);
   }
   catch (err) {
