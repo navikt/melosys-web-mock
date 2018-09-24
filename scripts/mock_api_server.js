@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
+const saksopplysninger = require('./modules/saksopplysninger');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
@@ -61,6 +62,7 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  *
  */
 router.get('/fagsaker/:snr', fagsaker.hent);
+/* @deprecated  - benyttes kun i spark på T5 */
 router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
 
 /**
@@ -129,7 +131,7 @@ router.get('/oppgaver/reset', oppgaver.reset);
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalpostID', journalforing.hent);
+router.get('/journalforing/:journalpostID/:oppgaveID', journalforing.hent);
 router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
 router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
 
@@ -144,6 +146,12 @@ router.get('/personer', personer.hent);
  * ---------------------------------------------------------------
  */
 router.get('/organisasjoner', organisasjoner.hent);
+
+/**
+ * SAKSOPPLYSNINGER
+ * ---------------------------------------------------------------
+ */
+router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
 
 /**
  * DOKUMENTER

@@ -299,7 +299,7 @@
                     "inntektsperiodetype" : "Maaned",
                     "inntektskilde" : "A-ordningen",
                     "fordel" : "kontantytelse",
-                    "beloep" : 30000,
+                    "beloep" : 30000.00,
                     "inntektsstatus" : "LoependeInnrapportert",
                     "utloeserArbeidsgiveravgift" : true,
                     "opptjeningsland" : null,
@@ -641,14 +641,17 @@
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
             "gateadresse": {
-              "gatenavn": null,
-              "gatenummer": null,
+              "gatenavn": "Waldemar Thranses gate",
+              "gatenummer": 98,
               "husnummer": null,
-              "husbokstav": null
+              "husbokstav": "C"
             },
-            "postnr": null,
-            "poststed":null,
-            "land": null
+            "postnr": "0175",
+            "poststed": "OSLO",
+            "land": {
+              "kode": "NO",
+              "term": "Norge"
+            }
           },
           "personStatus" : {
             "kode" : "BOSA",

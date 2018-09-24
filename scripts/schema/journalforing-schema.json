@@ -1,67 +1,87 @@
 {
-  "$id": "http://nav.no/melosys/journalforing.json",
-  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://nav.no/journalforing.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "brukerID",
+    "avsenderID",
+    "erBrukerAvsender",
+    "dokument"
+  ],
   "properties": {
     "brukerID": {
-      "$id": "/properties/brukerID",
+      "$id": "#/properties/brukerID",
       "type": "string",
-      "title": "The Brukerid Schema ",
+      "title": "The Brukerid Schema",
       "default": "",
       "examples": [
         "30098000492"
-      ]
+      ],
+      "pattern": "^[0-9]{9,11}$"
     },
     "avsenderID": {
-      "$id": "/properties/avsenderID",
-      "type": "string",
-      "title": "The Avsenderid Schema ",
+      "$id": "#/properties/avsenderID",
+      "type": ["string","null"],
+      "title": "The Avsenderid Schema",
       "default": "",
       "examples": [
         "30098000492"
-      ]
+      ],
+      "pattern": "[0-9]{9,11}$"
     },
     "erBrukerAvsender": {
-      "$id": "/properties/erBrukerAvsender",
+      "$id": "#/properties/erBrukerAvsender",
       "type": "boolean",
-      "title": "The Erbrukeravsender Schema ",
+      "title": "The Erbrukeravsender Schema",
       "default": false,
       "examples": [
         true
       ]
     },
     "dokument": {
-      "$id": "/properties/dokument",
+      "$id": "#/properties/dokument",
       "type": "object",
+      "title": "The Dokument Schema",
+      "additionalProperties": false,
+      "required": [
+        "ID",
+        "tittel",
+        "mottattDato"
+      ],
       "properties": {
         "ID": {
-          "$id": "/properties/dokument/properties/ID",
+          "$id": "#/properties/dokument/properties/ID",
           "type": "string",
-          "title": "The Id Schema ",
+          "title": "The Id Schema",
           "default": "",
           "examples": [
             "Dok_ID"
-          ]
+          ],
+          "pattern": "^(.*)$"
         },
         "tittel": {
-          "$id": "/properties/dokument/properties/tittel",
+          "$id": "#/properties/dokument/properties/tittel",
           "type": "string",
-          "title": "The Tittel Schema ",
+          "title": "The Tittel Schema",
           "default": "",
           "examples": [
             "Søknad om medlemskap"
-          ]
+          ],
+          "pattern": "^(.*)$"
         },
         "mottattDato": {
-          "$id": "/properties/dokument/properties/mottattDato",
+          "$id": "#/properties/dokument/properties/mottattDato",
           "type": "string",
           "format": "date-time",
-          "title": "The Mottattdato Schema ",
+          "title": "The Mottattdato Schema",
           "default": "",
           "examples": [
-            "2018-05-04T15:15:25.622"
-          ]
+            "2018-05-04T15:15:25.622Z"
+          ],
+          "pattern": "^(.*)$"
         }
       }
     }

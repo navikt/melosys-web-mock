@@ -4,28 +4,28 @@
  */
 const behandlingstyper = [
   {
-    kode: 'SKND',
-    term: 'Søknad',
+    kode: 'SOEKNAD',
+    term: 'Behandling av søknad'
   },
   {
-    kode: 'UFM',
-    term: 'Unntak medlemskap',
+    kode: 'KLAGE',
+    term: 'Behandling av klage eller anke'
   },
   {
-    kode: 'KLG',
-    term: 'Klage',
+    kode: 'NORGE_UTPEKT',
+    term: 'Behandling av at Norge er utpekt fra utenlandske myndigheter'
   },
   {
-    kode: 'REV',
-    term: 'Revurdering',
+    kode: 'PAASTAND_UTL',
+    term: 'Behandling av påstand fra utenlandske myndigheter'
   },
   {
-    kode: 'ML_U',
-    term: 'Melding fra utenlandsk myndighet',
+    kode: 'POSTING_UTL',
+    term: 'Behandling av melding om posting fra utenlandske myndigheter'
   },
   {
-    kode: 'PS_U',
-    term: 'Påstand fra utenlandsk myndighet',
-  },
+    kode: 'REVURDERING',
+    term: 'Behandling av revurdering av et tidligere vedtak'
+  }
 ];
 module.exports.behandlingstyper = behandlingstyper;

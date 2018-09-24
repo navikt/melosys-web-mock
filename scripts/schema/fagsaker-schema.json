@@ -420,21 +420,21 @@
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Antalltimergammeltaa Schema",
                             "default": null,
                             "examples": [
-                              0,
+                              0.5,
                               null
                             ]
                           },
                           "beregnetStillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetStillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Beregnetstillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -480,11 +480,11 @@
                           },
                           "stillingsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/stillingsprosent",
-                            "type": ["integer","null"],
+                            "type": ["number","null"],
                             "title": "The Stillingsprosent Schema",
-                            "default": 100,
+                            "default": 100.0,
                             "examples": [
-                              100,
+                              100.0,
                               null
                             ]
                           },
@@ -601,7 +601,10 @@
                           },
                           "permisjonsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
-                            "type": ["integer","null"]
+                            "type": ["number","null"],
+                            "examples": [
+                              "0.33"
+                            ]
                           },
                           "permisjonOgPermittering": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonOgPermittering",
@@ -743,7 +746,7 @@
                           },
                           "antallTimer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
-                            "type": ["integer","null"]
+                            "type": ["number","null"]
                           }
                         }
                       }
@@ -805,22 +808,12 @@
                       "title": "The Postadresse Schema",
                       "additionalProperties": false,
                       "required": [
-                        "postnr",
                         "gateadresse",
+                        "postnr",
                         "poststed",
                         "land"
                       ],
                       "properties": {
-                        "postnr": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
-                          "type": ["string", "null"],
-                          "title": "The Postnr Schema",
-                          "default": "",
-                          "examples": [
-                            "3936"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
                         "gateadresse": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/gateadresse",
                           "type": "object",
@@ -872,6 +865,16 @@
                             }
                           }
                         },
+                        "postnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/postnr",
+                          "type": ["string", "null"],
+                          "title": "The Postnr Schema",
+                          "default": "",
+                          "examples": [
+                            "3936"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
                         "poststed": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse/properties/poststed",
                           "type": ["string","null"],
@@ -919,22 +922,12 @@
                       "title": "The Forretningsadresse Schema",
                       "additionalProperties": false,
                       "required": [
-                        "postnr",
                         "gateadresse",
+                        "postnr",
                         "poststed",
                         "land"
                       ],
                       "properties": {
-                        "postnr": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
-                          "type": "string",
-                          "title": "The Postnr Schema",
-                          "default": "",
-                          "examples": [
-                            "3936"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
                         "gateadresse": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse",
                           "type": "object",
@@ -976,7 +969,7 @@
                             },
                             "gatenavn": {
                               "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
-                              "type": "string",
+                              "type": ["string","null"],
                               "title": "The Gatenavn Schema",
                               "default": "",
                               "examples": [
@@ -986,9 +979,19 @@
                             }
                           }
                         },
+                        "postnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
+                          "type": ["string", "null"],
+                          "title": "The Postnr Schema",
+                          "default": "",
+                          "examples": [
+                            "3936"
+                          ],
+                          "pattern": "^(.*)$"
+                        },
                         "poststed": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/poststed",
-                          "type": "string",
+                          "type": ["string", "null"],
                           "title": "The Poststed Schema",
                           "default": "",
                           "examples": [
@@ -998,7 +1001,7 @@
                         },
                         "land": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/forretningsadresse/properties/land",
-                          "type": "string",
+                          "type": ["string", "null"],
                           "title": "The Land Schema",
                           "default": "",
                           "examples": [
@@ -1142,11 +1145,11 @@
                                   },
                                   "beloep": {
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/beloep",
-                                    "type": "integer",
+                                    "type": "number",
                                     "title": "The Beloep Schema",
-                                    "default": 0,
+                                    "default": 0.0,
                                     "examples": [
-                                      30000
+                                      30000.00
                                     ]
                                   },
                                   "inntektsstatus": {
@@ -1704,7 +1707,7 @@
                           },
                           "gatenummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Gatenummer Schema",
                             "default": null,
                             "examples": [
@@ -1713,7 +1716,7 @@
                           },
                           "husnummer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
-                            "type": ["string","null"],
+                            "type": ["integer","null"],
                             "title": "The Husnummer Schema",
                             "default": null,
                             "examples": [
@@ -1752,12 +1755,29 @@
                       },
                       "land": {
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": ["string","null"],
+                        "type": "object",
                         "title": "The Land Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
+                        "additionalProperties": false,
+                        "required": [
+                          "kode",
+                          "term"
+                        ],
+                        "properties": {
+                          "kode": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
+                            "type": ["string","null"],
+                            "examples": [
+                              "NO"
+                            ]
+                          },
+                          "term": {
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
+                            "type": ["string","null"],
+                            "examples": [
+                              "Norge"
+                            ]
+                          }
+                        }
                       }
                     }
                   },
@@ -1900,6 +1920,7 @@
                   "statsborgerskapDato": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
                     "type": "string",
+                    "format": "date",
                     "title": "The Statsborgerskapdato Schema",
                     "default": "",
                     "examples": [
@@ -1911,7 +1932,68 @@
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
                     "type": "array",
                     "title": "The Familiemedlemmer Schema",
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "items": {
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items",
+                      "type": "object",
+                      "title": "The Familie medlem Schema",
+                      "required": [
+                        "fnr",
+                        "sammensattNavn",
+                        "relasjonstype"
+                      ],
+                      "properties": {
+                        "fnr": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/fnr",
+                          "type": "string",
+                          "title": "The Fnr schema",
+                          "description": "",
+                          "examples": [
+                            "10100638274"
+                          ]
+                        },
+                        "sammensattNavn": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/sammensattNavn",
+                          "type": "string",
+                          "title": "The sammensattNavn schema",
+                          "description": "",
+                          "examples": [
+                            "GIRAFF MAGER"
+                          ]
+                        },
+                        "relasjonstype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
+                          "type": "object",
+                          "title": "The relasjonstype schema",
+                          "additionalProperties": false,
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/kode",
+                              "type": "string",
+                              "enum": ["EKTE","SAM","FARA","REPA","BARN","MORA"],
+                              "title": "The Kode Schema",
+                              "default": "",
+                              "examples": [
+                                "EKTE","SAM","FARA","REPA","BARN","MORA"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/term",
+                              "type": "string",
+                              "title": "The Term Schema",
+                              "default": "",
+                              "examples": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
