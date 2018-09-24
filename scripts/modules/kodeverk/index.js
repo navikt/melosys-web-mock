@@ -16,12 +16,12 @@ const kodeverk = {
   behandlingsstatus,
   behandlingstyper,
   begrunnelser,
-  landkoder,
-  sakstyper,
-  oppgavetyper,
-  vedleggstitler,
   dokumenttitler,
   finansiering,
+  landkoder,
+  oppgavetyper,
+  sakstyper,
+  vedleggstitler,
 };
 module.exports.kodeverk = kodeverk;
 

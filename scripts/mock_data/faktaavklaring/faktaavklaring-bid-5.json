@@ -2,7 +2,9 @@
   "behandlingID": 5,
   "avklaring": {
     "opphold": {
-      "land": ["GB"],
+      "land": [
+        { "landKode": "GB", "erGyldig": true, "begrunnelseKode": null}
+      ],
       "periode": {
         "fom": "2018-01-01",
         "tom": "2019-01-01"
@@ -12,19 +14,23 @@
       "aktivitetLand": []
     },
     "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
+      "sysselsettingType": "YRKESAKTIV"
     },
     "utsending": {
       "ansattINorskSelskap": true,
       "erstatterTidligereUtsendt": true,
       "utsendingMindreEnn24Mnd": null,
       "foretakDriverINorge": true,
-      "harForutgaendeMedlemskap": true,
       "arbeidKnyttetTilVirksomhetUtlandet": null,
       "sammeTypeVirksomhet": null
     },
     "bosted": {
-      "land": []
+      "bostedLand": null,
+      "bostedBegrunnelser": []
+    },
+    "forutgaendeMedlemskap": {
+      "harForutgaendeMedlemskap": null,
+      "forutgaendeMedlemskapBegrunnelser": []
     },
     "sektor": {
       "ansattISektor": "INGEN_AV_DISSE"
