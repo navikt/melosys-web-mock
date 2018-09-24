@@ -6,14 +6,15 @@ properties([[$class: 'BuildDiscarderProperty',
                         daysToKeepStr: '', numToKeepStr: '5']]])
 
 node {
-  def project = "navikt"
-  def application = "melosys-schema"
-  def webMockDir = "/var/lib/jenkins/melosys-web-mock"
+  def project = 'navikt'
+  def application = 'melosys-schema'
+  def applicationLogger = 'melosys-frontendlogger'
+  def webMockDir = '/var/lib/jenkins/melosys-web-mock'
   // Nexus
-  def nexusHost = "http://maven.adeo.no/nexus/content/repositories/m2internal"
-  def artifactPath = "/no/nav/melosys/${application}/maven-metadata.xml"
+  def nexusHost = 'http://maven.adeo.no/nexus/content/repositories/m2internal'
+  // def artifactPath = "/no/nav/melosys/${application}/maven-metadata.xml"
   // curl -s http://maven.adeo.no/nexus/content/repositories/m2internal/no/nav/melosys/melosys-web-mock/maven-metadata.xml | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
-  def zipFile
+  def schemaZipFile, frontendLoggerZip
   def repositoryId
 
   /* metadata */
@@ -22,7 +23,7 @@ node {
   def scmVars
 
   /* tools */
-  def NODE_JS_HOME = tool "node-8.9.4" // => "installation directory" = "/opt/node"
+  def NODE_JS_HOME = tool "node-10.10.0" // => "installation directory" = "/opt/node"
   echo "${NODE_JS_HOME}"
   def node = "${NODE_JS_HOME}/bin/node"
   def npm = "${NODE_JS_HOME}/bin/npm"
@@ -63,20 +64,24 @@ node {
     sh "${npm} install"
   }
 
-  stage('Build Jar archive') {
-    echo('Build Jar archive')
+  stage('Build Zip artifacts') {
+    echo('Build Zip artifacts')
 
-    zipFile = "${application}-${buildVersion}"+".jar"
-    echo("zipFile:${zipFile}")
-    sh "cd scripts/; zip -r ../$zipFile ./schema/*; cd .."
+    schemaZipFile = "${application}-${buildVersion}.jar"
+    echo("schemaZipFile:${schemaZipFile}")
+    sh "cd scripts/; zip -r ../$schemaZipFile ./schema/*; cd .."
+
+    frontendLoggerZip = "frontendlogger-${buildVersion}.zip"
+    echo("frontendLoggerZip:${frontendLoggerZip}")
+    sh "cd static/; zip ../frontendLoggerZip *.js; cd .."
   }
 
   stage('Copy Zip archive to pickup') {
     sh "rm -rf $webMockDir/*" // Clean the content, don't remove top folder
-    sh "cp ${zipFile} $webMockDir"
+    sh "cp ${schemaZipFile} $webMockDir"
   }
 
-  stage('Deploy ZIP archive to Maven') {
+  stage('Deploy Schema Zip archive to Nexus') {
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       repositoryId = "m2internal"
     }
@@ -87,9 +92,20 @@ node {
     configFileProvider(
       [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
       sh """
-     	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${zipFile} -DartifactId=${application} \
+     	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${schemaZipFile} -DartifactId=${application} \
 	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
 	 	        -Ddescription='Melosys-web-mock JSON data and schema.' \
+		        -DrepositoryId=${repositoryId} -Durl=http://maven.adeo.no/nexus/content/repositories/${repositoryId}
+        """
+    }
+  }
+  stage('Deploy frontendlogger Zip archive til Nexus') {
+    configFileProvider(
+      [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
+      sh """
+     	  	mvn --settings ${MAVEN_SETTINGS} deploy:deploy-file -Dfile=${frontendLoggerZip} -DartifactId=${applicationLogger} \
+	            -DgroupId=no.nav.melosys -Dversion=${buildVersion} \
+	 	        -Ddescription='Melosys-frontendlogger.' \
 		        -DrepositoryId=${repositoryId} -Durl=http://maven.adeo.no/nexus/content/repositories/${repositoryId}
         """
     }
