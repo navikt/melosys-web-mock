@@ -73,7 +73,7 @@ node {
 
     frontendLoggerZip = "frontendlogger-${buildVersion}.zip"
     echo("frontendLoggerZip:${frontendLoggerZip}")
-    sh "cd static/; zip ../frontendLoggerZip *.js; cd .."
+    sh "cd static/; zip ../${frontendLoggerZip} *.js; cd .."
   }
 
   stage('Copy Zip archive to pickup') {
