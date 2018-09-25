@@ -574,7 +574,7 @@
       "required": [
         "forordning_883_2004",
         "forordning_987_2009",
-        "tilleggsbestemmelser"
+        "tillegg"
       ],
       "properties": {
         "forordning_883_2004": {
@@ -653,13 +653,13 @@
             }
           }
         },
-        "tilleggsbestemmelser": {
-          "$id": "#/properties/lovvalgsbestemmelser/properties/tilleggsbestemmelser",
+        "tillegg": {
+          "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg",
           "type": "array",
-          "title": "The forordning_883_2004 Schema",
+          "title": "The tillegg Schema",
           "uniqueItems": true,
           "items": {
-            "$id": "#/properties/lovvalgsbestemmelser/properties/tilleggsbestemmelser/items",
+            "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items",
             "type": "object",
             "title": "The Items Schema",
             "additionalProperties": false,
@@ -669,22 +669,22 @@
             ],
             "properties": {
               "kode": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/tilleggsbestemmelser/items/properties/kode",
+                "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items/properties/kode",
                 "type": "string",
                 "title": "The Kode Schema",
                 "default": "",
                 "examples": [
-                  "ART11_2"
+                  "ART14_11"
                 ],
                 "pattern": "^(.*)$"
               },
               "term": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/tilleggsbestemmelser/items/properties/term",
+                "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items/properties/term",
                 "type": "string",
                 "title": "The Term Schema",
                 "default": "",
                 "examples": [
-                  "Mottar kontantytelse"
+                  "Arbeidstaker i flere to/flere land -forreningsted utenfor EØS område"
                 ],
                 "pattern": "^(.*)$"
               }
