@@ -16,14 +16,6 @@
     "sysselsetting": {
       "sysselsettingType": "YRKESAKTIV"
     },
-    "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
-      "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "arbeidKnyttetTilVirksomhetUtlandet": null,
-      "sammeTypeVirksomhet": null
-    },
     "bosted": {
       "bostedLand": null,
       "bostedBegrunnelser": []
@@ -32,8 +24,8 @@
       "harForutgaendeMedlemskap": null,
       "forutgaendeMedlemskapBegrunnelser": []
     },
-    "sektor": {
-      "ansattISektor": "INGEN_AV_DISSE"
+    "yrkesaktivitet": {
+      "yrkesaktivitetType": null
     },
     "tjenestemann": {
       "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
@@ -50,6 +42,10 @@
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,
       "vesentligVirksomhetBegrunnelser": []
+    },
+    "vurdering": {
+      "lovvalg": "ART12_1",
+      "begrunnelser": []
     }
   }
 }

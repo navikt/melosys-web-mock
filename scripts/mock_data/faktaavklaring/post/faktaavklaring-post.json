@@ -25,8 +25,8 @@
       "sammeTypeVirksomhet": null
     },
     "valgteArbeidsgivere": [],
-    "sektor": {
-      "ansattISektor": "INGEN_AV_DISSE"
+    "yrkesaktivitet": {
+      "yrkesaktivitetType": "ORDINAER_ARBEIDSTAKER"
     },
     "bosted": {
       "vurdering": {},
