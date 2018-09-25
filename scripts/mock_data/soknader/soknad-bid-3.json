@@ -1,4 +1,101 @@
 {
   "behandlingID": 3,
-  "soeknadDokument": null
+  "soeknadDokument": {
+    "personOpplysninger": {
+      "utenlandskID": [],
+      "medfolgendeFamilie": [],
+      "medfolgendeAndre": null
+    },
+    "arbeidUtland": [{
+      "adresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "landKode": null
+      },
+      "arbeidsandelNorge": null,
+      "arbeidsandelUtland": null,
+      "arbeidUtlandErstatning": null,
+      "arbeidUtlandHjemmekontor": null
+    }],
+    "foretakUtland": [],
+    "oppholdUtland": {
+      "oppholdslandKoder": [],
+      "oppholdsPeriode": {
+        "fom": null,
+        "tom": null
+      },
+      "ektefelleEllerBarnINorge": null,
+      "sammeAdresseSomArbeidsgiver": null,
+      "studentFinansieringKode": null,
+      "studentSemester": null
+    },
+    "bosted": {
+      "intensjonOmRetur": null,
+      "bostedUtenforNorge": null,
+      "familiesBostedLandKode": null,
+      "antallMaanederINorge": 8,
+      "adresseIUtlandet": null,
+      "oppgittAdresse": {
+        "gatenavn": null,
+        "postnummer": null,
+        "poststed": null,
+        "landKode": null
+      }
+    },
+    "arbeidNorge": {
+      "arbeidsforholdOpprettholdIHelePerioden": null,
+      "arbeidsforholdVikarNavn": null,
+      "vikarOrgnr": null,
+      "flyendePersonellHjemmebase": null,
+      "kontaktNavn": null,
+      "kontaktEpost": null,
+      "fullmektigFirma": null,
+      "fullmektigGateadresse": null,
+      "fullmektigPostnr": null,
+      "fullmektigPoststed": null,
+      "fullmektigRegion": null,
+      "fullmektigLandKode": null
+    },
+    "selvstendigArbeid": {
+      "erSelvstendig": false,
+      "selvstendigForetak": []
+    },
+    "juridiskArbeidsgiverNorge": {
+      "erBemanningsbyra": null,
+      "utsendteNeste12Mnd": null,
+      "antallAdmAnsatte": null,
+      "antallAdminAnsatteEOS": null,
+      "andelOmsetningINorge": null,
+      "andelKontrakterINorge": null,
+      "utsendtFortsetterArbeidsforholdIUtlandet": null,
+      "utsendtArbeiderArbeiderMedKlienter": null,
+      "utsendtArbeiderArbeiderMedKontrakter": null,
+      "ekstraArbeidsgivere": []
+    },
+    "arbeidsinntekt": {
+      "inntektNorskIPerioden": 20000,
+      "inntektUtenlandskIPerioden": 32334,
+      "inntektNaeringIPerioden": 0,
+      "inntektNaturalYtelser": [],
+      "inntektErInnrapporteringspliktig": null,
+      "inntektTrygdeavgiftBlirTrukket": null
+    },
+    "arbeidsgiversBekreftelse": {
+      "arbeidsgiverBekrefterUtsendelse": null,
+      "arbeidstakerAnsattUnderUtsendelsen": null,
+      "erstatterArbeidstakerenUtsendte": null,
+      "arbeidstakerTidligereUtsendt24Mnd": null,
+      "arbeidsgiverBetalerArbeidsgiveravgift": null,
+      "trygdeavgiftTrukketGjennomSkatt": null,
+      "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
+    },
+    "maritimtArbeid": {
+      "maritimTypeKode": "SOKKEL",
+      "skipsNavn": null,
+      "fartsomradeKode": null,
+      "flaggLandKode": null,
+      "installasjonsLandKode": null
+    }
+  }
 }

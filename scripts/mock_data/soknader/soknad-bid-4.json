@@ -85,7 +85,8 @@
       "andelKontrakterINorge": 50.5,
       "utsendtFortsetterArbeidsforholdIUtlandet": true,
       "utsendtArbeiderArbeiderMedKlienter": true,
-      "utsendtArbeiderArbeiderMedKontrakter": true
+      "utsendtArbeiderArbeiderMedKontrakter": true,
+      "ekstraArbeidsgivere": ["943049467"]
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 5500,

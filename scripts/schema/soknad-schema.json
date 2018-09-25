@@ -21,7 +21,7 @@
     },
     "soeknadDokument": {
       "$id": "#/properties/soeknadDokument",
-      "type": ["object","null"],
+      "type": ["object"],
       "title": "The Soeknaddokument Schema",
       "additionalProperties": false,
       "required": [
@@ -751,7 +751,8 @@
             "andelKontrakterINorge",
             "utsendtFortsetterArbeidsforholdIUtlandet",
             "utsendtArbeiderArbeiderMedKlienter",
-            "utsendtArbeiderArbeiderMedKontrakter"
+            "utsendtArbeiderArbeiderMedKontrakter",
+            "ekstraArbeidsgivere"
           ],
           "properties": {
             "erBemanningsbyra": {
@@ -834,6 +835,22 @@
               "examples": [
                 true
               ]
+            },
+            "ekstraArbeidsgivere": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/ekstraArbeidsgivere",
+              "type": "array",
+              "title": "The EkstraArbeidsgivere Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/ekstraArbeidsgivere/items",
+                "type": ["string"],
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "910253158"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         },

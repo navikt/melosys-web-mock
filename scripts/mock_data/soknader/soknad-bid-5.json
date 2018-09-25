@@ -70,7 +70,8 @@
       "andelKontrakterINorge": null,
       "utsendtFortsetterArbeidsforholdIUtlandet": null,
       "utsendtArbeiderArbeiderMedKlienter": null,
-      "utsendtArbeiderArbeiderMedKontrakter": null
+      "utsendtArbeiderArbeiderMedKontrakter": null,
+      "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": null,
