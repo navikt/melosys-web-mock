@@ -12,10 +12,10 @@
     "dokumenttitler",
     "finansiering",
     "landkoder",
+    "lovvalgsbestemmelser",
     "oppgavetyper",
     "sakstyper",
-    "vedleggstitler",
-    "lovvalgsbestemmelser"
+    "vedleggstitler"
   ],
   "properties": {
     "behandlingsstatus": {
