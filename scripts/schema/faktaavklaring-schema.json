@@ -389,14 +389,14 @@
           "title": "The Avklaring Schema",
           "additionalProperties": false,
           "required": [
-            "artikkel",
+            "lovvalg",
             "begrunnelser"
           ],
           "properties": {
-            "artikkel": {
-              "$id": "#/properties/avklaring/properties/vurdering/properties/artikkel",
+            "lovvalg": {
+              "$id": "#/properties/avklaring/properties/vurdering/properties/lovvalg",
               "type": ["string", "null"],
-              "title": "The Artikkel Schema",
+              "title": "The Lovvalg Schema",
               "default": null,
               "examples": [
                 "ART12_1"
