@@ -20,10 +20,10 @@ const kodeverk = {
   dokumenttitler,
   finansiering,
   landkoder,
+  lovvalgsbestemmelser,
   oppgavetyper,
   sakstyper,
   vedleggstitler,
-  lovvalgsbestemmelser,
 };
 module.exports.kodeverk = kodeverk;
 
