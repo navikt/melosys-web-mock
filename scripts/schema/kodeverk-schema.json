@@ -452,120 +452,6 @@
         }
       }
     },
-    "oppgavetyper": {
-      "$id": "#/properties/oppgavetyper",
-      "type": "array",
-      "title": "The Oppgavetyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/oppgavetyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/oppgavetyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "BEH_SAK"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/oppgavetyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Behandling"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
-      }
-    },
-    "sakstyper": {
-      "$id": "#/properties/sakstyper",
-      "type": "array",
-      "title": "The Sakstyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/sakstyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/sakstyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "EU_EOS"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/sakstyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "EU/EØS"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
-      }
-    },
-    "vedleggstitler": {
-      "$id": "#/properties/vedleggstitler",
-      "type": "array",
-      "title": "The Vedleggstitler Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/vedleggstitler/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/vedleggstitler/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "TITTEL_1"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/vedleggstitler/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Vedleggstittel 1"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
-      }
-    },
     "lovvalgsbestemmelser": {
       "$id": "#/properties/lovvalgsbestemmelser",
       "type": "object",
@@ -689,6 +575,120 @@
                 "pattern": "^(.*)$"
               }
             }
+          }
+        }
+      }
+    },
+    "oppgavetyper": {
+      "$id": "#/properties/oppgavetyper",
+      "type": "array",
+      "title": "The Oppgavetyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/oppgavetyper/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/oppgavetyper/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "BEH_SAK"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/oppgavetyper/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "Behandling"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "sakstyper": {
+      "$id": "#/properties/sakstyper",
+      "type": "array",
+      "title": "The Sakstyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/sakstyper/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/sakstyper/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "EU_EOS"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/sakstyper/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "EU/EØS"
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "vedleggstitler": {
+      "$id": "#/properties/vedleggstitler",
+      "type": "array",
+      "title": "The Vedleggstitler Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/vedleggstitler/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "additionalProperties": false,
+        "required": [
+          "kode",
+          "term"
+        ],
+        "properties": {
+          "kode": {
+            "$id": "#/properties/vedleggstitler/items/properties/kode",
+            "type": "string",
+            "title": "The Kode Schema",
+            "default": "",
+            "examples": [
+              "TITTEL_1"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "term": {
+            "$id": "#/properties/vedleggstitler/items/properties/term",
+            "type": "string",
+            "title": "The Term Schema",
+            "default": "",
+            "examples": [
+              "Vedleggstittel 1"
+            ],
+            "pattern": "^(.*)$"
           }
         }
       }
