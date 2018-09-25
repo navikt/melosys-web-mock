@@ -9,7 +9,7 @@ function platformNIC() {
     case 'linux':
       return interfaces.ens192 ? interfaces.ens192 : interfaces.eno16780032;
     default: // win32
-      return interfaces.Ethernet0
+      return interfaces.Ethernet0 ? interfaces.Ethernet0 : interfaces['Wi-Fi'];
   }
 }
 
