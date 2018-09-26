@@ -44,7 +44,7 @@ module.exports.hent = (req, res) => {
 };
 
 module.exports.sendOpprettNySak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/opprett-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
@@ -62,7 +62,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 };
 
 module.exports.sendTilordneSak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/tilordne-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
