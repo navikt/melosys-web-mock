@@ -18,34 +18,21 @@ module.exports.lesJournalforingKatalog = () => {
   return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = (journalpostID, oppgaveID) => {
-  /* TODO lage flere filer.
-  const filnavn = finnJournalpostFil(journalpostID);
-  return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
-  */
-  try {
-    return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"));
-  }
-  catch (err) {
-    console.log(err);
-    logger.error(err)
-  }
+const lesOppgave = (journalpostID) => {
+  // const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-30098000492.json`;
+  const mockfile = `${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`;
+  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
 };
 
 module.exports.hent = (req, res) => {
   const url = URL.parse(req.url);
   try {
     const journalpostID = req.params.journalpostID;
-    const oppgaveID = req.params.oppgaveID;
     if (!journalpostID) {
       const melding = ERR.badRequest400(url, "journalpostID mangler");
       return res.status(400).send(melding);
     }
-    if (!oppgaveID) {
-      const melding = ERR.badRequest400(url, "oppgaveID mangler");
-      return res.status(400).send(melding);
-    }
-    const journalpost = lesOppgave(journalpostID,oppgaveID);
+    const journalpost = lesOppgave(journalpostID);
     return res.json(journalpost);
   }
   catch (err) {
@@ -57,7 +44,7 @@ module.exports.hent = (req, res) => {
 };
 
 module.exports.sendOpprettNySak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/opprett-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
@@ -75,7 +62,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 };
 
 module.exports.sendTilordneSak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/tilordne-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
