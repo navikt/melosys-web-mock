@@ -19,8 +19,7 @@
       "default": "",
       "examples": [
         "30098000492"
-      ],
-      "pattern": "^[0-9]{9,11}$"
+      ]
     },
     "avsenderID": {
       "$id": "#/properties/avsenderID",
@@ -29,8 +28,7 @@
       "default": "",
       "examples": [
         "30098000492"
-      ],
-      "pattern": "[0-9]{9,11}$"
+      ]
     },
     "erBrukerAvsender": {
       "$id": "#/properties/erBrukerAvsender",

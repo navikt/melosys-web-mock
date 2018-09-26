@@ -77,7 +77,7 @@
       "examples": [
         "171178022"
       ],
-      "pattern": "^[0-9]{9}$"
+      "pattern": "^(.*)$"
     },
     "representantID": {
       "$id": "#/properties/representantID",
@@ -87,7 +87,7 @@
       "examples": [
         "300980004"
       ],
-      "pattern": "^[0-9]{9}$"
+      "pattern": "^(.*)$"
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",

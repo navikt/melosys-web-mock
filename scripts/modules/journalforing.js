@@ -1,4 +1,5 @@
 const fs = require('fs');
+const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
@@ -9,7 +10,7 @@ const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 
 const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const MOCK_DATA_DIR = `${SCRIPTS_DIR}/journalforing`;
+const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
@@ -17,40 +18,33 @@ module.exports.lesJournalforingKatalog = () => {
   return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = () => {
-  /* TODO lage flere filer.
-  const filnavn = finnJournalpostFil(journalpostID);
-  return filnavn ? JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/${filnavn}`, "utf8")) : {};
-  */
-  try {
-    return JSON.parse(fs.readFileSync(`${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`, "utf8"));
-  }
-  catch (err) {
-    console.log(err);
-    logger.error(err)
-  }
+const lesOppgave = (journalpostID) => {
+  // const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-30098000492.json`;
+  const mockfile = `${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`;
+  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
 };
 
 module.exports.hent = (req, res) => {
+  const url = URL.parse(req.url);
   try {
     const journalpostID = req.params.journalpostID;
+    if (!journalpostID) {
+      const melding = ERR.badRequest400(url, "journalpostID mangler");
+      return res.status(400).send(melding);
+    }
     const journalpost = lesOppgave(journalpostID);
     return res.json(journalpost);
-    /*
-    const url = URL.parse(req.url);
-    const melding = ERR.serverError500(`/api${url.pathname}`, 'Request failed');
-    return res.status(500).send(melding);
-    */
   }
   catch (err) {
     console.log(err);
     logger.error(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(url, err);
+    res.status(500).send(melding);
   }
 };
 
 module.exports.sendOpprettNySak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/opprett-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
@@ -68,7 +62,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 };
 
 module.exports.sendTilordneSak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/tilordne-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
