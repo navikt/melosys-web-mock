@@ -86,7 +86,7 @@
       "utsendtFortsetterArbeidsforholdIUtlandet": true,
       "utsendtArbeiderArbeiderMedKlienter": true,
       "utsendtArbeiderArbeiderMedKontrakter": true,
-      "ekstraArbeidsgivere": ["943049467"]
+      "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 5500,
