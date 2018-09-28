@@ -1,20 +1,20 @@
 {
-  "orgnr": "910253158",
-  "navn": "MULTICONSULT ASA",
+  "orgnr": "923609016",
+  "navn": "EQUINOR ASA",
   "forretningsadresse": {
     "gateadresse": {
-      "gatenavn": "Nedre Skøyen vei 2"
+      "gatenavn": "Forusbeen 50"
     },
-    "postnr": "0276",
-    "poststed": "OSLO",
+    "postnr": "4035",
+    "poststed": "STAVANGER",
     "land": "NORGE"
   },
   "postadresse": {
     "gateadresse": {
-      "gatenavn": "Postboks 265  Skøyen"
+      "gatenavn": "Postboks 8500"
     },
-    "postnr": "0213",
-    "poststed": "OSLO",
+    "postnr": "4035",
+    "poststed": "STAVANGER",
     "land": "NORGE"
   }
 }

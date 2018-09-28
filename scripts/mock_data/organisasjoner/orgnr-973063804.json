@@ -1,19 +1,19 @@
 {
-  "orgnr": "910253158",
-  "navn": "MULTICONSULT ASA",
+  "orgnr": "973063804",
+  "navn": "ADECCO NORGE AS AVD OSLO",
   "forretningsadresse": {
     "gateadresse": {
-      "gatenavn": "Nedre Skøyen vei 2"
+      "gatenavn": "Rosenkrantz' gate 16"
     },
-    "postnr": "0276",
+    "postnr": "0160",
     "poststed": "OSLO",
     "land": "NORGE"
   },
   "postadresse": {
     "gateadresse": {
-      "gatenavn": "Postboks 265  Skøyen"
+      "gatenavn": "Postboks 2013 Vika"
     },
-    "postnr": "0213",
+    "postnr": "0125",
     "poststed": "OSLO",
     "land": "NORGE"
   }

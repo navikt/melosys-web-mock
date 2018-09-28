@@ -1,20 +1,20 @@
 {
-  "orgnr": "910253158",
-  "navn": "MULTICONSULT ASA",
+  "orgnr": "912499693",
+  "navn": "TOP-TOY NORGE AS AVD HOVEDKONTOR",
   "forretningsadresse": {
     "gateadresse": {
-      "gatenavn": "Nedre Skøyen vei 2"
+      "gatenavn": "Pindsleveien 1C"
     },
-    "postnr": "0276",
-    "poststed": "OSLO",
+    "postnr": "3221",
+    "poststed": "SANDEFJORD",
     "land": "NORGE"
   },
   "postadresse": {
     "gateadresse": {
-      "gatenavn": "Postboks 265  Skøyen"
+      "gatenavn": "Postboks 2044 SANDEFJORD"
     },
-    "postnr": "0213",
-    "poststed": "OSLO",
+    "postnr": "3221",
+    "poststed": "SANDEFJORD",
     "land": "NORGE"
   }
 }
