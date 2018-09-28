@@ -152,6 +152,7 @@ router.get('/organisasjoner', organisasjoner.hent);
  * ---------------------------------------------------------------
  */
 router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
+router.get('/behandlinger/:behandlingID/status', saksopplysninger.status);
 
 /**
  * DOKUMENTER
@@ -159,7 +160,7 @@ router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk
  */
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
-//router.post('/logger/trace', logging.trace);
+// router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
 router.post('/logger/warn', logging.warn);
