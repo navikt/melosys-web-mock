@@ -15,7 +15,7 @@ const lesOversikt = async () => {
 module.exports.lesOppgaveKatalog = () => {
   const navn = 'oversikt.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
-  const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));
+  const document =  JSON.parse(Utils.readFileSync(jasonfile));
   return [{
     navn,
     document
