@@ -19,17 +19,17 @@ module.exports.lesSokFagsakerKatalog = () => {
 const lesFagsakAsync = async (path) => {
   return JSON.parse(await Utils.readFileAsync(path));
 };
-const lesFagsakSync = (path) => {
-  return JSON.parse(Utils.readFileSync(path));
-};
 const lesSokFagsakAsync = async (fnr) => {
   const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;
   if (await Utils.existsAsync(mockfile)) {
-    return lesFagsakAsync(mockfile);
+    return await lesFagsakAsync(mockfile);
   }
   return [];
 };
-
+/*
+const lesFagsakSync = (path) => {
+  return JSON.parse(Utils.readFileSync(path));
+};
 const lesSokFagsakListe = () => {
   let fagsakListe = [];
   Utils.readDirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
@@ -46,7 +46,29 @@ const lesSokFagsakListe = () => {
   }), true);
   return fagsakListe;
 };
+*/
+const lesAlleFagsakerAsync = async () => {
+  const files = await Utils.readDirAsync(MOCK_SOK_FAGFSAKER_DIR);
+  const promises = files.map(async (file) => {
+    return await lesFagsakAsync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
+  });
+  const alleFagsaker = await Promise.all(promises);
+  return alleFagsaker.reduce((acc, cur) => {
+    if (cur && cur.length) acc.push(...cur);
+    return acc;
+  }, []);
+};
 
+const lesSokFagsakListeAsync = async () => {
+  let fagsakListe = await lesAlleFagsakerAsync();
+  fagsakListe = _.uniq(fagsakListe.sort((a, b) => {
+    assert.ok(_.isString(a.saksnummer), 'Saksnummer must be a string');
+    assert.ok(_.isString(b.saksnummer), 'Saksnummer must be a string');
+    return a.saksnummer.localeCompare(b.saksnummer);
+    //return a.saksnummer - b.saksnummer; // For ints
+  }), true);
+  return fagsakListe;
+};
 /**
  * Sok fagsak; [GET] /api/fagsaker/sok/?:fnr
  * @param req
@@ -84,7 +106,8 @@ module.exports.sok = async (req, res) => {
       }
     }
     else {
-      const fagsakListe = lesSokFagsakListe();
+      // const fagsakListe = lesSokFagsakListe();
+      const fagsakListe = await lesSokFagsakListeAsync();
       return res.json(fagsakListe);
     }
   } catch (err) {
