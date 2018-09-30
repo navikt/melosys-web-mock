@@ -122,6 +122,7 @@ router.get('/kodeverk', Kodeverk.hent);
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/sok', sokOppgaver.sok);
+router.get('/oppgaver/plukk', oppgaver.hentPlukk);
 router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
