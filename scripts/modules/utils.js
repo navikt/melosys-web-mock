@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 module.exports.isJSON = (str) => {
   try {
     return (JSON.parse(str) && !!str);
@@ -23,6 +24,9 @@ module.exports.readFileAsync = async (path) =>  {
     });
   });
 };
+module.exports.readFileSync = (path) => {
+  return fs.readFileSync(path, 'utf8');
+};
 
 module.exports.existsAsync = async (path) => {
   return new Promise((resolve) => {
@@ -34,4 +38,17 @@ module.exports.existsAsync = async (path) => {
       else resolve(true);
     });
   })
+};
+
+module.exports.readDirAsync = async (dirpath) => {
+  return new Promise((resolve, reject) => {
+    fs.readdir(dirpath, 'utf8', (err, files) => {
+      if (err) reject(err);
+      else resolve(files);
+    });
+  });
+};
+
+module.exports.readDirSync = (dirpath) => {
+  return fs.readdirSync(dirpath, 'utf8');
 };

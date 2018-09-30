@@ -1,4 +1,3 @@
-const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const assert = require('assert');
@@ -6,6 +5,7 @@ const URL = require('url');
 const _ = require('underscore');
 
 const ERR = require('./errors');
+const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const happy = require('./happystatus');
 
@@ -15,18 +15,25 @@ const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 module.exports.lesSokFagsakerKatalog = () => {
   return Schema.lesKatalog(MOCK_SOK_FAGFSAKER_DIR);
 };
-const lesSokFagsak = (fnr) => {
+
+const lesFagsakAsync = async (path) => {
+  return JSON.parse(await Utils.readFileAsync(path));
+};
+const lesFagsakSync = (path) => {
+  return JSON.parse(Utils.readFileSync(path));
+};
+const lesSokFagsakAsync = async (fnr) => {
   const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;
-  if (fs.existsSync(mockfile)) {
-    return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  if (await Utils.existsAsync(mockfile)) {
+    return lesFagsakAsync(mockfile);
   }
   return [];
 };
 
 const lesSokFagsakListe = () => {
   let fagsakListe = [];
-  fs.readdirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
-    const fagsaker = JSON.parse(fs.readFileSync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`, 'UTF-8'));
+  Utils.readDirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
+    const fagsaker = lesFagsakSync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
     fagsaker.every((fagsak) => {
       fagsakListe.push(fagsak);
     })
@@ -46,11 +53,11 @@ const lesSokFagsakListe = () => {
  * @param res
  * @returns {*}
  */
-module.exports.sok = (req, res) => {
+module.exports.sok = async (req, res) => {
   try {
     const fnr = req.query.fnr;
     if (fnr) {
-      const nyesaker = lesSokFagsak(fnr);
+      const nyesaker = await lesSokFagsakAsync(fnr);
       if (nyesaker && nyesaker.length) {
         return res.json(nyesaker);
       }
@@ -77,7 +84,7 @@ module.exports.sok = (req, res) => {
       }
     }
     else {
-      let fagsakListe = lesSokFagsakListe();
+      const fagsakListe = lesSokFagsakListe();
       return res.json(fagsakListe);
     }
   } catch (err) {
