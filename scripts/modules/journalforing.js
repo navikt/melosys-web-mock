@@ -14,7 +14,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 module.exports.lesJournalforingKatalog = () => {
-  return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
+  return Schema.lesKatalogSync(MOCK_JOURNALFORING_DIR);
 };
 
 const lesOppgave = async (journalpostID) => {

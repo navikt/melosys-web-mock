@@ -13,7 +13,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {
-  return Schema.lesKatalog(MOCK_SOK_FAGFSAKER_DIR);
+  return Schema.lesKatalogSync(MOCK_SOK_FAGFSAKER_DIR);
 };
 
 const lesFagsakAsync = async (path) => {

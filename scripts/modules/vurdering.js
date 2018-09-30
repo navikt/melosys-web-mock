@@ -14,7 +14,7 @@ const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const VURDERING_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
 module.exports.lesVurderingsKatalog = () => {
-  return Schema.lesKatalog(VURDERING_MOCK_DATA_DIR);
+  return Schema.lesKatalogSync(VURDERING_MOCK_DATA_DIR);
 };
 
 const lesVurdering = async (behandlingID) => {

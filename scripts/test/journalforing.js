@@ -22,7 +22,7 @@ const testJournalPost = (postnavn) => {
 
 const schemajson = `${SCHEMA_DIR}/journalforing-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
-const catalog = Schema.lesKatalog(MOCK_DATA_JOURNALFORING_DIR);
+const catalog = Schema.lesKatalogSync(MOCK_DATA_JOURNALFORING_DIR);
 
 
 const ajv = new Ajv({allErrors: true});

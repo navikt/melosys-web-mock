@@ -10,7 +10,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
 module.exports.lesOrganisasjonsKatalog = () => {
-  return Schema.lesKatalog(MOCK_DATA_ORG_DIR);
+  return Schema.lesKatalogSync(MOCK_DATA_ORG_DIR);
 };
 /**
  * Les organisasjon json fil eller returner tom svar

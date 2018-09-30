@@ -10,7 +10,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 module.exports.lesSaksbehandlerKatalog = () => {
-  return Schema.lesKatalog(MOCK_DATA_SAKSBEHANDLER_DIR);
+  return Schema.lesKatalogSync(MOCK_DATA_SAKSBEHANDLER_DIR);
 };
 const lesSaksbehandlere = async () => {
   const mockfile = `${MOCK_DATA_DIR}/saksbehandler.json`;

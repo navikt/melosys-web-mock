@@ -14,7 +14,7 @@ const lesPerson = async (fnr) => {
 };
 
 module.exports.lesPersonKatalog = () => {
-  return Schema.lesKatalog(PERSON_MOCK_DATA_DIR);
+  return Schema.lesKatalogSync(PERSON_MOCK_DATA_DIR);
 };
 
 module.exports.hent = async (req, res) => {

@@ -7,7 +7,7 @@ const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 
 module.exports.lesSokOppgaveKatalog = () => {
-  return Schema.lesKatalog(MOCK_DATA_OPPGAVE_SOK_DIR);
+  return Schema.lesKatalogSync(MOCK_DATA_OPPGAVE_SOK_DIR);
 };
 
 const lesOppgave = async (fnr) => {

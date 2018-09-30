@@ -30,7 +30,7 @@ module.exports.katalogTittel = path => {
   return katalog.charAt(0).toLocaleUpperCase() + katalog.slice(1);
 };
 
-module.exports.lesKatalog = dirpath => {
+module.exports.lesKatalogSync = dirpath => {
   let catalog = [];
   const files = glob.sync('*.json', {
     cwd: dirpath,

@@ -9,7 +9,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 module.exports.lesFagsakerKatalog = () => {
-  return Schema.lesKatalog(MOCK_DATA_FAGSAK_DIR);
+  return Schema.lesKatalogSync(MOCK_DATA_FAGSAK_DIR);
 };
 
 module.exports.hent = async (req, res) => {

@@ -7,7 +7,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
 module.exports.lesInngangKatalog = () => {
-  return Schema.lesKatalog(INNGANG_MOCK_DIR);
+  return Schema.lesKatalogSync(INNGANG_MOCK_DIR);
 };
 
 const lesInngang = async (snr) => {

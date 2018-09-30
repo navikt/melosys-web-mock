@@ -20,7 +20,7 @@ const lesSoknad = async (behandlingID) => {
 module.exports.lesSoknad = lesSoknad;
 
 module.exports.lesSoknadKatalog = () => {
-  return Schema.lesKatalog(MOCK_SOKNAD_DIR);
+  return Schema.lesKatalogSync(MOCK_SOKNAD_DIR);
 };
 
 const skrivSoknad = (behandlingID, soeknadDokument) => {
