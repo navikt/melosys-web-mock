@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
@@ -19,9 +18,9 @@ module.exports.lesFaktaavklaringKatalog = () => {
   return Schema.lesKatalog(FAKTAAVKLARING_MOCK_DIR);
 };
 
-const lesAvklaring = (behandlingID) => {
+const lesAvklaring = async (behandlingID) => {
   const mockfile = `${FAKTAAVKLARING_MOCK_DIR}/faktaavklaring-bid-${behandlingID}.json`;
-  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+  return (await Utils.existsAsync(mockfile)) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {}
 };
 /**
  * Hent faktavklaring
@@ -29,10 +28,10 @@ const lesAvklaring = (behandlingID) => {
  * @param res
  * @returns {*}
  */
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
-    const avklaring = lesAvklaring(behandlingID);
+    const avklaring = await lesAvklaring(behandlingID);
     if (_.isEmpty(avklaring)) {
       return res.status(404).send(ERR.notFound404(req.url));
     }
