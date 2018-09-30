@@ -12,7 +12,7 @@ const testJournalPost = (postnavn) => {
   const postSchemaPath = `${SCHEMA_DIR}/journalforing-${postnavn}-schema.json`;
 
   const elem = Schema.lesKatalogElement(postPath);
-  const postSchema = Schema.lesSchema(postSchemaPath);
+  const postSchema = Schema.lesSchemaSync(postSchemaPath);
 
   const ajv = new Ajv({allErrors: true});
   const postValidator = ajv.compile(postSchema);
@@ -21,7 +21,7 @@ const testJournalPost = (postnavn) => {
 };
 
 const schemajson = `${SCHEMA_DIR}/journalforing-schema.json`;
-const schema = Schema.lesSchema(schemajson);
+const schema = Schema.lesSchemaSync(schemajson);
 const catalog = Schema.lesKatalog(MOCK_DATA_JOURNALFORING_DIR);
 
 

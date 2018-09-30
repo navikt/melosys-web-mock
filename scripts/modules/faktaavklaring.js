@@ -55,7 +55,7 @@ module.exports.send = (req, res) => {
   logger.debug("faktaavklaring:send", JSON.stringify(jsonBody));
 
   const schemajson = `${SCHEMA_DIR}/faktaavklaring-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const valid = test(validate, jsonBody);

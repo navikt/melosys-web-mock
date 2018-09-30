@@ -24,8 +24,13 @@ module.exports.readFileAsync = async (path) =>  {
     });
   });
 };
-module.exports.readFileSync = (path) => {
+const readFileSync = (path) => {
   return fs.readFileSync(path, 'utf8');
+};
+module.exports.readFileSync = readFileSync;
+
+module.exports.readJsonAndParse = (path) => {
+  return JSON.parse(readFileSync(path));
 };
 
 module.exports.existsAsync = async (path) => {

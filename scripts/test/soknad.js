@@ -8,7 +8,7 @@ const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
-const schema = Schema.lesSchema(schemajson);
+const schema = Schema.lesSchemaSync(schemajson);
 const katalog = lesSoknadKatalog();
 
 const validate = ajv.compile(schema);

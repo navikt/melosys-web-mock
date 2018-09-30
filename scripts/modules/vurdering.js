@@ -60,7 +60,7 @@ module.exports.hent = async (req, res) => {
  */
 module.exports.send = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const behandlingID = req.params.behandlingID;

@@ -1,9 +1,14 @@
-const fs = require('fs');
 const glob = require('glob');
 const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
 const colors = require('colors/safe');
+const Utils = require('../modules/utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+
+
+module.exports.lesSchemaSync = schemapath => {
+  return Utils.readJsonAndParse(schemapath);
+};
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
@@ -33,7 +38,7 @@ module.exports.lesKatalog = dirpath => {
   });
   files.forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
-    const document = JSON.parse(fs.readFileSync(filepath, "utf8"));
+    const document = Utils.readJsonAndParse(filepath);
     catalog.push({
       navn,
       document
@@ -43,7 +48,7 @@ module.exports.lesKatalog = dirpath => {
 };
 
 module.exports.lesKatalogElement = path => {
-  const document =  JSON.parse(fs.readFileSync(path, "utf8"));
+  const document =  Utils.readJsonAndParse(path);
   const dirs = path.split('/');
   const navn = dirs[dirs.length-1];
   return {
@@ -65,10 +70,5 @@ module.exports.runTest = (data, ajv, validate) => {
       logger.error(`${navn} ${msg}`);
     });
   }
-};
-
-
-module.exports.lesSchema = schemapath => {
-  return JSON.parse(fs.readFileSync(schemapath, "utf8"));
 };
 
