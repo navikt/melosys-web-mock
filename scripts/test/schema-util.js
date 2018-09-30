@@ -7,7 +7,7 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 
 module.exports.lesSchemaSync = schemapath => {
-  return Utils.readJsonAndParse(schemapath);
+  return Utils.readJsonAndParseSync(schemapath);
 };
 
 const humanReadableErrors = (allErrors = []) => {
@@ -38,7 +38,7 @@ module.exports.lesKatalogSync = dirpath => {
   });
   files.forEach(navn => {
     const filepath = `${dirpath}/${navn}`;
-    const document = Utils.readJsonAndParse(filepath);
+    const document = Utils.readJsonAndParseSync(filepath);
     catalog.push({
       navn,
       document
@@ -48,7 +48,7 @@ module.exports.lesKatalogSync = dirpath => {
 };
 
 module.exports.lesKatalogElement = path => {
-  const document =  Utils.readJsonAndParse(path);
+  const document =  Utils.readJsonAndParseSync(path);
   const dirs = path.split('/');
   const navn = dirs[dirs.length-1];
   return {

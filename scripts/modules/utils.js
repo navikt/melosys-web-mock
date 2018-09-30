@@ -29,7 +29,7 @@ const readFileSync = (path) => {
 };
 module.exports.readFileSync = readFileSync;
 
-module.exports.readJsonAndParse = (path) => {
+module.exports.readJsonAndParseSync = (path) => {
   return JSON.parse(readFileSync(path));
 };
 
