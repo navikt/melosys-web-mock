@@ -31,7 +31,7 @@ const skrivSoknad = (behandlingID, soeknadDokument) => {
     behandlingID,
     soeknadDokument,
   };
-  fs.writeFileSync(mockfileSoknad, JSON.stringify(soknad, null, 2));
+  Utils.writeFileSync(mockfileSoknad, JSON.stringify(soknad, null, 2));
   return soknad;
 };
 

@@ -15,6 +15,9 @@ module.exports.writeFileAsync = async (path, text) => {
     });
   });
 };
+module.exports.writeFileSync = (path, ) => {
+  return fs.writeFileSync(path, text);
+};
 
 module.exports.readFileAsync = async (path) =>  {
   return new Promise((resolve, reject) => {
