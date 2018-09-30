@@ -1,25 +1,26 @@
-const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const URL = require('url');
+
+const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
 
-const lesPerson = (fnr) => {
+const lesPerson = async (fnr) => {
   const mockfile = `${PERSON_MOCK_DATA_DIR}/fnr-${fnr}.json`;
-  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {};
 };
 
 module.exports.lesPersonKatalog = () => {
   return Schema.lesKatalog(PERSON_MOCK_DATA_DIR);
 };
 
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   const fnr = req.query.fnr;
   if (fnr && fnr.length === 11) {
-    const person = lesPerson(fnr);
+    const person = await lesPerson(fnr);
     return res.json(person);
   }
   let message = '';
