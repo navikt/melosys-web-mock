@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
@@ -13,15 +12,15 @@ const Schema = require('../test/schema-util');
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
-const avklartefakta_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;
+const AVKLARTEFAKTA_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;
 
 module.exports.lesAvklartefaktaKatalog = () => {
-  return Schema.lesKatalog(avklartefakta_MOCK_DIR);
+  return Schema.lesKatalogSync(AVKLARTEFAKTA_MOCK_DIR);
 };
 
-const lesAvklaring = (behandlingID) => {
-  const mockfile = `${avklartefakta_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
-  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+const lesAvklaring = async (behandlingID) => {
+  const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
+  return (await Utils.existsAsync(mockfile)) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {}
 };
 /**
  * Hent faktavklaring
@@ -29,10 +28,10 @@ const lesAvklaring = (behandlingID) => {
  * @param res
  * @returns {*}
  */
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
-    const avklaring = lesAvklaring(behandlingID);
+    const avklaring = await lesAvklaring(behandlingID);
     if (_.isEmpty(avklaring)) {
       return res.status(404).send(ERR.notFound404(req.url));
     }

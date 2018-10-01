@@ -25,10 +25,14 @@ const LOGDIR = `${process.cwd()}/logdir`;
 createLogDirIfnotExists(LOGDIR);
 
 const MOCK_LOG_FILE = `${LOGDIR}/mock-errors.log`;
+const WEB_MOCK_LOG_FILE = `${LOGDIR}/web-mock-errors.log`;
 const log4js = require('log4js');
 log4js.configure({
-  appenders: { mock: { type: 'file', filename: MOCK_LOG_FILE } },
-  categories: { default: { appenders: ['mock'], level: 'debug' } }
+  appenders: {
+    mock: { type: 'file', filename: MOCK_LOG_FILE, maxLogSize: 10485760, backups: 3, compress: true },
+    webmock: { type: 'file', filename: WEB_MOCK_LOG_FILE, maxLogSize: 10485760, backups: 3, compress: true }
+  },
+  categories: { default: { appenders: ['mock','webmock'], level: 'debug' } }
 });
 
 const app = express();
@@ -122,6 +126,7 @@ router.get('/kodeverk', Kodeverk.hent);
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/sok', sokOppgaver.sok);
+router.get('/oppgaver/plukk', oppgaver.hentPlukk);
 router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);

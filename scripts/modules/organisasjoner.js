@@ -4,21 +4,22 @@ const logger = log4js.getLogger('mock');
 const URL = require('url');
 
 const ERR = require('./errors');
+const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
 module.exports.lesOrganisasjonsKatalog = () => {
-  return Schema.lesKatalog(MOCK_DATA_ORG_DIR);
+  return Schema.lesKatalogSync(MOCK_DATA_ORG_DIR);
 };
 /**
  * Les organisasjon json fil eller returner tom svar
  * @param orgnr
  * @returns {{}}
  */
-const lesOrganisasjon = (orgnr) => {
+const lesOrganisasjon = async (orgnr) => {
   const mockfile = `${MOCK_DATA_ORG_DIR}/orgnr-${orgnr}.json`;
-  return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
+  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {};
 };
 
 /**
@@ -27,10 +28,10 @@ const lesOrganisasjon = (orgnr) => {
  * @param res
  * @returns {*}
  */
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   const orgnr = req.query.orgnr;
   if (orgnr && orgnr.length === 9) {
-    const organisasjon = lesOrganisasjon(orgnr);
+    const organisasjon = await lesOrganisasjon(orgnr);
     return res.json(organisasjon);
   }
   let message = '';

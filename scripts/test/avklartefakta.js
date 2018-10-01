@@ -9,7 +9,7 @@ const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemapath = `${SCHEMA_DIR}/avklartefakta-schema.json`;
-const schema = Schema.lesSchema(schemapath);
+const schema = Schema.lesSchemaSync(schemapath);
 
 const catalog = lesAvklartefaktaKatalog();
 
