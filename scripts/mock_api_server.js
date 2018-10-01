@@ -81,7 +81,7 @@ router.get('/soknader/:behandlingID', soknader.hent);
 router.post('/soknader/:behandlingID', soknader.send);
 
 /**
- * FAKTAVKLARING (FRA STEGVELGEREN ++)
+ * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
  * ----------------------------------------------------------
  * avklartefakta for soknaden. Inneholder datagrunnlag fra saksbehandlers avklartefakta som ikke direkte
  * kommer fra søknad eller registere men som saksbehandler kan trekke slutninger rundt.

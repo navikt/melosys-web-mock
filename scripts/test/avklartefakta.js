@@ -17,7 +17,7 @@ const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('avklartefakta'));
+  console.log(colors.blue('Avklartefakta'));
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 

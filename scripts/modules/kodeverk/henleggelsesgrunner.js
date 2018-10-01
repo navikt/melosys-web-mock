@@ -13,3 +13,4 @@ const henleggelsesgrunner = [
     "term": "Begrunnelse oppgis i fritekst."
   }
 ];
+module.exports.henleggelsesgrunner = henleggelsesgrunner;

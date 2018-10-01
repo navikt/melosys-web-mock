@@ -44,7 +44,7 @@ module.exports.hent = async (req, res) => {
   }
 };
 /**
- * Send avklartefakta
+ * Send Avklartefakta
  * @param req
  * @param res
  * @returns {*}
@@ -52,10 +52,10 @@ module.exports.hent = async (req, res) => {
 module.exports.send = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("avklartefakta:send", JSON.stringify(jsonBody));
+  logger.debug("Avklartefakta:send", JSON.stringify(jsonBody));
 
   const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const valid = test(validate, jsonBody);
@@ -83,12 +83,12 @@ function valideringFeil(req, res) {
 function test(validate, data) {
   const valid = validate(data);
   if (valid) {
-    console.log('avklartefakta:send Valid!');
+    console.log('Avklartefakta:send Valid!');
   }
   else {
     const ajvErros = ajv.errorsText(validate.errors);
-    console.error('avklartefakta:send INVALID: see mock-errors.log');
-    logger.error('avklartefakta:send INVALID', ajvErros)
+    console.error('Avklartefakta:send INVALID: see mock-errors.log');
+    logger.error('Avklartefakta:send INVALID', ajvErros)
   }
   return valid;
 }

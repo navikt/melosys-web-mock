@@ -17,7 +17,7 @@ module.exports.lesJournalforingKatalog = () => {
   return Schema.lesKatalogSync(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = async (journalpostID) => {
+const lesOppgave = async (journalpostID) => { // eslint-disable-line no-unused-vars
   // const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-30098000492.json`;
   const mockfile = `${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`;
   return JSON.parse(await Utils.readFileAsync(mockfile));
@@ -86,7 +86,7 @@ function valideringFeil(req, res) {
 
 function test(validate, data) {
   const valid = validate(data);
-  if (valid) console.log('Valid!');
+  if (valid) console.log('Journalforint:send Valid!');
   else console.log('Invalid: ' + ajv.errorsText(validate.errors));
   return valid;
 }

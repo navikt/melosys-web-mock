@@ -1,4 +1,3 @@
-const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const URL = require('url');
