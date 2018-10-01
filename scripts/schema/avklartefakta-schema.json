@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://nav.no/faktaavklaring",
+  "$id": "http://nav.no/avklartefakta",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -28,15 +28,15 @@
         "opphold",
         "aktivitet",
         "sysselsetting",
-        "utsending",
         "bosted",
         "forutgaendeMedlemskap",
-        "sektor",
+        "yrkesaktivitet",
         "tjenestemann",
         "valgteArbeidsgivere",
         "yrkesaktivitetFordeling",
         "virksomhet",
-        "vesentligVirksomhet"
+        "vesentligVirksomhet",
+        "vurdering"
       ],
       "properties": {
         "opphold": {
@@ -170,77 +170,6 @@
             }
           }
         },
-        "utsending": {
-          "$id": "#/properties/avklaring/properties/utsending",
-          "type": "object",
-          "title": "The Utsending Schema",
-          "additionalProperties": false,
-          "required": [
-            "ansattINorskSelskap",
-            "erstatterTidligereUtsendt",
-            "utsendingMindreEnn24Mnd",
-            "foretakDriverINorge",
-            "arbeidKnyttetTilVirksomhetUtlandet",
-            "sammeTypeVirksomhet"
-          ],
-          "properties": {
-            "ansattINorskSelskap": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/ansattINorskSelskap",
-              "type": ["boolean", "null"],
-              "title": "The Ansattinorskselskap Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "erstatterTidligereUtsendt": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/erstatterTidligereUtsendt",
-              "type": ["boolean", "null"],
-              "title": "The Erstattertidligereutsendt Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendingMindreEnn24Mnd": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/utsendingMindreEnn24Mnd",
-              "type": ["boolean", "null"],
-              "title": "The Utsendingmindreenn24mnd Schema",
-              "default": false,
-              "examples": [
-                false,
-                true
-              ]
-            },
-            "foretakDriverINorge": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/foretakDriverINorge",
-              "type": ["boolean", "null"],
-              "title": "The Foretakdriverinorge Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "arbeidKnyttetTilVirksomhetUtlandet": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/arbeidKnyttetTilVirksomhetUtlandet",
-              "type": ["boolean", "null"],
-              "title": "The Arbeidknyttettilvirksomhetutlandet Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "sammeTypeVirksomhet": {
-              "$id": "#/properties/avklaring/properties/utsending/properties/sammeTypeVirksomhet",
-              "type": ["boolean", "null"],
-              "title": "The Sammetypevirksomhet Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            }
-          }
-        },
         "bosted": {
           "$id": "#/properties/avklaring/properties/bosted",
           "type": "object",
@@ -315,22 +244,22 @@
             }
           }
         },
-        "sektor": {
-          "$id": "#/properties/avklaring/properties/sektor",
+        "yrkesaktivitet": {
+          "$id": "#/properties/avklaring/properties/yrkesaktivitet",
           "type": "object",
-          "title": "The Sektor Schema",
+          "title": "The Yrkesaktivitet Schema",
           "additionalProperties": false,
           "required": [
-            "ansattISektor"
+            "yrkesaktivitetType"
           ],
           "properties": {
-            "ansattISektor": {
-              "$id": "#/properties/avklaring/properties/sektor/properties/ansattISektor",
+            "yrkesaktivitetType": {
+              "$id": "#/properties/avklaring/properties/yrkesaktivitet/properties/yrkesaktivitetType",
               "type": ["string", "null"],
-              "title": "The Ansattisektor Schema",
+              "title": "The YrkesaktivitetType Schema",
               "default": "",
               "examples": [
-                "INGEN_AV_DISSE"
+                "ORDINAER_ARBEIDSTAKER"
               ],
               "pattern": "^(.*)$"
             }
@@ -451,6 +380,43 @@
               "type": "array",
               "title": "The Vesentligvirksomhetbegrunnelser Schema",
               "uniqueItems": true
+            }
+          }
+        },
+        "vurdering": {
+          "$id": "#/properties/vurdering/properties/avklaring",
+          "type": "object",
+          "title": "The Avklaring Schema",
+          "additionalProperties": false,
+          "required": [
+            "lovvalgKode",
+            "begrunnelser"
+          ],
+          "properties": {
+            "lovvalgKode": {
+              "$id": "#/properties/avklaring/properties/vurdering/properties/lovvalgKode",
+              "type": ["string", "null"],
+              "title": "The LovvalgKode Schema",
+              "default": null,
+              "examples": [
+                "ART12_1"
+              ]
+            },
+            "begrunnelser": {
+              "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser",
+              "type": "array",
+              "title": "The Vesentligvirksomhetbegrunnelser Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "IKKE_VESENTLIGVIRKSOMHET"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         }

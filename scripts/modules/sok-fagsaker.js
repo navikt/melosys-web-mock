@@ -1,4 +1,3 @@
-const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const assert = require('assert');
@@ -6,6 +5,7 @@ const URL = require('url');
 const _ = require('underscore');
 
 const ERR = require('./errors');
+const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const happy = require('./happystatus');
 
@@ -13,20 +13,27 @@ const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {
-  return Schema.lesKatalog(MOCK_SOK_FAGFSAKER_DIR);
+  return Schema.lesKatalogSync(MOCK_SOK_FAGFSAKER_DIR);
 };
-const lesSokFagsak = (fnr) => {
+
+const lesFagsakAsync = async (path) => {
+  return JSON.parse(await Utils.readFileAsync(path));
+};
+const lesSokFagsakAsync = async (fnr) => {
   const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;
-  if (fs.existsSync(mockfile)) {
-    return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  if (await Utils.existsAsync(mockfile)) {
+    return await lesFagsakAsync(mockfile);
   }
   return [];
 };
-
+/*
+const lesFagsakSync = (path) => {
+  return JSON.parse(Utils.readFileSync(path));
+};
 const lesSokFagsakListe = () => {
   let fagsakListe = [];
-  fs.readdirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
-    const fagsaker = JSON.parse(fs.readFileSync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`, 'UTF-8'));
+  Utils.readDirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
+    const fagsaker = lesFagsakSync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
     fagsaker.every((fagsak) => {
       fagsakListe.push(fagsak);
     })
@@ -39,18 +46,40 @@ const lesSokFagsakListe = () => {
   }), true);
   return fagsakListe;
 };
+*/
+const lesAlleFagsakerAsync = async () => {
+  const files = await Utils.readDirAsync(MOCK_SOK_FAGFSAKER_DIR);
+  const promises = files.map(async (file) => {
+    return await lesFagsakAsync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
+  });
+  const alleFagsaker = await Promise.all(promises);
+  return alleFagsaker.reduce((acc, cur) => {
+    if (cur && cur.length) acc.push(...cur);
+    return acc;
+  }, []);
+};
 
+const lesSokFagsakListeAsync = async () => {
+  let fagsakListe = await lesAlleFagsakerAsync();
+  fagsakListe = _.uniq(fagsakListe.sort((a, b) => {
+    assert.ok(_.isString(a.saksnummer), 'Saksnummer must be a string');
+    assert.ok(_.isString(b.saksnummer), 'Saksnummer must be a string');
+    return a.saksnummer.localeCompare(b.saksnummer);
+    //return a.saksnummer - b.saksnummer; // For ints
+  }), true);
+  return fagsakListe;
+};
 /**
  * Sok fagsak; [GET] /api/fagsaker/sok/?:fnr
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.sok = (req, res) => {
+module.exports.sok = async (req, res) => {
   try {
     const fnr = req.query.fnr;
     if (fnr) {
-      const nyesaker = lesSokFagsak(fnr);
+      const nyesaker = await lesSokFagsakAsync(fnr);
       if (nyesaker && nyesaker.length) {
         return res.json(nyesaker);
       }
@@ -77,7 +106,8 @@ module.exports.sok = (req, res) => {
       }
     }
     else {
-      let fagsakListe = lesSokFagsakListe();
+      // const fagsakListe = lesSokFagsakListe();
+      const fagsakListe = await lesSokFagsakListeAsync();
       return res.json(fagsakListe);
     }
   } catch (err) {

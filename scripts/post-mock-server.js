@@ -21,8 +21,8 @@ instance.get('/saksbehandler').then(printresult).catch(console.error);
 const soknad4 = require('./mock_data/soknader/soknad-bid-4');
 instance.post('/soknader/4', soknad4).then(printresult).catch(console.error);
 
-const faktaavklaring4 = require('./mock_data/faktaavklaring/faktaavklaring-bid-4');
-instance.post('/faktaavklaring/4', faktaavklaring4).then(printresult).catch(console.error);
+const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
+instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(console.error);
 
 const vurdering4 = require('./mock_data/vurdering/vurdering-bid-4');
 instance.post('/vurdering/4', vurdering4).then(printresult).catch(console.error);
@@ -30,6 +30,11 @@ instance.post('/vurdering/4', vurdering4).then(printresult).catch(console.error)
 const oversikt = require('./mock_data/oppgaver/oversikt');
 instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(console.error);
 
+const journal_post_opprett = require('./mock_data/journalforing/post/opprett');
+instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).catch(console.error);
+
+const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
+instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(console.error);
 
 /*
 PUT vs POST for Creation

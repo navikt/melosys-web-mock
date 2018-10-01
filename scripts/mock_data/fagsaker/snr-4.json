@@ -673,6 +673,9 @@
           "familiemedlemmer" : [
 
           ]
+        },
+        "sakOgBehandling": {
+          "eosBarnetrygd": true
         }
       },
       "behandlingshistorikk" : [

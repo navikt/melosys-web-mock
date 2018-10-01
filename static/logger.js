@@ -1,5 +1,6 @@
 (function(){
-  var apiUrl = '/api/logger/';
+  var context = window.frontendlogger.context ? window.frontendlogger.context : '';
+  var apiUrl = context + '/api/logger/';
   var appname = window.frontendlogger.appname;
 
   function post(path, data) {

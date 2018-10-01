@@ -1,0 +1,20 @@
+{
+  "orgnr": "923609016",
+  "navn": "EQUINOR ASA",
+  "forretningsadresse": {
+    "gateadresse": {
+      "gatenavn": "Forusbeen 50"
+    },
+    "postnr": "4035",
+    "poststed": "STAVANGER",
+    "land": "NORGE"
+  },
+  "postadresse": {
+    "gateadresse": {
+      "gatenavn": "Postboks 8500"
+    },
+    "postnr": "4035",
+    "poststed": "STAVANGER",
+    "land": "NORGE"
+  }
+}

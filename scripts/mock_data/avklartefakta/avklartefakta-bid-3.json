@@ -1,9 +1,8 @@
 {
-  "behandlingID": 7,
+  "behandlingID": 3,
   "avklaring": {
     "opphold": {
       "land": [
-        { "landKode": "GB", "erGyldig": true, "begrunnelseKode": null}
       ],
       "periode": {
         "fom": "2018-01-01",
@@ -14,26 +13,18 @@
       "aktivitetLand": ["GB"]
     },
     "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
-    },
-    "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
-      "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "arbeidKnyttetTilVirksomhetUtlandet": null,
-      "sammeTypeVirksomhet": null
+      "sysselsettingType": "YRKESAKTIV"
     },
     "bosted": {
-      "bostedLand": "NO",
+      "bostedLand": null,
       "bostedBegrunnelser": []
     },
     "forutgaendeMedlemskap": {
       "harForutgaendeMedlemskap": null,
       "forutgaendeMedlemskapBegrunnelser": []
     },
-    "sektor": {
-      "ansattISektor": "INGEN_AV_DISSE"
+    "yrkesaktivitet": {
+      "yrkesaktivitetType": null
     },
     "tjenestemann": {
       "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
@@ -50,6 +41,10 @@
     "vesentligVirksomhet": {
       "vesentligVirksomhetINorge": null,
       "vesentligVirksomhetBegrunnelser": []
+    },
+    "vurdering": {
+      "lovvalgKode": "",
+      "begrunnelser": []
     }
   }
 }

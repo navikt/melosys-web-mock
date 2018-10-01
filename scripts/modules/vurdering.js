@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
@@ -12,23 +11,29 @@ const Schema = require('../test/schema-util');
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
-const VURDERING__MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
+const VURDERING_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vurdering`;
 
 module.exports.lesVurderingsKatalog = () => {
-  return Schema.lesKatalog(VURDERING__MOCK_DATA_DIR);
+  return Schema.lesKatalogSync(VURDERING_MOCK_DATA_DIR);
 };
+
+const lesVurdering = async (behandlingID) => {
+  const mockfile = `${VURDERING_MOCK_DATA_DIR}/vurdering-bid-${behandlingID}.json`;
+  return JSON.parse(await Utils.readFileAsync(mockfile));
+};
+
 /**
  * Hent vurdering
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const mockfile = `${MOCK_DATA_DIR}/vurdering/vurdering-bid-${behandlingID}.json`;
-    if (fs.existsSync(mockfile)) {
-      const data = JSON.parse(fs.readFileSync(mockfile, "utf8"));
+    if (await Utils.existsAsync(mockfile)) {
+      const data = await lesVurdering(behandlingID);
       const status = happy.happyStatus([200, 200, 404]);
       if (status === 200) {
         data.vurdering.feilmeldinger = [];
@@ -55,7 +60,7 @@ module.exports.hent = (req, res) => {
  */
 module.exports.send = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const behandlingID = req.params.behandlingID;
