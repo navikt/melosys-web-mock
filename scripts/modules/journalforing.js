@@ -1,4 +1,3 @@
-const fs = require('fs');
 const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
@@ -15,16 +14,16 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 module.exports.lesJournalforingKatalog = () => {
-  return Schema.lesKatalog(MOCK_JOURNALFORING_DIR);
+  return Schema.lesKatalogSync(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = (journalpostID) => {
+const lesOppgave = async (journalpostID) => { // eslint-disable-line no-unused-vars
   // const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-30098000492.json`;
   const mockfile = `${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`;
-  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  return JSON.parse(await Utils.readFileAsync(mockfile));
 };
 
-module.exports.hent = (req, res) => {
+module.exports.hent = async (req, res) => {
   const url = URL.parse(req.url);
   try {
     const journalpostID = req.params.journalpostID;
@@ -32,7 +31,7 @@ module.exports.hent = (req, res) => {
       const melding = ERR.badRequest400(url, "journalpostID mangler");
       return res.status(400).send(melding);
     }
-    const journalpost = lesOppgave(journalpostID);
+    const journalpost = await lesOppgave(journalpostID);
     return res.json(journalpost);
   }
   catch (err) {
@@ -45,7 +44,7 @@ module.exports.hent = (req, res) => {
 
 module.exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
@@ -63,7 +62,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 
 module.exports.sendTilordneSak = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
-  const schema = Schema.lesSchema(schemajson);
+  const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
@@ -87,7 +86,7 @@ function valideringFeil(req, res) {
 
 function test(validate, data) {
   const valid = validate(data);
-  if (valid) console.log('Valid!');
+  if (valid) console.log('Journalforint:send Valid!');
   else console.log('Invalid: ' + ajv.errorsText(validate.errors));
   return valid;
 }
