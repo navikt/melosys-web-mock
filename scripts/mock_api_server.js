@@ -13,7 +13,7 @@ const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
-const faktaavklaring = require('./modules/faktaavklaring');
+const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
@@ -79,15 +79,15 @@ router.post('/soknader/:behandlingID', soknader.send);
 /**
  * FAKTAVKLARING (FRA STEGVELGEREN ++)
  * ----------------------------------------------------------
- * Faktaavklaring for soknaden. Inneholder datagrunnlag fra saksbehandlers faktaavklaring som ikke direkte
+ * avklartefakta for soknaden. Inneholder datagrunnlag fra saksbehandlers avklartefakta som ikke direkte
  * kommer fra søknad eller registere men som saksbehandler kan trekke slutninger rundt.
- * GET /faktaavklaring Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
- * POST /faktaavklaring Sender alle faktaavklaringer som saksbehandler har gjort. Se Confluence
+ * GET /avklartefakta Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
+ * POST /avklartefakta Sender alle avklartefaktaer som saksbehandler har gjort. Se Confluence
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
-router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
+router.get('/avklartefakta/:behandlingID', avklartefakta.hent);
+router.post('/avklartefakta/:behandlingID', avklartefakta.send);
 
 /**
  * INNGANG (Første steg i STEGVELGEREN)
@@ -99,7 +99,7 @@ router.get('/inngang/:snr', inngang.hent);
  * VURDERING (FRA REGELMOTOREN)
  * ---------------------------------------------------------------
  * Vurdering (vurderingsforslag) fra regelmotor for soknaden. Denne kalles når regelmotor har (1) fagsaken (2) søknaden og
- * (3) faktaavklaring.
+ * (3) avklartefakta.
  * GET /vurdering Returnerer regelmotorens forslag til vurdering i tillegg til evt lagrede overprøvinger fra saksbehandler.
  * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
  *

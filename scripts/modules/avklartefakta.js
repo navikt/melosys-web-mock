@@ -13,14 +13,14 @@ const Schema = require('../test/schema-util');
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
-const FAKTAAVKLARING_MOCK_DIR = `${MOCK_DATA_DIR}/faktaavklaring`;
+const avklartefakta_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;
 
-module.exports.lesFaktaavklaringKatalog = () => {
-  return Schema.lesKatalog(FAKTAAVKLARING_MOCK_DIR);
+module.exports.lesAvklartefaktaKatalog = () => {
+  return Schema.lesKatalog(avklartefakta_MOCK_DIR);
 };
 
 const lesAvklaring = (behandlingID) => {
-  const mockfile = `${FAKTAAVKLARING_MOCK_DIR}/faktaavklaring-bid-${behandlingID}.json`;
+  const mockfile = `${avklartefakta_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
   return fs.existsSync(mockfile) ? JSON.parse(fs.readFileSync(mockfile, "utf8")) : {};
 };
 /**
@@ -45,7 +45,7 @@ module.exports.hent = (req, res) => {
   }
 };
 /**
- * Send faktaavklaring
+ * Send avklartefakta
  * @param req
  * @param res
  * @returns {*}
@@ -53,9 +53,9 @@ module.exports.hent = (req, res) => {
 module.exports.send = (req, res) => {
   const body = req.body;
   const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("faktaavklaring:send", JSON.stringify(jsonBody));
+  logger.debug("avklartefakta:send", JSON.stringify(jsonBody));
 
-  const schemajson = `${SCHEMA_DIR}/faktaavklaring-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
   const schema = Schema.lesSchema(schemajson);
   const validate = ajv.compile(schema);
 
@@ -66,12 +66,12 @@ module.exports.send = (req, res) => {
   let behandlingID, rest;
   ({behandlingID, ...rest} = jsonBody);
   behandlingID = req.params.behandlingID;
-  const faktaavklaring = {
+  const avklartefakta = {
     behandlingID,
     rest
   };
 
-  return res.json(faktaavklaring);
+  return res.json(avklartefakta);
 };
 
 
@@ -84,12 +84,12 @@ function valideringFeil(req, res) {
 function test(validate, data) {
   const valid = validate(data);
   if (valid) {
-    console.log('Faktaavklaring:send Valid!');
+    console.log('avklartefakta:send Valid!');
   }
   else {
     const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Faktaavklaring:send INVALID: see mock-errors.log');
-    logger.error('Faktaavklaring:send INVALID', ajvErros)
+    console.error('avklartefakta:send INVALID: see mock-errors.log');
+    logger.error('avklartefakta:send INVALID', ajvErros)
   }
   return valid;
 }
