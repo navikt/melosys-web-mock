@@ -43,6 +43,13 @@ module.exports.hent = async (req, res) => {
     return res.status(500).send(err);
   }
 };
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400, 'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+
 /**
  * Send Avklartefakta
  * @param req
@@ -62,23 +69,18 @@ module.exports.send = (req, res) => {
   if (!valid) {
     return valideringFeil(req, res);
   }
+
   let behandlingID, rest;
   ({behandlingID, ...rest} = jsonBody);
   behandlingID = req.params.behandlingID;
+
   const avklartefakta = {
     behandlingID,
-    rest
+    ...rest,
   };
 
   return res.json(avklartefakta);
 };
-
-
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
 
 function test(validate, data) {
   const valid = validate(data);
