@@ -1,16 +1,14 @@
 {
-  "journalpostID": "DOC_123",
-  "oppgaveID": "177057928",
-  "brukerID": "30098000492",
+  "arbeidsgiverID": "171178022",
   "avsenderID": "30098000492",
   "avsenderNavn": "PEN FUL",
-  "arbeidsgiverID": "171178022",
-  "representantID": "300980004",
+  "brukerID": "30098000492",
   "dokumentID": "2434234234",
   "dokumenttittel": "",
-  "vedleggstitler": [
-    ""
-  ],
+  "journalpostID": "DOC_123",
+  "oppgaveID": "177057928",
+  "representantID": "300980004",
+  "vedleggstitler": [],
   "fagsak": {
     "type": "EU_EOS",
     "soknadsperiode": {
