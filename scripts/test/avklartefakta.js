@@ -9,7 +9,7 @@ const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const schemapath = `${SCHEMA_DIR}/avklartefakta-schema.json`;
-const schema = Schema.lesSchema(schemapath);
+const schema = Schema.lesSchemaSync(schemapath);
 
 const catalog = lesAvklartefaktaKatalog();
 
@@ -17,7 +17,7 @@ const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('avklartefakta'));
+  console.log(colors.blue('Avklartefakta'));
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 
