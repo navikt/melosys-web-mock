@@ -71,13 +71,13 @@
     },
     "arbeidsgiverID": {
       "$id": "#/properties/arbeidsgiverID",
-      "type": "string",
+      "type": ["string","null"],
       "title": "The Arbeidsgiverid Schema",
       "default": "",
       "examples": [
         "171178022"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^[0-9]{9}$"
     },
     "representantID": {
       "$id": "#/properties/representantID",
@@ -87,7 +87,7 @@
       "examples": [
         "300980004"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^[0-9]{9}$"
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
