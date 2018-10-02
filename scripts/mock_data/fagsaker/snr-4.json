@@ -288,9 +288,6 @@
           "arbeidsInntektMaanedListe" : [
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "912499693",
@@ -319,9 +316,6 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "912499693",
@@ -350,9 +344,6 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "810072512",
@@ -381,9 +372,6 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "912499693",
@@ -412,9 +400,6 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "912499693",
@@ -443,9 +428,6 @@
             },
             {
               "arbeidsInntektInformasjon" : {
-                "arbeidsforholdFrilanserListe" : [
-
-                ],
                 "inntektListe" : [
                   {
                     "opplysningspliktigID" : "912499693",
@@ -472,7 +454,8 @@
               },
               "aarMaaned" : "2017-09"
             }
-          ]
+          ],
+          "frilansInntektMaanedListe": []
         },
         "sakOgBehandling": {
           "eosBarnetrygd": false

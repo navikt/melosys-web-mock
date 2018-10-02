@@ -487,7 +487,6 @@
             {
               "aarMaaned": "2017-12",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 30000,
@@ -516,7 +515,6 @@
             {
               "aarMaaned": "2017-11",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -545,7 +543,6 @@
             {
               "aarMaaned": "2018-02",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 2500,
@@ -658,7 +655,6 @@
             {
               "aarMaaned": "2017-10",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 30000,
@@ -684,7 +680,8 @@
                 ]
               }
             }
-          ]
+          ],
+          "frilansInntektMaanedListe": []
         },
         "sakOgBehandling": {
           "eosBarnetrygd": false

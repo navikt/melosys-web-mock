@@ -534,7 +534,6 @@
             {
               "aarMaaned": "2018-01",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -563,7 +562,6 @@
             {
               "aarMaaned": "2018-02",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -631,7 +629,8 @@
                 ]
               }
             }
-          ]
+          ],
+          "frilansInntektMaanedListe": []
         },
         "sakOgBehandling": {
           "eosBarnetrygd": false
