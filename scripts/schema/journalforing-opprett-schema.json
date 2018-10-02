@@ -131,15 +131,15 @@
       "title": "The Fagsak Schema",
       "additionalProperties": false,
       "required": [
-        "type",
+        "sakstype",
         "soknadsperiode",
         "land"
       ],
       "properties": {
-        "type": {
-          "$id": "#/properties/fagsak/properties/type",
+        "sakstype": {
+          "$id": "#/properties/fagsak/properties/sakstype",
           "type": "string",
-          "title": "The Type Schema",
+          "title": "The Sakstype Schema",
           "default": "",
           "examples": [
             "EU_EOS"
