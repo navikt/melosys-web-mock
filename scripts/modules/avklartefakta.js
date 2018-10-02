@@ -71,7 +71,10 @@ module.exports.send = (req, res) => {
     return valideringFeil(req, res);
   }
 
-  const { behandlingID, ...rest } = jsonBody;
+  let behandlingID, rest;
+  ({behandlingID, ...rest} = jsonBody);
+  behandlingID = req.params.behandlingID;
+
   const avklartefakta = {
     behandlingID,
     ...rest,
