@@ -1,20 +1,20 @@
 {
-  "orgnr": "910253158",
-  "navn": "MULTICONSULT ASA",
+  "orgnr": "910099035",
+  "navn": "SKARSVÅG OG VANSE",
   "forretningsadresse": {
     "gateadresse": {
-      "gatenavn": "Nedre Skøyen vei 2"
+      "gatenavn": "Olav Kyrres gate 9"
     },
-    "postnr": "0276",
-    "poststed": "OSLO",
+    "postnr": "3936",
+    "poststed": "TRONDHEIM",
     "land": "NORGE"
   },
   "postadresse": {
     "gateadresse": {
-      "gatenavn": "Postboks 265  Skøyen"
+      "gatenavn": "Olav Kyrres gate 9"
     },
-    "postnr": "0213",
-    "poststed": "OSLO",
+    "postnr": "3936",
+    "poststed": "TRONDHEIM",
     "land": "NORGE"
   }
 }

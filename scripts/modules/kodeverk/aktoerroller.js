@@ -21,3 +21,4 @@ const aktoerroller = [
     "term": "Myndigheten det sendes til og/eller mottas dokumentasjon fra i saken."
   }
 ];
+module.exports.aktoerroller = aktoerroller;

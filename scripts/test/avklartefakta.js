@@ -3,21 +3,21 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
-const { lesFaktaavklaringKatalog } = require('../modules/faktaavklaring');
+const { lesAvklartefaktaKatalog } = require('../modules/avklartefakta');
 
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemapath = `${SCHEMA_DIR}/faktaavklaring-schema.json`;
-const schema = Schema.lesSchema(schemapath);
+const schemapath = `${SCHEMA_DIR}/avklartefakta-schema.json`;
+const schema = Schema.lesSchemaSync(schemapath);
 
-const catalog = lesFaktaavklaringKatalog();
+const catalog = lesAvklartefaktaKatalog();
 
 const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('Faktaavklaring'));
+  console.log(colors.blue('Avklartefakta'));
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 
@@ -28,9 +28,9 @@ const testOne = (path) => {
   return Schema.runTest(elem, ajv, validate);
 };
 
-const faktaavklaring = {
+const avklartefakta = {
   testAll,
   testOne,
 };
-module.exports.faktaavklaring = faktaavklaring;
+module.exports.avklartefakta = avklartefakta;
 

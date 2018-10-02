@@ -30,3 +30,4 @@ const saksstatuser = [
     term: 'Saken har blitt henlagt'
   }
 ];
+module.exports.saksstatuser = saksstatuser;
