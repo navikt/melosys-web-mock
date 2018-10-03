@@ -1,0 +1,38 @@
+[
+  {
+    "vilkaar": "BOSATTINORGE",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  },
+  {
+    "vilkaar": "VESENTLIGVIRKSOMHET",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  },
+  {
+    "vilkaar": "FORUTGAAENDE_MEDLEMSKAP",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  },
+  {
+    "vilkaar": "art12_1",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  },
+  {
+    "vilkaar": "art12_2",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  },
+  {
+    "vilkaar": "art11_1",
+    "oppfylt": true,
+    "begrunnelseKoder": ["BEGRUNNELSE"],
+    "begrunnelseFritekst": "En begrunnelsestekst"
+  }
+]

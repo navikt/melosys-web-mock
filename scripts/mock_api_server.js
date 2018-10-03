@@ -13,6 +13,7 @@ const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
+const vilkar = require('./modules/vilkar');
 const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
@@ -157,6 +158,13 @@ router.get('/organisasjoner', organisasjoner.hent);
  * ---------------------------------------------------------------
  */
 router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
+
+/**
+ * VILKÅR
+ * ---------------------------------------------------------------
+ */
+router.get('/vilkaar/:behandlingID', vilkar.hent);
+router.post('/vilkaar/:behandlingID/:vilkarType', vilkar.send);
 
 /**
  * DOKUMENTER
