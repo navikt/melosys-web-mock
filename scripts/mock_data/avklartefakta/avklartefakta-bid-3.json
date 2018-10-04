@@ -1,50 +1,80 @@
-{
-  "behandlingID": 3,
-  "avklaring": {
-    "opphold": {
-      "land": [
-      ],
-      "periode": {
-        "fom": "2018-01-01",
-        "tom": "2019-01-01"
-      }
-    },
-    "aktivitet": {
-      "aktivitetLand": ["GB"]
-    },
-    "sysselsetting": {
-      "sysselsettingType": "YRKESAKTIV"
-    },
-    "bosted": {
-      "bostedLand": null,
-      "bostedBegrunnelser": []
-    },
-    "forutgaendeMedlemskap": {
-      "harForutgaendeMedlemskap": null,
-      "forutgaendeMedlemskapBegrunnelser": []
-    },
-    "yrkesaktivitet": {
-      "yrkesaktivitetType": null
-    },
-    "tjenestemann": {
-      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
-    },
-    "valgteArbeidsgivere": [],
-    "yrkesaktivitetFordeling": {
-      "antallLand": "ETT_LAND_IKKE_NORGE"
-    },
-    "virksomhet": {
-      "aktivitetINorge": "OVER_25_PROSENT",
-      "marginaltArbeid": "MARGINALT_JA",
-      "vekslingMellomLand": "EN_ELLER_BEGGE"
-    },
-    "vesentligVirksomhet": {
-      "vesentligVirksomhetINorge": null,
-      "vesentligVirksomhetBegrunnelser": []
-    },
-    "vurdering": {
-      "lovvalgKode": "",
-      "begrunnelser": []
-    }
+[
+  {
+    "referanse": "BOSTEDSLAND",
+    "fakta": "NO",
+    "subjektID": null,
+    "begrunnelseKoder": [
+      "OPPHOLD_MER_ENN_12_MND"
+    ],
+    "begrunnelseFritekst": "En egen fritekstbegrunnelse som ikke finnes i kodeverket"
+  },
+  {
+    "referanse": "OFFENTLIGTJENESTEMANN",
+    "fakta": "TRUE",
+    "subjektID": null,
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "KONTANTYTELSER",
+    "fakta": "FP",
+    "subjektID": null,
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "AGFORRETNINGSLAND",
+    "fakta": "DE",
+    "subjektID": "635284736",
+    "begrunnelseKoder": [
+      "ER_UTLANDET"
+    ],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "AGFORRETNINGSLAND",
+    "fakta": "DE",
+    "subjektID": "635284736",
+    "begrunnelseKoder": [
+      "ER_UTLANDET"
+    ],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "AGFORRETNINGSLAND",
+    "fakta": "DE",
+    "subjektID": "635284736",
+    "begrunnelseKoder": [
+      "ER_UTLANDET"
+    ],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "TJENESTESTED_NORSKSTATSFORVALTNING",
+    "fakta": "TRUE",
+    "subjektID": null,
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "TJENESTESTED_ARBEIDSPROSENT",
+    "fakta": "MER_ENN_5_PROSENT",
+    "subjektID": null,
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "SOKKELSKIP",
+    "fakta": "SOKKEL",
+    "subjektID": "736283472834",
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "SOKKELSKIP",
+    "fakta": "SKIP",
+    "subjektID": "47848293838",
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
   }
-}
+]

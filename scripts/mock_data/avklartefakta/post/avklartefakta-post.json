@@ -1,52 +1,16 @@
-{
-  "avklaring": {
-    "opphold": {
-      "land": [
-        "DE"
-      ],
-      "periode": {
-        "fom": "2018-01-01",
-        "tom": "2019-01-01"
-      }
-    },
-    "sysselsetting": {
-      "sysselsettingType": "ARBEIDSTAKER"
-    },
-    "aktivitet": {
-      "aktivitetLand": []
-    },
-    "utsending": {
-      "ansattINorskSelskap": true,
-      "erstatterTidligereUtsendt": true,
-      "utsendingMindreEnn24Mnd": null,
-      "foretakDriverINorge": true,
-      "harForutgaendeMedlemskap": true,
-      "arbeidKnyttetTilVirksomhetUtlandet": null,
-      "sammeTypeVirksomhet": null
-    },
-    "valgteArbeidsgivere": [],
-    "yrkesaktivitet": {
-      "yrkesaktivitetType": "ORDINAER_ARBEIDSTAKER"
-    },
-    "bosted": {
-      "vurdering": {},
-      "land": []
-    },
-    "yrkesaktivitetFordeling": {
-      "antallLand": "ETT_LAND_IKKE_NORGE"
-    },
-    "virksomhet": {
-      "aktivitetINorge": "OVER_25_PROSENT",
-      "marginaltArbeid": "MARGINALT_JA",
-      "vekslingMellomLand": "EN_ELLER_BEGGE"
-    },
-    "tjenestemann": {
-      "tjenestemann": "ETT_LAND_YRKESAKTIVITET_ANDRE_LAND"
-    },
-    "forretningssted": {},
-    "vesentligVirksomhet": {
-      "vesentligVirksomhetINorge": null,
-      "vesentligVirksomhetBegrunnelser": []
-    }
+[
+  {
+    "referanse": "TJENESTESTED_NORSKSTATSFORVALTNING",
+    "subjektID": null,
+    "fakta": "TRUE",
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
+  },
+  {
+    "referanse": "TJENESTESTED_ARBEIDSPROSENT",
+    "subjektID": null,
+    "fakta": "MER_ENN_5_PROSENT",
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
   }
-}
+]
