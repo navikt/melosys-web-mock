@@ -1,5 +1,87 @@
 {
-  "definitions": {},
+  "definitions": {
+    "avklartefakta": {
+      "type": ["object","null"],
+      "required": [
+        "referanse",
+        "fakta",
+        "subjektID",
+        "begrunnelseKoder",
+        "begrunnelseFritekst"
+      ],
+      "properties": {
+        "referanse": {
+          "$id": "#/items/properties/referanse",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Referanse Schema",
+          "default": "",
+          "examples": [
+            "BOSTEDSLAND"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "fakta": {
+          "$id": "#/items/properties/fakta",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Fakta Schema",
+          "default": "",
+          "examples": [
+            "NO"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "subjektID": {
+          "$id": "#/items/properties/subjektID",
+          "type": ["string","null"],
+          "title": "The Subjektid Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "begrunnelseKoder": {
+          "$id": "#/items/properties/begrunnelseKoder",
+          "type": [
+            "array",
+            "null"
+          ],
+          "title": "The Begrunnelsekoder Schema",
+          "items": {
+            "$id": "#/items/properties/begrunnelseKoder/items",
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "The Items Schema",
+            "default": "",
+            "examples": [
+              "OPPHOLD_MER_ENN_12_MND"
+            ],
+            "pattern": "^(.*)$"
+          }
+        },
+        "begrunnelseFritekst": {
+          "$id": "#/items/properties/begrunnelseFritekst",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Begrunnelsefritekst Schema",
+          "default": "",
+          "examples": [
+            "En egen fritekstbegrunnelse som ikke finnes i kodeverket"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://nav.no/avklartefakta.json",
   "type": [
@@ -9,88 +91,6 @@
   "title": "The Root Schema",
   "items": {
     "$id": "#/items",
-    "type": [
-      "object",
-      "null"
-    ],
-    "title": "The Items Schema",
-    "required": [
-      "referanse",
-      "fakta",
-      "subjektID",
-      "begrunnelseKoder",
-      "begrunnelseFritekst"
-    ],
-    "properties": {
-      "referanse": {
-        "$id": "#/items/properties/referanse",
-        "type": [
-          "string",
-          "null"
-        ],
-        "title": "The Referanse Schema",
-        "default": "",
-        "examples": [
-          "BOSTEDSLAND"
-        ],
-        "pattern": "^(.*)$"
-      },
-      "fakta": {
-        "$id": "#/items/properties/fakta",
-        "type": [
-          "string",
-          "null"
-        ],
-        "title": "The Fakta Schema",
-        "default": "",
-        "examples": [
-          "NO"
-        ],
-        "pattern": "^(.*)$"
-      },
-      "subjektID": {
-        "$id": "#/items/properties/subjektID",
-        "type": ["string","null"],
-        "title": "The Subjektid Schema",
-        "default": null,
-        "examples": [
-          null
-        ]
-      },
-      "begrunnelseKoder": {
-        "$id": "#/items/properties/begrunnelseKoder",
-        "type": [
-          "array",
-          "null"
-        ],
-        "title": "The Begrunnelsekoder Schema",
-        "items": {
-          "$id": "#/items/properties/begrunnelseKoder/items",
-          "type": [
-            "string",
-            "null"
-          ],
-          "title": "The Items Schema",
-          "default": "",
-          "examples": [
-            "OPPHOLD_MER_ENN_12_MND"
-          ],
-          "pattern": "^(.*)$"
-        }
-      },
-      "begrunnelseFritekst": {
-        "$id": "#/items/properties/begrunnelseFritekst",
-        "type": [
-          "string",
-          "null"
-        ],
-        "title": "The Begrunnelsefritekst Schema",
-        "default": "",
-        "examples": [
-          "En egen fritekstbegrunnelse som ikke finnes i kodeverket"
-        ],
-        "pattern": "^(.*)$"
-      }
-    }
+    "$ref": "#/definitions/avklartefakta"
   }
 }
