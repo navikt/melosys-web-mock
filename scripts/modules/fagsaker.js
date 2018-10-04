@@ -16,7 +16,7 @@ module.exports.hent = async (req, res) => {
   try {
     let { snr } = req.params;
     snr = snr && snr.toString() || '';
-    const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}BAD.json`;
+    const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
     logger.trace(mockfile);
     const exists = await existsAsync(mockfile);
     if (exists) {
