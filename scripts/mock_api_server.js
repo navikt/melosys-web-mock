@@ -164,6 +164,10 @@ router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk
  */
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 
+router.get('/dokumenter/utkast/pdf/:behandlingID/:dokumentTypeKode', dokumenter.hentPdfUtkast);
+router.post('/dokumenter/opprett/:behandlingID/:dokumentTypeKode', dokumenter.opprettPdf);
+
+// /dokumenter/opprett/{behandlingID}/{typeID}
 //router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
