@@ -3,9 +3,6 @@ const logger = log4js.getLogger('mock');
 
 module.exports.oppfrisk = (req, res) => {
   try {
-    const { behandlingID } = req.params;
-    createLibraryItem(behandlingID);
-
     return res.status(204).send();
   }
 
