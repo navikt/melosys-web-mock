@@ -30,11 +30,11 @@ module.exports.status = (req, res) => {
     const { count, targetCount } = statusLibrary[behandlingID];
 
     if (count === targetCount) {
-      return res.status(200).send('DONE');
+      return res.json('DONE');
     }
 
     statusLibrary[behandlingID] = { ...statusLibrary[behandlingID], count: count + 1 };
-    return res.status(200).send('PROGRESS');
+    return res.json('PROGRESS');
   }
   catch (err) {
     console.error(err);
