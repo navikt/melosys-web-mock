@@ -10,7 +10,7 @@ const printresult = res => {
   const { method, url} = res.config;
   console.log(`[${method.toUpperCase()}]`, url);
   console.log(res.status, res.statusText);
-  console.log(res.data);
+  // console.log(res.data);
   console.log("-------------------------------------------------------\n");
 };
 
@@ -36,6 +36,11 @@ instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).
 const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
 instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(console.error);
 
+const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
+const behandlingID = 3;
+const dokumentTypeID = 4000074;
+instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
+instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 /*
 PUT vs POST for Creation
 In short, favor using POST for resource creation.
