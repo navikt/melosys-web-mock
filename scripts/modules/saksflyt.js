@@ -4,6 +4,7 @@ const ERR = require('./errors');
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const statusarray = ['PROGRESS','ERROR', 'PROGRESS', 'PROGRESS','ERROR', 'PROGRESS','PROGRESS','PROGRESS','DONE','ERROR'];
+//const statusarray = ['PROGRESS', 'PROGRESS','PROGRESS','PROGRESS','PROGRESS','PROGRESS','DONE'];
 
 module.exports.sjekkStatus = async (req, res) => {
   const url = URL.parse(req.url);
