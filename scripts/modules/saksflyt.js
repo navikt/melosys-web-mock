@@ -11,11 +11,27 @@ const removeLibraryItem = behandlingID => {
   delete statusLibrary[behandlingID]
 }
 
+module.exports.oppfrisk = (req, res) => {
+  try {
+    const { behandlingID } = req.params;
+    if(!statusLibrary[behandlingID]) { createLibraryItem(behandlingID) }
+
+    return res.status(204).send();
+  }
+
+  catch (err) {
+    console.error(err);
+    logger.error(err);
+    return res.status(500).send(err);
+  }
+};
+
 module.exports.status = (req, res) => {
   try {
     const { behandlingID } = req.params;
 
-    if(!statusLibrary[behandlingID]) { createLibraryItem(behandlingID) }
+    if(!statusLibrary[behandlingID]) { return res.json('DONE'); }
+
     const { count, targetCount } = statusLibrary[behandlingID];
 
     if (count === targetCount) {

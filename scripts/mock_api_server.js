@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
-const saksopplysninger = require('./modules/saksopplysninger');
 const saksflyt = require('./modules/saksflyt');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
@@ -157,7 +156,7 @@ router.get('/organisasjoner', organisasjoner.hent);
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
+router.get('/saksopplysninger/oppfrisk/:behandlingID', saksflyt.oppfrisk);
 
 /**
  * SAKSFLYT
