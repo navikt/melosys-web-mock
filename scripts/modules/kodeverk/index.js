@@ -12,6 +12,7 @@ const { oppgavetyper } = require('./oppgavetyper');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { dokumenttyper } = require('./dokumenttyper');
 
 const kodeverk = {
   behandlingsstatus,
@@ -24,6 +25,7 @@ const kodeverk = {
   oppgavetyper,
   sakstyper,
   vedleggstitler,
+  dokumenttyper
 };
 module.exports.kodeverk = kodeverk;
 

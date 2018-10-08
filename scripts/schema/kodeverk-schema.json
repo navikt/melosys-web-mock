@@ -414,6 +414,16 @@
           }
         }
       }
+    },
+    "dokumenttyper": {
+      "$id": "#/properties/dokumenttyper",
+      "type": "array",
+      "title": "The Dokumenttyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/sakstyper/items",
+        "$ref": "#/definitions/kodeverk"
+      }
     }
   }
 }
