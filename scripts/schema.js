@@ -14,7 +14,7 @@ const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 const { SokOppgaver } = require('./test/sok-oppgaver');
 const { oppgaver } = require('./test/oppgaver');
-const { faktaavklaring } = require('./test/faktaavklaring');
+const { avklartefakta } = require('./test/avklartefakta');
 
 const Schema = require('./test/schema-util');
 
@@ -43,7 +43,7 @@ const katalogMap = new Map([
   ['journalforing', journalforing],
   ['oppgaver/sok', SokOppgaver],
   ['oppgaver', oppgaver],
-  ['faktaavklaring', faktaavklaring],
+  ['avklartefakta', avklartefakta],
 ]);
 
 const testAll = () => {

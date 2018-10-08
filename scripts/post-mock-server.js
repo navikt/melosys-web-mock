@@ -10,7 +10,7 @@ const printresult = res => {
   const { method, url} = res.config;
   console.log(`[${method.toUpperCase()}]`, url);
   console.log(res.status, res.statusText);
-  console.log(res.data);
+  // console.log(res.data);
   console.log("-------------------------------------------------------\n");
 };
 
@@ -21,8 +21,8 @@ instance.get('/saksbehandler').then(printresult).catch(console.error);
 const soknad4 = require('./mock_data/soknader/soknad-bid-4');
 instance.post('/soknader/4', soknad4).then(printresult).catch(console.error);
 
-const faktaavklaring4 = require('./mock_data/faktaavklaring/faktaavklaring-bid-4');
-instance.post('/faktaavklaring/4', faktaavklaring4).then(printresult).catch(console.error);
+const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
+instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(console.error);
 
 const vurdering4 = require('./mock_data/vurdering/vurdering-bid-4');
 instance.post('/vurdering/4', vurdering4).then(printresult).catch(console.error);
@@ -36,6 +36,11 @@ instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).
 const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
 instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(console.error);
 
+const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
+const behandlingID = 3;
+const dokumentTypeID = 4000074;
+instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
+instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 /*
 PUT vs POST for Creation
 In short, favor using POST for resource creation.

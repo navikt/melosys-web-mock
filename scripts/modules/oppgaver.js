@@ -1,4 +1,3 @@
-const fs = require('fs');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const _ = require('underscore');
@@ -8,24 +7,24 @@ const Utils = require('./utils');
 const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVRE_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
-const lesOversikt = () => {
+const lesOversikt = async () => {
   const mockfile = `${MOCK_DATA_OPPGAVRE_DIR}/oversikt.json`;
-  return JSON.parse(fs.readFileSync(mockfile, "utf8"));
+  return JSON.parse(await Utils.readFileAsync(mockfile));
 };
 
 module.exports.lesOppgaveKatalog = () => {
   const navn = 'oversikt.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
-  const document =  JSON.parse(fs.readFileSync(jasonfile, "utf8"));
+  const document =  JSON.parse(Utils.readFileSync(jasonfile));
   return [{
     navn,
     document
   }];
 };
 
-module.exports.hentPlukk = (req, res) => {
+module.exports.hentPlukk = async (req, res) => {
   try {
-    const oversikt = lesOversikt();
+    const oversikt = await lesOversikt();
     return res.json(_.sample(oversikt, 4));
   }
   catch (err) {
@@ -56,9 +55,9 @@ module.exports.sendPlukk = (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.oversikt = (req, res) => {
+module.exports.oversikt = async (req, res) => {
   try {
-    const oversikt = lesOversikt();
+    const oversikt = await lesOversikt();
     return res.json(oversikt);
   }
   catch (err) {

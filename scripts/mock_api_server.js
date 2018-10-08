@@ -14,7 +14,7 @@ const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
-const faktaavklaring = require('./modules/faktaavklaring');
+const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
@@ -26,10 +26,14 @@ const LOGDIR = `${process.cwd()}/logdir`;
 createLogDirIfnotExists(LOGDIR);
 
 const MOCK_LOG_FILE = `${LOGDIR}/mock-errors.log`;
+const WEB_MOCK_LOG_FILE = `${LOGDIR}/web-mock-errors.log`;
 const log4js = require('log4js');
 log4js.configure({
-  appenders: { mock: { type: 'file', filename: MOCK_LOG_FILE } },
-  categories: { default: { appenders: ['mock'], level: 'debug' } }
+  appenders: {
+    mock: { type: 'file', filename: MOCK_LOG_FILE, maxLogSize: 10485760, backups: 3, compress: true },
+    webmock: { type: 'file', filename: WEB_MOCK_LOG_FILE, maxLogSize: 10485760, backups: 3, compress: true }
+  },
+  categories: { default: { appenders: ['mock','webmock'], level: 'debug' } }
 });
 
 const app = express();
@@ -78,17 +82,17 @@ router.get('/soknader/:behandlingID', soknader.hent);
 router.post('/soknader/:behandlingID', soknader.send);
 
 /**
- * FAKTAVKLARING (FRA STEGVELGEREN ++)
+ * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
  * ----------------------------------------------------------
- * Faktaavklaring for soknaden. Inneholder datagrunnlag fra saksbehandlers faktaavklaring som ikke direkte
+ * avklartefakta for soknaden. Inneholder datagrunnlag fra saksbehandlers avklartefakta som ikke direkte
  * kommer fra søknad eller registere men som saksbehandler kan trekke slutninger rundt.
- * GET /faktaavklaring Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
- * POST /faktaavklaring Sender alle faktaavklaringer som saksbehandler har gjort. Se Confluence
+ * GET /avklartefakta Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
+ * POST /avklartefakta Sender alle avklartefaktaer som saksbehandler har gjort. Se Confluence
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/:behandlingID', faktaavklaring.hent);
-router.post('/faktaavklaring/:behandlingID', faktaavklaring.send);
+router.get('/avklartefakta/:behandlingID', avklartefakta.hent);
+router.post('/avklartefakta/:behandlingID', avklartefakta.send);
 
 /**
  * INNGANG (Første steg i STEGVELGEREN)
@@ -100,7 +104,7 @@ router.get('/inngang/:snr', inngang.hent);
  * VURDERING (FRA REGELMOTOREN)
  * ---------------------------------------------------------------
  * Vurdering (vurderingsforslag) fra regelmotor for soknaden. Denne kalles når regelmotor har (1) fagsaken (2) søknaden og
- * (3) faktaavklaring.
+ * (3) avklartefakta.
  * GET /vurdering Returnerer regelmotorens forslag til vurdering i tillegg til evt lagrede overprøvinger fra saksbehandler.
  * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
  *
@@ -123,6 +127,7 @@ router.get('/kodeverk', Kodeverk.hent);
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/sok', sokOppgaver.sok);
+router.get('/oppgaver/plukk', oppgaver.hentPlukk);
 router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
@@ -165,6 +170,8 @@ router.get('/saksflyt/:behandlingID/status', saksflyt.status);
  *  * ---------------------------------------------------------------
  */
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumentTypeID', dokumenter.lagPdfUtkast);
+router.post('/dokumenter/opprett/:behandlingID/:dokumentTypeID', dokumenter.opprettDokument);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
