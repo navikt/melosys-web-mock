@@ -18,6 +18,7 @@ const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
+const Saksflyt = require('./modules/saksflyt');
 const logging = require('./modules/logging');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
@@ -158,6 +159,8 @@ router.get('/organisasjoner', organisasjoner.hent);
  */
 router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
 
+router.get('/saksflyt/status/:behandlingID', Saksflyt.sjekkStatus);
+//router.get('/saksflyt/:behandlingID/status', Saksflyt.sjekkStatus);
 /**
  * DOKUMENTER
  *  * ---------------------------------------------------------------
