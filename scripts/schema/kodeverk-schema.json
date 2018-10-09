@@ -40,6 +40,7 @@
     "behandlingstyper",
     "begrunnelser",
     "dokumenttitler",
+    "dokumenttyper",
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
@@ -294,6 +295,16 @@
         "$ref": "#/definitions/kodeverk"
       }
     },
+    "dokumenttyper": {
+      "$id": "#/properties/dokumenttyper",
+      "type": "array",
+      "title": "The Dokumenttyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/dokumenttyper/items",
+        "$ref": "#/definitions/kodeverk"
+      }
+    },
     "finansiering": {
       "$id": "#/properties/finansiering",
       "type": "array",
@@ -413,16 +424,6 @@
             "pattern": "^(.*)$"
           }
         }
-      }
-    },
-    "dokumenttyper": {
-      "$id": "#/properties/dokumenttyper",
-      "type": "array",
-      "title": "The Dokumenttyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/sakstyper/items",
-        "$ref": "#/definitions/kodeverk"
       }
     }
   }
