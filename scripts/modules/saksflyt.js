@@ -4,7 +4,7 @@ const logger = log4js.getLogger('mock');
 let statusLibrary = {};
 
 const createLibraryItem = behandlingID => {
-  statusLibrary[behandlingID] = { behandlingID, count: 0, targetCount: Math.round(Math.random() * 10) };
+  statusLibrary[behandlingID] = { behandlingID, count: 0, targetCount: 5 + Math.round(Math.random() * 5) };
 }
 
 const removeLibraryItem = behandlingID => {
