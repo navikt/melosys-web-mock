@@ -162,7 +162,7 @@ router.get('/saksopplysninger/oppfrisk/:behandlingID', saksflyt.oppfrisk);
  * SAKSFLYT
  * ---------------------------------------------------------------
  */
-router.get('/saksflyt/:behandlingID/status', saksflyt.status);
+router.get('/saksflyt/status/:behandlingID', saksflyt.status);
 
 /**
  * DOKUMENTER
