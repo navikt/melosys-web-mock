@@ -80,8 +80,7 @@ module.exports.send = (req, res) => {
       valideringFeil(req, res);
     }
     else if (fs.existsSync(mockfileSoknad)) {
-      const soknad = lesSoknad(behandlingID);
-      res.json(soknad);
+      res.json(body);
     }
     else {
       const { soeknadDokument } = jsonBody;
