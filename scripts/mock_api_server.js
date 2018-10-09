@@ -90,8 +90,8 @@ router.post('/soknader/:behandlingID', soknader.send);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/faktaavklaring/:behandlingID', avklartefakta.hent);
-router.post('/faktaavklaring/:behandlingID', avklartefakta.send);
+router.get('/avklartefakta/:behandlingID', avklartefakta.hent);
+router.post('/avklartefakta/:behandlingID', avklartefakta.send);
 
 /**
  * INNGANG (Første steg i STEGVELGEREN)
