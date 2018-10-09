@@ -327,7 +327,6 @@
           "required": [
             "oppholdslandKoder",
             "oppholdsPeriode",
-            "oppholdsPeriodeEndringsBegrunnelse",
             "ektefelleEllerBarnINorge",
             "sammeAdresseSomArbeidsgiver",
             "studentFinansieringKode",
@@ -382,16 +381,6 @@
                   "pattern": "^(.*)$"
                 }
               }
-            },
-            "oppholdsPeriodeEndringsBegrunnelse": {
-              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriodeEndringsBegrunnelse",
-              "type": ["string","null"],
-              "title": "The OppholdsPeriodeEndringsBegrunnelse Schema",
-              "default": "",
-              "examples": [
-                "NYE_OPPLYSNINGER"
-              ],
-              "pattern": "^(.*)$"
             },
             "ektefelleEllerBarnINorge": {
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
