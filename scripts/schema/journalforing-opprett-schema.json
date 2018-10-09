@@ -71,13 +71,13 @@
     },
     "arbeidsgiverID": {
       "$id": "#/properties/arbeidsgiverID",
-      "type": "string",
+      "type": ["string","null"],
       "title": "The Arbeidsgiverid Schema",
       "default": "",
       "examples": [
         "171178022"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^[0-9]{9}$"
     },
     "representantID": {
       "$id": "#/properties/representantID",
@@ -87,7 +87,7 @@
       "examples": [
         "300980004"
       ],
-      "pattern": "^(.*)$"
+      "pattern": "^[0-9]{9}$"
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
@@ -131,15 +131,15 @@
       "title": "The Fagsak Schema",
       "additionalProperties": false,
       "required": [
-        "type",
+        "sakstype",
         "soknadsperiode",
         "land"
       ],
       "properties": {
-        "type": {
-          "$id": "#/properties/fagsak/properties/type",
+        "sakstype": {
+          "$id": "#/properties/fagsak/properties/sakstype",
           "type": "string",
-          "title": "The Type Schema",
+          "title": "The Sakstype Schema",
           "default": "",
           "examples": [
             "EU_EOS"

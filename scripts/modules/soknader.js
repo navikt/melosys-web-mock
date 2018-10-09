@@ -13,7 +13,11 @@ const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-const lesSoknad = async (behandlingID) => {
+const lesSoknad = (behandlingID) => {
+  const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
+  return JSON.parse(Utils.readFileSync(mockfileSoknad));
+};
+const lesSoknadAsync = async (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(await Utils.readFileAsync(mockfileSoknad));
 };
@@ -44,7 +48,7 @@ const skrivSoknad = (behandlingID, soeknadDokument) => {
 module.exports.hent = async (req, res) => {
   const behandlingID = req.params.behandlingID;
   try {
-    const soknad = await lesSoknad(behandlingID);
+    const soknad = await lesSoknadAsync(behandlingID);
     return res.json(soknad);
   }
   catch (err) {

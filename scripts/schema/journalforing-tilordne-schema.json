@@ -6,41 +6,17 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "avsenderID",
+    "avsenderNavn",
+    "brukerID",
+    "dokumentID",
+    "dokumenttittel",
     "journalpostID",
     "oppgaveID",
-    "brukerID",
-    "dokumenttittel",
-    "vedleggstitler",
-    "saksnummer"
+    "saksnummer",
+    "vedleggstitler"
   ],
   "properties": {
-    "journalpostID": {
-      "$id": "/properties/journalpostID",
-      "type": "string",
-      "title": "The Journalpostid Schema ",
-      "default": "",
-      "examples": [
-        "DOK_321"
-      ]
-    },
-    "oppgaveID": {
-      "$id": "/properties/oppgaveID",
-      "type": "string",
-      "title": "The Oppgaveid Schema ",
-      "default": "",
-      "examples": [
-        "192121803"
-      ]
-    },
-    "brukerID": {
-      "$id": "/properties/brukerID",
-      "type": "string",
-      "title": "The Brukerid Schema ",
-      "default": "",
-      "examples": [
-        "30098000492"
-      ]
-    },
     "avsenderID": {
       "$id": "/properties/avsenderID",
       "type": "string",
@@ -59,6 +35,15 @@
         "30098000492"
       ],
       "pattern": "^(.*)$"
+    },
+    "brukerID": {
+      "$id": "/properties/brukerID",
+      "type": "string",
+      "title": "The Brukerid Schema ",
+      "default": "",
+      "examples": [
+        "30098000492"
+      ]
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
@@ -79,13 +64,23 @@
         "Søknad om medlemskap"
       ]
     },
-    "vedleggstitler": {
-      "$id": "/properties/vedleggstitler",
-      "type": "array",
-      "items": {
-        "$id": "/properties/vedleggstitler/items",
-        "type": "string"
-      }
+    "journalpostID": {
+      "$id": "/properties/journalpostID",
+      "type": "string",
+      "title": "The Journalpostid Schema ",
+      "default": "",
+      "examples": [
+        "DOK_321"
+      ]
+    },
+    "oppgaveID": {
+      "$id": "/properties/oppgaveID",
+      "type": "string",
+      "title": "The Oppgaveid Schema ",
+      "default": "",
+      "examples": [
+        "192121803"
+      ]
     },
     "saksnummer": {
       "$id": "/properties/saksnummer",
@@ -95,6 +90,14 @@
       "examples": [
         44
       ]
+    },
+    "vedleggstitler": {
+      "$id": "/properties/vedleggstitler",
+      "type": "array",
+      "items": {
+        "$id": "/properties/vedleggstitler/items",
+        "type": "string"
+      }
     }
   }
 }
