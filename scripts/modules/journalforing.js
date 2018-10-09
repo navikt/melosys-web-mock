@@ -49,9 +49,9 @@ module.exports.sendOpprettNySak = (req, res) => {
 
   const body = req.body;
   try {
-    let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    logger.debug("journalforing:sendOpprettNySak", JSON.stringify(jsonBody));
-    const valid = test(validate, jsonBody);
+    let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    logger.debug("journalforing:sendOpprettNySak", JSON.stringify(jsBody));
+    const valid = test(validate, jsBody);
     return (valid) ? res.status(204).json('') : valideringFeil(req, res);
   }
   catch (err) {
@@ -67,9 +67,9 @@ module.exports.sendTilordneSak = (req, res) => {
 
   const body = req.body;
   try {
-    let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    logger.debug("journalforing:sendTilordneSak", JSON.stringify(jsonBody));
-    const valid = test(validate, jsonBody);
+    let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    logger.debug("journalforing:sendTilordneSak", JSON.stringify(jsBody));
+    const valid = test(validate, jsBody);
     return (valid) ? res.status(204).json('') : valideringFeil(req, res);
   }
   catch (err) {

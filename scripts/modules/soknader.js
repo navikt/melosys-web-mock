@@ -1,4 +1,3 @@
-const fs = require('fs');
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
@@ -25,18 +24,6 @@ module.exports.lesSoknad = lesSoknad;
 
 module.exports.lesSoknadKatalog = () => {
   return Schema.lesKatalogSync(MOCK_SOKNAD_DIR);
-};
-
-const skrivSoknad = (behandlingID, soeknadDokument) => {
-  const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
-
-  // Triks for å sikre at behandlingsID kommmer som forste key og ikke sist
-  const soknad = {
-    behandlingID,
-    soeknadDokument,
-  };
-  Utils.writeFileSync(mockfileSoknad, JSON.stringify(soknad, null, 2));
-  return soknad;
 };
 
 /**
@@ -68,25 +55,16 @@ module.exports.send = (req, res) => {
   const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
-  const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("soknad:send", JSON.stringify(jsonBody));
-  const mockfileSoknad = `${MOCK_DATA_DIR}/soknader/soknad-bid-${behandlingID}.json`;
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("soknad:send", body);
 
   try {
-    const valid = test(validate, jsonBody);
+    const valid = test(validate, jsBody);
     if (!valid) {
       valideringFeil(req, res);
     }
-    else if (fs.existsSync(mockfileSoknad)) {
-      res.json(body);
-    }
-    else {
-      const { soeknadDokument } = jsonBody;
-      const soknad = skrivSoknad(behandlingID, soeknadDokument);
-      res.json(soknad);
-    }
+    res.json(body);
   }
   catch (err) {
     console.log(err);
