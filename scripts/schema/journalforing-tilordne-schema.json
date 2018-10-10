@@ -6,7 +6,6 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "arbeidsgiverID",
     "avsenderID",
     "avsenderNavn",
     "brukerID",
@@ -14,21 +13,10 @@
     "dokumenttittel",
     "journalpostID",
     "oppgaveID",
-    "representantID",
     "saksnummer",
     "vedleggstitler"
   ],
   "properties": {
-    "arbeidsgiverID": {
-      "$id": "#/properties/arbeidsgiverID",
-      "type": ["string","null"],
-      "title": "The Arbeidsgiverid Schema",
-      "default": "",
-      "examples": [
-        "171178022"
-      ],
-      "pattern": "^[0-9]{9}$"
-    },
     "avsenderID": {
       "$id": "/properties/avsenderID",
       "type": "string",
@@ -93,16 +81,6 @@
       "examples": [
         "192121803"
       ]
-    },
-    "representantID": {
-      "$id": "#/properties/representantID",
-      "type": ["string","null"],
-      "title": "The Representantid Schema",
-      "default": "",
-      "examples": [
-        "300980004"
-      ],
-      "pattern": "^[0-9]{9}$"
     },
     "saksnummer": {
       "$id": "/properties/saksnummer",

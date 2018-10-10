@@ -1,5 +1,35 @@
 {
-  "definitions": {},
+  "definitions": {
+    "kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": "string",
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": "string",
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://nav.no/kodeverk.json",
   "type": "object",
@@ -25,35 +55,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/behandlingsstatus/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/behandlingsstatus/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "OPPRETTET"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/behandlingsstatus/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Opprettet"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "behandlingstyper": {
@@ -63,35 +65,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/behandlingstyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/behandlingstyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "SOEKNAD"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/behandlingstyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Behandling av søknad"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "begrunnelser": {
@@ -115,35 +89,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/bosted/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/bosted/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "OPPHOLD_MER_ENN_12_MND"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/bosted/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Oppholdet er mer enn 12 måneder."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "forutgaendeMedlemskap": {
@@ -153,35 +99,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/forutgaendeMedlemskap/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/forutgaendeMedlemskap/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "IKKE_LOENNET_UTSEND_AG"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/forutgaendeMedlemskap/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Mottok IKKE lønn fra utsendende arbeidsgiver opptjent i Norge forutgående måned."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "ikkeSkip": {
@@ -191,35 +109,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/ikkeSkip/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/ikkeSkip/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "IKKE_EGET_FREMDRIFT"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/ikkeSkip/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Ikke eget fremdrift"
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "opphold": {
@@ -229,35 +119,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/opphold/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/opphold/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "FEIL_LAND_JOURNALFOERING"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/opphold/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Feil land oppgitt i journalføringen."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "vesentligVirksomhet": {
@@ -267,35 +129,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "KUN_ADMIN_ANSATTE"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Foretaket har kun administrativt ansatte i Norge."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "artikkel12_1": {
@@ -305,35 +139,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/artikkel12_1/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/begrunnelser/properties/artikkel12_1/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "IKKE_VESENTLIGVIRKSOMHET"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/begrunnelser/properties/artikkel12_1/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Arbeidsgiver har ikke vesentlig virksomhet."
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         }
       }
@@ -345,35 +151,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttitler/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/dokumenttitler/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "ARBF"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/dokumenttitler/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Arbeidsforhold"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "finansiering": {
@@ -383,35 +161,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/finansiering/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/finansiering/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "LAANEKASSEN"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/finansiering/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Lånekassen"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "landkoder": {
@@ -421,35 +171,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/landkoder/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/landkoder/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "CH"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/landkoder/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Sveits"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "lovvalgsbestemmelser": {
@@ -470,35 +192,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_883_2004/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_883_2004/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "ART12_1"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_883_2004/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Utsendt arbeidstaker"
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "forordning_987_2009": {
@@ -508,35 +202,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_987_2009/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_987_2009/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "ART14_11"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_987_2009/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Arbeidstaker i flere to/flere land -forreningsted utenfor EØS område"
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         },
         "tillegg": {
@@ -546,35 +212,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items",
-            "type": "object",
-            "title": "The Items Schema",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items/properties/kode",
-                "type": "string",
-                "title": "The Kode Schema",
-                "default": "",
-                "examples": [
-                  "ART14_11"
-                ],
-                "pattern": "^(.*)$"
-              },
-              "term": {
-                "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items/properties/term",
-                "type": "string",
-                "title": "The Term Schema",
-                "default": "",
-                "examples": [
-                  "Arbeidstaker i flere to/flere land -forreningsted utenfor EØS område"
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
+            "$ref": "#/definitions/kodeverk"
           }
         }
       }
@@ -586,35 +224,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/oppgavetyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/oppgavetyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "BEH_SAK"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/oppgavetyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Behandling"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "sakstyper": {
@@ -624,35 +234,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/sakstyper/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/sakstyper/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "EU_EOS"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/sakstyper/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "EU/EØS"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     },
     "vedleggstitler": {
@@ -662,35 +244,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/vedleggstitler/items",
-        "type": "object",
-        "title": "The Items Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/properties/vedleggstitler/items/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "TITTEL_1"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/properties/vedleggstitler/items/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Vedleggstittel 1"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "#/definitions/kodeverk"
       }
     }
   }
