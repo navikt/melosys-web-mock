@@ -65,7 +65,8 @@ return {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`};
  */
 module.exports.lagPdfUtkast = (req, res) => {
   const url = URL.parse(req.url);
-  const { body } = req;
+  const { body, params } = req;
+  const { dokumenttypeKode } = params;
 
   const errorMelding = isRestParamsInValid(req);
   if (errorMelding && errorMelding.status) {
@@ -74,29 +75,26 @@ module.exports.lagPdfUtkast = (req, res) => {
   }
 
   try {
-    const mottakere = ["BRUKER","ARBEIDSGIVER"];
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const { mottaker} = jsBody;
-    logger.debug("dokument:lagPdfUtkast", JSON.stringify(jsBody));
-
-    if (mottaker && mottakere.includes(mottaker.toUpperCase())) {
+    if (isPostBodyValidationRequired(dokumenttypeKode)) {
+      const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+      logger.debug("Dokument:lagPdfUtkast", JSON.stringify(jsBody));
 
       const label = "Dokument::lagPdfUtkast";
       const valid = test(label, validate, jsBody);
-
-      if (valid) {
-        const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/mangelbrev_${mottaker}.pdf`;
-        logger.trace(mockfile);
-        res.type('application/pdf');
-        res.sendFile(mockfile);
+      if (!valid) {
+        return valideringFeil(req, res);
       }
-      else {
-        valideringFeil(req, res);
-      }
+      const { mottaker } = jsBody;
+      const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/mangelbrev_${mottaker}.pdf`;
+      logger.trace(mockfile);
+      res.type('application/pdf');
+      res.sendFile(mockfile);
     }
     else {
-      const melding = ERR.badRequest400(url, "body param 'mottaker=BRUKER|ARBEIDSGIVER' mangler");
-      res.status(400).send(melding);
+      const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/dokumenttest.pdf`;
+      logger.trace(mockfile);
+      res.type('application/pdf');
+      res.sendFile(mockfile);
     }
   }
   catch (err) {
@@ -106,7 +104,8 @@ module.exports.lagPdfUtkast = (req, res) => {
 };
 
 module.exports.opprettDokument = (req, res) => {
-  const { body } = req;
+  const { body, params } = req;
+  const { dokumenttypeKode } = params;
 
   const errorMelding = isRestParamsInValid(req);
   if (errorMelding && errorMelding.status) {
@@ -115,13 +114,9 @@ module.exports.opprettDokument = (req, res) => {
   }
 
   try {
-    // Body is only required for '000074' => 'Innhente manglende opplysninger'
-    const dokumentTypeKodeIndex = dokumenttypeKoder.findIndex(kode => kode === '000074');
-    if (dokumentTypeKodeIndex >= 0) {
-      const dokumentType = dokumenttypeKoder[dokumentTypeKodeIndex];
-      console.dir(dokumentType);
+    if (isPostBodyValidationRequired(dokumenttypeKode)) {
       const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-      logger.debug("dokument:opprettDokument", JSON.stringify(jsBody));
+      logger.debug("Dokument:opprettDokument", JSON.stringify(jsBody));
 
       const label = "Dokument::opprettDokument";
       const valid = test(label, validate, jsBody);
@@ -129,7 +124,6 @@ module.exports.opprettDokument = (req, res) => {
         return valideringFeil(req, res);
       }
     }
-
     const journalforingID = 'DOK_321';
     const dokumentID = 'Dok_ID';
     const dokumentURI = `/api/dokumenter/pdf/${journalforingID}/${dokumentID}`;
@@ -143,6 +137,10 @@ module.exports.opprettDokument = (req, res) => {
   }
 };
 
+// Body is only required for '000074' => 'Innhente manglende opplysninger'
+const isPostBodyValidationRequired = (dokumenttypeKode) => {
+  return '000074' === dokumenttypeKode;
+};
 function valideringFeil(req, res) {
   const status = 400;
   const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
