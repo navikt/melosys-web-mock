@@ -44,28 +44,28 @@
           "title": "The Personopplysninger Schema",
           "additionalProperties": false,
           "required": [
-            "utenlandskID",
+            "utenlandskIdent",
             "medfolgendeFamilie",
             "medfolgendeAndre"
           ],
           "properties": {
-            "utenlandskID": {
-              "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID",
+            "utenlandskIdent": {
+              "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent",
               "type": "array",
-              "title": "The Utenlandskid Schema",
+              "title": "The utenlandskIdent Schema",
               "uniqueItems": true,
               "items": {
-                "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items",
+                "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items",
                 "type": "object",
                 "title": "The Items Schema",
                 "additionalProperties": false,
                 "required": [
-                  "ID",
+                  "ident",
                   "landKode"
                 ],
                 "properties": {
-                  "ID": {
-                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/ID",
+                  "ident": {
+                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items/properties/ident",
                     "type": ["string","null"],
                     "title": "The Id Schema",
                     "default": "",
@@ -75,7 +75,7 @@
                     "pattern": "^(.*)$"
                   },
                   "landKode": {
-                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/landKode",
+                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items/properties/landKode",
                     "type": ["string","null"],
                     "title": "The Landkode Schema",
                     "default": "",
