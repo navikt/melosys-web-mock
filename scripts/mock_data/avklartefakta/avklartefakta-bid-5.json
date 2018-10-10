@@ -39,10 +39,6 @@
       "marginaltArbeid": "MARGINALT_JA",
       "vekslingMellomLand": "EN_ELLER_BEGGE"
     },
-    "vesentligVirksomhet": {
-      "vesentligVirksomhetINorge": null,
-      "vesentligVirksomhetBegrunnelser": []
-    },
     "vurdering": {
       "lovvalgKode": "ART12_1",
       "begrunnelser": []

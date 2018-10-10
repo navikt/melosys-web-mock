@@ -6,7 +6,7 @@
     "begrunnelseFritekst": "En begrunnelsestekst"
   },
   {
-    "vilkaar": "VESENTLIGVIRKSOMHET",
+    "vilkaar": "VESENTLIG_VIRKSOMHET",
     "oppfylt": true,
     "begrunnelseKoder": ["BEGRUNNELSE"],
     "begrunnelseFritekst": "En begrunnelsestekst"

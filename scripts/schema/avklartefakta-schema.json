@@ -35,7 +35,6 @@
         "valgteArbeidsgivere",
         "yrkesaktivitetFordeling",
         "virksomhet",
-        "vesentligVirksomhet",
         "vurdering"
       ],
       "properties": {
@@ -353,33 +352,6 @@
                 "EN_ELLER_BEGGE"
               ],
               "pattern": "^(.*)$"
-            }
-          }
-        },
-        "vesentligVirksomhet": {
-          "$id": "#/properties/avklaring/properties/vesentligVirksomhet",
-          "type": "object",
-          "title": "The Vesentligvirksomhet Schema",
-          "additionalProperties": false,
-          "required": [
-            "vesentligVirksomhetINorge",
-            "vesentligVirksomhetBegrunnelser"
-          ],
-          "properties": {
-            "vesentligVirksomhetINorge": {
-              "$id": "#/properties/avklaring/properties/vesentligVirksomhet/properties/vesentligVirksomhetINorge",
-              "type": ["boolean", "null"],
-              "title": "The Vesentligvirksomhetinorge Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "vesentligVirksomhetBegrunnelser": {
-              "$id": "#/properties/avklaring/properties/vesentligVirksomhet/properties/vesentligVirksomhetBegrunnelser",
-              "type": "array",
-              "title": "The Vesentligvirksomhetbegrunnelser Schema",
-              "uniqueItems": true
             }
           }
         },
