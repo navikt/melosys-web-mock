@@ -36,13 +36,12 @@ module.exports.hent = async (req, res) => {
     if (await Utils.existsAsync(mockfile)) {
       const data = await lesVilkar(behandlingID);
       const status = happy.happyStatus([200, 200, 404]);
-      if (status === 200) {
-        data.vilkar.feilmeldinger = [];
+      if (status === 404) {
+        return res.status(404).send(ERR.notFound404(req.url));
       }
       return res.json(data);
     }
     else {
-      logger.warn('Not found'+req.url);
       return res.status(404).send(ERR.notFound404(req.url));
     }
   }
@@ -60,7 +59,7 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/vilkar-post-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/vilkar-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 

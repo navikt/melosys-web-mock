@@ -164,7 +164,7 @@ router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk
  * ---------------------------------------------------------------
  */
 router.get('/vilkaar/:behandlingID', vilkar.hent);
-router.post('/vilkaar/:behandlingID/:vilkarType', vilkar.send);
+router.post('/vilkaar/:behandlingID', vilkar.send);
 
 /**
  * DOKUMENTER

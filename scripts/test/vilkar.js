@@ -25,6 +25,7 @@ const testOne = (path) => {
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
+
 const vilkar = {
   testAll,
   testOne,
