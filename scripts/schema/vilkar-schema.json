@@ -51,7 +51,7 @@
       },
       "begrunnelseFritekst": {
         "$id": "#/items/properties/begrunnelseFritekst",
-        "type": "string",
+        "type": ["string", "null"],
         "title": "The Begrunnelsefritekst Schema",
         "default": "",
         "examples": [
