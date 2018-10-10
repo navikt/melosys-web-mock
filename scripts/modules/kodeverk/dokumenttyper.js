@@ -4,40 +4,40 @@
  */
 const dokumenttyper = [
   {
-    kode : 'TODO-11',
+    kode : 'TODO-11',   // VEDTAK_A1
     term : 'Dokument A1'
   }, {
-    kode : 'TODO-12',
+    kode : 'TODO-12', // VEDTAK_AVSLAG_ARBEIDSTAGER
     term : 'Vedtaksbrev avslag til arbeidstager'
   }, {
-    kode : 'TODO-13',
+    kode : 'TODO-13', // FIXME VEDTAK_AVSLAG_ARBEIDSTAGER
     term : 'Vedtaksbrev avslag til arbeidstager'
   }, {
-    kode : 'TODO-14',
+    kode : 'TODO-14', // ORIENTERING_FORVENTET_SAKSBEHANDLINGSTID
     term : 'Orienteringsbrev om forventet saksbehandlingstid'
   }, {
-    kode : '000082',
+    kode : '000082', // FORVALTING_FORVENTET_SAKSBEHANDLINGSTID
     term : 'Melding om forventet saksbehandlingstid'
   }, {
-    kode : '000072',
+    kode : '000072', // 'FORVALTING_HENLEGGELSE
     term : 'Henleggelse'
   }, {
-    kode : '000048',
+    kode : '000048', // 'VEDTAK_BEKREFTELSE_TRYGDERETTIGH
     term : 'Vedtaksbrev om bekreftelse på trygderettigheter '
   }, {
-    kode : 'TODO-17',
+    kode : 'TODO-17', // TODO
     term : 'Klageoversendelse'
   }, {
-    kode : 'TODO-18',
+    kode : 'TODO-18', // VEDTAK_AVVISNING_KLAGE
     term : 'Avvisning av klage'
   }, {
-    kode : '000074',
+    kode : '000074', // MANGELBREV
     term : 'Innhente manglende opplysninger'
   }, {
-    kode : 'TODO-110',
+    kode : 'TODO-110', // ORIENTERINGSBREV
     term : 'Orienteringsbrev om status i saken'
   }, {
-    kode : 'TODO-111',
+    kode : 'TODO-111', // VEDTAKSBREV_MEDFØLGENDE_BARN
     term : 'Vedtaksbrev for medfølgende barn'
   }
 ];

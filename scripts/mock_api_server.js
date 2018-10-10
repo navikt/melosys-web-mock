@@ -162,7 +162,8 @@ router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-router.get('/dokumenter/pdf/:behandlingID/:dokumenttypeKode', dokumenter.hentPdf);
+//
+router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
 

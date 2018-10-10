@@ -5,7 +5,7 @@ const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 const { dokumenttyper } = require('../modules/kodeverk/dokumenttyper');
-const dokumentTypeKoder = dokumenttyper.reduce((acc,curr) => {acc.push(curr.kode); return acc;},[]);
+const dokumenttypeKoder = dokumenttyper.reduce((acc,curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
 
@@ -28,30 +28,25 @@ const isRestParamsInValid = req => {
   let melding = null;
 
   if (!behandlingID) {
-    melding = ERR.badRequest400(url, 'REST param, :behandlingID, /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
+    melding = ERR.badRequest400(url, 'REST param, :behandlingID, i /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
   }
   else if (!dokumenttypeKode) {
-    melding = ERR.badRequest400(url, 'REST param, :dokumenttypeKode, /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
+    melding = ERR.badRequest400(url, 'REST param, :dokumenttypeKode, i /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
   }
-  else if (!dokumentTypeKoder.includes(dokumenttypeKode)) {
+  else if (!dokumenttypeKoder.includes(dokumenttypeKode)) {
     melding = ERR.badRequest400(url, `REST param :dokumenttypeKode, ${dokumenttypeKode}, har ukjent verdi`);
   }
   return melding;
 };
 
 module.exports.hentPdf = (req, res) => {
-
-  const errorMelding = isRestParamsInValid(req);
-  if (errorMelding && errorMelding.status) {
-    logger.error(JSON.stringify(errorMelding));
-    return res.status(400).send(errorMelding);
-  }
-
+  //const { journalforingID, dokumentID } = req.params;
   const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/dokumenttest.pdf`;
   logger.trace(mockfile);
   res.type('application/pdf');
   res.sendFile(mockfile);
 };
+
 // Forhåndsvisning pdf, eks brev, etc.
 // [POST] http://localhost:3002/api/dokumenter/utkast/pdf/3/000074
 /*
@@ -60,7 +55,14 @@ Body required onlyif; :dokumenttypeKode='000074' => 'Innhente manglende opplysni
   "mottaker": "ARBEIDSGIVER|MOTTAKER",
   "fritekst": "blahbalh"
 }
+return {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`};
 */
+/**
+ * lagPdfUkast
+ * @param req
+ * @param res
+ * returns {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`}
+ */
 module.exports.lagPdfUtkast = (req, res) => {
   const url = URL.parse(req.url);
   const { body } = req;
@@ -104,7 +106,7 @@ module.exports.lagPdfUtkast = (req, res) => {
 };
 
 module.exports.opprettDokument = (req, res) => {
-  const { body, params } = req;
+  const { body } = req;
 
   const errorMelding = isRestParamsInValid(req);
   if (errorMelding && errorMelding.status) {
@@ -114,9 +116,9 @@ module.exports.opprettDokument = (req, res) => {
 
   try {
     // Body is only required for '000074' => 'Innhente manglende opplysninger'
-    const dokumentTypeKodeIndex = dokumentTypeKoder.findIndex(kode => kode === '000074');
+    const dokumentTypeKodeIndex = dokumenttypeKoder.findIndex(kode => kode === '000074');
     if (dokumentTypeKodeIndex >= 0) {
-      const dokumentType = dokumentTypeKoder[dokumentTypeKodeIndex];
+      const dokumentType = dokumenttypeKoder[dokumentTypeKodeIndex];
       console.dir(dokumentType);
       const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
       logger.debug("dokument:opprettDokument", JSON.stringify(jsBody));
@@ -128,11 +130,12 @@ module.exports.opprettDokument = (req, res) => {
       }
     }
 
-    const { behandlingID, dokumenttypeKode } = params;
-    const dokumentUrl = `/dokumenter/pdf/${behandlingID}/${dokumenttypeKode}`;
-    res.location(`/dokumenter/pdf/${behandlingID}/${dokumenttypeKode}`);
-    res.send(201, dokumentUrl);
-    //res.redirect(201, dokumentUrl);
+    const journalforingID = 'DOK_321';
+    const dokumentID = 'Dok_ID';
+    const dokumentURI = `/api/dokumenter/pdf/${journalforingID}/${dokumentID}`;
+    const dokument = { location: dokumentURI };
+    res.status(201).send(dokument);
+
   }
   catch (err) {
     console.log(err);
