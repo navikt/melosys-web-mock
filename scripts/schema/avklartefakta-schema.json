@@ -29,7 +29,6 @@
         "aktivitet",
         "sysselsetting",
         "bosted",
-        "forutgaendeMedlemskap",
         "yrkesaktivitet",
         "tjenestemann",
         "valgteArbeidsgivere",
@@ -200,43 +199,6 @@
                 "default": "",
                 "examples": [
                   "HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE"
-                ],
-                "pattern": "^(.*)$"
-              }
-            }
-          }
-        },
-        "forutgaendeMedlemskap": {
-          "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap",
-          "type": "object",
-          "title": "The ForutgaendeMedlemskap Schema",
-          "additionalProperties": false,
-          "required": [
-            "harForutgaendeMedlemskap",
-            "forutgaendeMedlemskapBegrunnelser"
-          ],
-          "properties": {
-            "harForutgaendeMedlemskap": {
-              "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/harForutgaendeMedlemskap",
-              "type": ["boolean", "null"],
-              "title": "The Vesentligvirksomhetinorge Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "forutgaendeMedlemskapBegrunnelser": {
-              "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/forutgaendeMedlemskapBegrunnelser",
-              "type": "array",
-              "title": "The Vesentligvirksomhetbegrunnelser Schema",
-              "uniqueItems": true,
-              "items": {
-                "$id": "#/properties/avklaring/properties/forutgaendeMedlemskap/properties/forutgaendeMedlemskapBegrunnelser/items",
-                "type": "string",
-                "title": "The Items Schema",
-                "default": "",
-                "examples": [
-                  "MOTTOK_IKKE_LOENN_FRA_UTSENDENDE"
                 ],
                 "pattern": "^(.*)$"
               }

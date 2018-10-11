@@ -14,8 +14,8 @@
   {
     "vilkaar": "FORUTGAAENDE_MEDLEMSKAP",
     "oppfylt": true,
-    "begrunnelseKoder": ["BEGRUNNELSE"],
-    "begrunnelseFritekst": "En begrunnelsestekst"
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
   },
   {
     "vilkaar": "art12_1",
