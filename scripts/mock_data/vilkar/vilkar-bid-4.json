@@ -1,11 +1,5 @@
 [
   {
-    "vilkaar": "BOSATT_I_NORGE",
-    "oppfylt": true,
-    "begrunnelseKoder": [],
-    "begrunnelseFritekst": null
-  },
-  {
     "vilkaar": "VESENTLIG_VIRKSOMHET",
     "oppfylt": true,
     "begrunnelseKoder": [],
@@ -18,21 +12,9 @@
     "begrunnelseFritekst": null
   },
   {
-    "vilkaar": "art12_1",
+    "vilkaar": "ART12_1",
     "oppfylt": true,
-    "begrunnelseKoder": ["BEGRUNNELSE"],
-    "begrunnelseFritekst": "En begrunnelsestekst"
-  },
-  {
-    "vilkaar": "art12_2",
-    "oppfylt": true,
-    "begrunnelseKoder": ["BEGRUNNELSE"],
-    "begrunnelseFritekst": "En begrunnelsestekst"
-  },
-  {
-    "vilkaar": "art11_1",
-    "oppfylt": true,
-    "begrunnelseKoder": ["BEGRUNNELSE"],
-    "begrunnelseFritekst": "En begrunnelsestekst"
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
   }
 ]
