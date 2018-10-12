@@ -15,7 +15,7 @@
     {
       "oppsummering": {
         "behandlingID": 3,
-        "behandlingtype":{
+        "behandlingstype":{
           "kode":"SKND",
           "term":"Søknad"
         },
@@ -440,7 +440,7 @@
                 "fom": "2007-11-12",
                 "tom": "2007-11-25"
               },
-              "medlemtype":{
+              "periodetype":{
                 "kode":"PMMEDSKP",
                 "term":"Periode med medlemskap"
               },
@@ -478,7 +478,7 @@
                 "fom": "2009-09-01",
                 "tom": "2009-10-01"
               },
-              "medlemtype":{
+              "periodetype":{
                 "kode":"PMMEDSKP",
                 "term":"Periode med medlemskap"
               },

@@ -205,8 +205,8 @@
             "additionalProperties": false,
             "required": [
               "behandlingID",
-              "behandlingType",
-              "behandlingStatus",
+              "behandlingstype",
+              "behandlingsstatus",
               "endretDato"
             ],
             "properties": {
@@ -220,10 +220,10 @@
                   "4"
                 ]
               },
-              "behandlingType": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType",
+              "behandlingstype": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype",
                 "type": "object",
-                "title": "The Behandlingtype Schema",
+                "title": "The behandlingstype Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "additionalProperties": false,
                 "required": [
@@ -232,7 +232,7 @@
                 ],
                 "properties": {
                   "kode": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/kode",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype/properties/kode",
                     "type": "string",
                     "title": "The Kode Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -243,7 +243,7 @@
                     "pattern": "^(.*)$"
                   },
                   "term": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/term",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype/properties/term",
                     "type": "string",
                     "title": "The Term Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -255,10 +255,10 @@
                   }
                 }
               },
-              "behandlingStatus": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus",
+              "behandlingsstatus": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus",
                 "type": "object",
-                "title": "The Behandlingstatus Schema",
+                "title": "The behandlingsstatus Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "additionalProperties": false,
                 "required": [
@@ -267,7 +267,7 @@
                 ],
                 "properties": {
                   "kode": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/kode",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus/properties/kode",
                     "type": "string",
                     "title": "The Kode Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -278,7 +278,7 @@
                     "pattern": "^(.*)$"
                   },
                   "term": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/term",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus/properties/term",
                     "type": "string",
                     "title": "The Term Schema",
                     "description": "An explanation about the purpose of this instance.",

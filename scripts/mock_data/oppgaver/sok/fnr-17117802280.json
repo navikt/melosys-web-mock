@@ -16,11 +16,11 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "OPPR",
           "term": "Opprettet"
         },
