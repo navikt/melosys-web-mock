@@ -33,8 +33,7 @@
         "tjenestemann",
         "valgteArbeidsgivere",
         "yrkesaktivitetFordeling",
-        "virksomhet",
-        "vurdering"
+        "virksomhet"
       ],
       "properties": {
         "opphold": {
@@ -297,43 +296,6 @@
                 "EN_ELLER_BEGGE"
               ],
               "pattern": "^(.*)$"
-            }
-          }
-        },
-        "vurdering": {
-          "$id": "#/properties/vurdering/properties/avklaring",
-          "type": "object",
-          "title": "The Avklaring Schema",
-          "additionalProperties": false,
-          "required": [
-            "lovvalgKode",
-            "begrunnelser"
-          ],
-          "properties": {
-            "lovvalgKode": {
-              "$id": "#/properties/avklaring/properties/vurdering/properties/lovvalgKode",
-              "type": ["string", "null"],
-              "title": "The LovvalgKode Schema",
-              "default": null,
-              "examples": [
-                "ART12_1"
-              ]
-            },
-            "begrunnelser": {
-              "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser",
-              "type": "array",
-              "title": "The Vesentligvirksomhetbegrunnelser Schema",
-              "uniqueItems": true,
-              "items": {
-                "$id": "#/properties/avklaring/properties/vurdering/properties/begrunnelser/items",
-                "type": "string",
-                "title": "The Items Schema",
-                "default": "",
-                "examples": [
-                  "IKKE_VESENTLIGVIRKSOMHET"
-                ],
-                "pattern": "^(.*)$"
-              }
             }
           }
         }
