@@ -174,8 +174,7 @@
           "title": "The Bosted Schema",
           "additionalProperties": false,
           "required": [
-            "bostedLand",
-            "bostedBegrunnelser"
+            "bostedLand"
           ],
           "properties": {
             "bostedLand": {
@@ -186,22 +185,6 @@
               "examples": [
                 "NO"
               ]
-            },
-            "bostedBegrunnelser": {
-              "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser",
-              "type": "array",
-              "title": "The bostedsBegrunnelser Schema",
-              "uniqueItems": true,
-              "items": {
-                "$id": "#/properties/avklaring/properties/bosted/properties/bostedsBegrunnelser/items",
-                "type": "string",
-                "title": "The items Schema",
-                "default": "",
-                "examples": [
-                  "HAR_IKKE_FORUTGAENDE_BOSTED_I_NORGE"
-                ],
-                "pattern": "^(.*)$"
-              }
             }
           }
         },

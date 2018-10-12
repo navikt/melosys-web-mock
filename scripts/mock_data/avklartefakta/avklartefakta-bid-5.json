@@ -17,8 +17,7 @@
       "sysselsettingType": "YRKESAKTIV"
     },
     "bosted": {
-      "bostedLand": null,
-      "bostedBegrunnelser": []
+      "bostedLand": null
     },
     "yrkesaktivitet": {
       "yrkesaktivitetType": null

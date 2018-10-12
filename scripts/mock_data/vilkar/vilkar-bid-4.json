@@ -1,9 +1,9 @@
 [
   {
-    "vilkaar": "BOSATTINORGE",
+    "vilkaar": "BOSATT_I_NORGE",
     "oppfylt": true,
-    "begrunnelseKoder": ["BEGRUNNELSE"],
-    "begrunnelseFritekst": "En begrunnelsestekst"
+    "begrunnelseKoder": [],
+    "begrunnelseFritekst": null
   },
   {
     "vilkaar": "VESENTLIG_VIRKSOMHET",
