@@ -484,7 +484,7 @@
                 "fom": "2018-02-01",
                 "tom": "2018-12-31"
               },
-              "medlemtype": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -522,7 +522,7 @@
                 "fom": "2016-02-01",
                 "tom": "2016-12-31"
               },
-              "medlemtype": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -560,7 +560,7 @@
                 "fom": "2018-01-01",
                 "tom": "2018-01-31"
               },
-              "medlemtype": {
+              "periodetype": {
                 "kode": "PUMEDSKP",
                 "term": "Periode uten medlemskap"
               },
@@ -598,7 +598,7 @@
                 "fom": "2017-12-01",
                 "tom": "2017-12-31"
               },
-              "medlemtype": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -689,7 +689,7 @@
         },
         "registrertDato" : "2018-08-27T07:16:03.273Z",
         "endretDato" : "2018-08-27T07:16:03.273Z",
-        "behandlingtype" : {
+        "behandlingstype" : {
           "kode" : "SKND",
           "term" : "Søknad"
         }
