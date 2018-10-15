@@ -212,7 +212,7 @@
             "properties": {
               "behandlingID": {
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingID",
-                "type": ["string","null"],
+                "type": ["integer","null"],
                 "title": "The Behandlingid Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "default": null,
@@ -299,6 +299,28 @@
                 "default": "",
                 "examples": [
                   "2016-01-28"
+                ]
+              },
+              "sisteOpplysningerHentetDato":{
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/sisteOpplysningerHentetDato",
+                "type": "string",
+                "format": "date-time",
+                "title": "The sisteOpplysningerHentetDato Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2018-08-27T07:16:03.273Z"
+                ]
+              },
+              "erUnderOppdatering": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/erUnderOppdatering",
+                "type": "boolean",
+                "title": "The erUnderOppdatering Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  false,
+                  true
                 ]
               }
             }
@@ -398,28 +420,6 @@
               "Z991001"
             ],
             "pattern": "^(.*)$"
-          },
-          "sistOppdatert":{
-            "$id": "#/properties/saksbehandling/items/properties/sistOppdatert",
-            "type": "string",
-            "format": "date-time",
-            "title": "The SistOppdatert Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "Z991001"
-            ]
-          },
-          "erUnderOppdatering": {
-            "$id": "#/properties/saksbehandling/items/properties/erUnderOppdatering",
-            "type": "boolean",
-            "title": "The erUnderOppdatering Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              false,
-              true
-            ]
           }
         }
       }
