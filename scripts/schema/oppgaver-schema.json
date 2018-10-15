@@ -126,9 +126,7 @@
           "prioritet",
           "land",
           "versjon",
-          "ansvarligID",
-          "sisteOpplysningerHentetDato",
-          "erUnderOppdatering"
+          "ansvarligID"
         ],
         "properties": {
           "oppgaveID": {
@@ -207,7 +205,8 @@
               "behandlingID",
               "behandlingstype",
               "behandlingsstatus",
-              "endretDato"
+              "sisteOpplysningerHentetDato",
+              "erUnderOppdatering"
             ],
             "properties": {
               "behandlingID": {
@@ -289,17 +288,6 @@
                     "pattern": "^(.*)$"
                   }
                 }
-              },
-              "endretDato": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/endretDato",
-                "type": "string",
-                "format": "date",
-                "title": "The Endretdato Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                  "2016-01-28"
-                ]
               },
               "sisteOpplysningerHentetDato":{
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/sisteOpplysningerHentetDato",
