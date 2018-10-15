@@ -127,7 +127,7 @@
           "land",
           "versjon",
           "ansvarligID",
-          "sistOppdatert",
+          "sisteOpplysningerHentetDato",
           "erUnderOppdatering"
         ],
         "properties": {
@@ -217,7 +217,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": null,
                 "examples": [
-                  "4"
+                  4
                 ]
               },
               "behandlingstype": {

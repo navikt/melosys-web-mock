@@ -79,7 +79,7 @@
       "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
       "erUnderOppdatering": false
     },
     {
@@ -111,7 +111,7 @@
       "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
       "erUnderOppdatering": false
     },
     {
@@ -142,9 +142,7 @@
       "prioritet": "HOY",
       "land": ["NO"],
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "176741739",
@@ -175,7 +173,7 @@
       "land": ["NO"],
       "versjon": 1,
       "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
+      "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
       "erUnderOppdatering": false
     }
   ]
