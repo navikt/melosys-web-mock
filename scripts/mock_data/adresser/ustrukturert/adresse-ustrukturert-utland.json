@@ -1,0 +1,13 @@
+{
+  "adresse": {
+    "adressetype": "USTRUKTURERT",
+    "ustrukturertAdresse": {
+      "adresselinje1": "Ardenham Court",
+      "adresselinje2": "Oxford Road",
+      "adresselinje3": "AYLESBURY",
+      "adresselinje4": "BUCKINGHAMSHIRE",
+      "adresselinje5": "HP19 3EQ",
+      "landKode": "UK"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "adresse": {
+    "adressetype": "STRUKTURERT",
+    "strukturertadresse": {
+      "gatenavn": "Ardenham Court, Oxford Road",
+      "husnr": null,
+      "region": "BUCKINGHAMSHIRE",
+      "postnr": "HP19 3EQ",
+      "poststed": "AYLESBURY",
+      "landKode": "UK"
+    }
+  }
+}

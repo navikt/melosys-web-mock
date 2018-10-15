@@ -113,6 +113,86 @@
       "examples": [
         "2018-08-27T07:16:03.273Z", null
       ]
+    },
+    "adresse": {
+      "type": "object",
+      "properties": {
+        "adressetype": {
+          "type": "string",
+          "enum": ["STRUKTURERT", "USTRUKTURERT"]
+        },
+        "strukturertadresse": {
+          "type": "object",
+          "properties": {
+            "gatenavn": {
+              "type": "string",
+              "minLength": 1
+            },
+            "husnr": {
+              "type": "string",
+              "minLength": 1
+            },
+            "region": {
+              "type": ["string", "null"],
+              "minLength": 1
+            },
+            "postnr": {
+              "type": "string",
+              "minLength": 1
+            },
+            "poststed": {
+              "type": "string",
+              "minLength": 1
+            },
+            "landKode": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "gatenavn",
+            "husnr",
+            "postnr",
+            "poststed",
+            "landKode"
+          ]
+        },
+        "ustrukturertAdresse": {
+          "type": "object",
+          "properties": {
+            "adresselinje1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adresselinje2": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adresselinje3": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adresselinje4": {
+              "type": "string",
+              "minLength": 1
+            },
+            "adresselinje5": {
+              "type": "string",
+              "minLength": 1
+            },
+            "landKode": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "landKode"
+          ]
+        }
+      },
+      "required": [
+        "adressetype"
+      ]
     }
   }
 }
