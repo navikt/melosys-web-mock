@@ -60,11 +60,11 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "UBEH",
           "term": "Under behandling"
         },
@@ -92,11 +92,11 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "ML_U",
           "term": "Melding fra utenlandsk myndighet"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "OPPR",
           "term": "Opprettet"
         },
@@ -124,11 +124,11 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "UFM",
           "term": "Unntak medlemskap"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "FORL",
           "term": "Foreløpig lovvalg"
         },
@@ -156,11 +156,11 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "UBEH",
           "term": "Under behandling"
         },

@@ -1318,7 +1318,7 @@
                       "type": "object",
                       "required": [
                         "periode",
-                        "medlemtype",
+                        "periodetype",
                         "status",
                         "grunnlagstype",
                         "land",
@@ -1359,17 +1359,17 @@
                             }
                           }
                         },
-                        "medlemtype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/medlemtype",
+                        "periodetype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
                           "type": "object",
-                          "title": "The medlemtype Schema",
+                          "title": "The periodetype Schema",
                           "required": [
                             "kode",
                             "term"
                           ],
                           "properties": {
                             "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/medlemtype/kode",
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/kode",
                               "type": ["string","null"],
                               "title": "The Fom Schema",
                               "default": "",
@@ -1379,7 +1379,7 @@
                               "pattern": "^(.*)$"
                             },
                             "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/medlemtype/term",
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/term",
                               "type": ["string","null"],
                               "title": "The Fom Schema",
                               "default": "",
@@ -2015,7 +2015,7 @@
               "status",
               "registrertDato",
               "endretDato",
-              "behandlingtype"
+              "behandlingstype"
             ],
             "properties": {
               "behandlingID": {
@@ -2081,8 +2081,8 @@
                 ],
                 "pattern": "^(.*)$"
               },
-              "behandlingtype": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingtype",
+              "behandlingstype": {
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
                 "type": "object",
                 "title": "The Type Schema",
                 "additionalProperties": false,
