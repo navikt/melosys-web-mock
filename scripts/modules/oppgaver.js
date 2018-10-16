@@ -36,9 +36,9 @@ module.exports.hentPlukk = async (req, res) => {
 
 module.exports.sendPlukk = (req, res) => {
   const body = req.body;
-  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("oppgaver:sendPlukk", JSON.stringify(jsonBody));
-  const { oppgavetype } = jsonBody;
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("oppgaver:sendPlukk", JSON.stringify(jsBody));
+  const { oppgavetype } = jsBody;
   let oppgave;
   if (oppgavetype === 'BEH_SAK') {
     oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
@@ -68,9 +68,9 @@ module.exports.oversikt = async (req, res) => {
 };
 module.exports.opprett = (req, res) => {
   const body = req.body;
-  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("oppgaver:opprett", JSON.stringify(jsonBody));
-  res.json(jsonBody);
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("oppgaver:opprett", JSON.stringify(jsBody));
+  res.json(jsBody);
 };
 
 module.exports.reset = (req, res) => {

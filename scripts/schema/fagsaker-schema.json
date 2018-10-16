@@ -6,13 +6,13 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "status",
+    "sakstype",
     "behandlinger",
     "endretDato",
     "gsakSaksnummer",
     "registrertDato",
-    "saksnummer",
-    "status",
-    "type"
+    "saksnummer"
   ],
   "properties": {
     "status": {
@@ -42,6 +42,38 @@
           "default": "",
           "examples": [
             "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "sakstype": {
+      "$id": "#/properties/type",
+      "type": "object",
+      "title": "The Type Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "$id": "#/properties/sakstype/properties/kode",
+          "type": "string",
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "EU_EOS"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "$id": "#/properties/sakstype/properties/term",
+          "type": "string",
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "EU/EØS"
           ],
           "pattern": "^(.*)$"
         }
@@ -1370,7 +1402,303 @@
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode",
                     "type": "array",
                     "title": "The Medlemsperiode Schema",
-                    "uniqueItems": true
+                    "uniqueItems": true,
+                    "items": {
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items",
+                      "type": "object",
+                      "required": [
+                        "periode",
+                        "periodetype",
+                        "status",
+                        "grunnlagstype",
+                        "land",
+                        "lovvalg",
+                        "trygdedekning",
+                        "kildedokumenttype",
+                        "kilde"
+                      ],
+                      "properties": {
+                        "periode": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",
+                          "type": "object",
+                          "title": "The Periode Schema",
+                          "required": [
+                            "fom",
+                            "tom"
+                          ],
+                          "properties": {
+                            "fom": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/fom",
+                              "type": ["string","null"],
+                              "title": "The Fom Schema",
+                              "default": "",
+                              "examples": [
+                                "2018-02-01"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "tom": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/tom",
+                              "type": ["string","null"],
+                              "title": "The Fom Schema",
+                              "default": "",
+                              "examples": [
+                                "2018-02-01"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "periodetype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
+                          "type": "object",
+                          "title": "The periodetype Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/kode",
+                              "type": ["string","null"],
+                              "title": "The Fom Schema",
+                              "default": "",
+                              "examples": [
+                                "PMMEDSKP"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/term",
+                              "type": ["string","null"],
+                              "title": "The Fom Schema",
+                              "default": "",
+                              "examples": [
+                                "Periode med medlemskap"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "status": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status",
+                          "type": "object",
+                          "title": "The medlemt status Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/kode",
+                              "type": ["string","null"],
+                              "title": "The Kode Schema",
+                              "default": "",
+                              "examples": [
+                                "GYLD"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/term",
+                              "type": ["string","null"],
+                              "title": "The Term Schema",
+                              "default": "",
+                              "examples": [
+                                "Gyldig"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "grunnlagstype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype",
+                          "type": "object",
+                          "title": "The medlem grunnlagstype Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "FO_12_1"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "EØS 883/04 - 12.1"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "land": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
+                          "type": "object",
+                          "title": "The medlem land Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "NO"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "Norge"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "lovvalg": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
+                          "type": "object",
+                          "title": "The medlem lovvalg Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "ENDL"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "Endelig"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "trygdedekning": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
+                          "type": "object",
+                          "title": "The medlem trygdedekning Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "FULL"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "Full"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "kildedokumenttype": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
+                          "type": "object",
+                          "title": "The medlem kildedokumenttype Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "Henv_Soknad"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "Henvendelse/søknad"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        },
+                        "kilde": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
+                          "type": "object",
+                          "title": "The medlem kilde Schema",
+                          "required": [
+                            "kode",
+                            "term"
+                          ],
+                          "properties": {
+                            "kode": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/kode",
+                              "type": ["string","null"],
+                              "title": "The kode Schema",
+                              "default": "",
+                              "examples": [
+                                "FS22"
+                              ],
+                              "pattern": "^(.*)$"
+                            },
+                            "term": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/term",
+                              "type": ["string","null"],
+                              "title": "The term Schema",
+                              "default": "",
+                              "examples": [
+                                "Gosys"
+                              ],
+                              "pattern": "^(.*)$"
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               },
@@ -1777,7 +2105,7 @@
               "status",
               "registrertDato",
               "endretDato",
-              "type"
+              "behandlingstype"
             ],
             "properties": {
               "behandlingID": {
@@ -1843,8 +2171,8 @@
                 ],
                 "pattern": "^(.*)$"
               },
-              "type": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/type",
+              "behandlingstype": {
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
                 "type": "object",
                 "title": "The Type Schema",
                 "additionalProperties": false,
@@ -1889,38 +2217,6 @@
         "MEL-1"
       ],
       "pattern": "^(.*)$"
-    },
-    "type": {
-      "$id": "#/properties/type",
-      "type": "object",
-      "title": "The Type Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/type/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "EU_EOS"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/type/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "EU/EØS"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
     }
   }
 }

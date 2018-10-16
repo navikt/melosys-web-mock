@@ -60,15 +60,16 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "UBEH",
           "term": "Under behandling"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "aktivTil": "2018-01-28",
       "soknadsperiode": {
@@ -78,9 +79,7 @@
       "prioritet": "HOY",
       "land": ["NO"],
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "176701002",
@@ -92,15 +91,16 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "ML_U",
           "term": "Melding fra utenlandsk myndighet"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "OPPR",
           "term": "Opprettet"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "aktivTil": "2016-03-22",
       "soknadsperiode": {
@@ -110,9 +110,7 @@
       "prioritet": "HOY",
       "land": ["NO"],
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "176314229",
@@ -124,15 +122,16 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "UFM",
           "term": "Unntak medlemskap"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "FORL",
           "term": "Foreløpig lovvalg"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "aktivTil": "2016-03-03",
       "soknadsperiode": {
@@ -142,9 +141,7 @@
       "prioritet": "HOY",
       "land": ["NO"],
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "176741739",
@@ -156,15 +153,16 @@
       },
       "behandling": {
         "behandlingID": null,
-        "behandlingType": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
-        "behandlingStatus": {
+        "behandlingsstatus": {
           "kode": "UBEH",
           "term": "Under behandling"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "aktivTil": "2016-03-23",
       "soknadsperiode": {
@@ -174,9 +172,7 @@
       "prioritet": "HOY",
       "land": ["NO"],
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     }
   ]
 }

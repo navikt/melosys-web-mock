@@ -65,16 +65,16 @@ module.exports.send = (req, res) => {
 
   const behandlingID = req.params.behandlingID;
   const body = req.body;
-  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("vurdering:send", JSON.stringify(jsonBody));
+  let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("vurdering:send", JSON.stringify(jsBody));
 
-  const valid = test(validate, jsonBody);
+  const valid = test(validate, jsBody);
   if (!valid) {
     valideringFeil(req, res);
   }
   else {
-    jsonBody.behandlingID = behandlingID;
-    res.json(jsonBody);
+    jsBody.behandlingID = behandlingID;
+    res.json(jsBody);
   }
 };
 

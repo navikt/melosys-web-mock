@@ -43,6 +43,13 @@ module.exports.hent = async (req, res) => {
     return res.status(500).send(err);
   }
 };
+function valideringFeil(req, res) {
+  const status = 400;
+  const melding = ERR.errorMessage(400, 'Bad Request', 'Invalid schema', req.originalUrl);
+  res.status(status).send(melding);
+}
+
+
 /**
  * Send Avklartefakta
  * @param req
@@ -51,34 +58,29 @@ module.exports.hent = async (req, res) => {
  */
 module.exports.send = (req, res) => {
   const body = req.body;
-  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("Avklartefakta:send", JSON.stringify(jsonBody));
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("Avklartefakta:send", JSON.stringify(jsBody));
 
   const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
-  const valid = test(validate, jsonBody);
+  const valid = test(validate, jsBody);
   if (!valid) {
     return valideringFeil(req, res);
   }
+
   let behandlingID, rest;
-  ({behandlingID, ...rest} = jsonBody);
+  ({behandlingID, ...rest} = jsBody);
   behandlingID = req.params.behandlingID;
+
   const avklartefakta = {
     behandlingID,
-    rest
+    ...rest,
   };
 
   return res.json(avklartefakta);
 };
-
-
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
 
 function test(validate, data) {
   const valid = validate(data);

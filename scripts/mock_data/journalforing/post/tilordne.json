@@ -1,13 +1,13 @@
 {
-  "journalpostID": "DOC_123",
-  "oppgaveID": "177057928",
-  "brukerID": "30098000492",
+  "saksnummer": "MELTEST-1",
   "avsenderID": "30098000492",
   "avsenderNavn": "PEN FUL",
-  "dokumentID": "2434234234",
-  "dokumenttittel": "",
+  "brukerID": "30098000492",
+  "dokumentID": "Dok_ID",
+  "dokumenttittel": "Søknad om medlemskap",
+  "journalpostID": "DOK_321",
+  "oppgaveID": "177057928",
   "vedleggstitler": [
-    ""
-  ],
-  "saksnummer": "44"
+    "Vedleggstittel 1"
+  ]
 }

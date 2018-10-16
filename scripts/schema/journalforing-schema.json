@@ -45,12 +45,12 @@
       "title": "The Dokument Schema",
       "additionalProperties": false,
       "required": [
-        "ID",
+        "dokumentID",
         "tittel",
         "mottattDato"
       ],
       "properties": {
-        "ID": {
+        "dokumentID": {
           "$id": "#/properties/dokument/properties/ID",
           "type": "string",
           "title": "The Id Schema",
