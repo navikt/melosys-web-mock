@@ -378,6 +378,16 @@
         "$ref": "#/definitions/kodeverk"
       }
     },
+    "rolletyper": {
+      "$id": "#/properties/rolletyper",
+      "type": "array",
+      "title": "The Rolletyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/rolletyper/items",
+        "$ref": "#/definitions/kodeverk"
+      }
+    },
     "sakstyper": {
       "$id": "#/properties/sakstyper",
       "type": "array",
