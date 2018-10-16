@@ -126,9 +126,7 @@
           "prioritet",
           "land",
           "versjon",
-          "ansvarligID",
-          "sistOppdatert",
-          "erUnderOppdatering"
+          "ansvarligID"
         ],
         "properties": {
           "oppgaveID": {
@@ -205,25 +203,26 @@
             "additionalProperties": false,
             "required": [
               "behandlingID",
-              "behandlingType",
-              "behandlingStatus",
-              "endretDato"
+              "behandlingstype",
+              "behandlingsstatus",
+              "sisteOpplysningerHentetDato",
+              "erUnderOppdatering"
             ],
             "properties": {
               "behandlingID": {
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingID",
-                "type": ["string","null"],
+                "type": ["integer","null"],
                 "title": "The Behandlingid Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "default": null,
                 "examples": [
-                  "4"
+                  4
                 ]
               },
-              "behandlingType": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType",
+              "behandlingstype": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype",
                 "type": "object",
-                "title": "The Behandlingtype Schema",
+                "title": "The behandlingstype Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "additionalProperties": false,
                 "required": [
@@ -232,7 +231,7 @@
                 ],
                 "properties": {
                   "kode": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/kode",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype/properties/kode",
                     "type": "string",
                     "title": "The Kode Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -243,7 +242,7 @@
                     "pattern": "^(.*)$"
                   },
                   "term": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingType/properties/term",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype/properties/term",
                     "type": "string",
                     "title": "The Term Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -255,10 +254,10 @@
                   }
                 }
               },
-              "behandlingStatus": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus",
+              "behandlingsstatus": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus",
                 "type": "object",
-                "title": "The Behandlingstatus Schema",
+                "title": "The behandlingsstatus Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "additionalProperties": false,
                 "required": [
@@ -267,7 +266,7 @@
                 ],
                 "properties": {
                   "kode": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/kode",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus/properties/kode",
                     "type": "string",
                     "title": "The Kode Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -278,7 +277,7 @@
                     "pattern": "^(.*)$"
                   },
                   "term": {
-                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingStatus/properties/term",
+                    "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus/properties/term",
                     "type": "string",
                     "title": "The Term Schema",
                     "description": "An explanation about the purpose of this instance.",
@@ -290,15 +289,26 @@
                   }
                 }
               },
-              "endretDato": {
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/endretDato",
+              "sisteOpplysningerHentetDato":{
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/sisteOpplysningerHentetDato",
                 "type": "string",
-                "format": "date",
-                "title": "The Endretdato Schema",
+                "format": "date-time",
+                "title": "The sisteOpplysningerHentetDato Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "2016-01-28"
+                  "2018-08-27T07:16:03.273Z"
+                ]
+              },
+              "erUnderOppdatering": {
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/erUnderOppdatering",
+                "type": "boolean",
+                "title": "The erUnderOppdatering Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  false,
+                  true
                 ]
               }
             }
@@ -398,28 +408,6 @@
               "Z991001"
             ],
             "pattern": "^(.*)$"
-          },
-          "sistOppdatert":{
-            "$id": "#/properties/saksbehandling/items/properties/sistOppdatert",
-            "type": "string",
-            "format": "date-time",
-            "title": "The SistOppdatert Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "Z991001"
-            ]
-          },
-          "erUnderOppdatering": {
-            "$id": "#/properties/saksbehandling/items/properties/erUnderOppdatering",
-            "type": "boolean",
-            "title": "The erUnderOppdatering Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              false,
-              true
-            ]
           }
         }
       }

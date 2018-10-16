@@ -2,7 +2,7 @@
   "behandlingID": 5,
   "soeknadDokument": {
     "personOpplysninger": {
-      "utenlandskID": [],
+      "utenlandskIdent": [],
       "medfolgendeFamilie": [],
       "medfolgendeAndre": null
     },

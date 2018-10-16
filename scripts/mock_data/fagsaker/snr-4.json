@@ -1,6 +1,6 @@
 {
   "saksnummer": "4",
-  "type": {
+  "sakstype": {
     "kode":"EU_EOS",
     "term":"EU/EØS"
   },
@@ -477,8 +477,161 @@
         "sakOgBehandling": {
           "eosBarnetrygd": false
         },
-        "medlemskap" : {
-          "medlemsperiode" : []
+        "medlemskap": {
+          "medlemsperiode": [
+            {
+              "periode": {
+                "fom": "2018-02-01",
+                "tom": "2018-12-31"
+              },
+              "periodetype": {
+                "kode": "PMMEDSKP",
+                "term": "Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NO",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"FULL",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
+            },
+            {
+              "periode": {
+                "fom": "2016-02-01",
+                "tom": "2016-12-31"
+              },
+              "periodetype": {
+                "kode": "PMMEDSKP",
+                "term": "Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NO",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
+            },
+            {
+              "periode": {
+                "fom": "2018-01-01",
+                "tom": "2018-01-31"
+              },
+              "periodetype": {
+                "kode": "PUMEDSKP",
+                "term": "Periode uten medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NO",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
+            },
+            {
+              "periode": {
+                "fom": "2017-12-01",
+                "tom": "2017-12-31"
+              },
+              "periodetype": {
+                "kode": "PMMEDSKP",
+                "term": "Periode med medlemskap"
+              },
+              "status":{
+                "kode":"GYLD",
+                "term":"Gyldig"
+              },
+              "grunnlagstype":{
+                "kode":"FO_12_1",
+                "term":"EØS 883/04 - 12.1"
+              },
+              "land":{
+                "kode":"NO",
+                "term":"NORGE"
+              },
+              "lovvalg":{
+                "kode":"ENDL",
+                "term":"Endelig"
+              },
+              "trygdedekning":{
+                "kode":"Full",
+                "term":"Full"
+              },
+              "kildedokumenttype":{
+                "kode":"Henv_Soknad",
+                "term":"Henvendelse/søknad"
+              },
+              "kilde":{
+                "kode":"FS22",
+                "term":"Gosys"
+              }
+            }
+          ]
         },
         "person" : {
           "diskresjonskode" : {
@@ -536,7 +689,7 @@
         },
         "registrertDato" : "2018-08-27T07:16:03.273Z",
         "endretDato" : "2018-08-27T07:16:03.273Z",
-        "type" : {
+        "behandlingstype" : {
           "kode" : "SKND",
           "term" : "Søknad"
         }
