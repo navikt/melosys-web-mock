@@ -4,6 +4,7 @@
       "type": ["object","null"],
       "required": [
         "referanse",
+        "avklartefaktaKode",
         "fakta",
         "subjektID",
         "begrunnelseKoder",
@@ -23,18 +24,40 @@
           ],
           "pattern": "^(.*)$"
         },
-        "fakta": {
-          "$id": "#/items/properties/fakta",
+        "avklartefaktaKode": {
+          "$id": "#/items/properties/avklartefaktaKode",
           "type": [
             "string",
             "null"
           ],
-          "title": "The Fakta Schema",
+          "title": "The AvklartefaktaKode Schema",
           "default": "",
           "examples": [
-            "NO"
+            "BOSTEDSLAND"
           ],
           "pattern": "^(.*)$"
+        },
+        "fakta": {
+          "$id": "#/items/properties/fakta",
+          "type": [
+            "array",
+            "null"
+          ],
+          "title": "The Fakta Schema",
+          "items": {
+            "$id": "#/items/properties/fakta/items",
+            "type": [
+              "string",
+              "null"
+            ],
+            "title": "The Items Schema",
+            "default": "",
+            "examples": [
+              "SOKKEL",
+              "NO"
+            ],
+            "pattern": "^(.*)$"
+          }
         },
         "subjektID": {
           "$id": "#/items/properties/subjektID",

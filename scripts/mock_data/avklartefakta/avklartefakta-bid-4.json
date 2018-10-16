@@ -1,7 +1,8 @@
 [
   {
     "referanse": "BOSTEDSLAND",
-    "fakta": "NO",
+    "avklartefaktaKode": "BOSTEDSLAND",
+    "fakta": ["NO"],
     "subjektID": null,
     "begrunnelseKoder": [
       "OPPHOLD_MER_ENN_12_MND"
@@ -10,21 +11,24 @@
   },
   {
     "referanse": "OFFENTLIGTJENESTEMANN",
-    "fakta": "TRUE",
+    "avklartefaktaKode": "OFFENTLIGTJENESTEMANN",
+    "fakta": ["TRUE"],
     "subjektID": null,
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
   },
   {
     "referanse": "KONTANTYTELSER",
-    "fakta": "FP",
+    "avklartefaktaKode": "MOTTAR_KONTANTYTELSE",
+    "fakta": ["FP"],
     "subjektID": null,
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
   },
   {
     "referanse": "AGFORRETNINGSLAND",
-    "fakta": "DE",
+    "avklartefaktaKode": "AGFORRETNINGSLAND",
+    "fakta": ["DE"],
     "subjektID": "635284736",
     "begrunnelseKoder": [
       "ER_UTLANDET"
@@ -33,7 +37,8 @@
   },
   {
     "referanse": "AGFORRETNINGSLAND",
-    "fakta": "DE",
+    "avklartefaktaKode": "AGFORRETNINGSLAND",
+    "fakta": ["DE"],
     "subjektID": "635284736",
     "begrunnelseKoder": [
       "ER_UTLANDET"
@@ -42,7 +47,8 @@
   },
   {
     "referanse": "AGFORRETNINGSLAND",
-    "fakta": "DE",
+    "avklartefaktaKode": "AGFORRETNINGSLAND",
+    "fakta": ["DE"],
     "subjektID": "635284736",
     "begrunnelseKoder": [
       "ER_UTLANDET"
@@ -51,28 +57,32 @@
   },
   {
     "referanse": "TJENESTESTED_NORSKSTATSFORVALTNING",
-    "fakta": "TRUE",
+    "avklartefaktaKode": null,
+    "fakta": ["TRUE"],
     "subjektID": null,
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
   },
   {
     "referanse": "TJENESTESTED_ARBEIDSPROSENT",
-    "fakta": "MER_ENN_5_PROSENT",
+    "avklartefaktaKode": null,
+    "fakta": ["MER_ENN_5_PROSENT"],
     "subjektID": null,
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
   },
   {
     "referanse": "SOKKELSKIP",
-    "fakta": "SOKKEL",
+    "avklartefaktaKode": "SOKKELSKIP",
+    "fakta": ["SOKKEL"],
     "subjektID": "736283472834",
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
   },
   {
     "referanse": "SOKKELSKIP",
-    "fakta": "SKIP",
+    "avklartefaktaKode": "SOKKELSKIP",
+    "fakta": ["SKIP"],
     "subjektID": "47848293838",
     "begrunnelseKoder": [],
     "begrunnelseFritekst": null
