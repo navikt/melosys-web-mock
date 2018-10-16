@@ -1,6 +1,6 @@
 {
   "saksnummer": "8",
-  "type": {
+  "sakstype": {
     "kode": "EU_EOS",
     "term": "EU/EØS"
   },
@@ -19,7 +19,7 @@
           "kode": "OPPRETTET",
           "term": "Opprettet"
         },
-        "type": {
+        "behandlingstype": {
           "kode": "SOEKNAD",
           "term": "Behandling av søknad"
         },
