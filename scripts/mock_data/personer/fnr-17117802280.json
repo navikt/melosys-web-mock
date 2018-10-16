@@ -8,7 +8,7 @@
   "foedselsdato": "1978-11-17",
   "postadresse": {
     "adressetype": "STRUKTURERT",
-    "strukturertadresse": {
+    "strukturertAdresse": {
       "gatenavn": "Sannergata",
       "husnr": "2",
       "region": null,
