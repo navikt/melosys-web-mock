@@ -6,8 +6,6 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "arbeidsgiverID",
-    "representantID",
     "avsenderID",
     "avsenderNavn",
     "brukerID",
@@ -19,32 +17,6 @@
     "vedleggstitler"
   ],
   "properties": {
-    "arbeidsgiverID": {
-      "$id": "/properties/arbeidsgiverID",
-      "type": [
-        "string",
-        "null"
-      ],
-      "title": "The Arbeidsgiverid Schema ",
-      "default": "",
-      "examples": [
-        "30098000491"
-      ],
-      "pattern": "^[0-9]{0,9}$"
-    },
-    "representantID": {
-      "$id": "/properties/representantID",
-      "type": [
-        "string",
-        "null"
-      ],
-      "title": "The Representantid Schema ",
-      "default": "",
-      "examples": [
-        "30098000493"
-      ],
-      "pattern": "^[0-9]{0,9}$"
-    },
     "avsenderID": {
       "$id": "/properties/avsenderID",
       "type": "string",
