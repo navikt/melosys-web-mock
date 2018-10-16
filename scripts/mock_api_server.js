@@ -168,9 +168,10 @@ router.get('/saksflyt/status/:behandlingID', saksflyt.status);
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumentTypeID', dokumenter.lagPdfUtkast);
-router.post('/dokumenter/opprett/:behandlingID/:dokumentTypeID', dokumenter.opprettDokument);
+//
+router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
+router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

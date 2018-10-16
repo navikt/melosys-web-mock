@@ -40,6 +40,7 @@
     "behandlingstyper",
     "begrunnelser",
     "dokumenttitler",
+    "dokumenttyper",
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
@@ -154,6 +155,16 @@
         "$ref": "#/definitions/kodeverk"
       }
     },
+    "dokumenttyper": {
+      "$id": "#/properties/dokumenttyper",
+      "type": "array",
+      "title": "The Dokumenttyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/dokumenttyper/items",
+        "$ref": "#/definitions/kodeverk"
+      }
+    },
     "finansiering": {
       "$id": "#/properties/finansiering",
       "type": "array",
@@ -224,6 +235,16 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/oppgavetyper/items",
+        "$ref": "#/definitions/kodeverk"
+      }
+    },
+    "rolletyper": {
+      "$id": "#/properties/rolletyper",
+      "type": "array",
+      "title": "The Rolletyper Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/rolletyper/items",
         "$ref": "#/definitions/kodeverk"
       }
     },
