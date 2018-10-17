@@ -38,7 +38,7 @@ instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult
 
 const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
 const behandlingID = 3;
-const dokumentTypeID = 4000074;
+const dokumentTypeID = '000074';
 instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 /*

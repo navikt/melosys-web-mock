@@ -24,14 +24,13 @@
           "kode": "OPPR",
           "term": "Opprettet"
         },
-        "endretDato": "2016-01-27"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "land": ["GB"],
       "prioritet": "HOY",
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "2",
@@ -56,14 +55,13 @@
           "kode": "OPPR",
           "term": "Opprettet"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "land": ["GB"],
       "prioritet": "HOY",
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     },
     {
       "oppgaveID": "3",
@@ -88,14 +86,13 @@
           "kode": "OPPR",
           "term": "Opprettet"
         },
-        "endretDato": "2016-01-28"
+        "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
+        "erUnderOppdatering": false
       },
       "land": ["GB"],
       "prioritet": "HOY",
       "versjon": 1,
-      "ansvarligID": "Z991001",
-      "sistOppdatert": "2018-08-10T15:00:00.622Z",
-      "erUnderOppdatering": false
+      "ansvarligID": "Z991001"
     }
   ]
 }

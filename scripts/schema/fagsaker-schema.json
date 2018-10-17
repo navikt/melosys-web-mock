@@ -1044,16 +1044,9 @@
                           "title": "The Arbeidsinntektinformasjon Schema",
                           "additionalProperties": false,
                           "required": [
-                            "arbeidsforholdFrilanserListe",
                             "inntektListe"
                           ],
                           "properties": {
-                            "arbeidsforholdFrilanserListe": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/arbeidsforholdFrilanserListe",
-                              "type": "array",
-                              "title": "The Arbeidsforholdfrilanserliste Schema",
-                              "uniqueItems": true
-                            },
                             "inntektListe": {
                               "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe",
                               "type": "array",
@@ -1266,6 +1259,103 @@
                         },
                         "aarMaaned": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/aarMaaned",
+                          "type": "string",
+                          "title": "The Aarmaaned Schema",
+                          "default": "",
+                          "examples": [
+                            "2017-11"
+                          ],
+                          "pattern": "^(.*)$"
+                        }
+                      }
+                    }
+                  },
+                  "frilansInntektMaanedListe": {
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe",
+                    "type": "array",
+                    "title": "The Frilansinntektmaanedliste Schema",
+                    "uniqueItems": true,
+                    "items": {
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "additionalProperties": false,
+                      "required": [
+                        "frilansInntektInformasjon",
+                        "aarMaaned"
+                      ],
+                      "properties": {
+                        "frilansInntektInformasjon": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon",
+                          "type": "object",
+                          "title": "The Frilansinntektinformasjon Schema",
+                          "additionalProperties": false,
+                          "required": [
+                            "arbeidsforholdFrilanserListe"
+                          ],
+                          "properties": {
+                            "arbeidsforholdFrilanserListe": {
+                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe",
+                              "type": "array",
+                              "title": "The ArbeidsforholdFrilanserListe Schema",
+                              "uniqueItems": true,
+                              "items": {
+                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items",
+                                "type": "object",
+                                "title": "The Items Schema",
+                                "additionalProperties": false,
+                                "required": [
+                                  "frilansPeriode",
+                                  "yrke"
+                                ],
+                                "properties": {
+                                  "frilansPeriode": {
+                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode",
+                                    "type": "object",
+                                    "title": "The FrilansPeriode Schema",
+                                    "additionalProperties": false,
+                                    "required": [
+                                      "fom",
+                                      "tom"
+                                    ],
+                                    "properties": {
+                                      "fom": {
+                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/fom",
+                                        "type": ["string","null"],
+                                        "title": "The Fom Schema",
+                                        "default": null,
+                                        "examples": [
+                                          null
+                                        ]
+                                      },
+                                      "tom": {
+                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/tom",
+                                        "type": ["string","null"],
+                                        "title": "The Fom Schema",
+                                        "default": null,
+                                        "examples": [
+                                          null
+                                        ]
+                                      }
+                                    }
+                                  },
+                                  "yrke": {
+                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/items/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/yrke",
+                                    "type": "string",
+                                    "title": "The Yrke Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "BUTIKKMEDARBEIDER"
+                                    ],
+                                    "pattern": "^(.*)$"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "aarMaaned": {
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/aarMaaned",
                           "type": "string",
                           "title": "The Aarmaaned Schema",
                           "default": "",

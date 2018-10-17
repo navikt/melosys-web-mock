@@ -9,9 +9,11 @@ const { dokumenttitler } = require('./dokumenttitler');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { oppgavetyper } = require('./oppgavetyper');
+const { rolletyper } = require('./rolletyper');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { dokumenttyper } = require('./dokumenttyper');
 
 const kodeverk = {
   behandlingsstatus,
@@ -22,8 +24,10 @@ const kodeverk = {
   landkoder,
   lovvalgsbestemmelser,
   oppgavetyper,
+  rolletyper,
   sakstyper,
   vedleggstitler,
+  dokumenttyper
 };
 module.exports.kodeverk = kodeverk;
 

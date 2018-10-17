@@ -18,6 +18,10 @@ module.exports.lesAvklartefaktaKatalog = () => {
   return Schema.lesKatalogSync(AVKLARTEFAKTA_MOCK_DIR);
 };
 
+module.exports.lesAvklartefaktaPostMock = () => {
+  const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/post/avklartefakta-post.json`;
+  return Schema.lesKatalogElement(mockfile);
+};
 const lesAvklaring = async (behandlingID) => {
   const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
   return (await Utils.existsAsync(mockfile)) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {}
@@ -58,20 +62,20 @@ function valideringFeil(req, res) {
  */
 module.exports.send = (req, res) => {
   const body = req.body;
-  const jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("Avklartefakta:send", JSON.stringify(jsonBody));
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("Avklartefakta:send", JSON.stringify(jsBody));
 
   const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
-  const valid = test(validate, jsonBody);
+  const valid = test(validate, jsBody);
   if (!valid) {
     return valideringFeil(req, res);
   }
 
   let behandlingID, rest;
-  ({behandlingID, ...rest} = jsonBody);
+  ({behandlingID, ...rest} = jsBody);
   behandlingID = req.params.behandlingID;
 
   const avklartefakta = {
