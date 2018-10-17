@@ -70,20 +70,12 @@ module.exports.send = (req, res) => {
   const validate = ajv.compile(schema);
 
   const valid = test(validate, jsBody);
+
   if (!valid) {
     return valideringFeil(req, res);
   }
 
-  let behandlingID, rest;
-  ({behandlingID, ...rest} = jsBody);
-  behandlingID = req.params.behandlingID;
-
-  const avklartefakta = {
-    behandlingID,
-    ...rest,
-  };
-
-  return res.json(avklartefakta);
+  return res.json(jsBody);
 };
 
 function test(validate, data) {
