@@ -31,7 +31,7 @@
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://nav.no/kodeverk.json",
+  "$id": "http://melosys.nav.no/kodeverk-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
