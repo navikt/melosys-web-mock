@@ -76,14 +76,9 @@
       "pattern": "^(.*)$"
     },
     "foedselsdato": {
-      "$id": "#/properties/foedselsdato",
-      "type": "string",
-      "format": "date",
       "title": "The Foedselsdato Schema",
-      "default": "",
-      "examples": [
-        "1972-11-19"
-      ]
+      "$id": "#/properties/foedselsdato",
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato"
     }
   }
 }
