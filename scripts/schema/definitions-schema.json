@@ -32,6 +32,18 @@
         }
       }
     },
+    "dato":  {
+      "type": "string",
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "dato-tid": {
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z"
+      ]
+    },
     "periode": {
       "title": "Periode med fom tom",
       "type": "object",
@@ -73,6 +85,18 @@
           "examples": ["2014-03-12", null]
         }
       }
+    },
+    "nullable-dato":  {
+      "type": ["string","null"],
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "nullable-dato-tid": {
+      "type": ["string","null"],
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z", null
+      ]
     }
   }
 }

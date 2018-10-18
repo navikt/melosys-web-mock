@@ -1,17 +1,5 @@
 {
   "definitions": {
-    "dato":  {
-      "type": "string",
-      "format": "date",
-      "examples": ["2018-08-27"]
-    },
-    "dato-tid": {
-      "type": "string",
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ]
-    },
     "nullable-kodeverk": {
       "type": "object",
       "title": "The Kodeverk Schema",
@@ -40,18 +28,6 @@
           "pattern": "^(.*)$"
         }
       }
-    },
-    "nullable-dato":  {
-      "type": ["string","null"],
-      "format": "date",
-      "examples": ["2018-08-27"]
-    },
-    "nullable-dato-tid": {
-      "type": ["string","null"],
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z", null
-      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -82,12 +58,12 @@
     "registrertDato": {
       "title": "The Registrertdato Schema",
       "$id": "#/properties/registrertDato",
-      "$ref": "#/definitions/dato-tid"
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato-tid"
     },
     "endretDato": {
       "title": "The Endretdato Schema",
       "$id": "#/properties/endretDato",
-      "$ref": "#/definitions/nullable-dato-tid"
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato-tid"
     },
     "gsakSaksnummer": {
       "$id": "#/properties/gsakSaksnummer",
@@ -277,7 +253,7 @@
                           "endringsdatoStillingsprosent": {
                             "title": "The Endringsdatostillingsprosent Schema",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
-                            "$ref": "#/definitions/nullable-dato"
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato"
                           },
                           "maritimArbeidsavtale": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/maritimArbeidsavtale",
@@ -546,7 +522,7 @@
                     "oppstartdato": {
                       "title": "The Oppstartdato Schema",
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
-                      "$ref": "#/definitions/nullable-dato"
+                      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato"
                     },
                     "postadresse": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse",
@@ -1320,7 +1296,7 @@
                   "foedselsdato": {
                     "title": "The Foedselsdato Schema",
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
-                    "$ref": "#/definitions/dato"
+                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato"
                   },
                   "sivilstand": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sivilstand",
@@ -1340,7 +1316,7 @@
                   "statsborgerskapDato": {
                     "title": "The Statsborgerskapdato Schema",
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
-                    "$ref": "#/definitions/dato"
+                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato"
                   },
                   "familiemedlemmer": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
@@ -1423,12 +1399,12 @@
               "registrertDato": {
                 "title": "The Registrertdato Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
-                "$ref": "#/definitions/nullable-dato-tid"
+                "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato-tid"
               },
               "endretDato": {
                 "title": "The Endretdato Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
-                "$ref": "#/definitions/nullable-dato-tid"
+                "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato-tid"
               },
               "behandlingstype": {
                 "title": "The Behandlingsype Schema",
