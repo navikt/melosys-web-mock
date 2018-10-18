@@ -205,15 +205,9 @@
                 "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
               },
               "sisteOpplysningerHentetDato":{
-                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/sisteOpplysningerHentetDato",
-                "type": "string",
-                "format": "date-time",
                 "title": "The sisteOpplysningerHentetDato Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                  "2018-08-27T07:16:03.273Z"
-                ]
+                "$id": "#/properties/saksbehandling/items/properties/behandling/properties/sisteOpplysningerHentetDato",
+                "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato-tid"
               },
               "erUnderOppdatering": {
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/erUnderOppdatering",

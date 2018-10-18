@@ -959,13 +959,7 @@
             },
             "trygdeavgiftTrukketGjennomSkattDato": {
               "$id": "#/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkattDato",
-              "type": ["string","null"],
-              "title": "The Trygdeavgifttrukketgjennomskattdato Schema",
-              "default": "",
-              "examples": [
-                "2018-01-01"
-              ],
-              "pattern": "^(.*)$"
+              "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-dato"
             }
           }
         },
