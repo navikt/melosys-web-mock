@@ -240,39 +240,10 @@
             ]
           },
           "soknadsperiode": {
-            "$id": "#/properties/saksbehandling/items/properties/soknadsperiode",
-            "type": "object",
             "title": "The Soknadsperiode Schema",
             "description": "An explanation about the purpose of this instance.",
-            "additionalProperties": false,
-            "required": [
-              "fom",
-              "tom"
-            ],
-            "properties": {
-              "fom": {
-                "$id": "#/properties/saksbehandling/items/properties/soknadsperiode/properties/fom",
-                "type": "string",
-                "format": "date",
-                "title": "The Fom Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                  "2018-10-01"
-                ]
-              },
-              "tom": {
-                "$id": "#/properties/saksbehandling/items/properties/soknadsperiode/properties/tom",
-                "type": "string",
-                "format": "date",
-                "title": "The Tom Schema",
-                "description": "An explanation about the purpose of this instance.",
-                "default": "",
-                "examples": [
-                  "2019-08-31"
-                ]
-              }
-            }
+            "$id": "#/properties/saksbehandling/items/properties/soknadsperiode",
+            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-periode"
           },
           "prioritet": {
             "$id": "#/properties/saksbehandling/items/properties/prioritet",

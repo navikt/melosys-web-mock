@@ -57,38 +57,9 @@
         "pattern": "^(.*)$"
       },
       "soknadsperiode": {
-        "$id": "#/items/properties/soknadsperiode",
-        "type": "object",
         "title": "The Soknadsperiode Schema",
-        "additionalProperties": false,
-        "required": [
-          "fom",
-          "tom"
-        ],
-        "properties": {
-          "fom": {
-            "$id": "#/items/properties/soknadsperiode/properties/fom",
-            "type": "string",
-            "format": "date",
-            "title": "The Fom Schema",
-            "default": "",
-            "examples": [
-              "2018-08-01"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "tom": {
-            "$id": "#/items/properties/soknadsperiode/properties/tom",
-            "type": "string",
-            "format": "date",
-            "title": "The Tom Schema",
-            "default": "",
-            "examples": [
-              "2018-12-31"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$id": "#/items/properties/soknadsperiode",
+        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
       },
       "land": {
         "$id": "#/items/properties/land",
