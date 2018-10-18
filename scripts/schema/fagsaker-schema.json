@@ -1,5 +1,17 @@
 {
   "definitions": {
+    "dato":  {
+      "type": "string",
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "dato-tid": {
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z"
+      ]
+    },
     "nullable-kodeverk": {
       "type": "object",
       "title": "The Kodeverk Schema",
@@ -28,6 +40,18 @@
           "pattern": "^(.*)$"
         }
       }
+    },
+    "nullable-dato":  {
+      "type": ["string","null"],
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "nullable-dato-tid": {
+      "type": ["string","null"],
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z", null
+      ]
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -56,25 +80,14 @@
       "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
     },
     "registrertDato": {
-      "$id": "#/properties/registrertDato",
-      "type": "string",
-      "format": "date-time",
       "title": "The Registrertdato Schema",
-      "default": "",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ]
+      "$id": "#/properties/registrertDato",
+      "$ref": "#/definitions/dato-tid"
     },
     "endretDato": {
-      "$id": "#/properties/endretDato",
-      "type": ["string","null"],
-      "format": "date-time",
       "title": "The Endretdato Schema",
-      "default": "",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ],
-      "pattern": "^(.*)$"
+      "$id": "#/properties/endretDato",
+      "$ref": "#/definitions/nullable-dato-tid"
     },
     "gsakSaksnummer": {
       "$id": "#/properties/gsakSaksnummer",
@@ -262,15 +275,9 @@
                             ]
                           },
                           "endringsdatoStillingsprosent": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
-                            "type": ["string","null"],
-                            "format": "date",
                             "title": "The Endringsdatostillingsprosent Schema",
-                            "default": null,
-                            "examples": [
-                             "2016-01-01",
-                              null
-                            ]
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
+                            "$ref": "#/definitions/nullable-dato"
                           },
                           "maritimArbeidsavtale": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/maritimArbeidsavtale",
@@ -537,13 +544,9 @@
                       "pattern": "^(.*)$"
                     },
                     "oppstartdato": {
-                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
-                      "type": ["string","null"],
                       "title": "The Oppstartdato Schema",
-                      "default": null,
-                      "examples": [
-                        null
-                      ]
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
+                      "$ref": "#/definitions/nullable-dato"
                     },
                     "postadresse": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse",
@@ -1315,14 +1318,9 @@
                     "pattern": "^(.*)$"
                   },
                   "foedselsdato": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
-                    "type": "string",
                     "title": "The Foedselsdato Schema",
-                    "default": "",
-                    "examples": [
-                      "1972-11-19"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
+                    "$ref": "#/definitions/dato"
                   },
                   "sivilstand": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sivilstand",
@@ -1340,15 +1338,9 @@
                     "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                   },
                   "statsborgerskapDato": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
-                    "type": "string",
-                    "format": "date",
                     "title": "The Statsborgerskapdato Schema",
-                    "default": "",
-                    "examples": [
-                      "2013-01-01"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
+                    "$ref": "#/definitions/dato"
                   },
                   "familiemedlemmer": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
@@ -1429,26 +1421,14 @@
                 "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
               },
               "registrertDato": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
-                "type": ["string","null"],
-                "format": "date-time",
                 "title": "The Registrertdato Schema",
-                "default": "",
-                "examples": [
-                  "2018-08-27T07:16:03.273Z"
-                ],
-                "pattern": "^(.*)$"
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
+                "$ref": "#/definitions/nullable-dato-tid"
               },
               "endretDato": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
-                "type": ["string","null"],
-                "format": "date-time",
                 "title": "The Endretdato Schema",
-                "default": "",
-                "examples": [
-                  "2018-08-27T07:16:03.273Z"
-                ],
-                "pattern": "^(.*)$"
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
+                "$ref": "#/definitions/nullable-dato-tid"
               },
               "behandlingstype": {
                 "title": "The Behandlingsype Schema",
