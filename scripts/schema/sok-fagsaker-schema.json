@@ -46,15 +46,9 @@
         "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
       },
       "opprettetDato": {
-        "$id": "#/items/properties/opprettetDato",
-        "type": "string",
-        "format": "date-time",
         "title": "The Opprettetdato Schema",
-        "default": "",
-        "examples": [
-          "2017-10-19T12:31:36.123Z"
-        ],
-        "pattern": "^(.*)$"
+        "$id": "#/items/properties/opprettetDato",
+        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato-tid"
       },
       "soknadsperiode": {
         "title": "The Soknadsperiode Schema",
