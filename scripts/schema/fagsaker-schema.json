@@ -1,5 +1,64 @@
 {
-  "definitions": {},
+  "definitions": {
+    "kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": "string",
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": "string",
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "nullable-kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": ["string", "null"],
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": ["string", "null"],
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://melosys.nav.no/fagsaker-schema.json",
   "type": "object",
@@ -16,68 +75,14 @@
   ],
   "properties": {
     "status": {
-      "$id": "#/properties/status",
-      "type": "object",
       "title": "The Status Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/status/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "OPPR"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/status/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "Opprettet"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$id": "#/properties/status",
+      "$ref": "#/definitions/kodeverk"
     },
     "sakstype": {
-      "$id": "#/properties/type",
-      "type": "object",
-      "title": "The Type Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/sakstype/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "EU_EOS"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/sakstype/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "EU/EØS"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$id": "#/properties/sakstype",
+      "title": "The Sakstype Schema",
+      "$ref": "#/definitions/kodeverk"
     },
     "registrertDato": {
       "$id": "#/properties/registrertDato",
@@ -288,33 +293,8 @@
                         "properties": {
                           "arbeidstidsordning": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
-                            "type": "object",
                             "title": "The Arbeidstidsordning Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "avtaltArbeidstimerPerUke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avtaltArbeidstimerPerUke",
@@ -358,65 +338,13 @@
                           },
                           "skipsregister": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
-                            "type": "object",
                             "title": "The Skipsregister Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "yrke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
-                            "type": "object",
                             "title": "The Yrke Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
-                                "type": "string",
-                                "title": "The Kode Schema",
-                                "default": "",
-                                "examples": [
-                                  "9120105"
-                                ],
-                                "pattern": "^(.*)$"
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/term",
-                                "type": "string",
-                                "title": "The Term Schema",
-                                "default": "",
-                                "examples": [
-                                  "ALTMULIGMANN (PRIVATHJEM)"
-                                ],
-                                "pattern": "^(.*)$"
-                              }
-                            }
+                            "$ref": "#/definitions/kodeverk"
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
@@ -440,33 +368,8 @@
                           },
                           "fartsomraade": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
-                            "type": "object",
                             "title": "The Fartsomraade Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "beregnetAntallTimerPrUke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetAntallTimerPrUke",
@@ -490,33 +393,8 @@
                           },
                           "skipstype": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
-                            "type": "object",
                             "title": "The Skipstype Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "gyldighetsperiode": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode",
@@ -1450,252 +1328,44 @@
                           }
                         },
                         "periodetype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
-                          "type": "object",
                           "title": "The periodetype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/kode",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "PMMEDSKP"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/term",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "Periode med medlemskap"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "status": {
+                          "title": "The medlemskap status Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status",
-                          "type": "object",
-                          "title": "The medlemt status Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/kode",
-                              "type": ["string","null"],
-                              "title": "The Kode Schema",
-                              "default": "",
-                              "examples": [
-                                "GYLD"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/term",
-                              "type": ["string","null"],
-                              "title": "The Term Schema",
-                              "default": "",
-                              "examples": [
-                                "Gyldig"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "grunnlagstype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype",
-                          "type": "object",
                           "title": "The medlem grunnlagstype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FO_12_1"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "EØS 883/04 - 12.1"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype",
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "land": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
-                          "type": "object",
                           "title": "The medlem land Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "NO"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Norge"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
+                          "$ref": "#/definitions/kodeverk"
                         },
                         "lovvalg": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
-                          "type": "object",
                           "title": "The medlem lovvalg Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "ENDL"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Endelig"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
+                          "$ref": "#/definitions/kodeverk"
                         },
                         "trygdedekning": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
-                          "type": "object",
                           "title": "The medlem trygdedekning Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FULL"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Full"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
+                          "$ref": "#/definitions/kodeverk"
                         },
                         "kildedokumenttype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
-                          "type": "object",
                           "title": "The medlem kildedokumenttype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "Henv_Soknad"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Henvendelse/søknad"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
+                          "$ref": "#/definitions/kodeverk"
                         },
                         "kilde": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
-                          "type": "object",
                           "title": "The medlem kilde Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FS22"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Gosys"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
+                          "$ref": "#/definitions/kodeverk"
                         }
                       }
                     }
@@ -1723,34 +1393,9 @@
                 ],
                 "properties": {
                   "diskresjonskode": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
-                    "type": "object",
                     "title": "The Diskresjonskode Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
-                        "type": ["string","null"],
-                        "title": "The Kode Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/term",
-                        "type": ["string","null"],
-                        "title": "The Term Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
+                    "$ref": "#/definitions/nullable-kodeverk"
                   },
                   "erEgenAnsatt": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/erEgenAnsatt",
@@ -1844,64 +1489,16 @@
                         ]
                       },
                       "land": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": "object",
                         "title": "The Land Schema",
-                        "additionalProperties": false,
-                        "required": [
-                          "kode",
-                          "term"
-                        ],
-                        "properties": {
-                          "kode": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
-                            "type": ["string","null"],
-                            "examples": [
-                              "NO"
-                            ]
-                          },
-                          "term": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
-                            "type": ["string","null"],
-                            "examples": [
-                              "Norge"
-                            ]
-                          }
-                        }
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
+                        "$ref": "#/definitions/kodeverk"
                       }
                     }
                   },
                   "personStatus": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
-                    "type": "object",
                     "title": "The Personstatus Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "BOSA"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "Bosatt"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
+                    "$ref": "#/definitions/kodeverk"
                   },
                   "sammensattNavn": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sammensattNavn",
@@ -1914,36 +1511,9 @@
                     "pattern": "^(.*)$"
                   },
                   "kjoenn": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
-                    "type": "object",
                     "title": "The Kjoenn Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "M"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "Mann"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
+                    "$ref": "#/definitions/kodeverk"
                   },
                   "fnr": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -1976,36 +1546,9 @@
                     "pattern": "^(.*)$"
                   },
                   "statsborgerskap": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
-                    "type": "object",
                     "title": "The Statsborgerskap Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "NOR"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "NORGE"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
+                    "$ref": "#/definitions/kodeverk"
                   },
                   "statsborgerskapDato": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
@@ -2052,35 +1595,9 @@
                           ]
                         },
                         "relasjonstype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
-                          "type": "object",
                           "title": "The relasjonstype schema",
-                          "additionalProperties": false,
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/kode",
-                              "type": "string",
-                              "enum": ["EKTE","SAM","FARA","REPA","BARN","MORA"],
-                              "title": "The Kode Schema",
-                              "default": "",
-                              "examples": [
-                                "EKTE","SAM","FARA","REPA","BARN","MORA"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/term",
-                              "type": "string",
-                              "title": "The Term Schema",
-                              "default": "",
-                              "examples": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
+                          "$ref": "#/definitions/kodeverk"
                         }
                       }
                     }
@@ -2118,36 +1635,9 @@
                 ]
               },
               "status": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
-                "type": "object",
                 "title": "The Status Schema",
-                "additionalProperties": false,
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "properties": {
-                  "kode": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
-                    "type": "string",
-                    "title": "The Kode Schema",
-                    "default": "",
-                    "examples": [
-                      "OPPR"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "term": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status/properties/term",
-                    "type": "string",
-                    "title": "The Term Schema",
-                    "default": "",
-                    "examples": [
-                      "Opprettet"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
+                "$ref": "#/definitions/kodeverk"
               },
               "registrertDato": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
@@ -2172,36 +1662,9 @@
                 "pattern": "^(.*)$"
               },
               "behandlingstype": {
+                "title": "The Behandlingsype Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
-                "type": "object",
-                "title": "The Type Schema",
-                "additionalProperties": false,
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "properties": {
-                  "kode": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
-                    "type": "string",
-                    "title": "The Kode Schema",
-                    "default": "",
-                    "examples": [
-                      "SKND"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "term": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/type/properties/term",
-                    "type": "string",
-                    "title": "The Term Schema",
-                    "default": "",
-                    "examples": [
-                      "Søknad"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$ref": "#/definitions/kodeverk"
               }
             }
           }
