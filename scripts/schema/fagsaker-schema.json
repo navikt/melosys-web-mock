@@ -1,34 +1,5 @@
 {
   "definitions": {
-    "kodeverk": {
-      "type": "object",
-      "title": "The Kodeverk Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "OPPRETTET"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "Opprettet"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
-    },
     "nullable-kodeverk": {
       "type": "object",
       "title": "The Kodeverk Schema",
@@ -77,12 +48,12 @@
     "status": {
       "title": "The Status Schema",
       "$id": "#/properties/status",
-      "$ref": "#/definitions/kodeverk"
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
     },
     "sakstype": {
       "$id": "#/properties/sakstype",
       "title": "The Sakstype Schema",
-      "$ref": "#/definitions/kodeverk"
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
     },
     "registrertDato": {
       "$id": "#/properties/registrertDato",
@@ -344,7 +315,7 @@
                           "yrke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
                             "title": "The Yrke Schema",
-                            "$ref": "#/definitions/kodeverk"
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
@@ -1345,27 +1316,27 @@
                         "land": {
                           "title": "The medlem land Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         },
                         "lovvalg": {
                           "title": "The medlem lovvalg Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         },
                         "trygdedekning": {
                           "title": "The medlem trygdedekning Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         },
                         "kildedokumenttype": {
                           "title": "The medlem kildedokumenttype Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         },
                         "kilde": {
                           "title": "The medlem kilde Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         }
                       }
                     }
@@ -1491,14 +1462,14 @@
                       "land": {
                         "title": "The Land Schema",
                         "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "$ref": "#/definitions/kodeverk"
+                        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                       }
                     }
                   },
                   "personStatus": {
                     "title": "The Personstatus Schema",
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
-                    "$ref": "#/definitions/kodeverk"
+                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                   },
                   "sammensattNavn": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sammensattNavn",
@@ -1513,7 +1484,7 @@
                   "kjoenn": {
                     "title": "The Kjoenn Schema",
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
-                    "$ref": "#/definitions/kodeverk"
+                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                   },
                   "fnr": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -1548,7 +1519,7 @@
                   "statsborgerskap": {
                     "title": "The Statsborgerskap Schema",
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
-                    "$ref": "#/definitions/kodeverk"
+                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                   },
                   "statsborgerskapDato": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
@@ -1597,7 +1568,7 @@
                         "relasjonstype": {
                           "title": "The relasjonstype schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
-                          "$ref": "#/definitions/kodeverk"
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
                         }
                       }
                     }
@@ -1637,7 +1608,7 @@
               "status": {
                 "title": "The Status Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
-                "$ref": "#/definitions/kodeverk"
+                "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
               },
               "registrertDato": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
@@ -1664,7 +1635,7 @@
               "behandlingstype": {
                 "title": "The Behandlingsype Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
-                "$ref": "#/definitions/kodeverk"
+                "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
               }
             }
           }
