@@ -194,14 +194,12 @@
               },
               "behandlingstype": {
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingstype",
-                "type": "object",
                 "title": "The behandlingstype Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
               },
               "behandlingsstatus": {
                 "$id": "#/properties/saksbehandling/items/properties/behandling/properties/behandlingsstatus",
-                "type": "object",
                 "title": "The behandlingsstatus Schema",
                 "description": "An explanation about the purpose of this instance.",
                 "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
