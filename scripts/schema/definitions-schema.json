@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/definitions-schema.json",
+  "title": "The Definitions Schema",
+  "definitions": {
+    "kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": "string",
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": "string",
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  }
+}
