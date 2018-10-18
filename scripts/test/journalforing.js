@@ -5,6 +5,10 @@ const Schema = require('./schema-util');
 
 const SCRIPTS_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
+
 const MOCK_DATA_JOURNALFORING_DIR = `${SCRIPTS_DIR}/mock_data/journalforing`;
 
 const testJournalPost = (postnavn) => {
@@ -26,7 +30,7 @@ const catalog = Schema.lesKatalogSync(MOCK_DATA_JOURNALFORING_DIR);
 
 
 const ajv = new Ajv({allErrors: true});
-const validate = ajv.compile(schema);
+const validate = ajv.addSchema(definitions).compile(schema);
 
 const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
