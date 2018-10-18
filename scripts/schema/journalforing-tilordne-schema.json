@@ -24,7 +24,8 @@
       "default": "",
       "examples": [
         "30098000492"
-      ]
+      ],
+      "pattern": "^(.*)$"
     },
     "avsenderNavn": {
       "$id": "#/properties/avsenderNavn",
