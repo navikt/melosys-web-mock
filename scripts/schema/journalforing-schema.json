@@ -71,15 +71,10 @@
           "pattern": "^(.*)$"
         },
         "mottattDato": {
-          "$id": "#/properties/dokument/properties/mottattDato",
-          "type": "string",
-          "format": "date-time",
           "title": "The Mottattdato Schema",
-          "default": "",
-          "examples": [
-            "2018-05-04T15:15:25.622Z"
-          ],
-          "pattern": "^(.*)$"
+          "$id": "#/properties/dokument/properties/mottattDato",
+
+          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions//dato-tid"
         }
       }
     }
