@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://nav.no/melosys/oppgaver-oversikt",
+  "$id": "http://melosys.nav.no/oppgaver-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "description": "An explanation about the purpose of this instance.",
