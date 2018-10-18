@@ -351,36 +351,9 @@
               }
             },
             "oppholdsPeriode": {
-              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
-              "type": "object",
               "title": "The Oppholdsperiode Schema",
-              "additionalProperties": false,
-              "required": [
-                "fom",
-                "tom"
-              ],
-              "properties": {
-                "fom": {
-                  "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/fom",
-                  "type": ["string","null"],
-                  "title": "The Fom Schema",
-                  "default": "",
-                  "examples": [
-                    "2018-01-01"
-                  ],
-                  "pattern": "^(.*)$"
-                },
-                "tom": {
-                  "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/tom",
-                  "type": ["string","null"],
-                  "title": "The Tom Schema",
-                  "default": "",
-                  "examples": [
-                    "2018-06-01"
-                  ],
-                  "pattern": "^(.*)$"
-                }
-              }
+              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
+              "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-periode"
             },
             "ektefelleEllerBarnINorge": {
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",

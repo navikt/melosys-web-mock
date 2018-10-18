@@ -52,6 +52,27 @@
           "examples": ["2014-03-12", null]
         }
       }
+    },
+    "nullable-periode": {
+      "title": "Periode med fom tom",
+      "type": "object",
+      "required": [
+        "fom",
+        "tom"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fom": {
+          "type": ["string", "null"],
+          "format": "date",
+          "examples": ["2014-03-12"]
+        },
+        "tom": {
+          "type": ["string","null"],
+          "format": "date",
+          "examples": ["2014-03-12", null]
+        }
+      }
     }
   }
 }

@@ -28,27 +28,6 @@
           "pattern": "^(.*)$"
         }
       }
-    },
-    "nullable-periode": {
-      "title": "Periode med fom tom",
-      "type": "object",
-      "required": [
-        "fom",
-        "tom"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "fom": {
-          "type": ["string", "null"],
-          "format": "date",
-          "examples": ["2014-03-12"]
-        },
-        "tom": {
-          "type": ["string","null"],
-          "format": "date",
-          "examples": ["2014-03-12", null]
-        }
-      }
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -989,7 +968,7 @@
                                   "opptjeningsperiode": {
                                     "title": "The Inntekt Opptjeningsperiode Schema",
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode",
-                                    "$ref": "#/definitions/nullable-periode"
+                                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/nullable-periode"
                                   }
                                 }
                               }
