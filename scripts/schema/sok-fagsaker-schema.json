@@ -42,7 +42,6 @@
       },
       "behandlingsstatus": {
         "$id": "#/items/properties/behandlingsstatus",
-        "type": "object",
         "title": "The Behandlingsstatus Schema",
         "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
       },
