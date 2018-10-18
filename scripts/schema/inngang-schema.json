@@ -11,35 +11,8 @@
   "properties": {
     "vurdering": {
       "$id": "#/properties/vurdering",
-      "type": "object",
       "title": "The Vurdering Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/vurdering/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "OPPFYLT"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/vurdering/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "Søknaden oppfyller inngangsvilkårene for EU/EØS-saker, etter forordning 883/2004."
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
     }
   }
 }
