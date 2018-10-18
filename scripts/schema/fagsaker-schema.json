@@ -28,6 +28,27 @@
           "pattern": "^(.*)$"
         }
       }
+    },
+    "nullable-periode": {
+      "title": "Periode med fom tom",
+      "type": "object",
+      "required": [
+        "fom",
+        "tom"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fom": {
+          "type": ["string", "null"],
+          "format": "date",
+          "examples": ["2014-03-12"]
+        },
+        "tom": {
+          "type": ["string","null"],
+          "format": "date",
+          "examples": ["2014-03-12", null]
+        }
+      }
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -199,25 +220,9 @@
                             ]
                           },
                           "periode": {
+                            "title": "Utenlandsk opphold periode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/fom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/tom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                           },
                           "land": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
@@ -368,35 +373,9 @@
                             "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "gyldighetsperiode": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode",
-                            "type": "object",
                             "title": "The Gyldighetsperiode Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
-                                "type": "string",
-                                "title": "The Fom Schema",
-                                "default": "",
-                                "examples": [
-                                  "2016-03-01"
-                                ],
-                                "pattern": "^(.*)$"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/tom",
-                                "type": ["string","null"],
-                                "title": "The Tom Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode",
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                           }
                         }
                       }
@@ -422,31 +401,9 @@
                             "type": ["string","null"]
                           },
                           "permisjonsPeriode": {
+                            "title": "Arbeidsforhold permisjonsPeriode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/fom",
-                                "type": [
-                                  "string",
-                                  "null"
-                                ],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/tom",
-                                "type": [
-                                  "string",
-                                  "null"
-                                ],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                           },
                           "permisjonsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
@@ -483,35 +440,9 @@
                       "pattern": "^(.*)$"
                     },
                     "ansettelsesPeriode": {
-                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
-                      "type": "object",
                       "title": "The Ansettelsesperiode Schema",
-                      "additionalProperties": false,
-                      "required": [
-                        "fom",
-                        "tom"
-                      ],
-                      "properties": {
-                        "fom": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/fom",
-                          "type": "string",
-                          "title": "The Fom Schema",
-                          "default": "",
-                          "examples": [
-                            "2016-03-01"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
-                        "tom": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/tom",
-                          "type": ["string","null"],
-                          "title": "The Tom Schema",
-                          "default": null,
-                          "examples": [
-                            null
-                          ]
-                        }
-                      }
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
+                      "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                     },
                     "arbeidsforholdstype": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdstype",
@@ -573,25 +504,9 @@
                             "pattern": "^\\d{4}-\\d{2}$"
                           },
                           "timelonnetPeriode": {
+                            "title": "Arbeidsforhold timelonnetPeriode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/fom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/tom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                           },
                           "antallTimer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
@@ -1072,34 +987,9 @@
                                     ]
                                   },
                                   "opptjeningsperiode": {
+                                    "title": "The Inntekt Opptjeningsperiode Schema",
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode",
-                                    "type": "object",
-                                    "title": "The Opptjeningsperiode Schema",
-                                    "additionalProperties": false,
-                                    "required": [
-                                      "fom",
-                                      "tom"
-                                    ],
-                                    "properties": {
-                                      "fom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode/properties/fom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      },
-                                      "tom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode/properties/tom",
-                                        "type": ["string","null"],
-                                        "title": "The Tom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      }
-                                    }
+                                    "$ref": "#/definitions/nullable-periode"
                                   }
                                 }
                               }
@@ -1159,34 +1049,9 @@
                                 ],
                                 "properties": {
                                   "frilansPeriode": {
-                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode",
-                                    "type": "object",
                                     "title": "The FrilansPeriode Schema",
-                                    "additionalProperties": false,
-                                    "required": [
-                                      "fom",
-                                      "tom"
-                                    ],
-                                    "properties": {
-                                      "fom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/fom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      },
-                                      "tom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/tom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      }
-                                    }
+                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode",
+                                    "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                                   },
                                   "yrke": {
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/items/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/yrke",
@@ -1268,35 +1133,9 @@
                       ],
                       "properties": {
                         "periode": {
+                          "title": "The Meldlemskap Periode Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",
-                          "type": "object",
-                          "title": "The Periode Schema",
-                          "required": [
-                            "fom",
-                            "tom"
-                          ],
-                          "properties": {
-                            "fom": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/fom",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "2018-02-01"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "tom": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/tom",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "2018-02-01"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/periode"
                         },
                         "periodetype": {
                           "title": "The periodetype Schema",
