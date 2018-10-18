@@ -164,36 +164,9 @@
           },
           "sakstype": {
             "$id": "#/properties/saksbehandling/items/properties/sakstype",
-            "type": "object",
             "title": "The Sakstypekode Schema",
             "description": "An explanation about the purpose of this instance.",
-            "additionalProperties": false,
-            "required": [
-              "kode",
-              "term"
-            ],
-            "properties": {
-              "kode": {
-                "$id": "#/properties/saksbehandling/items/properties/sakstype/kode",
-                "type": "string",
-                "description": "Sakstype kode fra kodeverk",
-                "examples": [
-                  "EU_EOS",
-                  "TRG_AVT",
-                  "FLK_TRG"
-                ]
-              },
-              "term": {
-                "$id": "#/properties/saksbehandling/items/properties/sakstype/term",
-                "type": "string",
-                "description": "Sakstype term fra kodeverk",
-                "examples": [
-                  "EU/EØS",
-                  "Trygdeavtale",
-                  "Folketrygd"
-                ]
-              }
-            }
+            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
           },
           "behandling": {
             "$id": "#/properties/saksbehandling/items/properties/behandling",
