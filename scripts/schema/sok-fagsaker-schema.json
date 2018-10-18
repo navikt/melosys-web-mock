@@ -32,99 +32,19 @@
       },
       "sakstype": {
         "$id": "#/items/properties/sakstype",
-        "type": "object",
         "title": "The Sakstype Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/items/properties/sakstype/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "EU_EOS"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/items/properties/sakstype/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "EU/EØS"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
       },
       "behandlingstype": {
         "$id": "#/items/properties/behandlingstype",
-        "type": "object",
         "title": "The Behandlingstype Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/items/properties/behandlingstype/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "SKND"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/items/properties/behandlingstype/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Søknad"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
       },
       "behandlingsstatus": {
         "$id": "#/items/properties/behandlingsstatus",
         "type": "object",
         "title": "The Behandlingsstatus Schema",
-        "additionalProperties": false,
-        "required": [
-          "kode",
-          "term"
-        ],
-        "properties": {
-          "kode": {
-            "$id": "#/items/properties/behandlingsstatus/properties/kode",
-            "type": "string",
-            "title": "The Kode Schema",
-            "default": "",
-            "examples": [
-              "OPPR"
-            ],
-            "pattern": "^(.*)$"
-          },
-          "term": {
-            "$id": "#/items/properties/behandlingsstatus/properties/term",
-            "type": "string",
-            "title": "The Term Schema",
-            "default": "",
-            "examples": [
-              "Opprettet"
-            ],
-            "pattern": "^(.*)$"
-          }
-        }
+        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
       },
       "opprettetDato": {
         "$id": "#/items/properties/opprettetDato",
