@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://melosys.nav.no/kodeverk-schema.json",
+  "$id": "http://melosys.nav.no/schemas/kodeverk-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -26,7 +26,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/behandlingsstatus/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "behandlingstyper": {
@@ -36,7 +36,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/behandlingstyper/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "begrunnelser": {
@@ -60,7 +60,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/bosted/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "forutgaendeMedlemskap": {
@@ -70,7 +70,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/forutgaendeMedlemskap/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "ikkeSkip": {
@@ -80,7 +80,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/ikkeSkip/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "opphold": {
@@ -90,7 +90,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/opphold/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "vesentligVirksomhet": {
@@ -100,7 +100,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/vesentligVirksomhet/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "artikkel12_1": {
@@ -110,7 +110,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/artikkel12_1/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }
       }
@@ -122,7 +122,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttitler/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "dokumenttyper": {
@@ -132,7 +132,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttyper/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "finansiering": {
@@ -142,7 +142,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/finansiering/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "landkoder": {
@@ -152,7 +152,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/landkoder/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "lovvalgsbestemmelser": {
@@ -173,7 +173,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_883_2004/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "forordning_987_2009": {
@@ -183,7 +183,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/forordning_987_2009/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
         "tillegg": {
@@ -193,7 +193,7 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/lovvalgsbestemmelser/properties/tillegg/items",
-            "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }
       }
@@ -205,7 +205,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/oppgavetyper/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "rolletyper": {
@@ -215,7 +215,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/rolletyper/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "sakstyper": {
@@ -225,7 +225,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/sakstyper/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "vedleggstitler": {
@@ -235,7 +235,7 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/vedleggstitler/items",
-        "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     }
   }

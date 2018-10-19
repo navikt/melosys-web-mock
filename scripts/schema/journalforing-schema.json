@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://melosys.nav.no/journalforing-schema.json",
+  "$id": "http://melosys.nav.no/schemas/journalforing-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -73,7 +73,7 @@
         "mottattDato": {
           "title": "The Mottattdato Schema",
           "$id": "#/properties/dokument/properties/mottattDato",
-          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato-tid"
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
         }
       }
     }
