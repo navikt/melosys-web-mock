@@ -1,8 +1,8 @@
 {
-  "$id": "/tilordne",
-  "type": "object",
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/schemas/journalforing-tilordne-schema.json",
+  "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
@@ -24,7 +24,8 @@
       "default": "",
       "examples": [
         "30098000492"
-      ]
+      ],
+      "pattern": "^(.*)$"
     },
     "avsenderNavn": {
       "$id": "#/properties/avsenderNavn",
