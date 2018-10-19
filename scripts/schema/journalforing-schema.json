@@ -73,7 +73,7 @@
         "mottattDato": {
           "title": "The Mottattdato Schema",
           "$id": "#/properties/dokument/properties/mottattDato",
-          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions//dato-tid"
+          "$ref": "http://melosys.nav.no/definitions-schema.json#/definitions/dato-tid"
         }
       }
     }
