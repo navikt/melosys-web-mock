@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://melosys.nav.no/dokumenter-post-schema.json",
+  "$id": "http://melosys.nav.no/schemas/dokumenter-post-schema.json",
   "type": [
     "object",
     "null"
