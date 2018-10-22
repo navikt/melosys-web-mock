@@ -36,9 +36,6 @@ module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const avklaring = await lesAvklaring(behandlingID);
-    if (_.isEmpty(avklaring)) {
-      return res.status(404).send(ERR.notFound404(req.url));
-    }
     return res.json(avklaring);
   }
   catch (err) {
