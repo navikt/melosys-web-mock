@@ -12,6 +12,13 @@ const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
+const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
+
+const schema = Schema.lesSchemaSync(schemajson);
+const validate = ajv.addSchema(definitions).compile(schema);
+
 const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(Utils.readFileSync(mockfileSoknad));
@@ -51,13 +58,6 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
-  const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-  const definitions = Schema.lesSchemaSync(definitionsPath);
-
-  const schema = Schema.lesSchemaSync(schemajson);
-  const validate = ajv.addSchema(definitions).compile(schema);
-
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug("soknad:send", body);
