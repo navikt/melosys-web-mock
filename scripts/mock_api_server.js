@@ -20,6 +20,8 @@ const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
 const logging = require('./modules/logging');
+const vedtak = require('./modules/vedtak');
+
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -178,6 +180,12 @@ router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 // Oppretter en bestilling av dokument i dokumentproduksjon
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
+
+/**
+ * VEDTAK
+ *  * ---------------------------------------------------------------
+ */
+router.post('/vedtak/:behandlingID', vedtak.lagre);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
