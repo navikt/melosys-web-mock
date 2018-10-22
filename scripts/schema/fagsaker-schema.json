@@ -1,7 +1,37 @@
 {
-  "definitions": {},
+  "definitions": {
+    "nullable-kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": ["string", "null"],
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": ["string", "null"],
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://melosys.nav.no/fagsaker-schema.json",
+  "$id": "http://melosys.nav.no/schemas/fagsaker-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -16,89 +46,24 @@
   ],
   "properties": {
     "status": {
-      "$id": "#/properties/status",
-      "type": "object",
       "title": "The Status Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/status/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "OPPR"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/status/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "Opprettet"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$id": "#/properties/status",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "sakstype": {
-      "$id": "#/properties/type",
-      "type": "object",
-      "title": "The Type Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "$id": "#/properties/sakstype/properties/kode",
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "EU_EOS"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "$id": "#/properties/sakstype/properties/term",
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "EU/EØS"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$id": "#/properties/sakstype",
+      "title": "The Sakstype Schema",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "registrertDato": {
-      "$id": "#/properties/registrertDato",
-      "type": "string",
-      "format": "date-time",
       "title": "The Registrertdato Schema",
-      "default": "",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ]
+      "$id": "#/properties/registrertDato",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
     },
     "endretDato": {
-      "$id": "#/properties/endretDato",
-      "type": ["string","null"],
-      "format": "date-time",
       "title": "The Endretdato Schema",
-      "default": "",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ],
-      "pattern": "^(.*)$"
+      "$id": "#/properties/endretDato",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
     },
     "gsakSaksnummer": {
       "$id": "#/properties/gsakSaksnummer",
@@ -216,32 +181,12 @@
                         "properties": {
                           "rapporteringsAarMaaned": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/rapporteringsAarMaaned",
-                            "type": "string",
-                            "pattern": "^\\d{4}-\\d{2}$",
-                            "examples": [
-                              "2016-12"
-                            ]
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/aarmaaned"
                           },
                           "periode": {
+                            "title": "Utenlandsk opphold periode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/fom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/periode/tom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                           },
                           "land": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/utenlandsopphold/items/land",
@@ -288,33 +233,8 @@
                         "properties": {
                           "arbeidstidsordning": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning",
-                            "type": "object",
                             "title": "The Arbeidstidsordning Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/arbeidstidsordning/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "avtaltArbeidstimerPerUke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/avtaltArbeidstimerPerUke",
@@ -327,15 +247,9 @@
                             ]
                           },
                           "endringsdatoStillingsprosent": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
-                            "type": ["string","null"],
-                            "format": "date",
                             "title": "The Endringsdatostillingsprosent Schema",
-                            "default": null,
-                            "examples": [
-                             "2016-01-01",
-                              null
-                            ]
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/endringsdatoStillingsprosent",
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato"
                           },
                           "maritimArbeidsavtale": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/maritimArbeidsavtale",
@@ -358,65 +272,13 @@
                           },
                           "skipsregister": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister",
-                            "type": "object",
                             "title": "The Skipsregister Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipsregister/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "yrke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke",
-                            "type": "object",
                             "title": "The Yrke Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/kode",
-                                "type": "string",
-                                "title": "The Kode Schema",
-                                "default": "",
-                                "examples": [
-                                  "9120105"
-                                ],
-                                "pattern": "^(.*)$"
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/yrke/properties/term",
-                                "type": "string",
-                                "title": "The Term Schema",
-                                "default": "",
-                                "examples": [
-                                  "ALTMULIGMANN (PRIVATHJEM)"
-                                ],
-                                "pattern": "^(.*)$"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                           },
                           "antallTimerGammeltAa": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/antallTimerGammeltAa",
@@ -440,33 +302,8 @@
                           },
                           "fartsomraade": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade",
-                            "type": "object",
                             "title": "The Fartsomraade Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/fartsomraade/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "beregnetAntallTimerPrUke": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/beregnetAntallTimerPrUke",
@@ -490,64 +327,13 @@
                           },
                           "skipstype": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype",
-                            "type": "object",
                             "title": "The Skipstype Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "kode",
-                              "term"
-                            ],
-                            "properties": {
-                              "kode": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/kode",
-                                "type": ["string","null"],
-                                "title": "The Kode Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              },
-                              "term": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/skipstype/properties/term",
-                                "type": ["string","null"],
-                                "title": "The Term Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$ref": "#/definitions/nullable-kodeverk"
                           },
                           "gyldighetsperiode": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode",
-                            "type": "object",
                             "title": "The Gyldighetsperiode Schema",
-                            "additionalProperties": false,
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/fom",
-                                "type": "string",
-                                "title": "The Fom Schema",
-                                "default": "",
-                                "examples": [
-                                  "2016-03-01"
-                                ],
-                                "pattern": "^(.*)$"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode/properties/tom",
-                                "type": ["string","null"],
-                                "title": "The Tom Schema",
-                                "default": null,
-                                "examples": [
-                                  null
-                                ]
-                              }
-                            }
+                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsavtaler/items/properties/gyldighetsperiode",
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                           }
                         }
                       }
@@ -573,31 +359,9 @@
                             "type": ["string","null"]
                           },
                           "permisjonsPeriode": {
+                            "title": "Arbeidsforhold permisjonsPeriode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/fom",
-                                "type": [
-                                  "string",
-                                  "null"
-                                ],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsPeriode/tom",
-                                "type": [
-                                  "string",
-                                  "null"
-                                ],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                           },
                           "permisjonsprosent": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/permisjonOgPermittering/items/permisjonsprosent",
@@ -634,35 +398,9 @@
                       "pattern": "^(.*)$"
                     },
                     "ansettelsesPeriode": {
-                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
-                      "type": "object",
                       "title": "The Ansettelsesperiode Schema",
-                      "additionalProperties": false,
-                      "required": [
-                        "fom",
-                        "tom"
-                      ],
-                      "properties": {
-                        "fom": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/fom",
-                          "type": "string",
-                          "title": "The Fom Schema",
-                          "default": "",
-                          "examples": [
-                            "2016-03-01"
-                          ],
-                          "pattern": "^(.*)$"
-                        },
-                        "tom": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode/properties/tom",
-                          "type": ["string","null"],
-                          "title": "The Tom Schema",
-                          "default": null,
-                          "examples": [
-                            null
-                          ]
-                        }
-                      }
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/ansettelsesPeriode",
+                      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                     },
                     "arbeidsforholdstype": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/arbeidsforholdstype",
@@ -720,29 +458,12 @@
                         "properties": {
                           "rapporteringsAarMaaned": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/rapporteringsAarMaaned",
-                            "type": ["string","null"],
-                            "pattern": "^\\d{4}-\\d{2}$"
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/aarmaaned"
                           },
                           "timelonnetPeriode": {
+                            "title": "Arbeidsforhold timelonnetPeriode",
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode",
-                            "type": "object",
-                            "required": [
-                              "fom",
-                              "tom"
-                            ],
-                            "additionalProperties": false,
-                            "properties": {
-                              "fom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/fom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              },
-                              "tom": {
-                                "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/timelonnetPeriode/tom",
-                                "type": ["string","null"],
-                                "format": "date"
-                              }
-                            }
+                            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                           },
                           "antallTimer": {
                             "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/arbeidsforhold/items/properties/timerTimelonnet/items/antallTimer",
@@ -794,13 +515,9 @@
                       "pattern": "^(.*)$"
                     },
                     "oppstartdato": {
-                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
-                      "type": ["string","null"],
                       "title": "The Oppstartdato Schema",
-                      "default": null,
-                      "examples": [
-                        null
-                      ]
+                      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/oppstartdato",
+                      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato"
                     },
                     "postadresse": {
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/organisasjoner/items/properties/postadresse",
@@ -1223,34 +940,9 @@
                                     ]
                                   },
                                   "opptjeningsperiode": {
+                                    "title": "The Inntekt Opptjeningsperiode Schema",
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode",
-                                    "type": "object",
-                                    "title": "The Opptjeningsperiode Schema",
-                                    "additionalProperties": false,
-                                    "required": [
-                                      "fom",
-                                      "tom"
-                                    ],
-                                    "properties": {
-                                      "fom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode/properties/fom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      },
-                                      "tom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/arbeidsInntektInformasjon/properties/inntektListe/items/properties/opptjeningsperiode/properties/tom",
-                                        "type": ["string","null"],
-                                        "title": "The Tom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      }
-                                    }
+                                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-periode"
                                   }
                                 }
                               }
@@ -1259,13 +951,7 @@
                         },
                         "aarMaaned": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/arbeidsInntektMaanedListe/items/properties/aarMaaned",
-                          "type": "string",
-                          "title": "The Aarmaaned Schema",
-                          "default": "",
-                          "examples": [
-                            "2017-11"
-                          ],
-                          "pattern": "^(.*)$"
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/aarmaaned"
                         }
                       }
                     }
@@ -1310,34 +996,9 @@
                                 ],
                                 "properties": {
                                   "frilansPeriode": {
-                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode",
-                                    "type": "object",
                                     "title": "The FrilansPeriode Schema",
-                                    "additionalProperties": false,
-                                    "required": [
-                                      "fom",
-                                      "tom"
-                                    ],
-                                    "properties": {
-                                      "fom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/fom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      },
-                                      "tom": {
-                                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode/properties/tom",
-                                        "type": ["string","null"],
-                                        "title": "The Fom Schema",
-                                        "default": null,
-                                        "examples": [
-                                          null
-                                        ]
-                                      }
-                                    }
+                                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/frilansPeriode",
+                                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                                   },
                                   "yrke": {
                                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/items/properties/frilansInntektMaanedListe/items/properties/frilansInntektInformasjon/properties/arbeidsforholdFrilanserListe/items/properties/yrke",
@@ -1356,13 +1017,7 @@
                         },
                         "aarMaaned": {
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/inntekt/properties/frilansInntektMaanedListe/items/properties/aarMaaned",
-                          "type": "string",
-                          "title": "The Aarmaaned Schema",
-                          "default": "",
-                          "examples": [
-                            "2017-11"
-                          ],
-                          "pattern": "^(.*)$"
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/aarmaaned"
                         }
                       }
                     }
@@ -1419,283 +1074,49 @@
                       ],
                       "properties": {
                         "periode": {
+                          "title": "The Meldlemskap Periode Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",
-                          "type": "object",
-                          "title": "The Periode Schema",
-                          "required": [
-                            "fom",
-                            "tom"
-                          ],
-                          "properties": {
-                            "fom": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/fom",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "2018-02-01"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "tom": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode/tom",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "2018-02-01"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
                         },
                         "periodetype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
-                          "type": "object",
                           "title": "The periodetype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/kode",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "PMMEDSKP"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype/term",
-                              "type": ["string","null"],
-                              "title": "The Fom Schema",
-                              "default": "",
-                              "examples": [
-                                "Periode med medlemskap"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periodetype",
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "status": {
+                          "title": "The medlemskap status Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status",
-                          "type": "object",
-                          "title": "The medlemt status Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/kode",
-                              "type": ["string","null"],
-                              "title": "The Kode Schema",
-                              "default": "",
-                              "examples": [
-                                "GYLD"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/status/term",
-                              "type": ["string","null"],
-                              "title": "The Term Schema",
-                              "default": "",
-                              "examples": [
-                                "Gyldig"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "grunnlagstype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype",
-                          "type": "object",
                           "title": "The medlem grunnlagstype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FO_12_1"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "EØS 883/04 - 12.1"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/grunnlagstype",
+                          "$ref": "#/definitions/nullable-kodeverk"
                         },
                         "land": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
-                          "type": "object",
                           "title": "The medlem land Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "NO"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Norge"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/land",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         },
                         "lovvalg": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
-                          "type": "object",
                           "title": "The medlem lovvalg Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "ENDL"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Endelig"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/lovvalg",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         },
                         "trygdedekning": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
-                          "type": "object",
                           "title": "The medlem trygdedekning Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FULL"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Full"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/trygdedekning",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         },
                         "kildedokumenttype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
-                          "type": "object",
                           "title": "The medlem kildedokumenttype Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "Henv_Soknad"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Henvendelse/søknad"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kildedokumenttype",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         },
                         "kilde": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
-                          "type": "object",
                           "title": "The medlem kilde Schema",
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/kode",
-                              "type": ["string","null"],
-                              "title": "The kode Schema",
-                              "default": "",
-                              "examples": [
-                                "FS22"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde/term",
-                              "type": ["string","null"],
-                              "title": "The term Schema",
-                              "default": "",
-                              "examples": [
-                                "Gosys"
-                              ],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/kilde",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         }
                       }
                     }
@@ -1723,34 +1144,9 @@
                 ],
                 "properties": {
                   "diskresjonskode": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
-                    "type": "object",
                     "title": "The Diskresjonskode Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/kode",
-                        "type": ["string","null"],
-                        "title": "The Kode Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode/properties/term",
-                        "type": ["string","null"],
-                        "title": "The Term Schema",
-                        "default": null,
-                        "examples": [
-                          null
-                        ]
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
+                    "$ref": "#/definitions/nullable-kodeverk"
                   },
                   "erEgenAnsatt": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/erEgenAnsatt",
@@ -1844,64 +1240,16 @@
                         ]
                       },
                       "land": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
-                        "type": "object",
                         "title": "The Land Schema",
-                        "additionalProperties": false,
-                        "required": [
-                          "kode",
-                          "term"
-                        ],
-                        "properties": {
-                          "kode": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/kode",
-                            "type": ["string","null"],
-                            "examples": [
-                              "NO"
-                            ]
-                          },
-                          "term": {
-                            "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land/term",
-                            "type": ["string","null"],
-                            "examples": [
-                              "Norge"
-                            ]
-                          }
-                        }
+                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
+                        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                       }
                     }
                   },
                   "personStatus": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
-                    "type": "object",
                     "title": "The Personstatus Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "BOSA"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "Bosatt"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/personStatus",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                   },
                   "sammensattNavn": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sammensattNavn",
@@ -1914,36 +1262,9 @@
                     "pattern": "^(.*)$"
                   },
                   "kjoenn": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
-                    "type": "object",
                     "title": "The Kjoenn Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "M"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "Mann"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/kjoenn",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                   },
                   "fnr": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/fnr",
@@ -1956,14 +1277,9 @@
                     "pattern": "^(.*)$"
                   },
                   "foedselsdato": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
-                    "type": "string",
                     "title": "The Foedselsdato Schema",
-                    "default": "",
-                    "examples": [
-                      "1972-11-19"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/foedselsdato",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
                   },
                   "sivilstand": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sivilstand",
@@ -1976,47 +1292,14 @@
                     "pattern": "^(.*)$"
                   },
                   "statsborgerskap": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
-                    "type": "object",
                     "title": "The Statsborgerskap Schema",
-                    "additionalProperties": false,
-                    "required": [
-                      "kode",
-                      "term"
-                    ],
-                    "properties": {
-                      "kode": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/kode",
-                        "type": "string",
-                        "title": "The Kode Schema",
-                        "default": "",
-                        "examples": [
-                          "NOR"
-                        ],
-                        "pattern": "^(.*)$"
-                      },
-                      "term": {
-                        "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap/properties/term",
-                        "type": "string",
-                        "title": "The Term Schema",
-                        "default": "",
-                        "examples": [
-                          "NORGE"
-                        ],
-                        "pattern": "^(.*)$"
-                      }
-                    }
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskap",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                   },
                   "statsborgerskapDato": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
-                    "type": "string",
-                    "format": "date",
                     "title": "The Statsborgerskapdato Schema",
-                    "default": "",
-                    "examples": [
-                      "2013-01-01"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/statsborgerskapDato",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
                   },
                   "familiemedlemmer": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer",
@@ -2052,35 +1335,9 @@
                           ]
                         },
                         "relasjonstype": {
-                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
-                          "type": "object",
                           "title": "The relasjonstype schema",
-                          "additionalProperties": false,
-                          "required": [
-                            "kode",
-                            "term"
-                          ],
-                          "properties": {
-                            "kode": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/kode",
-                              "type": "string",
-                              "enum": ["EKTE","SAM","FARA","REPA","BARN","MORA"],
-                              "title": "The Kode Schema",
-                              "default": "",
-                              "examples": [
-                                "EKTE","SAM","FARA","REPA","BARN","MORA"
-                              ],
-                              "pattern": "^(.*)$"
-                            },
-                            "term": {
-                              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype/properties/term",
-                              "type": "string",
-                              "title": "The Term Schema",
-                              "default": "",
-                              "examples": ["Ektefelle til","Samboer med","Far til","Registrert partner med","Barn av","Mor til"],
-                              "pattern": "^(.*)$"
-                            }
-                          }
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/familiemedlemmer/items/properties/relasjonstype",
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                         }
                       }
                     }
@@ -2118,90 +1375,24 @@
                 ]
               },
               "status": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
-                "type": "object",
                 "title": "The Status Schema",
-                "additionalProperties": false,
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "properties": {
-                  "kode": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status/properties/kode",
-                    "type": "string",
-                    "title": "The Kode Schema",
-                    "default": "",
-                    "examples": [
-                      "OPPR"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "term": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status/properties/term",
-                    "type": "string",
-                    "title": "The Term Schema",
-                    "default": "",
-                    "examples": [
-                      "Opprettet"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "registrertDato": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
-                "type": ["string","null"],
-                "format": "date-time",
                 "title": "The Registrertdato Schema",
-                "default": "",
-                "examples": [
-                  "2018-08-27T07:16:03.273Z"
-                ],
-                "pattern": "^(.*)$"
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/registrertDato",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
               },
               "endretDato": {
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
-                "type": ["string","null"],
-                "format": "date-time",
                 "title": "The Endretdato Schema",
-                "default": "",
-                "examples": [
-                  "2018-08-27T07:16:03.273Z"
-                ],
-                "pattern": "^(.*)$"
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
               },
               "behandlingstype": {
+                "title": "The Behandlingsype Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
-                "type": "object",
-                "title": "The Type Schema",
-                "additionalProperties": false,
-                "required": [
-                  "kode",
-                  "term"
-                ],
-                "properties": {
-                  "kode": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/type/properties/kode",
-                    "type": "string",
-                    "title": "The Kode Schema",
-                    "default": "",
-                    "examples": [
-                      "SKND"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "term": {
-                    "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/type/properties/term",
-                    "type": "string",
-                    "title": "The Term Schema",
-                    "default": "",
-                    "examples": [
-                      "Søknad"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               }
             }
           }

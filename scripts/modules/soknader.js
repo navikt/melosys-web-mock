@@ -52,8 +52,11 @@ module.exports.hent = async (req, res) => {
  */
 module.exports.send = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+  const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+  const definitions = Schema.lesSchemaSync(definitionsPath);
+
   const schema = Schema.lesSchemaSync(schemajson);
-  const validate = ajv.compile(schema);
+  const validate = ajv.addSchema(definitions).compile(schema);
 
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
