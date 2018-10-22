@@ -429,7 +429,6 @@
           "additionalProperties": false,
           "required": [
             "intensjonOmRetur",
-            "bostedUtenforNorge",
             "familiesBostedLandKode",
             "antallMaanederINorge",
             "adresseIUtlandet",
@@ -440,15 +439,6 @@
               "$id": "#/properties/soeknadDokument/properties/bosted/properties/intensjonOmRetur",
               "type": ["boolean","null"],
               "title": "The Intensjonomretur Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "bostedUtenforNorge": {
-              "$id": "#/properties/soeknadDokument/properties/bosted/properties/bostedUtenforNorge",
-              "type": ["boolean","null"],
-              "title": "The Bostedutenfornorge Schema",
               "default": false,
               "examples": [
                 true
@@ -749,9 +739,7 @@
             "antallAdminAnsatteEOS",
             "andelOmsetningINorge",
             "andelKontrakterINorge",
-            "utsendtFortsetterArbeidsforholdIUtlandet",
-            "utsendtArbeiderArbeiderMedKlienter",
-            "utsendtArbeiderArbeiderMedKontrakter"
+            "utsendtFortsetterArbeidsforholdIUtlandet"
           ],
           "properties": {
             "erBemanningsbyra": {
@@ -812,24 +800,6 @@
               "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtFortsetterArbeidsforholdIUtlandet",
               "type": ["boolean","null"],
               "title": "The Utsendtfortsetterarbeidsforholdiutlandet Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendtArbeiderArbeiderMedKlienter": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKlienter",
-              "type": ["boolean","null"],
-              "title": "The Utsendtarbeiderarbeidermedklienter Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendtArbeiderArbeiderMedKontrakter": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKontrakter",
-              "type": ["boolean","null"],
-              "title": "The Utsendtarbeiderarbeidermedkontrakter Schema",
               "default": false,
               "examples": [
                 true
