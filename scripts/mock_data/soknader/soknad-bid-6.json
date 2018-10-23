@@ -32,7 +32,6 @@
     },
     "bosted": {
       "intensjonOmRetur": true,
-      "bostedUtenforNorge": true,
       "familiesBostedLandKode": null,
       "antallMaanederINorge": 8,
       "adresseIUtlandet": true,
@@ -68,9 +67,7 @@
       "antallAdminAnsatteEOS": null,
       "andelOmsetningINorge": null,
       "andelKontrakterINorge": null,
-      "utsendtFortsetterArbeidsforholdIUtlandet": null,
-      "utsendtArbeiderArbeiderMedKlienter": null,
-      "utsendtArbeiderArbeiderMedKontrakter": null
+      "utsendtFortsetterArbeidsforholdIUtlandet": null
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": null,

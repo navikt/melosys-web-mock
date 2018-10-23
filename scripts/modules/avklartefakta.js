@@ -36,9 +36,6 @@ module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
     const avklaring = await lesAvklaring(behandlingID);
-    if (_.isEmpty(avklaring)) {
-      return res.status(404).send(ERR.notFound404(req.url));
-    }
     return res.json(avklaring);
   }
   catch (err) {
@@ -70,20 +67,12 @@ module.exports.send = (req, res) => {
   const validate = ajv.compile(schema);
 
   const valid = test(validate, jsBody);
+
   if (!valid) {
     return valideringFeil(req, res);
   }
 
-  let behandlingID, rest;
-  ({behandlingID, ...rest} = jsBody);
-  behandlingID = req.params.behandlingID;
-
-  const avklartefakta = {
-    behandlingID,
-    ...rest,
-  };
-
-  return res.json(avklartefakta);
+  return res.json(jsBody);
 };
 
 function test(validate, data) {
