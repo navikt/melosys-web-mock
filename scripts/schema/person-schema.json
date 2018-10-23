@@ -3,7 +3,7 @@
   "$id": "http://melosys.nav.no/schemas/person-schema.json",
   "type": "object",
   "title": "The Root Schema",
-  "additionalProperties": true,
+  "additionalProperties": false,
   "required": [
     "fnr",
     "sivilstand",

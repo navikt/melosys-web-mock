@@ -116,13 +116,36 @@
     },
     "adresse": {
       "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adressetype"
+      ],
+      "if": {
+        "properties": {
+          "adressetype": {"const": "STRUKTURERT"}
+        }
+      },
+      "then": {
+        "required": ["strukturertAdresse"]
+      },
+      "else": {
+        "required": ["ustrukturertAdresse"]
+      },
       "properties": {
         "adressetype": {
           "type": "string",
           "enum": ["STRUKTURERT", "USTRUKTURERT"]
         },
-        "strukturertadresse": {
+        "strukturertAdresse": {
           "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "gatenavn",
+            "husnr",
+            "postnr",
+            "poststed",
+            "landKode"
+          ],
           "properties": {
             "gatenavn": {
               "type": "string",
@@ -148,17 +171,14 @@
               "type": "string",
               "minLength": 1
             }
-          },
-          "required": [
-            "gatenavn",
-            "husnr",
-            "postnr",
-            "poststed",
-            "landKode"
-          ]
+          }
         },
         "ustrukturertAdresse": {
           "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "landKode"
+          ],
           "properties": {
             "adresselinje1": {
               "type": "string",
@@ -184,15 +204,9 @@
               "type": "string",
               "minLength": 1
             }
-          },
-          "required": [
-            "landKode"
-          ]
+          }
         }
-      },
-      "required": [
-        "adressetype"
-      ]
+      }
     }
   }
 }
