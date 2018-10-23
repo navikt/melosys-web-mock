@@ -2,6 +2,7 @@
  * Kodeverk.
  * @module
  */
+const { aktoerroller } = require('./aktoerroller');
 const { behandlingsstatus } = require('./behandlingsstatus');
 const { behandlingstyper } = require('./behandlingstyper');
 const { begrunnelser } = require('./begrunnelser');
@@ -17,6 +18,7 @@ const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
 
 const kodeverk = {
+  aktoerroller,
   behandlingsstatus,
   behandlingstyper,
   begrunnelser,
