@@ -1,6 +1,6 @@
 {
   "saksnummer": "7",
-  "type": {
+  "sakstype": {
     "kode": "EU_EOS",
     "term": "EU/EØS"
   },
@@ -15,7 +15,7 @@
     {
       "oppsummering": {
         "behandlingID": 7,
-        "type": {
+        "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
         },
@@ -203,8 +203,6 @@
             {
               "aarMaaned": "2018-01",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -233,7 +231,6 @@
             {
               "aarMaaned": "2017-12",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -262,7 +259,6 @@
             {
               "aarMaaned": "2017-11",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -291,7 +287,6 @@
             {
               "aarMaaned": "2017-03",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -320,7 +315,6 @@
             {
               "aarMaaned": "2017-05",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -349,8 +343,6 @@
             {
               "aarMaaned": "2017-04",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -379,8 +371,6 @@
             {
               "aarMaaned": "2017-06",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -409,8 +399,6 @@
             {
               "aarMaaned": "2017-07",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -439,8 +427,6 @@
             {
               "aarMaaned": "2017-08",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -469,8 +455,6 @@
             {
               "aarMaaned": "2017-10",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -499,8 +483,6 @@
             {
               "aarMaaned": "2017-09",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [
-                ],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -526,7 +508,8 @@
                 ]
               }
             }
-          ]
+          ],
+          "frilansInntektMaanedListe": []
         },
         "sakOgBehandling": {
           "eosBarnetrygd": false

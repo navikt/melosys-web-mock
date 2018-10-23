@@ -2,7 +2,12 @@
   "behandlingID": 4,
   "soeknadDokument": {
     "personOpplysninger": {
-      "utenlandskID": [{"ID": "123456789", "landKode": "DK"}],
+      "utenlandskIdent": [
+        {
+          "ident": "123456789",
+          "landKode": "DK"
+        }
+      ],
       "medfolgendeFamilie": ["10100638274"],
       "medfolgendeAndre": "28106600300"
     },
@@ -43,7 +48,6 @@
     },
     "bosted": {
       "intensjonOmRetur": true,
-      "bostedUtenforNorge": true,
       "familiesBostedLandKode": "SE",
       "antallMaanederINorge": 8,
       "adresseIUtlandet": true,
@@ -84,8 +88,6 @@
       "andelOmsetningINorge": 78.5,
       "andelKontrakterINorge": 50.5,
       "utsendtFortsetterArbeidsforholdIUtlandet": true,
-      "utsendtArbeiderArbeiderMedKlienter": true,
-      "utsendtArbeiderArbeiderMedKontrakter": true,
       "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {

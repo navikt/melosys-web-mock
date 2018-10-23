@@ -1,7 +1,7 @@
 {
   "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://nav.no/soknad.json",
+  "$id": "http://melosys.nav.no/schemas/soknad-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -44,28 +44,28 @@
           "title": "The Personopplysninger Schema",
           "additionalProperties": false,
           "required": [
-            "utenlandskID",
+            "utenlandskIdent",
             "medfolgendeFamilie",
             "medfolgendeAndre"
           ],
           "properties": {
-            "utenlandskID": {
-              "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID",
+            "utenlandskIdent": {
+              "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent",
               "type": "array",
-              "title": "The Utenlandskid Schema",
+              "title": "The utenlandskIdent Schema",
               "uniqueItems": true,
               "items": {
-                "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items",
+                "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items",
                 "type": "object",
                 "title": "The Items Schema",
                 "additionalProperties": false,
                 "required": [
-                  "ID",
+                  "ident",
                   "landKode"
                 ],
                 "properties": {
-                  "ID": {
-                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/ID",
+                  "ident": {
+                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items/properties/ident",
                     "type": ["string","null"],
                     "title": "The Id Schema",
                     "default": "",
@@ -75,7 +75,7 @@
                     "pattern": "^(.*)$"
                   },
                   "landKode": {
-                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskID/items/properties/landKode",
+                    "$id": "#/properties/soeknadDokument/properties/personOpplysninger/properties/utenlandskIdent/items/properties/landKode",
                     "type": ["string","null"],
                     "title": "The Landkode Schema",
                     "default": "",
@@ -351,36 +351,9 @@
               }
             },
             "oppholdsPeriode": {
-              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
-              "type": "object",
               "title": "The Oppholdsperiode Schema",
-              "additionalProperties": false,
-              "required": [
-                "fom",
-                "tom"
-              ],
-              "properties": {
-                "fom": {
-                  "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/fom",
-                  "type": ["string","null"],
-                  "title": "The Fom Schema",
-                  "default": "",
-                  "examples": [
-                    "2018-01-01"
-                  ],
-                  "pattern": "^(.*)$"
-                },
-                "tom": {
-                  "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode/properties/tom",
-                  "type": ["string","null"],
-                  "title": "The Tom Schema",
-                  "default": "",
-                  "examples": [
-                    "2018-06-01"
-                  ],
-                  "pattern": "^(.*)$"
-                }
-              }
+              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-periode"
             },
             "ektefelleEllerBarnINorge": {
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
@@ -429,7 +402,6 @@
           "additionalProperties": false,
           "required": [
             "intensjonOmRetur",
-            "bostedUtenforNorge",
             "familiesBostedLandKode",
             "antallMaanederINorge",
             "adresseIUtlandet",
@@ -440,15 +412,6 @@
               "$id": "#/properties/soeknadDokument/properties/bosted/properties/intensjonOmRetur",
               "type": ["boolean","null"],
               "title": "The Intensjonomretur Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "bostedUtenforNorge": {
-              "$id": "#/properties/soeknadDokument/properties/bosted/properties/bostedUtenforNorge",
-              "type": ["boolean","null"],
-              "title": "The Bostedutenfornorge Schema",
               "default": false,
               "examples": [
                 true
@@ -750,8 +713,6 @@
             "andelOmsetningINorge",
             "andelKontrakterINorge",
             "utsendtFortsetterArbeidsforholdIUtlandet",
-            "utsendtArbeiderArbeiderMedKlienter",
-            "utsendtArbeiderArbeiderMedKontrakter",
             "ekstraArbeidsgivere"
           ],
           "properties": {
@@ -813,24 +774,6 @@
               "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtFortsetterArbeidsforholdIUtlandet",
               "type": ["boolean","null"],
               "title": "The Utsendtfortsetterarbeidsforholdiutlandet Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendtArbeiderArbeiderMedKlienter": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKlienter",
-              "type": ["boolean","null"],
-              "title": "The Utsendtarbeiderarbeidermedklienter Schema",
-              "default": false,
-              "examples": [
-                true
-              ]
-            },
-            "utsendtArbeiderArbeiderMedKontrakter": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtArbeiderArbeiderMedKontrakter",
-              "type": ["boolean","null"],
-              "title": "The Utsendtarbeiderarbeidermedkontrakter Schema",
               "default": false,
               "examples": [
                 true
@@ -1003,13 +946,7 @@
             },
             "trygdeavgiftTrukketGjennomSkattDato": {
               "$id": "#/properties/soeknadDokument/properties/arbeidsgiversBekreftelse/properties/trygdeavgiftTrukketGjennomSkattDato",
-              "type": ["string","null"],
-              "title": "The Trygdeavgifttrukketgjennomskattdato Schema",
-              "default": "",
-              "examples": [
-                "2018-01-01"
-              ],
-              "pattern": "^(.*)$"
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato"
             }
           }
         },

@@ -7,11 +7,13 @@ const Kodeverk = require('../modules/kodeverk');
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
 const schemajson = `${SCHEMA_DIR}/kodeverk-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
 const dokument = Kodeverk.kodeverk;
 
-const validate = ajv.compile(schema);
+const validate = ajv.addSchema(definitions).compile(schema);
 
 function runTest(data) {
   const valid = validate(data);

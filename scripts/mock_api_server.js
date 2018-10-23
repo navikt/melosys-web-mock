@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
-const saksopplysninger = require('./modules/saksopplysninger');
+const saksflyt = require('./modules/saksflyt');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
@@ -13,6 +13,7 @@ const soknader = require('./modules/soknader');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
+const vilkar = require('./modules/vilkar');
 const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
@@ -156,17 +157,31 @@ router.get('/organisasjoner', organisasjoner.hent);
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfrisk/:behandlingID', saksopplysninger.oppfrisk);
+router.get('/saksopplysninger/oppfrisk/:behandlingID', saksflyt.oppfrisk);
+
+/**
+ * SAKSFLYT
+ * ---------------------------------------------------------------
+ */
+router.get('/saksflyt/status/:behandlingID', saksflyt.status);
+
+/**
+ * VILKÅR
+ * ---------------------------------------------------------------
+ */
+router.get('/vilkaar/:behandlingID', vilkar.hent);
+router.post('/vilkaar/:behandlingID', vilkar.send);
 
 /**
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumentTypeID', dokumenter.lagPdfUtkast);
-router.post('/dokumenter/opprett/:behandlingID/:dokumentTypeID', dokumenter.opprettDokument);
+//
+router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
+router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
 
-//router.post('/logger/trace', logging.trace);
+// router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
 router.post('/logger/warn', logging.warn);

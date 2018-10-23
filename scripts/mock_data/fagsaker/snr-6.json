@@ -1,6 +1,6 @@
 {
   "saksnummer": "6",
-  "type":{
+  "sakstype":{
     "kode":"EU_EOS",
     "term":"EU/EØS"
   },
@@ -15,7 +15,7 @@
     {
       "oppsummering": {
         "behandlingID": 6,
-        "type":{
+        "behandlingstype":{
           "kode":"SKND",
           "term":"Søknad"
         },
@@ -342,7 +342,7 @@
                 "fom": "2018-01-01",
                 "tom": "2018-01-31"
               },
-              "type": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -380,7 +380,7 @@
                 "fom": "2017-12-01",
                 "tom": "2017-12-31"
               },
-              "type": {
+              "periodetype": {
                 "kode": "PUMEDSKP",
                 "term": "Periode uten medlemskap"
               },
@@ -418,7 +418,7 @@
                 "fom": "2018-02-01",
                 "tom": "2018-02-15"
               },
-              "type": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -456,7 +456,7 @@
                 "fom": "2018-02-15",
                 "tom": "2018-02-28"
               },
-              "type": {
+              "periodetype": {
                 "kode": "PUMEDSKP",
                 "term": "Periode uten medlemskap"
               },
@@ -494,7 +494,7 @@
                 "fom": "2018-03-01",
                 "tom": "2018-03-31"
               },
-              "type": {
+              "periodetype": {
                 "kode": "PMMEDSKP",
                 "term": "Periode med medlemskap"
               },
@@ -534,7 +534,6 @@
             {
               "aarMaaned": "2018-01",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -563,7 +562,6 @@
             {
               "aarMaaned": "2018-02",
               "arbeidsInntektInformasjon": {
-                "arbeidsforholdFrilanserListe": [],
                 "inntektListe": [
                   {
                     "beloep": 25000,
@@ -631,7 +629,8 @@
                 ]
               }
             }
-          ]
+          ],
+          "frilansInntektMaanedListe": []
         },
         "sakOgBehandling": {
           "eosBarnetrygd": false

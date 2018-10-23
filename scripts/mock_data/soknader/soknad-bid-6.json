@@ -2,7 +2,7 @@
   "behandlingID": 6,
   "soeknadDokument": {
     "personOpplysninger": {
-      "utenlandskID": [],
+      "utenlandskIdent": [],
       "medfolgendeFamilie": [],
       "medfolgendeAndre": null
     },
@@ -32,7 +32,6 @@
     },
     "bosted": {
       "intensjonOmRetur": true,
-      "bostedUtenforNorge": true,
       "familiesBostedLandKode": null,
       "antallMaanederINorge": 8,
       "adresseIUtlandet": true,
@@ -69,8 +68,6 @@
       "andelOmsetningINorge": null,
       "andelKontrakterINorge": null,
       "utsendtFortsetterArbeidsforholdIUtlandet": null,
-      "utsendtArbeiderArbeiderMedKlienter": null,
-      "utsendtArbeiderArbeiderMedKontrakter": null,
       "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {

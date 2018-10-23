@@ -1,7 +1,29 @@
 {
-  "definitions": {},
+  "definitions": {
+    "periode": {
+      "title": "Periode med fom tom",
+      "type": "object",
+      "required": [
+        "fom",
+        "tom"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fom": {
+          "type": ["string"],
+          "format": "date",
+          "examples": ["2014-03-12"]
+        },
+        "tom": {
+          "type": ["string","null"],
+          "format": "date",
+          "examples": ["2014-03-12", null]
+        }
+      }
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://nav.no/journalforing-opprett.json",
+  "$id": "http://melosys.nav.no/schemas/journalforing-opprett-schema.json",
   "type": "object",
   "title": "The Root Schema",
   "additionalProperties": false,
@@ -77,7 +99,7 @@
       "examples": [
         "171178022"
       ],
-      "pattern": "^[0-9]{9}$"
+      "pattern": "^[0-9]{0,9}$"
     },
     "representantID": {
       "$id": "#/properties/representantID",
@@ -87,7 +109,7 @@
       "examples": [
         "300980004"
       ],
-      "pattern": "^[0-9]{9}$"
+      "pattern": "^[0-9]{0,9}$"
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
@@ -147,38 +169,9 @@
           "pattern": "^(.*)$"
         },
         "soknadsperiode": {
-          "$id": "#/properties/fagsak/properties/soknadsperiode",
-          "type": "object",
           "title": "The Soknadsperiode Schema",
-          "additionalProperties": false,
-          "required": [
-            "fom",
-            "tom"
-          ],
-          "properties": {
-            "fom": {
-              "$id": "#/properties/fagsak/properties/soknadsperiode/properties/fom",
-              "type": "string",
-              "format": "date",
-              "title": "The Fom Schema",
-              "default": "",
-              "examples": [
-                "2018-02-02"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "tom": {
-              "$id": "#/properties/fagsak/properties/soknadsperiode/properties/tom",
-              "type": "string",
-              "format": "date",
-              "title": "The Tom Schema",
-              "default": "",
-              "examples": [
-                "2018-02-02"
-              ],
-              "pattern": "^(.*)$"
-            }
-          }
+          "$id": "#/properties/fagsak/properties/soknadsperiode",
+          "$ref": "#/definitions/periode"
         },
         "land": {
           "$id": "#/properties/fagsak/properties/land",
