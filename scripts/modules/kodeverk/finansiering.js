@@ -14,6 +14,6 @@ const finansiering = [
   {
     kode: "EGNE_MIDLER",
     term: "Egne midler / arv / etc",
-  },
+  }
 ];
 module.exports.finansiering = finansiering;

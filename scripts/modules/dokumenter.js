@@ -124,12 +124,7 @@ module.exports.opprettDokument = (req, res) => {
         return valideringFeil(req, res);
       }
     }
-    const journalforingID = 'DOK_321';
-    const dokumentID = 'Dok_ID';
-    const dokumentURI = `/api/dokumenter/pdf/${journalforingID}/${dokumentID}`;
-    const dokument = { location: dokumentURI };
-    res.status(201).json(dokument);
-
+    res.status(204);
   }
   catch (err) {
     console.log(err);
