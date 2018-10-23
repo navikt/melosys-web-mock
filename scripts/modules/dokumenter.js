@@ -134,7 +134,7 @@ module.exports.opprettDokument = (req, res) => {
 
 // Body is only required for '000074' => 'Innhente manglende opplysninger'
 const erMangelBrevMedFritekst = (dokumenttypeKode) => {
-  return 'MELDING_MANGLENDE_OPPLYSNINGER' === dokumenttypeKode;
+  return 'MELDING_MANGLENDE_OPPLYSNINGER' === dokumenttypeKode; // TODO hent fra Kodverk!!
 };
 function valideringFeil(req, res) {
   const status = 400;
