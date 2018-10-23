@@ -124,7 +124,7 @@ module.exports.opprettDokument = (req, res) => {
         return valideringFeil(req, res);
       }
     }
-    res.status(204);
+    res.status(204).json();
   }
   catch (err) {
     console.log(err);
@@ -134,7 +134,7 @@ module.exports.opprettDokument = (req, res) => {
 
 // Body is only required for '000074' => 'Innhente manglende opplysninger'
 const erMangelBrevMedFritekst = (dokumenttypeKode) => {
-  return '000074' === dokumenttypeKode;
+  return 'MELDING_MANGLENDE_OPPLYSNINGER' === dokumenttypeKode;
 };
 function valideringFeil(req, res) {
   const status = 400;
