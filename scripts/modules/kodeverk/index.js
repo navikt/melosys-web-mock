@@ -13,6 +13,7 @@ const { rolletyper } = require('./rolletyper');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { lovvalgsunntak } = require('./lovvalgsunntak');
 const { dokumenttyper } = require('./dokumenttyper');
 
 const kodeverk = {
@@ -27,6 +28,7 @@ const kodeverk = {
   rolletyper,
   sakstyper,
   vedleggstitler,
+  lovvalgsunntak,
   dokumenttyper
 };
 module.exports.kodeverk = kodeverk;
