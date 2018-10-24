@@ -1,7 +1,6 @@
 const Ajv = require('ajv');
 
 const ajv = new Ajv({allErrors: true});
-const _ = require('underscore');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
