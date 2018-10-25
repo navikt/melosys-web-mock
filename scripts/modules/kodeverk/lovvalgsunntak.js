@@ -1,23 +1,23 @@
 const lovvalgsunntak = [
   {
     kode: 'ART11_3A',
-    term: 'Omfattet i arbeidsland',
+    term: 'Artikkel 11.3A',
   },
   {
     kode: 'ART11_3B',
-    term: 'Omfattet av lovgivningen i det landet der man er vurdert som tjenestemann',
+    term: 'Artikkel 11.3B',
   },
   {
     kode: 'ART11_3C',
-    term: 'Omfattet i bostedsland dersom de utbetaler dagpenger etter art. 65',
+    term: 'Artikkel 11.3C',
   },
   {
     kode: 'ART11_3E',
-    term: 'Ikke-yrkesaktive er omfattet i bostedsland',
+    term: 'Artikkel 11.3E',
   },
   {
     kode: 'ART11_4_2',
-    term: 'Arbeid på skip, lønnet av arbeidsgiveer i bostedsland',
+    term: 'Artikkel 11.4.2',
   }
 ];
 module.exports.lovvalgsunntak = lovvalgsunntak;
