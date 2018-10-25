@@ -6,6 +6,7 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "aktoerroller",
     "behandlingsstatus",
     "behandlingstyper",
     "begrunnelser",
@@ -21,6 +22,16 @@
     "vedleggstitler"
   ],
   "properties": {
+    "aktoerroller": {
+      "$id": "#/properties/aktoerroller",
+      "type": "array",
+      "title": "The Aktoerroller Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/aktoerroller/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "behandlingsstatus": {
       "$id": "#/properties/behandlingsstatus",
       "type": "array",
