@@ -12,30 +12,6 @@
     "begrunnelseFritekst" : null
   },
   {
-    "fakta" : [
-      "TRUE"
-    ],
-    "referanse" : "OPPHOLDSLAND",
-    "avklartefaktaKode" : null,
-    "begrunnelseKoder" : [
-
-    ],
-    "subjektID" : "SE",
-    "begrunnelseFritekst" : null
-  },
-  {
-    "fakta" : [
-      "TRUE"
-    ],
-    "referanse" : "OPPHOLDSLAND",
-    "avklartefaktaKode" : null,
-    "begrunnelseKoder" : [
-
-    ],
-    "subjektID" : "GB",
-    "begrunnelseFritekst" : null
-  },
-  {
     "avklartefaktaKode" : null,
     "subjektID" : "810072512",
     "begrunnelseKoder" : [
