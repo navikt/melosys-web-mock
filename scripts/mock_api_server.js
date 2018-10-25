@@ -176,9 +176,11 @@ router.post('/vilkaar/:behandlingID', vilkar.send);
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-//
+// Henter et eksisterende dokument fra dokumentarkiv
 router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+// Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
+// Oppretter en bestilling av dokument i dokumentproduksjon
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
 
 // router.post('/logger/trace', logging.trace);

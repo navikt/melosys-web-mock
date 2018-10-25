@@ -13,7 +13,7 @@ const rolletyper = [
     kode : 'REPRESENTANT', // Aka. fullmektig, verge
     term : 'Representant'
   }, {
-    kode : 'ARBEIDSGIVER',
+    kode : 'MYNDIGHET',
     term : 'Myndighet'
   }
 ];

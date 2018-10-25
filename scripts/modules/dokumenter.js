@@ -75,7 +75,7 @@ module.exports.lagPdfUtkast = (req, res) => {
   }
 
   try {
-    if (isPostBodyValidationRequired(dokumenttypeKode)) {
+    if (erMangelBrevMedFritekst(dokumenttypeKode)) {
       const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
       logger.debug("Dokument:lagPdfUtkast", JSON.stringify(jsBody));
 
@@ -114,7 +114,7 @@ module.exports.opprettDokument = (req, res) => {
   }
 
   try {
-    if (isPostBodyValidationRequired(dokumenttypeKode)) {
+    if (erMangelBrevMedFritekst(dokumenttypeKode)) {
       const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
       logger.debug("Dokument:opprettDokument", JSON.stringify(jsBody));
 
@@ -124,12 +124,7 @@ module.exports.opprettDokument = (req, res) => {
         return valideringFeil(req, res);
       }
     }
-    const journalforingID = 'DOK_321';
-    const dokumentID = 'Dok_ID';
-    const dokumentURI = `/api/dokumenter/pdf/${journalforingID}/${dokumentID}`;
-    const dokument = { location: dokumentURI };
-    res.status(201).send(dokument);
-
+    res.status(204).json();
   }
   catch (err) {
     console.log(err);
@@ -138,8 +133,8 @@ module.exports.opprettDokument = (req, res) => {
 };
 
 // Body is only required for '000074' => 'Innhente manglende opplysninger'
-const isPostBodyValidationRequired = (dokumenttypeKode) => {
-  return '000074' === dokumenttypeKode;
+const erMangelBrevMedFritekst = (dokumenttypeKode) => {
+  return 'MELDING_MANGLENDE_OPPLYSNINGER' === dokumenttypeKode; // TODO hent fra Kodverk!!
 };
 function valideringFeil(req, res) {
   const status = 400;
