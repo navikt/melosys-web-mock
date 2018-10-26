@@ -17,7 +17,6 @@
     "lovvalgsbestemmelser",
     "oppgavetyper",
     "representerer",
-    "rolletyper",
     "sakstyper",
     "vedleggstitler"
   ],
@@ -228,16 +227,6 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/representerer/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "rolletyper": {
-      "$id": "#/properties/rolletyper",
-      "type": "array",
-      "title": "The Rolletyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/rolletyper/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },

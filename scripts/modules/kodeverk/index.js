@@ -12,7 +12,6 @@ const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
-const { rolletyper } = require('./rolletyper');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
@@ -29,7 +28,6 @@ const kodeverk = {
   lovvalgsbestemmelser,
   oppgavetyper,
   representerer,
-  rolletyper,
   sakstyper,
   vedleggstitler
 };
