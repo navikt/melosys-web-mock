@@ -33,7 +33,6 @@ const kodeverk = {
   representerer,
   rolletyper,
   sakstyper,
-  vedleggstitler,
   vedleggstitler
 };
 module.exports.kodeverk = kodeverk;
