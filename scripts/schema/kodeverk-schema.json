@@ -6,6 +6,7 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "aktoerroller",
     "behandlingsstatus",
     "behandlingstyper",
     "begrunnelser",
@@ -15,10 +16,22 @@
     "landkoder",
     "lovvalgsbestemmelser",
     "oppgavetyper",
+    "representerer",
+    "rolletyper",
     "sakstyper",
     "vedleggstitler"
   ],
   "properties": {
+    "aktoerroller": {
+      "$id": "#/properties/aktoerroller",
+      "type": "array",
+      "title": "The Aktoerroller Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/aktoerroller/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "behandlingsstatus": {
       "$id": "#/properties/behandlingsstatus",
       "type": "array",
@@ -205,6 +218,16 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/oppgavetyper/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "representerer": {
+      "$id": "#/properties/representerer",
+      "type": "array",
+      "title": "The Representerer Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/representerer/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
