@@ -353,7 +353,7 @@
             "oppholdsPeriode": {
               "title": "The Oppholdsperiode Schema",
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
-              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-periode"
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
             },
             "ektefelleEllerBarnINorge": {
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",
