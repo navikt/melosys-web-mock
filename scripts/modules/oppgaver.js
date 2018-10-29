@@ -10,15 +10,11 @@ const ERR = require('./errors');
 
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
-
-const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
-const validateTilbakelegg = ajv.addSchema(definitions).compile(schema);
-
 const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
+
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
 
 const lesOversikt = async () => {
   const mockfil = `${MOCK_DATA_OPPGAVER_DIR}/oversikt.json`;
@@ -85,23 +81,21 @@ module.exports.reset = (req, res) => {
 };
 
 module.exports.tilbakelegg = (req, res) => {
+  const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
+  const schema = Schema.lesSchemaSync(schemajson);
+  const validate = ajv.addSchema(definitions).compile(schema);
+
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-
+  logger.debug("oppgaver:tilbakelegg", JSON.stringify(jsBody));
   try {
-    const valid = test(validateTilbakelegg, jsBody);
-    if (!valid) {
-      valideringFeil(req, res);
-    }
-    res.json(body);
+    const valid = test(validate, jsBody);
+    return valid ? res.status(204).send() : valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
     res.status(500).send(err);
   }
-
-  logger.debug("oppgaver:tilbakelegg", JSON.stringify(jsBody));
-  res.status(204).send();
 };
 
 function valideringFeil(req, res) {

@@ -33,7 +33,7 @@ instance.post('/lovvalgsperiode/4', lovvalgsperiode).then(printresult).catch(con
 const oversikt = require('./mock_data/oppgaver/oversikt');
 instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(console.error);
 
-const tilbakelegg = require('./mock_data/oppgaver/tilbakelegge');
+const tilbakelegg = require('./mock_data/oppgaver/post/tilbakelegge');
 instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(printresult).catch(console.error);
 
 const journal_post_opprett = require('./mock_data/journalforing/post/opprett');
