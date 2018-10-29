@@ -77,7 +77,29 @@
               "kode": "EKTE",
               "term": "Ektefelle"
             }}
-          ]
+          ],
+          "postadresse": {
+            "adressetype": "STRUKTURERT",
+            "strukturertAdresse": {
+              "gatenavn": "Sannergata",
+              "husnr": "2",
+              "region": null,
+              "postnr": "0557",
+              "poststed": "OSLO",
+              "landKode": "NO"
+            }
+          },
+          "midlertidigPostadresse": {
+            "adressetype": "USTRUKTURERT",
+            "ustrukturertAdresse": {
+              "adresselinje1": "Ardenham Court",
+              "adresselinje2": "Oxford Road",
+              "adresselinje3": "AYLESBURY",
+              "adresselinje4": "BUCKINGHAMSHIRE",
+              "adresselinje5": "HP19 3EQ",
+              "landKode": "UK"
+            }
+          }
         },
         "arbeidsforhold": [
           {

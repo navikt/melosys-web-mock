@@ -152,7 +152,7 @@
               "minLength": 1
             },
             "husnr": {
-              "type": "string",
+              "type": ["string", "null"],
               "minLength": 1
             },
             "region": {
