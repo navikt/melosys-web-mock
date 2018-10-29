@@ -12,8 +12,18 @@ const lesOversikt = async () => {
   return JSON.parse(await Utils.readFileAsync(mockfile));
 };
 
-module.exports.lesOppgaveKatalog = () => {
+module.exports.lesOppgaveOversiktFiler = () => {
   const navn = 'oversikt.json';
+  const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
+  const document =  JSON.parse(Utils.readFileSync(jasonfile));
+  return [{
+    navn,
+    document
+  }];
+};
+
+module.exports.lesOppgaveTilbakeleggFiler = () => {
+  const navn = 'tilbakelegge.json';
   const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
   const document =  JSON.parse(Utils.readFileSync(jasonfile));
   return [{
@@ -75,4 +85,11 @@ module.exports.opprett = (req, res) => {
 
 module.exports.reset = (req, res) => {
   res.json({});
+};
+
+module.exports.tilbakelegg = (req, res) => {
+  const body = req.body;
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  logger.debug("oppgaver:tilbakelegg", JSON.stringify(jsBody));
+  res.status(204).send();
 };
