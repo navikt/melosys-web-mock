@@ -13,7 +13,7 @@ const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 
-const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegg-schema.json`;
+const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
 const validateTilbakelegg = ajv.addSchema(definitions).compile(schema);
 
@@ -25,24 +25,8 @@ const lesOversikt = async () => {
   return JSON.parse(await Utils.readFileAsync(mockfil));
 };
 
-module.exports.lesOppgaveOversiktFiler = () => {
-  const navn = 'oversikt.json';
-  const jsonfil = `${MOCK_DATA_OPPGAVER_DIR}/${navn}`;
-  const document =  JSON.parse(Utils.readFileSync(jsonfil));
-  return [{
-    navn,
-    document
-  }];
-};
-
-module.exports.lesOppgaveTilbakeleggFiler = () => {
-  const navn = 'tilbakelegge.json';
-  const jasonfil = `${MOCK_DATA_OPPGAVER_DIR}/${navn}`;
-  const document =  JSON.parse(Utils.readFileSync(jasonfil));
-  return [{
-    navn,
-    document
-  }];
+module.exports.lesOppgaveKatalog = () => {
+  return Schema.lesKatalogSync(MOCK_DATA_OPPGAVER_DIR);
 };
 
 module.exports.hentPlukk = async (req, res) => {
