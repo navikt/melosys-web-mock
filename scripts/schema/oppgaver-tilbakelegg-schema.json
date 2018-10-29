@@ -25,9 +25,7 @@
       "type": ["string", "null"],
       "title": "The begrunnelse Schema",
       "default": "",
-      "examples": [
-        ""
-      ],
+      "examples": [],
       "pattern": "^(.*)$"
     },
     "venterPaaDokumentasjon": {

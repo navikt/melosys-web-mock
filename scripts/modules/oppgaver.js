@@ -18,17 +18,17 @@ const schema = Schema.lesSchemaSync(schemajson);
 const validateTilbakelegg = ajv.addSchema(definitions).compile(schema);
 
 const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
-const MOCK_DATA_OPPGAVRE_DIR = `${MOCK_DATA_DIR}/oppgaver`;
+const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
 const lesOversikt = async () => {
-  const mockfile = `${MOCK_DATA_OPPGAVRE_DIR}/oversikt.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfile));
+  const mockfil = `${MOCK_DATA_OPPGAVER_DIR}/oversikt.json`;
+  return JSON.parse(await Utils.readFileAsync(mockfil));
 };
 
 module.exports.lesOppgaveOversiktFiler = () => {
   const navn = 'oversikt.json';
-  const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
-  const document =  JSON.parse(Utils.readFileSync(jasonfile));
+  const jsonfil = `${MOCK_DATA_OPPGAVER_DIR}/${navn}`;
+  const document =  JSON.parse(Utils.readFileSync(jsonfil));
   return [{
     navn,
     document
@@ -37,8 +37,8 @@ module.exports.lesOppgaveOversiktFiler = () => {
 
 module.exports.lesOppgaveTilbakeleggFiler = () => {
   const navn = 'tilbakelegge.json';
-  const jasonfile = `${MOCK_DATA_OPPGAVRE_DIR}/${navn}`;
-  const document =  JSON.parse(Utils.readFileSync(jasonfile));
+  const jasonfil = `${MOCK_DATA_OPPGAVER_DIR}/${navn}`;
+  const document =  JSON.parse(Utils.readFileSync(jasonfil));
   return [{
     navn,
     document
