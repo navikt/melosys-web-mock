@@ -27,6 +27,9 @@ instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(consol
 const vurdering4 = require('./mock_data/vurdering/vurdering-bid-4');
 instance.post('/vurdering/4', vurdering4).then(printresult).catch(console.error);
 
+const lovvalgsperiode = require('./mock_data/lovvalgsperiode/lovvalgsperiode-bid-4');
+instance.post('/lovvalgsperiode/4', lovvalgsperiode).then(printresult).catch(console.error);
+
 const oversikt = require('./mock_data/oppgaver/oversikt');
 instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(console.error);
 
@@ -38,7 +41,7 @@ instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult
 
 const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
 const behandlingID = 3;
-const dokumentTypeID = '000074';
+const dokumentTypeID = 'MELDING_MANGLENDE_OPPLYSNINGER';
 instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(console.error);
 /*

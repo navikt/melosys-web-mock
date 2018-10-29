@@ -51,7 +51,7 @@
       },
       "unntakFraBestemmelse": {
         "$id": "#/items/properties/unntakFraBestemmelse",
-        "type": "string",
+        "type": ["string", "null"],
         "title": "The UnntakFraBestemmelse Schema",
         "default": "",
         "examples": [
