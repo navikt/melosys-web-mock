@@ -10,6 +10,7 @@ const { fagsak } = require('./test/fagsak');
 const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
+const { lovvalgsperiode } = require('./test/lovvalgsperiode');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 const { SokOppgaver } = require('./test/sok-oppgaver');
@@ -40,6 +41,7 @@ const katalogMap = new Map([
   ['sok/fagsaker', SokFagsak],
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
+  ['lovvalgsperiode', lovvalgsperiode],
   ['inngang', inngang],
   ['journalforing', journalforing],
   ['oppgaver/sok', SokOppgaver],

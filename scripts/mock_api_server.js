@@ -10,6 +10,7 @@ const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
+const lovvalgsperiode = require('./modules/lovvalgsperiode');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
@@ -121,6 +122,13 @@ router.get('/saksbehandler', saksbehandler.hent);
  * KODEVERK
  */
 router.get('/kodeverk', Kodeverk.hent);
+
+/**
+ * LOVVALGSPERIODE
+ * ---------------------------------------------------------------
+ */
+router.get('/lovvalgsperiode/:behandlingID', lovvalgsperiode.hent);
+router.post('/lovvalgsperiode/:behandlingID', lovvalgsperiode.send);
 
 /**
  * OPPGAVEBEHANDLING
