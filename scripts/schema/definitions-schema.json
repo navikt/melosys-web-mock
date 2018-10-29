@@ -137,74 +137,80 @@
           "enum": ["STRUKTURERT", "USTRUKTURERT"]
         },
         "strukturertAdresse": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "gatenavn",
-            "husnr",
-            "postnr",
-            "poststed",
-            "landKode"
-          ],
-          "properties": {
-            "gatenavn": {
-              "type": "string",
-              "minLength": 1
-            },
-            "husnr": {
-              "type": ["string", "null"],
-              "minLength": 1
-            },
-            "region": {
-              "type": ["string", "null"],
-              "minLength": 1
-            },
-            "postnr": {
-              "type": "string",
-              "minLength": 1
-            },
-            "poststed": {
-              "type": "string",
-              "minLength": 1
-            },
-            "landKode": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "$ref": "#/definitions/strukturertAdresse"
         },
         "ustrukturertAdresse": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "landKode"
-          ],
-          "properties": {
-            "adresselinje1": {
-              "type": "string",
-              "minLength": 1
-            },
-            "adresselinje2": {
-              "type": "string",
-              "minLength": 1
-            },
-            "adresselinje3": {
-              "type": "string",
-              "minLength": 1
-            },
-            "adresselinje4": {
-              "type": "string",
-              "minLength": 1
-            },
-            "adresselinje5": {
-              "type": "string",
-              "minLength": 1
-            },
-            "landKode": {
-              "type": "string",
-              "minLength": 1
-            }
-          }
+          "$ref": "#/definitions/ustrukturertAdresse"
+        }
+      }
+    },
+    "strukturertAdresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gatenavn",
+        "husnr",
+        "postnr",
+        "poststed",
+        "landKode"
+      ],
+      "properties": {
+        "gatenavn": {
+          "type": "string",
+          "minLength": 1
+        },
+        "husnr": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "region": {
+          "type": ["string", "null"],
+          "minLength": 1
+        },
+        "postnr": {
+          "type": "string",
+          "minLength": 1
+        },
+        "poststed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "landKode": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "ustrukturertAdresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "landKode"
+      ],
+      "properties": {
+        "adresselinje1": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adresselinje2": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adresselinje3": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adresselinje4": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adresselinje5": {
+          "type": "string",
+          "minLength": 1
+        },
+        "landKode": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

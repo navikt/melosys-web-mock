@@ -657,22 +657,18 @@
 
           ],
           "postadresse": {
-            "adressetype": "USTRUKTURERT",
-            "ustrukturertAdresse": {
-              "adresselinje1": "Sannergata 2",
-              "adresselinje2": "0557 OSLO",
-              "landKode": "NO"
-            }
+            "adresselinje1": "Sannergata 2",
+            "adresselinje2": "0557 OSLO",
+            "landKode": "NO"
           },
           "midlertidigPostadresse": {
             "adressetype": "STRUKTURERT",
             "strukturertAdresse": {
-              "gatenavn": "Ardenham Court, Oxford Road",
-              "husnr": null,
-              "region": "BUCKINGHAMSHIRE",
-              "postnr": "HP19 3EQ",
-              "poststed": "AYLESBURY",
-              "landKode": "UK"
+              "gatenavn": "Sannergata",
+              "husnr": "2",
+              "postnr": "0557",
+              "poststed": "OSLO",
+              "landKode": "NO"
             }
           }
         },
