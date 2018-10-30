@@ -120,17 +120,20 @@
       "required": [
         "adressetype"
       ],
-      "if": {
-        "properties": {
-          "adressetype": {"const": "STRUKTURERT"}
+      "oneOf": [
+        {
+          "properties": {
+            "adressetype": {"const": "STRUKTURERT"}
+          },
+          "required": ["strukturertAdresse"]
+        },
+        {
+          "properties": {
+            "adressetype": {"const": "USTRUKTURERT"}
+          },
+          "required": ["ustrukturertAdresse"]
         }
-      },
-      "then": {
-        "required": ["strukturertAdresse"]
-      },
-      "else": {
-        "required": ["ustrukturertAdresse"]
-      },
+      ],
       "properties": {
         "adressetype": {
           "type": "string",
