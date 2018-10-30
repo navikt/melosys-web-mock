@@ -5,15 +5,15 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "oppgaveID",
+    "behandlingID",
     "begrunnelse",
     "venterPaaDokumentasjon"
   ],
   "properties": {
-    "oppgaveID": {
-      "$id": "#/properties/oppgaveID",
+    "behandlingID": {
+      "$id": "#/properties/behandlingID",
       "type": "string",
-      "title": "The oppgaveID Schema",
+      "title": "The behandlingID Schema",
       "default": "",
       "examples": [
         "1000023948"
