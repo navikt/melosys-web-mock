@@ -11,19 +11,19 @@ const Schema = require('../test/schema-util');
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
-const LOVVALGSPERIODE_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperiode`;
+const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;
 
-module.exports.lesLovvalgsperiodesKatalog = () => {
-  return Schema.lesKatalogSync(LOVVALGSPERIODE_MOCK_DATA_DIR);
+module.exports.lesLovvalgsperiodersKatalog = () => {
+  return Schema.lesKatalogSync(LOVVALGSPERIODER_MOCK_DATA_DIR);
 };
 
-const lesLovvalgsperiode = async (behandlingID) => {
-  const mockfile = `${LOVVALGSPERIODE_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
+const lesLovvalgsperioder = async (behandlingID) => {
+  const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperioder-bid-${behandlingID}.json`;
   return JSON.parse(await Utils.readFileAsync(mockfile));
 };
 
 /**
- * Hent lovvalgsperiode
+ * Hent lovvalgsperioder
  * @param req
  * @param res
  * @returns {*}
@@ -31,10 +31,10 @@ const lesLovvalgsperiode = async (behandlingID) => {
 module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
-    const mockfile = `${LOVVALGSPERIODE_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
+    const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperioder-bid-${behandlingID}.json`;
 
     if (await Utils.existsAsync(mockfile)) {
-      const data = await lesLovvalgsperiode(behandlingID);
+      const data = await lesLovvalgsperioder(behandlingID);
       const status = happy.happyStatus([200, 200, 404]);
       if (status === 404) {
         return res.status(404).send(ERR.notFound404(req.url));
@@ -53,19 +53,19 @@ module.exports.hent = async (req, res) => {
 };
 
 /**
- * Send lovvalgsperiode
+ * Send lovvalgsperioder
  * @param req
  * @param res
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/lovvalgsperiode-schema.json`;
+  const schemajson = `${SCHEMA_DIR}/lovvalgsperioder-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const validate = ajv.compile(schema);
 
   const body = req.body;
   let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("lovvalgsperiode:send", JSON.stringify(jsonBody));
+  logger.debug("lovvalgsperioder:send", JSON.stringify(jsonBody));
 
   const valid = test(validate, jsonBody);
   if (!valid) {
@@ -85,12 +85,12 @@ function valideringFeil(req, res) {
 function test(validate, data) {
   const valid = validate(data);
   if (valid) {
-    console.log('Lovvalgsperiode:send Valid!');
+    console.log('Lovvalgsperioder:send Valid!');
   }
   else {
     const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Lovvalgsperiode:send INVALID: see mock-errors.log');
-    logger.error('Lovvalgsperiode:send INVALID', ajvErros)
+    console.error('Lovvalgsperioder:send INVALID: see mock-errors.log');
+    logger.error('Lovvalgsperioder:send INVALID', ajvErros)
   }
   return valid;
 }

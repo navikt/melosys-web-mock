@@ -24,8 +24,8 @@ instance.post('/soknader/4', soknad4).then(printresult).catch(console.error);
 const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
 instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(console.error);
 
-const lovvalgsperiode = require('./mock_data/lovvalgsperiode/lovvalgsperiode-bid-4');
-instance.post('/lovvalgsperiode/4', lovvalgsperiode).then(printresult).catch(console.error);
+const lovvalgsperioder = require('./mock_data/lovvalgsperioder/lovvalgsperioder-bid-4');
+instance.post('/lovvalgsperioder/4', lovvalgsperioder).then(printresult).catch(console.error);
 
 const oversikt = require('./mock_data/oppgaver/oversikt');
 instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(console.error);
