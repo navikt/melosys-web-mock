@@ -3,19 +3,19 @@ const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
-const Vurderinger = require('../modules/vurdering');
+const Lovvalgsperiode = require('../modules/lovvalgsperiode');
 const SCRIPTS_DIR =`${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemajson = `${SCHEMA_DIR}/vurdering-schema.json`;
+const schemajson = `${SCHEMA_DIR}/lovvalgsperiode-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
-const katalog = Vurderinger.lesVurderingsKatalog();
+const katalog = Lovvalgsperiode.lesLovvalgsperiodesKatalog();
 
 const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('Vurdering'));
+  console.log(colors.blue('Lovvalgsperiode'));
   katalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 
@@ -25,9 +25,10 @@ const testOne = (path) => {
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
-const vurdering = {
+
+const lovvalgsperiode = {
   testAll,
   testOne,
 };
-module.exports.vurdering = vurdering;
+module.exports.lovvalgsperiode = lovvalgsperiode;
 

@@ -10,6 +10,7 @@ const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
+const lovvalgsperiode = require('./modules/lovvalgsperiode');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vurdering = require('./modules/vurdering');
@@ -123,6 +124,13 @@ router.get('/saksbehandler', saksbehandler.hent);
 router.get('/kodeverk', Kodeverk.hent);
 
 /**
+ * LOVVALGSPERIODE
+ * ---------------------------------------------------------------
+ */
+router.get('/lovvalgsperiode/:behandlingID', lovvalgsperiode.hent);
+router.post('/lovvalgsperiode/:behandlingID', lovvalgsperiode.send);
+
+/**
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
@@ -132,6 +140,7 @@ router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
 router.get('/oppgaver/reset', oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING
