@@ -34,7 +34,7 @@
     },
     "behandlingID": {
       "$id": "#/properties/behandlingID",
-      "type": ["integer", "null"],
+      "type": ["integer"],
       "title": "The BehandlingID Schema",
       "default": 0,
       "examples": [
