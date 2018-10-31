@@ -59,7 +59,7 @@
         "term": "Trygdeavtale"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 4,
         "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
@@ -90,7 +90,7 @@
         "term": "Trygdeavtale"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 3,
         "behandlingstype": {
           "kode": "ML_U",
           "term": "Melding fra utenlandsk myndighet"
@@ -121,7 +121,7 @@
         "term": "Folketrygd"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 5,
         "behandlingstype": {
           "kode": "UFM",
           "term": "Unntak medlemskap"
@@ -152,7 +152,7 @@
         "term": "Folketrygd"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 4,
         "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"

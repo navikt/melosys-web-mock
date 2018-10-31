@@ -5,7 +5,6 @@ const { demo } = require('./test/demo');
 const { kodeverk } = require('./test/kodeverk');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
-const { vurdering } = require('./test/vurdering');
 const { fagsak } = require('./test/fagsak');
 const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
@@ -36,7 +35,6 @@ const katalogMap = new Map([
   ['kodeverk', kodeverk],
   ['personer', person],
   ['soknader', soknad],
-  ['vurdering', vurdering],
   ['fagsaker', fagsak],
   ['sok/fagsaker', SokFagsak],
   ['saksbehandler', Saksbehandler],

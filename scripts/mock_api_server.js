@@ -140,6 +140,7 @@ router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
 router.get('/oppgaver/reset', oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING

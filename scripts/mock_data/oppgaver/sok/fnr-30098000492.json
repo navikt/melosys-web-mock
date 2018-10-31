@@ -15,7 +15,7 @@
         "term": "EU/EØS"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 3,
         "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
@@ -46,7 +46,7 @@
         "term": "EU/EØS"
       },
       "behandling": {
-        "behandlingID": null,
+        "behandlingID": 2,
         "behandlingstype": {
           "kode": "SKND",
           "term": "Søknad"
