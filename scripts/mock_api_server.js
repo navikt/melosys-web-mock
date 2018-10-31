@@ -13,7 +13,6 @@ const soknader = require('./modules/soknader');
 const lovvalgsperiode = require('./modules/lovvalgsperiode');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
-const vurdering = require('./modules/vurdering');
 const vilkar = require('./modules/vilkar');
 const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
@@ -100,18 +99,6 @@ router.post('/avklartefakta/:behandlingID', avklartefakta.send);
  * ----------------------------------------------------------
  */
 router.get('/inngang/:snr', inngang.hent);
-
-/**
- * VURDERING (FRA REGELMOTOREN)
- * ---------------------------------------------------------------
- * Vurdering (vurderingsforslag) fra regelmotor for soknaden. Denne kalles når regelmotor har (1) fagsaken (2) søknaden og
- * (3) avklartefakta.
- * GET /vurdering Returnerer regelmotorens forslag til vurdering i tillegg til evt lagrede overprøvinger fra saksbehandler.
- * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
- *
- */
-router.get('/vurdering/:behandlingID', vurdering.hent);
-router.post('/vurdering/:behandlingID', vurdering.send);
 
 /**
  * SAKSBEHANDLER
