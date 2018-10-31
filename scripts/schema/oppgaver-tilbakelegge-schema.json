@@ -12,13 +12,7 @@
   "properties": {
     "behandlingID": {
       "$id": "#/properties/behandlingID",
-      "type": "string",
-      "title": "The behandlingID Schema",
-      "default": "",
-      "examples": [
-        "1000023948"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/behandlingID"
     },
     "begrunnelse": {
       "$id": "#/properties/begrunnelse",
