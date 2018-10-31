@@ -25,7 +25,9 @@
       "type": ["string", "null"],
       "title": "The begrunnelse Schema",
       "default": "",
-      "examples": [],
+      "examples": [
+        "KODE_FOR_BEGRUNNELSE_ER_PT_IKKE_DEFINERT"
+      ],
       "pattern": "^(.*)$"
     },
     "venterPaaDokumentasjon": {
