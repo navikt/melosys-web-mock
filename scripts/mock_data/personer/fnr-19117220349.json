@@ -7,8 +7,10 @@
   "kjoenn": "M",
   "foedselsdato": "1972-11-19",
   "postadresse": {
-    "adresselinje1": "Sannergata 2",
-    "adresselinje2": "0557 OSLO",
+    "adresselinjer": [
+      "Sannergata 2",
+      "0557 OSLO"
+    ],
     "landKode": "NO"
   },
   "midlertidigPostadresse": {

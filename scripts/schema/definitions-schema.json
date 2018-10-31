@@ -191,25 +191,13 @@
         "landKode"
       ],
       "properties": {
-        "adresselinje1": {
-          "type": "string",
-          "minLength": 1
-        },
-        "adresselinje2": {
-          "type": "string",
-          "minLength": 1
-        },
-        "adresselinje3": {
-          "type": "string",
-          "minLength": 1
-        },
-        "adresselinje4": {
-          "type": "string",
-          "minLength": 1
-        },
-        "adresselinje5": {
-          "type": "string",
-          "minLength": 1
+        "adresselinjer": {
+          "type": "array",
+          "additionalItems": false,
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
         },
         "landKode": {
           "type": "string",
