@@ -10,7 +10,7 @@ const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
-const lovvalgsperiode = require('./modules/lovvalgsperiode');
+const lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
 const vilkar = require('./modules/vilkar');
@@ -111,11 +111,11 @@ router.get('/saksbehandler', saksbehandler.hent);
 router.get('/kodeverk', Kodeverk.hent);
 
 /**
- * LOVVALGSPERIODE
+ * LOVVALGSPERIODER
  * ---------------------------------------------------------------
  */
-router.get('/lovvalgsperiode/:behandlingID', lovvalgsperiode.hent);
-router.post('/lovvalgsperiode/:behandlingID', lovvalgsperiode.send);
+router.get('/lovvalgsperioder/:behandlingID', lovvalgsperioder.hent);
+router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
 
 /**
  * OPPGAVEBEHANDLING
