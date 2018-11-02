@@ -667,8 +667,8 @@
             "adressetype": "STRUKTURERT",
             "strukturertAdresse": {
               "gatenavn": "Sannergata",
-              "husnr": "2",
-              "postnr": "0557",
+              "husnummer": "2",
+              "postnummer": "0557",
               "poststed": "OSLO",
               "landKode": "NO"
             }

@@ -152,35 +152,52 @@
       "additionalProperties": false,
       "required": [
         "gatenavn",
-        "husnr",
-        "postnr",
+        "postnummer",
         "poststed",
         "landKode"
       ],
       "properties": {
         "gatenavn": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Waldemar Thranes gate"
+          ]
         },
-        "husnr": {
-          "type": ["string", "null"],
-          "minLength": 1
+        "husnummer": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "98"
+          ]
         },
         "region": {
-          "type": ["string", "null"],
-          "minLength": 1
-        },
-        "postnr": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Bydel Sagene"
+          ]
+        },
+        "postnummer": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "0175"
+          ]
         },
         "poststed": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "OSLO"
+          ]
         },
         "landKode": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "NO"
+          ]
         }
       }
     },
@@ -201,7 +218,10 @@
         },
         "landKode": {
           "type": "string",
-          "minLength": 1
+          "default": "",
+          "examples": [
+            "NO"
+          ]
         }
       }
     }
