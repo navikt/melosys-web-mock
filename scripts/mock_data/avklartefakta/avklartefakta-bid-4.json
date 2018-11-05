@@ -12,12 +12,11 @@
     "begrunnelseFritekst" : null
   },
   {
-    "avklartefaktaKode" : null,
+    "avklartefaktaKode" : "ARBEIDSGIVER",
     "subjektID" : "810072512",
     "begrunnelseKoder" : [
 
     ],
-    "avklartFaktaKode" : "ARBEIDSGIVER",
     "fakta" : [
       "TRUE"
     ],
