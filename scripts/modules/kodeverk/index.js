@@ -15,6 +15,7 @@ const { representerer } = require('./representerer');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { lovvalgsunntak } = require('./lovvalgsunntak');
 
 const kodeverk = {
   aktoerroller,
@@ -29,7 +30,8 @@ const kodeverk = {
   oppgavetyper,
   representerer,
   sakstyper,
-  vedleggstitler
+  vedleggstitler,
+  lovvalgsunntak,
 };
 module.exports.kodeverk = kodeverk;
 
