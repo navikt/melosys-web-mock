@@ -15,6 +15,7 @@
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
+    "lovvalgsunntak",
     "oppgavetyper",
     "representerer",
     "sakstyper",
@@ -62,7 +63,8 @@
         "ikkeSkip",
         "opphold",
         "vesentligVirksomhet",
-        "artikkel12_1"
+        "artikkel12_1",
+        "artikkel16_1_anmodning"
       ],
       "properties": {
         "bosted": {
@@ -122,6 +124,16 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/artikkel12_1/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "artikkel16_1_anmodning": {
+          "$id": "#/properties/begrunnelser/properties/artikkel16_1_anmodning",
+          "type": "array",
+          "title": "The Artikkel 16.1 anmodning Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/artikkel16_1_anmodning/items",
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }
@@ -208,6 +220,16 @@
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }
+      }
+    },
+    "lovvalgsunntak": {
+      "$id": "#/properties/lovvalgsunntak",
+      "type": "array",
+      "title": "The Lovvalgsunntak Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/lovvalgsunntak/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
     "oppgavetyper": {
