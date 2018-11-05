@@ -1,5 +1,5 @@
 /**
- * Kodeverk/vesentligVirksomhet
+ * Kodeverk/artikkel16_1_anmodning
  * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
  * @module
  */
