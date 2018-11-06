@@ -37,6 +37,10 @@ const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
   console.log(colors.blue(tittel));
   const elem = Schema.lesKatalogElement(path);
+  const schemajson = path;
+  const schema = Schema.lesSchemaSync(schemajson);
+  const ajv = new Ajv({allErrors: true});
+  const validate = ajv.addSchema(definitions).compile(schema);
   return Schema.runTest(elem, ajv, validate);
 };
 

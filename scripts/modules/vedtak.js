@@ -3,8 +3,6 @@ const logger = log4js.getLogger('mock');
 const ERR = require('./errors');
 const URL = require('url');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
-
 module.exports.lagre = (req, res) => {
   const url = URL.parse(req.url);
   try {
