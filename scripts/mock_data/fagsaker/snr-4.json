@@ -668,6 +668,7 @@
             "strukturertAdresse": {
               "gatenavn": "Sannergata",
               "husnummer": "2",
+              "region": null,
               "postnummer": "0557",
               "poststed": "OSLO",
               "landKode": "NO"

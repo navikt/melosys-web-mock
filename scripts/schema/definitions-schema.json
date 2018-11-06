@@ -152,6 +152,8 @@
       "additionalProperties": false,
       "required": [
         "gatenavn",
+        "husnummer",
+        "region",
         "postnummer",
         "poststed",
         "landKode"
@@ -165,14 +167,14 @@
           ]
         },
         "husnummer": {
-          "type": "string",
+          "type": ["string", "null"],
           "minLength": 1,
           "examples": [
             "98"
           ]
         },
         "region": {
-          "type": "string",
+          "type": ["string", "null"],
           "minLength": 1,
           "examples": [
             "Bydel Sagene"

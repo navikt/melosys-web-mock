@@ -9,6 +9,8 @@
     "arbeidUtland": [{
       "adresse": {
         "gatenavn": "Adresseveien 123",
+        "husnummer": null,
+        "region": null,
         "postnummer": "1234",
         "poststed": "Poststedet",
         "landKode": "DE"
@@ -38,6 +40,7 @@
       "oppgittAdresse": {
         "gatenavn": "Waldemar Thranes gate",
         "husnummer": "98",
+        "region": null,
         "postnummer": "O175",
         "poststed": "Oslo",
         "landKode": "NO"
