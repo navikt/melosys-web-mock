@@ -5,5 +5,19 @@
   "sammensattNavn": "HATT GLITRENDE",
   "personstatus": "Bosatt",
   "kjoenn": "M",
-  "foedselsdato": "1972-11-19"
+  "foedselsdato": "1972-11-19",
+  "bostedsadresse" : {
+    "gateadresse": {
+      "gatenavn": "Waldemar Thranses gate",
+      "gatenummer": 98,
+      "husnummer": null,
+      "husbokstav": "C"
+    },
+    "postnr": "0175",
+    "poststed": "OSLO",
+    "land": {
+      "kode": "NO",
+      "term": "Norge"
+    }
+  }
 }

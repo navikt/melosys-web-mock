@@ -12,7 +12,8 @@
     "sammensattNavn",
     "personstatus",
     "kjoenn",
-    "foedselsdato"
+    "foedselsdato",
+    "adresse"
   ],
   "properties": {
     "fnr": {
@@ -79,6 +80,94 @@
       "title": "The Foedselsdato Schema",
       "$id": "#/properties/foedselsdato",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
+    },
+    "adresse": {
+      "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse",
+      "type": "object",
+      "title": "The Bostedsadresse Schema",
+      "additionalProperties": false,
+      "required": [
+        "gateadresse",
+        "postnr",
+        "poststed",
+        "land"
+      ],
+      "properties": {
+        "gateadresse": {
+          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse",
+          "type": "object",
+          "title": "The Gateadresse Schema",
+          "additionalProperties": false,
+          "required": [
+            "gatenavn",
+            "gatenummer",
+            "husnummer",
+            "husbokstav"
+          ],
+          "properties": {
+            "gatenavn": {
+              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenavn",
+              "type": ["string","null"],
+              "title": "The Gatenavn Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "gatenummer": {
+              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
+              "type": ["integer","null"],
+              "title": "The Gatenummer Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "husnummer": {
+              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
+              "type": ["integer","null"],
+              "title": "The Husnummer Schema",
+              "default": null,
+              "examples": [
+                null,
+                "1"
+              ]
+            },
+            "husbokstav": {
+              "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/gateadresse/properties/husbokstav",
+              "type": ["string","null"],
+              "title": "The Husbokstav Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            }
+          }
+        },
+        "postnr": {
+          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/postnr",
+          "type": ["string","null"],
+          "title": "The Postnr Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "poststed": {
+          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/poststed",
+          "type": ["string","null"],
+          "title": "The poststed Schema",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "land": {
+          "title": "The Land Schema",
+          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/bostedsadresse/properties/land",
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+        }
+      }
     }
   }
 }
