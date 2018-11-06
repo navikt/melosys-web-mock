@@ -5,5 +5,19 @@
   "sammensattNavn": "KAKE ARTIG",
   "personstatus": "Bosatt",
   "kjoenn": "K",
-  "foedselsdato": "1978-11-17"
+  "foedselsdato": "1978-11-17",
+  "bostedsadresse" : {
+    "gateadresse": {
+      "gatenavn": "Waldemar Thranses gate",
+      "gatenummer": 98,
+      "husnummer": null,
+      "husbokstav": "C"
+    },
+    "postnr": "0175",
+    "poststed": "OSLO",
+    "land": {
+      "kode": "NO",
+      "term": "Norge"
+    }
+  }
 }

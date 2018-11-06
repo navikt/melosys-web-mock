@@ -5,5 +5,19 @@
   "sammensattNavn": "MASKIN ARTIG",
   "personstatus": "Bosatt",
   "kjoenn": "M",
-  "foedselsdato": "1966-10-28"
+  "foedselsdato": "1966-10-28",
+  "bostedsadresse" : {
+    "gateadresse": {
+      "gatenavn": "Waldemar Thranses gate",
+      "gatenummer": 98,
+      "husnummer": null,
+      "husbokstav": "C"
+    },
+    "postnr": "0175",
+    "poststed": "OSLO",
+    "land": {
+      "kode": "NO",
+      "term": "Norge"
+    }
+  }
 }
