@@ -1,2 +1,34 @@
 [
+  {
+    "vilkaar" : "ART12_1_FORUTGAAENDE_MEDLEMSKAP",
+    "oppfylt" : true,
+    "begrunnelseKoder" : [
+
+    ],
+    "begrunnelseFritekst" : null
+  },
+  {
+    "vilkaar" : "VESENTLIG_VIRKSOMHET",
+    "oppfylt" : true,
+    "begrunnelseKoder" : [
+
+    ],
+    "begrunnelseFritekst" : null
+  },
+  {
+    "vilkaar" : "ART12_1",
+    "oppfylt" : false,
+    "begrunnelseKoder" : [
+
+    ],
+    "begrunnelseFritekst" : null
+  },
+  {
+    "vilkaar" : "ART16_1",
+    "oppfylt" : true,
+    "begrunnelseKoder" : [
+
+    ],
+    "begrunnelseFritekst" : null
+  }
 ]

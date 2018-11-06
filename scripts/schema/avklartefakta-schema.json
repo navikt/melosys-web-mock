@@ -1,7 +1,19 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/schemas/avklartefakta-schema.json",
+  "type": [
+    "array",
+    "null"
+  ],
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "$ref": "#/definitions/avklartefakta"
+  },
   "definitions": {
     "avklartefakta": {
       "type": ["object","null"],
+      "additionalProperties": false,
       "required": [
         "referanse",
         "avklartefaktaKode",
@@ -104,16 +116,5 @@
         }
       }
     }
-  },
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://melosys.nav.no/schemas/avklartefakta-schema.json",
-  "type": [
-    "array",
-    "null"
-  ],
-  "title": "The Root Schema",
-  "items": {
-    "$id": "#/items",
-    "$ref": "#/definitions/avklartefakta"
   }
 }

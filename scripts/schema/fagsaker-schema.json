@@ -1367,12 +1367,7 @@
             "properties": {
               "behandlingID": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingID",
-                "type": "integer",
-                "title": "The Behandlingid Schema",
-                "default": 0,
-                "examples": [
-                  4
-                ]
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/behandlingID"
               },
               "status": {
                 "title": "The Status Schema",

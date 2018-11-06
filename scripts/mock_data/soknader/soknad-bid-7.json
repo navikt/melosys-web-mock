@@ -20,10 +20,10 @@
     }],
     "foretakUtland": [],
     "oppholdUtland": {
-      "oppholdslandKoder": [],
+      "oppholdslandKoder": ["FR"],
       "oppholdsPeriode": {
-        "fom": null,
-        "tom": null
+        "fom": "2018-01-01",
+        "tom": "2019-05-31"
       },
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,

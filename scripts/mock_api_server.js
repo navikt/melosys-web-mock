@@ -10,9 +10,9 @@ const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
+const lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Kodeverk = require('./modules/kodeverk');
 const saksbehandler = require('./modules/saksbehandler');
-const vurdering = require('./modules/vurdering');
 const vilkar = require('./modules/vilkar');
 const avklartefakta = require('./modules/avklartefakta');
 const inngang = require('./modules/inngang');
@@ -20,6 +20,8 @@ const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
 const logging = require('./modules/logging');
+const vedtak = require('./modules/vedtak');
+
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -101,18 +103,6 @@ router.post('/avklartefakta/:behandlingID', avklartefakta.send);
 router.get('/inngang/:snr', inngang.hent);
 
 /**
- * VURDERING (FRA REGELMOTOREN)
- * ---------------------------------------------------------------
- * Vurdering (vurderingsforslag) fra regelmotor for soknaden. Denne kalles når regelmotor har (1) fagsaken (2) søknaden og
- * (3) avklartefakta.
- * GET /vurdering Returnerer regelmotorens forslag til vurdering i tillegg til evt lagrede overprøvinger fra saksbehandler.
- * POST /vurdering Lagrer en vurdering, enten den er lik regelmotoren eller det er en overprøvelse fra saksbehandler.
- *
- */
-router.get('/vurdering/:behandlingID', vurdering.hent);
-router.post('/vurdering/:behandlingID', vurdering.send);
-
-/**
  * SAKSBEHANDLER
  */
 router.get('/saksbehandler', saksbehandler.hent);
@@ -121,6 +111,13 @@ router.get('/saksbehandler', saksbehandler.hent);
  * KODEVERK
  */
 router.get('/kodeverk', Kodeverk.hent);
+
+/**
+ * LOVVALGSPERIODER
+ * ---------------------------------------------------------------
+ */
+router.get('/lovvalgsperioder/:behandlingID', lovvalgsperioder.hent);
+router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
 
 /**
  * OPPGAVEBEHANDLING
@@ -132,6 +129,7 @@ router.post('/oppgaver/plukk', oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', oppgaver.oversikt);
 router.post('/oppgaver/opprett', oppgaver.opprett);
 router.get('/oppgaver/reset', oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING
@@ -176,10 +174,18 @@ router.post('/vilkaar/:behandlingID', vilkar.send);
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-//
+// Henter et eksisterende dokument fra dokumentarkiv
 router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+// Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
+// Oppretter en bestilling av dokument i dokumentproduksjon
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
+
+/**
+ * VEDTAK
+ *  * ---------------------------------------------------------------
+ */
+router.post('/vedtak/:behandlingID', vedtak.lagre);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

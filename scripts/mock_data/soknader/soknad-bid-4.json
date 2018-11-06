@@ -36,7 +36,7 @@
       }
     ],
     "oppholdUtland": {
-      "oppholdslandKoder": ["DK", "SE", "GB"],
+      "oppholdslandKoder": ["DK"],
       "oppholdsPeriode": {
         "fom": "2018-01-01",
         "tom": "2018-06-01"

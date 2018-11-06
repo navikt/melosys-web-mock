@@ -12,12 +12,7 @@
   "properties": {
     "behandlingID": {
       "$id": "#/properties/behandlingID",
-      "type": ["integer","null"],
-      "title": "The Behandlingid Schema",
-      "default": 0,
-      "examples": [
-        4
-      ]
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/behandlingID"
     },
     "soeknadDokument": {
       "$id": "#/properties/soeknadDokument",
@@ -353,7 +348,7 @@
             "oppholdsPeriode": {
               "title": "The Oppholdsperiode Schema",
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/oppholdsPeriode",
-              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-periode"
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
             },
             "ektefelleEllerBarnINorge": {
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/ektefelleEllerBarnINorge",

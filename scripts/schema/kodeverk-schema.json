@@ -6,6 +6,7 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
+    "aktoerroller",
     "behandlingsstatus",
     "behandlingstyper",
     "begrunnelser",
@@ -14,11 +15,23 @@
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
+    "lovvalgsunntak",
     "oppgavetyper",
+    "representerer",
     "sakstyper",
     "vedleggstitler"
   ],
   "properties": {
+    "aktoerroller": {
+      "$id": "#/properties/aktoerroller",
+      "type": "array",
+      "title": "The Aktoerroller Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/aktoerroller/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "behandlingsstatus": {
       "$id": "#/properties/behandlingsstatus",
       "type": "array",
@@ -50,7 +63,8 @@
         "ikkeSkip",
         "opphold",
         "vesentligVirksomhet",
-        "artikkel12_1"
+        "artikkel12_1",
+        "artikkel16_1_anmodning"
       ],
       "properties": {
         "bosted": {
@@ -110,6 +124,16 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/artikkel12_1/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "artikkel16_1_anmodning": {
+          "$id": "#/properties/begrunnelser/properties/artikkel16_1_anmodning",
+          "type": "array",
+          "title": "The Artikkel 16.1 anmodning Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/artikkel16_1_anmodning/items",
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }
@@ -198,6 +222,16 @@
         }
       }
     },
+    "lovvalgsunntak": {
+      "$id": "#/properties/lovvalgsunntak",
+      "type": "array",
+      "title": "The Lovvalgsunntak Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/lovvalgsunntak/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "oppgavetyper": {
       "$id": "#/properties/oppgavetyper",
       "type": "array",
@@ -208,13 +242,13 @@
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
-    "rolletyper": {
-      "$id": "#/properties/rolletyper",
+    "representerer": {
+      "$id": "#/properties/representerer",
       "type": "array",
-      "title": "The Rolletyper Schema",
+      "title": "The Representerer Schema",
       "uniqueItems": true,
       "items": {
-        "$id": "#/properties/rolletyper/items",
+        "$id": "#/properties/representerer/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },

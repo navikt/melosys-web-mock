@@ -20,10 +20,10 @@
     }],
     "foretakUtland": [],
     "oppholdUtland": {
-      "oppholdslandKoder": [],
+      "oppholdslandKoder": ["GB"],
       "oppholdsPeriode": {
-        "fom": null,
-        "tom": null
+        "fom": "2018-01-01",
+        "tom": "2019-05-31"
       },
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,
@@ -31,10 +31,10 @@
       "studentSemester": null
     },
     "bosted": {
-      "intensjonOmRetur": null,
+      "intensjonOmRetur": true,
       "familiesBostedLandKode": null,
-      "antallMaanederINorge": 8,
-      "adresseIUtlandet": null,
+      "antallMaanederINorge": null,
+      "adresseIUtlandet": true,
       "oppgittAdresse": {
         "gatenavn": null,
         "postnummer": null,
@@ -71,9 +71,9 @@
       "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {
-      "inntektNorskIPerioden": 20000,
-      "inntektUtenlandskIPerioden": 32334,
-      "inntektNaeringIPerioden": 0,
+      "inntektNorskIPerioden": null,
+      "inntektUtenlandskIPerioden": null,
+      "inntektNaeringIPerioden": null,
       "inntektNaturalYtelser": [],
       "inntektErInnrapporteringspliktig": null,
       "inntektTrygdeavgiftBlirTrukket": null
@@ -85,10 +85,10 @@
       "arbeidstakerTidligereUtsendt24Mnd": null,
       "arbeidsgiverBetalerArbeidsgiveravgift": null,
       "trygdeavgiftTrukketGjennomSkatt": null,
-      "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
+      "trygdeavgiftTrukketGjennomSkattDato": null
     },
     "maritimtArbeid": {
-      "maritimTypeKode": "SOKKEL",
+      "maritimTypeKode": null,
       "skipsNavn": null,
       "fartsomradeKode": null,
       "flaggLandKode": null,
