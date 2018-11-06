@@ -8,7 +8,7 @@
     "begrunnelseFritekst" : null
   },
   {
-    "vilkaar" : "VESENTLIG_VIRKSOMHET",
+    "vilkaar" : "ART12_1_VESENTLIG_VIRKSOMHET",
     "oppfylt" : true,
     "begrunnelseKoder" : [
 
@@ -16,7 +16,7 @@
     "begrunnelseFritekst" : null
   },
   {
-    "vilkaar" : "ART12_1",
+    "vilkaar" : "FO_883_2004_ART12_1",
     "oppfylt" : false,
     "begrunnelseKoder" : [
 
@@ -24,7 +24,7 @@
     "begrunnelseFritekst" : null
   },
   {
-    "vilkaar" : "ART16_1",
+    "vilkaar" : "FO_883_2004_ART16_1",
     "oppfylt" : true,
     "begrunnelseKoder" : [
 

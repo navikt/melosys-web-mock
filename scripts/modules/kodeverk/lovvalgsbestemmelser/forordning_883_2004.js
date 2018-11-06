@@ -1,84 +1,84 @@
 
 const forordning_883_2004 = [
   {
-    kode: 'ART11_1',
-    term: 'Kun omfattet i en medlemsstat',
+    kode: 'FO_883_2004_ART11_1',
+    term: 'Fo 883/2004 Artikkel 11 nr. 1',
   },
   {
-    kode: 'ART11_2',
-    term: 'Omfattet i medlemsland som utbetaler kontantytelsen',
+    kode: 'FO_883_2004_ART11_3A',
+    term: 'Fo 883/2004 Artikkel 11 nr. 3 bokstav a',
   },
   {
-    kode: 'ART11_3A',
-    term: 'Omfattet i arbeidsland',
+    kode: 'FO_883_2004_ART11_3B',
+    term: 'Fo 883/2004 Artikkel 11 nr. 3 bokstav b',
   },
   {
-    kode: 'ART11_3B',
-    term: 'Omfattet av lovgivningen i det landet der man er vurdert som tjenestemann',
+    kode: 'FO_883_2004_ART11_3C',
+    term: 'Fo 883/2004 Artikkel 11 nr. 3 bokstav c',
   },
   {
-    kode: 'ART11_3C',
-    term: 'Omfattet i bostedsland dersom de utbetaler dagpenger etter art. 65',
+    kode: 'FO_883_2004_ART11_3E',
+    term: 'Fo 883/2004 Artikkel 11 nr. 3 bokstav e',
   },
   {
-    kode: 'ART11_3E',
-    term: 'Ikke-yrkesaktive er omfattet i bostedsland',
+    kode: 'FO_883_2004_ART11_4_2',
+    term: 'Fo 883/2004 Artikkel 11 nr. 4 andre punktum',
   },
   {
-    kode: 'ART11_4_2',
-    term: 'Arbeid på skip, lønnet av arbeidsgiveer i bostedsland',
+    kode: 'FO_883_2004_ART12_1',
+    term: 'Fo 883/2004 Artikkel 12 nr. 1',
   },
   {
-    kode: 'ART12_1',
-    term: 'Utsendt arbeidstaker',
+    kode: 'FO_883_2004_ART12_2',
+    term: 'Fo 883/2004 Artikkel 12 nr. 2',
   },
   {
-    kode: 'ART12_2',
-    term: 'Utsendt selvstendig næringsrivende',
+    kode: 'FO_883_2004_ART13_1A',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav a',
   },
   {
     kode: 'ART13_1A',
-    term: 'Arbeidstaker i to/flere land - omfattet i bostedsland',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav a',
   },
   {
-    kode: 'ART13_1B1',
-    term: 'Arbeidstaker i to/flere land - omfattet i landet der arbeidsgiver har forretningssted',
+    kode: 'FO_883_2004_ART13_1B1',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav b i)',
   },
   {
-    kode: 'ART13_1_B2',
-    term: 'Arbeidstaker i to/flere land - omfattet i landet der alle arbeidsgiverne har foretningssted',
+    kode: 'FO_883_2004_ART13_1_B2',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav b ii)',
   },
   {
-    kode: 'ART13_1_B3',
-    term: 'Arbeidstaker i to/flere land - omfattet i landet arbeidsgiver(ene) har foretningssted, ikke bosstedsland, når atbeidsgivere i bostedsland og ett annet land',
+    kode: 'FO_883_2004_ART13_1_B3',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav b iii)',
   },
   {
-    kode: 'ART13_1_B4',
-    term: 'Arbeidstaker i to/flere land - omfattet i bostedsland når flere arbeidsgivere med forretningssted i flere land, ikke bostedsland',
+    kode: 'FO_883_2004_ART13_1_B4',
+    term: 'Fo 883/2004 Artikkel 13 nr. 1 bokstav b iv)',
   },
   {
-    kode: 'ART13_2A',
-    term: 'Selvstendig virksomhet i to/flere land - omfattet i bostedsland (art. 13.2.a)',
+    kode: 'FO_883_2004_ART13_2A',
+    term: 'Fo 883/2004 Artikkel 13 nr. 2 bokstav a',
   },
   {
-    kode: 'ART13_2B',
-    term: 'Selvstendig virksomhet i to/flere land - omfattet der virksomheten har hovedtyngden av virksomheten',
+    kode: 'FO_883_2004_ART13_2B',
+    term: 'Fo 883/2004 Artikkel 13 nr. 2 bokstav b',
   },
   {
-    kode: 'ART13_3',
-    term: 'Arbeidstaker og selvstendig virksomhet i to/flere land',
+    kode: 'FO_883_2004_ART13_3',
+    term: 'Fo 883/2004 Artikkel 13 nr. 3',
   },
   {
-    kode: 'ART13_4',
-    term: 'Tjenestemann og arbeidstaker/ selvstendig virksomhet i to/flere land',
+    kode: 'FO_883_2004_ART13_4',
+    term: 'Fo 883/2004 Artikkel 13 nr. 4',
   },
   {
-    kode: 'ART16_1',
-    term: 'Avtale om unntak fra artikkel 11 til 15',
+    kode: 'FO_883_2004_ART16_1',
+    term: 'Fo 883/2004 Artikkel 16 nr. 1',
   },
   {
-    kode: 'ART16_2',
-    term: 'Anmodning om unntak for pensjonist',
+    kode: 'FO_883_2004_ART16_2',
+    term: 'Fo 883/2004 Artikkel 16 nr. 2',
   }
 ];
 module.exports.forordning_883_2004 = forordning_883_2004;
