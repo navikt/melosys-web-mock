@@ -51,7 +51,8 @@ node {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
     else {
-      buildVersion = "${semVer}-SNAPSHOT"
+      def snapshotVersion = scmVars.GIT_BRANCH.toUpperCase().replaceAll("[^A-Z0-9]", "-")
+      buildVersion = "${semVer}-${snapshotVersion}-SNAPSHOT"
     }
     echo("buildVersion=${buildVersion}")
   }
