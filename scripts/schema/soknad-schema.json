@@ -7,7 +7,8 @@
   "additionalProperties": false,
   "required": [
     "behandlingID",
-    "soeknadDokument"
+    "soeknadDokument",
+    "tilleggsData"
   ],
   "properties": {
     "behandlingID": {
@@ -1007,6 +1008,396 @@
                 "GB"
               ],
               "pattern": "^(.*)$"
+            }
+          }
+        }
+      }
+    },
+    "tilleggsData": {
+      "$id": "#/properties/tilleggsData",
+      "type": "object",
+      "title": "The Tilleggsdata Schema",
+      "additionalProperties": false,
+      "required": [
+        "organisasjoner",
+        "personer"
+      ],
+      "properties": {
+        "organisasjoner": {
+          "$id": "#/properties/tilleggsData/properties/organisasjoner",
+          "type": "array",
+          "title": "The Organisasjoner Schema",
+          "items": {
+            "$id": "#/properties/tilleggsData/properties/organisasjoner/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "orgnr",
+              "navn",
+              "forretningsadresse",
+              "postadresse"
+            ],
+            "properties": {
+              "orgnr": {
+                "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/orgnr",
+                "type": "string",
+                "title": "The Orgnr Schema",
+                "default": "",
+                "examples": [
+                  "910253158"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "navn": {
+                "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/navn",
+                "type": "string",
+                "title": "The Navn Schema",
+                "default": "",
+                "examples": [
+                  "MULTICONSULT ASA"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "forretningsadresse": {
+                "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse",
+                "type": "object",
+                "title": "The Forretningsadresse Schema",
+                "additionalProperties": false,
+                "required": [
+                  "gateadresse",
+                  "postnr",
+                  "poststed",
+                  "land"
+                ],
+                "properties": {
+                  "gateadresse": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse",
+                    "type": "object",
+                    "title": "The Gateadresse Schema",
+                    "required": [
+                      "gatenavn"
+                    ],
+                    "properties": {
+                      "gatenavn": {
+                        "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
+                        "type": "string",
+                        "title": "The Gatenavn Schema",
+                        "default": "",
+                        "examples": [
+                          "Nedre Skøyen vei 2"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "postnr": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse/properties/postnr",
+                    "type": "string",
+                    "title": "The Postnr Schema",
+                    "default": "",
+                    "examples": [
+                      "0276"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "poststed": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse/properties/poststed",
+                    "type": "string",
+                    "title": "The Poststed Schema",
+                    "default": "",
+                    "examples": [
+                      "OSLO"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "land": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/forretningsadresse/properties/land",
+                    "type": "string",
+                    "title": "The Land Schema",
+                    "default": "",
+                    "examples": [
+                      "NORGE"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              },
+              "postadresse": {
+                "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse",
+                "type": "object",
+                "title": "The Postadresse Schema",
+                "additionalProperties": false,
+                "required": [
+                  "gateadresse",
+                  "postnr",
+                  "poststed",
+                  "land"
+                ],
+                "properties": {
+                  "gateadresse": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse/properties/gateadresse",
+                    "type": "object",
+                    "title": "The Gateadresse Schema",
+                    "additionalProperties": false,
+                    "required": [
+                      "gatenavn"
+                    ],
+                    "properties": {
+                      "gatenavn": {
+                        "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse/properties/gateadresse/properties/gatenavn",
+                        "type": "string",
+                        "title": "The Gatenavn Schema",
+                        "default": "",
+                        "examples": [
+                          "Postboks 265  Skøyen"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "postnr": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse/properties/postnr",
+                    "type": "string",
+                    "title": "The Postnr Schema",
+                    "default": "",
+                    "examples": [
+                      "0213"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "poststed": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse/properties/poststed",
+                    "type": "string",
+                    "title": "The Poststed Schema",
+                    "default": "",
+                    "examples": [
+                      "OSLO"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "land": {
+                    "$id": "#/properties/tilleggsData/properties/organisasjoner/items/properties/postadresse/properties/land",
+                    "type": "string",
+                    "title": "The Land Schema",
+                    "default": "",
+                    "examples": [
+                      "NORGE"
+                    ],
+                    "pattern": "^(.*)$"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "personer": {
+          "$id": "#/properties/tilleggsData/properties/personer",
+          "type": "array",
+          "title": "The Personer Schema",
+          "items": {
+            "$id": "#/properties/tilleggsData/properties/personer/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "additionalProperties": false,
+            "required": [
+              "fnr",
+              "sivilstand",
+              "statsborgerskap",
+              "sammensattNavn",
+              "personstatus",
+              "kjoenn",
+              "foedselsdato",
+              "bostedsadresse"
+            ],
+            "properties": {
+              "fnr": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/fnr",
+                "type": "string",
+                "title": "The Fnr Schema",
+                "default": "",
+                "examples": [
+                  "28106600300"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "sivilstand": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/sivilstand",
+                "type": "string",
+                "title": "The Sivilstand Schema",
+                "default": "",
+                "examples": [
+                  "Ugift"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "statsborgerskap": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/statsborgerskap",
+                "type": "string",
+                "title": "The Statsborgerskap Schema",
+                "default": "",
+                "examples": [
+                  "NOR"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "sammensattNavn": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/sammensattNavn",
+                "type": "string",
+                "title": "The Sammensattnavn Schema",
+                "default": "",
+                "examples": [
+                  "MASKIN ARTIG"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "personstatus": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/personstatus",
+                "type": "string",
+                "title": "The Personstatus Schema",
+                "default": "",
+                "examples": [
+                  "Bosatt"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "kjoenn": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/kjoenn",
+                "type": "string",
+                "title": "The Kjoenn Schema",
+                "default": "",
+                "examples": [
+                  "M"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "foedselsdato": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/foedselsdato",
+                "type": "string",
+                "title": "The Foedselsdato Schema",
+                "default": "",
+                "examples": [
+                  "1966-10-28"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "bostedsadresse": {
+                "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse",
+                "type": "object",
+                "title": "The Bostedsadresse Schema",
+                "additionalProperties": false,
+                "required": [
+                  "gateadresse",
+                  "postnr",
+                  "poststed",
+                  "land"
+                ],
+                "properties": {
+                  "gateadresse": {
+                    "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse",
+                    "type": "object",
+                    "title": "The Gateadresse Schema",
+                    "additionalProperties": false,
+                    "required": [
+                      "gatenavn",
+                      "gatenummer",
+                      "husnummer",
+                      "husbokstav"
+                    ],
+                    "properties": {
+                      "gatenavn": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/gatenavn",
+                        "type": "string",
+                        "title": "The Gatenavn Schema",
+                        "default": "",
+                        "examples": [
+                          "Waldemar Thranses gate"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "gatenummer": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
+                        "type": "integer",
+                        "title": "The Gatenummer Schema",
+                        "default": 0,
+                        "examples": [
+                          98
+                        ]
+                      },
+                      "husnummer": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
+                        "type": "null",
+                        "title": "The Husnummer Schema",
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
+                      },
+                      "husbokstav": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/husbokstav",
+                        "type": "string",
+                        "title": "The Husbokstav Schema",
+                        "default": "",
+                        "examples": [
+                          "C"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  },
+                  "postnr": {
+                    "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/postnr",
+                    "type": "string",
+                    "title": "The Postnr Schema",
+                    "default": "",
+                    "examples": [
+                      "0175"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "poststed": {
+                    "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/poststed",
+                    "type": "string",
+                    "title": "The Poststed Schema",
+                    "default": "",
+                    "examples": [
+                      "OSLO"
+                    ],
+                    "pattern": "^(.*)$"
+                  },
+                  "land": {
+                    "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/land",
+                    "type": "object",
+                    "title": "The Land Schema",
+                    "required": [
+                      "kode",
+                      "term"
+                    ],
+                    "properties": {
+                      "kode": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/land/properties/kode",
+                        "type": "string",
+                        "title": "The Kode Schema",
+                        "default": "",
+                        "examples": [
+                          "NO"
+                        ],
+                        "pattern": "^(.*)$"
+                      },
+                      "term": {
+                        "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/land/properties/term",
+                        "type": "string",
+                        "title": "The Term Schema",
+                        "default": "",
+                        "examples": [
+                          "Norge"
+                        ],
+                        "pattern": "^(.*)$"
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

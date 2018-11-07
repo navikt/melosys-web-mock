@@ -94,5 +94,9 @@
       "flaggLandKode": null,
       "installasjonsLandKode": null
     }
+  },
+  "tilleggsData": {
+    "organisasjoner": [],
+    "personer": []
   }
 }

@@ -8,7 +8,7 @@
           "landKode": "DK"
         }
       ],
-      "medfolgendeFamilie": ["10100638274"],
+      "medfolgendeFamilie": ["30098000492"],
       "medfolgendeAndre": "28106600300"
     },
     "arbeidUtland": [{
@@ -75,9 +75,7 @@
     "selvstendigArbeid": {
       "erSelvstendig": true,
       "selvstendigForetak": [
-        { "orgnr": "910253158", "fortsetterEtterArbeidIUtlandet": true },
-        { "orgnr": "967032271", "fortsetterEtterArbeidIUtlandet": false },
-        { "orgnr": "982683955", "fortsetterEtterArbeidIUtlandet": false }
+        { "orgnr": "910253158", "fortsetterEtterArbeidIUtlandet": true }
       ]
     },
     "juridiskArbeidsgiverNorge": {
@@ -88,7 +86,7 @@
       "andelOmsetningINorge": 78.5,
       "andelKontrakterINorge": 50.5,
       "utsendtFortsetterArbeidsforholdIUtlandet": true,
-      "ekstraArbeidsgivere": []
+      "ekstraArbeidsgivere": ["910099035"]
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 5500,
@@ -114,5 +112,54 @@
       "flaggLandKode": "GB",
       "installasjonsLandKode": "GB"
     }
+  },
+  "tilleggsData": {
+    "organisasjoner": [
+      {
+        "orgnr": "910253158",
+        "navn": "MULTICONSULT ASA",
+        "forretningsadresse": {
+          "gateadresse": {
+            "gatenavn": "Nedre Skøyen vei 2"
+          },
+          "postnr": "0276",
+          "poststed": "OSLO",
+          "land": "NORGE"
+        },
+        "postadresse": {
+          "gateadresse": {
+            "gatenavn": "Postboks 265  Skøyen"
+          },
+          "postnr": "0213",
+          "poststed": "OSLO",
+          "land": "NORGE"
+        }
+      }
+    ],
+    "personer": [
+      {
+        "fnr": "28106600300",
+        "sivilstand": "Ugift",
+        "statsborgerskap": "NOR",
+        "sammensattNavn": "MASKIN ARTIG",
+        "personstatus": "Bosatt",
+        "kjoenn": "M",
+        "foedselsdato": "1966-10-28",
+        "bostedsadresse" : {
+          "gateadresse": {
+            "gatenavn": "Waldemar Thranses gate",
+            "gatenummer": 98,
+            "husnummer": null,
+            "husbokstav": "C"
+          },
+          "postnr": "0175",
+          "poststed": "OSLO",
+          "land": {
+            "kode": "NO",
+            "term": "Norge"
+          }
+        }
+      }
+    ]
   }
 }
