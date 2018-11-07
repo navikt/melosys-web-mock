@@ -1233,13 +1233,8 @@
               },
               "statsborgerskap": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/statsborgerskap",
-                "type": "string",
                 "title": "The Statsborgerskap Schema",
-                "default": "",
-                "examples": [
-                  "NOR"
-                ],
-                "pattern": "^(.*)$"
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "sammensattNavn": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/sammensattNavn",
@@ -1263,13 +1258,8 @@
               },
               "kjoenn": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/kjoenn",
-                "type": "string",
                 "title": "The Kjoenn Schema",
-                "default": "",
-                "examples": [
-                  "M"
-                ],
-                "pattern": "^(.*)$"
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "foedselsdato": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/foedselsdato",

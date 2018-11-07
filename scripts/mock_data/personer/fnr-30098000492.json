@@ -1,10 +1,16 @@
 {
   "fnr": "30098000492",
   "sivilstand": "Gift",
-  "statsborgerskap": "NOR",
+  "statsborgerskap": {
+    "kode": "NO",
+    "term": "Norge"
+  },
   "sammensattNavn": "HEST LILLA",
   "personstatus": "Bosatt",
-  "kjoenn": "K",
+  "kjoenn": {
+    "kode": "K",
+    "term": "Kvinne"
+  },
   "foedselsdato": "1963-05-05",
   "bostedsadresse" : {
     "gateadresse": {

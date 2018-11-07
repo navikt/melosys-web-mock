@@ -38,13 +38,8 @@
     },
     "statsborgerskap": {
       "$id": "#/properties/statsborgerskap",
-      "type": "string",
       "title": "The Statsborgerskap Schema",
-      "default": "",
-      "examples": [
-        "NOR"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "sammensattNavn": {
       "$id": "#/properties/sammensattNavn",
@@ -68,13 +63,8 @@
     },
     "kjoenn": {
       "$id": "#/properties/kjoenn",
-      "type": "string",
       "title": "The Kjoenn Schema",
-      "default": "",
-      "examples": [
-        "M","K"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "foedselsdato": {
       "title": "The Foedselsdato Schema",
