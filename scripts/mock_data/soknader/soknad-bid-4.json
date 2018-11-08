@@ -116,23 +116,31 @@
   "tilleggsData": {
     "organisasjoner": [
       {
-        "orgnr": "910253158",
-        "navn": "MULTICONSULT ASA",
-        "forretningsadresse": {
-          "gateadresse": {
-            "gatenavn": "Nedre Skøyen vei 2"
+        "orgnr" : "910099035",
+        "oppstartdato" : null,
+        "postadresse" : {
+          "postnr" : "3936",
+          "gateadresse" : {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn" : "Olav Kyrres gate 9"
           },
-          "postnr": "0276",
-          "poststed": "OSLO",
-          "land": "NORGE"
+          "poststed" : "PORSGRUNN",
+          "land" : "NORGE"
         },
-        "postadresse": {
-          "gateadresse": {
-            "gatenavn": "Postboks 265  Skøyen"
+        "organisasjonsform" : null,
+        "navn" : "SKARSVÅG OG VANSE",
+        "forretningsadresse" : {
+          "postnr" : "3936",
+          "gateadresse" : {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn" : "Olav Kyrres gate 9"
           },
-          "postnr": "0213",
-          "poststed": "OSLO",
-          "land": "NORGE"
+          "poststed" : "PORSGRUNN",
+          "land" : "NORGE"
         }
       }
     ],
