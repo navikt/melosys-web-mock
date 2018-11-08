@@ -53,13 +53,8 @@
     },
     "personstatus": {
       "$id": "#/properties/personstatus",
-      "type": "string",
       "title": "The Personstatus Schema",
-      "default": "",
-      "examples": [
-        "Bosatt"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "kjoenn": {
       "$id": "#/properties/kjoenn",

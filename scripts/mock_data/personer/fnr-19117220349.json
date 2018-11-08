@@ -6,7 +6,10 @@
     "term": "Norge"
   },
   "sammensattNavn": "HATT GLITRENDE",
-  "personstatus": "Bosatt",
+  "personstatus": {
+    "kode": "BOSA",
+    "term": "Bosatt"
+  },
   "kjoenn": {
     "kode": "M",
     "term": "Mann"

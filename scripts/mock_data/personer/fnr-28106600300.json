@@ -6,7 +6,10 @@
     "term": "Norge"
   },
   "sammensattNavn": "MASKIN ARTIG",
-  "personstatus": "Bosatt",
+  "personstatus": {
+    "kode": "BOSA",
+    "term": "Bosatt"
+  },
   "kjoenn": {
     "kode": "M",
     "term": "Mann"
