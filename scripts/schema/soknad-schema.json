@@ -1377,13 +1377,8 @@
               },
               "personstatus": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/personstatus",
-                "type": "string",
                 "title": "The Personstatus Schema",
-                "default": "",
-                "examples": [
-                  "Bosatt"
-                ],
-                "pattern": "^(.*)$"
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "kjoenn": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/kjoenn",
@@ -1436,7 +1431,7 @@
                       },
                       "gatenummer": {
                         "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
-                        "type": "integer",
+                        "type": ["integer", "null"],
                         "title": "The Gatenummer Schema",
                         "default": 0,
                         "examples": [
@@ -1445,7 +1440,7 @@
                       },
                       "husnummer": {
                         "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
-                        "type": "null",
+                        "type": ["integer", "null"],
                         "title": "The Husnummer Schema",
                         "default": null,
                         "examples": [
@@ -1454,7 +1449,7 @@
                       },
                       "husbokstav": {
                         "$id": "#/properties/tilleggsData/properties/personer/items/properties/bostedsadresse/properties/gateadresse/properties/husbokstav",
-                        "type": "string",
+                        "type": ["string", "null"],
                         "title": "The Husbokstav Schema",
                         "default": "",
                         "examples": [
