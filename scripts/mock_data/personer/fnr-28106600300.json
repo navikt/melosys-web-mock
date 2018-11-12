@@ -1,6 +1,13 @@
 {
   "fnr": "28106600300",
-  "sivilstand": "Ugift",
+  "diskresjonskode" : {
+    "kode": "PEND",
+    "term": "Pendler"
+  },
+  "sivilstand": {
+    "kode": "GIFT",
+    "term" : "Gift"
+  },
   "statsborgerskap": {
     "kode": "NO",
     "term": "Norge"

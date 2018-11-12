@@ -1,6 +1,10 @@
 {
   "fnr": "30098000492",
-  "sivilstand": "Gift",
+  "diskresjonskode" : null,
+  "sivilstand": {
+    "kode": "GIFT",
+    "term" : "Gift"
+  },
   "statsborgerskap": {
     "kode": "NO",
     "term": "Norge"

@@ -5,8 +5,8 @@
   "forretningsadresse": {
     "gateadresse": {
       "gatenummer" : null,
-      "husbokstav" : null,
-      "husnummer" : null,
+      "husbokstav" : "C",
+      "husnummer" : 1,
       "gatenavn": "Pindsleveien 1C"
     },
     "postnr": "3221",

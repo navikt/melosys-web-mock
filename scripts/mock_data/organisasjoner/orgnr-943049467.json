@@ -6,7 +6,7 @@
     "gateadresse": {
       "gatenummer" : null,
       "husbokstav" : null,
-      "husnummer" : null,
+      "husnummer" : 53,
       "gatenavn": "Lakkegata 53"
     },
     "postnr": "0187",

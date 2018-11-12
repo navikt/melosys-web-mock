@@ -85,7 +85,7 @@
             "husnummer": {
               "$id": "#/properties/postadresse/properties/gateadresse/properties/husnummer",
               "type": [
-                "string",
+                "integer",
                 "null"
               ],
               "title": "The Husnummer Schema",
@@ -223,7 +223,7 @@
             "husnummer": {
               "$id": "#/properties/forretningsadresse/properties/gateadresse/properties/husnummer",
               "type": [
-                "string",
+                "integer",
                 "null"
               ],
               "title": "The Husnummer Schema",

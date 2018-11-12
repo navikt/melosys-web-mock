@@ -6,7 +6,7 @@
     "gateadresse": {
       "gatenummer" : null,
       "husbokstav" : null,
-      "husnummer" : null,
+      "husnummer" : 260,
       "gatenavn": "Drammensveien 260"
     },
     "postnr": "0283",

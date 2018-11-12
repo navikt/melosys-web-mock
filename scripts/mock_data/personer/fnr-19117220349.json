@@ -1,6 +1,10 @@
 {
   "fnr": "19117220349",
-  "sivilstand": "Registrert partner",
+  "diskresjonskode" : null,
+  "sivilstand": {
+    "kode": "GIFT",
+    "term" : "Gift"
+  },
   "statsborgerskap": {
     "kode": "NO",
     "term": "Norge"

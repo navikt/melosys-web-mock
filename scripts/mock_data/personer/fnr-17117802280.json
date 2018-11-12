@@ -1,6 +1,13 @@
 {
   "fnr": "17117802280",
-  "sivilstand": "Ugift",
+  "diskresjonskode" : {
+    "kode": "MILI",
+    "term": "Militær"
+  },
+  "sivilstand": {
+    "kode": "GIFT",
+    "term" : "Gift"
+  },
   "statsborgerskap": {
     "kode": "NO",
     "term": "Norge"
