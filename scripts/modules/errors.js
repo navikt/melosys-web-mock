@@ -47,3 +47,9 @@ module.exports.serverError500 = (path, message = 'A generic error message, given
     message,
     path);
 };
+
+module.exports.notAcceptable406 = (path, message = 'The target resource does not have a current representation that would be acceptable to the user agent, according to the proactive negotiation header fields.') => {
+  return errorMessage(406, 'Not Acceptable',
+    message,
+    path);
+};

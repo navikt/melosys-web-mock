@@ -64,6 +64,11 @@ return {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`};
  * returns {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`}
  */
 module.exports.lagPdfUtkast = (req, res) => {
+  if(!req.accepts('application/pdf')) {
+    const melding = ERR.notAcceptable406()
+    return res.status(406).send(melding);
+  }
+
   const url = URL.parse(req.url);
   const { body, params } = req;
   const { dokumenttypeKode } = params;
