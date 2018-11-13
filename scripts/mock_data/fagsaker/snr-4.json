@@ -614,9 +614,9 @@
           ]
         },
         "person" : {
-          "diskresjonskode" : {
-            "kode": null,
-            "term": null
+          "sivilstand" : {
+            "kode": "NULL",
+            "term": "Uoppgitt"
           },
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
@@ -644,7 +644,6 @@
           },
           "fnr" : "19117220349",
           "foedselsdato" : "1972-11-19",
-          "sivilstand" : "Registrert paertner",
           "statsborgerskap" : {
             "kode" : "NOR",
             "term" : "NORGE"

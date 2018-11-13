@@ -1,9 +1,5 @@
 {
   "fnr": "28106600300",
-  "diskresjonskode" : {
-    "kode": "PEND",
-    "term": "Pendler"
-  },
   "sivilstand": {
     "kode": "GIFT",
     "term" : "Gift"

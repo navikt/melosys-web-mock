@@ -1129,7 +1129,6 @@
                 "title": "The Person Schema",
                 "additionalProperties": false,
                 "required": [
-                  "diskresjonskode",
                   "erEgenAnsatt",
                   "bostedsadresse",
                   "personStatus",
@@ -1143,11 +1142,6 @@
                   "familiemedlemmer"
                 ],
                 "properties": {
-                  "diskresjonskode": {
-                    "title": "The Diskresjonskode Schema",
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/diskresjonskode",
-                    "$ref": "#/definitions/nullable-kodeverk"
-                  },
                   "erEgenAnsatt": {
                     "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/erEgenAnsatt",
                     "type": "boolean",
@@ -1282,14 +1276,9 @@
                     "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
                   },
                   "sivilstand": {
-                    "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/person/properties/sivilstand",
-                    "type": "string",
+                    "$id": "#/properties/tilleggsData/properties/personer/items/properties/sivilstand",
                     "title": "The Sivilstand Schema",
-                    "default": "",
-                    "examples": [
-                      "Registrert partner"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
                   },
                   "statsborgerskap": {
                     "title": "The Statsborgerskap Schema",

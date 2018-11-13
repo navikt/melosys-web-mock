@@ -1352,13 +1352,8 @@
               },
               "sivilstand": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/sivilstand",
-                "type": "string",
                 "title": "The Sivilstand Schema",
-                "default": "",
-                "examples": [
-                  "Ugift"
-                ],
-                "pattern": "^(.*)$"
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "statsborgerskap": {
                 "$id": "#/properties/tilleggsData/properties/personer/items/properties/statsborgerskap",

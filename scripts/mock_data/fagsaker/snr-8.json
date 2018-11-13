@@ -29,16 +29,15 @@
     "saksopplysninger": {
       "person": {
         "fnr": "19018803960",
-        "sivilstand": "Ugift",
         "statsborgerskap": {
           "kode": "NOR",
           "term": "NORGE"
         },
         "sammensattNavn": "Busk Smekker",
         "familiemedlemmer": [],
-        "diskresjonskode": {
-          "kode": null,
-          "term": null
+        "sivilstand": {
+          "kode": "GIFT",
+          "term": "Gift"
         },
         "statsborgerskapDato": "2018-10-02",
         "bostedsadresse": {
