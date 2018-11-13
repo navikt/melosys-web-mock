@@ -12,7 +12,7 @@ const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
+const schemajson = `${SCHEMA_DIR}/soknad-post-schema.json`;
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 

@@ -18,8 +18,8 @@ console.log('query testing|\n');
 
 instance.get('/saksbehandler').then(printresult).catch(console.error);
 
-const soknad4 = require('./mock_data/soknader/soknad-bid-4');
-instance.post('/soknader/4', soknad4).then(printresult).catch(console.error);
+const soknad = require('./mock_data/soknader/post/soknad-post');
+instance.post('/soknader/4', soknad).then(printresult).catch(console.error);
 
 const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
 instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(console.error);

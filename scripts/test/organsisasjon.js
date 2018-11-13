@@ -12,8 +12,9 @@ const schemapath = `${SCHEMA_DIR}/organisasjoner-schema.json`;
 const schema = Schema.lesSchemaSync(schemapath);
 const catalog = lesOrganisasjonsKatalog();
 
-const validate = ajv.compile(schema);
-
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
+const validate = ajv.addSchema(definitions).compile(schema);
 
 const testAll = () => {
   console.log(colors.blue('Organisasjon'));

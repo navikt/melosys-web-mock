@@ -27,12 +27,7 @@
     "oppstartdato": {
       "$id": "#/properties/oppstartdato",
       "title": "The Oppstartdato Schema",
-      "type": ["string", "null"],
-      "default": "",
-      "examples": [
-        "1966-10-28"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato"
     },
     "postadresse": {
       "$id": "#/properties/postadresse",
