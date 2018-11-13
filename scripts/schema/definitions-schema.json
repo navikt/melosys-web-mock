@@ -196,7 +196,7 @@
         },
         "landKode": {
           "type": "string",
-          "minLength": 1,
+          "minLength": 2,
           "examples": [
             "NO"
           ]
@@ -220,7 +220,7 @@
         },
         "landKode": {
           "type": "string",
-          "default": "",
+          "minLength": 2,
           "examples": [
             "NO"
           ]
