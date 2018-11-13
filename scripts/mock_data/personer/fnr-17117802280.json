@@ -5,5 +5,28 @@
   "sammensattNavn": "KAKE ARTIG",
   "personstatus": "Bosatt",
   "kjoenn": "K",
-  "foedselsdato": "1978-11-17"
+  "foedselsdato": "1978-11-17",
+  "postadresse": {
+    "adresselinjer": [
+      "Ardenham Court",
+      "Oxford Road",
+      "AYLESBURY",
+      "BUCKINGHAMSHIRE",
+      "HP19 3EQ"
+    ],
+    "landKode": "UK"
+  },
+  "midlertidigPostadresse": {
+    "adressetype": "USTRUKTURERT",
+    "ustrukturertAdresse": {
+      "adresselinjer": [
+        "Ardenham Court",
+        "Oxford Road",
+        "AYLESBURY",
+        "BUCKINGHAMSHIRE",
+        "HP19 3EQ"
+      ],
+      "landKode": "UK"
+    }
+  }
 }

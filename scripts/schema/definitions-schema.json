@@ -113,6 +113,119 @@
       "examples": [
         "2018-08-27T07:16:03.273Z", null
       ]
+    },
+    "adresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adressetype"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "adressetype": {"const": "STRUKTURERT"}
+          },
+          "required": ["strukturertAdresse"]
+        },
+        {
+          "properties": {
+            "adressetype": {"const": "USTRUKTURERT"}
+          },
+          "required": ["ustrukturertAdresse"]
+        }
+      ],
+      "properties": {
+        "adressetype": {
+          "type": "string",
+          "enum": ["STRUKTURERT", "USTRUKTURERT"]
+        },
+        "strukturertAdresse": {
+          "$ref": "#/definitions/strukturertAdresse"
+        },
+        "ustrukturertAdresse": {
+          "$ref": "#/definitions/ustrukturertAdresse"
+        }
+      }
+    },
+    "strukturertAdresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gatenavn",
+        "husnummer",
+        "region",
+        "postnummer",
+        "poststed",
+        "landKode"
+      ],
+      "properties": {
+        "gatenavn": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Waldemar Thranes gate"
+          ]
+        },
+        "husnummer": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "examples": [
+            "98"
+          ]
+        },
+        "region": {
+          "type": ["string", "null"],
+          "minLength": 1,
+          "examples": [
+            "Bydel Sagene"
+          ]
+        },
+        "postnummer": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "0175"
+          ]
+        },
+        "poststed": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "OSLO"
+          ]
+        },
+        "landKode": {
+          "type": "string",
+          "minLength": 2,
+          "examples": [
+            "NO"
+          ]
+        }
+      }
+    },
+    "ustrukturertAdresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "landKode"
+      ],
+      "properties": {
+        "adresselinjer": {
+          "type": "array",
+          "additionalItems": false,
+          "maxItems": 5,
+          "items": {
+            "type": "string"
+          }
+        },
+        "landKode": {
+          "type": "string",
+          "minLength": 2,
+          "examples": [
+            "NO"
+          ]
+        }
+      }
     }
   }
 }

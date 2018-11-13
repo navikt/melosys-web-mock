@@ -655,7 +655,25 @@
           "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
 
-          ]
+          ],
+          "postadresse": {
+            "adresselinjer": [
+              "Sannergata 2",
+              "0557 OSLO"
+            ],
+            "landKode": "NO"
+          },
+          "midlertidigPostadresse": {
+            "adressetype": "STRUKTURERT",
+            "strukturertAdresse": {
+              "gatenavn": "Sannergata",
+              "husnummer": "2",
+              "region": null,
+              "postnummer": "0557",
+              "poststed": "OSLO",
+              "landKode": "NO"
+            }
+          }
         },
         "sakOgBehandling": {
           "eosBarnetrygd": true
