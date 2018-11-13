@@ -615,8 +615,8 @@
         },
         "person" : {
           "sivilstand" : {
-            "kode": "NULL",
-            "term": "Uoppgitt"
+            "kode": "GIFT",
+            "term": "Gift"
           },
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
