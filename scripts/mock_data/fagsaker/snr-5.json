@@ -29,10 +29,9 @@
       "saksopplysninger": {
         "person": {
           "fnr": "17117802280",
-          "sivilstand": "Ugift",
-          "diskresjonskode" :  {
-            "kode": null,
-            "term": null
+          "sivilstand": {
+            "kode": "SAMB",
+            "term": "Samboer"
           },
           "statsborgerskap":{
             "kode": "NO",

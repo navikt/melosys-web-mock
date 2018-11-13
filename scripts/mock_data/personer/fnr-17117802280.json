@@ -1,9 +1,5 @@
 {
   "fnr": "17117802280",
-  "diskresjonskode" : {
-    "kode": "MILI",
-    "term": "Militær"
-  },
   "sivilstand": {
     "kode": "GIFT",
     "term" : "Gift"

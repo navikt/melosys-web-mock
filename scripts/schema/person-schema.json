@@ -7,7 +7,6 @@
   "additionalProperties": false,
   "required": [
     "fnr",
-    "diskresjonskode",
     "sivilstand",
     "statsborgerskap",
     "sammensattNavn",
@@ -26,11 +25,6 @@
         "19117220349"
       ],
       "pattern": "^(.*)$"
-    },
-    "diskresjonskode": {
-      "$id": "#/properties/diskresjonskode",
-      "title": "The Diskresjonskode Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
     "sivilstand": {
       "$id": "#/properties/sivilstand",

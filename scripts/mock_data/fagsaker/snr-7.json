@@ -29,10 +29,9 @@
       "saksopplysninger": {
         "person": {
           "fnr": "22127501762",
-          "sivilstand": "Ugift",
-          "diskresjonskode": {
-            "kode": null,
-            "term": null
+          "sivilstand": {
+            "kode": "UGIF",
+            "term": "Ugift"
           },
           "statsborgerskap": {
             "kode": "NO",

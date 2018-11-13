@@ -175,13 +175,19 @@
     "personer": [
       {
         "fnr": "28106600300",
-        "sivilstand": "Ugift",
+        "sivilstand": {
+          "kode": "UGIF",
+          "term": "Ugift"
+        },
         "statsborgerskap": {
           "kode": "NO",
           "term": "Norge"
         },
         "sammensattNavn": "MASKIN ARTIG",
-        "personstatus": "Bosatt",
+        "personstatus": {
+          "kode": "BOSATT",
+          "term": "Bosatt"
+        },
         "kjoenn": {
           "kode": "M",
           "term": "Mann"
@@ -204,13 +210,19 @@
       },
       {
         "fnr": "30098000492",
-        "sivilstand": "Gift",
+        "sivilstand": {
+          "kode": "GIFT",
+          "term": "Gift"
+        },
         "statsborgerskap": {
           "kode": "NO",
           "term": "Norge"
         },
         "sammensattNavn": "HEST LILLA",
-        "personstatus": "Bosatt",
+        "personstatus": {
+          "kode": "BOSATT",
+          "term": "Bosatt"
+        },
         "kjoenn": {
           "kode": "K",
           "term": "Kvinne"
