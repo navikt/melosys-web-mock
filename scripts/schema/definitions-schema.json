@@ -113,6 +113,120 @@
       "examples": [
         "2018-08-27T07:16:03.273Z", null
       ]
+    },
+    "strukturertadresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gateadresse",
+        "postnr",
+        "poststed",
+        "land"
+      ],
+      "properties": {
+        "gateadresse": {
+          "$id": "#/properties/strukturertadresse/properties/gateadresse",
+          "type": "object",
+          "title": "The Gateadresse Schema",
+          "additionalProperties": false,
+          "required": [
+            "gatenummer",
+            "husbokstav",
+            "husnummer",
+            "gatenavn"
+          ],
+          "properties": {
+            "gatenummer": {
+              "$id": "#/properties/strukturertadresse/properties/gateadresse/properties/gatenummer",
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "The Gatenummer Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "husbokstav": {
+              "$id": "#/properties/strukturertadresse/properties/gateadresse/properties/husbokstav",
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "The Husbokstav Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "husnummer": {
+              "$id": "#/properties/strukturertadresse/properties/gateadresse/properties/husnummer",
+              "type": [
+                "integer",
+                "null"
+              ],
+              "title": "The Husnummer Schema",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "gatenavn": {
+              "$id": "#/properties/strukturertadresse/properties/gateadresse/properties/gatenavn",
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "The Gatenavn Schema",
+              "default": "",
+              "examples": [
+                "Olav Kyrres gate 9"
+              ],
+              "pattern": "^(.*)$"
+            }
+          }
+        },
+        "postnr": {
+          "$id": "#/properties/strukturertadresse/properties/postnr",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Postnr Schema",
+          "default": "",
+          "examples": [
+            "3936"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "poststed": {
+          "$id": "#/properties/strukturertadresse/properties/poststed",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Poststed Schema",
+          "default": "",
+          "examples": [
+            "PORSGRUNN"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "land": {
+          "$id": "#/properties/strukturertadresse/properties/land",
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "The Land Schema",
+          "default": "",
+          "examples": [
+            "NORGE"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
     }
   }
 }
