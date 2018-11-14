@@ -3,7 +3,7 @@
  * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
  * @module
  */
-const vesentligVirksomhet = [
+const vesentligVirksomhet12_1 = [
   {
     "kode": "KUN_ADMIN_ANSATTE",
     "term": "Foretaket har kun administrativt ansatte i Norge."
@@ -33,4 +33,4 @@ const vesentligVirksomhet = [
     "term": "Det er ikke norsk lovgivning som er gjeldende for kontraktene foretaket inngår med sine kunder."
   }
 ];
-module.exports.vesentligVirksomhet = vesentligVirksomhet;
+module.exports.vesentligVirksomhet12_1 = vesentligVirksomhet12_1;
