@@ -1,5 +1,8 @@
 [{
-  "mottak": "INN",
+  "mottaksretning": {
+    "kode": "INN",
+    "term": "Inngående dokument"
+  },
   "addressat": "Ole Hermanrud",
   "dokument": {
     "dokumentID": "DOK",
@@ -12,7 +15,10 @@
     "mottattDato":  null
   }]
 }, {
-  "mottak": "UT",
+  "mottaksretning": {
+    "kode": "UT",
+    "term": "Utgående dokument"
+  },
   "addressat": "Stor Potet",
   "dokument": {
     "dokumentID": "DOK_ID_5",

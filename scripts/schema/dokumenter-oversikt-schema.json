@@ -1,5 +1,34 @@
 {
   "definitions": {
+    "kodeverk": {
+      "type": "object",
+      "title": "The Kodeverk Schema",
+      "additionalProperties": false,
+      "required": [
+        "kode",
+        "term"
+      ],
+      "properties": {
+        "kode": {
+          "type": "string",
+          "title": "The Kode Schema",
+          "default": "",
+          "examples": [
+            "OPPRETTET"
+          ],
+          "pattern": "^(.*)$"
+        },
+        "term": {
+          "type": "string",
+          "title": "The Term Schema",
+          "default": "",
+          "examples": [
+            "Opprettet"
+          ],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
     "dato-tid": {
       "type": "string",
       "format": "date-time",
@@ -74,21 +103,15 @@
     "type": "object",
     "title": "The Items Schema",
     "required": [
-      "mottak",
+      "mottaksretning",
       "addressat",
       "dokument",
       "vedlegg"
     ],
     "properties": {
-      "mottak": {
-        "$id": "#/items/properties/mottak",
-        "type": "string",
-        "title": "The Mottak Schema",
-        "default": "",
-        "examples": [
-          "INN"
-        ],
-        "pattern": "^(.*)$"
+      "mottaksretning": {
+        "$id": "#/items/properties/mottaksretning",
+        "$ref": "#/definitions/kodeverk"
       },
       "addressat": {
         "$id": "#/items/properties/addressat",
@@ -102,8 +125,6 @@
       },
       "dokument": {
         "$id": "#/items/properties/dokument",
-        "type": "object",
-        "title": "The Dokument Schema",
         "$ref": "#/definitions/dokument"
       },
       "vedlegg": {
@@ -112,8 +133,6 @@
         "title": "The Vedlegg Schema",
         "items": {
           "$id": "#/items/properties/vedlegg/items",
-          "type": "object",
-          "title": "The Items Schema",
           "$ref": "#/definitions/nullable-dokument"
         }
       }
