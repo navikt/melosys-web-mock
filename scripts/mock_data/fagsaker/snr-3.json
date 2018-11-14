@@ -29,10 +29,9 @@
       "saksopplysninger": {
         "person": {
           "fnr": "30098000492",
-          "sivilstand": "Gift",
-          "diskresjonskode" :  {
-            "kode": null,
-            "term": null
+          "sivilstand": {
+            "kode": "UGIF",
+            "term": "Ugift"
           },
           "statsborgerskap":{
             "kode": "NO",

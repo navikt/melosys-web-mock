@@ -457,9 +457,6 @@
           ],
           "frilansInntektMaanedListe": []
         },
-        "sakOgBehandling": {
-          "eosBarnetrygd": false
-        },
         "medlemskap": {
           "medlemsperiode": [
             {
@@ -617,9 +614,9 @@
           ]
         },
         "person" : {
-          "diskresjonskode" : {
-            "kode": null,
-            "term": null
+          "sivilstand" : {
+            "kode": "GIFT",
+            "term": "Gift"
           },
           "erEgenAnsatt" : false,
           "bostedsadresse" : {
@@ -647,14 +644,16 @@
           },
           "fnr" : "19117220349",
           "foedselsdato" : "1972-11-19",
-          "sivilstand" : "Registrert partner",
           "statsborgerskap" : {
             "kode" : "NOR",
             "term" : "NORGE"
           },
           "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
-
+            {"fnr": "30098000492", "sammensattNavn": "LILLA HEST", "relasjonstype": {
+              "kode": "EKTEFELLE",
+              "term": "Ektefelle til"
+            }}
           ],
           "postadresse": {
             "adresselinjer": [

@@ -8,7 +8,7 @@
           "landKode": "DK"
         }
       ],
-      "medfolgendeFamilie": ["10100638274"],
+      "medfolgendeFamilie": ["30098000492"],
       "medfolgendeAndre": "28106600300"
     },
     "arbeidUtland": [{
@@ -81,9 +81,7 @@
     "selvstendigArbeid": {
       "erSelvstendig": true,
       "selvstendigForetak": [
-        { "orgnr": "910253158", "fortsetterEtterArbeidIUtlandet": true },
-        { "orgnr": "967032271", "fortsetterEtterArbeidIUtlandet": false },
-        { "orgnr": "982683955", "fortsetterEtterArbeidIUtlandet": false }
+        { "orgnr": "910253158", "fortsetterEtterArbeidIUtlandet": true }
       ]
     },
     "juridiskArbeidsgiverNorge": {
@@ -93,7 +91,8 @@
       "antallAdminAnsatteEOS": 75,
       "andelOmsetningINorge": 78.5,
       "andelKontrakterINorge": 50.5,
-      "utsendtFortsetterArbeidsforholdIUtlandet": true
+      "utsendtFortsetterArbeidsforholdIUtlandet": true,
+      "ekstraArbeidsgivere": ["910099035"]
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 5500,
@@ -119,5 +118,137 @@
       "flaggLandKode": "GB",
       "installasjonsLandKode": "GB"
     }
+  },
+  "tilleggsData": {
+    "organisasjoner": [
+      {
+        "orgnr" : "910099035",
+        "oppstartdato" : null,
+        "postadresse" : {
+          "postnr" : "3936",
+          "gateadresse" : {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn" : "Olav Kyrres gate 9"
+          },
+          "poststed" : "PORSGRUNN",
+          "land" : "NORGE"
+        },
+        "organisasjonsform" : null,
+        "navn" : "SKARSVÅG OG VANSE",
+        "forretningsadresse" : {
+          "postnr" : "3936",
+          "gateadresse" : {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn" : "Olav Kyrres gate 9"
+          },
+          "poststed" : "PORSGRUNN",
+          "land" : "NORGE"
+        }
+      },
+      {
+        "orgnr": "910253158",
+        "navn": "MULTICONSULT ASA",
+        "oppstartdato" : null,
+        "forretningsadresse": {
+          "gateadresse": {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn": "Nedre Skøyen vei 2"
+          },
+          "postnr": "0276",
+          "poststed": "OSLO",
+          "land": "NORGE"
+        },
+        "organisasjonsform" : null,
+        "postadresse": {
+          "gateadresse": {
+            "gatenummer" : null,
+            "husbokstav" : null,
+            "husnummer" : null,
+            "gatenavn": "Postboks 265  Skøyen"
+          },
+          "postnr": "0213",
+          "poststed": "OSLO",
+          "land": "NORGE"
+        }
+      }
+    ],
+    "personer": [
+      {
+        "fnr": "28106600300",
+        "sivilstand": {
+          "kode": "UGIF",
+          "term": "Ugift"
+        },
+        "statsborgerskap": {
+          "kode": "NO",
+          "term": "Norge"
+        },
+        "sammensattNavn": "MASKIN ARTIG",
+        "personstatus": {
+          "kode": "BOSATT",
+          "term": "Bosatt"
+        },
+        "kjoenn": {
+          "kode": "M",
+          "term": "Mann"
+        },
+        "foedselsdato": "1966-10-28",
+        "bostedsadresse" : {
+          "gateadresse": {
+            "gatenavn": "Waldemar Thranses gate",
+            "gatenummer": 98,
+            "husnummer": null,
+            "husbokstav": "C"
+          },
+          "postnr": "0175",
+          "poststed": "OSLO",
+          "land": {
+            "kode": "NO",
+            "term": "Norge"
+          }
+        }
+      },
+      {
+        "fnr": "30098000492",
+        "sivilstand": {
+          "kode": "GIFT",
+          "term": "Gift"
+        },
+        "statsborgerskap": {
+          "kode": "NO",
+          "term": "Norge"
+        },
+        "sammensattNavn": "HEST LILLA",
+        "personstatus": {
+          "kode": "BOSATT",
+          "term": "Bosatt"
+        },
+        "kjoenn": {
+          "kode": "K",
+          "term": "Kvinne"
+        },
+        "foedselsdato": "1963-05-05",
+        "bostedsadresse" : {
+          "gateadresse": {
+            "gatenavn": "Waldemar Thranses gate",
+            "gatenummer": 98,
+            "husnummer": null,
+            "husbokstav": "C"
+          },
+          "postnr": "0175",
+          "poststed": "OSLO",
+          "land": {
+            "kode": "NO",
+            "term": "Norge"
+          }
+        }
+      }
+    ]
   }
 }

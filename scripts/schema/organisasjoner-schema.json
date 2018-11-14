@@ -7,9 +7,11 @@
   "additionalProperties": false,
   "required": [
     "orgnr",
+    "oppstartdato",
+    "postadresse",
+    "organisasjonsform",
     "navn",
-    "forretningsadresse",
-    "postadresse"
+    "forretningsadresse"
   ],
   "properties": {
     "orgnr": {
@@ -18,9 +20,31 @@
       "title": "The Orgnr Schema",
       "default": "",
       "examples": [
-        "943049467"
+        "910099035"
       ],
       "pattern": "^(.*)$"
+    },
+    "oppstartdato": {
+      "$id": "#/properties/oppstartdato",
+      "title": "The Oppstartdato Schema",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato"
+    },
+    "postadresse": {
+      "$id": "#/properties/postadresse",
+      "title": "The Postadresse Schema",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/registerAdresse"
+    },
+    "organisasjonsform": {
+      "$id": "#/properties/organisasjonsform",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The Organisasjonsform Schema",
+      "default": null,
+      "examples": [
+        null
+      ]
     },
     "navn": {
       "$id": "#/properties/navn",
@@ -28,139 +52,14 @@
       "title": "The Navn Schema",
       "default": "",
       "examples": [
-        "SKANSKA NORGE AS"
+        "SKARSVÅG OG VANSE"
       ],
       "pattern": "^(.*)$"
     },
     "forretningsadresse": {
       "$id": "#/properties/forretningsadresse",
-      "type": "object",
       "title": "The Forretningsadresse Schema",
-      "additionalProperties": false,
-      "required": [
-        "gateadresse",
-        "postnr",
-        "poststed",
-        "land"
-      ],
-      "properties": {
-        "gateadresse": {
-          "$id": "#/properties/forretningsadresse/properties/gateadresse",
-          "type": "object",
-          "title": "The Gateadresse Schema",
-          "additionalProperties": false,
-          "required": [
-            "gatenavn"
-          ],
-          "properties": {
-            "gatenavn": {
-              "$id": "#/properties/forretningsadresse/properties/gateadresse/properties/gatenavn",
-              "type": "string",
-              "title": "The Gatenavn Schema",
-              "default": "",
-              "examples": [
-                "Lakkegata 53"
-              ],
-              "pattern": "^(.*)$"
-            }
-          }
-        },
-        "postnr": {
-          "$id": "#/properties/forretningsadresse/properties/postnr",
-          "type": "string",
-          "title": "The Postnr Schema",
-          "default": "",
-          "examples": [
-            "0187"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "poststed": {
-          "$id": "#/properties/forretningsadresse/properties/poststed",
-          "type": "string",
-          "title": "The Poststed Schema",
-          "default": "",
-          "examples": [
-            "OSLO"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "land": {
-          "$id": "#/properties/forretningsadresse/properties/land",
-          "type": "string",
-          "title": "The Land Schema",
-          "default": "",
-          "examples": [
-            "NO"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
-    },
-    "postadresse": {
-      "$id": "#/properties/postadresse",
-      "type": "object",
-      "title": "The Postadresse Schema",
-      "additionalProperties": false,
-      "required": [
-        "gateadresse",
-        "postnr",
-        "poststed",
-        "land"
-      ],
-      "properties": {
-        "gateadresse": {
-          "$id": "#/properties/postadresse/properties/gateadresse",
-          "type": "object",
-          "title": "The Gateadresse Schema",
-          "additionalProperties": false,
-          "required": [
-            "gatenavn"
-          ],
-          "properties": {
-            "gatenavn": {
-              "$id": "#/properties/postadresse/properties/gateadresse/properties/gatenavn",
-              "type": "string",
-              "title": "The Gatenavn Schema",
-              "default": "",
-              "examples": [
-                "Postboks 1175 Oslo Sentrum"
-              ],
-              "pattern": "^(.*)$"
-            }
-          }
-        },
-        "postnr": {
-          "$id": "#/properties/postadresse/properties/postnr",
-          "type": "string",
-          "title": "The Postnr Schema",
-          "default": "",
-          "examples": [
-            "0107"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "poststed": {
-          "$id": "#/properties/postadresse/properties/poststed",
-          "type": "string",
-          "title": "The Poststed Schema",
-          "default": "",
-          "examples": [
-            "OSLO"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "land": {
-          "$id": "#/properties/postadresse/properties/land",
-          "type": "string",
-          "title": "The Land Schema",
-          "default": "",
-          "examples": [
-            "NO"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/registerAdresse"
     }
   }
 }

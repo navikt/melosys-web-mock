@@ -1,10 +1,22 @@
 {
   "fnr": "17117802280",
-  "sivilstand": "Ugift",
-  "statsborgerskap": "NOR",
+  "sivilstand": {
+    "kode": "GIFT",
+    "term" : "Gift"
+  },
+  "statsborgerskap": {
+    "kode": "NO",
+    "term": "Norge"
+  },
   "sammensattNavn": "KAKE ARTIG",
-  "personstatus": "Bosatt",
-  "kjoenn": "K",
+  "personstatus": {
+    "kode": "BOSA",
+    "term": "Bosatt"
+  },
+  "kjoenn": {
+    "kode": "K",
+    "term": "Kvinne"
+  },
   "foedselsdato": "1978-11-17",
   "postadresse": {
     "adresselinjer": [

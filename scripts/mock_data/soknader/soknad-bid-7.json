@@ -71,7 +71,8 @@
       "antallAdminAnsatteEOS": null,
       "andelOmsetningINorge": null,
       "andelKontrakterINorge": null,
-      "utsendtFortsetterArbeidsforholdIUtlandet": null
+      "utsendtFortsetterArbeidsforholdIUtlandet": null,
+      "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt": {
       "inntektNorskIPerioden": 20000,
@@ -97,5 +98,9 @@
       "flaggLandKode": null,
       "installasjonsLandKode": null
     }
+  },
+  "tilleggsData": {
+    "organisasjoner": [],
+    "personer": []
   }
 }
