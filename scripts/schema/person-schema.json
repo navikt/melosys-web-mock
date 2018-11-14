@@ -1,5 +1,4 @@
 {
-  "definitions": {},
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://melosys.nav.no/schemas/person-schema.json",
   "type": "object",
@@ -12,8 +11,7 @@
     "sammensattNavn",
     "personstatus",
     "kjoenn",
-    "foedselsdato",
-    "bostedsadresse"
+    "foedselsdato"
   ],
   "properties": {
     "fnr": {
@@ -28,13 +26,23 @@
     },
     "sivilstand": {
       "$id": "#/properties/sivilstand",
+      "type": "string",
       "title": "The Sivilstand Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      "default": "",
+      "examples": [
+        "Registrert partner"
+      ],
+      "pattern": "^(.*)$"
     },
     "statsborgerskap": {
       "$id": "#/properties/statsborgerskap",
+      "type": "string",
       "title": "The Statsborgerskap Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      "default": "",
+      "examples": [
+        "NOR"
+      ],
+      "pattern": "^(.*)$"
     },
     "sammensattNavn": {
       "$id": "#/properties/sammensattNavn",
@@ -48,106 +56,36 @@
     },
     "personstatus": {
       "$id": "#/properties/personstatus",
+      "type": "string",
       "title": "The Personstatus Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      "default": "",
+      "examples": [
+        "Bosatt"
+      ],
+      "pattern": "^(.*)$"
     },
     "kjoenn": {
       "$id": "#/properties/kjoenn",
+      "type": "string",
       "title": "The Kjoenn Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      "default": "",
+      "examples": [
+        "M","K"
+      ],
+      "pattern": "^(.*)$"
     },
     "foedselsdato": {
       "title": "The Foedselsdato Schema",
       "$id": "#/properties/foedselsdato",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
     },
-    "bostedsadresse": {
-      "$id": "#/properties/bostedsadresse",
-      "type": "object",
-      "title": "The Bostedsadresse Schema",
-      "additionalProperties": false,
-      "required": [
-        "gateadresse",
-        "postnr",
-        "poststed",
-        "land"
-      ],
-      "properties": {
-        "gateadresse": {
-          "$id": "#/properties/gateadresse",
-          "type": "object",
-          "title": "The Gateadresse Schema",
-          "additionalProperties": false,
-          "required": [
-            "gatenavn",
-            "gatenummer",
-            "husnummer",
-            "husbokstav"
-          ],
-          "properties": {
-            "gatenavn": {
-              "$id": "#/properties/gateadresse/properties/gatenavn",
-              "type": ["string","null"],
-              "title": "The Gatenavn Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "gatenummer": {
-              "$id": "#/properties/bostedsadresse/properties/gateadresse/properties/gatenummer",
-              "type": ["integer","null"],
-              "title": "The Gatenummer Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            },
-            "husnummer": {
-              "$id": "#/properties/bostedsadresse/properties/gateadresse/properties/husnummer",
-              "type": ["integer","null"],
-              "title": "The Husnummer Schema",
-              "default": null,
-              "examples": [
-                null,
-                "1"
-              ]
-            },
-            "husbokstav": {
-              "$id": "#/properties/bostedsadresse/properties/gateadresse/properties/husbokstav",
-              "type": ["string","null"],
-              "title": "The Husbokstav Schema",
-              "default": null,
-              "examples": [
-                null
-              ]
-            }
-          }
-        },
-        "postnr": {
-          "$id": "#/properties/bostedsadresse/properties/postnr",
-          "type": ["string","null"],
-          "title": "The Postnr Schema",
-          "default": null,
-          "examples": [
-            null
-          ]
-        },
-        "poststed": {
-          "$id": "#/properties/bostedsadresse/properties/poststed",
-          "type": ["string","null"],
-          "title": "The poststed Schema",
-          "default": null,
-          "examples": [
-            null
-          ]
-        },
-        "land": {
-          "title": "The Land Schema",
-          "$id": "#/properties/bostedsadresse/properties/land",
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-        }
-      }
+    "postadresse": {
+      "$id": "#/properties/postadresse",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/ustrukturertAdresse"
+    },
+    "midlertidigPostadresse": {
+      "$id": "#/properties/midlertidigPostadresse",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/adresse"
     }
   }
 }

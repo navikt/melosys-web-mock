@@ -18,18 +18,22 @@
     "term": "Mann"
   },
   "foedselsdato": "1972-11-19",
-  "bostedsadresse" : {
-    "gateadresse": {
-      "gatenavn": "Waldemar Thranses gate",
-      "gatenummer": 98,
-      "husnummer": null,
-      "husbokstav": "C"
-    },
-    "postnr": "0175",
-    "poststed": "OSLO",
-    "land": {
-      "kode": "NO",
-      "term": "Norge"
+  "postadresse": {
+    "adresselinjer": [
+      "Sannergata 2",
+      "0557 OSLO"
+    ],
+    "landKode": "NO"
+  },
+  "midlertidigPostadresse": {
+    "adressetype": "STRUKTURERT",
+    "strukturertAdresse": {
+      "gatenavn": "Sannergata",
+      "husnummer": "2",
+      "region": null,
+      "postnummer": "0557",
+      "poststed": "OSLO",
+      "landKode": "NO"
     }
   }
 }

@@ -8,10 +8,12 @@
     },
     "arbeidUtland": [{
       "adresse": {
-        "gatenavn": null,
-        "postnummer": null,
-        "poststed": null,
-        "landKode": null
+        "gatenavn": "Adresseveien 123",
+        "husnummer": null,
+        "region": null,
+        "postnummer": "1234",
+        "poststed": "Poststedet",
+        "landKode": "DE"
       },
       "arbeidsandelNorge": null,
       "arbeidsandelUtland": null,
@@ -36,10 +38,12 @@
       "antallMaanederINorge": null,
       "adresseIUtlandet": true,
       "oppgittAdresse": {
-        "gatenavn": null,
-        "postnummer": null,
-        "poststed": null,
-        "landKode": null
+        "gatenavn": "Waldemar Thranes gate",
+        "husnummer": "98",
+        "region": null,
+        "postnummer": "O175",
+        "poststed": "Oslo",
+        "landKode": "NO"
       }
     },
     "arbeidNorge": {

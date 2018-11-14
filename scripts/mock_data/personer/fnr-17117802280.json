@@ -9,27 +9,30 @@
     "term": "Norge"
   },
   "sammensattNavn": "KAKE ARTIG",
-  "personstatus": {
-    "kode": "BOSA",
-    "term": "Bosatt"
-  },
-  "kjoenn": {
-    "kode": "K",
-    "term": "Kvinne"
-  },
+  "personstatus": "Bosatt",
+  "kjoenn": "K",
   "foedselsdato": "1978-11-17",
-  "bostedsadresse" : {
-    "gateadresse": {
-      "gatenavn": "Waldemar Thranses gate",
-      "gatenummer": 98,
-      "husnummer": null,
-      "husbokstav": "C"
-    },
-    "postnr": "0175",
-    "poststed": "OSLO",
-    "land": {
-      "kode": "NO",
-      "term": "Norge"
+  "postadresse": {
+    "adresselinjer": [
+      "Ardenham Court",
+      "Oxford Road",
+      "AYLESBURY",
+      "BUCKINGHAMSHIRE",
+      "HP19 3EQ"
+    ],
+    "landKode": "UK"
+  },
+  "midlertidigPostadresse": {
+    "adressetype": "USTRUKTURERT",
+    "ustrukturertAdresse": {
+      "adresselinjer": [
+        "Ardenham Court",
+        "Oxford Road",
+        "AYLESBURY",
+        "BUCKINGHAMSHIRE",
+        "HP19 3EQ"
+      ],
+      "landKode": "UK"
     }
   }
 }

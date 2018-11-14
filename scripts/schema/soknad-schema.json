@@ -131,57 +131,7 @@
             "properties": {
               "adresse": {
                 "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse",
-                "type": "object",
-                "title": "The Adresse Schema",
-                "additionalProperties": false,
-                "required": [
-                  "gatenavn",
-                  "postnummer",
-                  "poststed",
-                  "landKode"
-                ],
-                "properties": {
-                  "gatenavn": {
-                    "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/gatenavn",
-                    "type": ["string","null"],
-                    "title": "The Gatenavn Schema",
-                    "default": "",
-                    "examples": [
-                      "Adresseveien 123"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "postnummer": {
-                    "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/postnummer",
-                    "type": ["string","null"],
-                    "title": "The Postnummer Schema",
-                    "default": "",
-                    "examples": [
-                      "1234"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "poststed": {
-                    "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/poststed",
-                    "type": ["string","null"],
-                    "title": "The Poststed Schema",
-                    "default": "",
-                    "examples": [
-                      "Poststedet"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "landKode": {
-                    "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse/properties/landKode",
-                    "type": ["string","null"],
-                    "title": "The Landkode Schema",
-                    "default": "",
-                    "examples": [
-                      "DE"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertAdresse"
               },
               "arbeidsandelNorge": {
                 "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidsandelNorge",
@@ -260,57 +210,7 @@
               },
               "adresse": {
                 "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse",
-                "type": "object",
-                "title": "The Adresse Schema",
-                "additionalProperties": false,
-                "required": [
-                  "gatenavn",
-                  "postnummer",
-                  "poststed",
-                  "landKode"
-                ],
-                "properties": {
-                  "gatenavn": {
-                    "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/gatenavn",
-                    "type": ["string","null"],
-                    "title": "The Gatenavn Schema",
-                    "default": "",
-                    "examples": [
-                      "Deutschlandstrasse 123"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "postnummer": {
-                    "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/postnummer",
-                    "type": ["string","null"],
-                    "title": "The Postnummer Schema",
-                    "default": "",
-                    "examples": [
-                      "3388"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "poststed": {
-                    "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/poststed",
-                    "type": ["string","null"],
-                    "title": "The Poststed Schema",
-                    "default": "",
-                    "examples": [
-                      "Berlin"
-                    ],
-                    "pattern": "^(.*)$"
-                  },
-                  "landKode": {
-                    "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse/properties/landKode",
-                    "type": ["string","null"],
-                    "title": "The Landkode Schema",
-                    "default": "",
-                    "examples": [
-                      "DE"
-                    ],
-                    "pattern": "^(.*)$"
-                  }
-                }
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertAdresse"
               }
             }
           }
@@ -443,57 +343,7 @@
             },
             "oppgittAdresse": {
               "$id": "#/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse",
-              "type": "object",
-              "title": "The Oppgittadresse Schema",
-              "additionalProperties": false,
-              "required": [
-                "gatenavn",
-                "postnummer",
-                "poststed",
-                "landKode"
-              ],
-              "properties": {
-                "gatenavn": {
-                  "$id": "#/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/gatenavn",
-                  "type": ["string","null"],
-                  "title": "The Gatenavn Schema",
-                  "default": "",
-                  "examples": [
-                    "Gateadressen"
-                  ],
-                  "pattern": "^(.*)$"
-                },
-                "postnummer": {
-                  "$id": "#/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/postnummer",
-                  "type": ["string","null"],
-                  "title": "The Postnummer Schema",
-                  "default": "",
-                  "examples": [
-                    "12345"
-                  ],
-                  "pattern": "^(.*)$"
-                },
-                "poststed": {
-                  "$id": "#/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/poststed",
-                  "type": ["string","null"],
-                  "title": "The Poststed Schema",
-                  "default": "",
-                  "examples": [
-                    "Poststeder"
-                  ],
-                  "pattern": "^(.*)$"
-                },
-                "landKode": {
-                  "$id": "#/properties/soeknadDokument/properties/bosted/properties/oppgittAdresse/properties/landKode",
-                  "type": ["string","null"],
-                  "title": "The Landkode Schema",
-                  "default": "",
-                  "examples": [
-                    "DE"
-                  ],
-                  "pattern": "^(.*)$"
-                }
-              }
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertAdresse"
             }
           }
         },
