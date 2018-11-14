@@ -16,6 +16,7 @@ const { SokOppgaver } = require('./test/sok-oppgaver');
 const { oppgaver } = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
+const { dokumenter } = require('./test/dokumenter');
 
 const Schema = require('./test/schema-util');
 
@@ -46,6 +47,7 @@ const katalogMap = new Map([
   ['oppgaver', oppgaver],
   ['avklartefakta', avklartefakta],
   ['vilkar', vilkar],
+  ['dokumenter', dokumenter],
 ]);
 
 const testAll = () => {

@@ -1,0 +1,122 @@
+{
+  "definitions": {
+    "dato-tid": {
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z"
+      ]
+    },
+    "nullable-dato-tid": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z", null
+      ]
+    },
+    "nullable-dokument":  {
+      "type": "object",
+      "title": "Nullable Dokument type definisjon",
+      "additionalProperties": false,
+      "required": [
+        "dokumentID",
+        "tittel",
+        "mottattDato"
+      ],
+      "properties": {
+        "dokumentID": {
+          "type": ["string", "null"],
+          "title": "DokumentID Schema",
+          "examples": ["DOK_ID_6", null]
+        },
+        "tittel": {
+          "type": "string",
+          "title": "Tittel Schema",
+          "examples": ["Tittelen her"]
+        },
+        "mottattDato": {
+          "$ref": "#/definitions/nullable-dato-tid"
+        }
+      }
+    },
+    "dokument":  {
+      "type": "object",
+      "title": "Dokument type definisjon",
+      "additionalProperties": false,
+      "required": [
+        "dokumentID",
+        "tittel",
+        "mottattDato"
+      ],
+      "properties": {
+        "dokumentID": {
+          "type": "string",
+          "title": "DokumentID Schema",
+          "examples": ["DOK_ID_6"]
+        },
+        "tittel": {
+          "type": "string",
+          "title": "Tittel Schema",
+          "examples": ["Tittelen her"]
+        },
+        "mottattDato": {
+          "$ref": "#/definitions/dato-tid"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/schemas/dokumenter-oversikt-schema.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "mottak",
+      "addressat",
+      "dokument",
+      "vedlegg"
+    ],
+    "properties": {
+      "mottak": {
+        "$id": "#/items/properties/mottak",
+        "type": "string",
+        "title": "The Mottak Schema",
+        "default": "",
+        "examples": [
+          "INN"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "addressat": {
+        "$id": "#/items/properties/addressat",
+        "type": "string",
+        "title": "The Addressat Schema",
+        "default": "",
+        "examples": [
+          "Ole Hermanrud"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "dokument": {
+        "$id": "#/items/properties/dokument",
+        "type": "object",
+        "title": "The Dokument Schema",
+        "$ref": "#/definitions/dokument"
+      },
+      "vedlegg": {
+        "$id": "#/items/properties/vedlegg",
+        "type": "array",
+        "title": "The Vedlegg Schema",
+        "items": {
+          "$id": "#/items/properties/vedlegg/items",
+          "type": "object",
+          "title": "The Items Schema",
+          "$ref": "#/definitions/nullable-dokument"
+        }
+      }
+    }
+  }
+}

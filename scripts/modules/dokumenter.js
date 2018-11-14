@@ -38,6 +38,18 @@ const isRestParamsInValid = req => {
   }
   return melding;
 };
+module.exports.lesDokumenterKatalog = () => {
+  return Schema.lesKatalogSync(MOCK_DOKUMENTER_DATA_DIR);
+};
+const lesOversikt = async () => {
+  const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/oversikt.json`;
+  return JSON.parse(await Utils.readFileAsync(mockfile));
+};
+module.exports.oversikt = async (req, res) => {
+  const snr = req.snr;
+  const oversikt = await lesOversikt();
+  res.json(oversikt);
+};
 
 module.exports.hentPdf = (req, res) => {
   //const { journalforingID, dokumentID } = req.params;
@@ -65,7 +77,7 @@ return {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`};
  */
 module.exports.lagPdfUtkast = (req, res) => {
   if(!req.accepts('application/pdf')) {
-    const melding = ERR.notAcceptable406()
+    const melding = ERR.notAcceptable406();
     return res.status(406).send(melding);
   }
 

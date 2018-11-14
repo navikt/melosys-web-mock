@@ -1,0 +1,27 @@
+[{
+  "mottak": "INN",
+  "addressat": "Ole Hermanrud",
+  "dokument": {
+    "dokumentID": "DOK",
+    "tittel":  "Tittelen her",
+    "mottattDato": "2018-05-04T15:15:25.622Z"
+  },
+  "vedlegg": [{
+    "tittel":  "Dokument med eget vedlegg",
+    "dokumentID": "DOK_ID_5",
+    "mottattDato":  null
+  }]
+}, {
+  "mottak": "UT",
+  "addressat": "Stor Potet",
+  "dokument": {
+    "dokumentID": "DOK_ID_5",
+    "tittel":  "Tittelen her",
+    "mottattDato": "2018-05-04T15:15:25.622Z"
+  },
+  "vedlegg": [{
+    "tittel":  "Dokumentet er en del av hoveddokumentet",
+    "dokumentID": null,
+    "mottattDato":  null
+  }]
+}]
