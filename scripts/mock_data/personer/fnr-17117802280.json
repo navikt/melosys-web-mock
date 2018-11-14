@@ -9,8 +9,14 @@
     "term": "Norge"
   },
   "sammensattNavn": "KAKE ARTIG",
-  "personstatus": "Bosatt",
-  "kjoenn": "K",
+  "personstatus": {
+    "kode": "BOSA",
+    "term": "Bosatt"
+  },
+  "kjoenn": {
+    "kode": "K",
+    "term": "Kvinne"
+  },
   "foedselsdato": "1978-11-17",
   "postadresse": {
     "adresselinjer": [

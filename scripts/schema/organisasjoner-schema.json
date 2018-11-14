@@ -32,7 +32,7 @@
     "postadresse": {
       "$id": "#/properties/postadresse",
       "title": "The Postadresse Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertadresse"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/registerAdresse"
     },
     "organisasjonsform": {
       "$id": "#/properties/organisasjonsform",
@@ -59,7 +59,7 @@
     "forretningsadresse": {
       "$id": "#/properties/forretningsadresse",
       "title": "The Forretningsadresse Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertadresse"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/registerAdresse"
     }
   }
 }

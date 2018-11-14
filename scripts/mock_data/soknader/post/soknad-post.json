@@ -1,116 +1,136 @@
 {
-  "behandlingID": 4,
-  "soeknadDokument": {
-    "personOpplysninger": {
-      "utenlandskIdent": [
-        {
-          "ident": "123456789",
-          "landKode": "DK"
-        }
-      ],
-      "medfolgendeFamilie": ["30098000492"],
-      "medfolgendeAndre": "28106600300"
-    },
-    "arbeidUtland": [{
-      "adresse": {
-        "gatenavn": "Adresseveien 123",
-        "postnummer": "1234",
-        "poststed": "Poststedet",
-        "landKode": "DE"
+  "behandlingID" : 4,
+  "soeknadDokument" : {
+    "bosted" : {
+      "adresseIUtlandet" : true,
+      "intensjonOmRetur" : true,
+      "antallMaanederINorge" : 8,
+      "oppgittAdresse" : {
+        "poststed" : "Poststeder",
+        "postnummer" : "12345",
+        "landKode" : "DE",
+        "husnummer": "1",
+        "region": null,
+        "gatenavn" : "Gateadressen"
       },
-      "arbeidsandelNorge": 33.3,
-      "arbeidsandelUtland": 66.6,
-      "arbeidUtlandErstatning": false,
-      "arbeidUtlandHjemmekontor": false
-    }],
-    "foretakUtland": [
+      "familiesBostedLandKode" : "SE"
+    },
+    "foretakUtland" : [
       {
-        "navn": "EQUINOR DEUTSCHLAND",
-        "orgnr": "372384726",
-        "adresse": {
-          "gatenavn": "Deutschlandstrasse 123",
-          "postnummer": "3388",
-          "poststed": "Berlin",
-          "landKode": "DE"
+        "navn" : "EQUINOR DEUTSCHLAND",
+        "orgnr" : "372384726",
+        "adresse" : {
+          "landKode" : "DE",
+          "region" : "Brandenburger",
+          "husnummer" : "123",
+          "postnummer" : "3388",
+          "poststed" : "Berlin",
+          "gatenavn" : "Deutschlandstrasse"
         }
       }
     ],
-    "oppholdUtland": {
-      "oppholdslandKoder": ["DK"],
-      "oppholdsPeriode": {
-        "fom": "2018-01-01",
-        "tom": "2018-06-01"
-      },
-      "ektefelleEllerBarnINorge": true,
-      "sammeAdresseSomArbeidsgiver": true,
-      "studentFinansieringKode": "LAANEKASSEN",
-      "studentSemester": "2018/2019"
+    "arbeidNorge" : {
+      "fullmektigFirma" : "Advokatfullmektig AS",
+      "kontaktEpost" : "ola.nordmann@fullmektigfirma.no",
+      "arbeidsforholdVikarNavn" : "Vikarbyrået AS",
+      "flyendePersonellHjemmebase" : "Flybasen Int. Airport, ....",
+      "fullmektigGateadresse" : "Adresseveien 123",
+      "arbeidsforholdOpprettholdIHelePerioden" : true,
+      "vikarOrgnr" : "22334455",
+      "fullmektigPostnr" : "1234",
+      "kontaktNavn" : "Ola Nordmann",
+      "fullmektigPoststed" : "Byensvik",
+      "fullmektigRegion" : "Østlandsregionen",
+      "fullmektigLandKode" : "NO"
     },
-    "bosted": {
-      "intensjonOmRetur": true,
-      "familiesBostedLandKode": "SE",
-      "antallMaanederINorge": 8,
-      "adresseIUtlandet": true,
-      "oppgittAdresse": {
-        "gatenavn": "Gateadressen",
-        "postnummer": "12345",
-        "poststed": "Poststeder",
-        "landKode": "DE"
+    "juridiskArbeidsgiverNorge" : {
+      "andelOmsetningINorge" : 79,
+      "utsendtFortsetterArbeidsforholdIUtlandet" : true,
+      "antallAdminAnsatteEOS" : 75,
+      "erBemanningsbyra" : false,
+      "andelKontrakterINorge" : 51,
+      "utsendteNeste12Mnd" : 10,
+      "ekstraArbeidsgivere" : [
+        "910099035"
+      ],
+      "antallAdmAnsatte" : 350
+    },
+    "arbeidsinntekt" : {
+      "inntektNaeringIPerioden" : 0,
+      "inntektTrygdeavgiftBlirTrukket" : true,
+      "inntektUtenlandskIPerioden" : 2000,
+      "inntektNaturalYtelser" : [
+        "Fri bolig",
+        "Fri bil"
+      ],
+      "inntektErInnrapporteringspliktig" : true,
+      "inntektNorskIPerioden" : 5500
+    },
+    "arbeidsgiversBekreftelse" : {
+      "arbeidsgiverBetalerArbeidsgiveravgift" : true,
+      "arbeidstakerAnsattUnderUtsendelsen" : true,
+      "arbeidsgiverBekrefterUtsendelse" : true,
+      "erstatterArbeidstakerenUtsendte" : false,
+      "trygdeavgiftTrukketGjennomSkatt" : true,
+      "arbeidstakerTidligereUtsendt24Mnd" : false,
+      "trygdeavgiftTrukketGjennomSkattDato" : "2018-01-01"
+    },
+    "maritimtArbeid" : {
+      "installasjonsLandKode" : "GB",
+      "flaggLandKode" : "GB",
+      "maritimTypeKode" : "SKIP",
+      "skipsNavn" : "Navn på skipet",
+      "fartsomradeKode" : "INNENRIKS"
+    },
+    "arbeidUtland" : [
+      {
+        "arbeidsandelNorge" : 33.299999999999997,
+        "adresse" : {
+          "landKode" : "DE",
+          "region" : "Brandenburger",
+          "husnummer" : "123",
+          "postnummer" : "1234",
+          "poststed" : "Poststedet",
+          "gatenavn" : "Adresseveien 123"
+        },
+        "arbeidUtlandHjemmekontor" : false,
+        "arbeidUtlandErstatning" : false,
+        "arbeidsandelUtland" : 66.599999999999994
       }
+    ],
+    "selvstendigArbeid" : {
+      "selvstendigForetak" : [
+        {
+          "orgnr" : "910253158",
+          "fortsetterEtterArbeidIUtlandet" : true
+        }
+      ],
+      "erSelvstendig" : true
     },
-    "arbeidNorge": {
-      "arbeidsforholdOpprettholdIHelePerioden": true,
-      "arbeidsforholdVikarNavn": "Vikarbyrået AS",
-      "vikarOrgnr": "22334455",
-      "flyendePersonellHjemmebase": "Flybasen Int. Airport, ....",
-      "kontaktNavn": "Ola Nordmann",
-      "kontaktEpost": "ola.nordmann@fullmektigfirma.no",
-      "fullmektigFirma": "Advokatfullmektig AS",
-      "fullmektigGateadresse": "Adresseveien 123",
-      "fullmektigPostnr": "1234",
-      "fullmektigPoststed": "Byensvik",
-      "fullmektigRegion": "Østlandsregionen",
-      "fullmektigLandKode": "NO"
+    "oppholdUtland" : {
+      "oppholdslandKoder" : [
+        "DK"
+      ],
+      "sammeAdresseSomArbeidsgiver" : true,
+      "studentSemester" : "2018/2019",
+      "studentFinansieringKode" : "LAANEKASSEN",
+      "oppholdsPeriode" : {
+        "fom" : "2018-01-01",
+        "tom" : "2018-06-01"
+      },
+      "ektefelleEllerBarnINorge" : true
     },
-    "selvstendigArbeid": {
-      "erSelvstendig": true,
-      "selvstendigForetak": [
-        { "orgnr": "910253158", "fortsetterEtterArbeidIUtlandet": true }
-      ]
-    },
-    "juridiskArbeidsgiverNorge": {
-      "erBemanningsbyra": false,
-      "utsendteNeste12Mnd": 10,
-      "antallAdmAnsatte": 350,
-      "antallAdminAnsatteEOS": 75,
-      "andelOmsetningINorge": 78.5,
-      "andelKontrakterINorge": 50.5,
-      "utsendtFortsetterArbeidsforholdIUtlandet": true,
-      "ekstraArbeidsgivere": ["910099035"]
-    },
-    "arbeidsinntekt": {
-      "inntektNorskIPerioden": 5500,
-      "inntektUtenlandskIPerioden": 2000,
-      "inntektNaeringIPerioden": 0,
-      "inntektNaturalYtelser": ["Fri bolig", "Fri bil"],
-      "inntektErInnrapporteringspliktig": true,
-      "inntektTrygdeavgiftBlirTrukket": true
-    },
-    "arbeidsgiversBekreftelse": {
-      "arbeidsgiverBekrefterUtsendelse": true,
-      "arbeidstakerAnsattUnderUtsendelsen": true,
-      "erstatterArbeidstakerenUtsendte": false,
-      "arbeidstakerTidligereUtsendt24Mnd": false,
-      "arbeidsgiverBetalerArbeidsgiveravgift": true,
-      "trygdeavgiftTrukketGjennomSkatt": true,
-      "trygdeavgiftTrukketGjennomSkattDato": "2018-01-01"
-    },
-    "maritimtArbeid": {
-      "maritimTypeKode": "SKIP",
-      "skipsNavn": "Navn på skipet",
-      "fartsomradeKode": "INNENRIKS",
-      "flaggLandKode": "GB",
-      "installasjonsLandKode": "GB"
+    "personOpplysninger" : {
+      "utenlandskIdent" : [
+        {
+          "ident" : "123456789",
+          "landKode" : "DK"
+        }
+      ],
+      "medfolgendeFamilie" : [
+        "30098000492"
+      ],
+      "medfolgendeAndre" : "28106600300"
     }
   }
 }
