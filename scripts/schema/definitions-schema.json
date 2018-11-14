@@ -41,6 +41,15 @@
         1000023948
       ]
     },
+    "dokumentID": {
+      "$id": "#/properties/dokumentID",
+      "type": ["integer"],
+      "title": "The DokumentID Schema",
+      "default": 0,
+      "examples": [
+        1000023948
+      ]
+    },
     "aarmaaned": {
       "type": "string",
       "pattern": "^\\d{4}-\\d{2}$",
