@@ -106,7 +106,7 @@
       "mottaksretning",
       "addressat",
       "journalpostID",
-      "dokument",
+      "hoveddokument",
       "vedlegg"
     ],
     "properties": {
@@ -133,8 +133,8 @@
           "DOK_321"
         ]
       },
-      "dokument": {
-        "$id": "#/items/properties/dokument",
+      "hoveddokument": {
+        "$id": "#/items/properties/hoveddokument",
         "$ref": "#/definitions/dokument"
       },
       "vedlegg": {

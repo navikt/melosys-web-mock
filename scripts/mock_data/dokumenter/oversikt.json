@@ -6,7 +6,7 @@
     },
     "addressat": "Peter Christen Asbjørnsen",
     "journalpostID": "4",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK_ID_4",
       "tittel": "Vedtaksbrev",
       "mottattDato": "2017-06-03T15:15:25.622Z"
@@ -26,7 +26,7 @@
     },
     "addressat": "Svensk trygdemyndighet",
     "journalpostID": "5",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK",
       "tittel": "Inntektsmelding",
       "mottattDato": "2017-05-30T15:15:25.622Z"
@@ -40,7 +40,7 @@
     },
     "addressat": "Clemens Bonifacius",
     "journalpostID": "4",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK_ID_5",
       "tittel": "Manglende dokumentasjon",
       "mottattDato": "2018-05-04T15:15:25.622Z"
@@ -54,7 +54,7 @@
     },
     "addressat": "Thorine Elisabeth Bruun",
     "journalpostID": "5",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK",
       "tittel": "Endring av søknad",
       "mottattDato": "2017-05-24T15:15:25.622Z"
@@ -72,7 +72,7 @@
     },
     "addressat": "Peter Christen Asbjørnsen",
     "journalpostID": "4",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK_ID_4",
       "tittel": "Forvaltningsmelding",
       "mottattDato": "2017-05-12T15:15:25.622Z"
@@ -86,7 +86,7 @@
     },
     "addressat": "Peter Christen Asbjørnsen",
     "journalpostID": "5",
-    "dokument": {
+    "hoveddokument": {
       "dokumentID": "DOK",
       "tittel": "Søknad",
       "mottattDato": "2017-05-24T15:15:25.622Z"
