@@ -105,6 +105,7 @@
     "required": [
       "mottaksretning",
       "addressat",
+      "journalpostID",
       "dokument",
       "vedlegg"
     ],
@@ -122,6 +123,15 @@
           "Ole Hermanrud"
         ],
         "pattern": "^(.*)$"
+      },
+      "journalpostID": {
+        "$id": "/properties/journalpostID",
+        "type": "string",
+        "title": "The Journalpostid Schema ",
+        "default": "",
+        "examples": [
+          "DOK_321"
+        ]
       },
       "dokument": {
         "$id": "#/items/properties/dokument",
