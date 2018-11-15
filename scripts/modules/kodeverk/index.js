@@ -32,8 +32,8 @@ const kodeverk = {
   representerer,
   sakstyper,
   vedleggstitler,
-  lovvalgsunntak,
 };
+
 module.exports.kodeverk = kodeverk;
 
 /**
