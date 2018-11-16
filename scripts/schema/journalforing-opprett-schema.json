@@ -43,13 +43,7 @@
   "properties": {
     "journalpostID": {
       "$id": "#/properties/journalpostID",
-      "type": "string",
-      "title": "The Journalpostid Schema",
-      "default": "",
-      "examples": [
-        "DOC_123"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/journalpostID"
     },
     "oppgaveID": {
       "$id": "#/properties/oppgaveID",

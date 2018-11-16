@@ -46,14 +46,7 @@
           },
           "journalpostID": {
             "$id": "#/properties/journalforing/items/properties/journalpostID",
-            "type": "string",
-            "title": "The Journalpostid Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "DOK_321"
-            ],
-            "pattern": "^(.*)$"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/journalpostID"
           },
           "aktivTil": {
             "$id": "#/properties/journalforing/items/properties/aktivTil",
