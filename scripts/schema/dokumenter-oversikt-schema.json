@@ -22,28 +22,6 @@
           "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
         }
       }
-    },
-    "dokument":  {
-      "type": "object",
-      "title": "Dokument type definisjon",
-      "additionalProperties": false,
-      "required": [
-        "dokumentID",
-        "tittel",
-        "mottattDato"
-      ],
-      "properties": {
-        "dokumentID": {"$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
-        },
-        "tittel": {
-          "type": "string",
-          "title": "Tittel Schema",
-          "examples": ["Tittelen her"]
-        },
-        "mottattDato": {
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
-        }
-      }
     }
   },
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -82,7 +60,7 @@
       },
       "hoveddokument": {
         "$id": "#/items/properties/hoveddokument",
-        "$ref": "#/definitions/dokument"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokument"
       },
       "vedlegg": {
         "$id": "#/items/properties/vedlegg",

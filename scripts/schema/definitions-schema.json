@@ -3,6 +3,128 @@
   "$id": "http://melosys.nav.no/schemas/definitions-schema.json",
   "title": "The Definitions Schema",
   "definitions": {
+    "aarmaaned": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}$",
+      "examples": [
+        "2016-12"
+      ]
+    },
+    "adresse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "adressetype"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "adressetype": {"const": "STRUKTURERT"}
+          },
+          "required": ["strukturertAdresse"]
+        },
+        {
+          "properties": {
+            "adressetype": {"const": "USTRUKTURERT"}
+          },
+          "required": ["ustrukturertAdresse"]
+        }
+      ],
+      "properties": {
+        "adressetype": {
+          "type": "string",
+          "enum": ["STRUKTURERT", "USTRUKTURERT"]
+        },
+        "strukturertAdresse": {
+          "$ref": "#/definitions/strukturertAdresse"
+        },
+        "ustrukturertAdresse": {
+          "$ref": "#/definitions/ustrukturertAdresse"
+        }
+      }
+    },
+    "behandlingID": {
+      "$id": "#/properties/behandlingID",
+      "type": ["integer"],
+      "title": "The BehandlingID Schema",
+      "default": 0,
+      "examples": [
+        1000023948
+      ]
+    },
+    "dato":  {
+      "type": "string",
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "nullable-dato":  {
+      "type": ["string","null"],
+      "format": "date",
+      "examples": ["2018-08-27"]
+    },
+    "dato-tid": {
+      "type": "string",
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z"
+      ]
+    },
+    "nullable-dato-tid": {
+      "type": ["string","null"],
+      "format": "date-time",
+      "examples": [
+        "2018-08-27T07:16:03.273Z", null
+      ]
+    },
+    "dokument":  {
+      "type": "object",
+      "title": "Dokument type definisjon",
+      "additionalProperties": false,
+      "required": [
+        "dokumentID",
+        "tittel",
+        "mottattDato"
+      ],
+      "properties": {
+        "dokumentID": {"$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
+        },
+        "tittel": {
+          "type": "string",
+          "title": "Tittel Schema",
+          "examples": ["Tittelen her"]
+        },
+        "mottattDato": {
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
+        }
+      }
+    },
+    "dokumentID": {
+      "$id": "#/properties/dokumentID",
+      "type": ["string"],
+      "title": "The DokumentID Schema",
+      "default": "",
+      "examples": [
+        "DOK_ID_4"
+      ]
+    },
+    "nullable-dokumentID": {
+      "$id": "#/properties/dokumentID",
+      "type": ["string","null"],
+      "title": "The Nullable DokumentID Schema",
+      "default": "",
+      "examples": [
+        "DOK_ID_4", null
+      ]
+    },
+    "journalpostID": {
+      "$id": "#/properties/journalpostID",
+      "type": ["string"],
+      "title": "The JournalpostID Schema",
+      "default": "",
+      "examples": [
+        "DOK_321"
+      ]
+    },
     "kodeverk": {
       "type": "object",
       "title": "The Kodeverk Schema",
@@ -31,61 +153,6 @@
           "pattern": "^(.*)$"
         }
       }
-    },
-    "behandlingID": {
-      "$id": "#/properties/behandlingID",
-      "type": ["integer"],
-      "title": "The BehandlingID Schema",
-      "default": 0,
-      "examples": [
-        1000023948
-      ]
-    },
-    "journalpostID": {
-      "$id": "#/properties/journalpostID",
-      "type": ["string"],
-      "title": "The JournalpostID Schema",
-      "default": "",
-      "examples": [
-        "DOK_321"
-      ]
-    },
-    "dokumentID": {
-      "$id": "#/properties/dokumentID",
-      "type": ["string"],
-      "title": "The DokumentID Schema",
-      "default": "",
-      "examples": [
-        "DOK_ID_4"
-      ]
-    },
-    "nullable-dokumentID": {
-      "$id": "#/properties/dokumentID",
-      "type": ["string","null"],
-      "title": "The Nullable DokumentID Schema",
-      "default": "",
-      "examples": [
-        "DOK_ID_4", null
-      ]
-    },
-    "aarmaaned": {
-      "type": "string",
-      "pattern": "^\\d{4}-\\d{2}$",
-      "examples": [
-        "2016-12"
-      ]
-    },
-    "dato":  {
-      "type": "string",
-      "format": "date",
-      "examples": ["2018-08-27"]
-    },
-    "dato-tid": {
-      "type": "string",
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ]
     },
     "periode": {
       "title": "Periode med fom tom",
@@ -126,51 +193,6 @@
           "type": ["string","null"],
           "format": "date",
           "examples": ["2014-03-12", null]
-        }
-      }
-    },
-    "nullable-dato":  {
-      "type": ["string","null"],
-      "format": "date",
-      "examples": ["2018-08-27"]
-    },
-    "nullable-dato-tid": {
-      "type": ["string","null"],
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z", null
-      ]
-    },
-    "adresse": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "adressetype"
-      ],
-      "oneOf": [
-        {
-          "properties": {
-            "adressetype": {"const": "STRUKTURERT"}
-          },
-          "required": ["strukturertAdresse"]
-        },
-        {
-          "properties": {
-            "adressetype": {"const": "USTRUKTURERT"}
-          },
-          "required": ["ustrukturertAdresse"]
-        }
-      ],
-      "properties": {
-        "adressetype": {
-          "type": "string",
-          "enum": ["STRUKTURERT", "USTRUKTURERT"]
-        },
-        "strukturertAdresse": {
-          "$ref": "#/definitions/strukturertAdresse"
-        },
-        "ustrukturertAdresse": {
-          "$ref": "#/definitions/ustrukturertAdresse"
         }
       }
     },

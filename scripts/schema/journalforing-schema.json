@@ -41,35 +41,7 @@
     },
     "dokument": {
       "$id": "#/properties/dokument",
-      "type": "object",
-      "title": "The Dokument Schema",
-      "additionalProperties": false,
-      "required": [
-        "dokumentID",
-        "tittel",
-        "mottattDato"
-      ],
-      "properties": {
-        "dokumentID": {
-          "$id": "#/properties/dokument/properties/dokumentID",
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
-        },
-        "tittel": {
-          "$id": "#/properties/dokument/properties/tittel",
-          "type": "string",
-          "title": "The Tittel Schema",
-          "default": "",
-          "examples": [
-            "Søknad om medlemskap"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "mottattDato": {
-          "title": "The Mottattdato Schema",
-          "$id": "#/properties/dokument/properties/mottattDato",
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
-        }
-      }
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokument"
     }
   }
 }
