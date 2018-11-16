@@ -8,7 +8,7 @@
     "begrunnelseFritekst" : null
   },
   {
-    "vilkaar" : "ART12_1_VESENTLIG_VIRKSOMHET",
+    "vilkaar" : "VESENTLIG_VIRKSOMHET",
     "oppfylt" : true,
     "begrunnelseKoder" : [
 
