@@ -9,6 +9,7 @@
     "brukerID",
     "avsenderID",
     "erBrukerAvsender",
+    "mottattDato",
     "dokument"
   ],
   "properties": {
@@ -38,6 +39,9 @@
       "examples": [
         true
       ]
+    },
+    "mottattDato": {
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
     },
     "dokument": {
       "$id": "#/properties/dokument",

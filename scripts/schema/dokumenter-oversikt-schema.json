@@ -6,8 +6,7 @@
       "additionalProperties": false,
       "required": [
         "dokumentID",
-        "tittel",
-        "mottattDato"
+        "tittel"
       ],
       "properties": {
         "dokumentID": {
@@ -17,9 +16,6 @@
           "type": "string",
           "title": "Tittel Schema",
           "examples": ["Tittelen her"]
-        },
-        "mottattDato": {
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
         }
       }
     }
@@ -35,6 +31,7 @@
     "required": [
       "mottaksretning",
       "addressat",
+      "mottattDato",
       "journalpostID",
       "hoveddokument",
       "vedlegg"
@@ -43,6 +40,9 @@
       "mottaksretning": {
         "$id": "#/items/properties/mottaksretning",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      },
+      "mottattDato": {
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
       },
       "addressat": {
         "$id": "#/items/properties/addressat",

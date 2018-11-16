@@ -82,8 +82,7 @@
       "additionalProperties": false,
       "required": [
         "dokumentID",
-        "tittel",
-        "mottattDato"
+        "tittel"
       ],
       "properties": {
         "dokumentID": {"$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
@@ -92,9 +91,6 @@
           "type": "string",
           "title": "Tittel Schema",
           "examples": ["Tittelen her"]
-        },
-        "mottattDato": {
-          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
         }
       }
     },
