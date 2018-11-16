@@ -51,14 +51,8 @@
       ],
       "properties": {
         "dokumentID": {
-          "$id": "#/properties/dokument/properties/ID",
-          "type": "string",
-          "title": "The Id Schema",
-          "default": "",
-          "examples": [
-            "Dok_ID"
-          ],
-          "pattern": "^(.*)$"
+          "$id": "#/properties/dokument/properties/dokumentID",
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
         },
         "tittel": {
           "$id": "#/properties/dokument/properties/tittel",
