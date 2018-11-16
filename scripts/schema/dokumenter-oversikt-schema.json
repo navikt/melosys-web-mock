@@ -1,48 +1,5 @@
 {
   "definitions": {
-    "kodeverk": {
-      "type": "object",
-      "title": "The Kodeverk Schema",
-      "additionalProperties": false,
-      "required": [
-        "kode",
-        "term"
-      ],
-      "properties": {
-        "kode": {
-          "type": "string",
-          "title": "The Kode Schema",
-          "default": "",
-          "examples": [
-            "OPPRETTET"
-          ],
-          "pattern": "^(.*)$"
-        },
-        "term": {
-          "type": "string",
-          "title": "The Term Schema",
-          "default": "",
-          "examples": [
-            "Opprettet"
-          ],
-          "pattern": "^(.*)$"
-        }
-      }
-    },
-    "dato-tid": {
-      "type": "string",
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z"
-      ]
-    },
-    "nullable-dato-tid": {
-      "type": ["string", "null"],
-      "format": "date-time",
-      "examples": [
-        "2018-08-27T07:16:03.273Z", null
-      ]
-    },
     "nullable-dokument":  {
       "type": "object",
       "title": "Nullable Dokument type definisjon",
@@ -64,7 +21,7 @@
           "examples": ["Tittelen her"]
         },
         "mottattDato": {
-          "$ref": "#/definitions/nullable-dato-tid"
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
         }
       }
     },
@@ -89,7 +46,7 @@
           "examples": ["Tittelen her"]
         },
         "mottattDato": {
-          "$ref": "#/definitions/dato-tid"
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
         }
       }
     }
@@ -112,7 +69,7 @@
     "properties": {
       "mottaksretning": {
         "$id": "#/items/properties/mottaksretning",
-        "$ref": "#/definitions/kodeverk"
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       },
       "addressat": {
         "$id": "#/items/properties/addressat",
