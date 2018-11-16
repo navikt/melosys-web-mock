@@ -11,9 +11,7 @@
       ],
       "properties": {
         "dokumentID": {
-          "type": ["string", "null"],
-          "title": "DokumentID Schema",
-          "examples": ["DOK_ID_6", null]
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dokumentID"
         },
         "tittel": {
           "type": "string",
@@ -35,10 +33,7 @@
         "mottattDato"
       ],
       "properties": {
-        "dokumentID": {
-          "type": "string",
-          "title": "DokumentID Schema",
-          "examples": ["DOK_ID_6"]
+        "dokumentID": {"$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
         },
         "tittel": {
           "type": "string",
@@ -83,12 +78,7 @@
       },
       "journalpostID": {
         "$id": "/properties/journalpostID",
-        "type": "string",
-        "title": "The Journalpostid Schema ",
-        "default": "",
-        "examples": [
-          "DOK_321"
-        ]
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/journalpostID"
       },
       "hoveddokument": {
         "$id": "#/items/properties/hoveddokument",

@@ -41,13 +41,31 @@
         1000023948
       ]
     },
+    "journalpostID": {
+      "$id": "#/properties/journalpostID",
+      "type": ["string"],
+      "title": "The JournalpostID Schema",
+      "default": "",
+      "examples": [
+        "DOK_321"
+      ]
+    },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
-      "type": ["integer"],
+      "type": ["string"],
       "title": "The DokumentID Schema",
-      "default": 0,
+      "default": "",
       "examples": [
-        1000023948
+        "DOK_ID_4"
+      ]
+    },
+    "nullable-dokumentID": {
+      "$id": "#/properties/dokumentID",
+      "type": ["string","null"],
+      "title": "The Nullable DokumentID Schema",
+      "default": "",
+      "examples": [
+        "DOK_ID_4", null
       ]
     },
     "aarmaaned": {
