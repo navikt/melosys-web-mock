@@ -50,15 +50,8 @@
           },
           "aktivTil": {
             "$id": "#/properties/journalforing/items/properties/aktivTil",
-            "type": "string",
-            "format": "date",
             "title": "The Aktivtil Schema",
-            "description": "An explanation about the purpose of this instance.",
-            "default": "",
-            "examples": [
-              "2016-03-30"
-            ],
-            "pattern": "^(.*)$"
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato"
           },
           "prioritet": {
             "$id": "#/properties/journalforing/items/properties/prioritet",
