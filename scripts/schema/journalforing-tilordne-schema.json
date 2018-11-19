@@ -10,7 +10,7 @@
     "avsenderNavn",
     "brukerID",
     "dokumentID",
-    "dokumenttittel",
+    "hoveddokumentTittel",
     "journalpostID",
     "oppgaveID",
     "saksnummer",
@@ -50,10 +50,10 @@
       "$id": "#/properties/dokumentID",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
     },
-    "dokumenttittel": {
-      "$id": "/properties/dokumenttittel",
+    "hoveddokumentTittel": {
+      "$id": "/properties/hoveddokumentTittel",
       "type": "string",
-      "title": "The Dokumenttittel Schema ",
+      "title": "The HoveddokumentTittel Schema ",
       "default": "",
       "examples": [
         "Søknad om medlemskap"
