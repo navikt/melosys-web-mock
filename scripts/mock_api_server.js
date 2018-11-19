@@ -180,6 +180,7 @@ router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 // Oppretter en bestilling av dokument i dokumentproduksjon
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
+router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
 
 /**
  * VEDTAK

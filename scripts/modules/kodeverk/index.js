@@ -10,12 +10,13 @@ const { dokumenttitler } = require('./dokumenttitler');
 const { dokumenttyper } = require('./dokumenttyper');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
+const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { lovvalgsunntak } = require('./lovvalgsunntak');
+const { mottaksretning } = require('./mottaksretning');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
-const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
-const { lovvalgsunntak } = require('./lovvalgsunntak');
 
 const kodeverk = {
   aktoerroller,
@@ -28,11 +29,11 @@ const kodeverk = {
   landkoder,
   lovvalgsbestemmelser,
   lovvalgsunntak,
+  mottaksretning,
   oppgavetyper,
   representerer,
   sakstyper,
   vedleggstitler,
-  lovvalgsunntak,
 };
 module.exports.kodeverk = kodeverk;
 
