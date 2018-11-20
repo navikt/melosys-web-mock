@@ -3,8 +3,8 @@ const { bosted } = require('./bosted');
 const { forutgaendeMedlemskap } = require('./forutgaendeMedlemskap');
 const { ikkeSkip } = require('./ikkeSkip');
 const { opphold } = require('./opphold');
-const { vesentligVirksomhet12_1 } = require('./vesentligVirksomhet12_1');
-const { vesentligVirksomhet12_2 } = require('./vesentligVirksomhet12_2');
+const { vesentligVirksomhet } = require('./vesentligVirksomhet');
+const { normaltDriverVirksomhet } = require('./normaltDriverVirksomhet');
 const { artikkel12_1 } = require('./artikkel12.1');
 const { artikkel12_2 } = require('./artikkel12.2');
 const { artikkel16_1_anmodning } = require('./artikkel16.1_anmodning');
@@ -14,8 +14,8 @@ const begrunnelser = {
   forutgaendeMedlemskap,
   ikkeSkip,
   opphold,
-  vesentligVirksomhet12_1,
-  vesentligVirksomhet12_2,
+  vesentligVirksomhet,
+  normaltDriverVirksomhet,
   artikkel12_1,
   artikkel12_2,
   artikkel16_1_anmodning,

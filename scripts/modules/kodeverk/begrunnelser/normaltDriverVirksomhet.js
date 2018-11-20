@@ -3,7 +3,7 @@
  * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
  * @module
  */
-const vesentligVirksomhet12_2 = [
+const normaltDriverVirksomhet = [
   {
     "kode": "UTSENDELSE_OVER_24_MN",
     "term": "Utsendelseperioden overskrider 24 måneder."
@@ -17,4 +17,4 @@ const vesentligVirksomhet12_2 = [
     "term": "Normalt ikke drift i Norge."
   }
 ];
-module.exports.vesentligVirksomhet12_2 = vesentligVirksomhet12_2;
+module.exports.normaltDriverVirksomhet = normaltDriverVirksomhet;
