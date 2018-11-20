@@ -46,7 +46,7 @@ const lesOversikt = async () => {
   return JSON.parse(await Utils.readFileAsync(mockfile));
 };
 module.exports.oversikt = async (req, res) => {
-  const snr = req.snr;
+  // const snr = req.snr;
   const oversikt = await lesOversikt();
   res.json(oversikt);
 };
