@@ -14,7 +14,7 @@
     "journalpostID",
     "oppgaveID",
     "saksnummer",
-    "vedleggstitler"
+    "vedlegg"
   ],
   "properties": {
     "avsenderID": {
@@ -81,12 +81,13 @@
         44
       ]
     },
-    "vedleggstitler": {
-      "$id": "/properties/vedleggstitler",
+    "vedlegg": {
+      "$id": "#/items/properties/vedlegg",
       "type": "array",
+      "title": "The Vedlegg Schema",
       "items": {
-        "$id": "/properties/vedleggstitler/items",
-        "type": "string"
+        "$id": "#/items/properties/vedlegg/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dokument"
       }
     }
   }

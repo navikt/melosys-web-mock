@@ -10,8 +10,9 @@
     "title": "The Items Schema",
     "required": [
       "mottaksretning",
-      "addressat",
+      "avsenderEllerMottaker",
       "mottattDato",
+      "journalforingDato",
       "journalpostID",
       "hoveddokument",
       "vedlegg"
@@ -22,12 +23,17 @@
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       },
       "mottattDato": {
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
+        "$id": "#/items/properties/mottattDato",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
       },
-      "addressat": {
-        "$id": "#/items/properties/addressat",
+      "journalforingDato": {
+        "$id": "#/items/properties/journalforingDato",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
+      },
+      "avsenderEllerMottaker": {
+        "$id": "#/items/properties/avsenderEllerMottaker",
         "type": "string",
-        "title": "The Addressat Schema",
+        "title": "The avsenderEllerMottaker Schema",
         "default": "",
         "examples": [
           "Ole Hermanrud"
