@@ -5,16 +5,16 @@
  */
 const normaltDriverVirksomhet = [
   {
-    "kode": "UTSENDELSE_OVER_24_MN",
-    "term": "Utsendelseperioden overskrider 24 måneder."
+    "kode": "IKKE_FORUTGAAENDE_DRIFT",
+    "term": "Ikke tilstrekkelig forutgående drift"
   },
   {
-    "kode": "IKKE_LIGNENDE_VIRKSOMHET",
-    "term": "Ikke lignende virksomhet."
+    "kode": "HAR_IKKE_NØDVENDIG_INFRASTRUKTUR",
+    "term": "Ikke nødvendig utstyr eller fasiliteter"
   },
   {
-    "kode": "NORMALT_IKKE_DRIFT_NORGE",
-    "term": "Normalt ikke drift i Norge."
+    "kode": "OPPRETTHOLDER_IKKE_LISENSER_AUTORISASJON",
+    "term": "Opprettholder ikke nødvendige lisenser eller autorisasjoner"
   }
 ];
 module.exports.normaltDriverVirksomhet = normaltDriverVirksomhet;
