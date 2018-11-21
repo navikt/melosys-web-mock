@@ -10,7 +10,8 @@
     "avsenderID",
     "erBrukerAvsender",
     "mottattDato",
-    "dokument"
+    "hoveddokument",
+    "vedlegg"
   ],
   "properties": {
     "brukerID": {
@@ -43,9 +44,18 @@
     "mottattDato": {
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
     },
-    "dokument": {
+    "hoveddokument": {
       "$id": "#/properties/dokument",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokument"
+    },
+    "vedlegg": {
+      "$id": "#/items/properties/vedlegg",
+      "type": "array",
+      "title": "The Vedlegg Schema",
+      "items": {
+        "$id": "#/items/properties/vedlegg/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dokument"
+      }
     }
   }
 }

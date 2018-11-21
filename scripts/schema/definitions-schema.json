@@ -94,6 +94,25 @@
         }
       }
     },
+    "nullable-dokument":  {
+      "type": "object",
+      "title": "Nullable Dokument type definisjon",
+      "additionalProperties": false,
+      "required": [
+        "dokumentID",
+        "tittel"
+      ],
+      "properties": {
+        "dokumentID": {
+          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dokumentID"
+        },
+        "tittel": {
+          "type": "string",
+          "title": "Tittel Schema",
+          "examples": ["Tittelen her"]
+        }
+      }
+    },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
       "type": ["string"],
