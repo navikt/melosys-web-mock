@@ -19,8 +19,7 @@ module.exports.lesJournalforingKatalog = () => {
   return Schema.lesKatalogSync(MOCK_JOURNALFORING_DIR);
 };
 
-const lesOppgave = async (journalpostID) => { // eslint-disable-line no-unused-vars
-  // const mockfile = `${MOCK_JOURNALFORING_DIR}/${journalpostID}-30098000492.json`;
+const lesOppgave = async () => { // eslint-disable-line no-unused-vars
   const mockfile = `${MOCK_JOURNALFORING_DIR}/DOK_3789-30098000492.json`;
   return JSON.parse(await Utils.readFileAsync(mockfile));
 };
