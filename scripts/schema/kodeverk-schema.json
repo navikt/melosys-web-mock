@@ -16,6 +16,7 @@
     "landkoder",
     "lovvalgsbestemmelser",
     "lovvalgsunntak",
+    "mottaksretning",
     "oppgavetyper",
     "representerer",
     "sakstyper",
@@ -229,6 +230,15 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/lovvalgsunntak/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "mottaksretning":  {
+      "$id": "#/properties/mottaksretning",
+      "type": "array",
+      "uniqueItems": true,
+      "items":  {
+        "$id": "#/properties/mottaksretning/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },

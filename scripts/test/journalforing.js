@@ -19,7 +19,7 @@ const testJournalPost = (postnavn) => {
   const postSchema = Schema.lesSchemaSync(postSchemaPath);
 
   const ajv = new Ajv({allErrors: true});
-  const postValidator = ajv.compile(postSchema);
+  const postValidator = ajv.addSchema(definitions).compile(postSchema);
 
   Schema.runTest(elem, ajv, postValidator);
 };

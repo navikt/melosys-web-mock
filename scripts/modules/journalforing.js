@@ -3,7 +3,6 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
 
-const ajv = new Ajv({allErrors: true});
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const ERR = require('./errors');
@@ -11,6 +10,9 @@ const ERR = require('./errors');
 const SCRIPTS_DIR = `${process.cwd()}/scripts`;
 const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
+const definitions = Schema.lesSchemaSync(definitionsPath);
+
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 module.exports.lesJournalforingKatalog = () => {
@@ -45,13 +47,14 @@ module.exports.hent = async (req, res) => {
 module.exports.sendOpprettNySak = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
-  const validate = ajv.compile(schema);
+  const ajv = new Ajv({allErrors: true});
+  const ajvValidator = ajv.addSchema(definitions).compile(schema);
 
   const body = req.body;
   try {
     let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     logger.debug("journalforing:sendOpprettNySak", JSON.stringify(jsBody));
-    const valid = test(validate, jsBody);
+    const valid = test(ajvValidator, jsBody, ajv);
     return (valid) ? res.status(204).json('') : valideringFeil(req, res);
   }
   catch (err) {
@@ -63,13 +66,14 @@ module.exports.sendOpprettNySak = (req, res) => {
 module.exports.sendTilordneSak = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
-  const validate = ajv.compile(schema);
+  const ajv = new Ajv({allErrors: true});
+  const ajvValidator = ajv.addSchema(definitions).compile(schema);
 
   const body = req.body;
   try {
     let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     logger.debug("journalforing:sendTilordneSak", JSON.stringify(jsBody));
-    const valid = test(validate, jsBody);
+    const valid = test(ajvValidator, jsBody, ajv);
     return (valid) ? res.status(204).json('') : valideringFeil(req, res);
   }
   catch (err) {
@@ -84,9 +88,9 @@ function valideringFeil(req, res) {
   res.status(status).send(melding);
 }
 
-function test(validate, data) {
-  const valid = validate(data);
+function test(ajvValidator, data, ajv) {
+  const valid = ajvValidator(data);
   if (valid) console.log('Journalforint:send Valid!');
-  else console.log('Invalid: ' + ajv.errorsText(validate.errors));
+  else console.log('Invalid: ' + ajv.errorsText(ajvValidator.errors));
   return valid;
 }

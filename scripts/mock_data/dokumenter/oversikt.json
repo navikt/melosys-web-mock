@@ -1,0 +1,97 @@
+[
+  {
+    "mottaksretning": {
+      "kode": "UT",
+      "term": "Utgående dokument"
+    },
+    "addressat": "Peter Christen Asbjørnsen",
+    "journalpostID": "4",
+    "mottattDato": "2017-06-03T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK_ID_4",
+      "tittel": "Vedtaksbrev"
+    },
+    "vedlegg": [
+      {
+        "tittel": "A1",
+        "dokumentID": "DOK_ID_4"
+      }
+    ]
+  },
+  {
+    "mottaksretning": {
+      "kode": "INN",
+      "term": "Inngående dokument"
+    },
+    "addressat": "Svensk trygdemyndighet",
+    "journalpostID": "5",
+    "mottattDato": "2017-05-30T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK",
+      "tittel": "Inntektsmelding"
+    },
+    "vedlegg": []
+  },
+  {
+    "mottaksretning": {
+      "kode": "UT",
+      "term": "Utgående dokument"
+    },
+    "addressat": "Clemens Bonifacius",
+    "journalpostID": "4",
+    "mottattDato": "2018-05-04T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK_ID_5",
+      "tittel": "Manglende dokumentasjon"
+    },
+    "vedlegg": []
+  },
+  {
+    "mottaksretning": {
+      "kode": "INN",
+      "term": "Inngående dokument"
+    },
+    "addressat": "Thorine Elisabeth Bruun",
+    "journalpostID": "5",
+    "mottattDato": "2017-05-24T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK",
+      "tittel": "Endring av søknad"
+    },
+    "vedlegg": [{
+      "dokumentID": null,
+      "tittel": "Fullmakt"
+    }]
+  },
+  {
+    "mottaksretning": {
+      "kode": "UT",
+      "term": "Utgående dokument"
+    },
+    "addressat": "Peter Christen Asbjørnsen",
+    "journalpostID": "4",
+    "mottattDato": "2017-05-12T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK_ID_4",
+      "tittel": "Forvaltningsmelding"
+    },
+    "vedlegg": []
+  },
+  {
+    "mottaksretning": {
+      "kode": "INN",
+      "term": "Inngående dokument"
+    },
+    "addressat": "Peter Christen Asbjørnsen",
+    "journalpostID": "5",
+    "mottattDato": "2017-05-24T15:15:25.622Z",
+    "hoveddokument": {
+      "dokumentID": "DOK",
+      "tittel": "Søknad"
+    },
+    "vedlegg": [{
+      "dokumentID": null,
+      "tittel": "Fremtidig arbeidskontrakt"
+    }]
+  }
+]

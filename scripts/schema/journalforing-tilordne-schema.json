@@ -48,13 +48,7 @@
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
-      "type": "string",
-      "title": "The dokumentID Schema",
-      "default": "",
-      "examples": [
-        "30098000492"
-      ],
-      "pattern": "^(.*)$"
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dokumentID"
     },
     "dokumenttittel": {
       "$id": "/properties/dokumenttittel",
@@ -67,12 +61,7 @@
     },
     "journalpostID": {
       "$id": "/properties/journalpostID",
-      "type": "string",
-      "title": "The Journalpostid Schema ",
-      "default": "",
-      "examples": [
-        "DOK_321"
-      ]
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/journalpostID"
     },
     "oppgaveID": {
       "$id": "/properties/oppgaveID",
