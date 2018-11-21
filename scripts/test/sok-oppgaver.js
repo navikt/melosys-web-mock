@@ -10,7 +10,7 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
-const schemajson = `${SCHEMA_DIR}/oppgaver-oversikt-schema.json`;
+const schemajson = `${SCHEMA_DIR}/oppgaver-sok-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
 const catalog = lesSokOppgaveKatalog();
 

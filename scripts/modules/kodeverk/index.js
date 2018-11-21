@@ -35,6 +35,7 @@ const kodeverk = {
   sakstyper,
   vedleggstitler,
 };
+
 module.exports.kodeverk = kodeverk;
 
 /**

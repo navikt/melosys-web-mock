@@ -12,7 +12,7 @@ module.exports.lesSokOppgaveKatalog = () => {
 
 const lesOppgave = async (fnr) => {
   const mockfile = `${MOCK_DATA_OPPGAVE_SOK_DIR}/fnr-${fnr}.json`;
-  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {};
+  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : [];
 };
 /**
  * Sok oppgaver
