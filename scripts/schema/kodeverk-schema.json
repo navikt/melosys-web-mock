@@ -64,7 +64,9 @@
         "ikkeSkip",
         "opphold",
         "vesentligVirksomhet",
+        "normaltDriverVirksomhet",
         "artikkel12_1",
+        "artikkel12_2",
         "artikkel16_1_anmodning"
       ],
       "properties": {
@@ -118,6 +120,16 @@
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
+        "normaltDriverVirksomhet": {
+          "$id": "#/properties/begrunnelser/properties/normaltDriverVirksomhet",
+          "type": "array",
+          "title": "The NormaltDriverVirksomhet Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/normaltDriverVirksomhet/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
         "artikkel12_1": {
           "$id": "#/properties/begrunnelser/properties/artikkel12_1",
           "type": "array",
@@ -125,6 +137,16 @@
           "uniqueItems": true,
           "items": {
             "$id": "#/properties/begrunnelser/properties/artikkel12_1/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "artikkel12_2": {
+          "$id": "#/properties/begrunnelser/properties/artikkel12_2",
+          "type": "array",
+          "title": "The Artikkel 12.2 Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/begrunnelser/properties/artikkel12_2/items",
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
