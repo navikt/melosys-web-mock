@@ -18,6 +18,8 @@ console.log('query testing|\n');
 
 instance.get('/saksbehandler').then(printresult).catch(console.error);
 
+instance.post('/behandlinger/4/status').then(printresult).catch(console.error);
+
 const soknad = require('./mock_data/soknader/post/soknad-post');
 instance.post('/soknader/4', soknad).then(printresult).catch(error => console.error(error.response.data));
 
