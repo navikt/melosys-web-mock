@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const serverinfo = require('./modules/server-info');
+const behandlinger = require('./modules/behandlinger');
 const fagsaker = require('./modules/fagsaker');
 const saksflyt = require('./modules/saksflyt');
 const sokFagsaker = require('./modules/sok-fagsaker');
@@ -53,6 +54,11 @@ app.use(bodyParser.raw());
 
 const port = process.env.PORT || 3002;
 const router = express.Router();
+
+/**
+ * BEHANDLINGER
+ */
+router.post('/behandlinger/:behandlingID/status', behandlinger.status);
 
 /**
  * SOK-FAGSAKER basert på fnr
