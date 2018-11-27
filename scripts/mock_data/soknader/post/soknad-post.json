@@ -75,13 +75,15 @@
       "arbeidstakerTidligereUtsendt24Mnd" : false,
       "trygdeavgiftTrukketGjennomSkattDato" : "2018-01-01"
     },
-    "maritimtArbeid" : {
-      "installasjonsLandKode" : "GB",
-      "flaggLandKode" : "GB",
-      "maritimTypeKode" : "SKIP",
-      "skipsNavn" : "Navn på skipet",
-      "fartsomradeKode" : "INNENRIKS"
-    },
+    "maritimtArbeid" : [
+      {
+        "installasjonsLandKode" : "GB",
+        "flaggLandKode" : "GB",
+        "maritimTypeKode" : "SKIP",
+        "skipsNavn" : "Snorre Dunfjæder",
+        "fartsomradeKode" : "INNENRIKS"
+      }
+    ],
     "arbeidUtland" : [
       {
         "arbeidsandelNorge" : 33.299999999999997,

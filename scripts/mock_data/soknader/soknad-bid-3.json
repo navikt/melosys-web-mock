@@ -91,13 +91,7 @@
       "trygdeavgiftTrukketGjennomSkatt": null,
       "trygdeavgiftTrukketGjennomSkattDato": null
     },
-    "maritimtArbeid": {
-      "maritimTypeKode": null,
-      "skipsNavn": null,
-      "fartsomradeKode": null,
-      "flaggLandKode": null,
-      "installasjonsLandKode": null
-    }
+    "maritimtArbeid": []
   },
   "tilleggsData": {
     "organisasjoner": [],

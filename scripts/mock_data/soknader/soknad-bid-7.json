@@ -91,13 +91,7 @@
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
     },
-    "maritimtArbeid": {
-      "maritimTypeKode": "SOKKEL",
-      "skipsNavn": null,
-      "fartsomradeKode": null,
-      "flaggLandKode": null,
-      "installasjonsLandKode": null
-    }
+    "maritimtArbeid": []
   },
   "tilleggsData": {
     "organisasjoner": [],
