@@ -17,11 +17,11 @@ const behandlingsstatus = [
   },
   {
     kode: 'AVVENT_DOK_UTL',
-    term: 'AVVENT_DOK_UTL',
+    term: 'Avventer svar fra utenlandsk trygdemyndighet',
   },
   {
     kode: 'AVVENT_DOK_PART',
-    term: 'AVVENT_DOK_PART',
+    term: 'Avventer svar fra part i saken',
   }
 ];
 module.exports.behandlingsstatus = behandlingsstatus;
