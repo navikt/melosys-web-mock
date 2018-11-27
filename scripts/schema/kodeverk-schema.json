@@ -12,6 +12,7 @@
     "begrunnelser",
     "dokumenttitler",
     "dokumenttyper",
+    "fartsomrader",
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
@@ -179,6 +180,16 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttyper/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "fartsomrader": {
+      "$id": "#/properties/fartsomrader",
+      "type": "array",
+      "title": "The Fartsomrader Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/finansiering/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },

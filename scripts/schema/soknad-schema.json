@@ -807,23 +807,12 @@
             "title": "The Maritimtarbeid Schema",
             "additionalProperties": false,
             "required": [
-              "maritimTypeKode",
               "skipsNavn",
               "fartsomradeKode",
               "flaggLandKode",
               "installasjonsLandKode"
             ],
             "properties": {
-              "maritimTypeKode": {
-                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/maritimTypeKode",
-                "type": ["string","null"],
-                "title": "The Maritimtypekode Schema",
-                "default": "",
-                "examples": [
-                  "SKIP"
-                ],
-                "pattern": "^(.*)$"
-              },
               "skipsNavn": {
                 "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/skipsNavn",
                 "type": ["string","null"],
