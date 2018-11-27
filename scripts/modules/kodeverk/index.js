@@ -8,6 +8,7 @@ const { behandlingstyper } = require('./behandlingstyper');
 const { begrunnelser } = require('./begrunnelser');
 const { dokumenttitler } = require('./dokumenttitler');
 const { dokumenttyper } = require('./dokumenttyper');
+const { fartsomrader } = require('./fartsomrader');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
@@ -25,6 +26,7 @@ const kodeverk = {
   begrunnelser,
   dokumenttitler,
   dokumenttyper,
+  fartsomrader,
   finansiering,
   landkoder,
   lovvalgsbestemmelser,
