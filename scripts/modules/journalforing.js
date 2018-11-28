@@ -58,7 +58,8 @@ module.exports.sendOpprettNySak = (req, res) => {
   }
   catch (err) {
     console.log(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 
@@ -77,7 +78,8 @@ module.exports.sendTilordneSak = (req, res) => {
   }
   catch (err) {
     console.log(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl);
+    res.status(500).send(melding);
   }
 };
 

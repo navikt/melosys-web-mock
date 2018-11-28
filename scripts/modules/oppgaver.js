@@ -35,7 +35,8 @@ module.exports.hentPlukk = async (req, res) => {
   catch (err) {
     console.log(err);
     logger.error(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 
@@ -68,7 +69,8 @@ module.exports.oversikt = async (req, res) => {
   catch (err) {
     console.log(err);
     logger.error(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 module.exports.opprett = (req, res) => {
@@ -96,7 +98,8 @@ module.exports.tilbakelegg = (req, res) => {
   }
   catch (err) {
     console.log(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 
