@@ -113,7 +113,7 @@
     },
     "maritimtArbeid": [
       {
-        "skipsNavn": "Dunfjæder",
+        "navn": "Dunfjæder",
         "fartsomradeKode": "INNENRIKS",
         "flaggLandKode": "GB",
         "installasjonsLandKode": "GB"

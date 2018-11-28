@@ -806,16 +806,16 @@
             "title": "The Maritimtarbeid Schema",
             "additionalProperties": false,
             "required": [
-              "skipsNavn",
+              "navn",
               "fartsomradeKode",
               "flaggLandKode",
               "installasjonsLandKode"
             ],
             "properties": {
-              "skipsNavn": {
-                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/skipsNavn",
+              "navn": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/navn",
                 "type": ["string","null"],
-                "title": "The Skipsnavn Schema",
+                "title": "The Navn Schema",
                 "default": "",
                 "examples": [
                   "Navn på skipet"
