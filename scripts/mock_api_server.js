@@ -8,7 +8,6 @@ global.nodeCache = nodeCache;
 
 const serverinfo = require('./modules/server-info');
 const fagsaker = require('./modules/fagsaker');
-const saksflyt = require('./modules/saksflyt');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
@@ -16,7 +15,7 @@ const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Kodeverk = require('./modules/kodeverk');
-const oppfriskning = require('./modules/oppfriskning')
+const saksopplysninger = require('./modules/saksopplysninger');
 const saksbehandler = require('./modules/saksbehandler');
 const vilkar = require('./modules/vilkar');
 const avklartefakta = require('./modules/avklartefakta');
@@ -159,12 +158,8 @@ router.get('/organisasjoner', organisasjoner.hent);
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfrisk/:behandlingID', saksflyt.oppfrisk);
-/**
- * OPPFRISKNING
- * ---------------------------------------------------------------
- */
-router.get('/oppfriskning/:behandlingID/status', oppfriskning.status);
+router.get('/saksopplysninger/oppfriskning/:behandlingID/status', saksopplysninger.status);
+router.get('/saksopplysninger/oppfriskning/:behandlingID', saksopplysninger.oppfrisk);
 
 /**
  * VILKÅR
