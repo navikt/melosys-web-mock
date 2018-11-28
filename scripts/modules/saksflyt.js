@@ -5,8 +5,10 @@ const memcache = require('./memcache');
 module.exports.oppfrisk = (req, res) => {
   try {
     const { behandlingID } = req.params;
-    if (!memcache.getLibraryItem(behandlingID)) {
+    const status = memcache.getLibraryItem(behandlingID);
+    if (!status) {
       memcache.createLibraryItem(behandlingID);
+      console.log('Created cache entry for behandlingID:', behandlingID);
     }
     res.status(204).send();
   }
