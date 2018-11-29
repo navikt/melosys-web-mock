@@ -9,7 +9,7 @@
   ],
   "properties": {
     "behandlingsresultat": {
-      "$id": "#/properties/behandlingsresultat",
+      "$id": "#/properties/behandlingsresultattype",
       "type": "string",
       "enum": [
         "FASTSATT_LOVVALGSLAND", "FORELOEPIG_FASTSATT_LOVVALGSLAND", "HENLEGGELSE", "ANMODNING_OM_UNNTAK"
