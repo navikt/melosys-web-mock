@@ -5,7 +5,7 @@
   "type": "object",
   "title": "The Root Schema",
   "required": [
-    "behandlingsresultat"
+    "behandlingsresultattype"
   ],
   "properties": {
     "behandlingsresultat": {
