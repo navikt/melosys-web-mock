@@ -186,7 +186,7 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  * VEDTAK
  *  * ---------------------------------------------------------------
  */
-router.post('/vedtak/:behandlingID', vedtak.lagre);
+router.post('/vedtak/:behandlingID', vedtak.fattet);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

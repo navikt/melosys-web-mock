@@ -39,6 +39,9 @@ instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).
 const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
 instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(console.error);
 
+const vedtak_post = require('./mock_data/vedtak/post/vedtak-post');
+instance.post('/vedtak/4', vedtak_post).then(printresult).catch(console.error);
+
 const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
 const behandlingID = 3;
 const dokumentTypeID = 'MELDING_MANGLENDE_OPPLYSNINGER';
