@@ -1381,6 +1381,11 @@
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
               },
+              "sisteOpplysningerHentetDato": {
+                "title": "The SisteOpplysningerHentetDato Schema",
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/sisteOpplysningerHentetDato",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
+              },
               "behandlingstype": {
                 "title": "The Behandlingsype Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",

@@ -7,6 +7,7 @@ const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
 const serverinfo = require('./modules/server-info');
+const behandlinger = require('./modules/behandlinger');
 const fagsaker = require('./modules/fagsaker');
 const sokFagsaker = require('./modules/sok-fagsaker');
 const oppgaver = require('./modules/oppgaver');
@@ -56,6 +57,11 @@ app.use(bodyParser.raw());
 
 const port = process.env.PORT || 3002;
 const router = express.Router();
+
+/**
+ * BEHANDLINGER
+ */
+router.post('/behandlinger/:behandlingID/status', behandlinger.status);
 
 /**
  * SOK-FAGSAKER basert på fnr
