@@ -12,6 +12,22 @@
     "begrunnelseFritekst" : null
   },
   {
+    "referanse" : "SOKKEL_ELLER_SKIP",
+    "avklartefaktaKode" : "SOKKEL_ELLER_SKIP",
+    "begrunnelseKoder" : ["SOMETHING"],
+    "subjektID" : "Dunfjæder",
+    "fakta" : ["SOKKEL"],
+    "begrunnelseFritekst" : null
+  },
+  {
+    "referanse" : "INSTALLASJON_ARBEIDSLAND",
+    "avklartefaktaKode" : "ARBEIDSLAND",
+    "begrunnelseKoder" : [],
+    "subjektID" : "Dunfjæder",
+    "fakta" : ["GB"],
+    "begrunnelseFritekst" : null
+  },
+  {
     "avklartefaktaKode" : "AVKLARTE_ARBEIDSGIVER",
     "subjektID" : "810072512",
     "begrunnelseKoder" : [
