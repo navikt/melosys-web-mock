@@ -1359,7 +1359,6 @@
               "status",
               "registrertDato",
               "endretDato",
-              "opprettetDato",
               "sisteOpplysningerHentetDato",
               "behandlingstype"
             ],
@@ -1381,11 +1380,6 @@
               "endretDato": {
                 "title": "The Endretdato Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/endretDato",
-                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
-              },
-              "opprettetDato": {
-                "title": "The OpprettetDato Schema",
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/opprettetDato",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-dato-tid"
               },
               "sisteOpplysningerHentetDato": {
