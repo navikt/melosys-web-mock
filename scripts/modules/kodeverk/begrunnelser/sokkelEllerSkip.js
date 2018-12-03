@@ -1,9 +1,9 @@
 /**
- * Kodeverk/ikkeSkip
+ * Kodeverk/sokkelEllerSkip
  * ref: https://confluence.adeo.no/display/TEESSI/Kodeverk+i+Melosys
  * @module
  */
-const ikkeSkip = [
+const sokkelEllerSkip = [
   {
     'kode': 'IKKE_EGET_FREMDRIFT',
     'term': 'Ikke eget fremdrift'
@@ -13,4 +13,5 @@ const ikkeSkip = [
     'term': 'Ikke ordinært skipsfart'
   }
 ];
-module.exports.ikkeSkip = ikkeSkip;
+
+module.exports.sokkelEllerSkip = sokkelEllerSkip;
