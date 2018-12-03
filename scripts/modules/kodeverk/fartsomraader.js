@@ -2,7 +2,7 @@
  * Kodeverk/fartsomrader
  * @module
  */
-const fartsomrader = [
+const fartsomraader = [
   {
     kode: "INNENRIKS",
     term: "Innenriks",
@@ -12,4 +12,4 @@ const fartsomrader = [
     term: "Utenriks",
   }
 ];
-module.exports.fartsomrader = fartsomrader;
+module.exports.fartsomraader = fartsomraader;
