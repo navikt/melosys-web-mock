@@ -2,6 +2,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Schema = require('../test/schema-util');
 const Utils = require('./utils');
+const ERR = require('./errors');
 
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
@@ -23,6 +24,7 @@ module.exports.hent = async (req, res) => {
   } catch (err) {
     console.log(err);
     logger.error(err);
-    res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };

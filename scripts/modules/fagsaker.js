@@ -21,30 +21,32 @@ module.exports.hent = async (req, res) => {
     const exists = await existsAsync(mockfile);
     if (exists) {
       const fagsaker = JSON.parse(await readFileAsync(mockfile));
-      return res.json(fagsaker);
+      res.json(fagsaker);
     }
     else {
       console.error("File not found:"+ mockfile);
       logger.error("File not found"+mockfile);
       const melding = ERR.notFound404(req.url);
-      return res.status(404).send(melding);
+      res.status(404).send(melding);
     }
   }
   catch (err) {
     console.error(err);
     logger.error(err);
-    return res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 
 module.exports.oppfrisk = (req, res) => {
   try {
-    return res.status(204).send();
+    res.status(204).send();
   }
   catch (err) {
     console.error(err);
     logger.error(err);
-    return res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 

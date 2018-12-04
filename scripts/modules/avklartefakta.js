@@ -40,9 +40,11 @@ module.exports.hent = async (req, res) => {
   catch (err) {
     console.error(err);
     logger.error(err);
-    return res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
+
 function valideringFeil(req, res) {
   const status = 400;
   const melding = ERR.errorMessage(400, 'Bad Request', 'Invalid schema', req.originalUrl);

@@ -48,7 +48,8 @@ module.exports.hent = async (req, res) => {
   catch (err) {
     console.error(err);
     logger.error(err);
-    return res.status(500).send(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
   }
 };
 

@@ -1,4 +1,3 @@
-const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
@@ -12,21 +11,22 @@ const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 
-// const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
-// const MOCK_VEDTAK_DIR = `${MOCK_DATA_DIR}/vedtak`;
-
-module.exports.fattet = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/vedtak-post-schema.json`;
+module.exports.status = (req, res) => {
+  const schemajson = `${SCHEMA_DIR}/behandlinger-status-post-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const ajv = new Ajv({allErrors: true});
-
   const ajvValidator = ajv.addSchema(definitions).compile(schema);
-  const url = URL.parse(req.url);
-  const body = req.body;
 
   try {
+    const { behandlingID } = req.params;
+    if (!behandlingID) {
+      const melding = ERR.badRequest400(req.originalUrl, "behandlingID mangler");
+      return res.status(400).send(melding);
+    }
+    const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const valid = test(ajvValidator, jsBody, ajv);
+
     if (valid) {
       res.status(204).send();
     }
@@ -35,12 +35,13 @@ module.exports.fattet = (req, res) => {
     }
   }
   catch (err) {
-    console.error(err);
+    console.log(err);
     logger.error(err);
-    const melding = ERR.serverError500(url, err);
+    const melding = ERR.serverError500(req.originalUrl, err);
     res.status(500).send(melding);
   }
 };
+
 
 function valideringFeil(req, res) {
   const status = 400;
@@ -50,7 +51,7 @@ function valideringFeil(req, res) {
 
 function test(ajvValidator, data, ajv) {
   const valid = ajvValidator(data);
-  if (valid) console.log('Vedtak:fattet Valid!');
+  if (valid) console.log('Behandlinger:status Valid!');
   else console.log('Invalid: ' + ajv.errorsText(ajvValidator.errors));
   return valid;
 }
