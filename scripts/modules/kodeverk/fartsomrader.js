@@ -4,11 +4,11 @@
  */
 const fartsomrader = [
   {
-    kode: "INNENRIKS",
+    kode: "innenriks",
     term: "Innenriks",
   },
   {
-    kode: "UTENRIKS",
+    kode: "utenriks",
     term: "Utenriks",
   }
 ];
