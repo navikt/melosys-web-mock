@@ -17,7 +17,6 @@ const { mottaksretning } = require('./mottaksretning');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
 const { sakstyper } = require('./sakstyper');
-const { vedleggstitler } = require('./vedleggstitler');
 
 const kodeverk = {
   aktoerroller,
@@ -35,7 +34,6 @@ const kodeverk = {
   oppgavetyper,
   representerer,
   sakstyper,
-  vedleggstitler,
 };
 
 module.exports.kodeverk = kodeverk;

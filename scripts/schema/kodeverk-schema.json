@@ -20,8 +20,7 @@
     "mottaksretning",
     "oppgavetyper",
     "representerer",
-    "sakstyper",
-    "vedleggstitler"
+    "sakstyper"
   ],
   "properties": {
     "aktoerroller": {
@@ -62,7 +61,7 @@
       "required": [
         "bosted",
         "forutgaendeMedlemskap",
-        "ikkeSkip",
+        "sokkelEllerSkip",
         "opphold",
         "vesentligVirksomhet",
         "normaltDriverVirksomhet",
@@ -91,7 +90,7 @@
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         },
-        "ikkeSkip": {
+        "sokkelEllerSkip": {
           "$id": "#/properties/begrunnelser/properties/ikkeSkip",
           "type": "array",
           "title": "The Ikkeskip Schema",
@@ -302,16 +301,6 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/sakstyper/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "vedleggstitler": {
-      "$id": "#/properties/vedleggstitler",
-      "type": "array",
-      "title": "The Vedleggstitler Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/vedleggstitler/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     }
