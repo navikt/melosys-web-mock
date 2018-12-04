@@ -62,7 +62,7 @@ const router = express.Router();
  * BEHANDLINGER
  */
 router.post('/behandlinger/:behandlingID/status', behandlinger.status);
-
+router.post('/behandlinger/:behandlingID/perioder', behandlinger.perioder);
 /**
  * SOK-FAGSAKER basert på fnr
  */

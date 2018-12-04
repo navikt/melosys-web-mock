@@ -459,6 +459,7 @@
         "medlemskap": {
           "medlemsperiode": [
             {
+              "periodeID": 300110740,
               "periode": {
                 "fom": "2007-11-12",
                 "tom": "2007-11-25"
@@ -497,6 +498,7 @@
               }
             },
             {
+              "periodeID": 300110741,
               "periode": {
                 "fom": "2009-09-01",
                 "tom": "2009-10-01"

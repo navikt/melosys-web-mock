@@ -1062,6 +1062,7 @@
                       "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items",
                       "type": "object",
                       "required": [
+                        "periodeID",
                         "periode",
                         "periodetype",
                         "status",
@@ -1073,6 +1074,13 @@
                         "kilde"
                       ],
                       "properties": {
+                        "periodeID": {
+                          "title":"The Medklemsskap PeriodeID Schema",
+                          "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",
+                          "type": "integer",
+                          "default": 0,
+                          "examples": [400110740]
+                        },
                         "periode": {
                           "title": "The Meldlemskap Periode Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",

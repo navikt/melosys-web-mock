@@ -42,6 +42,22 @@ module.exports.status = (req, res) => {
   }
 };
 
+module.exports.perioder = (req, res) => {
+  try {
+    const { behandlingID } = req.params;
+    console.log(behandlingID);
+    const { body } = req;
+    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    console.log(jsBody);
+    res.status(204).send();
+  }
+  catch (err) {
+    console.log(err);
+    logger.error(err);
+    const melding = ERR.serverError500(req.originalUrl, err);
+    res.status(500).send(melding);
+  }
+};
 
 function valideringFeil(req, res) {
   const status = 400;
