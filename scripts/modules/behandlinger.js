@@ -25,7 +25,7 @@ module.exports.status = (req, res) => {
     }
     const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = test(ajvValidator, jsBody, ajv);
+    const valid = test(ajvValidator, jsBody, ajv, 'status');
 
     if (valid) {
       res.status(204).send();
@@ -43,13 +43,27 @@ module.exports.status = (req, res) => {
 };
 
 module.exports.perioder = (req, res) => {
+  const schemajson = `${SCHEMA_DIR}/behandlinger-perioder-post-schema.json`;
+  const schema = Schema.lesSchemaSync(schemajson);
+  const ajv = new Ajv({allErrors: true});
+  const ajvValidator = ajv.addSchema(definitions).compile(schema);
+
   try {
     const { behandlingID } = req.params;
-    console.log(behandlingID);
+    if (!behandlingID) {
+      const melding = ERR.badRequest400(req.originalUrl, "behandlingID mangler");
+      return res.status(400).send(melding);
+    }
     const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    console.log(jsBody);
-    res.status(204).send();
+
+    const valid = test(ajvValidator, jsBody, ajv, 'perioder');
+    if (valid) {
+      res.json(jsBody)
+    }
+    else {
+      valideringFeil(req, res);
+    }
   }
   catch (err) {
     console.log(err);
@@ -65,9 +79,9 @@ function valideringFeil(req, res) {
   res.status(status).send(melding);
 }
 
-function test(ajvValidator, data, ajv) {
+function test(ajvValidator, data, ajv, endepunkt) {
   const valid = ajvValidator(data);
-  if (valid) console.log('Behandlinger:status Valid!');
+  if (valid) console.log('Behandlinger:%s Valid!', endepunkt);
   else console.log('Invalid: ' + ajv.errorsText(ajvValidator.errors));
   return valid;
 }

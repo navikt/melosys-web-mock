@@ -1077,9 +1077,7 @@
                         "periodeID": {
                           "title":"The Medklemsskap PeriodeID Schema",
                           "$id": "#/properties/behandlinger/items/properties/saksopplysninger/properties/medlemskap/properties/medlemsperiode/items/periode",
-                          "type": "integer",
-                          "default": 0,
-                          "examples": [400110740]
+                          "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periodeID"
                         },
                         "periode": {
                           "title": "The Meldlemskap Periode Schema",
