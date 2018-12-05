@@ -225,6 +225,7 @@
             "oppholdsPeriode",
             "ektefelleEllerBarnINorge",
             "sammeAdresseSomArbeidsgiver",
+            "forutgaendeBostedINorge",
             "studentFinansieringKode",
             "studentSemester"
           ],
@@ -264,6 +265,15 @@
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/sammeAdresseSomArbeidsgiver",
               "type": ["boolean","null"],
               "title": "The Sammeadressesomarbeidsgiver Schema",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "forutgaendeBostedINorge": {
+              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/forutgaendeBostedINorge",
+              "type": ["boolean","null"],
+              "title": "The ForutgaendeBostedINorge Schema",
               "default": false,
               "examples": [
                 true
