@@ -12,7 +12,6 @@ const { fartsomrader } = require('./fartsomrader');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
-const { lovvalgsunntak } = require('./lovvalgsunntak');
 const { mottaksretning } = require('./mottaksretning');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
@@ -29,7 +28,6 @@ const kodeverk = {
   finansiering,
   landkoder,
   lovvalgsbestemmelser,
-  lovvalgsunntak,
   mottaksretning,
   oppgavetyper,
   representerer,
