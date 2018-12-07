@@ -1365,6 +1365,7 @@
               "status",
               "registrertDato",
               "endretDato",
+              "sisteOpplysningerHentetDato",
               "behandlingstype"
             ],
             "properties": {
