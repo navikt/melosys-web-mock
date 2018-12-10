@@ -1,6 +1,7 @@
 [
   {
     "oppgaveID": "1",
+    "redigerbart": true,
     "sammensattNavn": "GLITRENDE HATT",
     "saksnummer": "4",
     "aktivTil": "2019-04-25",
@@ -32,6 +33,7 @@
   },
   {
     "oppgaveID": "2",
+    "redigerbart": false,
     "sammensattNavn": "GLITRENDE HATT",
     "saksnummer": "4",
     "aktivTil": "2019-04-25",
@@ -63,6 +65,7 @@
   },
   {
     "oppgaveID": "3",
+    "redigerbart": true,
     "sammensattNavn": "GLITRENDE HATT",
     "saksnummer": "4",
     "aktivTil": "2019-04-25",

@@ -1,6 +1,7 @@
 [
   {
     "oppgaveID": "1",
+    "redigerbart": false,
     "sammensattNavn": "ARTIG MASKIN",
     "saksnummer": "6",
     "aktivTil": "2019-04-25",
@@ -32,6 +33,7 @@
   },
   {
     "oppgaveID": "2",
+    "redigerbart": true,
     "sammensattNavn": "ARTIG MASKIN",
     "saksnummer": "6",
     "aktivTil": "2019-04-25",
