@@ -13,6 +13,7 @@
   "gsakSaksnummer": null,
   "behandlinger": [
     {
+      "redigerbart": false,
       "oppsummering": {
         "behandlingID": 5,
         "status": {

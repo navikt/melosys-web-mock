@@ -86,11 +86,18 @@
         "title": "The Items Schema",
         "additionalProperties": false,
         "required": [
+          "redigerbart",
           "saksopplysninger",
           "behandlingshistorikk",
           "oppsummering"
         ],
         "properties": {
+          "redigerbart": {
+            "$id": "#/properties/behandlinger/items/properties/redigerbart",
+            "type": "boolean",
+            "default": true,
+            "examples": [true, false]
+          },
           "saksopplysninger": {
             "$id": "#/properties/behandlinger/items/properties/saksopplysninger",
             "type": "object",
