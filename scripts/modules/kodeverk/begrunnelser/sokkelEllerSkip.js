@@ -6,11 +6,15 @@
 const sokkelEllerSkip = [
   {
     'kode': 'IKKE_EGET_FREMDRIFT',
-    'term': 'Ikke eget fremdrift'
+    'term': 'Ikke framdrift for egen maskin'
   },
   {
     'kode': 'IKKE_ORDINAERT_SKIPSFART',
-    'term': 'Ikke ordinært skipsfart'
+    'term': 'Skrogtypen kan ikke brukes i ordinær skipsfart'
+  },
+  {
+    'kode': 'BORESKIP',
+    'term': 'Boreskip - Sokkel'
   }
 ];
 
