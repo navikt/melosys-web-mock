@@ -20,6 +20,8 @@ instance.get('/saksbehandler').then(printresult).catch(console.error);
 
 const behandinger_status = require('./mock_data/behandlinger/post/behandlinger-status');
 instance.post('/behandlinger/4/status', behandinger_status).then(printresult).catch(console.error);
+const behandlinger_perioder= require('./mock_data/behandlinger/post/behandlinger-perioder');
+instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(printresult).catch(console.error);
 
 const soknad = require('./mock_data/soknader/post/soknad-post');
 instance.post('/soknader/4', soknad).then(printresult).catch(error => console.error(error.response.data));

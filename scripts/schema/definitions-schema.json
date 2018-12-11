@@ -44,12 +44,19 @@
       }
     },
     "behandlingID": {
-      "$id": "#/properties/behandlingID",
-      "type": ["integer"],
+      "type": "integer",
       "title": "The BehandlingID Schema",
       "default": 0,
       "examples": [
         1000023948
+      ]
+    },
+    "periodeID": {
+      "type": "integer",
+      "title": "The PeriodeID Schema",
+      "default": 0,
+      "examples": [
+        400110740
       ]
     },
     "dato":  {
