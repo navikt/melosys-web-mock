@@ -15,6 +15,10 @@ const sokkelEllerSkip = [
   {
     'kode': 'BORESKIP',
     'term': 'Boreskip - Sokkel'
+  },
+  {
+    'kode': 'FAST_INSTALLASJON',
+    'term': 'Fast installasjon'
   }
 ];
 
