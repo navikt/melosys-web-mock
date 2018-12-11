@@ -36,7 +36,7 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "status",
+    "saksstatus",
     "sakstype",
     "behandlinger",
     "endretDato",
@@ -45,8 +45,8 @@
     "saksnummer"
   ],
   "properties": {
-    "status": {
-      "title": "The Status Schema",
+    "saksstatus": {
+      "title": "The Saksstatus Schema",
       "$id": "#/properties/status",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
     },
