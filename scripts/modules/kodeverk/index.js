@@ -14,6 +14,7 @@ const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
 const { mottaksretning } = require('./mottaksretning');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
+const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
 const { vedleggstitler } = require('./vedleggstitler');
 
@@ -30,6 +31,7 @@ const kodeverk = {
   mottaksretning,
   oppgavetyper,
   representerer,
+  saksstatuser,
   sakstyper,
   vedleggstitler,
 };
