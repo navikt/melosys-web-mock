@@ -280,7 +280,7 @@
       "title": "The SaksStatuser Schema",
       "uniqueItems": true,
       "items": {
-        "$id": "#/properties/sakstyper/items",
+        "$id": "#/properties/saksstatuser/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
