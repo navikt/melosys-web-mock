@@ -8,11 +8,11 @@
 const saksstatuser = [
   {
     kode: 'OPPRETTET',
-    term: 'Saken har blitt opprettet men behandlingen har ikke startet eller er ikke ferdigstilt ennå.'
+    term: 'Saken har blitt opprettet'
   },
   {
     kode: 'LOVVALG_AVKLART',
-    term: 'Avklart hvilket landstrygdeloving bruker skal omfattes av.'
+    term: 'Lovvalget er avklart'
   },
   {
     kode: 'AVSLUTTET',
@@ -20,7 +20,7 @@ const saksstatuser = [
   },
   {
     kode: 'HENLAGT',
-    term: 'Saken har blitt henlagt'
+    term: 'Saken er henlagt'
   }
 ];
 module.exports.saksstatuser = saksstatuser;

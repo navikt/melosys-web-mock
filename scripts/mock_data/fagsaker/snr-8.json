@@ -4,9 +4,9 @@
     "kode": "EU_EOS",
     "term": "EU/EØS"
   },
-  "status": {
-    "kode": "OPPRETTET",
-    "term": "Opprettet"
+  "saksstatus": {
+    "kode" : "OPPRETTET",
+    "term" : "Saken er opprettet"
   },
   "registrertDato": "2018-10-02T07:04:35.403Z",
   "endretDato": "2018-10-02T07:04:35.403Z",

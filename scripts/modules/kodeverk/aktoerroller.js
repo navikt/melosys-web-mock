@@ -6,19 +6,19 @@
 const aktoerroller = [
   {
     "kode": "BRUKER",
-    "term": "Personen som avklaringen lovvalg eller medlemskap gjelder for."
+    "term": "Bruker"
   },
   {
     "kode": "ARBEIDSGIVER",
-    "term": "Arbeidsgiver som sender bruker for arbeid eller oppdrag i utlandet."
+    "term": "Arbeidsgiver"
   },
   {
     "kode": "REPRESENTANT",
-    "term": "Aktøren representerer bruker og/eller arbeidsgiver is saken."
+    "term": "Fullmektig"
   },
   {
     "kode": "MYNDIGHET",
-    "term": "Myndigheten det sendes til og/eller mottas dokumentasjon fra i saken."
+    "term": "Trygdemyndighet"
   }
 ];
 module.exports.aktoerroller = aktoerroller;

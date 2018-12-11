@@ -5,6 +5,10 @@
       "kode": "EU_EOS",
       "term": "EU/EØS"
     },
+    "saksstatus" : {
+      "kode" : "OPPRETTET",
+      "term" : "Saken er opprettet"
+    },
     "behandlingstype": {
       "kode": "SKND",
       "term": "Søknad"
