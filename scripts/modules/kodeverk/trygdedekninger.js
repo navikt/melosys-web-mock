@@ -1,3 +1,7 @@
+/**
+ * Kodeverk/trygdedekninger
+ * @module
+ */
 const trygdedekninger = [
   {
     kode: 'UTEN_DEKNING',

@@ -18,6 +18,7 @@ const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
 const { trygdedekninger } = require('./trygdedekninger');
 const { vedleggstitler } = require('./vedleggstitler');
+const { yrke } = require('./yrke');
 
 const kodeverk = {
   aktoerroller,
@@ -36,6 +37,7 @@ const kodeverk = {
   sakstyper,
   trygdedekninger,
   vedleggstitler,
+  yrke,
 };
 
 module.exports.kodeverk = kodeverk;

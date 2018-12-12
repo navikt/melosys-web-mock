@@ -21,7 +21,8 @@
     "saksstatuser",
     "sakstyper",
     "trygdedekninger",
-    "vedleggstitler"
+    "vedleggstitler",
+    "yrke"
   ],
   "properties": {
     "aktoerroller": {
@@ -344,6 +345,38 @@
       "items": {
         "$id": "#/properties/vedleggstitler/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "yrke": {
+      "$id": "#/properties/yrke",
+      "type": "object",
+      "title": "The Yrke Schema",
+      "additionalProperties": false,
+      "required": [
+        "yrkesaktivitetstyper",
+        "yrkesgrupper"
+      ],
+      "properties": {
+        "yrkesaktivitetstyper": {
+          "$id": "#/properties/yrke/properties/yrkesaktivitetstyper/",
+          "type": "array",
+          "title": "The YrkesaktivitetsTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/yrke/properties/yrkesaktivitetstyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "yrkesgrupper": {
+          "$id": "#/properties/yrke/properties/yrkesgrupper/",
+          "type": "array",
+          "title": "The YrkesGrupper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/yrke/properties/yrkesgrupper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
       }
     }
   }
