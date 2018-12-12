@@ -16,7 +16,7 @@
       "oppsummering": {
         "behandlingID": 3,
         "behandlingstype":{
-          "kode":"SKND",
+          "kode":"SOEKNAD",
           "term":"Søknad"
         },
         "status":{

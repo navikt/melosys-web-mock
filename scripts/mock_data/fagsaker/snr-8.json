@@ -21,7 +21,7 @@
         },
         "behandlingstype": {
           "kode": "SOEKNAD",
-          "term": "Behandling av søknad"
+          "term": "Søknad"
         },
         "registrertDato": "2018-10-02T07:04:35.403Z",
         "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
