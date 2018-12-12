@@ -18,7 +18,7 @@ const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
 const { trygdedekninger } = require('./trygdedekninger');
 const { vedleggstitler } = require('./vedleggstitler');
-const { yrke } = require('./yrke');
+const { yrke } = require('./yrker');
 
 const kodeverk = {
   aktoerroller,

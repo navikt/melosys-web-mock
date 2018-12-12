@@ -1,9 +1,9 @@
 const { yrkesaktivitetstyper } = require('./yrkesaktivitetstyper');
 const { yrkesgrupper } = require('./yrkesgrupper');
 
-const yrke = {
+const yrker = {
   yrkesaktivitetstyper,
   yrkesgrupper
 };
 
-module.exports.yrke = yrke;
+module.exports.yrker = yrker;
