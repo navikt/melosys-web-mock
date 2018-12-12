@@ -9,8 +9,8 @@
     "aktoerroller",
     "behandlinger",
     "begrunnelser",
+    "brev",
     "dokumenttitler",
-    "dokumenttyper",
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
@@ -186,6 +186,38 @@
         }
       }
     },
+    "brev": {
+      "$id": "#/properties/brev",
+      "type": "object",
+      "title": "The Brev Schema",
+      "additionalProperties": false,
+      "required": [
+        "dokumentTypeIder",
+        "dokumenttyper"
+      ],
+      "properties": {
+        "dokumentTypeIder": {
+          "$id": "#/properties/brev/dokumentTypeIder",
+          "type": "array",
+          "title": "The dokumentTypeIder Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/brev/dokumentTypeIder/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "dokumenttyper": {
+          "$id": "#/properties/brev/dokumenttyper",
+          "type": "array",
+          "title": "The DokumentTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/brev/dokumenttyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
+      }
+    },
     "dokumenttitler": {
       "$id": "#/properties/dokumenttitler",
       "type": "array",
@@ -193,16 +225,6 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttitler/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "dokumenttyper": {
-      "$id": "#/properties/dokumenttyper",
-      "type": "array",
-      "title": "The Dokumenttyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/dokumenttyper/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },

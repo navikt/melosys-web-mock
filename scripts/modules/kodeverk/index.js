@@ -6,7 +6,7 @@ const { aktoerroller } = require('./aktoerroller');
 const { begrunnelser } = require('./begrunnelser');
 const { behandlinger } = require('./behandlinger');
 const { dokumenttitler } = require('./dokumenttitler');
-const { dokumenttyper } = require('./dokumenttyper');
+const { brev } = require('./brev');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
@@ -18,14 +18,14 @@ const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
 const { trygdedekninger } = require('./trygdedekninger');
 const { vedleggstitler } = require('./vedleggstitler');
-const { yrke } = require('./yrker');
+const { yrker } = require('./yrker');
 
 const kodeverk = {
   aktoerroller,
   dokumenttitler,
   behandlinger,
   begrunnelser,
-  dokumenttyper,
+  brev,
   finansiering,
   landkoder,
   lovvalgsbestemmelser,
@@ -37,7 +37,7 @@ const kodeverk = {
   sakstyper,
   trygdedekninger,
   vedleggstitler,
-  yrke,
+  yrker,
 };
 
 module.exports.kodeverk = kodeverk;

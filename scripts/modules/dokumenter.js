@@ -4,7 +4,7 @@ const Ajv = require('ajv');
 const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
-const { dokumenttyper } = require('../modules/kodeverk/dokumenttyper');
+const { dokumenttyper } = require('./kodeverk/brev/dokumenttyper');
 const dokumenttypeKoder = dokumenttyper.reduce((acc,curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
