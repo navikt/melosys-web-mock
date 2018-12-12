@@ -10,7 +10,7 @@
       "term" : "Saken er opprettet"
     },
     "behandlingstype": {
-      "kode": "SKND",
+      "kode": "SOEKNAD",
       "term": "Søknad"
     },
     "behandlingsstatus": {

@@ -15,7 +15,7 @@
     "behandling": {
       "behandlingID": 1,
       "behandlingstype": {
-        "kode": "SKND",
+        "kode": "SOEKNAD",
         "term": "Søknad"
       },
       "behandlingsstatus": {

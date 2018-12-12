@@ -15,7 +15,7 @@
     "behandling": {
       "behandlingID": 3,
       "behandlingstype": {
-        "kode": "SKND",
+        "kode": "SOEKNAD",
         "term": "Søknad"
       },
       "behandlingsstatus": {
@@ -46,7 +46,7 @@
     "behandling": {
       "behandlingID": 2,
       "behandlingstype": {
-        "kode": "SKND",
+        "kode": "SOEKNAD",
         "term": "Søknad"
       },
       "behandlingsstatus": {
