@@ -55,7 +55,7 @@
       "sammensattNavn": "GLITRENDE HATT",
       "saksnummer": "4",
       "sakstype": {
-        "kode": "FLK_TRG",
+        "kode": "TRYGDEAVTALE",
         "term": "Trygdeavtale"
       },
       "behandling": {
@@ -117,7 +117,7 @@
       "sammensattNavn": "KAKE ARTIG",
       "saksnummer": "5",
       "sakstype": {
-        "kode": "FLK_TRG",
+        "kode": "TRYGDEAVTALE",
         "term": "Folketrygd"
       },
       "behandling": {
@@ -148,7 +148,7 @@
       "sammensattNavn": "MASKIN ARTIG",
       "saksnummer": "4",
       "sakstype": {
-        "kode": "FLK_TRG",
+        "kode": "TRYGDEAVTALE",
         "term": "Folketrygd"
       },
       "behandling": {
