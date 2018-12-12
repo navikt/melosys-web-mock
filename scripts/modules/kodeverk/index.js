@@ -10,6 +10,7 @@ const { dokumenttyper } = require('./dokumenttyper');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
+const { medlemskapstyper } = require('./medlemskapstyper');
 const { mottaksretning } = require('./mottaksretning');
 const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
@@ -26,6 +27,7 @@ const kodeverk = {
   finansiering,
   landkoder,
   lovvalgsbestemmelser,
+  medlemskapstyper,
   mottaksretning,
   oppgavetyper,
   representerer,

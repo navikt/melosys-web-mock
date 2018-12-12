@@ -4,24 +4,48 @@
  */
 const dokumenttyper = [
   {
-    kode: 'ATTEST_A1',
-    term: 'Attest A1'
+    kode: 'SOEKNAD_AVKL_LOV',
+    term: 'Melding om at en søknad er mottatt.'
   },
   {
-    kode: 'INNVILGELSE_YRKESAKTIV',
-    term: 'Innvilgelse yrkesaktiv'
+    kode: 'SOEKNAD_OVERS_UTLMYNDH',
+    term: 'Melding om at en søknad er oversendt fra utenlandske myndigheter.'
   },
   {
-    kode: 'MELDING_FORVENTET_SAKSBEHANDLINGSTID',
-    term: 'Melding om forventet sakbehandlingstid'
+    kode: 'UTPEK_NO_UTLMYNDH',
+    term: 'Melding om påstand fra utenlandske myndigheter.'
   },
   {
-    kode: 'MELDING_HENLAGT_SAK',
-    term: 'Melding om henlagt sak'
+    kode: 'PAAPSTAND_UTLMYNDH',
+    term: 'Melding om påstand fra utenlandske myndigheter.'
   },
   {
-    kode: 'MELDING_MANGLENDE_OPPLYSNINGER',
-    term: 'Melding om manglende opplysninger'
+    kode: 'MELDING_UTLMYNDH',
+    term: 'Melding om posting fra utenlandske myndigheter.'
+  },
+  {
+    kode: 'MELDING_AKTOER',
+    term: 'Melding mottatt fra en aktør i saken.'
+  },
+  {
+    kode: 'KLAGE',
+    term: 'Klage'
+  },
+  {
+    kode: 'ANKE',
+    term: 'Anke'
+  },
+  {
+    kode: 'POSTING_UTLMYNDH',
+    term: 'Melding om posting mottatt fra utenlandske myndigheter.'
+  },
+  {
+    kode: 'KLAGEVEDTAK',
+    term: 'Klagevedtak'
+  },
+  {
+    kode: 'KJENNELSE_TRYGDERETTEN',
+    term: 'Trygderettskjennelse'
   }
 ];
 module.exports.dokumenttyper = dokumenttyper;
