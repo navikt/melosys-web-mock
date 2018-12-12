@@ -86,7 +86,7 @@
       "sammensattNavn": "LILLA HEST",
       "saksnummer": "3",
       "sakstype": {
-        "kode": "TRG_AVT",
+        "kode": "TRYGDEAVTALE",
         "term": "Trygdeavtale"
       },
       "behandling": {
