@@ -486,7 +486,7 @@
                 "term":"Endelig"
               },
               "trygdedekning":{
-                "kode":"FULL",
+                "kode":"FULL_DEKNING_EOSFO",
                 "term":"Full"
               },
               "kildedokumenttype":{
