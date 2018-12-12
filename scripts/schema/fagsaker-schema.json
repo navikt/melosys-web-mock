@@ -1362,20 +1362,25 @@
             "additionalProperties": false,
             "required": [
               "behandlingID",
-              "status",
-              "registrertDato",
+              "behandlingsstatus",
+              "behandlingstype",
               "endretDato",
-              "sisteOpplysningerHentetDato",
-              "behandlingstype"
+              "registrertDato",
+              "sisteOpplysningerHentetDato"
             ],
             "properties": {
               "behandlingID": {
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingID",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/behandlingID"
               },
-              "status": {
-                "title": "The Status Schema",
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/status",
+              "behandlingsstatus": {
+                "title": "The BehandlingsStatus Schema",
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingsstatus",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+              },
+              "behandlingstype": {
+                "title": "The Behandlingsype Schema",
+                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               },
               "registrertDato": {
@@ -1392,11 +1397,6 @@
                 "title": "The SisteOpplysningerHentetDato Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/sisteOpplysningerHentetDato",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
-              },
-              "behandlingstype": {
-                "title": "The Behandlingsype Schema",
-                "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/behandlingstype",
-                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
               }
             }
           }

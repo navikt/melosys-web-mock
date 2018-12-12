@@ -92,11 +92,11 @@
       "behandling": {
         "behandlingID": 3,
         "behandlingstype": {
-          "kode": "ML_U",
+          "kode": "PAASTAND_UTL",
           "term": "Melding fra utenlandsk myndighet"
         },
         "behandlingsstatus": {
-          "kode": "OPPR",
+          "kode": "OPPRETTET",
           "term": "Opprettet"
         },
         "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",

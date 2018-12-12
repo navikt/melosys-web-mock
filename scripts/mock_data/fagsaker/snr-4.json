@@ -687,8 +687,8 @@
       ],
       "oppsummering" : {
         "behandlingID" : 4,
-        "status" : {
-          "kode" : "OPPR",
+        "behandlingsstatus" : {
+          "kode" : "OPPRETTET",
           "term" : "Opprettet"
         },
         "registrertDato" : "2018-08-27T07:16:03.273Z",

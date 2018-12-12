@@ -15,7 +15,7 @@
     {
       "oppsummering": {
         "behandlingID": 5,
-        "status": {
+        "behandlingsstatus": {
           "kode": "OPPRETTET",
           "term": "Opprettet"
         },

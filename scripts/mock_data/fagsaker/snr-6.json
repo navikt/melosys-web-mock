@@ -19,8 +19,8 @@
           "kode":"SOEKNAD",
           "term":"Søknad"
         },
-        "status":{
-          "kode":"OPPR",
+        "behandlingsstatus":{
+          "kode":"OPPRETTET",
           "term":"Opprettet"
         },
         "registrertDato": "2018-03-12T14:32:37.448Z",

@@ -14,7 +14,7 @@
       "term": "Søknad"
     },
     "behandlingsstatus": {
-      "kode": "OPPR",
+      "kode": "OPPRETTET",
       "term": "Opprettet"
     },
     "opprettetDato": "2017-10-19T12:31:36.123Z",
