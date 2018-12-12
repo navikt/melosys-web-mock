@@ -16,6 +16,7 @@ const { oppgavetyper } = require('./oppgavetyper');
 const { representerer } = require('./representerer');
 const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
+const { trygdedekninger } = require('./trygdedekninger');
 const { vedleggstitler } = require('./vedleggstitler');
 
 const kodeverk = {
@@ -33,6 +34,7 @@ const kodeverk = {
   representerer,
   saksstatuser,
   sakstyper,
+  trygdedekninger,
   vedleggstitler,
 };
 

@@ -20,6 +20,7 @@
     "representerer",
     "saksstatuser",
     "sakstyper",
+    "trygdedekninger",
     "vedleggstitler"
   ],
   "properties": {
@@ -322,6 +323,16 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/sakstyper/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "trygdedekninger": {
+      "$id": "#/properties/trygdedekninger",
+      "type": "array",
+      "title": "The Trygdedekninger Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/trygdedekninger/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
