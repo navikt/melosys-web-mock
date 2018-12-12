@@ -5,7 +5,7 @@ const dokumentTypeIder = [
   },
   {
     kode: 'MELDING_FORVENTET_SAKSBEHANDLINGSTID',
-    term: '\tMelding om forventet sakbehandlingstid'
+    term: 'Melding om forventet sakbehandlingstid'
   },
   {
     kode: 'ORIENTERING_ANMODNING_UNNTAK',

@@ -34,7 +34,7 @@
     "happycase": "cross-env HAPPY=true node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
     "amock": "node scripts/mock_api_server.js",
     "schema": "node $NODE_DEBUG_OPTION scripts/schema",
-    "post": "node scripts/post-mock-server",
+    "post": "node $NODE_DEBUG_OPTION scripts/post-mock-server",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",
     "eslint": "eslint scripts --ext .js",
