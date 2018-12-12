@@ -3,9 +3,8 @@
  * @module
  */
 const { aktoerroller } = require('./aktoerroller');
-const { behandlingsstatus } = require('./behandlingsstatus');
-const { behandlingstyper } = require('./behandlingstyper');
 const { begrunnelser } = require('./begrunnelser');
+const { behandlinger } = require('./behandlinger');
 const { dokumenttitler } = require('./dokumenttitler');
 const { dokumenttyper } = require('./dokumenttyper');
 const { finansiering } = require('./finansiering');
@@ -20,10 +19,9 @@ const { vedleggstitler } = require('./vedleggstitler');
 
 const kodeverk = {
   aktoerroller,
-  behandlingsstatus,
-  behandlingstyper,
-  begrunnelser,
   dokumenttitler,
+  behandlinger,
+  begrunnelser,
   dokumenttyper,
   finansiering,
   landkoder,

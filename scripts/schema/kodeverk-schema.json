@@ -7,8 +7,7 @@
   "additionalProperties": false,
   "required": [
     "aktoerroller",
-    "behandlingsstatus",
-    "behandlingstyper",
+    "behandlinger",
     "begrunnelser",
     "dokumenttitler",
     "dokumenttyper",
@@ -33,24 +32,46 @@
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
-    "behandlingsstatus": {
-      "$id": "#/properties/behandlingsstatus",
-      "type": "array",
-      "title": "The Behandlingsstatus Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/behandlingsstatus/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "behandlingstyper": {
-      "$id": "#/properties/behandlingstyper",
-      "type": "array",
-      "title": "The Behandlingstyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/behandlingstyper/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+    "behandlinger": {
+      "$id": "#/properties/behandlinger",
+      "type": "object",
+      "title": "The Behandlinger object",
+      "additionalProperties": false,
+      "required": [
+        "behandlingsstatus",
+        "behandlingstyper"
+      ],
+      "properties": {
+        "behandlingsstatus": {
+          "$id": "#/properties/behandlinger/behandlingsstatus",
+          "type": "array",
+          "title": "The Behandlingsstatus Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingsstatus/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "behandlingstyper": {
+          "$id": "#/properties/behandlinger/behandlingstyper",
+          "type": "array",
+          "title": "The Behandlingstyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingstyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "behandlingsresultattyper":  {
+          "$id": "#/properties/behandlinger/behandlingsresultattyper",
+          "type": "array",
+          "title": "The BehandlingsResultatTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingsresultattyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
       }
     },
     "begrunnelser": {
