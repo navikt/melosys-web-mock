@@ -16,7 +16,7 @@ const dokumenttyper = [
     term: 'Melding om påstand fra utenlandske myndigheter.'
   },
   {
-    kode: 'PAAPSTAND_UTLMYNDH',
+    kode: 'PAASTAND_UTLMYNDH',
     term: 'Melding om påstand fra utenlandske myndigheter.'
   },
   {
