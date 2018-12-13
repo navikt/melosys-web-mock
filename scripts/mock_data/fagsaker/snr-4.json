@@ -486,7 +486,7 @@
                 "term":"Endelig"
               },
               "trygdedekning":{
-                "kode":"FULL",
+                "kode":"Full",
                 "term":"Full"
               },
               "kildedokumenttype":{
@@ -655,7 +655,7 @@
           "statsborgerskapDato": "2013-01-01",
           "familiemedlemmer" : [
             {"fnr": "30098000492", "sammensattNavn": "LILLA HEST", "relasjonstype": {
-              "kode": "EKTEFELLE",
+              "kode": "EKTE",
               "term": "Ektefelle til"
             }}
           ],
@@ -687,15 +687,15 @@
       ],
       "oppsummering" : {
         "behandlingID" : 4,
-        "status" : {
-          "kode" : "OPPR",
+        "behandlingsstatus" : {
+          "kode" : "OPPRETTET",
           "term" : "Opprettet"
         },
         "registrertDato" : "2018-08-27T07:16:03.273Z",
         "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
         "endretDato" : "2018-08-27T07:16:03.273Z",
         "behandlingstype" : {
-          "kode" : "SKND",
+          "kode" : "SOEKNAD",
           "term" : "Søknad"
         }
       }

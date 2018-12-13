@@ -6,15 +6,15 @@
 const behandlingsstatus = [
   {
     kode: 'OPPRETTET',
-    term: 'Opprettet',
+    term: 'Behandlingen er opprettet',
   },
   {
     kode: 'UNDER_BEHANDLING',
-    term: 'Under behandling',
+    term: 'Behandlingen pågår',
   },
   {
     kode: 'AVSLUTTET',
-    term: 'Avsluttet',
+    term: 'Behandlingen er avsluttet',
   },
   {
     kode: 'AVVENT_DOK_UTL',
@@ -30,7 +30,7 @@ const behandlingsstatus = [
   },
   {
     kode: 'VURDER_DOKUMENT',
-    term: 'Nytt dokument mottatt på behandlingen',
+    term: 'Vurdere dokument',
   },
   {
     kode: 'TIDSFRIST_UTLOEPT',

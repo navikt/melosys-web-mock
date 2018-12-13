@@ -7,20 +7,22 @@
   "additionalProperties": false,
   "required": [
     "aktoerroller",
-    "behandlingsstatus",
-    "behandlingstyper",
+    "behandlinger",
     "begrunnelser",
+    "brev",
     "dokumenttitler",
-    "dokumenttyper",
     "finansiering",
     "landkoder",
     "lovvalgsbestemmelser",
+    "medlemskapstyper",
     "mottaksretning",
     "oppgavetyper",
     "representerer",
     "saksstatuser",
     "sakstyper",
-    "vedleggstitler"
+    "trygdedekninger",
+    "vedleggstitler",
+    "yrker"
   ],
   "properties": {
     "aktoerroller": {
@@ -33,24 +35,46 @@
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
-    "behandlingsstatus": {
-      "$id": "#/properties/behandlingsstatus",
-      "type": "array",
-      "title": "The Behandlingsstatus Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/behandlingsstatus/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "behandlingstyper": {
-      "$id": "#/properties/behandlingstyper",
-      "type": "array",
-      "title": "The Behandlingstyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/behandlingstyper/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+    "behandlinger": {
+      "$id": "#/properties/behandlinger",
+      "type": "object",
+      "title": "The Behandlinger object",
+      "additionalProperties": false,
+      "required": [
+        "behandlingsstatus",
+        "behandlingstyper"
+      ],
+      "properties": {
+        "behandlingsstatus": {
+          "$id": "#/properties/behandlinger/behandlingsstatus",
+          "type": "array",
+          "title": "The Behandlingsstatus Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingsstatus/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "behandlingstyper": {
+          "$id": "#/properties/behandlinger/behandlingstyper",
+          "type": "array",
+          "title": "The Behandlingstyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingstyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "behandlingsresultattyper":  {
+          "$id": "#/properties/behandlinger/behandlingsresultattyper",
+          "type": "array",
+          "title": "The BehandlingsResultatTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/behandlinger/behandlingsresultattyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
       }
     },
     "begrunnelser": {
@@ -162,6 +186,38 @@
         }
       }
     },
+    "brev": {
+      "$id": "#/properties/brev",
+      "type": "object",
+      "title": "The Brev Schema",
+      "additionalProperties": false,
+      "required": [
+        "dokumentTypeIder",
+        "dokumenttyper"
+      ],
+      "properties": {
+        "dokumentTypeIder": {
+          "$id": "#/properties/brev/dokumentTypeIder",
+          "type": "array",
+          "title": "The dokumentTypeIder Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/brev/dokumentTypeIder/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "dokumenttyper": {
+          "$id": "#/properties/brev/dokumenttyper",
+          "type": "array",
+          "title": "The DokumentTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/brev/dokumenttyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
+      }
+    },
     "dokumenttitler": {
       "$id": "#/properties/dokumenttitler",
       "type": "array",
@@ -169,16 +225,6 @@
       "uniqueItems": true,
       "items": {
         "$id": "#/properties/dokumenttitler/items",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      }
-    },
-    "dokumenttyper": {
-      "$id": "#/properties/dokumenttyper",
-      "type": "array",
-      "title": "The Dokumenttyper Schema",
-      "uniqueItems": true,
-      "items": {
-        "$id": "#/properties/dokumenttyper/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
@@ -245,6 +291,15 @@
         }
       }
     },
+    "medlemskapstyper":   {
+      "$id": "#/properties/medlemskapstyper",
+      "type": "array",
+      "uniqueItems": true,
+      "items":  {
+        "$id": "#/properties/medlemskapstyper/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "mottaksretning":  {
       "$id": "#/properties/mottaksretning",
       "type": "array",
@@ -294,6 +349,16 @@
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       }
     },
+    "trygdedekninger": {
+      "$id": "#/properties/trygdedekninger",
+      "type": "array",
+      "title": "The Trygdedekninger Schema",
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/trygdedekninger/items",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
     "vedleggstitler": {
       "$id": "#/properties/vedleggstitler",
       "type": "array",
@@ -302,6 +367,38 @@
       "items": {
         "$id": "#/properties/vedleggstitler/items",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+      }
+    },
+    "yrker": {
+      "$id": "#/properties/yrke",
+      "type": "object",
+      "title": "The Yrke Schema",
+      "additionalProperties": false,
+      "required": [
+        "yrkesaktivitetstyper",
+        "yrkesgrupper"
+      ],
+      "properties": {
+        "yrkesaktivitetstyper": {
+          "$id": "#/properties/yrke/properties/yrkesaktivitetstyper/",
+          "type": "array",
+          "title": "The YrkesaktivitetsTyper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/yrke/properties/yrkesaktivitetstyper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        },
+        "yrkesgrupper": {
+          "$id": "#/properties/yrke/properties/yrkesgrupper/",
+          "type": "array",
+          "title": "The YrkesGrupper Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/yrke/properties/yrkesgrupper/items",
+            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+          }
+        }
       }
     }
   }
