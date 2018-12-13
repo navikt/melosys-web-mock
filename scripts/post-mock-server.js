@@ -16,16 +16,20 @@ const printresult = res => {
   const { method, url} = res.config;
   console.log(`[${method.toUpperCase()}]`, url);
   console.log(res.status, res.statusText);
-  // console.log(res.data);
   console.log("-------------------------------------------------------\n");
 };
 
 const printerror = res => {
   oppsummering.failure += 1;
   const { request, response } = res;
-  console.error(`[${request.method.toUpperCase()}]`, request.path);
-  console.error(colors.bgRed(`${response.status} ${response.statusText}`));
-  console.error(response.data.message);
+
+  const { method, path } = request;
+  const { status, statusText, data } = response;
+
+  const message = (data && data.message) ? data.message : 'Ukjent validering feil';
+  console.error(`[${method.toUpperCase()}]`, path);
+  console.error(colors.bgRed(`${status} ${statusText}`));
+  console.error(message);
   console.error("-------------------------------------------------------\n");
 };
 
@@ -66,7 +70,7 @@ const testAlleEndepunkter = async () => {
 
     const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
     const behandlingID = 3;
-    const dokumentTypeID = 'MELDING_MANGLENDE_OPPLYSNINGER2';
+    const dokumentTypeID = 'MELDING_MANGLENDE_OPPLYSNINGER';
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(printerror);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(printerror);
 
