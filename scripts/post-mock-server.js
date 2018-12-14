@@ -70,9 +70,9 @@ const testAlleEndepunkter = async () => {
 
     const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
     const behandlingID = 3;
-    const dokumentTypeID = 'MELDING_MANGLENDE_OPPLYSNINGER';
-    await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(printerror);
-    await instance.post(`/dokumenter/opprett/${behandlingID}/${dokumentTypeID}`, dokument_post_utkast).then(printresult).catch(printerror);
+    const produserbartDokument = 'MELDING_MANGLENDE_OPPLYSNINGER';
+    await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
+    await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
 
 
     console.dir(oppsummering);
