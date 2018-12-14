@@ -11,11 +11,11 @@ const sakstyper = [
   },
   {
     kode: 'TRYGDEAVTALE',
-    term: 'Saken skal behandles etter en trygdeavtale',
+    term: 'Trygdeavtale',
   },
   {
     kode: 'FTRL',
-    term: 'Saken skal behandles etter folketrygdloven',
+    term: 'Folketrygdloven',
   },
 ];
 module.exports.sakstyper = sakstyper;

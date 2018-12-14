@@ -4,9 +4,9 @@
     "kode":"EU_EOS",
     "term":"EU/EØS"
   },
-  "status":{
-    "kode":"OPPR",
-    "term":"Opprettet"
+  "saksstatus": {
+    "kode" : "OPPRETTET",
+    "term" : "Saken er opprettet"
   },
   "registrertDato": "2017-10-19T12:31:36.123Z",
   "endretDato": "2017-10-19T12:31:36.123Z",
@@ -16,11 +16,11 @@
       "oppsummering": {
         "behandlingID": 3,
         "behandlingstype":{
-          "kode":"SKND",
+          "kode":"SOEKNAD",
           "term":"Søknad"
         },
-        "status":{
-          "kode":"OPPR",
+        "behandlingsstatus":{
+          "kode":"OPPRETTET",
           "term":"Opprettet"
         },
         "registrertDato": "2017-10-19T14:35:54.000Z",
