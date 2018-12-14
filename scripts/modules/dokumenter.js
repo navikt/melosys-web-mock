@@ -5,8 +5,8 @@ const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 
-const { dokumentTypeIder } = require('./kodeverk/brev/dokumentTypeIder');
-const dokumenttypeKoder = dokumentTypeIder.reduce((acc,curr) => {acc.push(curr.kode); return acc;},[]);
+const { produserbareDokumenter } = require('./kodeverk/brev/produserbareDokumenter');
+const dokumenttypeKoder = produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
 

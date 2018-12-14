@@ -192,27 +192,16 @@
       "title": "The Brev Schema",
       "additionalProperties": false,
       "required": [
-        "dokumentTypeIder",
-        "dokumenttyper"
+        "produserbareDokumenter"
       ],
       "properties": {
-        "dokumentTypeIder": {
-          "$id": "#/properties/brev/dokumentTypeIder",
+        "produserbareDokumenter": {
+          "$id": "#/properties/brev/produserbareDokumenter",
           "type": "array",
-          "title": "The dokumentTypeIder Schema",
+          "title": "The produserbareDokumenter Schema",
           "uniqueItems": true,
           "items": {
-            "$id": "#/properties/brev/dokumentTypeIder/items",
-            "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-          }
-        },
-        "dokumenttyper": {
-          "$id": "#/properties/brev/dokumenttyper",
-          "type": "array",
-          "title": "The DokumentTyper Schema",
-          "uniqueItems": true,
-          "items": {
-            "$id": "#/properties/brev/dokumenttyper/items",
+            "$id": "#/properties/brev/produserbareDokumenter/items",
             "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
           }
         }

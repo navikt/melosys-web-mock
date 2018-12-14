@@ -1,4 +1,4 @@
-const dokumentTypeIder = [
+const produserbareDokumenter = [
   {
     kode: 'INNVILGELSE_YRKESAKTIV',
     term: 'Innvilgelse yrkesaktiv'
@@ -25,4 +25,4 @@ const dokumentTypeIder = [
   }
 ];
 
-module.exports.dokumentTypeIder = dokumentTypeIder;
+module.exports.produserbareDokumenter = produserbareDokumenter;
