@@ -7,6 +7,7 @@ const { begrunnelser } = require('./begrunnelser');
 const { behandlinger } = require('./behandlinger');
 const { dokumenttitler } = require('./dokumenttitler');
 const { brev } = require('./brev');
+const { fartsomrader } = require('./fartsomrader');
 const { finansiering } = require('./finansiering');
 const { landkoder } = require('./landkoder');
 const { lovvalgsbestemmelser } = require('./lovvalgsbestemmelser');
@@ -17,7 +18,6 @@ const { representerer } = require('./representerer');
 const { saksstatuser } = require('./saksstatuser');
 const { sakstyper } = require('./sakstyper');
 const { trygdedekninger } = require('./trygdedekninger');
-const { vedleggstitler } = require('./vedleggstitler');
 const { yrker } = require('./yrker');
 
 const kodeverk = {
@@ -26,6 +26,7 @@ const kodeverk = {
   behandlinger,
   begrunnelser,
   brev,
+  fartsomrader,
   finansiering,
   landkoder,
   lovvalgsbestemmelser,
@@ -36,7 +37,6 @@ const kodeverk = {
   saksstatuser,
   sakstyper,
   trygdedekninger,
-  vedleggstitler,
   yrker,
 };
 

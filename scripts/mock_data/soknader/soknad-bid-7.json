@@ -27,6 +27,7 @@
         "fom": "2018-01-01",
         "tom": "2019-05-31"
       },
+      "forutgaendeBostedINorge": true,
       "ektefelleEllerBarnINorge": null,
       "sammeAdresseSomArbeidsgiver": null,
       "studentFinansieringKode": null,
@@ -91,13 +92,7 @@
       "trygdeavgiftTrukketGjennomSkatt": true,
       "trygdeavgiftTrukketGjennomSkattDato": "2018-06-01"
     },
-    "maritimtArbeid": {
-      "maritimTypeKode": "SOKKEL",
-      "skipsNavn": null,
-      "fartsomradeKode": null,
-      "flaggLandKode": null,
-      "installasjonsLandKode": null
-    }
+    "maritimtArbeid": []
   },
   "tilleggsData": {
     "organisasjoner": [],
