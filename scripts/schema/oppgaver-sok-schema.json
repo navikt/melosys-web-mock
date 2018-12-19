@@ -13,6 +13,7 @@
       "additionalProperties": false,
       "required": [
         "oppgaveID",
+        "redigerbart",
         "sammensattNavn",
         "saksnummer",
         "sakstype",
@@ -35,6 +36,13 @@
             "174562068"
           ],
           "pattern": "^(.*)$"
+        },
+        "redigerbart": {
+          "$id": "#/properties/saksbehandling/items/properties/redigerbart",
+          "title": "Er oppgaven redigerbart",
+          "type": "boolean",
+          "default": true,
+          "examples": [true, false]
         },
         "sammensattNavn": {
           "$id": "#/properties/saksbehandling/items/properties/sammensattNavn",

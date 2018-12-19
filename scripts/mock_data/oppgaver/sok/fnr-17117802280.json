@@ -1,6 +1,7 @@
 [
   {
     "oppgaveID": "1",
+    "redigerbart": true,
     "sammensattNavn": "ARTIG KAKE",
     "saksnummer": "5",
     "aktivTil": "2019-04-25",

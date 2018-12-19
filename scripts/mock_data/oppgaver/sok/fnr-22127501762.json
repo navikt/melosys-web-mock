@@ -1,6 +1,7 @@
 [
   {
     "oppgaveID": "1",
+    "redigerbart": false,
     "sammensattNavn": "RASK KAFFI",
     "saksnummer": "7",
     "aktivTil": "2019-04-25",
@@ -32,6 +33,7 @@
   },
   {
     "oppgaveID": "2",
+    "redigerbart": true,
     "sammensattNavn": "RASK KAFFI",
     "saksnummer": "7",
     "aktivTil": "2019-04-25",
@@ -63,6 +65,7 @@
   },
   {
     "oppgaveID": "3",
+    "redigerbart": false,
     "sammensattNavn": "RASK KAFFI",
     "saksnummer": "7",
     "aktivTil": "2019-04-25",

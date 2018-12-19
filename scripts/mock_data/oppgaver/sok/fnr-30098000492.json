@@ -1,6 +1,7 @@
 [
   {
     "oppgaveID": "1",
+    "redigerbart": true,
     "sammensattNavn": "LILLA HEST",
     "saksnummer": "3",
     "aktivTil": "2019-04-25",
@@ -32,6 +33,7 @@
   },
   {
     "oppgaveID": "2",
+    "redigerbart": false,
     "sammensattNavn": "LILLA HEST",
     "saksnummer": "3",
     "aktivTil": "2019-04-25",
