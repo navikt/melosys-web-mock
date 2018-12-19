@@ -1,7 +1,6 @@
-
 const { bosted } = require('./bosted');
 const { forutgaendeMedlemskap } = require('./forutgaendeMedlemskap');
-const { ikkeSkip } = require('./ikkeSkip');
+const { sokkelEllerSkip } = require('./sokkelEllerSkip');
 const { opphold } = require('./opphold');
 const { vesentligVirksomhet } = require('./vesentligVirksomhet');
 const { normaltDriverVirksomhet } = require('./normaltDriverVirksomhet');
@@ -12,7 +11,7 @@ const { artikkel16_1_anmodning } = require('./artikkel16.1_anmodning');
 const begrunnelser = {
   bosted,
   forutgaendeMedlemskap,
-  ikkeSkip,
+  sokkelEllerSkip,
   opphold,
   vesentligVirksomhet,
   normaltDriverVirksomhet,

@@ -4,9 +4,9 @@
     "kode":"EU_EOS",
     "term":"EU/EØS"
   },
-  "status":{
-    "kode":"OPPR",
-    "term":"Opprettet"
+  "saksstatus": {
+    "kode" : "OPPRETTET",
+    "term" : "Saken er opprettet"
   },
   "registrertDato": "2018-03-06T12:05:59.031Z",
   "endretDato": null,
@@ -17,11 +17,11 @@
       "oppsummering": {
         "behandlingID": 5,
         "behandlingstype":{
-          "kode":"SKND",
+          "kode":"SOEKNAD",
           "term":"Søknad"
         },
-        "status":{
-          "kode":"OPPR",
+        "behandlingsstatus":{
+          "kode":"OPPRETTET",
           "term":"Opprettet"
         },
         "registrertDato": "2018-03-06T12:05:59.031Z",
@@ -46,7 +46,7 @@
             "term" : "Bosatt"
           },
           "kjoenn":{
-            "kode": "F",
+            "kode": "K",
             "term": "Kvinne"
           },
           "bostedsadresse":{
@@ -330,6 +330,7 @@
         "medlemskap": {
           "medlemsperiode": [
             {
+              "periodeID": 500110740,
               "periode": {
                 "fom": "2018-02-01",
                 "tom": "2018-12-31"
@@ -368,6 +369,7 @@
               }
             },
             {
+              "periodeID": 500110741,
               "periode": {
                 "fom": "2016-02-01",
                 "tom": "2016-12-31"
@@ -406,6 +408,7 @@
               }
             },
             {
+              "periodeID": 500110742,
               "periode": {
                 "fom": "2018-01-01",
                 "tom": "2018-01-31"
@@ -444,6 +447,7 @@
               }
             },
             {
+              "periodeID": 500110743,
               "periode": {
                 "fom": "2017-12-01",
                 "tom": "2017-12-31"

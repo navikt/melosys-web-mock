@@ -28,6 +28,7 @@
         "tom": "2018-05-31"
       },
       "ektefelleEllerBarnINorge": null,
+      "forutgaendeBostedINorge": true,
       "sammeAdresseSomArbeidsgiver": null,
       "studentFinansieringKode": null,
       "studentSemester": null
@@ -91,13 +92,8 @@
       "trygdeavgiftTrukketGjennomSkatt": null,
       "trygdeavgiftTrukketGjennomSkattDato": null
     },
-    "maritimtArbeid": {
-      "maritimTypeKode": null,
-      "skipsNavn": null,
-      "fartsomradeKode": null,
-      "flaggLandKode": null,
-      "installasjonsLandKode": null
-    }
+    "maritimtArbeid": [
+    ]
   },
   "tilleggsData": {
     "organisasjoner": [],

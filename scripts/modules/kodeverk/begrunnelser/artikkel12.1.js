@@ -22,7 +22,7 @@ const artikkel12_1 = [
   },
   {
     "kode": "HJEMMEKONTOR",
-    "term": "Bruker skal enten være ute under 12 mn eller er medfølgende til en utsendt som er omfattet"
+    "term": "Bruker skal enten være ute under 12 måneder eller er medfølgende til en utsendt som er omfattet."
   }
 ];
 module.exports.artikkel12_1 = artikkel12_1;

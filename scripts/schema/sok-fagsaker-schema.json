@@ -12,6 +12,7 @@
     "additionalProperties": false,
     "required": [
       "saksnummer",
+      "saksstatus",
       "sakstype",
       "behandlingstype",
       "behandlingsstatus",
@@ -29,6 +30,11 @@
           "4"
         ],
         "pattern": "^(.*)$"
+      },
+      "saksstatus": {
+        "$id": "#/items/properties/saksstatus",
+        "title": "The Saksstatus Schema",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       },
       "sakstype": {
         "$id": "#/items/properties/sakstype",

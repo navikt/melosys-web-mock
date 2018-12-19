@@ -4,8 +4,9 @@ const Ajv = require('ajv');
 const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
-const { dokumenttyper } = require('../modules/kodeverk/dokumenttyper');
-const dokumenttypeKoder = dokumenttyper.reduce((acc,curr) => {acc.push(curr.kode); return acc;},[]);
+
+const { produserbareDokumenter } = require('./kodeverk/brev/produserbareDokumenter');
+const dokumenttypeKoder = produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
 
@@ -15,8 +16,6 @@ const SCRIPTS_DIR = `${process.cwd()}/scripts`;
 const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
 const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/dokumenter`;
-
-
 
 const schemajson = `${SCHEMA_DIR}/dokumenter-post-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
