@@ -224,6 +224,7 @@
             "oppholdsPeriode",
             "ektefelleEllerBarnINorge",
             "sammeAdresseSomArbeidsgiver",
+            "forutgaendeBostedINorge",
             "studentFinansieringKode",
             "studentSemester"
           ],
@@ -263,6 +264,15 @@
               "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/sammeAdresseSomArbeidsgiver",
               "type": ["boolean","null"],
               "title": "The Sammeadressesomarbeidsgiver Schema",
+              "default": false,
+              "examples": [
+                true
+              ]
+            },
+            "forutgaendeBostedINorge": {
+              "$id": "#/properties/soeknadDokument/properties/oppholdUtland/properties/forutgaendeBostedINorge",
+              "type": ["boolean","null"],
+              "title": "The ForutgaendeBostedINorge Schema",
               "default": false,
               "examples": [
                 true
@@ -797,66 +807,61 @@
         },
         "maritimtArbeid": {
           "$id": "#/properties/soeknadDokument/properties/maritimtArbeid",
-          "type": "object",
-          "title": "The Maritimtarbeid Schema",
-          "additionalProperties": false,
-          "required": [
-            "maritimTypeKode",
-            "skipsNavn",
-            "fartsomradeKode",
-            "flaggLandKode",
-            "installasjonsLandKode"
-          ],
-          "properties": {
-            "maritimTypeKode": {
-              "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/properties/maritimTypeKode",
-              "type": ["string","null"],
-              "title": "The Maritimtypekode Schema",
-              "default": "",
-              "examples": [
-                "SKIP"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "skipsNavn": {
-              "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/properties/skipsNavn",
-              "type": ["string","null"],
-              "title": "The Skipsnavn Schema",
-              "default": "",
-              "examples": [
-                "Navn på skipet"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "fartsomradeKode": {
-              "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/properties/fartsomradeKode",
-              "type": ["string","null"],
-              "title": "The Fartsomradekode Schema",
-              "default": "",
-              "examples": [
-                "INNENRIKS"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "flaggLandKode": {
-              "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/properties/flaggLandKode",
-              "type": ["string","null"],
-              "title": "The Flagglandkode Schema",
-              "default": "",
-              "examples": [
-                "GB"
-              ],
-              "pattern": "^(.*)$"
-            },
-            "installasjonsLandKode": {
-              "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/properties/installasjonsLandKode",
-              "type": ["string","null"],
-              "title": "The Installasjonslandkode Schema",
-              "default": "",
-              "examples": [
-                "GB"
-              ],
-              "pattern": "^(.*)$"
+          "type": "array",
+          "title": "The MaritimtArbeid Schema",
+          "uniqueItems": true,
+          "items": {
+            "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items",
+            "type": "object",
+            "title": "The Maritimtarbeid Schema",
+            "additionalProperties": false,
+            "required": [
+              "navn",
+              "fartsomradeKode",
+              "flaggLandKode",
+              "installasjonsLandKode"
+            ],
+            "properties": {
+              "navn": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/navn",
+                "type": ["string","null"],
+                "title": "The Navn Schema",
+                "default": "",
+                "examples": [
+                  "Navn på skipet"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "fartsomradeKode": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/fartsomradeKode",
+                "type": ["string","null"],
+                "title": "The Fartsomradekode Schema",
+                "default": "",
+                "examples": [
+                  "INNENRIKS"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "flaggLandKode": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/flaggLandKode",
+                "type": ["string","null"],
+                "title": "The Flagglandkode Schema",
+                "default": "",
+                "examples": [
+                  "GB"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "installasjonsLandKode": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/installasjonsLandKode",
+                "type": ["string","null"],
+                "title": "The Installasjonslandkode Schema",
+                "default": "",
+                "examples": [
+                  "GB"
+                ],
+                "pattern": "^(.*)$"
+              }
             }
           }
         }
