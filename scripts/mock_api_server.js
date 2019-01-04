@@ -1,7 +1,7 @@
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+// const Kodeverk = require('melosys-kodeverk');
 const NodeCache = require('node-cache');
 const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
@@ -120,6 +120,7 @@ router.get('/saksbehandler', saksbehandler.hent);
  * KODEVERK
  */
 router.get('/kodeverk', Kodeverk.hent);
+router.get('/kodeset', Kodeverk.hentset);
 
 /**
  * LOVVALGSPERIODER
