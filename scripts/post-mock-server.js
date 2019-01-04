@@ -36,7 +36,7 @@ const printerror = res => {
 const testAlleEndepunkter = async () => {
   try {
 
-    await await instance.get('/saksbehandler').then(printresult).catch(printerror);
+    await instance.get('/saksbehandler').then(printresult).catch(printerror);
 
     const behandinger_status = require('./mock_data/behandlinger/post/behandlinger-status');
     await instance.post('/behandlinger/4/status', behandinger_status).then(printresult).catch(printerror);

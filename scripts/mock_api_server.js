@@ -1,7 +1,6 @@
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
-// const Kodeverk = require('melosys-kodeverk');
 const NodeCache = require('node-cache');
 const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
