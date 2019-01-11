@@ -7,8 +7,10 @@
     "null"
   ],
   "title": "The Root Schema",
+  "additionalProperties": false,
   "required": [
     "mottaker",
+    "begrunnelse",
     "fritekst"
   ],
   "properties": {
@@ -40,6 +42,19 @@
       "default": "",
       "examples": [
         "blahbalh"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "begrunnelse": {
+      "$id": "#/properties/begrunnelse",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The Begrunnelse Schema",
+      "default": "",
+      "examples": [
+        "IKKE_VESENTLIG_VIRKSOMHET"
       ],
       "pattern": "^(.*)$"
     }
