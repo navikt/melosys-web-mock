@@ -4,6 +4,8 @@
   "$id": "http://nav.no/lovvalgsperioder.json",
   "type": "array",
   "title": "The Root Schema",
+  "description": "An explanation about the purpose of this instance.",
+  "additionalProperties": false,
   "items": {
     "$id": "#/items",
     "type": "object",
@@ -47,6 +49,15 @@
         "default": "",
         "examples": [
           "ART16_1"
+        ]
+      },
+      "tilleggBestemmelse": {
+        "$id": "#/items/properties/tilleggBestemmelse",
+        "type": "string",
+        "title": "The tilleggBestemmelse Schema",
+        "default": "",
+        "examples": [
+          "FO_883_2004_ART13_4"
         ]
       },
       "unntakFraBestemmelse": {
