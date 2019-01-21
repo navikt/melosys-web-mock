@@ -63,3 +63,11 @@ module.exports.opprett = (req, res) => {
   res.status(410).send(melding);
 };
 
+module.exports.henlegg = async (req, res) => {
+  try {
+    res.status(204).send();
+  }
+  catch(err) {
+    res.status(500).send();
+  }
+};
