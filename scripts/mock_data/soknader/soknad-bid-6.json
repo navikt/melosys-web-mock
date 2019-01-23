@@ -15,9 +15,8 @@
         "poststed": "Poststedet",
         "landKode": "DE"
       },
-      "arbeidsandelNorge": null,
-      "arbeidsandelUtland": null,
-      "arbeidUtlandErstatning": false,
+      "foretakNavn": "EQUINOR",
+      "foretakOrgnr": "372384726",
       "arbeidUtlandHjemmekontor": false
     }],
     "foretakUtland": [],
