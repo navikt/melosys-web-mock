@@ -2,6 +2,7 @@
   "saksnummer": "MELTEST-1",
   "avsenderID": "30098000492",
   "avsenderNavn": "PEN FUL",
+  "behandlingstype": "KLAGE",
   "brukerID": "30098000492",
   "dokumentID": "Dok_ID",
   "hoveddokumentTittel": "Søknad om medlemskap",
