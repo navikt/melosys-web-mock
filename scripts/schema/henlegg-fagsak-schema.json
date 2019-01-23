@@ -1,0 +1,26 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/schemas/henlegg-fagsak-schema.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "begrunnelse",
+    "fritekst"
+  ],
+  "properties": {
+    "begrunnelse": {
+      "$id": "#/properties/begrunnelse",
+      "title": "The Begrunnelse Schema",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk",
+      "type": ["string"]
+    },
+    "fritekst": {
+      "$id": "#/properties/fritekst",
+      "title": "The Fritekst Schema",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk",
+      "type": ["string", "null"]
+    }
+  }
+}
