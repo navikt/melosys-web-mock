@@ -13,13 +13,11 @@
     "begrunnelse": {
       "$id": "#/properties/begrunnelse",
       "title": "The Begrunnelse Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk",
       "type": ["string"]
     },
     "fritekst": {
       "$id": "#/properties/fritekst",
       "title": "The Fritekst Schema",
-      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk",
       "type": ["string", "null"]
     }
   }
