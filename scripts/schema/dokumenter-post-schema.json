@@ -10,7 +10,7 @@
   "additionalProperties": false,
   "required": [
     "mottaker",
-    "begrunnelse",
+    "begrunnelseKode",
     "fritekst"
   ],
   "properties": {
@@ -40,18 +40,16 @@
       ],
       "title": "The Fritekst Schema",
       "default": "",
-      "examples": [
-        "blahbalh"
-      ],
+      "examples": ["Fritekst"],
       "pattern": "^(.*)$"
     },
-    "begrunnelse": {
-      "$id": "#/properties/begrunnelse",
+    "begrunnelseKode": {
+      "$id": "#/properties/begrunnelseKode",
       "type": [
         "string",
         "null"
       ],
-      "title": "The Begrunnelse Schema",
+      "title": "The BegrunnelseKode Schema",
       "default": "",
       "examples": [
         "IKKE_VESENTLIG_VIRKSOMHET"
