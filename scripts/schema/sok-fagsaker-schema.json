@@ -12,13 +12,11 @@
     "additionalProperties": false,
     "required": [
       "saksnummer",
+      "sammensattNavn",
       "saksstatus",
       "sakstype",
-      "behandlingstype",
-      "behandlingsstatus",
       "opprettetDato",
-      "soknadsperiode",
-      "land"
+      "behandlingoppsummeringer"
     ],
     "properties": {
       "saksnummer": {
@@ -31,6 +29,15 @@
         ],
         "pattern": "^(.*)$"
       },
+      "sammensattNavn": {
+        "$id": "#/items/properties/sammensattNavn",
+        "type": "string",
+        "title": "The sammensattNavn Schema",
+        "default": "",
+        "examples": [
+          "FørstNavn EtterNavn"
+        ]
+      },
       "saksstatus": {
         "$id": "#/items/properties/saksstatus",
         "title": "The Saksstatus Schema",
@@ -41,42 +48,111 @@
         "title": "The Sakstype Schema",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
       },
-      "behandlingstype": {
-        "$id": "#/items/properties/behandlingstype",
-        "title": "The Behandlingstype Schema",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      },
-      "behandlingsstatus": {
-        "$id": "#/items/properties/behandlingsstatus",
-        "title": "The Behandlingsstatus Schema",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
-      },
       "opprettetDato": {
         "title": "The Opprettetdato Schema",
         "$id": "#/items/properties/opprettetDato",
         "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
       },
-      "soknadsperiode": {
-        "title": "The Soknadsperiode Schema",
-        "$id": "#/items/properties/soknadsperiode",
-        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
-      },
-      "land": {
-        "$id": "#/items/properties/land",
+      "behandlingoppsummeringer": {
+        "$id": "#/properties/behandlingoppsummeringer",
         "type": "array",
-        "title": "The Land Schema",
+        "title": "The behandlingoppsummeringer Schema",
         "uniqueItems": true,
         "items": {
-          "$id": "#/items/properties/land/items",
-          "type": "string",
+          "$id": "#/properties/behandlingoppsummeringer/items",
+          "type": "object",
           "title": "The Items Schema",
-          "default": "",
-          "examples": [
-            "GB"
+          "additionalProperties": false,
+          "required": [
+            "behandlingID",
+            "behandlingsstatus",
+            "behandlingstype",
+            "registrertDato",
+            "endretDato",
+            "sisteOpplysningerHentetDato",
+            "soknadsperiode",
+            "land"
           ],
-          "pattern": "^(.*)$"
+          "properties": {
+            "behandlingID": {
+              "$id": "#/properties/behandlingoppsummeringer/properties/behandlingID",
+              "type": "string",
+              "title": "The behandlingID Schema",
+              "default": "",
+              "examples": [
+                "4"
+              ]
+            },
+            "behandlingstype": {
+              "$id": "#/items/properties/behandlingstype",
+              "title": "The Behandlingstype Schema",
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+            },
+            "behandlingsstatus": {
+              "$id": "#/items/properties/behandlingsstatus",
+              "title": "The Behandlingsstatus Schema",
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"
+            },
+            "registrertDato": {
+              "$id": "#/properties/behandlingoppsummeringer/properties/registrertDato",
+              "type": "string",
+              "format": "date-time",
+              "title": "The registrertDato Schema",
+              "default": "",
+              "examples": [
+                "2018-02-18T07:32:45.797Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "endretDato": {
+              "$id": "#/properties/behandlingoppsummeringer/properties/endretDato",
+              "type": "string",
+              "format": "date-time",
+              "title": "The endretDato Schema",
+              "default": "",
+              "examples": [
+                "2018-02-18T07:32:45.797Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "sisteOpplysningerHentetDato": {
+              "$id": "#/properties/behandlingoppsummeringer/properties/sisteOpplysningerHentetDato",
+              "type": "string",
+              "format": "date-time",
+              "title": "The sisteOpplysningerHentetDato Schema",
+              "default": "",
+              "examples": [
+                "2018-02-18T07:32:45.797Z"
+              ],
+              "pattern": "^(.*)$"
+            },
+            "soknadsperiode": {
+              "title": "The Soknadsperiode Schema",
+              "$id": "#/properties/behandlingoppsummeringer/properties/soknadsperiode",
+              "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
+            },
+            "land": {
+              "$id": "#/properties/behandlingoppsummeringer/items/properties/land",
+              "type": "array",
+              "title": "The Land Schema",
+              "uniqueItems": true,
+              "items": {
+                "$id": "#/properties/behandlingoppsummeringer/properties/items",
+                "type": "string",
+                "title": "The Items Schema",
+                "default": "",
+                "examples": [
+                  "GB"
+                ],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
         }
       }
     }
   }
 }
+
+
+
