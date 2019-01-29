@@ -74,15 +74,10 @@
             "land"
           ],
           "properties": {
-            "behandlingID": {
-              "$id": "#/properties/behandlingoppsummeringer/properties/behandlingID",
-              "type": "string",
-              "title": "The behandlingID Schema",
-              "default": "",
-              "examples": [
-                "4"
-              ]
-            },
+              "behandlingID": {
+                "$id": "#/items/properties/behandlingID",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/behandlingID"
+              },
             "behandlingstype": {
               "$id": "#/items/properties/behandlingstype",
               "title": "The Behandlingstype Schema",
