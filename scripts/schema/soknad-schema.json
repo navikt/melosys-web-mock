@@ -123,9 +123,8 @@
             "additionalProperties": false,
             "required": [
               "adresse",
-              "arbeidsandelNorge",
-              "arbeidsandelUtland",
-              "arbeidUtlandErstatning",
+              "foretakNavn",
+              "foretakOrgnr",
               "arbeidUtlandHjemmekontor"
             ],
             "properties": {
@@ -133,32 +132,25 @@
                 "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/adresse",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/strukturertAdresse"
               },
-              "arbeidsandelNorge": {
-                "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidsandelNorge",
-                "type": ["number","null"],
-                "title": "The Arbeidsandelnorge Schema",
-                "default": 0.0,
+              "foretakNavn": {
+                "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/foretakNavn",
+                "type": ["string","null"],
+                "title": "The ForetakNavn Schema",
+                "default": "",
                 "examples": [
-                  33.3
-                ]
+                  "EQUINOR DEUTSCHLAND"
+                ],
+                "pattern": "^(.*)$"
               },
-              "arbeidsandelUtland": {
-                "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidsandelUtland",
-                "type": ["number","null"],
-                "title": "The Arbeidsandelutland Schema",
-                "default": 0.0,
+              "foretakOrgnr": {
+                "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/foretakOrgnr",
+                "type": ["string","null"],
+                "title": "The ForetakOrgnr Schema",
+                "default": "",
                 "examples": [
-                  66.6
-                ]
-              },
-              "arbeidUtlandErstatning": {
-                "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidUtlandErstatning",
-                "type": ["boolean","null"],
-                "title": "The Arbeidutlanderstatning Schema",
-                "default": false,
-                "examples": [
-                  false
-                ]
+                  ""
+                ],
+                "pattern": "^(.*)$"
               },
               "arbeidUtlandHjemmekontor": {
                 "$id": "#/properties/soeknadDokument/properties/arbeidUtland/items/properties/arbeidUtlandHjemmekontor",

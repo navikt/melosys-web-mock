@@ -92,15 +92,16 @@ module.exports.lagPdfUtkast = (req, res) => {
   }
 
   try {
-    if (erMangelBrevMedFritekst(dokumenttypeKode)) {
-      const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-      logger.debug("Dokument:lagPdfUtkast", JSON.stringify(jsBody));
+    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    logger.debug("Dokument:lagPdfUtkast", JSON.stringify(jsBody));
 
-      const label = "Dokument::lagPdfUtkast";
-      const valid = test(label, validate, jsBody);
-      if (!valid) {
-        return valideringFeil(req, res);
-      }
+    const label = "Dokument::lagPdfUtkast";
+    const valid = test(label, validate, jsBody);
+    if (!valid) {
+      return valideringFeil(req, res);
+    }
+
+    if (erMangelBrevMedFritekst(dokumenttypeKode)) {
       const { mottaker } = jsBody;
       const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/mangelbrev_${mottaker}.pdf`;
       logger.trace(mockfile);

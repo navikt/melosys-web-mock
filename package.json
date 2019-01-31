@@ -17,7 +17,7 @@
     "glob": "^7.1.2",
     "jsdoc": "^3.5.5",
     "log4js": "^3.0.5",
-    "melosys-kodeverk": "^1.1.1",
+    "melosys-kodeverk": "^2.0.1",
     "moment": "^2.22.2",
     "node-cache": "^4.2.0",
     "ora": "^3.0.0",
@@ -29,13 +29,16 @@
     "yargs": "^12.0.1"
   },
   "engines": {
-    "node": ">=9.0.0"
+    "node": ">=10.0.0"
   },
   "scripts": {
-    "happycase": "cross-env HAPPY=true node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
+    "happycase": "cross-env HAPPY=true node scripts/mock_api_server.js",
+    "happycase:dbg": "cross-env HAPPY=true node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
     "amock": "node scripts/mock_api_server.js",
-    "schema": "node $NODE_DEBUG_OPTION scripts/schema",
-    "post": "node $NODE_DEBUG_OPTION scripts/post-mock-server",
+    "schema": "node scripts/schema",
+    "schema:dbg": "node $NODE_DEBUG_OPTION scripts/schema",
+    "post": "node scripts/post-mock-server",
+    "post:dbg": "node $NODE_DEBUG_OPTION scripts/post-mock-server",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",
     "eslint": "eslint scripts --ext .js",

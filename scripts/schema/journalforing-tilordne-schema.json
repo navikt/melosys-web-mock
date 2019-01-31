@@ -8,6 +8,7 @@
   "required": [
     "avsenderID",
     "avsenderNavn",
+    "behandlingstype",
     "brukerID",
     "dokumentID",
     "hoveddokumentTittel",
@@ -36,6 +37,15 @@
         "30098000492"
       ],
       "pattern": "^(.*)$"
+    },
+    "behandlingstype": {
+      "$id": "/properties/behandlingstype",
+      "type": ["string","null"],
+      "title": "The Behandlingstype Schema ",
+      "default": "",
+      "examples": [
+        "SOEKNAD", "KLAGE"
+      ]
     },
     "brukerID": {
       "$id": "/properties/brukerID",

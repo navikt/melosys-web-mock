@@ -7,8 +7,10 @@
     "null"
   ],
   "title": "The Root Schema",
+  "additionalProperties": false,
   "required": [
     "mottaker",
+    "begrunnelseKode",
     "fritekst"
   ],
   "properties": {
@@ -38,8 +40,19 @@
       ],
       "title": "The Fritekst Schema",
       "default": "",
+      "examples": ["Fritekst"],
+      "pattern": "^(.*)$"
+    },
+    "begrunnelseKode": {
+      "$id": "#/properties/begrunnelseKode",
+      "type": [
+        "string",
+        "null"
+      ],
+      "title": "The BegrunnelseKode Schema",
+      "default": "",
       "examples": [
-        "blahbalh"
+        "IKKE_VESENTLIG_VIRKSOMHET"
       ],
       "pattern": "^(.*)$"
     }
