@@ -14,7 +14,6 @@ const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const lovvalgsperioder = require('./modules/lovvalgsperioder');
-const Kodeverk = require('./modules/kodeverk');
 const saksopplysninger = require('./modules/saksopplysninger');
 const saksbehandler = require('./modules/saksbehandler');
 const vilkar = require('./modules/vilkar');
@@ -114,12 +113,6 @@ router.get('/inngang/:snr', inngang.hent);
  * SAKSBEHANDLER
  */
 router.get('/saksbehandler', saksbehandler.hent);
-
-/**
- * KODEVERK
- */
-router.get('/kodeverk', Kodeverk.hent);
-router.get('/kodeset', Kodeverk.hentset);
 
 /**
  * LOVVALGSPERIODER
