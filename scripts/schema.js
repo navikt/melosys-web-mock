@@ -6,6 +6,7 @@ const { kodeverk } = require('./test/kodeverk');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
 const { fagsak } = require('./test/fagsak');
+const { behandlingsresultat } = require('./test/behandlingsresultat');
 const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
@@ -48,6 +49,7 @@ const katalogMap = new Map([
   ['avklartefakta', avklartefakta],
   ['vilkar', vilkar],
   ['dokumenter', dokumenter],
+  ['behandlingsresultat', behandlingsresultat],
 ]);
 
 const testAll = () => {
