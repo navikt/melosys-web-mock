@@ -11,12 +11,10 @@
       "kode" : "OPPRETTET",
       "term" : "Saken er opprettet"
     },
-    "behandlingoppsummeringer": [
+    "behandlingOversikter": [
       {
         "behandlingID": 1234,
-        "registrertDato": "2017-10-01T12:31:36.123Z",
-        "endretDato": "2017-11-02T12:31:36.123Z",
-        "sisteOpplysningerHentetDato": "2017-12-19T12:31:36.123Z",
+        "opprettetDato": "2017-10-01T12:31:36.123Z",
         "behandlingstype": {
           "kode": "SOEKNAD",
           "term": "Søknad"
