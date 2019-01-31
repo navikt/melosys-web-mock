@@ -25,14 +25,7 @@
         },
         "registrertDato": "2018-10-02T07:04:35.403Z",
         "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
-        "endretDato": "2018-10-02T07:04:35.403Z",
-        "soknadsperiode": {
-          "fom": "2018-08-01",
-          "tom": "2018-12-31"
-        },
-        "land": [
-          "GB"
-        ]
+        "endretDato": "2018-10-02T07:04:35.403Z"
       },
       "saksopplysninger": {
         "person": {

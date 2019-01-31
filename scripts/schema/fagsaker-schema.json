@@ -1366,9 +1366,7 @@
               "behandlingstype",
               "endretDato",
               "registrertDato",
-              "sisteOpplysningerHentetDato",
-              "soknadsperiode",
-              "land"
+              "sisteOpplysningerHentetDato"
             ],
             "properties": {
               "behandlingID": {
@@ -1399,27 +1397,6 @@
                 "title": "The SisteOpplysningerHentetDato Schema",
                 "$id": "#/properties/behandlinger/items/properties/oppsummering/properties/sisteOpplysningerHentetDato",
                 "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/dato-tid"
-              },
-              "soknadsperiode": {
-                "title": "The Soknadsperiode Schema",
-                "$id": "#/properties/behandlingoppsummeringer/properties/soknadsperiode",
-                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/periode"
-              },
-              "land": {
-                "$id": "#/properties/behandlingoppsummeringer/items/properties/land",
-                "type": "array",
-                "title": "The Land Schema",
-                "uniqueItems": true,
-                "items": {
-                  "$id": "#/properties/behandlingoppsummeringer/properties/items",
-                  "type": "string",
-                  "title": "The Items Schema",
-                  "default": "",
-                  "examples": [
-                    "GB"
-                  ],
-                  "pattern": "^(.*)$"
-                }
               }
             }
           }
