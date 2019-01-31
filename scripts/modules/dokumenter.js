@@ -1,11 +1,13 @@
 const log4js = require('log4js');
 const URL = require('url');
 const Ajv = require('ajv');
+const { kodeverk } = require('melosys-kodeverk');
+
 const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 
-const { produserbareDokumenter } = require('./kodeverk/brev/produserbareDokumenter');
+const { brev: { produserbareDokumenter } } = kodeverk;
 const dokumenttypeKoder = produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
