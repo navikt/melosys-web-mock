@@ -7,8 +7,8 @@ const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 
-const { brev: { produserbareDokumenter } } = kodeverk;
-const dokumenttypeKoder = produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
+// Extract an  ['INNVILGELSE_YRKESAKTIV', ...] ie all kodes as strings fra produserbare dokumenter kode/term nodes.
+const dokumenttypeKoder = kodeverk.brev.produserbaredokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
 
