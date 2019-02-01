@@ -1,7 +1,7 @@
 {
-  "henleggelsegrunn": {
+  "henleggelsegrunnKode": {
     "kode": "ANNET",
     "term": "Annet"
   },
-  "henleggelseFritekst": "Brukeren har fått flyskrekk";
+  "henleggelseFritekst": "Brukeren har fått flyskrekk"
 }

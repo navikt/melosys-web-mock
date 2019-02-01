@@ -6,12 +6,12 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "henleggelsegrunn",
+    "henleggelsegrunnKode",
     "henleggelseFritekst"
   ],
   "properties": {
-    "henleggelsegrunn": {
-      "$id": "#/properties/henleggelsegrunn",
+    "henleggelsegrunnKode": {
+      "$id": "#/properties/henleggelsegrunnKode",
       "oneOf": [
         { "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/kodeverk"},
         { "type": ["null"] }
