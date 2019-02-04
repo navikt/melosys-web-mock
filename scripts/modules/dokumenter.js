@@ -7,9 +7,6 @@ const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 
-// Extract an  ['INNVILGELSE_YRKESAKTIV', ...] ie all kodes as strings fra produserbare dokumenter kode/term nodes.
-const dokumenttypeKoder = kodeverk.brev.produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
-
 const logger = log4js.getLogger('mock');
 
 const ajv = new Ajv({allErrors: true});
@@ -33,9 +30,6 @@ const isRestParamsInValid = req => {
   }
   else if (!dokumenttypeKode) {
     melding = ERR.badRequest400(url, 'REST param, :dokumenttypeKode, i /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
-  }
-  else if (!dokumenttypeKoder.includes(dokumenttypeKode)) {
-    melding = ERR.badRequest400(url, `REST param :dokumenttypeKode, ${dokumenttypeKode}, har ukjent verdi`);
   }
   return melding;
 };

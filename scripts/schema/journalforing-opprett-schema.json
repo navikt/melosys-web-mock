@@ -35,6 +35,7 @@
     "avsenderNavn",
     "arbeidsgiverID",
     "representantID",
+    "representantKontaktPerson",
     "dokumentID",
     "hoveddokumentTittel",
     "vedlegg",
@@ -104,6 +105,12 @@
         "300980004"
       ],
       "pattern": "^[0-9]{0,9}$"
+    },
+    "representantKontaktPerson": {
+      "$id": "#/properties/representantKontaktPerson",
+      "type": "string",
+      "title": "The RepresentantKontaktPerson Schema",
+      "default": ""
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
