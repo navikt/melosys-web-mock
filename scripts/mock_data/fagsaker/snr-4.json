@@ -694,9 +694,9 @@
         "registrertDato" : "2018-08-27T07:16:03.273Z",
         "sisteOpplysningerHentetDato": "2018-08-10T15:00:00.622Z",
         "endretDato" : "2018-08-27T07:16:03.273Z",
-        "behandlingstype" : {
-          "kode" : "SOEKNAD",
-          "term" : "Søknad"
+        "behandlingstype": {
+          "kode": "ENDRET_PERIODE",
+          "term": "Behandle forkortet periode"
         }
       }
     }
