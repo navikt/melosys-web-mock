@@ -65,10 +65,7 @@ module.exports.send = (req, res) => {
 
   try {
     const valid = test(validate, jsBody);
-    if (!valid) {
-      valideringFeil(req, res);
-    }
-    res.json(body);
+    return valid ? res.json(body) : valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
