@@ -1,6 +1,8 @@
 [
   {
     "saksnummer": "25",
+    "sammensattNavn" : "Joe Moe",
+    "opprettetDato": "2017-11-01T12:31:36.123Z",
     "sakstype": {
       "kode": "EU_EOS",
       "term": "EU/EØS"
@@ -9,21 +11,29 @@
       "kode" : "OPPRETTET",
       "term" : "Saken er opprettet"
     },
-    "behandlingstype": {
-      "kode": "SOEKNAD",
-      "term": "Søknad"
-    },
-    "behandlingsstatus": {
-      "kode": "OPPRETTET",
-      "term": "Opprettet"
-    },
-    "opprettetDato": "2017-10-19T12:31:36.123Z",
-    "soknadsperiode": {
-      "fom": "2018-08-01",
-      "tom": "2018-12-31"
-    },
-    "land": [
-      "GB"
+    "behandlingOversikter": [
+      {
+        "behandlingID": 1234,
+        "opprettetDato": "2017-10-01T12:31:36.123Z",
+        "behandlingstype": {
+          "kode": "SOEKNAD",
+          "term": "Søknad"
+        },
+        "behandlingsstatus": {
+          "kode": "OPPRETTET",
+          "term": "Opprettet"
+        },
+        "soknadsperiode": {
+          "fom": "2018-08-01",
+          "tom": "2018-12-31"
+        },
+        "land": [
+          "GB"
+        ]
+      }
     ]
   }
 ]
+
+
+
