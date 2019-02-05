@@ -2,6 +2,7 @@ const glob = require('glob');
 const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
 const colors = require('colors/safe');
+const emoji = require('node-emoji');
 const Utils = require('../modules/utils');
 const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
@@ -61,7 +62,7 @@ module.exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
-    console.log(colors.green('\tValid! '+navn));
+    console.log(' ',emoji.get('ballot_box_with_check'),' ',colors.green(navn));
   }
   else {
     console.log(colors.red('\tInvalid: '+navn));
@@ -72,3 +73,6 @@ module.exports.runTest = (data, ajv, validate) => {
   }
 };
 
+module.exports.prettyTittel = label => {
+  console.log(colors.white(label));
+};

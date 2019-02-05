@@ -114,7 +114,7 @@ function runTest(data) {
 }
 
 const testAll = () => {
-  console.log(colors.blue('Demo'));
+  console.log(colors.white('Demo'));
   runTest(jsonJS);
 };
 
