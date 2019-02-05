@@ -1,10 +1,8 @@
-const Ajv = require('ajv');
-
-const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
+const SchemaPostValidator  = require('./schema-post-validator');
 const ERR = require('./errors');
 
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
@@ -13,11 +11,8 @@ const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
 const schemajson = `${SCHEMA_DIR}/soknad-post-schema.json`;
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
 
 const schema = Schema.lesSchemaSync(schemajson);
-const validate = ajv.addSchema(definitions).compile(schema);
 
 const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
@@ -61,11 +56,13 @@ module.exports.hent = async (req, res) => {
 module.exports.send = (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("soknad:send", body);
+  const label = "Soknad:Send";
+  logger.debug(`${label}`, body);
 
   try {
-    const valid = test(validate, jsBody);
-    return valid ? res.json(body) : valideringFeil(req, res);
+    const valid = SchemaPostValidator.test(label, schema, jsBody);
+
+    return valid ? res.json(body) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
@@ -74,21 +71,3 @@ module.exports.send = (req, res) => {
   }
 };
 
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
-
-function test(validate, data) {
-  const valid = validate(data);
-  if (valid) {
-    console.log('Soknad: send Valid!');
-  }
-  else {
-    const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Soknad:send INVALID: see mock-errors.log');
-    logger.error('Soknad:send INVALID', ajvErros)
-  }
-  return valid;
-}
