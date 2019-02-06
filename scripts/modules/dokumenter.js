@@ -1,18 +1,13 @@
 const log4js = require('log4js');
 const URL = require('url');
-const Ajv = require('ajv');
-const { kodeverk } = require('melosys-kodeverk');
 
 const Utils = require('./utils');
 const ERR = require('./errors');
+const SchemaPostValidator  = require('./schema-post-validator');
 const Schema = require('../test/schema-util');
-
-// Extract an  ['INNVILGELSE_YRKESAKTIV', ...] ie all kodes as strings fra produserbare dokumenter kode/term nodes.
-const dokumenttypeKoder = kodeverk.brev.produserbareDokumenter.reduce((acc, curr) => {acc.push(curr.kode); return acc;},[]);
 
 const logger = log4js.getLogger('mock');
 
-const ajv = new Ajv({allErrors: true});
 
 const SCRIPTS_DIR = `${process.cwd()}/scripts`;
 const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
@@ -21,7 +16,6 @@ const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/dokumenter`;
 
 const schemajson = `${SCHEMA_DIR}/dokumenter-post-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
-const validate = ajv.compile(schema);
 
 const isRestParamsInValid = req => {
   const url = URL.parse(req.url);
@@ -33,9 +27,6 @@ const isRestParamsInValid = req => {
   }
   else if (!dokumenttypeKode) {
     melding = ERR.badRequest400(url, 'REST param, :dokumenttypeKode, i /dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode mangler');
-  }
-  else if (!dokumenttypeKoder.includes(dokumenttypeKode)) {
-    melding = ERR.badRequest400(url, `REST param :dokumenttypeKode, ${dokumenttypeKode}, har ukjent verdi`);
   }
   return melding;
 };
@@ -93,12 +84,11 @@ module.exports.lagPdfUtkast = (req, res) => {
 
   try {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    logger.debug("Dokument:lagPdfUtkast", JSON.stringify(jsBody));
-
-    const label = "Dokument::lagPdfUtkast";
-    const valid = test(label, validate, jsBody);
+    const label = "Dokument:lagPdfUtkast";
+    logger.debug(`${label}`, JSON.stringify(jsBody));
+    const valid = SchemaPostValidator.test(label, schema, jsBody);
     if (!valid) {
-      return valideringFeil(req, res);
+      return SchemaPostValidator.valideringFeil(req, res);
     }
 
     if (erMangelBrevMedFritekst(dokumenttypeKode)) {
@@ -134,12 +124,13 @@ module.exports.opprettDokument = (req, res) => {
   try {
     if (erMangelBrevMedFritekst(dokumenttypeKode)) {
       const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-      logger.debug("Dokument:opprettDokument", JSON.stringify(jsBody));
+      const label = "Dokument:opprettDokument";
+      logger.debug(`${label}`, JSON.stringify(jsBody));
 
-      const label = "Dokument::opprettDokument";
-      const valid = test(label, validate, jsBody);
+      const valid = SchemaPostValidator.test(label, schema, jsBody);
+
       if (!valid) {
-        return valideringFeil(req, res);
+        return SchemaPostValidator.valideringFeil(req, res);
       }
     }
     res.status(204).json();
@@ -155,15 +146,5 @@ module.exports.opprettDokument = (req, res) => {
 const erMangelBrevMedFritekst = (dokumenttypeKode) => {
   return 'MELDING_MANGLENDE_OPPLYSNINGER' === dokumenttypeKode; // TODO hent fra Kodverk!!
 };
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
 
-function test(label, validate, data) {
-  const valid = validate(data);
-  if (valid) console.log(`${label}, Valid`);
-  else console.log('Invalid: ' + ajv.errorsText(validate.errors));
-  return valid;
-}
+
