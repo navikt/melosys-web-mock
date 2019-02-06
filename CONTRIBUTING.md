@@ -1,3 +1,23 @@
+# User Guide
+## Mock web server
+Serveren startes med: `npm run happycase`
+
+To request typer er støttet
+* [GET] mock data filer fra `mock_data` katalogen
+* [POST] tar imot req.body og kjører schema validering på body
+
+## Mock data, Schema og validering
+Mock data valideres vha JSON Schema.
+* `npm run schema`
+
+Schema skriptet enumerer alle importerte schema, kartlegger alle kataloger i mock_data.
+Itererer og validerer alle mock data filer hver katalog med assosiert schema. 
+
+## Testing av [POST] body data
+* Start mock serveren `npm run happycase`
+* Åpnet nytt shell og kjør `npm run post`
+
+Skriptet post, enumerer alle endepunkter med [POST] actions, og leser post mock data, og sender dem til mock serveren og rapporterer success eller failed schema validering.
 # Hvordan bidra
 
 I Melosys-prosjektet brukes JSON-schema til å definere kontrakten mellom frontend og backend. Det er derfor viktig å ha et sett med konvensjoner for å opprettholde høy kvalitet og gjøre det enklere å forvalte mock og schema. 
