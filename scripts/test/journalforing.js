@@ -1,5 +1,4 @@
 const Ajv = require('ajv');
-const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
 
@@ -34,14 +33,14 @@ const validate = ajv.addSchema(definitions).compile(schema);
 
 const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
-  console.log(colors.blue(tittel));
+  Schema.prettyTittel(tittel);
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
 const testAll = () => {
-  console.log(colors.blue('Journalforing'));
+  Schema.prettyTittel('Journalforing');
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
-  console.log(colors.blue(`Journalforing/post`));
+  Schema.prettyTittel('Journalforing/post');
   testJournalPost('opprett');
   testJournalPost('tilordne');
 };

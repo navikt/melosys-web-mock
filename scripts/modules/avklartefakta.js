@@ -1,12 +1,10 @@
-const Ajv = require('ajv');
-
-const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
+const SchemaPostValidator  = require('./schema-post-validator');
 
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
@@ -45,12 +43,6 @@ module.exports.hent = async (req, res) => {
   }
 };
 
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400, 'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
-
 
 /**
  * Send Avklartefakta
@@ -61,30 +53,11 @@ function valideringFeil(req, res) {
 module.exports.send = (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("Avklartefakta:send", JSON.stringify(jsBody));
+  const label = 'Avklartefakta:send';
+  logger.debug(`${label}`, JSON.stringify(jsBody));
 
   const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
-  const validate = ajv.compile(schema);
-
-  const valid = test(validate, jsBody);
-
-  if (!valid) {
-    return valideringFeil(req, res);
-  }
-
-  return res.json(jsBody);
+  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };
-
-function test(validate, data) {
-  const valid = validate(data);
-  if (valid) {
-    console.log('Avklartefakta:send Valid!');
-  }
-  else {
-    const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Avklartefakta:send INVALID: see mock-errors.log');
-    logger.error('Avklartefakta:send INVALID', ajvErros)
-  }
-  return valid;
-}

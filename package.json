@@ -44,5 +44,8 @@
     "swagger-jsdoc": "node_modules/swagger-jsdoc/bin/swagger-jsdoc.js",
     "disabled-swagger": "npm run swagger-jsdoc -d swaggerDef.js scripts/modules/**/*.js",
     "jsdoc": "node_modules/.bin/jsdoc -P ./package.json -R ./README.md -X -r scripts/modules/"
+  },
+  "devDependencies": {
+    "node-emoji": "^1.8.1"
   }
 }

@@ -1,5 +1,4 @@
 const Ajv = require('ajv');
-const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
 const { lesOppgaveKatalog } = require('../modules/oppgaver');
@@ -21,7 +20,7 @@ const catalog = lesOppgaveKatalog();
   mock_oppgaver/sok/fnr-*.json => oppgaver-oversikt-schema.json, NB! Renamed from oppgaver-schema.json
  */
 const testAll = () => {
-  console.log(colors.blue('Oppgaver'));
+  Schema.prettyTittel('Oppgaver');
   catalog.forEach((elem) => {
     const { navn } = elem;
     const fornavn = navn.split('.')[0];
@@ -35,7 +34,7 @@ const testAll = () => {
 
 const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
-  console.log(colors.blue(tittel));
+  Schema.prettyTittel(tittel);
   const elem = Schema.lesKatalogElement(path);
   const schemajson = path;
   const schema = Schema.lesSchemaSync(schemajson);

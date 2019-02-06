@@ -85,7 +85,8 @@
     ],
     "arbeidUtland" : [
       {
-        "arbeidsandelNorge" : 33.299999999999997,
+        "foretakNavn" : "BMW AG",
+        "foretakOrgnr": "123456789",
         "adresse" : {
           "landKode" : "DE",
           "region" : "Brandenburger",
@@ -94,9 +95,7 @@
           "poststed" : "Poststedet",
           "gatenavn" : "Adresseveien 123"
         },
-        "arbeidUtlandHjemmekontor" : false,
-        "arbeidUtlandErstatning" : false,
-        "arbeidsandelUtland" : 66.599999999999994
+        "arbeidUtlandHjemmekontor" : false
       }
     ],
     "selvstendigArbeid" : {

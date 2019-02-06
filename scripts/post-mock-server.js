@@ -45,7 +45,7 @@ const testAlleEndepunkter = async () => {
     await instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(printresult).catch(printerror);
 
     const soknad = require('./mock_data/soknader/post/soknad-post');
-    await instance.post('/soknader/4', soknad).then(printresult).catch(error => printerror(error.response.data));
+    await instance.post('/soknader/4', soknad).then(printresult).catch(printerror);
 
     const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
     await instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(printerror);

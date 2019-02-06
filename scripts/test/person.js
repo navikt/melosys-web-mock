@@ -1,6 +1,5 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
-const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
 const { lesPersonKatalog } = require('../modules/personer');
@@ -18,11 +17,11 @@ const catalog = lesPersonKatalog();
 const validate = ajv.addSchema(definitions).compile(schema);
 
 const testAll = () => {
-  console.log(colors.blue('Person'));
+  Schema.prettyTittel('Person');
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 const testOne = (path) => {
-  console.log(colors.blue('Person'));
+  Schema.prettyTittel('Person');
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
