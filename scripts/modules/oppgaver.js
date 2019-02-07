@@ -1,22 +1,16 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const _ = require('underscore');
 
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
+const SchemaPostValidator  = require('./schema-post-validator');
 const ERR = require('./errors');
 
 const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
 const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
 const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
-
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
-
-const schemaMedDefinitions = ajv.addSchema(definitions);
 
 const lesOversikt = async () => {
   const mockfil = `${MOCK_DATA_OPPGAVER_DIR}/oversikt.json`;
@@ -87,14 +81,14 @@ module.exports.reset = (req, res) => {
 module.exports.tilbakelegg = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
-  const validate = schemaMedDefinitions.compile(schema);
 
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("oppgaver:tilbakelegg", JSON.stringify(jsBody));
+  const label = 'Oppgaver:tilbakelegg';
+  logger.debug(label, JSON.stringify(jsBody));
   try {
-    const valid = test(validate, jsBody);
-    return valid ? res.status(204).send() : valideringFeil(req, res);
+    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
     console.log(err);
@@ -102,22 +96,3 @@ module.exports.tilbakelegg = (req, res) => {
     res.status(500).send(melding);
   }
 };
-
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
-
-function test(validate, data) {
-  const valid = validate(data);
-  if (valid) {
-    console.log('TilbakeleggeOppgave: send Valid!');
-  }
-  else {
-    const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Oppgave:send INVALID: see mock-errors.log');
-    logger.error('Oppgave:send INVALID', ajvErros)
-  }
-  return valid;
-}

@@ -1,6 +1,5 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
-const colors = require('colors/safe');
 
 const Schema = require('./schema-util');
 const { lesAvklartefaktaKatalog, lesAvklartefaktaPostMock } = require('../modules/avklartefakta');
@@ -29,15 +28,15 @@ const validate = ajv.compile(schema);
 
 
 const testAll = () => {
-  console.log(colors.blue('Avklartefakta'));
+  Schema.prettyTittel('Avklartefakta');
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
-  console.log(colors.blue(`Avklartefakta/post`));
+  Schema.prettyTittel('Avklartefakta/post');
   testAvklaringPost();
 };
 
 const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
-  console.log(colors.blue(tittel));
+  Schema.prettyTittel(tittel);
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
