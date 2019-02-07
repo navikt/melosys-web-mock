@@ -12,6 +12,7 @@
     "brukerID",
     "dokumentID",
     "hoveddokumentTittel",
+    "ingenVurdering",
     "journalpostID",
     "oppgaveID",
     "saksnummer",
@@ -68,6 +69,12 @@
       "examples": [
         "Søknad om medlemskap"
       ]
+    },
+    "ingenVurdering": {
+      "$id": "#/properties/ingenVurdering",
+      "type": "boolean",
+      "title": "The Dokumentet trenger ingen vurdering Schema",
+      "default": false
     },
     "journalpostID": {
       "$id": "/properties/journalpostID",
