@@ -30,6 +30,7 @@
   "required": [
     "journalpostID",
     "oppgaveID",
+    "behandlingstype",
     "brukerID",
     "avsenderID",
     "avsenderNavn",
@@ -54,6 +55,14 @@
       "examples": [
         "177057928"
       ],
+      "pattern": "^(.*)$"
+    },
+
+    "behandlingstype": {
+      "title": "The Behandlingsype Schema",
+      "$id": "#/properties/behandlingstype",
+      "type": "string",
+      "default": "",
       "pattern": "^(.*)$"
     },
     "brukerID": {
