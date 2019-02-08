@@ -10,7 +10,7 @@
   "additionalProperties": false,
   "required": [
     "mottaker",
-    "begrunnelseKode",
+    "begrunnelseKoder",
     "fritekst"
   ],
   "properties": {
@@ -43,16 +43,16 @@
       "examples": ["Fritekst"],
       "pattern": "^(.*)$"
     },
-    "begrunnelseKode": {
-      "$id": "#/properties/begrunnelseKode",
+    "begrunnelseKoder": {
+      "$id": "#/properties/begrunnelseKoder",
       "type": [
-        "string",
+        "array",
         "null"
       ],
       "title": "The BegrunnelseKode Schema",
-      "default": "",
+      "default": [],
       "examples": [
-        "IKKE_VESENTLIG_VIRKSOMHET"
+        ["IKKE_VESENTLIG_VIRKSOMHET"]
       ],
       "pattern": "^(.*)$"
     }
