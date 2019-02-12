@@ -45,7 +45,7 @@
       },
       "lovvalgBestemmelse": {
         "$id": "#/items/properties/lovvalgBestemmelse",
-        "type": "string",
+        "type": ["string", "null"],
         "title": "The LovvalgBestemmelse Schema",
         "default": "",
         "examples": [
