@@ -45,7 +45,7 @@ node {
     commitUrl = "https://github.com/${project}/${application}/commit/${commitHash}"
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
-    lsRemote = sh(script: "git ls remote origin 'pull/*/head'", returnStdout: true).trim()
+    lsRemote = sh(script: "git ls-remote origin 'pull/*/head'", returnStdout: true).trim()
     echo("commitHash=${lsRemote}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
