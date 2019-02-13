@@ -19,7 +19,7 @@ node {
 
   /* metadata */
   def semVer, buildVersion
-  def commitHash, commitHashShort, commitUrl, committer
+  def commitHash, commitHashShort, commitUrl, committer, lsRemote
   def scmVars
 
   /* tools */
@@ -40,13 +40,17 @@ node {
 
   stage('Initialize scm') {
     commitHash = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+    echo("commitHash=${commitHash}")
     commitHashShort = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     commitUrl = "https://github.com/${project}/${application}/commit/${commitHash}"
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
+    lsRemote = sh(script: "git ls remote origin 'pull/*/head'", returnStdout: true).trim()
+    echo("commitHash=${lsRemote}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
-    echo("semVer=${semVer}")
+    echo("package.json semVer=${semVer}")
+    echo("")
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
