@@ -47,6 +47,9 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin 'pull/*/head'", returnStdout: true).trim()
     echo("commitHash=${lsRemote}")
+    lsRemote.eachLine {
+      println it.split()
+    }
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
