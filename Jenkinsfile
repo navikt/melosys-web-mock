@@ -49,11 +49,12 @@ node {
     echo("commitHash=${lsRemote}")
     def map = [:]
     lsRemote.eachLine { line ->
-      def tokens = line.split("    ")
+      def tokens = line.split(/\s+/)
       map.put(tokens[0], tokens[1])
     }
-    def prNum = map.get(commitHash).split("/")[2]
-    echo("PR#${prNum}")
+    echo("${map}")
+    //def prNum = map.get(commitHash).split("/")[2]
+    //echo("PR#${prNum}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
