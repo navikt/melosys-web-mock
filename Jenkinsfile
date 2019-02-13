@@ -46,16 +46,14 @@ node {
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin 'pull/*/head'", returnStdout: true).trim()
-    // echo("commitHash=${lsRemote}")
+    echo("commitHash=${lsRemote}")
     def map = [:]
-    lsRemote.splitEachLine('    ') { line ->
-      if (line != null) {
-        map.put(line[0],line[1])
-      }
+    lsRemote.eachLine { line ->
+      def tokens = line.split("    ")
+      map.put(tokens[0], tokens[1])
     }
-    echo("map#${map}")
-    //def prNum = map.get(commitHash).split("/")[2]
-    //echo("PR#${prNum}")
+    def prNum = map.get(commitHash).split("/")[2]
+    echo("PR#${prNum}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
