@@ -52,9 +52,9 @@ node {
       def tokens = line.split(/\s+/)
       map.put(tokens[0], tokens[1])
     }
-    echo("${map}")
-    //def prNum = map.get(commitHash).split("/")[2]
-    //echo("PR#${prNum}")
+    //echo("${map}")
+    def prNum = map.get(commitHash) //.split("/")[2]
+    echo("${prNum}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
