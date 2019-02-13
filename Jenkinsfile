@@ -49,7 +49,9 @@ node {
     // echo("commitHash=${lsRemote}")
     def map = [:]
     lsRemote.splitEachLine('    ') { line ->
-      map.put(line[0],line[1])
+      if (line != null) {
+        map.put(line[0],line[1])
+      }
     }
     echo("map#${map}")
     //def prNum = map.get(commitHash).split("/")[2]
