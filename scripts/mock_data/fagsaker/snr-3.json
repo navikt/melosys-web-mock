@@ -13,6 +13,7 @@
   "gsakSaksnummer" : 131063977,
   "behandlinger": [
     {
+      "redigerbart": true,
       "oppsummering": {
         "behandlingID": 3,
         "behandlingstype":{
