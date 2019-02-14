@@ -2,7 +2,7 @@
 ###### Express mock server
 ```
 GitBash MINGW64 ~/Dev/NAV/BitBucket/melosys-web-mock (develop)
-$ npm run amock
+$ npm run happycase
 
 > melosys-web-mock@0.1.0 amock C:\Users\B150245\Dev\NAV\BitBucket\melosys-web-mock
 > node scripts/mock_api_server.js
