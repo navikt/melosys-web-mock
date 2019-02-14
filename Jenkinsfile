@@ -47,8 +47,11 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
     lsRemoteString = lsRemote.toString()
-    echo("lsRemote=${lsRemote}")
-    echo("lsRemoteString=${lsRemoteString}")
+//    echo("lsRemote=${lsRemote}")
+//    echo("lsRemoteString=${lsRemoteString}")
+    echo("type: "+lsRemoteString.getClass())
+    def list = lsRemoteString.split('\n')
+    echo("listtype: "+list.getClass())
     def token
     lsRemoteString.eachLine { line ->
       echo("LINE:${line}")
