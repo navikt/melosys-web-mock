@@ -55,6 +55,10 @@ node {
     def token
     list.each {
       echo("it: ${it}")
+        if (it.startsWith(commitHash)) {
+          echo(it)
+        }
+
     }
 //    lsRemoteString.eachLine { line ->
 //      echo("LINE:${line}")
