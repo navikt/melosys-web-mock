@@ -57,6 +57,9 @@ node {
       echo("it: ${it}")
         if (it.startsWith(commitHash)) {
           echo(it)
+          listen = denne.split()
+          println "reffen: " + listen[1]
+          token = listen[1]
         }
 
     }
@@ -66,7 +69,7 @@ node {
 //        echo("found it")
 //      }
 //    }
-    // echo("${token}")
+    echo("token: ${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
