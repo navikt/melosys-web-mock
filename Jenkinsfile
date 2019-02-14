@@ -53,12 +53,15 @@ node {
     def list = lsRemoteString.split('\n')
     echo("listtype: "+list.getClass())
     def token
-    lsRemoteString.eachLine { line ->
-      echo("LINE:${line}")
-      if (line.startsWith(commitHash)) {
-        echo("found it")
-      }
+    list.each {
+      echo("it: ${it}")
     }
+//    lsRemoteString.eachLine { line ->
+//      echo("LINE:${line}")
+//      if (line.startsWith(commitHash)) {
+//        echo("found it")
+//      }
+//    }
     // echo("${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
