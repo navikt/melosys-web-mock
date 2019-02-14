@@ -45,12 +45,13 @@ node {
     commitUrl = "https://github.com/${project}/${application}/commit/${commitHash}"
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
-    lsRemote = sh(script: "git ls-remote origin 'pull/*/head'", returnStdout: true)
-    echo("commitHash=${lsRemote}")
+    lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
+    echo("lsRemote=${lsRemote}")
     def token
     lsRemote.eachLine { line ->
       echo("LINE:${line}")
       if (line.startsWith(commitHash)) {
+        echo("found it")
       }
     }
     // echo("${token}")
