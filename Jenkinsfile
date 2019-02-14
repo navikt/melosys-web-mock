@@ -19,7 +19,7 @@ node {
 
   /* metadata */
   def semVer, buildVersion
-  def commitHash, commitHashShort, commitUrl, committer
+  def commitHash, commitHashShort, commitUrl, committer, lsRemote, token
   def scmVars
 
   /* tools */
@@ -40,18 +40,36 @@ node {
 
   stage('Initialize scm') {
     commitHash = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+    echo("commitHash=${commitHash}")
     commitHashShort = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     commitUrl = "https://github.com/${project}/${application}/commit/${commitHash}"
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
+    lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
+    def lsRemoteString = lsRemote.toString()
+    def list = lsRemoteString.split('\n')
+
+    // Let etter siste commithash blant pull request refs
+    list.each {
+        if (it.startsWith(commitHash)) {
+          refList = it.split('/')
+
+          // Finn pr-nummer fra strengen: refs/pull/85/head
+          token = refList[2]
+        }
+    }
+    echo("pr nummer: ${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
-    echo("semVer=${semVer}")
+    echo("package.json semVer=${semVer}")
+
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
-    else if (scmVars.GIT_BRANCH.startsWith("PR-")) {
-      def snapshotVersion = scmVars.GIT_BRANCH.toUpperCase().replaceAll("[^A-Z0-9]", "-")
+    else if (token != null) {
+
+      // Hvis det eksisterer et token så betyr det at dette er en pull-request
+      def snapshotVersion = "PR-${token}"
       buildVersion = "${semVer}-${snapshotVersion}-SNAPSHOT"
     }
     else {

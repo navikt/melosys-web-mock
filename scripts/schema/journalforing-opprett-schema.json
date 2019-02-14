@@ -30,11 +30,13 @@
   "required": [
     "journalpostID",
     "oppgaveID",
+    "behandlingstype",
     "brukerID",
     "avsenderID",
     "avsenderNavn",
     "arbeidsgiverID",
     "representantID",
+    "representantKontaktPerson",
     "dokumentID",
     "hoveddokumentTittel",
     "vedlegg",
@@ -53,6 +55,14 @@
       "examples": [
         "177057928"
       ],
+      "pattern": "^(.*)$"
+    },
+
+    "behandlingstype": {
+      "title": "The Behandlingsype Schema",
+      "$id": "#/properties/behandlingstype",
+      "type": "string",
+      "default": "",
       "pattern": "^(.*)$"
     },
     "brukerID": {
@@ -104,6 +114,12 @@
         "300980004"
       ],
       "pattern": "^[0-9]{0,9}$"
+    },
+    "representantKontaktPerson": {
+      "$id": "#/properties/representantKontaktPerson",
+      "type": "string",
+      "title": "The RepresentantKontaktPerson Schema",
+      "default": ""
     },
     "dokumentID": {
       "$id": "#/properties/dokumentID",
