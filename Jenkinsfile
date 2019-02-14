@@ -49,8 +49,8 @@ node {
     echo("commitHash=${lsRemote}")
     def token
     lsRemote.eachLine { line ->
+      echo("LINE:${line}")
       if (line.startsWith(commitHash)) {
-        echo("LINE:${line}")
       }
     }
     // echo("${token}")
