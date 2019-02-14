@@ -47,28 +47,15 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
     lsRemoteString = lsRemote.toString()
-//    echo("lsRemote=${lsRemote}")
-//    echo("lsRemoteString=${lsRemoteString}")
-    echo("type: "+lsRemoteString.getClass())
     def list = lsRemoteString.split('\n')
-    echo("listtype: "+list.getClass())
     def token
     list.each {
-      echo("it: ${it}")
         if (it.startsWith(commitHash)) {
-          echo(it)
-          listen = it.split()
-          println "reffen: " + listen[1]
-          token = listen[1]
+          listen = it.split('/')
+          token = listen[2]
         }
 
     }
-//    lsRemoteString.eachLine { line ->
-//      echo("LINE:${line}")
-//      if (line.startsWith(commitHash)) {
-//        echo("found it")
-//      }
-//    }
     echo("token: ${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
@@ -77,8 +64,8 @@ node {
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
-    else if (scmVars.GIT_BRANCH.startsWith("PR-")) {
-      def snapshotVersion = scmVars.GIT_BRANCH.toUpperCase().replaceAll("[^A-Z0-9]", "-")
+    else if (token != null) {
+      def snapshotVersion = "PR-${token}"
       buildVersion = "${semVer}-${snapshotVersion}-SNAPSHOT"
     }
     else {
