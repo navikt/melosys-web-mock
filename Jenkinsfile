@@ -47,14 +47,13 @@ node {
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin 'pull/*/head'", returnStdout: true).trim()
     echo("commitHash=${lsRemote}")
-    def map = [:]
+    def token
     lsRemote.eachLine { line ->
-      def tokens = line.split(/\s+/)
-      map.put(tokens[0], tokens[1])
+      if (line.startsWith(commitHash)) {
+        token = line;
+      }
     }
-    echo("${map}")
-    def prNum = map.get(commitHash) //.split("/")[2]
-    echo("${prNum}")
+    echo("${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
