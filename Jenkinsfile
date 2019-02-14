@@ -50,10 +50,11 @@ node {
     def token
     lsRemote.eachLine { line ->
       if (line.startsWith(commitHash)) {
-        token = line;
+        token = line
+        echo("LINE:${line}")
       }
     }
-    echo("${token}")
+    // echo("${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
