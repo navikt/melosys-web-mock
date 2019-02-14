@@ -57,7 +57,7 @@ node {
       echo("it: ${it}")
         if (it.startsWith(commitHash)) {
           echo(it)
-          listen = denne.split()
+          listen = it.split()
           println "reffen: " + listen[1]
           token = listen[1]
         }
