@@ -19,7 +19,7 @@ node {
 
   /* metadata */
   def semVer, buildVersion
-  def commitHash, commitHashShort, commitUrl, committer, lsRemote
+  def commitHash, commitHashShort, commitUrl, committer, lsRemote, token
   def scmVars
 
   /* tools */
@@ -46,25 +46,29 @@ node {
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
     lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
-    lsRemoteString = lsRemote.toString()
+    def lsRemoteString = lsRemote.toString()
     def list = lsRemoteString.split('\n')
-    def token
+
+    // Let etter siste commithash blant pull request refs
     list.each {
         if (it.startsWith(commitHash)) {
-          listen = it.split('/')
-          token = listen[2]
-        }
+          refList = it.split('/')
 
+          // Finn pr-nummer fra strengen: refs/pull/85/head
+          token = refList[2]
+        }
     }
-    echo("token: ${token}")
+    echo("pr nummer: ${token}")
 
     semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
     echo("package.json semVer=${semVer}")
-    echo("")
+
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       buildVersion = "${semVer}-${BUILD_NUMBER}"
     }
     else if (token != null) {
+
+      // Hvis det eksisterer et token så betyr det at dette er en pull-request
       def snapshotVersion = "PR-${token}"
       buildVersion = "${semVer}-${snapshotVersion}-SNAPSHOT"
     }
