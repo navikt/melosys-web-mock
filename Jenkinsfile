@@ -114,6 +114,13 @@ node {
     }
   }
   stage('Deploy frontendlogger Zip archive til Nexus') {
+    def repositoryId
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+      repositoryId = "m2internal"
+    }
+    else {
+      repositoryId = "m2snapshot"
+    }
     configFileProvider(
       [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
       sh """
