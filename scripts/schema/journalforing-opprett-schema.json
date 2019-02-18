@@ -30,7 +30,7 @@
   "required": [
     "journalpostID",
     "oppgaveID",
-    "behandlingstype",
+    "behandlingstypeKode",
     "brukerID",
     "avsenderID",
     "avsenderNavn",
@@ -58,9 +58,9 @@
       "pattern": "^(.*)$"
     },
 
-    "behandlingstype": {
+    "behandlingstypeKode": {
       "title": "The Behandlingsype Schema",
-      "$id": "#/properties/behandlingstype",
+      "$id": "#/properties/behandlingstypeKode",
       "type": "string",
       "default": "",
       "pattern": "^(.*)$"
