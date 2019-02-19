@@ -192,6 +192,7 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  *  * ---------------------------------------------------------------
  */
 router.post('/vedtak/:behandlingID', vedtak.fattet);
+router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
