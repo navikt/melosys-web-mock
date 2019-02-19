@@ -1,7 +1,7 @@
 {
   "arbeidsgiverID": null,
   "representantID": "",
-  "behandlingstype": "SOEKNAD",
+  "behandlingstypeKode": "SOEKNAD",
   "representantKontaktPerson": "",
   "avsenderID": "30098000492",
   "avsenderNavn": "HEST LILLA",

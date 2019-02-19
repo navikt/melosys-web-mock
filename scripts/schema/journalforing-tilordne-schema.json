@@ -8,7 +8,7 @@
   "required": [
     "avsenderID",
     "avsenderNavn",
-    "behandlingstype",
+    "behandlingstypeKode",
     "brukerID",
     "dokumentID",
     "hoveddokumentTittel",
@@ -39,10 +39,10 @@
       ],
       "pattern": "^(.*)$"
     },
-    "behandlingstype": {
-      "$id": "/properties/behandlingstype",
+    "behandlingstypeKode": {
+      "$id": "/properties/behandlingstypeKode",
       "type": ["string","null"],
-      "title": "The Behandlingstype Schema ",
+      "title": "The BehandlingstypeKode Schema ",
       "default": "",
       "examples": [
         "SOEKNAD", "KLAGE"
