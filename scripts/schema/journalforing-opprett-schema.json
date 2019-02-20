@@ -117,7 +117,7 @@
     },
     "representantKontaktPerson": {
       "$id": "#/properties/representantKontaktPerson",
-      "type": "string",
+      "type": ["string","null"],
       "title": "The RepresentantKontaktPerson Schema",
       "default": ""
     },
