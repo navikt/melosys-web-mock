@@ -811,7 +811,8 @@
               "navn",
               "fartsomradeKode",
               "flaggLandKode",
-              "installasjonsLandKode"
+              "installasjonsLandKode",
+              "territorialfarvann"
             ],
             "properties": {
               "navn": {
@@ -848,6 +849,16 @@
                 "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/installasjonsLandKode",
                 "type": ["string","null"],
                 "title": "The Installasjonslandkode Schema",
+                "default": "",
+                "examples": [
+                  "GB"
+                ],
+                "pattern": "^(.*)$"
+              },
+              "territorialfarvann": {
+                "$id": "#/properties/soeknadDokument/properties/maritimtArbeid/items/properties/territorialfarvann",
+                "type": ["string","null"],
+                "title": "The Territorialfarvann Schema",
                 "default": "",
                 "examples": [
                   "GB"
