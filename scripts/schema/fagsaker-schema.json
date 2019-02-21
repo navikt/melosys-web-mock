@@ -88,9 +88,21 @@
         "required": [
           "saksopplysninger",
           "behandlingshistorikk",
-          "oppsummering"
+          "oppsummering",
+          "redigerbart"
         ],
         "properties": {
+        "redigerbart": {
+          "$id": "#/properties/behandlinger/items/properties/redigerbart",
+          "type": "boolean",
+          "title": "The behandlinger Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            false,
+            true
+          ]
+        },
           "saksopplysninger": {
             "$id": "#/properties/behandlinger/items/properties/saksopplysninger",
             "type": "object",
