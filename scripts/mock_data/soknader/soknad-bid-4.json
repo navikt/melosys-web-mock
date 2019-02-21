@@ -116,7 +116,8 @@
         "navn": "Dunfjæder",
         "fartsomradeKode": "INNENRIKS",
         "flaggLandKode": "GB",
-        "installasjonsLandKode": "GB"
+        "installasjonsLandKode": "GB",
+        "territorialfarvann": "GB"
       }
     ]
   },

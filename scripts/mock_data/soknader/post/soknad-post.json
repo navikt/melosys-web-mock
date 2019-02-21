@@ -80,7 +80,8 @@
         "installasjonsLandKode" : "GB",
         "flaggLandKode" : "GB",
         "navn" : "Snorre Dunfjæder",
-        "fartsomradeKode" : "INNENRIKS"
+        "fartsomradeKode" : "INNENRIKS",
+        "territorialfarvann": "GB"
       }
     ],
     "arbeidUtland" : [
