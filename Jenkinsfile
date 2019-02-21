@@ -15,12 +15,11 @@ node {
   // def artifactPath = "/no/nav/melosys/${application}/maven-metadata.xml"
   // curl -s http://maven.adeo.no/nexus/content/repositories/m2internal/no/nav/melosys/melosys-web-mock/maven-metadata.xml | xmllint --xpath 'string((//metadata/versioning/versions/version)[last()])' -
   def schemaZipFile, frontendLoggerZip
-  def repositoryId
 
   /* metadata */
-  def semVer, buildVersion
+  def semver, buildVersion
   def commitHash, commitHashShort, commitUrl, committer
-  def scmVars
+  def scmVars, prNummer
 
   /* tools */
   def NODE_JS_HOME = tool "node-10.10.0" // => "installation directory" = "/opt/node"
@@ -40,22 +39,32 @@ node {
 
   stage('Initialize scm') {
     commitHash = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+    echo("commitHash=${commitHash}")
     commitHashShort = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
     commitUrl = "https://github.com/${project}/${application}/commit/${commitHash}"
     // gets the person who committed last as "Surname, First name"
     committer = sh(script: 'git log -1 --pretty=format:"%an"', returnStdout: true).trim()
-
-    semVer = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
-    echo("semVer=${semVer}")
-    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
-      buildVersion = "${semVer}-${BUILD_NUMBER}"
+    def lsRemote = sh(script: "git ls-remote origin pull/*/head", returnStdout: true)
+    lsRemote.toString().split('\n').each {
+      if (it.startsWith(commitHash)) {
+        // Finn pr-nummer fra strengen: refs/pull/85/head
+        prNummer = it.split('/')[2]
+      }
     }
-    else if (scmVars.GIT_BRANCH.startsWith("PR-")) {
-      def snapshotVersion = scmVars.GIT_BRANCH.toUpperCase().replaceAll("[^A-Z0-9]", "-")
-      buildVersion = "${semVer}-${snapshotVersion}-SNAPSHOT"
+    echo("prNummer: ${prNummer}")
+
+    semver = sh(returnStdout: true, script: "node -pe \"require('./package.json').version\"").trim()
+    echo("package.json semVer=${semver}")
+
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+      buildVersion = "${semver}-${BUILD_NUMBER}"
+    }
+    else if (prNummer != null) {
+      // Hvis det eksisterer et token så betyr det at dette er en pull-request
+      buildVersion = "${semver}-PR-${prNummer}-SNAPSHOT"
     }
     else {
-      buildVersion = "${semVer}-SNAPSHOT"
+      buildVersion = "${semver}-SNAPSHOT"
     }
     echo("buildVersion=${buildVersion}")
   }
@@ -86,6 +95,7 @@ node {
   }
 
   stage('Deploy Schema Zip archive to Nexus') {
+    def repositoryId
     if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
       repositoryId = "m2internal"
     }
@@ -104,6 +114,13 @@ node {
     }
   }
   stage('Deploy frontendlogger Zip archive til Nexus') {
+    def repositoryId
+    if (scmVars.GIT_BRANCH.equalsIgnoreCase("develop")) {
+      repositoryId = "m2internal"
+    }
+    else {
+      repositoryId = "m2snapshot"
+    }
     configFileProvider(
       [configFile(fileId: 'navMavenSettings', variable: 'MAVEN_SETTINGS')]) {
       sh """

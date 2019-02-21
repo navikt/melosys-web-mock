@@ -8,10 +8,11 @@
   "required": [
     "avsenderID",
     "avsenderNavn",
-    "behandlingstype",
+    "behandlingstypeKode",
     "brukerID",
     "dokumentID",
     "hoveddokumentTittel",
+    "ingenVurdering",
     "journalpostID",
     "oppgaveID",
     "saksnummer",
@@ -38,10 +39,10 @@
       ],
       "pattern": "^(.*)$"
     },
-    "behandlingstype": {
-      "$id": "/properties/behandlingstype",
+    "behandlingstypeKode": {
+      "$id": "/properties/behandlingstypeKode",
       "type": ["string","null"],
-      "title": "The Behandlingstype Schema ",
+      "title": "The BehandlingstypeKode Schema ",
       "default": "",
       "examples": [
         "SOEKNAD", "KLAGE"
@@ -68,6 +69,12 @@
       "examples": [
         "Søknad om medlemskap"
       ]
+    },
+    "ingenVurdering": {
+      "$id": "#/properties/ingenVurdering",
+      "type": "boolean",
+      "title": "The Dokumentet trenger ingen vurdering Schema",
+      "default": false
     },
     "journalpostID": {
       "$id": "/properties/journalpostID",

@@ -13,6 +13,7 @@
   "gsakSaksnummer" : 131063977,
   "behandlinger" : [
     {
+      "redigerbart": true,
       "saksopplysninger" : {
         "arbeidsforhold" : [
           {
