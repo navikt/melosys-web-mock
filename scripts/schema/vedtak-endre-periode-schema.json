@@ -9,7 +9,7 @@
     "begrunnelseKode"
   ],
   "properties": {
-    "begrunnelsekode": {
+    "begrunnelseKode": {
       "$id": "#/properties/begrunnelseKode",
       "title": "The BegrunnelseKode Schema",
       "type": "string"
