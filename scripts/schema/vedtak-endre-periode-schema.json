@@ -6,12 +6,12 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "begrunnelsekode"
+    "begrunnelseKode"
   ],
   "properties": {
     "begrunnelsekode": {
-      "$id": "#/properties/begrunnelsekode",
-      "title": "The Begrunnelsekode Schema",
+      "$id": "#/properties/begrunnelseKode",
+      "title": "The BegrunnelseKode Schema",
       "type": "string"
     }
   }
