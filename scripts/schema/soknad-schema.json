@@ -554,25 +554,17 @@
           "title": "The Juridiskarbeidsgivernorge Schema",
           "additionalProperties": false,
           "required": [
-            "erBemanningsbyra",
             "utsendteNeste12Mnd",
             "antallAdmAnsatte",
-            "antallAdminAnsatteEOS",
+            "antallAnsatte",
             "andelOmsetningINorge",
+            "andelOppdragINorge",
             "andelKontrakterINorge",
-            "utsendtFortsetterArbeidsforholdIUtlandet",
+            "arbeidstakereRekruttert",
+            "oppdragsKontrakterIHovedsakInngaattILand",
             "ekstraArbeidsgivere"
           ],
           "properties": {
-            "erBemanningsbyra": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/erBemanningsbyra",
-              "type": ["boolean","null"],
-              "title": "The Erbemanningsbyra Schema",
-              "default": false,
-              "examples": [
-                false
-              ]
-            },
             "utsendteNeste12Mnd": {
               "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendteNeste12Mnd",
               "type": ["integer","null"],
@@ -591,10 +583,10 @@
                 350
               ]
             },
-            "antallAdminAnsatteEOS": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAdminAnsatteEOS",
+            "antallAnsatte": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/antallAnsatte",
               "type": ["integer","null"],
-              "title": "The Antalladminansatteeos Schema",
+              "title": "The antallAnsatte Schema",
               "default": 0,
               "examples": [
                 75
@@ -609,6 +601,15 @@
                 78.5
               ]
             },
+            "andelOppdragINorge": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelOppdragINorge",
+              "type": ["number","null"],
+              "title": "The andelOppdragINorge Schema",
+              "default": 0.0,
+              "examples": [
+                78.5
+              ]
+            },
             "andelKontrakterINorge": {
               "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/andelKontrakterINorge",
               "type": ["number","null"],
@@ -618,13 +619,22 @@
                 50.5
               ]
             },
-            "utsendtFortsetterArbeidsforholdIUtlandet": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/utsendtFortsetterArbeidsforholdIUtlandet",
-              "type": ["boolean","null"],
-              "title": "The Utsendtfortsetterarbeidsforholdiutlandet Schema",
-              "default": false,
+            "arbeidstakereRekruttert": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/arbeidstakereRekruttert",
+              "type": ["string","null"],
+              "title": "The arbeidstakereRekruttert Schema",
+              "default": 0.0,
               "examples": [
-                true
+                50.5
+              ]
+            },
+            "oppdragsKontrakterIHovedsakInngaattILand": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/oppdragsKontrakterIHovedsakInngaattILand",
+              "type": ["string","null"],
+              "title": "The oppdragsKontrakterIHovedsakInngaattILand Schema",
+              "default": 0.0,
+              "examples": [
+                50.5
               ]
             },
             "ekstraArbeidsgivere": {
