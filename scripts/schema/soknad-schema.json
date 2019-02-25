@@ -560,7 +560,7 @@
             "andelOmsetningINorge",
             "andelOppdragINorge",
             "andelKontrakterINorge",
-            "arbeidstakereRekruttert",
+            "arbeidstakereRekruttertILand",
             "oppdragsKontrakterIHovedsakInngaattILand",
             "ekstraArbeidsgivere"
           ],
@@ -619,10 +619,10 @@
                 50.5
               ]
             },
-            "arbeidstakereRekruttert": {
-              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/arbeidstakereRekruttert",
+            "arbeidstakereRekruttertILand": {
+              "$id": "#/properties/soeknadDokument/properties/juridiskArbeidsgiverNorge/properties/arbeidstakereRekruttertILand",
               "type": ["string","null"],
-              "title": "The arbeidstakereRekruttert Schema",
+              "title": "The arbeidstakereRekruttertILand Schema",
               "default": 0.0,
               "examples": [
                 50.5
