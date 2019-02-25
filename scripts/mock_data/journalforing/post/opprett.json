@@ -2,7 +2,7 @@
   "arbeidsgiverID": null,
   "representantID": "",
   "behandlingstypeKode": "SOEKNAD",
-  "representantKontaktPerson": "",
+  "representantKontaktPerson": null,
   "avsenderID": "30098000492",
   "avsenderNavn": "HEST LILLA",
   "dokumentID": "Dok_ID",
