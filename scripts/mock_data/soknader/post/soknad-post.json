@@ -44,16 +44,15 @@
       "fullmektigLandKode" : "NO"
     },
     "juridiskArbeidsgiverNorge" : {
-      "andelOmsetningINorge" : 79,
-      "utsendtFortsetterArbeidsforholdIUtlandet" : true,
-      "antallAdminAnsatteEOS" : 75,
-      "erBemanningsbyra" : false,
-      "andelKontrakterINorge" : 51,
-      "utsendteNeste12Mnd" : 10,
-      "ekstraArbeidsgivere" : [
-        "910099035"
-      ],
-      "antallAdmAnsatte" : 350
+      "utsendteNeste12Mnd": 10,
+      "antallAdmAnsatte": 35,
+      "antallAnsatte": 350,
+      "andelOmsetningINorge": 78.5,
+      "andelOppdragINorge": 50.5,
+      "andelKontrakterINorge": 30.5,
+      "arbeidstakereRekruttertILand": "SE",
+      "oppdragsKontrakterIHovedsakInngaattILand": "NO",
+      "ekstraArbeidsgivere": []
     },
     "arbeidsinntekt" : {
       "inntektNaeringIPerioden" : 0,
