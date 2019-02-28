@@ -61,10 +61,11 @@
       "rolleKode": {
         "$id": "#/items/properties/rolleKode",
         "type": "string",
+        "enum": ["BRUKER", "ARBEIDSGIVER", "REPRESENTANT", "MYNDIGHET"],
         "title": "The Rollekode Schema",
         "default": "",
         "examples": [
-          "BRUKER"
+          "BRUKER", "ARBEIDSGIVER", "REPRESENTANT", "MYNDIGHET"
         ],
         "pattern": "^(.*)$"
       },
