@@ -6,6 +6,7 @@ const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
 const serverinfo = require('./modules/server-info');
+const aktoer = require('./modules/aktoer');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
 const fagsaker = require('./modules/fagsaker');
@@ -56,6 +57,11 @@ app.use(bodyParser.raw());
 
 const port = process.env.PORT || 3002;
 const router = express.Router();
+
+/**
+ * AKTOER
+ */
+router.get('/aktoer/:saksnummer/:rolle', aktoer.hent);
 
 /**
  * BEHANDLINGER
