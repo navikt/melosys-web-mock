@@ -1,0 +1,91 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://http://melosys.nav.no/schemas/aktoer",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "saksnummer",
+      "aktoerID",
+      "orgnr",
+      "institusjonsID",
+      "rolleKode",
+      "kontaktperson",
+      "kontaktpersonOrgnr"
+    ],
+    "properties": {
+      "saksnummer": {
+        "$id": "#/items/properties/saksnummer",
+        "type": "string",
+        "title": "The Saksnummer Schema",
+        "default": "",
+        "examples": [
+          "4"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "aktoerID": {
+        "$id": "#/items/properties/aktoerID",
+        "type": ["string", "null"],
+        "title": "The Aktoerid Schema",
+        "default": "",
+        "examples": [
+          "1167540096033"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "orgnr": {
+        "$id": "#/items/properties/orgnr",
+        "type": ["string", "null"],
+        "title": "The Orgnr Schema",
+        "default": "",
+        "examples": [
+          "1167540096033"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "institusjonsID": {
+        "$id": "#/items/properties/institusjonsID",
+        "type": ["string", "null"],
+        "title": "The Institusjonsid Schema",
+        "default": null,
+        "examples": [
+          "NO:NAVT001"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "rolleKode": {
+        "$id": "#/items/properties/rolleKode",
+        "type": "string",
+        "title": "The Rollekode Schema",
+        "default": "",
+        "examples": [
+          "BRUKER"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "kontaktperson": {
+        "$id": "#/items/properties/kontaktperson",
+        "type": ["string", "null"],
+        "title": "The Kontaktperson Schema",
+        "default": null,
+        "examples": [
+          null
+        ]
+      },
+      "kontaktpersonOrgnr": {
+        "$id": "#/items/properties/kontaktpersonOrgnr",
+        "type": ["string", "null"],
+        "title": "The Kontaktpersonorgnr Schema",
+        "default": null,
+        "examples": [
+          null
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+const log4js = require('log4js');
+const logger = log4js.getLogger('mock');
+const URL = require('url');
+
+const Utils = require('./utils');
+const Schema = require('../test/schema-util');
+const ERR = require('./errors');
+
+const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/aktoer`;
+
+const lesAktoer = async (saksnummer, rolle) => {
+  const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
+  const aktoerer =  JSON.parse(await Utils.readFileAsync(mockfile));
+  return aktoerer.filter(aktor => aktor.rolleKode === rolle);
+};
+
+module.exports.lesAktoerKatalog = () => {
+  return Schema.lesKatalogSync(AKTOER_DATA_DIR);
+};
+
+module.exports.hent = async (req, res) => {
+  const { saksnummer, rolle } = req.params;
+  if (!saksnummer) {
+    const message = "Mangler saksnummer";
+    const melding = ERR.badRequest400(url.pathname, message);
+    return res.status(400).send(melding);
+  }
+  else if (!rolle) {
+    const message = "Mangler rolle";
+    const melding = ERR.badRequest400(url.pathname, message);
+    return res.status(400).send(melding);
+  }
+
+  try {
+    const aktoer = await lesAktoer(saksnummer, rolle);
+    res.json(aktoer);
+  }
+  catch (e) {
+    const url = URL.parse(req.url);
+    console.error(e);
+    logger.error(e.message);
+    const melding = ERR.serverError500(url.pathname, e.message);
+    return res.status(500).send(melding);
+  }
+};
