@@ -6,26 +6,28 @@ const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
 const serverinfo = require('./modules/server-info');
+const logging = require('./modules/logging');
+
 const aktoer = require('./modules/aktoer');
+const avklartefakta = require('./modules/avklartefakta');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
-const fagsaker = require('./modules/fagsaker');
-const sokFagsaker = require('./modules/sok-fagsaker');
-const oppgaver = require('./modules/oppgaver');
-const sokOppgaver = require('./modules/sok-oppgaver');
-const journalforing = require('./modules/journalforing');
-const soknader = require('./modules/soknader');
-const lovvalgsperioder = require('./modules/lovvalgsperioder');
-const saksopplysninger = require('./modules/saksopplysninger');
-const saksbehandler = require('./modules/saksbehandler');
-const vilkar = require('./modules/vilkar');
-const avklartefakta = require('./modules/avklartefakta');
-const inngang = require('./modules/inngang');
-const personer = require('./modules/personer');
-const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-const logging = require('./modules/logging');
+const fagsaker = require('./modules/fagsaker');
+const inngang = require('./modules/inngang');
+const kontaktopplysninger = require('./modules/kontaktopplysninger');
+const journalforing = require('./modules/journalforing');
+const lovvalgsperioder = require('./modules/lovvalgsperioder');
+const oppgaver = require('./modules/oppgaver');
+const organisasjoner = require('./modules/organisasjoner');
+const personer = require('./modules/personer');
+const sokOppgaver = require('./modules/sok-oppgaver');
+const saksbehandler = require('./modules/saksbehandler');
+const saksopplysninger = require('./modules/saksopplysninger');
+const sokFagsaker = require('./modules/sok-fagsaker');
+const soknader = require('./modules/soknader');
 const vedtak = require('./modules/vedtak');
+const vilkar = require('./modules/vilkar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -62,6 +64,10 @@ const router = express.Router();
  * AKTOER
  */
 router.get('/aktoer/:saksnummer/:rolle', aktoer.hent);
+/**
+ * KONTAKTOPPLYSNINGER
+ */
+router.post('/kontaktopplysninger/:saksnummer/:orgnr', kontaktopplysninger.send);
 
 /**
  * BEHANDLINGER

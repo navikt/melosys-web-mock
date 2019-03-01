@@ -74,6 +74,13 @@ const testAlleEndepunkter = async () => {
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
 
+    // TODO lag ny mock_data/kontaktopplysninger/post/kontaktopplysninger-post.json når innhold er avklart
+    const kontaktopplysninger = {
+      navn: 'Donald Trumf',
+    };
+    const saksnummer = 4;
+    const orgnr = '810072512';
+    await instance.post(`/kontaktopplysninger/${saksnummer}/${orgnr}`, kontaktopplysninger).then(printresult).catch(printerror);
 
     console.dir(oppsummering);
   }
