@@ -77,8 +77,9 @@ const testAlleEndepunkter = async () => {
     // TODO lag ny mock_data/kontaktopplysninger/post/kontaktopplysninger-post.json når innhold er avklart
     const kontaktopplysninger = {
       navn: 'Donald Trumf',
+      orgnr: '873152362',
     };
-    const saksnummer = 4;
+    const saksnummer = 'MEL-1';
     const orgnr = '810072512';
     await instance.post(`/kontaktopplysninger/${saksnummer}/${orgnr}`, kontaktopplysninger).then(printresult).catch(printerror);
 
