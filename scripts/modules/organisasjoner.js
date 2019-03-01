@@ -5,7 +5,7 @@ const URL = require('url');
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
 
 module.exports.lesOrganisasjonsKatalog = () => {

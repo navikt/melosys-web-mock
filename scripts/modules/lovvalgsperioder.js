@@ -6,9 +6,7 @@ const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
+const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;
 
 module.exports.lesLovvalgsperiodersKatalog = () => {

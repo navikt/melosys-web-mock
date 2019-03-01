@@ -3,8 +3,9 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
+
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const Utils = require('../modules/utils');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 
 
 module.exports.lesSchemaSync = schemapath => {

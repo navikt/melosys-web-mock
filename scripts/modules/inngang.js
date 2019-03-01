@@ -4,7 +4,7 @@ const Schema = require('../test/schema-util');
 const Utils = require('./utils');
 const ERR = require('./errors');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
 module.exports.lesInngangKatalog = () => {

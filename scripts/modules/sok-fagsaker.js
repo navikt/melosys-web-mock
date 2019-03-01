@@ -2,14 +2,14 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const assert = require('assert');
 const URL = require('url');
-const _ = require('underscore');
+const _ = require('lodash');
 
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const happy = require('./happystatus');
 
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {

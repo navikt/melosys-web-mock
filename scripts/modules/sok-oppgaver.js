@@ -3,7 +3,7 @@ const logger = log4js.getLogger('mock');
 const Utils = require('./utils');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
 
 

@@ -5,7 +5,8 @@ const URL = require('url');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const ERR = require('./errors');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+
+const { MOCK_DATA_DIR } = require('../../dirconfig');
 const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/behandlingsresultat`;
 
 const lesBehandlingsresultat = async (bid) => {

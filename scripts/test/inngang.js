@@ -4,8 +4,7 @@ const ajv = new Ajv({allErrors: true});
 const Schema = require('./schema-util');
 const { lesInngangKatalog } = require('../modules/inngang');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);

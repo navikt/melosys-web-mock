@@ -3,8 +3,8 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('./schema-util');
 const Vilkarer = require('../modules/vilkar');
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemajson = `${SCHEMA_DIR}/vilkar-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);

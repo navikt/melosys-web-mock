@@ -7,8 +7,7 @@ const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const ERR = require('./errors');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 

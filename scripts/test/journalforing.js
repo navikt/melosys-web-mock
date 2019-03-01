@@ -2,8 +2,7 @@ const Ajv = require('ajv');
 
 const Schema = require('./schema-util');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCRIPTS_DIR, SCHEMA_DIR } = require('../../dirconfig');
 
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);

@@ -8,10 +8,7 @@ const Schema = require('../test/schema-util');
 
 const logger = log4js.getLogger('mock');
 
-
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const {  SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/dokumenter`;
 
 const schemajson = `${SCHEMA_DIR}/dokumenter-post-schema.json`;

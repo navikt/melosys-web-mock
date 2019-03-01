@@ -3,8 +3,7 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('./schema-util');
 const Lovvalgsperioder = require('../modules/lovvalgsperioder');
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemajson = `${SCHEMA_DIR}/lovvalgsperioder-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);

@@ -4,8 +4,7 @@ const emoji = require('node-emoji');
 const ERR = require('./errors');
 const Schema = require('../test/schema-util');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 

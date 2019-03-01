@@ -3,9 +3,7 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('./schema-util');
 const { lesSaksbehandlerKatalog } = require('../modules/saksbehandler');
-
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemajson = `${SCHEMA_DIR}/saksbehandler-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);

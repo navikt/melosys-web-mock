@@ -8,9 +8,7 @@ const happy = require('./happystatus');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
+const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vilkar`;
 
 module.exports.lesVilkarsKatalog = () => {

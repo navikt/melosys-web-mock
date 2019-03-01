@@ -7,9 +7,7 @@ const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
 const ERR = require('./errors');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 

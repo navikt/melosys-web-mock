@@ -3,9 +3,7 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('./schema-util');
 const { lesAvklartefaktaKatalog, lesAvklartefaktaPostMock } = require('../modules/avklartefakta');
-
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const testAvklaringPost = () => {
   const postSchemaPath = `${SCHEMA_DIR}/avklartefakta-schema.json`;

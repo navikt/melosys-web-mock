@@ -5,8 +5,7 @@ const colors = require('colors/safe');
 const Schema = require('./schema-util');
 const { lesOrganisasjonsKatalog } = require('../modules/organisasjoner');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemapath = `${SCHEMA_DIR}/organisasjoner-schema.json`;
 const schema = Schema.lesSchemaSync(schemapath);

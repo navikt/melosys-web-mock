@@ -6,8 +6,7 @@ const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
 const ERR = require('./errors');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const {  SCHEMA_DIR } = require('../../dirconfig');
 
 module.exports.status = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/behandlinger-status-post-schema.json`;
