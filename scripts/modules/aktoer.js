@@ -21,6 +21,8 @@ module.exports.lesAktoerKatalog = () => {
 
 module.exports.hent = async (req, res) => {
   const { saksnummer, rolle } = req.params;
+  const url = URL.parse(req.url);
+
   if (!saksnummer) {
     const message = "Mangler saksnummer";
     const melding = ERR.badRequest400(url.pathname, message);
@@ -37,7 +39,6 @@ module.exports.hent = async (req, res) => {
     res.json(aktoer);
   }
   catch (e) {
-    const url = URL.parse(req.url);
     console.error(e);
     logger.error(e.message);
     const melding = ERR.serverError500(url.pathname, e.message);
