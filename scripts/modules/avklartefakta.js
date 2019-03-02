@@ -17,6 +17,7 @@ module.exports.lesAvklartefaktaPostMock = () => {
   const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/post/avklartefakta-post.json`;
   return Schema.lesKatalogElement(mockfile);
 };
+
 const lesAvklaring = async (behandlingID) => {
   const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
   return (await Utils.existsAsync(mockfile)) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {}

@@ -1,15 +1,12 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
 
 const { lesInngangKatalog } = require('../modules/inngang');
 
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
-const schemajson = `${SCHEMA_DIR}/inngang-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const definitions = Schema.lesSchemaDefinitonsSync();
+const schema = Schema.lesSchemaFileSync('inngang-schema.json');
 const catalog = lesInngangKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);

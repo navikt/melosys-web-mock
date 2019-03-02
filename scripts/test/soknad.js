@@ -4,12 +4,9 @@ const ajv = new Ajv({allErrors: true});
 const Schema = require('./schema-util');
 const { lesSoknadKatalog } = require('../modules/soknader');
 
-const { SCHEMA_DIR } = require('../../mock.config');
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const definitions = Schema.lesSchemaDefinitonsSync();
 
-const schemajson = `${SCHEMA_DIR}/soknad-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const schema = Schema.lesSchemaFileSync('/soknad-schema.json');
 const katalog = lesSoknadKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);

@@ -1,15 +1,12 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
 
 const Dokumenter = require('../modules/dokumenter');
 
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
-const schemajson = `${SCHEMA_DIR}/dokumenter-oversikt-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const definitions = Schema.lesSchemaDefinitonsSync();
+const schema = Schema.lesSchemaFileSync('dokumenter-oversikt-schema.json');
 const catalog = Dokumenter.lesDokumenterKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);

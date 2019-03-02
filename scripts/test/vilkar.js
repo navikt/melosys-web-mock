@@ -1,13 +1,10 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
-
 const Vilkarer = require('../modules/vilkar');
 
-const schemajson = `${SCHEMA_DIR}/vilkar-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const schema = Schema.lesSchemaFileSync('vilkar-schema.json');
 const katalog = Vilkarer.lesVilkarsKatalog();
 
 const validate = ajv.compile(schema);
