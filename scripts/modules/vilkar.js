@@ -4,7 +4,7 @@ const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const ERR = require('./errors');
 const happy = require('./happystatus');
 const Utils = require('./utils');
@@ -59,8 +59,7 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/vilkar-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('vilkar-schema.json')
   const validate = ajv.compile(schema);
 
   const body = req.body;

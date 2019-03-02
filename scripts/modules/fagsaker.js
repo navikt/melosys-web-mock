@@ -3,7 +3,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
 
-const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
@@ -68,8 +68,7 @@ module.exports.opprett = (req, res) => {
 };
 
 module.exports.henlegg = async (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/henlegg-fagsak-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('henlegg-fagsak-schema.json');
   const ajv = new Ajv({allErrors: true});
 
   const ajvValidator = ajv.addSchema(definitions).compile(schema);

@@ -1,7 +1,6 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const {  SCHEMA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
@@ -9,8 +8,7 @@ const SchemaPostValidator  = require('./schema-post-validator');
 const ERR = require('./errors');
 
 module.exports.status = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/behandlinger-status-post-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('behandlinger-status-post-schema.json')
 
   try {
     const { behandlingID } = req.params;
@@ -34,8 +32,7 @@ module.exports.status = (req, res) => {
 };
 
 module.exports.perioder = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/behandlinger-perioder-post-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('behandlinger-perioder-post-schema.json');
 
   try {
     const { behandlingID } = req.params;

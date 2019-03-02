@@ -1,7 +1,7 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const {  SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
@@ -54,8 +54,7 @@ module.exports.send = (req, res) => {
   const label = 'Avklartefakta:send';
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
-  const schemajson = `${SCHEMA_DIR}/avklartefakta-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('avklartefakta-schema.json');
   const valid = SchemaPostValidator.test(label, schema, jsBody);
   return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };

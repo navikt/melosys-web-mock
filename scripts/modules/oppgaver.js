@@ -2,7 +2,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const _ = require('lodash');
 
-const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
@@ -77,8 +77,7 @@ module.exports.reset = (req, res) => {
 };
 
 module.exports.tilbakelegg = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('oppgaver-tilbakelegge-schema.json');
 
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
