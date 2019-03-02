@@ -2,12 +2,10 @@ const Ajv = require('ajv');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
-const { SCHEMA_DIR } = require('../../mock.config');
 const ERR = require('./errors');
 
 const Schema = require('../test/schema-util');
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const definitions = Schema.lesSchemaDefinitonsSync();
 
 module.exports.valideringFeil = (req, res) => {
   const status = 400;

@@ -3,17 +3,13 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
 
-const { SCHEMA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
+const definitions = Schema.lesSchemaDefinitonsSync();
 
 const ERR = require('./errors');
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
 
-const { existsAsync, readFileAsync } = require('./utils');
-
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 module.exports.lesFagsakerKatalog = () => {
@@ -26,9 +22,9 @@ module.exports.hent = async (req, res) => {
     snr = snr && snr.toString() || '';
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${snr}.json`;
     logger.trace(mockfile);
-    const exists = await existsAsync(mockfile);
+    const exists = await Utils.existsAsync(mockfile);
     if (exists) {
-      const fagsaker = JSON.parse(await readFileAsync(mockfile));
+      const fagsaker = JSON.parse(await Utils.readFileAsync(mockfile));
       res.json(fagsaker);
     }
     else {
