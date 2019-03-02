@@ -1,12 +1,12 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
+const {  SCHEMA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
 
-const {  SCHEMA_DIR } = require('../../dirconfig');
+const ERR = require('./errors');
 
 module.exports.status = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/behandlinger-status-post-schema.json`;

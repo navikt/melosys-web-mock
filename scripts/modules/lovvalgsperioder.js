@@ -1,12 +1,13 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const ERR = require('./errors');
-const happy = require('./happystatus');
+
+const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
+const ERR = require('./errors');
+const happy = require('./happystatus');
 const SchemaPostValidator  = require('./schema-post-validator');
 
-const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;
 
 module.exports.lesLovvalgsperiodersKatalog = () => {

@@ -1,10 +1,10 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
-const { lesBehandlingsresultatKatalog } = require('../modules/behandlingsresultat');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const { lesBehandlingsresultatKatalog } = require('../modules/behandlingsresultat');
 
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);

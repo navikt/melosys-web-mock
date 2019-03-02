@@ -3,12 +3,12 @@ const URL = require('url');
 
 const Utils = require('./utils');
 const ERR = require('./errors');
+const {  SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
 const SchemaPostValidator  = require('./schema-post-validator');
+
 const Schema = require('../test/schema-util');
 
 const logger = log4js.getLogger('mock');
-
-const {  SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
 const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/dokumenter`;
 
 const schemajson = `${SCHEMA_DIR}/dokumenter-post-schema.json`;

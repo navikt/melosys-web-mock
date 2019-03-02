@@ -1,10 +1,10 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
-const { lesSokFagsakerKatalog } = require('../modules/sok-fagsaker');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const { lesSokFagsakerKatalog } = require('../modules/sok-fagsaker');
 
 const schemajson = `${SCHEMA_DIR}/sok-fagsaker-schema.json`;
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;

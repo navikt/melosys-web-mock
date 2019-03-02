@@ -1,9 +1,9 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
 const { lesAvklartefaktaKatalog, lesAvklartefaktaPostMock } = require('../modules/avklartefakta');
-const { SCHEMA_DIR } = require('../../dirconfig');
 
 const testAvklaringPost = () => {
   const postSchemaPath = `${SCHEMA_DIR}/avklartefakta-schema.json`;

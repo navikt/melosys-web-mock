@@ -1,9 +1,9 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
 const { lesSaksbehandlerKatalog } = require('../modules/saksbehandler');
-const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemajson = `${SCHEMA_DIR}/saksbehandler-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);

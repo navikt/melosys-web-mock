@@ -2,12 +2,12 @@ const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
+const { SCHEMA_DIR } = require('../../mock.config');
+const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const SchemaPostValidator  = require('./schema-post-validator');
 
 module.exports.fattet = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/vedtak-post-schema.json`;

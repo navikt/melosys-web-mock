@@ -1,11 +1,12 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
+
+const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
 
-const { SCHEMA_DIR, MOCK_DATA_DIR } = require('../../dirconfig');
+const ERR = require('./errors');
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
 const schemajson = `${SCHEMA_DIR}/soknad-post-schema.json`;

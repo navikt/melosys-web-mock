@@ -4,7 +4,7 @@ const logger = log4js.getLogger('schema');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
-const { MOCK_DATA_DIR } = require('../../dirconfig');
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../modules/utils');
 
 

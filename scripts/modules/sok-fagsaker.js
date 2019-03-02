@@ -4,12 +4,12 @@ const assert = require('assert');
 const URL = require('url');
 const _ = require('lodash');
 
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const ERR = require('./errors');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const happy = require('./happystatus');
 
-const { MOCK_DATA_DIR } = require('../../dirconfig');
+const happy = require('./happystatus');
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {
@@ -19,6 +19,7 @@ module.exports.lesSokFagsakerKatalog = () => {
 const lesFagsakAsync = async (path) => {
   return JSON.parse(await Utils.readFileAsync(path));
 };
+
 const lesSokFagsakAsync = async (fnr) => {
   const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;
   if (await Utils.existsAsync(mockfile)) {
@@ -26,27 +27,7 @@ const lesSokFagsakAsync = async (fnr) => {
   }
   return [];
 };
-/*
-const lesFagsakSync = (path) => {
-  return JSON.parse(Utils.readFileSync(path));
-};
-const lesSokFagsakListe = () => {
-  let fagsakListe = [];
-  Utils.readDirSync(MOCK_SOK_FAGFSAKER_DIR).forEach(file => {
-    const fagsaker = lesFagsakSync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
-    fagsaker.every((fagsak) => {
-      fagsakListe.push(fagsak);
-    })
-  });
-  fagsakListe = _.uniq(fagsakListe.sort((a, b) => {
-    assert.ok(_.isString(a.saksnummer), 'Saksnummer must be a string');
-    assert.ok(_.isString(b.saksnummer), 'Saksnummer must be a string');
-    return a.saksnummer.localeCompare(b.saksnummer);
-    //return a.saksnummer - b.saksnummer; // For ints
-  }), true);
-  return fagsakListe;
-};
-*/
+
 const lesAlleFagsakerAsync = async () => {
   const files = await Utils.readDirAsync(MOCK_SOK_FAGFSAKER_DIR);
   const promises = files.map(async (file) => {

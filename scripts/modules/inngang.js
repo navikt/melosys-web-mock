@@ -1,10 +1,11 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
+
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const Schema = require('../test/schema-util');
 const Utils = require('./utils');
-const ERR = require('./errors');
 
-const { MOCK_DATA_DIR } = require('../../dirconfig');
+const ERR = require('./errors');
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
 module.exports.lesInngangKatalog = () => {

@@ -1,8 +1,9 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const ERR = require('./errors');
 const memcache = require('./memcache');
+const ERR = require('./errors');
+
 module.exports.oppfrisk = (req, res) => {
   try {
     const { behandlingID } = req.params;

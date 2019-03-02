@@ -1,10 +1,11 @@
 const Ajv = require('ajv');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
-const ERR = require('./errors');
-const Schema = require('../test/schema-util');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const { SCHEMA_DIR } = require('../../mock.config');
+const ERR = require('./errors');
+
+const Schema = require('../test/schema-util');
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 

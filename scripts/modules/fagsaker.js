@@ -3,11 +3,11 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const Ajv = require('ajv');
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Utils = require('./utils');
 const Schema = require('../test/schema-util');
-const ERR = require('./errors');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const ERR = require('./errors');
 const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
 const definitions = Schema.lesSchemaSync(definitionsPath);
 

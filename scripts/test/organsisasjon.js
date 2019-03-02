@@ -2,10 +2,10 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
-const { lesOrganisasjonsKatalog } = require('../modules/organisasjoner');
 
-const { SCHEMA_DIR } = require('../../dirconfig');
+const { lesOrganisasjonsKatalog } = require('../modules/organisasjoner');
 
 const schemapath = `${SCHEMA_DIR}/organisasjoner-schema.json`;
 const schema = Schema.lesSchemaSync(schemapath);

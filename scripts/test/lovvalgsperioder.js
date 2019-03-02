@@ -1,9 +1,9 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
+const { SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('./schema-util');
 const Lovvalgsperioder = require('../modules/lovvalgsperioder');
-const { SCHEMA_DIR } = require('../../dirconfig');
 
 const schemajson = `${SCHEMA_DIR}/lovvalgsperioder-schema.json`;
 const schema = Schema.lesSchemaSync(schemajson);
