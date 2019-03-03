@@ -5,11 +5,11 @@ const URL = require('url');
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ERR = require('./errors');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const ERR = require('../utils/errors');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 
-const happy = require('./happystatus');
+const happy = require('../utils/happystatus');
 const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
 
 module.exports.lesSokFagsakerKatalog = () => {

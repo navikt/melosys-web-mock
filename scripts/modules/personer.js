@@ -3,9 +3,9 @@ const logger = log4js.getLogger('mock');
 const URL = require('url');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const ERR = require('./errors');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const ERR = require('../utils/errors');
 const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
 
 const lesPerson = async (fnr) => {

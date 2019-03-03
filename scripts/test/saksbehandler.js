@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 const { lesSaksbehandlerKatalog } = require('../modules/saksbehandler');
 
 const schema = Schema.lesSchemaFileSync('saksbehandler-schema.json');

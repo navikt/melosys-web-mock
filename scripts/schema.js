@@ -19,7 +19,7 @@ const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
 
-const Schema = require('./test/schema-util');
+const Schema = require('./utils/schema-util');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;

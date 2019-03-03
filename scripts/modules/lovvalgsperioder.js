@@ -2,10 +2,10 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const ERR = require('./errors');
-const happy = require('./happystatus');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const ERR = require('../utils/errors');
+const happy = require('../utils/happystatus');
 const SchemaPostValidator  = require('./schema-post-validator');
 
 const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;

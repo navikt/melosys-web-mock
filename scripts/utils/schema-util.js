@@ -5,7 +5,7 @@ const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
 const { MOCK_DATA_DIR, SCHEMA_DIR, DEFINITION_SCHEMA } = require('../../mock.config');
-const Utils = require('../modules/utils');
+const Utils = require('./utils');
 
 
 module.exports.lesSchemaSync = schemapath => {

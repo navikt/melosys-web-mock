@@ -3,11 +3,11 @@ const logger = log4js.getLogger('mock');
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
 
-const ERR = require('./errors');
+const ERR = require('../utils/errors');
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
 const lesOversikt = async () => {

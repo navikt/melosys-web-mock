@@ -1,14 +1,14 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 const SchemaPostValidator  = require('./schema-post-validator');
 
-const ERR = require('./errors');
+const ERR = require('../utils/errors');
 
 module.exports.status = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('behandlinger-status-post-schema.json')
+  const schema = Schema.lesSchemaFileSync('behandlinger-status-post-schema.json');
 
   try {
     const { behandlingID } = req.params;

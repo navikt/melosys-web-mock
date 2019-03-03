@@ -5,7 +5,7 @@ const NodeCache = require('node-cache');
 const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
-const serverinfo = require('./modules/server-info');
+const serverinfo = require('./utils/server-info');
 const aktoer = require('./modules/aktoer');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
@@ -24,7 +24,7 @@ const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-const logging = require('./modules/logging');
+const logging = require('./utils/logging');
 const vedtak = require('./modules/vedtak');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);

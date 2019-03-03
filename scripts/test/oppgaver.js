@@ -1,6 +1,6 @@
 const Ajv = require('ajv');
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 
 const { lesOppgaveKatalog } = require('../modules/oppgaver');
 

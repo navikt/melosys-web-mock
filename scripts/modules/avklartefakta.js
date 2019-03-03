@@ -2,9 +2,9 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ERR = require('./errors');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const ERR = require('../utils/errors');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 
 const SchemaPostValidator  = require('./schema-post-validator');
 const AVKLARTEFAKTA_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;

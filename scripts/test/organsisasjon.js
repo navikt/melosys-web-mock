@@ -2,7 +2,7 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 
 const { lesOrganisasjonsKatalog } = require('../modules/organisasjoner');
 

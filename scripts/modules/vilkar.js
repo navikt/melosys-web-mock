@@ -5,10 +5,10 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ERR = require('./errors');
-const happy = require('./happystatus');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const ERR = require('../utils/errors');
+const happy = require('../utils/happystatus');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 
 const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vilkar`;
 
@@ -59,7 +59,7 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('vilkar-schema.json')
+  const schema = Schema.lesSchemaFileSync('vilkar-schema.json');
   const validate = ajv.compile(schema);
 
   const body = req.body;

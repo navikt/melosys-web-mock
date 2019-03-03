@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 const Lovvalgsperioder = require('../modules/lovvalgsperioder');
 
 const schema = Schema.lesSchemaFileSync('lovvalgsperioder-schema.json');

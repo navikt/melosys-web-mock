@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
 
 const { SCRIPTS_DIR, SCHEMA_DIR } = require('../../mock.config');
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 

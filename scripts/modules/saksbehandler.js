@@ -3,10 +3,10 @@ const logger = log4js.getLogger('mock');
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const ERR = require('./errors');
-const happy = require('./happystatus');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const ERR = require('../utils/errors');
+const happy = require('../utils/happystatus');
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 module.exports.lesSaksbehandlerKatalog = () => {

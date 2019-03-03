@@ -1,7 +1,7 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 const { lesAvklartefaktaKatalog, lesAvklartefaktaPostMock } = require('../modules/avklartefakta');
 
 const testAvklaringPost = () => {

@@ -2,14 +2,14 @@ const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const ERR = require('./errors');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
+const ERR = require('../utils/errors');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 
 const SchemaPostValidator  = require('./schema-post-validator');
 
 module.exports.fattet = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('vedtak-post-schema.json')
+  const schema = Schema.lesSchemaFileSync('vedtak-post-schema.json');
 
   const url = URL.parse(req.url);
   const body = req.body;
@@ -29,7 +29,7 @@ module.exports.fattet = (req, res) => {
 };
 
 module.exports.endreperiode = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('vedtak-endre-periode-schema.json')
+  const schema = Schema.lesSchemaFileSync('vedtak-endre-periode-schema.json');
 
   const url = URL.parse(req.url);
   const body = req.body;

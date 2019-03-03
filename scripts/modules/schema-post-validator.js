@@ -2,9 +2,9 @@ const Ajv = require('ajv');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
-const ERR = require('./errors');
+const ERR = require('../utils/errors');
 
-const Schema = require('../test/schema-util');
+const Schema = require('../utils/schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
 
 module.exports.valideringFeil = (req, res) => {
