@@ -43,6 +43,8 @@ const testAlleEndepunkter = async () => {
     await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak);
     const aktoer = require('./mock_data/fagsaker/aktoerer/post/aktoer');
     await instance.post('/fagsaker/4/aktoerer', aktoer).then(printresult).catch(printerror);
+    const kontaktopplysninger = require('./mock_data/fagsaker/kontaktopplysninger/post/kontaktopplysninger');
+    await instance.post('/fagsaker/4/kontaktopplysninger', kontaktopplysninger).then(printresult).catch(printerror);
 
     // Behandlinger
     const behandinger_status = require('./mock_data/behandlinger/post/behandlinger-status');
