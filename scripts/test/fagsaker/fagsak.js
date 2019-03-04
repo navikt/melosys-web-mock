@@ -1,9 +1,9 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('../utils/schema-util');
+const Schema = require('../../utils/schema-util');
 
-const Fagsaker = require('../modules/fagsaker');
+const Fagsaker = require('../../modules/fagsaker');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 const schema = Schema.lesSchemaFileSync('fagsaker-schema.json');
@@ -12,7 +12,7 @@ const catalog = Fagsaker.lesFagsakerKatalog();
 const validate = ajv.addSchema(definitions).compile(schema);
 
 const testAll = () => {
-  Schema.prettyTittel('Fagsak');
+  Schema.prettyTittel('Fagsaker Fagsak');
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 

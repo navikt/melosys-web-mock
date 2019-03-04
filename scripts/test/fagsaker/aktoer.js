@@ -1,15 +1,15 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('../utils/schema-util');
+const Schema = require('../../utils/schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
 const schema = Schema.lesSchemaFileSync('aktoer-schema.json');
 
-const Fagsaker = require('../modules/fagsaker');
+const Fagsaker = require('../../modules/fagsaker');
 const catalog = Fagsaker.lesAktoerKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);
-const printTitle = () => Schema.prettyTittel('Aktoer');
+const printTitle = () => Schema.prettyTittel('Fagsaker Aktoerer');
 
 const testAll = () => {
   printTitle();
