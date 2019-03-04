@@ -1,18 +1,16 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const MOCK_DATA_DIR = `${SCRIPTS_DATA_DIR}/mock_data`;
+const { MOCK_DATA_DIR } = require('../../mock.config');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
+
+const ERR = require('../utils/errors');
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-const schemajson = `${SCHEMA_DIR}/soknad-post-schema.json`;
 
-const schema = Schema.lesSchemaSync(schemajson);
+const schema = Schema.lesSchemaFileSync('soknad-post-schema.json');
 
 const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;

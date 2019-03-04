@@ -13,7 +13,8 @@
     "begrunnelseKode": {
       "$id": "#/properties/begrunnelseKode",
       "title": "The BegrunnelseKode Schema",
-      "type": ["string"]
+      "type": ["string"],
+      "enum": ["SOEKNADEN_TRUKKET", "OPPHOLD_UTL_AVLYST"]
     },
     "fritekst": {
       "$id": "#/properties/fritekst",

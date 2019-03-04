@@ -12,12 +12,11 @@
     "required": [
       "aktoerID",
       "institusjonsID",
-      "kontaktperson",
-      "kontaktpersonOrgnr",
       "orgnr",
       "rolleKode",
       "saksnummer",
-      "utenlandskPersonID"
+      "utenlandskPersonID",
+      "representererKode"
     ],
     "properties": {
       "saksnummer": {
@@ -71,24 +70,6 @@
         ],
         "pattern": "^(.*)$"
       },
-      "kontaktperson": {
-        "$id": "#/items/properties/kontaktperson",
-        "type": ["string", "null"],
-        "title": "The Kontaktperson Schema",
-        "default": null,
-        "examples": [
-          null
-        ]
-      },
-      "kontaktpersonOrgnr": {
-        "$id": "#/items/properties/kontaktpersonOrgnr",
-        "type": ["string", "null"],
-        "title": "The Kontaktpersonorgnr Schema",
-        "default": null,
-        "examples": [
-          null
-        ]
-      },
       "utenlandskPersonID": {
         "$id": "#/items/properties/utenlandskPersonID",
         "type": ["string", "null"],
@@ -97,6 +78,14 @@
         "examples": [
           null
         ]
+      },
+      "representererKode": {
+        "$id": "#/items/properties/representerer",
+        "type": ["string"],
+        "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"],
+        "title": "The Representerer Schema",
+        "default": null,
+        "examples": ["BRUKER", "ARBEIDSGIVER", "BEGGE"]
       }
     }
   }

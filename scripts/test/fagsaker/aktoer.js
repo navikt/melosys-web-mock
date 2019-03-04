@@ -1,30 +1,29 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('../utils/schema-util');
-
-const { lesPersonKatalog } = require('../modules/personer');
-
+const Schema = require('../../utils/schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
-const schema = Schema.lesSchemaFileSync('person-schema.json');
+const schema = Schema.lesSchemaFileSync('aktoer-schema.json');
 
-const catalog = lesPersonKatalog();
+const Fagsaker = require('../../modules/fagsaker');
+const catalog = Fagsaker.lesAktoerKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);
+const printTitle = () => Schema.prettyTittel('Fagsaker Aktoerer');
 
 const testAll = () => {
-  Schema.prettyTittel('Person');
+  printTitle();
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
+
 const testOne = (path) => {
-  Schema.prettyTittel('Person');
+  printTitle();
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
 
-const person = {
+const aktoer = {
   testAll,
   testOne,
 };
-module.exports.person = person;
-
+module.exports.aktoer = aktoer;

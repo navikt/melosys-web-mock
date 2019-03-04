@@ -1,4 +1,10 @@
 const fs = require('fs');
+const path = require('path');
+
+module.exports.baseName = filename => {
+  const ext = path.extname(filename);
+  return path.basename(filename, ext);
+};
 
 module.exports.isJSON = (str) => {
   try {

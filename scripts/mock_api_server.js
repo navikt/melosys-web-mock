@@ -5,14 +5,11 @@ const NodeCache = require('node-cache');
 const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
-const serverinfo = require('./modules/server-info');
-const aktoer = require('./modules/aktoer');
+const serverinfo = require('./utils/server-info');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
-const fagsaker = require('./modules/fagsaker');
-const sokFagsaker = require('./modules/sok-fagsaker');
-const oppgaver = require('./modules/oppgaver');
-const sokOppgaver = require('./modules/sok-oppgaver');
+const Fagsaker = require('./modules/fagsaker');
+const Oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const lovvalgsperioder = require('./modules/lovvalgsperioder');
@@ -24,7 +21,7 @@ const inngang = require('./modules/inngang');
 const personer = require('./modules/personer');
 const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-const logging = require('./modules/logging');
+const logging = require('./utils/logging');
 const vedtak = require('./modules/vedtak');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
@@ -59,11 +56,6 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
- * AKTOER
- */
-router.get('/aktoer/:saksnummer/:rolle', aktoer.hent);
-
-/**
  * BEHANDLINGER
  */
 router.post('/behandlinger/:behandlingID/status', behandlinger.status);
@@ -75,11 +67,6 @@ router.post('/behandlinger/:behandlingID/perioder', behandlinger.perioder);
 router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
 
 /**
- * SOK-FAGSAKER basert på fnr
- */
-router.get('/fagsaker/sok/', sokFagsaker.sok);
-
-/**
  * FAGSAKER
  * ----------------------------------------------------------------------------
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
@@ -88,10 +75,11 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * GET /f/:snr
  *
  */
-router.get('/fagsaker/:snr', fagsaker.hent);
-/* @deprecated  - benyttes kun i spark på T5 */
-router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/:fnr/henlegg', fagsaker.henlegg);
+router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
+router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
+router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
+router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
 
 /**
  * SØKNAD
@@ -139,13 +127,13 @@ router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', sokOppgaver.sok);
-router.get('/oppgaver/plukk', oppgaver.hentPlukk);
-router.post('/oppgaver/plukk', oppgaver.sendPlukk);
-router.get('/oppgaver/oversikt', oppgaver.oversikt);
-router.post('/oppgaver/opprett', oppgaver.opprett);
-router.get('/oppgaver/reset', oppgaver.reset);
-router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
+router.get('/oppgaver/sok', Oppgaver.sok);
+router.get('/oppgaver/plukk', Oppgaver.hentPlukk);
+router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
+router.get('/oppgaver/oversikt', Oppgaver.oversikt);
+router.post('/oppgaver/opprett', Oppgaver.opprett);
+router.get('/oppgaver/reset', Oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', Oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING

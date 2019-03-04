@@ -1,42 +1,38 @@
 [
   {
-    "saksnummer": "4",
+    "saksnummer": "8",
     "aktoerID": "1167540096033",
-    "orgnr": "1167540096033",
+    "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT001",
     "rolleKode": "BRUKER",
-    "kontaktperson": null,
-    "kontaktpersonOrgnr": null
+    "representererKode": "BRUKER"
   },
   {
-    "saksnummer": "4",
+    "saksnummer": "8",
     "aktoerID": "1167540096033",
-    "orgnr": "1167540096033",
+    "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
     "rolleKode": "ARBEIDSGIVER",
-    "kontaktperson": null,
-    "kontaktpersonOrgnr": null
+    "representererKode": "BRUKER"
   },
   {
-    "saksnummer": "4",
+    "saksnummer": "8",
     "aktoerID": "1167540096033",
-    "orgnr": null,
+    "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
     "rolleKode": "REPRESENTANT",
-    "kontaktperson": "Nils Nilsern",
-    "kontaktpersonOrgnr": "889640782"
+    "representererKode": "BRUKER"
   },
   {
-    "saksnummer": "4",
+    "saksnummer": "8",
     "aktoerID": null,
-    "orgnr": null,
+    "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "FR:RG75V00002",
     "rolleKode": "MYNDIGHET",
-    "kontaktperson": "National 2 - Age Insurance Fund",
-    "kontaktpersonOrgnr": null
+    "representererKode": "BRUKER"
   }
 ]
