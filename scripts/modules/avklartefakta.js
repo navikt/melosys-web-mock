@@ -6,7 +6,7 @@ const ERR = require('../utils/errors');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 
-const SchemaPostValidator  = require('./schema-post-validator');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 const AVKLARTEFAKTA_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;
 
 module.exports.lesAvklartefaktaKatalog = () => {

@@ -6,7 +6,7 @@ const ERR = require('../utils/errors');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 
-const SchemaPostValidator  = require('./schema-post-validator');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const postValidator = (req, res, label, schema) => {
   const body = req.body;

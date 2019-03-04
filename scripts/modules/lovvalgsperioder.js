@@ -6,7 +6,7 @@ const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 const ERR = require('../utils/errors');
 const happy = require('../utils/happystatus');
-const SchemaPostValidator  = require('./schema-post-validator');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;
 

@@ -4,7 +4,7 @@ const URL = require('url');
 const Utils = require('../utils/utils');
 const ERR = require('../utils/errors');
 const {  MOCK_DATA_DIR } = require('../../mock.config');
-const SchemaPostValidator  = require('./schema-post-validator');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const Schema = require('../utils/schema-util');
 

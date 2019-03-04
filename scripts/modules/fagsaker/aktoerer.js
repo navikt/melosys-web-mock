@@ -3,7 +3,7 @@ const logger = log4js.getLogger('mock');
 const URL = require('url');
 
 const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../../mock.config');
-const SchemaPostValidator  = require('../schema-post-validator');
+const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const ERR = require('../../utils/errors');

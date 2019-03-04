@@ -3,7 +3,7 @@ const logger = log4js.getLogger('mock');
 
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const ERR = require('../utils/errors');
 
