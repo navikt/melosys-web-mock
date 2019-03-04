@@ -3,7 +3,7 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('../utils/schema-util');
 
-const { lesSokOppgaveKatalog} = require('../modules/sok-oppgaver');
+const { lesSokOppgaveKatalog} = require('../modules/oppgaver/sok-oppgaver');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 const schema = Schema.lesSchemaFileSync('oppgaver-sok-schema.json');
