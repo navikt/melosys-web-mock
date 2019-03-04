@@ -2,10 +2,9 @@ const argv = require('yargs').argv;
 const fs = require('fs');
 
 const { demo } = require('./test/demo');
-const { aktoer } = require('./test/fagsaker/aktoer');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
-const { fagsak } = require('./test/fagsaker/fagsak');
+const { fagsaker, aktoerer } = require('./test/fagsaker');
 const { behandlingsresultat } = require('./test/behandlingsresultat');
 const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
@@ -36,8 +35,8 @@ const katalogMap = new Map([
   ['demo', demo],
   ['personer', person],
   ['soknader', soknad],
-  ['fagsaker', fagsak],
-  ['fagsak/aktoerer', aktoer],
+  ['fagsaker', fagsaker.fagsak],
+  ['fagsaker/aktoerer', aktoerer.aktoer],
   ['sok/fagsaker', SokFagsak],
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
