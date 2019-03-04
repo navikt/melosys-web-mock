@@ -70,7 +70,7 @@ const testAlleEndepunkter = async () => {
     const tilbakelegg = require('./mock_data/oppgaver/post/tilbakelegge');
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(printresult).catch(printerror);
 
-    // Jjournalforing
+    // Journalforing
     const journal_post_opprett = require('./mock_data/journalforing/post/opprett');
     await instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).catch(printerror);
 
