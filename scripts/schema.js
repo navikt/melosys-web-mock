@@ -4,17 +4,14 @@ const fs = require('fs');
 const { demo } = require('./test/demo');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
-//const { fagsaker, aktoerer } = require('./test/fagsaker');
 const Fagsaker = require('./test/fagsaker');
 const { behandlingsresultat } = require('./test/behandlingsresultat');
-//const { SokFagsak } = require('./test/fagsaker/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { lovvalgsperioder } = require('./test/lovvalgsperioder');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
-const { SokOppgaver } = require('./test/sok-oppgaver');
-const { oppgaver } = require('./test/oppgaver');
+const Oppgaver = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
@@ -44,8 +41,8 @@ const katalogMap = new Map([
   ['lovvalgsperioder', lovvalgsperioder],
   ['inngang', inngang],
   ['journalforing', journalforing],
-  ['oppgaver/sok', SokOppgaver],
-  ['oppgaver', oppgaver],
+  ['oppgaver', Oppgaver.oppgaver],
+  ['oppgaver/sok', Oppgaver.sok],
   ['avklartefakta', avklartefakta],
   ['vilkar', vilkar],
   ['dokumenter', dokumenter],

@@ -9,8 +9,7 @@ const serverinfo = require('./utils/server-info');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
 const Fagsaker = require('./modules/fagsaker');
-const oppgaver = require('./modules/oppgaver/oppgaver');
-const sokOppgaver = require('./modules/oppgaver/sok-oppgaver');
+const Oppgaver = require('./modules/oppgaver');
 const journalforing = require('./modules/journalforing');
 const soknader = require('./modules/soknader');
 const lovvalgsperioder = require('./modules/lovvalgsperioder');
@@ -128,13 +127,13 @@ router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', sokOppgaver.sok);
-router.get('/oppgaver/plukk', oppgaver.hentPlukk);
-router.post('/oppgaver/plukk', oppgaver.sendPlukk);
-router.get('/oppgaver/oversikt', oppgaver.oversikt);
-router.post('/oppgaver/opprett', oppgaver.opprett);
-router.get('/oppgaver/reset', oppgaver.reset);
-router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
+router.get('/oppgaver/sok', Oppgaver.sok);
+router.get('/oppgaver/plukk', Oppgaver.hentPlukk);
+router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
+router.get('/oppgaver/oversikt', Oppgaver.oversikt);
+router.post('/oppgaver/opprett', Oppgaver.opprett);
+router.get('/oppgaver/reset', Oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', Oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING

@@ -1,8 +1,8 @@
 const Ajv = require('ajv');
 
-const Schema = require('../utils/schema-util');
+const Schema = require('../../utils/schema-util');
 
-const { lesOppgaveKatalog } = require('../modules/oppgaver/oppgaver');
+const { lesOppgaveKatalog } = require('../../modules/oppgaver');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 
