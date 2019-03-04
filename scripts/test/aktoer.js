@@ -5,8 +5,8 @@ const Schema = require('../utils/schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
 const schema = Schema.lesSchemaFileSync('aktoer-schema.json');
 
-const { lesAktoerKatalog } = require('../modules/aktoer');
-const catalog = lesAktoerKatalog();
+const Fagsaker = require('../modules/fagsaker');
+const catalog = Fagsaker.lesAktoerKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);
 const printTitle = () => Schema.prettyTittel('Aktoer');

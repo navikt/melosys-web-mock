@@ -1,14 +1,12 @@
 const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const Ajv = require('ajv');
 
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('../utils/utils');
-const Schema = require('../utils/schema-util');
-const definitions = Schema.lesSchemaDefinitonsSync();
-
-const ERR = require('../utils/errors');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
+const Utils = require('../../utils/utils');
+const Schema = require('../../utils/schema-util');
+const SchemaPostValidator  = require('../schema-post-validator');
+const ERR = require('../../utils/errors');
 
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
@@ -16,7 +14,7 @@ module.exports.lesFagsakerKatalog = () => {
   return Schema.lesKatalogSync(MOCK_DATA_FAGSAK_DIR);
 };
 
-module.exports.hent = async (req, res) => {
+module.exports.hentFagsak = async (req, res) => {
   try {
     let { snr } = req.params;
     snr = snr && snr.toString() || '';
@@ -42,7 +40,7 @@ module.exports.hent = async (req, res) => {
   }
 };
 
-module.exports.oppfrisk = (req, res) => {
+module.exports.oppfriskFagsak = (req, res) => {
   try {
     res.status(204).send();
   }
@@ -54,57 +52,20 @@ module.exports.oppfrisk = (req, res) => {
   }
 };
 
-/**
- * @deprecated Benyttes kun i spark på t5
- * Opprett ny fagsak. [GET] /api/fagsaker/ny/:fnr
- * @param req
- * @param res
- * @returns {*|void}
- */
-
-module.exports.opprett = (req, res) => {
-  const melding = ERR.gone410(req.uri);
-  res.status(410).send(melding);
-};
-
-module.exports.henlegg = async (req, res) => {
+module.exports.henleggFagsak = async (req, res) => {
   const schema = Schema.lesSchemaFileSync('henlegg-fagsak-schema.json');
-  const ajv = new Ajv({allErrors: true});
-
-  const ajvValidator = ajv.addSchema(definitions).compile(schema);
-  const url = URL.parse(req.url);
-  const body = req.body;
-
+  const label = 'Fagsaker::fagsak:henlegg';
   try {
+    const body = req.body;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = test(ajvValidator, jsBody, ajv);
-
-    if (valid) {
-      res.status(204).send();
-    }
-    else {
-      valideringFeil(req, res);
-    }
+    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch(err) {
     console.log(err);
     logger.error(err);
+    const url = URL.parse(req.url);
     const melding = ERR.serverError500(url, err);
     res.status(500).send(melding);
   }
 };
-
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
-
-function test(ajvValidator, data, ajv) {
-  const valid = ajvValidator(data);
-  if (valid) console.log('Vedtak:fattet Valid!');
-  else {
-    console.log('Invalid: ' + ajv.errorsText(ajvValidator.errors));
-  }
-  return valid;
-}

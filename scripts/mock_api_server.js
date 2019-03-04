@@ -6,7 +6,6 @@ const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
 const serverinfo = require('./utils/server-info');
-const aktoer = require('./modules/aktoer');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
 const fagsaker = require('./modules/fagsaker');
@@ -59,12 +58,6 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
- * AKTOER
- */
-router.get('/aktoer/:saksnummer/:rolle', aktoer.hent);
-router.post('/aktoer/:saksnummer/:rolle', aktoer.send);
-
-/**
  * BEHANDLINGER
  */
 router.post('/behandlinger/:behandlingID/status', behandlinger.status);
@@ -89,10 +82,10 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * GET /f/:snr
  *
  */
-router.get('/fagsaker/:snr', fagsaker.hent);
-/* @deprecated  - benyttes kun i spark på T5 */
-router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/:fnr/henlegg', fagsaker.henlegg);
+router.get('/fagsaker/:snr', fagsaker.fagsak.hentFagsak);
+router.post('/fagsaker/:fnr/henlegg', fagsaker.fagsak.henleggFagsak);
+router.get('/fagsaker/aktoerer/:saksnummer', fagsaker.aktoer.hentAktoerer);
+router.post('/fagsaker/aktoerer/:saksnummer', fagsaker.aktoer.sendAktoer);
 
 /**
  * SØKNAD

@@ -3,11 +3,11 @@ const ajv = new Ajv({allErrors: true});
 
 const Schema = require('../utils/schema-util');
 
-const { lesFagsakerKatalog } = require('../modules/fagsaker');
+const Fagsaker = require('../modules/fagsaker');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 const schema = Schema.lesSchemaFileSync('fagsaker-schema.json');
-const catalog = lesFagsakerKatalog();
+const catalog = Fagsaker.lesFagsakerKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);
 

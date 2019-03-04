@@ -8,17 +8,20 @@ const Schema = require('../utils/schema-util');
 
 const SchemaPostValidator  = require('./schema-post-validator');
 
+const postValidator = (req, res, label, schema) => {
+  const body = req.body;
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+};
+
 module.exports.fattet = (req, res) => {
+  const url = URL.parse(req.url);
   const schema = Schema.lesSchemaFileSync('vedtak-post-schema.json');
 
-  const url = URL.parse(req.url);
-  const body = req.body;
   const label = 'Vedtak:fattet';
-
   try {
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+    postValidator(req, res, label, schema)
   }
   catch (err) {
     console.error(err);
@@ -30,15 +33,11 @@ module.exports.fattet = (req, res) => {
 
 module.exports.endreperiode = (req, res) => {
   const schema = Schema.lesSchemaFileSync('vedtak-endre-periode-schema.json');
-
   const url = URL.parse(req.url);
-  const body = req.body;
   const label = 'Vedtak:endre';
 
   try {
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+    postValidator(req, res, label, schema);
   }
   catch (err) {
     console.error(err);
