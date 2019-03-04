@@ -62,6 +62,7 @@ const router = express.Router();
  * AKTOER
  */
 router.get('/aktoer/:saksnummer/:rolle', aktoer.hent);
+router.post('/aktoer/:saksnummer/:rolle', aktoer.send);
 
 /**
  * BEHANDLINGER

@@ -16,7 +16,7 @@
       "rolleKode",
       "saksnummer",
       "utenlandskPersonID",
-      "representerer"
+      "representererKode"
     ],
     "properties": {
       "saksnummer": {
@@ -79,7 +79,7 @@
           null
         ]
       },
-      "representerer": {
+      "representererKode": {
         "$id": "#/items/properties/representerer",
         "type": ["string"],
         "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"],
