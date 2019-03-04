@@ -1,7 +1,9 @@
-const fagsak = require('./fagsak');
-const aktoer = require('./aktoer');
+const { fagsak } = require('./fagsak');
+const { aktoer} = require('./aktoer');
+const { sok } = require('./sok');
 
 module.exports = {
-  fagsaker: fagsak,
-  aktoerer: aktoer,
+  fagsak,
+  aktoer,
+  sok,
 };

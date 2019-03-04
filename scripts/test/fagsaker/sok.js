@@ -1,9 +1,9 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('../utils/schema-util');
+const Schema = require('../../utils/schema-util');
 
-const { lesSokFagsakerKatalog } = require('../modules/fagsaker/sok');
+const { lesSokFagsakerKatalog } = require('../../modules/fagsaker');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 
@@ -14,7 +14,7 @@ const validate = ajv.addSchema(definitions).compile(schema);
 
 
 const testAll = () => {
-  Schema.prettyTittel('Sok Fagsak');
+  Schema.prettyTittel('Fagsaker Sok');
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
 };
 
@@ -25,9 +25,9 @@ const testOne = (path) => {
   return Schema.runTest(elem, ajv, validate);
 };
 
-const SokFagsak = {
+const sok = {
   testAll,
   testOne,
 };
-module.exports.SokFagsak = SokFagsak;
+module.exports.sok = sok;
 

@@ -4,9 +4,10 @@ const fs = require('fs');
 const { demo } = require('./test/demo');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
-const { fagsaker, aktoerer } = require('./test/fagsaker');
+//const { fagsaker, aktoerer } = require('./test/fagsaker');
+const Fagsaker = require('./test/fagsaker');
 const { behandlingsresultat } = require('./test/behandlingsresultat');
-const { SokFagsak } = require('./test/sok-fagsak');
+//const { SokFagsak } = require('./test/fagsaker/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { lovvalgsperioder } = require('./test/lovvalgsperioder');
@@ -35,9 +36,9 @@ const katalogMap = new Map([
   ['demo', demo],
   ['personer', person],
   ['soknader', soknad],
-  ['fagsaker', fagsaker.fagsak],
-  ['fagsaker/aktoerer', aktoerer.aktoer],
-  ['sok/fagsaker', SokFagsak],
+  ['fagsaker', Fagsaker.fagsak],
+  ['fagsaker/aktoerer', Fagsaker.aktoer],
+  ['sok/fagsaker', Fagsaker.sok],
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
   ['lovvalgsperioder', lovvalgsperioder],

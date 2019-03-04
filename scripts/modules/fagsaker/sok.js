@@ -56,7 +56,7 @@ const lesSokFagsakListeAsync = async () => {
  * @param res
  * @returns {*}
  */
-module.exports.sok = async (req, res) => {
+module.exports.sokFagsak = async (req, res) => {
   try {
     const fnr = req.query.fnr;
     if (fnr) {

@@ -8,8 +8,7 @@ global.nodeCache = nodeCache;
 const serverinfo = require('./utils/server-info');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
-const fagsaker = require('./modules/fagsaker');
-const sokFagsaker = require('./modules/fagsaker/sok');
+const Fagsaker = require('./modules/fagsaker');
 const oppgaver = require('./modules/oppgaver');
 const sokOppgaver = require('./modules/sok-oppgaver');
 const journalforing = require('./modules/journalforing');
@@ -69,11 +68,6 @@ router.post('/behandlinger/:behandlingID/perioder', behandlinger.perioder);
 router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
 
 /**
- * SOK-FAGSAKER basert på fnr
- */
-router.get('/fagsaker/sok/', sokFagsaker.sok);
-
-/**
  * FAGSAKER
  * ----------------------------------------------------------------------------
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
@@ -82,10 +76,11 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * GET /f/:snr
  *
  */
-router.get('/fagsaker/:snr', fagsaker.fagsak.hentFagsak);
-router.post('/fagsaker/:fnr/henlegg', fagsaker.fagsak.henleggFagsak);
-router.get('/fagsaker/aktoerer/:saksnummer', fagsaker.aktoer.hentAktoerer);
-router.post('/fagsaker/aktoerer/:saksnummer', fagsaker.aktoer.sendAktoer);
+router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
+router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
+router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
+router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
 
 /**
  * SØKNAD
