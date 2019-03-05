@@ -1,0 +1,34 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://melosys.nav.no/schemas/kontaktopplysninger-schema.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": false,
+  "required": [
+    "kontaktnavn",
+    "kontaktorgnr"
+  ],
+  "properties": {
+    "kontaktnavn": {
+      "$id": "#/properties/kontaktnavn",
+      "type": "string",
+      "title": "The Kontaktnavn Schema",
+      "default": "",
+      "examples": [
+        "GLITRENDE HATT"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "kontaktorgnr": {
+      "$id": "#/properties/kontaktorgnr",
+      "type": "string",
+      "title": "The Kontaktorgnr Schema",
+      "default": "",
+      "examples": [
+        "810072512"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

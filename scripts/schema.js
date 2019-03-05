@@ -35,6 +35,7 @@ const katalogMap = new Map([
   ['soknader', soknad],
   ['fagsaker', Fagsaker.fagsak],
   ['fagsaker/aktoerer', Fagsaker.aktoer],
+  ['fagsaker/kontaktopplysninger', Fagsaker.kontaktopplysninger],
   ['sok/fagsaker', Fagsaker.sok],
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
