@@ -80,8 +80,8 @@ router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
-router.get('/fagsaker/:saksnummer/kontaktopplysninger', Fagsaker.kontaktopplysninger.hent);
-router.post('/fagsaker/:saksnummer/kontaktopplysninger/:orgnr', Fagsaker.kontaktopplysninger.send);
+router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
+router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 
 
 /**

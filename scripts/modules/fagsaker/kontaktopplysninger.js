@@ -21,12 +21,17 @@ module.exports.lesKontaktopplysningerKatalog = () => {
 };
 
 module.exports.hentKontaktopplysninger = async (req, res) => {
-  const { saksnummer } = req.params;
+  const { saksnummer, juridiskorgnr } = req.params;
   const { rolle: orgnr } = req.query;
   const url = URL.parse(req.url);
 
   if (!saksnummer) {
     const message = "Mangler saksnummer";
+    const melding = ERR.badRequest400(url.pathname, message);
+    return res.status(400).send(melding);
+  }
+  else if (!juridiskorgnr) {
+    const message = "Mangler juridiskorgnr";
     const melding = ERR.badRequest400(url.pathname, message);
     return res.status(400).send(melding);
   }
@@ -44,15 +49,15 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
 };
 
 module.exports.sendKontaktopplysninger = (req, res) => {
-  const { saksnummer, orgnr } = req.params;
+  const { saksnummer, juridiskorgnr } = req.params;
 
   if (!saksnummer) {
     const message = "Mangler saksnummer";
     const melding = ERR.badRequest400(url.pathname, message);
     return res.status(400).send(melding);
   }
-  else if (!orgnr) {
-    const message = "Mangler orgnrr";
+  else if (!juridiskorgnr) {
+    const message = "Mangler juridiskorgnr";
     const melding = ERR.badRequest400(url.pathname, message);
     return res.status(400).send(melding);
   }
