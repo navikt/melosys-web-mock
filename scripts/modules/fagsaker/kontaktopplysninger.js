@@ -37,8 +37,8 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
   }
 
   try {
-    const aktoer = await lesKontaktopplysninger(saksnummer, orgnr);
-    res.json(aktoer);
+    const kontaktopplysninger = await lesKontaktopplysninger(saksnummer, orgnr);
+    res.json(kontaktopplysninger);
   }
   catch (e) {
     console.error(e);
