@@ -44,6 +44,18 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
 };
 
 module.exports.sendKontaktopplysninger = (req, res) => {
+  const { saksnummer, orgnr } = req.params;
+
+  if (!saksnummer) {
+    const message = "Mangler saksnummer";
+    const melding = ERR.badRequest400(url.pathname, message);
+    return res.status(400).send(melding);
+  }
+  else if (!orgnr) {
+    const message = "Mangler orgnrr";
+    const melding = ERR.badRequest400(url.pathname, message);
+    return res.status(400).send(melding);
+  }
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = 'Fagsaker::Kontaktopplysninger:sendKontaktopplysninger';
