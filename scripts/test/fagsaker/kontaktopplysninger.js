@@ -2,7 +2,7 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
 const Schema = require('../../utils/schema-util');
-const schema = Schema.lesSchemaFileSync('kontaktopplysninger-post-schema.json');
+const schema = Schema.lesSchemaFileSync('kontaktopplysninger-schema.json');
 
 const Fagsaker = require('../../modules/fagsaker');
 const catalog = Fagsaker.lesKontaktopplysningerKatalog();

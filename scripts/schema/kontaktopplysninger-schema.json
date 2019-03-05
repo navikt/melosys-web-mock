@@ -6,16 +6,27 @@
   "title": "The Root Schema",
   "additionalProperties": false,
   "required": [
-    "navn"
+    "kontaktnavn",
+    "kontaktorgnr"
   ],
   "properties": {
-    "navn": {
-      "$id": "#/properties/navn",
+    "kontaktnavn": {
+      "$id": "#/properties/kontaktnavn",
       "type": "string",
-      "title": "The Navn Schema",
+      "title": "The Kontaktnavn Schema",
       "default": "",
       "examples": [
         "GLITRENDE HATT"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "kontaktorgnr": {
+      "$id": "#/properties/kontaktorgnr",
+      "type": "string",
+      "title": "The Kontaktorgnr Schema",
+      "default": "",
+      "examples": [
+        "810072512"
       ],
       "pattern": "^(.*)$"
     }
