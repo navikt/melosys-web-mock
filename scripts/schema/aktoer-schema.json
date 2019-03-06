@@ -1,5 +1,10 @@
 {
-  "definitions": {},
+  "definitions": {
+    "representererEnum": {
+      "type": "string",
+      "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"]
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://http://melosys.nav.no/schemas/aktoer",
   "type": "array",
@@ -14,21 +19,10 @@
       "institusjonsID",
       "orgnr",
       "rolleKode",
-      "saksnummer",
       "utenlandskPersonID",
       "representererKode"
     ],
     "properties": {
-      "saksnummer": {
-        "$id": "#/items/properties/saksnummer",
-        "type": "string",
-        "title": "The Saksnummer Schema",
-        "default": "",
-        "examples": [
-          "4"
-        ],
-        "pattern": "^(.*)$"
-      },
       "aktoerID": {
         "$id": "#/items/properties/aktoerID",
         "type": ["string", "null"],
@@ -40,14 +34,9 @@
         "pattern": "^(.*)$"
       },
       "orgnr": {
-        "$id": "#/items/properties/orgnr",
-        "type": ["string", "null"],
         "title": "The Orgnr Schema",
-        "default": "",
-        "examples": [
-          "1167540096033"
-        ],
-        "pattern": "^(.*)$"
+        "$id": "#/items/properties/orgnr",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-orgnr"
       },
       "institusjonsID": {
         "$id": "#/items/properties/institusjonsID",
@@ -80,12 +69,13 @@
         ]
       },
       "representererKode": {
-        "$id": "#/items/properties/representerer",
-        "type": ["string"],
-        "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"],
         "title": "The Representerer Schema",
-        "default": null,
-        "examples": ["BRUKER", "ARBEIDSGIVER", "BEGGE"]
+        "$id": "#/items/properties/representerer",
+        "examples": ["BRUKER", "ARBEIDSGIVER", "BEGGE", null],
+        "oneOf": [
+          { "$ref": "#/definitions/representererEnum"},
+          { "type": ["null"] }
+        ]
       }
     }
   }
