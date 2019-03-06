@@ -176,6 +176,22 @@
         }
       }
     },
+    "orgnr": {
+      "type": "string",
+      "default": "",
+      "examples": [
+        "810072512"
+      ],
+      "pattern": "^\\d{9}$"
+    },
+    "fnr": {
+      "type": "string",
+      "default": "",
+      "examples": [
+        "81007251212"
+      ],
+      "pattern": "^\\d{11}$"
+    },
     "periode": {
       "title": "Periode med fom tom",
       "type": "object",
