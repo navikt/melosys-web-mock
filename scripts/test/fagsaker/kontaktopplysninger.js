@@ -6,8 +6,9 @@ const schema = Schema.lesSchemaFileSync('kontaktopplysninger-schema.json');
 
 const Fagsaker = require('../../modules/fagsaker');
 const catalog = Fagsaker.lesKontaktopplysningerKatalog();
+const definitions = Schema.lesSchemaDefinitonsSync();
 
-const validate = ajv.compile(schema);
+const validate = ajv.addSchema(definitions).compile(schema);
 const printTitle = () => Schema.prettyTittel('Fagsaker Kontaktopplysninger');
 
 const testAll = () => {
