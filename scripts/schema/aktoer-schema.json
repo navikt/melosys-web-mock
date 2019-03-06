@@ -1,5 +1,10 @@
 {
-  "definitions": {},
+  "definitions": {
+    "representererEnum": {
+      "type": "string",
+      "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"]
+    }
+  },
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://http://melosys.nav.no/schemas/aktoer",
   "type": "array",
@@ -64,12 +69,13 @@
         ]
       },
       "representererKode": {
-        "$id": "#/items/properties/representerer",
-        "type": ["string"],
-        "enum": ["BRUKER", "ARBEIDSGIVER", "BEGGE"],
         "title": "The Representerer Schema",
-        "default": null,
-        "examples": ["BRUKER", "ARBEIDSGIVER", "BEGGE"]
+        "$id": "#/items/properties/representerer",
+        "examples": ["BRUKER", "ARBEIDSGIVER", "BEGGE", null],
+        "oneOf": [
+          { "$ref": "#/definitions/representererEnum"},
+          { "type": ["null"] }
+        ]
       }
     }
   }
