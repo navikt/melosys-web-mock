@@ -36,14 +36,9 @@
       "pattern": "^(.*)$"
     },
     "orgnr": {
-      "$id": "#/items/properties/orgnr",
-      "type": ["string", "null"],
       "title": "The Orgnr Schema",
-      "default": "",
-      "examples": [
-        "1167540096033"
-      ],
-      "pattern": "^(.*)$"
+      "$id": "#/items/properties/orgnr",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-orgnr"
     },
     "institusjonsID": {
       "$id": "#/items/properties/institusjonsID",

@@ -184,8 +184,24 @@
       ],
       "pattern": "^\\d{9}$"
     },
+    "nullable-orgnr": {
+      "type": ["string", "null"],
+      "default": "",
+      "examples": [
+        "810072512"
+      ],
+      "pattern": "^\\d{9}$"
+    },
     "fnr": {
       "type": "string",
+      "default": "",
+      "examples": [
+        "81007251212"
+      ],
+      "pattern": "^\\d{11}$"
+    },
+    "nullable-fnr": {
+      "type": ["string", "null"],
       "default": "",
       "examples": [
         "81007251212"

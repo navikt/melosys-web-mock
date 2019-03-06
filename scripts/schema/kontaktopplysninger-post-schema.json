@@ -21,8 +21,8 @@
       "pattern": "^(.*)$"
     },
     "kontaktorgnr": {
-      "$id": "#/properties/kontaktorgnr",
       "title": "The Kontaktorgnr Schema",
+      "$id": "#/properties/kontaktorgnr",
       "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/orgnr"
     }
   }

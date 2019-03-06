@@ -7,7 +7,6 @@ const schema = Schema.lesSchemaFileSync('aktoer-schema.json');
 
 const Fagsaker = require('../../modules/fagsaker');
 const catalog = Fagsaker.lesAktoerKatalog();
-
 const validate = ajv.addSchema(definitions).compile(schema);
 const printTitle = () => Schema.prettyTittel('Fagsaker Aktoerer');
 
