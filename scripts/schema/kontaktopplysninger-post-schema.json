@@ -21,14 +21,9 @@
       "pattern": "^(.*)$"
     },
     "kontaktorgnr": {
-      "$id": "#/properties/kontaktorgnr",
-      "type": "string",
       "title": "The Kontaktorgnr Schema",
-      "default": "",
-      "examples": [
-        "810072512"
-      ],
-      "pattern": "^(.*)$"
+      "$id": "#/properties/kontaktorgnr",
+      "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/orgnr"
     }
   }
 }

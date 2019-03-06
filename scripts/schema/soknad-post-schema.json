@@ -190,14 +190,9 @@
                 "pattern": "^(.*)$"
               },
               "orgnr": {
-                "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/orgnr",
-                "type": ["string","null"],
                 "title": "The Orgnr Schema",
-                "default": "",
-                "examples": [
-                  "372384726"
-                ],
-                "pattern": "^(.*)$"
+                "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/orgnr",
+                "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-orgnr"
               },
               "adresse": {
                 "$id": "#/properties/soeknadDokument/properties/foretakUtland/items/properties/adresse",
@@ -524,14 +519,9 @@
                 ],
                 "properties": {
                   "orgnr": {
-                    "$id": "#/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/orgnr",
-                    "type": ["string","null"],
                     "title": "The Orgnr Schema",
-                    "default": "",
-                    "examples": [
-                      "910253158"
-                    ],
-                    "pattern": "^(.*)$"
+                    "$id": "#/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/orgnr",
+                    "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-orgnr"
                   },
                   "fortsetterEtterArbeidIUtlandet": {
                     "$id": "#/properties/soeknadDokument/properties/selvstendigArbeid/properties/selvstendigForetak/items/properties/fortsetterEtterArbeidIUtlandet",
