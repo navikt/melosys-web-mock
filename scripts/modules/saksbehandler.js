@@ -1,12 +1,12 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const _ = require('underscore');
+const _ = require('lodash');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const ERR = require('./errors');
-const happy = require('./happystatus');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../mock.config');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const ERR = require('../utils/errors');
+const happy = require('../utils/happystatus');
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 module.exports.lesSaksbehandlerKatalog = () => {

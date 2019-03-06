@@ -1,15 +1,13 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const _ = require('underscore');
+const _ = require('lodash');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
+const Utils = require('../../utils/utils');
+const Schema = require('../../utils/schema-util');
+const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const MOCK_DATA_DIR  = `${process.cwd()}/scripts/mock_data`;
+const ERR = require('../../utils/errors');
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
 const lesOversikt = async () => {
@@ -79,8 +77,7 @@ module.exports.reset = (req, res) => {
 };
 
 module.exports.tilbakelegg = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/oppgaver-tilbakelegge-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('oppgaver-tilbakelegge-schema.json');
 
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;

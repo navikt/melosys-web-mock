@@ -1,14 +1,10 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 const { lesSaksbehandlerKatalog } = require('../modules/saksbehandler');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
-
-const schemajson = `${SCHEMA_DIR}/saksbehandler-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const schema = Schema.lesSchemaFileSync('saksbehandler-schema.json');
 const catalog = lesSaksbehandlerKatalog();
 
 const validate = ajv.compile(schema);

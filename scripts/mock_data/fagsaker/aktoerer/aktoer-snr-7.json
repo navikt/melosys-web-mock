@@ -1,0 +1,38 @@
+[
+  {
+    "saksnummer": "7",
+    "aktoerID": "1167540096033",
+    "orgnr": "810072512",
+    "utenlandskPersonID": null,
+    "institusjonsID": "NO:NAVT001",
+    "rolleKode": "BRUKER",
+    "representererKode": "BRUKER"
+  },
+  {
+    "saksnummer": "7",
+    "aktoerID": "1167540096033",
+    "orgnr": "810072512",
+    "utenlandskPersonID": null,
+    "institusjonsID": "NO:NAVT002",
+    "rolleKode": "ARBEIDSGIVER",
+    "representererKode": "BRUKER"
+  },
+  {
+    "saksnummer": "7",
+    "aktoerID": "1167540096033",
+    "orgnr": "810072512",
+    "utenlandskPersonID": null,
+    "institusjonsID": "NO:NAVT002",
+    "rolleKode": "REPRESENTANT",
+    "representererKode": "BRUKER"
+  },
+  {
+    "saksnummer": "7",
+    "aktoerID": null,
+    "orgnr": "810072512",
+    "utenlandskPersonID": null,
+    "institusjonsID": "FR:RG75V00002",
+    "rolleKode": "MYNDIGHET",
+    "representererKode": "BRUKER"
+  }
+]

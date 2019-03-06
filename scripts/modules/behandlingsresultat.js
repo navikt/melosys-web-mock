@@ -2,10 +2,11 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const URL = require('url');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const ERR = require('./errors');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+const { MOCK_DATA_DIR } = require('../../mock.config');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+
+const ERR = require('../utils/errors');
 const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/behandlingsresultat`;
 
 const lesBehandlingsresultat = async (bid) => {

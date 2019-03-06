@@ -1,13 +1,10 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
 const Vilkarer = require('../modules/vilkar');
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
 
-const schemajson = `${SCHEMA_DIR}/vilkar-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const schema = Schema.lesSchemaFileSync('vilkar-schema.json');
 const katalog = Vilkarer.lesVilkarsKatalog();
 
 const validate = ajv.compile(schema);

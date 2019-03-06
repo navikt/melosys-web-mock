@@ -3,12 +3,20 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
-const Utils = require('../modules/utils');
-const MOCK_DATA_DIR = `${process.cwd()}/scripts/mock_data`;
+
+const { MOCK_DATA_DIR, SCHEMA_DIR, DEFINITION_SCHEMA } = require('../../mock.config');
+const Utils = require('./utils');
 
 
 module.exports.lesSchemaSync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
+};
+module.exports.lesSchemaFileSync = schemafile => {
+  const schemapath = `${SCHEMA_DIR}/${schemafile}`;
+  return Utils.readJsonAndParseSync(schemapath);
+};
+module.exports.lesSchemaDefinitonsSync = () => {
+  return Utils.readJsonAndParseSync(DEFINITION_SCHEMA);
 };
 
 const humanReadableErrors = (allErrors = []) => {

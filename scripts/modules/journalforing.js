@@ -2,14 +2,12 @@ const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
+const { MOCK_DATA_DIR } = require('../../mock.config');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const MOCK_DATA_DIR = `${SCRIPTS_DIR}/mock_data`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const ERR = require('../utils/errors');
 
 const MOCK_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
@@ -42,8 +40,7 @@ module.exports.hent = async (req, res) => {
 };
 
 module.exports.sendOpprettNySak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/journalforing-opprett-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('journalforing-opprett-schema.json');
 
   const body = req.body;
   try {
@@ -61,8 +58,7 @@ module.exports.sendOpprettNySak = (req, res) => {
 };
 
 module.exports.sendTilordneSak = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/journalforing-tilordne-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaFileSync('journalforing-tilordne-schema.json');
 
   const body = req.body;
   try {

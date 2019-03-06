@@ -2,26 +2,26 @@ const URL = require('url');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const Utils = require('./utils');
-const Schema = require('../test/schema-util');
-const SchemaPostValidator  = require('./schema-post-validator');
-const ERR = require('./errors');
+const ERR = require('../utils/errors');
+const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const SchemaPostValidator  = require('../utils/schema-post-validator');
+
+const postValidator = (req, res, label, schema) => {
+  const body = req.body;
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+};
 
 module.exports.fattet = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/vedtak-post-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
-
   const url = URL.parse(req.url);
-  const body = req.body;
-  const label = 'Vedtak:fattet';
+  const schema = Schema.lesSchemaFileSync('vedtak-post-schema.json');
 
+  const label = 'Vedtak:fattet';
   try {
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+    postValidator(req, res, label, schema)
   }
   catch (err) {
     console.error(err);
@@ -32,17 +32,12 @@ module.exports.fattet = (req, res) => {
 };
 
 module.exports.endreperiode = (req, res) => {
-  const schemajson = `${SCHEMA_DIR}/vedtak-endre-periode-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
-
+  const schema = Schema.lesSchemaFileSync('vedtak-endre-periode-schema.json');
   const url = URL.parse(req.url);
-  const body = req.body;
   const label = 'Vedtak:endre';
 
   try {
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+    postValidator(req, res, label, schema);
   }
   catch (err) {
     console.error(err);

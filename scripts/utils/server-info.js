@@ -1,5 +1,5 @@
 const os = require('os');
-const _ = require('underscore');
+const _ = require('lodash');
 
 function platformNIC() {
   const interfaces = os.networkInterfaces();

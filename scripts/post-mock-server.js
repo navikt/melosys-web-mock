@@ -38,50 +38,57 @@ const testAlleEndepunkter = async () => {
 
     await instance.get('/saksbehandler').then(printresult).catch(printerror);
 
+    // Fagsaker
+    const henlegg_fagsak = require('./mock_data/fagsaker/post/henlegg-fagsak');
+    await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak);
+    const aktoer = require('./mock_data/fagsaker/aktoerer/post/aktoer');
+    await instance.post('/fagsaker/4/aktoerer', aktoer).then(printresult).catch(printerror);
+    const kontaktopplysninger = require('./mock_data/fagsaker/kontaktopplysninger/post/kontaktopplysninger');
+    await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(printresult).catch(printerror);
+
+    // Behandlinger
     const behandinger_status = require('./mock_data/behandlinger/post/behandlinger-status');
     await instance.post('/behandlinger/4/status', behandinger_status).then(printresult).catch(printerror);
 
     const behandlinger_perioder = require('./mock_data/behandlinger/post/behandlinger-perioder');
     await instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(printresult).catch(printerror);
 
+    // Soknader
     const soknad = require('./mock_data/soknader/post/soknad-post');
     await instance.post('/soknader/4', soknad).then(printresult).catch(printerror);
 
+    // Avklartefakta
     const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
     await instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(printerror);
 
+    // Lovvalgsperioder
     const lovvalgsperioder = require('./mock_data/lovvalgsperioder/lovvalgsperiode-bid-4');
     await instance.post('/lovvalgsperioder/4', lovvalgsperioder).then(printresult).catch(printerror);
 
+    // Oppgaver
     const oversikt = require('./mock_data/oppgaver/oversikt');
     await instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(printerror);
 
     const tilbakelegg = require('./mock_data/oppgaver/post/tilbakelegge');
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(printresult).catch(printerror);
 
+    // Journalforing
     const journal_post_opprett = require('./mock_data/journalforing/post/opprett');
     await instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).catch(printerror);
 
     const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(printerror);
 
+    // Vedtak
     const vedtak_post = require('./mock_data/vedtak/post/vedtak-post');
     await instance.post('/vedtak/4', vedtak_post).then(printresult).catch(printerror);
 
+    // Dokumenter
     const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
     const behandlingID = 3;
     const produserbartDokument = 'MELDING_MANGLENDE_OPPLYSNINGER';
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
-
-    // TODO lag ny mock_data/kontaktopplysninger/post/kontaktopplysninger-post.json når innhold er avklart
-    const kontaktopplysninger = {
-      navn: 'Donald Trumf',
-      orgnr: '873152362',
-    };
-    const saksnummer = 'MEL-1';
-    const orgnr = '810072512';
-    await instance.post(`/kontaktopplysninger/${saksnummer}/${orgnr}`, kontaktopplysninger).then(printresult).catch(printerror);
 
     console.dir(oppsummering);
   }
