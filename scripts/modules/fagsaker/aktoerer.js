@@ -10,10 +10,21 @@ const ERR = require('../../utils/errors');
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
 
-const lesAktoer = async (saksnummer, rolle) => {
+const lesAktoer = async (saksnummer, rolle, representerer) => {
   const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
   const aktoerer = JSON.parse(await Utils.readFileAsync(mockfile));
-  return ( rolle ) ? aktoerer.filter(aktor => aktor.rolleKode === rolle) : aktoerer;
+  if (rolle && representerer) {
+    return aktoerer
+      .filter(aktor => aktor.rolleKode === rolle)
+      .filter(aktor => aktor.representererKode === representerer);
+  }
+  else if (rolle) {
+    return aktoerer.filter(aktor => aktor.rolleKode === rolle);
+  }
+  else if (representerer) {
+    return aktoerer.filter(aktor => aktor.representererKode === representerer);
+  }
+  return aktoerer;
 };
 
 module.exports.lesAktoerKatalog = () => {
@@ -22,7 +33,7 @@ module.exports.lesAktoerKatalog = () => {
 
 module.exports.hentAktoerer = async (req, res) => {
   const { saksnummer } = req.params;
-  const { rolle } = req.query;
+  const { rolle, representerer } = req.query;
   const url = URL.parse(req.url);
 
   if (!saksnummer) {
@@ -32,7 +43,7 @@ module.exports.hentAktoerer = async (req, res) => {
   }
 
   try {
-    const aktoer = await lesAktoer(saksnummer, rolle);
+    const aktoer = await lesAktoer(saksnummer, rolle, representerer);
     res.json(aktoer);
   }
   catch (e) {

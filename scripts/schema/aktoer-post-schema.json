@@ -10,21 +10,10 @@
     "institusjonsID",
     "orgnr",
     "rolleKode",
-    "saksnummer",
     "utenlandskPersonID",
     "representererKode"
   ],
   "properties": {
-    "saksnummer": {
-      "$id": "#/items/properties/saksnummer",
-      "type": "string",
-      "title": "The Saksnummer Schema",
-      "default": "",
-      "examples": [
-        "4"
-      ],
-      "pattern": "^(.*)$"
-    },
     "aktoerID": {
       "$id": "#/items/properties/aktoerID",
       "type": ["string", "null"],

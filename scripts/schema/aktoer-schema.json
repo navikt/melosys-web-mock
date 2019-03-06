@@ -14,21 +14,10 @@
       "institusjonsID",
       "orgnr",
       "rolleKode",
-      "saksnummer",
       "utenlandskPersonID",
       "representererKode"
     ],
     "properties": {
-      "saksnummer": {
-        "$id": "#/items/properties/saksnummer",
-        "type": "string",
-        "title": "The Saksnummer Schema",
-        "default": "",
-        "examples": [
-          "4"
-        ],
-        "pattern": "^(.*)$"
-      },
       "aktoerID": {
         "$id": "#/items/properties/aktoerID",
         "type": ["string", "null"],
@@ -40,14 +29,9 @@
         "pattern": "^(.*)$"
       },
       "orgnr": {
-        "$id": "#/items/properties/orgnr",
-        "type": ["string", "null"],
         "title": "The Orgnr Schema",
-        "default": "",
-        "examples": [
-          "1167540096033"
-        ],
-        "pattern": "^(.*)$"
+        "$id": "#/items/properties/orgnr",
+        "$ref": "http://melosys.nav.no/schemas/definitions-schema.json#/definitions/nullable-orgnr"
       },
       "institusjonsID": {
         "$id": "#/items/properties/institusjonsID",

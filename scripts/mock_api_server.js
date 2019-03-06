@@ -6,23 +6,24 @@ const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
 const serverinfo = require('./utils/server-info');
+const logging = require('./utils/logging');
+
+const avklartefakta = require('./modules/avklartefakta');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
-const Fagsaker = require('./modules/fagsaker');
-const Oppgaver = require('./modules/oppgaver');
-const journalforing = require('./modules/journalforing');
-const soknader = require('./modules/soknader');
-const lovvalgsperioder = require('./modules/lovvalgsperioder');
-const saksopplysninger = require('./modules/saksopplysninger');
-const saksbehandler = require('./modules/saksbehandler');
-const vilkar = require('./modules/vilkar');
-const avklartefakta = require('./modules/avklartefakta');
-const inngang = require('./modules/inngang');
-const personer = require('./modules/personer');
-const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-const logging = require('./utils/logging');
+const Fagsaker = require('./modules/fagsaker');
+const inngang = require('./modules/inngang');
+const journalforing = require('./modules/journalforing');
+const lovvalgsperioder = require('./modules/lovvalgsperioder');
+const Oppgaver = require('./modules/oppgaver');
+const organisasjoner = require('./modules/organisasjoner');
+const personer = require('./modules/personer');
+const saksbehandler = require('./modules/saksbehandler');
+const saksopplysninger = require('./modules/saksopplysninger');
+const soknader = require('./modules/soknader');
 const vedtak = require('./modules/vedtak');
+const vilkar = require('./modules/vilkar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;

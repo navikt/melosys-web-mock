@@ -1,6 +1,5 @@
 [
   {
-    "saksnummer": "3",
     "aktoerID": "1167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
@@ -9,25 +8,22 @@
     "representererKode": "BRUKER"
   },
   {
-    "saksnummer": "3",
     "aktoerID": "1167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
     "rolleKode": "ARBEIDSGIVER",
-    "representererKode": "BRUKER"
+    "representererKode": "ARBEIDSGIVER"
   },
   {
-    "saksnummer": "3",
     "aktoerID": "1167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
     "rolleKode": "REPRESENTANT",
-    "representererKode": "BRUKER"
+    "representererKode": "BEGGE"
   },
   {
-    "saksnummer": "3",
     "aktoerID": null,
     "orgnr": "810072512",
     "utenlandskPersonID": null,
