@@ -19,6 +19,7 @@ const lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const organisasjoner = require('./modules/organisasjoner');
 const personer = require('./modules/personer');
+const registrering = require('./modules/registrering');
 const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
@@ -84,7 +85,7 @@ router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
 router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 
-
+router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksperioder);
 /**
  * SØKNAD
  * ----------------------------------------------------------
