@@ -90,7 +90,7 @@ const testAlleEndepunkter = async () => {
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
 
-
+    console.log('[POST]',colors.green('yarn post-mock'));
     console.dir(oppsummering);
   }
   catch (e) {

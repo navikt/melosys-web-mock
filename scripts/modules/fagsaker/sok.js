@@ -1,7 +1,6 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const assert = require('assert');
-const URL = require('url');
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
@@ -9,11 +8,10 @@ const ERR = require('../../utils/errors');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 
-const happy = require('../../utils/happystatus');
-const MOCK_SOK_FAGFSAKER_DIR = `${MOCK_DATA_DIR}/sok/fagsaker`;
+const MOCK_FAGFSAKER_SOK_DIR = `${MOCK_DATA_DIR}/fagsaker/sok`;
 
 module.exports.lesSokFagsakerKatalog = () => {
-  return Schema.lesKatalogSync(MOCK_SOK_FAGFSAKER_DIR);
+  return Schema.lesKatalogSync(MOCK_FAGFSAKER_SOK_DIR);
 };
 
 const lesFagsakAsync = async (path) => {
@@ -21,7 +19,7 @@ const lesFagsakAsync = async (path) => {
 };
 
 const lesSokFagsakAsync = async (fnr) => {
-  const mockfile = `${MOCK_SOK_FAGFSAKER_DIR}/fnr-${fnr}.json`;
+  const mockfile = `${MOCK_FAGFSAKER_SOK_DIR}/fnr-${fnr}.json`;
   if (await Utils.existsAsync(mockfile)) {
     return await lesFagsakAsync(mockfile);
   }
@@ -29,9 +27,9 @@ const lesSokFagsakAsync = async (fnr) => {
 };
 
 const lesAlleFagsakerAsync = async () => {
-  const files = await Utils.readDirAsync(MOCK_SOK_FAGFSAKER_DIR);
+  const files = await Utils.readDirAsync(MOCK_FAGFSAKER_SOK_DIR);
   const promises = files.map(async (file) => {
-    return await lesFagsakAsync(`${MOCK_SOK_FAGFSAKER_DIR}/${file}`);
+    return await lesFagsakAsync(`${MOCK_FAGFSAKER_SOK_DIR}/${file}`);
   });
   const alleFagsaker = await Promise.all(promises);
   return alleFagsaker.reduce((acc, cur) => {
@@ -64,27 +62,8 @@ module.exports.sokFagsak = async (req, res) => {
       if (nyesaker && nyesaker.length) {
         return res.json(nyesaker);
       }
-      else {
-        const url = URL.parse(req.url);
-        // Søk på fagsaker med fnr kan gi tomt svar, eller gi unauthorized
-        const status = happy.happyStatus([200, 200, 403, 500]);
-        switch (status) {
-          case 200: {
-            const tom_soknad = [];
-            return res.json(tom_soknad);
-          }
-          case 403: {
-            const melding = ERR.forbiddenRequest403(url.pathname);
-            logger.warn(melding);
-            return res.status(status).send(melding);
-          }
-          case 500: {
-            const melding = ERR.serverError500(url.pathname);
-            logger.error(melding);
-            return res.status(status).send(melding);
-          }
-        }
-      }
+      const tom_soknad = [];
+      return res.json(tom_soknad);
     }
     else {
       // const fagsakListe = lesSokFagsakListe();
@@ -93,6 +72,7 @@ module.exports.sokFagsak = async (req, res) => {
     }
   } catch (err) {
     console.log(err);
+    logger.error(err);
     const melding = ERR.serverError500(req.originalUrl, err);
     res.status(500).send(melding);
   }

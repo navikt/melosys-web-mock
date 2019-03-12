@@ -5,7 +5,6 @@ const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 const ERR = require('../utils/errors');
-const happy = require('../utils/happystatus');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/lovvalgsperioder`;
@@ -28,19 +27,9 @@ const lesLovvalgsperioder = async (behandlingID) => {
 module.exports.hent = async (req, res) => {
   try {
     const behandlingID = req.params.behandlingID;
-    const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
 
-    if (await Utils.existsAsync(mockfile)) {
-      const data = await lesLovvalgsperioder(behandlingID);
-      const status = happy.happyStatus([200, 200, 404]);
-      if (status === 404) {
-        return res.status(404).send(ERR.notFound404(req.url));
-      }
-      return res.json(data);
-    }
-    else {
-      return res.status(404).send(ERR.notFound404(req.url));
-    }
+    const data = await lesLovvalgsperioder(behandlingID);
+    return res.json(data);
   }
   catch (err) {
     console.error(err);
