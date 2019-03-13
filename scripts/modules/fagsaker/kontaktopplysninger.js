@@ -50,7 +50,7 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
 
 module.exports.sendKontaktopplysninger = (req, res) => {
   const { saksnummer, juridiskorgnr } = req.params;
-
+  const url = URL.parse(req.url);
   if (!saksnummer) {
     const message = "Mangler saksnummer";
     const melding = ERR.badRequest400(url.pathname, message);

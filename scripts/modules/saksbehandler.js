@@ -6,7 +6,6 @@ const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 const ERR = require('../utils/errors');
-const happy = require('../utils/happystatus');
 const MOCK_DATA_SAKSBEHANDLER_DIR = `${MOCK_DATA_DIR}/saksbehandler`;
 
 module.exports.lesSaksbehandlerKatalog = () => {
@@ -20,26 +19,11 @@ const lesSaksbehandlere = async () => {
 module.exports.hent = async (req, res) => {
   try {
     const saksbehandlere = await lesSaksbehandlere();
-    const status = happy.happyStatus([200, 200, 200, 401, 500]);
-    const url = '/saksbehandler';
-    switch (status) {
-      case 200:
-        return res.json(_.sample(saksbehandlere));
-      case 401: {
-        const melding = ERR.unauthorizedRequest401(url);
-        logger.warn(melding);
-        return res.status(status).send(melding);
-      }
-      case 500: {
-        const melding = ERR.serverError500(url);
-        logger.error(melding);
-        return res.status(status).send(melding);
-      }
-    }
+    res.json(_.sample(saksbehandlere));
   } catch (err) {
     console.log(err);
-    logger.error(err);
     const melding = ERR.serverError500(req.originalUrl, err);
+    logger.error(melding);
     res.status(500).send(melding);
   }
 };
