@@ -38,6 +38,7 @@ const testAlleEndepunkter = async () => {
     await instance.get('/fagsaker/sok/').then(printresult).catch(printerror);
     await instance.get('/fagsaker/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/3/kontaktopplysninger/810072512').then(printresult).catch(printerror);
+    await instance.get('/fagsaker/3/aktoerer/?rolle=BRUKER&presenterer=BRUKER').then(printresult).catch(printerror);
     await instance.get('/soknader/4').then(printresult).catch(printerror);
     await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
     await instance.get('/inngang/4').then(printresult).catch(printerror);
@@ -60,4 +61,8 @@ const testAlleEndepunkter = async () => {
   console.dir(oppsummering);
 };
 
+
+console.log('\n=======================================================');
+console.log('[GET] Mock server');
+console.log("-------------------------------------------------------");
 testAlleEndepunkter();
