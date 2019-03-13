@@ -47,9 +47,9 @@ module.exports.hent = async (req, res) => {
 module.exports.send = (req, res) => {
   const schema = Schema.lesSchemaFileSync('vilkar-post-schema.json');
 
+  const label = 'Vilkar:send';
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  const label = 'Vilkar:send';
   logger.debug(label, JSON.stringify(jsBody));
 
   const valid = SchemaPostValidator.test(label, schema, jsBody);
