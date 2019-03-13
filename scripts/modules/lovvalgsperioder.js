@@ -48,9 +48,9 @@ module.exports.hent = async (req, res) => {
 module.exports.send = (req, res) => {
   const schema = Schema.lesSchemaFileSync('lovvalgsperioder-schema.json');
 
+  const label = 'Lovvalgsperioder:send';
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  const label = 'Lovvalgsperioder:send';
   logger.debug(label, JSON.stringify(jsBody));
 
   const valid = SchemaPostValidator.test(label, schema, jsBody);
