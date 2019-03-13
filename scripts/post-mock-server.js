@@ -35,9 +35,6 @@ const printerror = res => {
 
 const testAlleEndepunkter = async () => {
   try {
-
-    await instance.get('/saksbehandler').then(printresult).catch(printerror);
-
     // Fagsaker
     const henlegg_fagsak = require('./mock_data/fagsaker/post/henlegg-fagsak');
     await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak);
@@ -98,6 +95,9 @@ const testAlleEndepunkter = async () => {
   }
 };
 
+console.log('\n=======================================================');
+console.log('[POST] Mock server');
+console.log("---------------------------------------------------------");
 testAlleEndepunkter();
 /*
 PUT vs POST for Creation
