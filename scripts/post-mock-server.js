@@ -80,6 +80,10 @@ const testAlleEndepunkter = async () => {
     const vedtak_post = require('./mock_data/vedtak/post/vedtak-post');
     await instance.post('/vedtak/4', vedtak_post).then(printresult).catch(printerror);
 
+    // Vilkar
+    const vilkar_post = require('./mock_data/vilkar/post/vilkar-post');
+    await instance.post('/vilkaar/4', vilkar_post);
+
     // Dokumenter
     const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
     const behandlingID = 3;

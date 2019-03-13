@@ -1,6 +1,3 @@
-const Ajv = require('ajv');
-
-const ajv = new Ajv({allErrors: true});
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
@@ -8,6 +5,7 @@ const { MOCK_DATA_DIR } = require('../../mock.config');
 const ERR = require('../utils/errors');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
+const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vilkar`;
 
@@ -47,37 +45,13 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('vilkar-schema.json');
-  const validate = ajv.compile(schema);
+  const schema = Schema.lesSchemaFileSync('vilkar-post-schema.json');
 
   const body = req.body;
-  let jsonBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug("vilkar:send", JSON.stringify(jsonBody));
+  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+  const label = 'Vilkar:send';
+  logger.debug(label, JSON.stringify(jsBody));
 
-  const valid = test(validate, jsonBody);
-  if (!valid) {
-    valideringFeil(req, res);
-  }
-  else {
-    res.json(jsonBody);
-  }
+  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };
-
-function valideringFeil(req, res) {
-  const status = 400;
-  const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
-  res.status(status).send(melding);
-}
-
-function test(validate, data) {
-  const valid = validate(data);
-  if (valid) {
-    console.log('Vilkar:send Valid!');
-  }
-  else {
-    const ajvErros = ajv.errorsText(validate.errors);
-    console.error('Vilkar:send INVALID: see mock-errors.log');
-    logger.error('Vilkar:send INVALID', ajvErros)
-  }
-  return valid;
-}
