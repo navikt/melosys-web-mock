@@ -7,6 +7,21 @@ const emoji = require('node-emoji');
 const { MOCK_DATA_DIR, SCHEMA_DIR, DEFINITION_SCHEMA } = require('../../mock.config');
 const Utils = require('./utils');
 
+const oppsummering = {
+  success: 0,
+  failure: 0,
+};
+
+const incSuccess = () => {
+  oppsummering.success += 1;
+};
+const incFailure = () => {
+  oppsummering.failure += 1;
+};
+
+module.exports.oppsummering = () => {
+  return oppsummering;
+};
 
 module.exports.lesSchemaSync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
@@ -70,9 +85,11 @@ module.exports.runTest = (data, ajv, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
+    incSuccess();
     console.log(' ',emoji.get('ballot_box_with_check'),' ',colors.green(navn));
   }
   else {
+    incFailure();
     console.log(colors.red('\tInvalid: '+navn));
     humanReadableErrors(validate.errors).forEach((msg, index) => {
       console.log('\t', (index < 10 ? ` ${index}` : index), msg);
