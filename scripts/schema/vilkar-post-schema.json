@@ -11,11 +11,32 @@
     "title": "The Items Schema",
     "additionalProperties": false,
     "required": [
+      "vilkaar",
       "oppfylt",
       "begrunnelseKoder",
       "begrunnelseFritekst"
     ],
     "properties": {
+      "vilkaar": {
+        "title": "The Vilkaar Schema",
+        "$id": "#/items/properties/vilkaar",
+        "type": "string",
+        "enum": [
+          "FO_883_2004_INNGANGSVILKAAR",
+          "FO_883_2004_ART12_1",
+          "FO_883_2004_ART12_2",
+          "FO_883_2004_ART16_1",
+          "FO_883_2004_ART11_3A",
+          "FO_883_2004_ART11_4_1",
+          "FO_883_2004_ART11_4_2",
+          "ART12_1_VESENTLIG_VIRKSOMHET",
+          "ART12_1_FORUTGAAENDE_MEDLEMSKAP",
+          "ART12_2_NORMALT_DRIVER_VIRKSOMHET",
+          "BOSATT_I_NORGE",
+          "FTRL_2_12_UNNTAK_TURISTSKIP"
+        ],
+        "default": "FO_883_2004_INNGANGSVILKAAR"
+      },
       "oppfylt": {
         "$id": "#/items/properties/oppfylt",
         "type": "boolean",
@@ -29,7 +50,7 @@
         "$id": "#/items/properties/begrunnelseKoder",
         "type": "array",
         "title": "The Begrunnelsekoder Schema",
-        "minItems": 1,
+        "minItems": 0,
         "items": {
           "$id": "#/items/properties/begrunnelseKoder/items",
           "type": "string",
@@ -43,7 +64,7 @@
       },
       "begrunnelseFritekst": {
         "$id": "#/items/properties/begrunnelseFritekst",
-        "type": "string",
+        "type": ["string", "null"],
         "title": "The Begrunnelsefritekst Schema",
         "default": "",
         "examples": [
