@@ -82,7 +82,7 @@ const testAlleEndepunkter = async () => {
 
     // Vilkar
     const vilkar_post = require('./mock_data/vilkar/post/vilkar-post');
-    await instance.post('/vilkaar/4', vilkar_post);
+    await instance.post('/vilkaar/4', vilkar_post).then(printresult).catch(printerror);
 
     // Dokumenter
     const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
