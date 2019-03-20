@@ -8,7 +8,7 @@
     "representererKode": "BRUKER"
   },
   {
-    "aktoerID": "1167540096033",
+    "aktoerID": "2167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
@@ -16,7 +16,7 @@
     "representererKode": "BRUKER"
   },
   {
-    "aktoerID": "1167540096033",
+    "aktoerID": "2167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "NO:NAVT002",
@@ -24,7 +24,7 @@
     "representererKode": "BRUKER"
   },
   {
-    "aktoerID": null,
+    "aktoerID": "2167540096033",
     "orgnr": "810072512",
     "utenlandskPersonID": null,
     "institusjonsID": "FR:RG75V00002",
