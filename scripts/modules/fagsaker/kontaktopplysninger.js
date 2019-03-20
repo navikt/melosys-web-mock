@@ -75,5 +75,5 @@ module.exports.sendKontaktopplysninger = (req, res) => {
 module.exports.slettKontaktopplysninger = (req, res) => {
   const { saksnummer } = req.params;
   console.log('slettKontaktopplysninger', saksnummer);
-  res.send('DELETE request to homepage');
+  res.status(204).send();
 };
