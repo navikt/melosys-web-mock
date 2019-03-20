@@ -1,13 +1,11 @@
 const Ajv = require('ajv');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
-const ERR = require('./errors');
-const Schema = require('../test/schema-util');
 
-const SCRIPTS_DATA_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DATA_DIR}/schema`;
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const ERR = require('./errors');
+
+const Schema = require('./schema-util');
+const definitions = Schema.lesSchemaDefinitonsSync();
 
 module.exports.valideringFeil = (req, res) => {
   const status = 400;

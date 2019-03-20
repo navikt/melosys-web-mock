@@ -1,13 +1,10 @@
 const Ajv = require('ajv');
 
-const Schema = require('./schema-util');
-const { lesOppgaveKatalog } = require('../modules/oppgaver');
+const Schema = require('../../utils/schema-util');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { lesOppgaveKatalog } = require('../../modules/oppgaver');
 
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const definitions = Schema.lesSchemaDefinitonsSync();
 
 const catalog = lesOppgaveKatalog();
 /*
@@ -24,8 +21,7 @@ const testAll = () => {
   catalog.forEach((elem) => {
     const { navn } = elem;
     const fornavn = navn.split('.')[0];
-    const schemajson = `${SCHEMA_DIR}/oppgaver-${fornavn}-schema.json`;
-    const schema = Schema.lesSchemaSync(schemajson);
+    const schema = Schema.lesSchemaFileSync(`oppgaver-${fornavn}-schema.json`);
     const ajv = new Ajv({allErrors: true});
     const validate = ajv.addSchema(definitions).compile(schema);
     Schema.runTest(elem, ajv, validate)
@@ -36,8 +32,7 @@ const testOne = (path) => {
   const tittel = Schema.katalogTittel(path);
   Schema.prettyTittel(tittel);
   const elem = Schema.lesKatalogElement(path);
-  const schemajson = path;
-  const schema = Schema.lesSchemaSync(schemajson);
+  const schema = Schema.lesSchemaSync(path);
   const ajv = new Ajv({allErrors: true});
   const validate = ajv.addSchema(definitions).compile(schema);
   return Schema.runTest(elem, ajv, validate);

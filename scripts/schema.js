@@ -4,21 +4,19 @@ const fs = require('fs');
 const { demo } = require('./test/demo');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
-const { fagsak } = require('./test/fagsak');
+const Fagsaker = require('./test/fagsaker');
 const { behandlingsresultat } = require('./test/behandlingsresultat');
-const { SokFagsak } = require('./test/sok-fagsak');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { lovvalgsperioder } = require('./test/lovvalgsperioder');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
-const { SokOppgaver } = require('./test/sok-oppgaver');
-const { oppgaver } = require('./test/oppgaver');
+const Oppgaver = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
 
-const Schema = require('./test/schema-util');
+const Schema = require('./utils/schema-util');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -35,15 +33,17 @@ const katalogMap = new Map([
   ['demo', demo],
   ['personer', person],
   ['soknader', soknad],
-  ['fagsaker', fagsak],
-  ['sok/fagsaker', SokFagsak],
+  ['fagsaker', Fagsaker.fagsak],
+  ['fagsaker/aktoerer', Fagsaker.aktoer],
+  ['fagsaker/kontaktopplysninger', Fagsaker.kontaktopplysninger],
+  ['sok/fagsaker', Fagsaker.sok],
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
   ['lovvalgsperioder', lovvalgsperioder],
   ['inngang', inngang],
   ['journalforing', journalforing],
-  ['oppgaver/sok', SokOppgaver],
-  ['oppgaver', oppgaver],
+  ['oppgaver', Oppgaver.oppgaver],
+  ['oppgaver/sok', Oppgaver.sok],
   ['avklartefakta', avklartefakta],
   ['vilkar', vilkar],
   ['dokumenter', dokumenter],
@@ -75,4 +75,6 @@ if (argv.watch) {
 }
 
 testAll();
+console.log();
+console.dir(Schema.oppsummering());
 console.log('\nSchema validation completed.\n');

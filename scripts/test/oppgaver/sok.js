@@ -1,16 +1,12 @@
 const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 
-const Schema = require('./schema-util');
-const { lesSokOppgaveKatalog} = require('../modules/sok-oppgaver');
+const Schema = require('../../utils/schema-util');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
+const { lesSokOppgaveKatalog} = require('../../modules/oppgaver/sok');
 
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
-const schemajson = `${SCHEMA_DIR}/oppgaver-sok-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
+const definitions = Schema.lesSchemaDefinitonsSync();
+const schema = Schema.lesSchemaFileSync('oppgaver-sok-schema.json');
 const catalog = lesSokOppgaveKatalog();
 
 const validate = ajv.addSchema(definitions).compile(schema);
@@ -28,9 +24,9 @@ const testOne = (path) => {
   return Schema.runTest(elem, ajv, validate);
 };
 
-const SokOppgaver = {
+const sok = {
   testAll,
   testOne,
 };
-module.exports.SokOppgaver = SokOppgaver;
+module.exports.sok = sok;
 

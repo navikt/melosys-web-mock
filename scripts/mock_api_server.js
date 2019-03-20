@@ -5,26 +5,26 @@ const NodeCache = require('node-cache');
 const nodeCache = new NodeCache();
 global.nodeCache = nodeCache;
 
-const serverinfo = require('./modules/server-info');
+const serverinfo = require('./utils/server-info');
+const logging = require('./utils/logging');
+
+const avklartefakta = require('./modules/avklartefakta');
 const behandlinger = require('./modules/behandlinger');
 const behandlingsresultat = require('./modules/behandlingsresultat');
-const fagsaker = require('./modules/fagsaker');
-const sokFagsaker = require('./modules/sok-fagsaker');
-const oppgaver = require('./modules/oppgaver');
-const sokOppgaver = require('./modules/sok-oppgaver');
-const journalforing = require('./modules/journalforing');
-const soknader = require('./modules/soknader');
-const lovvalgsperioder = require('./modules/lovvalgsperioder');
-const saksopplysninger = require('./modules/saksopplysninger');
-const saksbehandler = require('./modules/saksbehandler');
-const vilkar = require('./modules/vilkar');
-const avklartefakta = require('./modules/avklartefakta');
-const inngang = require('./modules/inngang');
-const personer = require('./modules/personer');
-const organisasjoner = require('./modules/organisasjoner');
 const dokumenter = require('./modules/dokumenter');
-const logging = require('./modules/logging');
+const Fagsaker = require('./modules/fagsaker');
+const inngang = require('./modules/inngang');
+const journalforing = require('./modules/journalforing');
+const lovvalgsperioder = require('./modules/lovvalgsperioder');
+const Oppgaver = require('./modules/oppgaver');
+const organisasjoner = require('./modules/organisasjoner');
+const personer = require('./modules/personer');
+const registrering = require('./modules/registrering');
+const saksbehandler = require('./modules/saksbehandler');
+const saksopplysninger = require('./modules/saksopplysninger');
+const soknader = require('./modules/soknader');
 const vedtak = require('./modules/vedtak');
+const vilkar = require('./modules/vilkar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -69,11 +69,6 @@ router.post('/behandlinger/:behandlingID/perioder', behandlinger.perioder);
 router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
 
 /**
- * SOK-FAGSAKER basert på fnr
- */
-router.get('/fagsaker/sok/', sokFagsaker.sok);
-
-/**
  * FAGSAKER
  * ----------------------------------------------------------------------------
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
@@ -82,11 +77,15 @@ router.get('/fagsaker/sok/', sokFagsaker.sok);
  * GET /f/:snr
  *
  */
-router.get('/fagsaker/:snr', fagsaker.hent);
-/* @deprecated  - benyttes kun i spark på T5 */
-router.get('/fagsaker/ny/:fnr', fagsaker.opprett);
-router.post('/fagsaker/:fnr/henlegg', fagsaker.henlegg);
+router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
+router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
+router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
+router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
+router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
+router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 
+router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksperioder);
 /**
  * SØKNAD
  * ----------------------------------------------------------
@@ -133,13 +132,13 @@ router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', sokOppgaver.sok);
-router.get('/oppgaver/plukk', oppgaver.hentPlukk);
-router.post('/oppgaver/plukk', oppgaver.sendPlukk);
-router.get('/oppgaver/oversikt', oppgaver.oversikt);
-router.post('/oppgaver/opprett', oppgaver.opprett);
-router.get('/oppgaver/reset', oppgaver.reset);
-router.post('/oppgaver/tilbakelegge', oppgaver.tilbakelegg);
+router.get('/oppgaver/sok', Oppgaver.sok);
+router.get('/oppgaver/plukk', Oppgaver.hentPlukk);
+router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
+router.get('/oppgaver/oversikt', Oppgaver.oversikt);
+router.post('/oppgaver/opprett', Oppgaver.opprett);
+router.get('/oppgaver/reset', Oppgaver.reset);
+router.post('/oppgaver/tilbakelegge', Oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING

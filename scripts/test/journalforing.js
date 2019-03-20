@@ -1,12 +1,9 @@
 const Ajv = require('ajv');
 
-const Schema = require('./schema-util');
+const { SCRIPTS_DIR, SCHEMA_DIR } = require('../../mock.config');
+const Schema = require('../utils/schema-util');
 
-const SCRIPTS_DIR = `${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
-
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const definitions = Schema.lesSchemaDefinitonsSync();
 
 const MOCK_DATA_JOURNALFORING_DIR = `${SCRIPTS_DIR}/mock_data/journalforing`;
 
@@ -23,12 +20,8 @@ const testJournalPost = (postnavn) => {
   Schema.runTest(elem, ajv, postValidator);
 };
 
-const schemajson = `${SCHEMA_DIR}/journalforing-schema.json`;
-const schema = Schema.lesSchemaSync(schemajson);
-const catalog = Schema.lesKatalogSync(MOCK_DATA_JOURNALFORING_DIR);
-
-
 const ajv = new Ajv({allErrors: true});
+const schema = Schema.lesSchemaFileSync('journalforing-schema.json');
 const validate = ajv.addSchema(definitions).compile(schema);
 
 const testOne = (path) => {
@@ -37,9 +30,12 @@ const testOne = (path) => {
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, ajv, validate);
 };
+
 const testAll = () => {
   Schema.prettyTittel('Journalforing');
+  const catalog = Schema.lesKatalogSync(MOCK_DATA_JOURNALFORING_DIR);
   catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+
   Schema.prettyTittel('Journalforing/post');
   testJournalPost('opprett');
   testJournalPost('tilordne');

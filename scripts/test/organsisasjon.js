@@ -2,18 +2,14 @@ const Ajv = require('ajv');
 const ajv = new Ajv({allErrors: true});
 const colors = require('colors/safe');
 
-const Schema = require('./schema-util');
+const Schema = require('../utils/schema-util');
+
 const { lesOrganisasjonsKatalog } = require('../modules/organisasjoner');
 
-const SCRIPTS_DIR =`${process.cwd()}/scripts`;
-const SCHEMA_DIR = `${SCRIPTS_DIR}/schema`;
-
-const schemapath = `${SCHEMA_DIR}/organisasjoner-schema.json`;
-const schema = Schema.lesSchemaSync(schemapath);
+const schema = Schema.lesSchemaFileSync('organisasjoner-schema.json');
 const catalog = lesOrganisasjonsKatalog();
 
-const definitionsPath = `${SCHEMA_DIR}/definitions-schema.json`;
-const definitions = Schema.lesSchemaSync(definitionsPath);
+const definitions = Schema.lesSchemaDefinitonsSync();
 const validate = ajv.addSchema(definitions).compile(schema);
 
 const testAll = () => {
