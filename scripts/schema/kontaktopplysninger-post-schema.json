@@ -12,7 +12,7 @@
   "properties": {
     "kontaktnavn": {
       "$id": "#/properties/kontaktnavn",
-      "type": "string",
+      "type": ["string", "null"],
       "title": "The Kontaktnavn Schema",
       "default": "",
       "examples": [

@@ -177,7 +177,7 @@
       }
     },
     "orgnr": {
-      "type": "string",
+      "type": ["string", "null"],
       "default": "",
       "examples": [
         "810072512"
