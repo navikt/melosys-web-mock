@@ -26,6 +26,9 @@ module.exports.oppsummering = () => {
 module.exports.lesSchemaSync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
 };
+module.exports.lesSchemaASync = schemapath => {
+  return Utils.readJsonAndParseSync(schemapath);
+};
 module.exports.lesSchemaFileSync = schemafile => {
   const schemapath = `${SCHEMA_DIR}/${schemafile}`;
   return Utils.readJsonAndParseSync(schemapath);
