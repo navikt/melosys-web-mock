@@ -71,3 +71,9 @@ module.exports.sendKontaktopplysninger = (req, res) => {
   const valid = SchemaPostValidator.test(label, schema, jsBody);
   return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };
+
+module.exports.slettKontaktopplysninger = (req, res) => {
+  const { saksnummer } = req.params;
+  console.log('slettKontaktopplysninger', saksnummer);
+  res.status(204).send();
+};
