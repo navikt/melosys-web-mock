@@ -43,9 +43,8 @@ module.exports.readJsonAndParseSync = (path) => {
 };
 
 module.exports.readJsonAndParseAsync = async (path) => {
-  readFileAsync(path).then((file)=> {
-    resolve(file)
-  });
+  const json = await readFileSync(path);
+  return JSON.parse(json);
 };
 
 module.exports.existsSync = (path) => fs.existsSync(path);
