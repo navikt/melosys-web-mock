@@ -45,7 +45,7 @@ module.exports.hent = async (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.send = (req, res) => {
+module.exports.send = async (req, res) => {
   const schema = Schema.lesSchemaFileSync('lovvalgsperioder-schema.json');
 
   const label = 'Lovvalgsperioder:send';
@@ -53,6 +53,6 @@ module.exports.send = (req, res) => {
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug(label, JSON.stringify(jsBody));
 
-  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  const valid = await SchemaPostValidator.testAsync(label, schema, jsBody);
   return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };

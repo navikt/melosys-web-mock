@@ -51,14 +51,14 @@ module.exports.hent = async (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.send = (req, res) => {
+module.exports.send = async (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = "Soknad:Send";
   logger.debug(`${label}`, body);
 
   try {
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = await SchemaPostValidator.testAsync(label, schema, jsBody);
 
     return valid ? res.json(body) : SchemaPostValidator.valideringFeil(req, res);
   }
