@@ -182,7 +182,7 @@
       "examples": [
         "810072512"
       ],
-      "pattern": "^\\d{9}$"
+      "pattern": "^\\d{9}$|^$"
     },
     "nullable-orgnr": {
       "type": ["string", "null"],
