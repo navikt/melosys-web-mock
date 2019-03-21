@@ -73,7 +73,7 @@ module.exports.sendKontaktopplysninger = (req, res) => {
 };
 
 module.exports.slettKontaktopplysninger = (req, res) => {
-  const { saksnummer } = req.params;
-  console.log('slettKontaktopplysninger', saksnummer);
+  const { saksnummer, juridiskorgnr } = req.params;
+  console.log('slettKontaktopplysninger', saksnummer, juridiskorgnr);
   res.status(204).send();
 };
