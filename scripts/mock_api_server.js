@@ -84,7 +84,7 @@ router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
 router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
-router.delete('/fagsaker/:saksnummer/kontaktopplysninger', Fagsaker.kontaktopplysninger.slett);
+router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
 router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksperioder);
 /**
