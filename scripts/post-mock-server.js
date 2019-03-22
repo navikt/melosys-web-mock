@@ -38,7 +38,7 @@ const testAlleEndepunkter = async () => {
   try {
     // Fagsaker
     const henlegg_fagsak = require(`${MOCK_DATA_DIR}/fagsaker/post/henlegg-fagsak`);
-    await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak);
+    await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak).then(printresult).catch(printerror);
     const aktoer = require(`${MOCK_DATA_DIR}/fagsaker/aktoerer/post/aktoer`);
     await instance.post('/fagsaker/4/aktoerer', aktoer).then(printresult).catch(printerror);
     const kontaktopplysninger = require(`${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger/post/kontaktopplysninger`);
