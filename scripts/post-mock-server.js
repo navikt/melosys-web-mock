@@ -1,5 +1,6 @@
 const colors = require('colors/safe');
-const axios = require("axios");
+const axios = require('axios');
+const { MOCK_DATA_DIR } = require('../mock.config');
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 const instance = axios.create({
@@ -36,56 +37,56 @@ const printerror = res => {
 const testAlleEndepunkter = async () => {
   try {
     // Fagsaker
-    const henlegg_fagsak = require('./mock_data/fagsaker/post/henlegg-fagsak');
+    const henlegg_fagsak = require(`${MOCK_DATA_DIR}/fagsaker/post/henlegg-fagsak`);
     await instance.post('/fagsaker/17117802280/henlegg', henlegg_fagsak);
-    const aktoer = require('./mock_data/fagsaker/aktoerer/post/aktoer');
+    const aktoer = require(`${MOCK_DATA_DIR}/fagsaker/aktoerer/post/aktoer`);
     await instance.post('/fagsaker/4/aktoerer', aktoer).then(printresult).catch(printerror);
-    const kontaktopplysninger = require('./mock_data/fagsaker/kontaktopplysninger/post/kontaktopplysninger');
+    const kontaktopplysninger = require(`${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger/post/kontaktopplysninger`);
     await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(printresult).catch(printerror);
 
     // Behandlinger
-    const behandinger_status = require('./mock_data/behandlinger/post/behandlinger-status');
+    const behandinger_status = require(`${MOCK_DATA_DIR}/behandlinger/post/behandlinger-status`);
     await instance.post('/behandlinger/4/status', behandinger_status).then(printresult).catch(printerror);
 
-    const behandlinger_perioder = require('./mock_data/behandlinger/post/behandlinger-perioder');
+    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlinger/post/behandlinger-perioder`);
     await instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(printresult).catch(printerror);
 
     // Soknader
-    const soknad = require('./mock_data/soknader/post/soknad-post');
+    const soknad = require(`${MOCK_DATA_DIR}/soknader/post/soknad-post`);
     await instance.post('/soknader/4', soknad).then(printresult).catch(printerror);
 
     // Avklartefakta
-    const avklartefakta4 = require('./mock_data/avklartefakta/avklartefakta-bid-4');
+    const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/avklartefakta-bid-4`);
     await instance.post('/avklartefakta/4', avklartefakta4).then(printresult).catch(printerror);
 
     // Lovvalgsperioder
-    const lovvalgsperioder = require('./mock_data/lovvalgsperioder/lovvalgsperiode-bid-4');
+    const lovvalgsperioder = require(`${MOCK_DATA_DIR}/lovvalgsperioder/lovvalgsperiode-bid-4`);
     await instance.post('/lovvalgsperioder/4', lovvalgsperioder).then(printresult).catch(printerror);
 
     // Oppgaver
-    const oversikt = require('./mock_data/oppgaver/oversikt');
+    const oversikt = require(`${MOCK_DATA_DIR}/oppgaver/oversikt`);
     await instance.post('/oppgaver/opprett', oversikt).then(printresult).catch(printerror);
 
-    const tilbakelegg = require('./mock_data/oppgaver/post/tilbakelegge');
+    const tilbakelegg = require(`${MOCK_DATA_DIR}/oppgaver/post/tilbakelegge`);
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(printresult).catch(printerror);
 
     // Journalforing
-    const journal_post_opprett = require('./mock_data/journalforing/post/opprett');
+    const journal_post_opprett = require(`${MOCK_DATA_DIR}/journalforing/post/opprett`);
     await instance.post('/journalforing/opprett', journal_post_opprett).then(printresult).catch(printerror);
 
-    const journal_post_tilordne = require('./mock_data/journalforing/post/tilordne');
+    const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(printresult).catch(printerror);
 
     // Vedtak
-    const vedtak_post = require('./mock_data/vedtak/post/vedtak-post');
+    const vedtak_post = require(`${MOCK_DATA_DIR}/vedtak/post/vedtak-post`);
     await instance.post('/vedtak/4', vedtak_post).then(printresult).catch(printerror);
 
     // Vilkar
-    const vilkar_post = require('./mock_data/vilkar/post/vilkar-post');
+    const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);
     await instance.post('/vilkaar/4', vilkar_post).then(printresult).catch(printerror);
 
     // Dokumenter
-    const dokument_post_utkast = require('./mock_data/dokumenter/post/post_utkast_og_opprett');
+    const dokument_post_utkast = require(`${MOCK_DATA_DIR}/dokumenter/post/post_utkast_og_opprett`);
     const behandlingID = 3;
     const produserbartDokument = 'MELDING_MANGLENDE_OPPLYSNINGER';
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(printresult).catch(printerror);
@@ -101,7 +102,8 @@ const testAlleEndepunkter = async () => {
 
 console.log('\n=======================================================');
 console.log('[POST] Mock server');
-console.log("---------------------------------------------------------");
+console.log('---------------------------------------------------------');
+
 testAlleEndepunkter();
 /*
 PUT vs POST for Creation

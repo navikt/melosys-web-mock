@@ -1,11 +1,11 @@
 const Ajv = require('ajv');
 
-const { SCRIPTS_DIR, SCHEMA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../mock.config');
 const Schema = require('../utils/schema-util');
 
 const definitions = Schema.lesSchemaDefinitonsSync();
 
-const MOCK_DATA_JOURNALFORING_DIR = `${SCRIPTS_DIR}/mock_data/journalforing`;
+const MOCK_DATA_JOURNALFORING_DIR = `${MOCK_DATA_DIR}/journalforing`;
 
 const testJournalPost = (postnavn) => {
   const postPath = `${MOCK_DATA_JOURNALFORING_DIR}/post/${postnavn}.json`;
