@@ -10,11 +10,11 @@ const ERR = require('../../utils/errors');
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
 
-const lesJsonFraFil = mockfile => JSON.parse(Utils.readFileAsync(mockfile));
+const lesJsonFraFil = async mockfile => JSON.parse(await Utils.readFileAsync(mockfile));
 
 const lesAktoer = async (saksnummer, rolle, representerer) => {
   const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
-  const aktoerer = lesJsonFraFil(mockfile);
+  const aktoerer = await lesJsonFraFil(mockfile);
   if (rolle && representerer) {
     return aktoerer
       .filter(aktor => aktor.rolleKode === rolle)
@@ -69,7 +69,7 @@ module.exports.sendAktoer = async (req, res) => {
   if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
   const mockfile = `${AKTOER_DATA_DIR}/post/aktoer.json`;
-  const aktoer = lesJsonFraFil(mockfile);
+  const aktoer = await lesJsonFraFil(mockfile);
 
   return res.json(aktoer);
 };
