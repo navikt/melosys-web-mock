@@ -29,9 +29,20 @@ module.exports.lesSchemaSync = schemapath => {
 module.exports.lesSchemaASync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
 };
-module.exports.lesSchemaFileSync = schemafile => {
+const lesSchemaFileSync = schemafile => {
   const schemapath = `${SCHEMA_DIR}/${schemafile}`;
   return Utils.readJsonAndParseSync(schemapath);
+};
+module.exports.lesSchemaFileSync = lesSchemaFileSync;
+
+module.exports.lesSchemaFilesSync = schemafiles => {
+  console.log(schemafiles);
+  let schemas = [];
+  schemafiles.forEach(filename => {
+    const schema = lesSchemaFileSync(filename);
+    schemas.push(schema);
+  });
+  return schemas;
 };
 module.exports.lesSchemaDefinitonsSync = () => {
   return Utils.readJsonAndParseSync(DEFINITION_SCHEMA);
