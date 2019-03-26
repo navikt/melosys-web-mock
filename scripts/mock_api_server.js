@@ -82,6 +82,7 @@ router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
+router.delete('/fagsaker/aktoerer/:id', Fagsaker.aktoer.slettAktoer);
 router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);

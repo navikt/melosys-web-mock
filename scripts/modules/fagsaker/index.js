@@ -1,5 +1,5 @@
 const { lesFagsakerKatalog, hentFagsak, henleggFagsak, oppfriskFagsak } = require('./fagsaker');
-const { lesAktoerKatalog, hentAktoerer, sendAktoer } = require('./aktoerer');
+const { lesAktoerKatalog, hentAktoerer, sendAktoer, slettAktoer } = require('./aktoerer');
 const { lesSokFagsakerKatalog, sokFagsak}  = require('./sok');
 const { lesKontaktopplysningerKatalog, hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
   lesSokFagsakerKatalog,
   lesKontaktopplysningerKatalog,
   fagsak: { hentFagsak, henleggFagsak, oppfriskFagsak },
-  aktoer: { hentAktoerer, sendAktoer },
+  aktoer: { hentAktoerer, sendAktoer, slettAktoer },
   sok: { sokFagsak },
   kontaktopplysninger: { hent: hentKontaktopplysninger, send: sendKontaktopplysninger, slett: slettKontaktopplysninger }
 };
