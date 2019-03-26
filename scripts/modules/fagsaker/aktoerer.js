@@ -10,9 +10,11 @@ const ERR = require('../../utils/errors');
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
 
+const lesJsonFraFil = mockfile => JSON.parse(Utils.readFileAsync(mockfile));
+
 const lesAktoer = async (saksnummer, rolle, representerer) => {
   const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
-  const aktoerer = JSON.parse(await Utils.readFileAsync(mockfile));
+  const aktoerer = lesJsonFraFil(mockfile);
   if (rolle && representerer) {
     return aktoerer
       .filter(aktor => aktor.rolleKode === rolle)
@@ -54,7 +56,7 @@ module.exports.hentAktoerer = async (req, res) => {
   }
 };
 
-module.exports.sendAktoer = (req, res) => {
+module.exports.sendAktoer = async (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = 'Fagsaker::aktoerer:sendAktoer';
@@ -63,5 +65,17 @@ module.exports.sendAktoer = (req, res) => {
   const schemajson = `${SCHEMA_DIR}/aktoer-post-schema.json`;
   const schema = Schema.lesSchemaSync(schemajson);
   const valid = SchemaPostValidator.test(label, schema, jsBody);
-  return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
+
+  if (!valid) return SchemaPostValidator.valideringFeil(req, res);
+
+  const mockfile = `${AKTOER_DATA_DIR}/post/aktoer.json`;
+  const aktoer = lesJsonFraFil(mockfile);
+
+  return res.json(aktoer);
+};
+
+module.exports.slettAktoer = (req, res) => {
+  const { id } = req.params;
+  console.log('slettAktoer', id);
+  res.status(204).send();
 };
