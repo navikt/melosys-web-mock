@@ -1,31 +1,38 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
-
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const Schema = require('../utils/schema-util');
 const Utils = require('../utils/utils');
 
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
 
+/**
+ * lesInngangKatalog
+ */
 module.exports.lesInngangKatalog = () => {
   return Schema.lesKatalogSync(INNGANG_MOCK_DIR);
 };
 
-const lesInngang = async (snr) => {
+const lesInngang = snr => {
   const mockfile = `${INNGANG_MOCK_DIR}/inngang-snr-${snr}.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfile));
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
+/**
+ * hent
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 module.exports.hent = async (req, res) => {
   try {
-    const snr = req.params.snr;
+    const { snr } = req.params;
+    if (!snr) {
+      Mock.manglerParamSaksnummer(req, res);
+    }
     const inngang = await lesInngang(snr);
     res.json(inngang);
-  } catch (err) {
-    console.log(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+  }
+  catch (err) {
+   Mock.serverError(req, res, err);
   }
 };

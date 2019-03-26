@@ -1,15 +1,21 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
-const URL = require('url');
 
 const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../../mock.config');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
-const ERR = require('../../utils/errors');
+const Mock = require('../../utils/mock-util');
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
 
+/**
+ * lesAktoer
+ * @param saksnummer
+ * @param rolle
+ * @param representerer
+ * @returns {Promise<*>}
+ */
 const lesAktoer = async (saksnummer, rolle, representerer) => {
   const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
   const aktoerer = await Utils.readJsonAndParseAsync(mockfile);
@@ -27,19 +33,25 @@ const lesAktoer = async (saksnummer, rolle, representerer) => {
   return aktoerer;
 };
 
+/**
+ * lesAktoerKatalog
+ */
 module.exports.lesAktoerKatalog = () => {
   return Schema.lesKatalogSync(AKTOER_DATA_DIR);
 };
 
+/**
+ * hentAktoerer
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
 module.exports.hentAktoerer = async (req, res) => {
   const { saksnummer } = req.params;
   const { rolle, representerer } = req.query;
-  const url = URL.parse(req.url);
 
   if (!saksnummer) {
-    const message = "Mangler saksnummer";
-    const melding = ERR.badRequest400(url.pathname, message);
-    return res.status(400).send(melding);
+    return Mock.manglerParamSaksnummer(req, res);
   }
 
   try {
@@ -47,34 +59,54 @@ module.exports.hentAktoerer = async (req, res) => {
     res.json(aktoer);
   }
   catch (e) {
-    console.error(e);
-    logger.error(e.message);
-    const melding = ERR.serverError500(url.pathname, e.message);
-    return res.status(500).send(melding);
+    Mock.serverError(req, res, e);
   }
 };
 
+/**
+ * sendAktoer
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
 module.exports.sendAktoer = async (req, res) => {
-  const { saksnummer } = req.params;
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = 'Fagsaker::aktoerer:sendAktoer';
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
-  const schemajson = `${SCHEMA_DIR}/aktoer-post-schema.json`;
-  const schema = Schema.lesSchemaSync(schemajson);
-  const valid = SchemaPostValidator.test(label, schema, jsBody);
+  try {
+    const { saksnummer } = req.params;
+    if (!saksnummer) {
+      return Mock.manglerParamSaksnummer(req, res);
+    }
 
-  if (!valid) return SchemaPostValidator.valideringFeil(req, res);
+    const schemajson = `${SCHEMA_DIR}/aktoer-post-schema.json`;
+    const schema = Schema.lesSchemaSync(schemajson);
+    const valid = SchemaPostValidator.test(label, schema, jsBody);
 
-  const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
-  const aktoer = await Utils.readJsonAndParseAsync(mockfile);
+    if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
-  return res.json(aktoer);
+    const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
+    const aktoer = await Utils.readJsonAndParseAsync(mockfile);
+
+    return res.json(aktoer);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };
 
 module.exports.slettAktoer = (req, res) => {
-  const { id } = req.params;
-  console.log('slettAktoer', id);
-  res.status(204).send();
+  try {
+    const { databaseid } = req.params;
+    if (!databaseid) {
+      return Mock.badRequstParam(req, res, 'Mangler databaseid');
+    }
+    console.log('slettAktoer', databaseid);
+    res.status(204).send();
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };
