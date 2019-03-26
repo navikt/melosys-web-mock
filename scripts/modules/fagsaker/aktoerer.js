@@ -55,6 +55,7 @@ module.exports.hentAktoerer = async (req, res) => {
 };
 
 module.exports.sendAktoer = async (req, res) => {
+  const { saksnummer } = req.params;
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = 'Fagsaker::aktoerer:sendAktoer';
@@ -66,7 +67,7 @@ module.exports.sendAktoer = async (req, res) => {
 
   if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
-  const mockfile = `${AKTOER_DATA_DIR}/post/aktoer.json`;
+  const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
   const aktoer = await Utils.readJsonAndParseAsync(mockfile);
 
   return res.json(aktoer);
