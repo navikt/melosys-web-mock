@@ -1,12 +1,8 @@
-const URL = require('url');
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
-
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
-const ERR = require('../../utils/errors');
+const Mock = require('../../utils/mock-util');
 
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
@@ -22,10 +18,7 @@ module.exports.hentFagsak = async (req, res) => {
     res.json(fagsaker);
   }
   catch (err) {
-    console.error(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 
@@ -39,10 +32,6 @@ module.exports.henleggFagsak = async (req, res) => {
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch(err) {
-    console.log(err);
-    logger.error(err);
-    const url = URL.parse(req.url);
-    const melding = ERR.serverError500(url, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };

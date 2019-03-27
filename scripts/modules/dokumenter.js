@@ -3,6 +3,7 @@ const URL = require('url');
 
 const Utils = require('../utils/utils');
 const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const {  MOCK_DATA_DIR } = require('../../mock.config');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
@@ -26,18 +27,40 @@ const isRestParamsInValid = req => {
   }
   return melding;
 };
+
+/**
+ * lesDokumenterKatalog
+ */
 module.exports.lesDokumenterKatalog = () => {
   return Schema.lesKatalogSync(MOCK_DOKUMENTER_DATA_DIR);
 };
-const lesOversikt = async () => {
+
+const lesOversikt = () => {
   const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/oversikt.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfile));
-};
-module.exports.oversikt = async (req, res) => {
-  const oversikt = await lesOversikt();
-  res.json(oversikt);
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
+/**
+ * oversikt
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+module.exports.oversikt = async (req, res) => {
+  try {
+    const oversikt = await lesOversikt();
+    res.json(oversikt);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
+};
+
+/**
+ *
+ * @param req
+ * @param res
+ */
 module.exports.hentPdf = (req, res) => {
   //const { journalforingID, dokumentID } = req.params;
   const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/dokumenttest.pdf`;

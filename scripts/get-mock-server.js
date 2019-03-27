@@ -48,7 +48,7 @@ const testAlleEndepunkter = async () => {
     await instance.get('/oppgaver/oversikt').then(printresult).catch(printerror);
     await instance.get('/oppgaver/reset').then(printresult).catch(printerror);
     await instance.get('/journalforing/4').then(printresult).catch(printerror);
-    await instance.get('/personer/?fnr=19117220349').then(printresult).catch(printerror);
+    await instance.get('/personer/?fnr=17117802280').then(printresult).catch(printerror);
     await instance.get('/organisasjoner/?orgnr=810072512').then(printresult).catch(printerror);
     await instance.get('/saksopplysninger/oppfriskning/4/status').then(printresult).catch(printerror);
     await instance.get('/saksopplysninger/oppfriskning/4').then(printresult).catch(printerror);

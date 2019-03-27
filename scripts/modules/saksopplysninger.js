@@ -1,12 +1,18 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
-
 const memcache = require('../utils/memcache');
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 
+/**
+ * oppfrisk
+ * @param req
+ * @param res
+ * @returns {*}
+ */
 module.exports.oppfrisk = (req, res) => {
   try {
     const { behandlingID } = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
     const status = memcache.getLibraryItem(behandlingID);
     if (!status) {
       memcache.createLibraryItem(behandlingID);
@@ -14,18 +20,23 @@ module.exports.oppfrisk = (req, res) => {
     }
     res.status(204).send();
   }
-
   catch (err) {
-    console.error(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 
+/**
+ * status
+ * @param req
+ * @param res
+ * @returns {*|Request|Promise<any>}
+ */
 module.exports.status = (req, res) => {
   try {
     const { behandlingID } = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
     const status = memcache.getLibraryItem(behandlingID);
     if (!status) {
       console.log('Ingen cache entry for behandlingID:', behandlingID);
@@ -42,9 +53,6 @@ module.exports.status = (req, res) => {
     res.json('PROGRESS');
   }
   catch (err) {
-    console.error(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };

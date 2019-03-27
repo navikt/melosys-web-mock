@@ -1,3 +1,4 @@
+const Ajv = require('ajv');
 const glob = require('glob');
 const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
@@ -29,13 +30,25 @@ module.exports.lesSchemaSync = schemapath => {
 module.exports.lesSchemaASync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
 };
-module.exports.lesSchemaFileSync = schemafile => {
+const lesSchemaFileSync = schemafile => {
   const schemapath = `${SCHEMA_DIR}/${schemafile}`;
   return Utils.readJsonAndParseSync(schemapath);
 };
-module.exports.lesSchemaDefinitonsSync = () => {
+module.exports.lesSchemaFileSync = lesSchemaFileSync;
+
+module.exports.lesSchemaFilesSync = schemafiles => {
+  console.log(schemafiles);
+  let schemas = [];
+  schemafiles.forEach(filename => {
+    const schema = lesSchemaFileSync(filename);
+    schemas.push(schema);
+  });
+  return schemas;
+};
+const lesSchemaDefinitonsSync = () => {
   return Utils.readJsonAndParseSync(DEFINITION_SCHEMA);
 };
+module.exports.lesSchemaDefinitonsSync = lesSchemaDefinitonsSync;
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
@@ -83,8 +96,15 @@ module.exports.lesKatalogElement = path => {
     document,
   };
 };
+const schemaValidator = schemaNavn => {
+  const definitions = lesSchemaDefinitonsSync();
+  const schema = lesSchemaFileSync(schemaNavn);
+  const ajv = new Ajv({allErrors: true});
+  return ajv.addSchema(definitions).compile(schema);
+};
+module.exports.schemaValidator = schemaValidator;
 
-module.exports.runTest = (data, ajv, validate) => {
+module.exports.runTest = (data, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
@@ -100,7 +120,24 @@ module.exports.runTest = (data, ajv, validate) => {
     });
   }
 };
-
+/*
+module.exports.runTest2 = (data, validate) => {
+  const { navn, document } = data;
+  const valid = validate(document);
+  if (valid) {
+    incSuccess();
+    console.log(' ',emoji.get('ballot_box_with_check'),' ',colors.green(navn));
+  }
+  else {
+    incFailure();
+    console.log(colors.red('\tInvalid: '+navn));
+    humanReadableErrors(validate.errors).forEach((msg, index) => {
+      console.log('\t', (index < 10 ? ` ${index}` : index), msg);
+      logger.error(`${navn} ${msg}`);
+    });
+  }
+};
+*/
 module.exports.prettyTittel = label => {
   console.log(colors.white(label));
 };
