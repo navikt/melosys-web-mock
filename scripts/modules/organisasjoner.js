@@ -16,7 +16,7 @@ const lesOrganisasjon = orgnr => {
   const mockfile = `${MOCK_DATA_ORG_DIR}/orgnr-${orgnr}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
-
+module.exports.lesOrganisasjon = lesOrganisasjon;
 /**
  * Hent organisasjon git /api/organisasjon/?orgnr=:orgnr
  * @param req

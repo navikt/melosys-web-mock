@@ -32,6 +32,7 @@ const lesAktoer = async (saksnummer, rolle, representerer) => {
   }
   return aktoerer;
 };
+module.exports.lesAktoer = lesAktoer;
 
 /**
  * lesAktoerKatalog
