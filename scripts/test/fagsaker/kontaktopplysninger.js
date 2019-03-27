@@ -1,25 +1,21 @@
-const Ajv = require('ajv');
-const ajv = new Ajv({allErrors: true});
-
 const Schema = require('../../utils/schema-util');
-const schema = Schema.lesSchemaFileSync('kontaktopplysninger-schema.json');
 
 const Fagsaker = require('../../modules/fagsaker');
 const catalog = Fagsaker.lesKontaktopplysningerKatalog();
-const definitions = Schema.lesSchemaDefinitonsSync();
 
-const validate = ajv.addSchema(definitions).compile(schema);
+const validate = Schema.schemaValidator('kontaktopplysninger-schema.json');
+
 const printTitle = () => Schema.prettyTittel('Fagsaker Kontaktopplysninger');
 
 const testAll = () => {
   printTitle();
-  catalog.forEach((elem) => Schema.runTest(elem, ajv, validate));
+  catalog.forEach(elem => Schema.runTest(elem, validate));
 };
 
-const testOne = (path) => {
+const testOne = path => {
   printTitle();
   const elem = Schema.lesKatalogElement(path);
-  return Schema.runTest(elem, ajv, validate);
+  return Schema.runTest(elem, validate);
 };
 
 const kontaktopplysninger = {

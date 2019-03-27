@@ -1,10 +1,8 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
 const assert = require('assert');
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
-const ERR = require('../../utils/errors');
+const Mock = require('../../utils/mock-util');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 
@@ -71,9 +69,6 @@ module.exports.sokFagsak = async (req, res) => {
       return res.json(fagsakListe);
     }
   } catch (err) {
-    console.log(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };

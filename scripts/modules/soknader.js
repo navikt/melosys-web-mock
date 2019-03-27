@@ -6,7 +6,7 @@ const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
 
@@ -16,12 +16,20 @@ const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(Utils.readFileSync(mockfileSoknad));
 };
-const lesSoknadAsync = async (behandlingID) => {
-  const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfileSoknad));
+/**
+ * lesSoknadAsync
+ * @param behandlingID
+ * @returns {Promise<*>}
+ */
+const lesSoknadAsync = behandlingID => {
+  const mockfile = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 module.exports.lesSoknad = lesSoknad;
 
+/**
+ * lesSoknadKatalog
+ */
 module.exports.lesSoknadKatalog = () => {
   return Schema.lesKatalogSync(MOCK_SOKNAD_DIR);
 };
@@ -33,16 +41,16 @@ module.exports.lesSoknadKatalog = () => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
-  const behandlingID = req.params.behandlingID;
+  const { behandlingID } = req.params;
   try {
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
     const soknad = await lesSoknadAsync(behandlingID);
     return res.json(soknad);
   }
   catch (err) {
-    logger.error(err);
-    console.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 /**
@@ -63,9 +71,7 @@ module.exports.send = async (req, res) => {
     return valid ? res.json(body) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
-    console.log(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 

@@ -1,9 +1,5 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
-const URL = require('url');
-
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 const MOCK_DATA_ORG_DIR = `${MOCK_DATA_DIR}/organisasjoner`;
@@ -16,11 +12,11 @@ module.exports.lesOrganisasjonsKatalog = () => {
  * @param orgnr
  * @returns {{}}
  */
-const lesOrganisasjon = async (orgnr) => {
+const lesOrganisasjon = orgnr => {
   const mockfile = `${MOCK_DATA_ORG_DIR}/orgnr-${orgnr}.json`;
-  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {};
+  return Utils.readJsonAndParseAsync(mockfile);
 };
-
+module.exports.lesOrganisasjon = lesOrganisasjon;
 /**
  * Hent organisasjon git /api/organisasjon/?orgnr=:orgnr
  * @param req
@@ -28,20 +24,18 @@ const lesOrganisasjon = async (orgnr) => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
-  const orgnr = req.query.orgnr;
-  if (orgnr && orgnr.length === 9) {
+  try {
+    const { orgnr } = req.query;
+    if (!orgnr) {
+      return Mock.manglerParamOrgnr(req, res);
+    }
+    else if (orgnr.length !== 9)  {
+      return Mock.badRequstParam(req, res, 'Orgnr må ha 9 siffer');
+    }
     const organisasjon = await lesOrganisasjon(orgnr);
     return res.json(organisasjon);
   }
-  let message = '';
-  if (!orgnr) {
-    message = 'Mangler orgnr';
+  catch (err) {
+    Mock.serverError(req, res, err);
   }
-  else if (orgnr.length !== 9) {
-    message = 'Orgnr må ha 9 siffer';
-  }
-  logger.warn(message);
-  const url = URL.parse(req.url);
-  const melding = ERR.badRequest400(url.pathname, message);
-  return res.status(400).send(melding);
 };

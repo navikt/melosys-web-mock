@@ -1,33 +1,38 @@
-const log4js = require('log4js');
-const logger = log4js.getLogger('mock');
-const URL = require('url');
-
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/behandlingsresultat`;
 
-const lesBehandlingsresultat = async (bid) => {
+const lesBehandlingsresultat = bid => {
   const mockfile = `${BEHANDLINGSRESULTAT_MOCK_DATA_DIR}/bid-${bid}.json`;
-  return await Utils.existsAsync(mockfile) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {};
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
+/**
+ * lesBehandlingsresultatKatalog
+ */
 module.exports.lesBehandlingsresultatKatalog = () => {
   return Schema.lesKatalogSync(BEHANDLINGSRESULTAT_MOCK_DATA_DIR);
 };
 
+/**
+ * hent
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
 module.exports.hent = async (req, res) => {
-  const bid = req.params.behandlingID;
-  if (bid && bid.length >= 1) {
-    const resultat = await lesBehandlingsresultat(bid);
+  try {
+    const { behandlingID } = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
+    const resultat = await lesBehandlingsresultat(behandlingID);
     return res.json(resultat);
   }
-
-  let message = 'Mangler behandlingsid';
-  logger.warn(message);
-  const url = URL.parse(req.url);
-  const melding = ERR.badRequest400(url.pathname, message);
-  return res.status(400).send(melding);
+  catch (err) {
+    Mock.badRequstParam(req, res, err);
+  }
 };

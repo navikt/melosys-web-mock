@@ -6,8 +6,7 @@ const { MOCK_DATA_DIR } = require('../../../mock.config');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
-
-const ERR = require('../../utils/errors');
+const Mock = require('../../utils/mock-util');
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
 const lesOversikt = async () => {
@@ -15,37 +14,55 @@ const lesOversikt = async () => {
   return JSON.parse(await Utils.readFileAsync(mockfil));
 };
 
+/**
+ * lesOppgaveKatalog
+ */
 module.exports.lesOppgaveKatalog = () => {
   return Schema.lesKatalogSync(MOCK_DATA_OPPGAVER_DIR);
 };
 
+/**
+ * hentPlukk
+ * @param req
+ * @param res
+ * @returns {Promise<*|Request|Promise<any>>}
+ */
 module.exports.hentPlukk = async (req, res) => {
   try {
     const oversikt = await lesOversikt();
     return res.json(_.sample(oversikt, 4));
   }
   catch (err) {
-    console.log(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 
+/**
+ * sendPlukk
+ * @param req
+ * @param res
+ */
 module.exports.sendPlukk = (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug("oppgaver:sendPlukk", JSON.stringify(jsBody));
-  const { oppgavetype } = jsBody;
-  let oppgave;
-  if (oppgavetype === 'BEH_SAK') {
-    oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
+
+  try {
+    const { oppgavetype } = jsBody;
+    let oppgave;
+    if (oppgavetype === 'BEH_SAK') {
+      oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
+    }
+    else { // JFR
+      // saknummer optional
+      oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalpostID:'DOK_321' };
+    }
+    res.json(oppgave);
   }
-  else { // JFR
-    // saknummer optional
-    oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalpostID:'DOK_321' };
+  catch (err) {
+    Mock.serverError(req, res, err);
   }
-  res.json(oppgave);
+
 };
 /**
  * Oversikt
@@ -59,23 +76,43 @@ module.exports.oversikt = async (req, res) => {
     return res.json(oversikt);
   }
   catch (err) {
-    console.log(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
+/**
+ * Opprett
+ * @param req
+ * @param res
+ */
 module.exports.opprett = (req, res) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug("oppgaver:opprett", JSON.stringify(jsBody));
-  res.json(jsBody);
+  try {
+    res.json(jsBody);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };
-
+/**
+ * reset
+ * @param req
+ * @param res
+ */
 module.exports.reset = (req, res) => {
-  res.json({});
+  try {
+    res.json({});
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };
-
+/**
+ * tilbakelegg
+ * @param req
+ * @param res
+ */
 module.exports.tilbakelegg = (req, res) => {
   const schema = Schema.lesSchemaFileSync('oppgaver-tilbakelegge-schema.json');
 
@@ -88,8 +125,6 @@ module.exports.tilbakelegg = (req, res) => {
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
-    console.log(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
