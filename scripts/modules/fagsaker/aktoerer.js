@@ -8,6 +8,8 @@ const Schema = require('../../utils/schema-util');
 const Mock = require('../../utils/mock-util');
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
+const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
+
 
 /**
  * lesAktoer
@@ -32,7 +34,6 @@ const lesAktoer = async (saksnummer, rolle, representerer) => {
   }
   return aktoerer;
 };
-module.exports.lesAktoer = lesAktoer;
 
 /**
  * lesAktoerKatalog
@@ -88,7 +89,7 @@ module.exports.sendAktoer = async (req, res) => {
 
     if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
-    const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
+    const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json`;
     const aktoer = await Utils.readJsonAndParseAsync(mockfile);
 
     return res.json(aktoer);

@@ -1,4 +1,4 @@
-const Ajv = require('ajv');
+//const Ajv = require('ajv');
 
 const Schema = require('../utils/schema-util');
 const { lesAvklartefaktaKatalog, lesAvklartefaktaPostMock } = require('../modules/avklartefakta');
