@@ -1,5 +1,6 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
+const _ = require('lodash');
 
 const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../../mock.config');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
@@ -9,10 +10,10 @@ const Mock = require('../../utils/mock-util');
 
 const KONTAKT_OPPLYSNINGER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger`;
 
-const lesKontaktopplysninger = async (saksnummer, orgnr) => {
+const lesKontaktopplysning = async (saksnummer, juridiskorgnr) => {
   const mockfile = `${KONTAKT_OPPLYSNINGER_DATA_DIR }/kontaktopplysninger-snr-${saksnummer}.json`;
-  const kontaktopplysninger = JSON.parse(await Utils.readFileAsync(mockfile));
-  return ( orgnr ) ? kontaktopplysninger.filter(elem => elem.orgnr === orgnr) : kontaktopplysninger;
+  const kontaktopplysninger = await Utils.readJsonAndParseAsync(mockfile);
+  return kontaktopplysninger.find(elem => elem.juridiskorgnr === juridiskorgnr);
 };
 
 /**
@@ -45,10 +46,12 @@ const manglerParamSakEllerOrgNummer = (req, res,) => {
 module.exports.hentKontaktopplysninger = async (req, res) => {
   if (manglerParamSakEllerOrgNummer(req, res)) return;
   try {
-    const { saksnummer } = req.params;
-    const { rolle: orgnr } = req.query;
-    const kontaktopplysninger = await lesKontaktopplysninger(saksnummer, orgnr);
-    res.json(kontaktopplysninger);
+    const { saksnummer, juridiskorgnr } = req.params;
+    const kontaktopplysninger = await lesKontaktopplysning(saksnummer, juridiskorgnr);
+    if (!kontaktopplysninger) {
+      return Mock.notFound(req, res, `Ingen kontaktopplysinger funnet for, ${saksnummer} og ${juridiskorgnr}`);
+    }
+    res.json(_.omit(kontaktopplysninger, 'juridiskorgnr'));
   }
   catch (e) {
     return Mock.serverError(req, res, e);
