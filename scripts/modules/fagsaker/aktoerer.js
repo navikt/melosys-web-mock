@@ -90,8 +90,12 @@ module.exports.sendAktoer = async (req, res) => {
     if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
     const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json`;
-    const aktoer = await Utils.readJsonAndParseAsync(mockfile);
-
+    const response = await Utils.readJsonAndParseAsync(mockfile);
+    const { orgnr } = jsBody;
+    const aktoer = {
+      ...response,
+      orgnr,
+    };
     return res.json(aktoer);
   }
   catch (err) {

@@ -9,10 +9,9 @@ const Mock = require('../../utils/mock-util');
 
 const KONTAKT_OPPLYSNINGER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger`;
 
-const lesKontaktopplysninger = async (saksnummer, orgnr) => {
+const lesKontaktopplysning = saksnummer => {
   const mockfile = `${KONTAKT_OPPLYSNINGER_DATA_DIR }/kontaktopplysninger-snr-${saksnummer}.json`;
-  const kontaktopplysninger = JSON.parse(await Utils.readFileAsync(mockfile));
-  return ( orgnr ) ? kontaktopplysninger.filter(elem => elem.orgnr === orgnr) : kontaktopplysninger;
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
 /**
@@ -45,9 +44,20 @@ const manglerParamSakEllerOrgNummer = (req, res,) => {
 module.exports.hentKontaktopplysninger = async (req, res) => {
   if (manglerParamSakEllerOrgNummer(req, res)) return;
   try {
-    const { saksnummer } = req.params;
-    const { rolle: orgnr } = req.query;
-    const kontaktopplysninger = await lesKontaktopplysninger(saksnummer, orgnr);
+    const { saksnummer, juridiskorgnr } = req.params;
+    const opplysninger = await lesKontaktopplysning(saksnummer);
+    const kontaktopplysninger = {
+      ...opplysninger,
+      kontaktorgnr: juridiskorgnr,
+    };
+    /*
+    const organisasjon = await Organisasjoner.lesOrganisasjon(juridiskorgnr);
+    console.log(organisasjon);
+    const kontaktopplysninger = {
+      kontaktnavn: organisasjon.navn,
+      kontaktorgnr: juridiskorgnr,
+    };
+    */
     res.json(kontaktopplysninger);
   }
   catch (e) {
