@@ -49,14 +49,14 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.sendOpprettNySak = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('journalforing-opprett-schema.json');
+  const schemaNavn = 'journalforing-opprett-schema.json';
 
   const body = req.body;
   try {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = 'Journalforing:sendOpprettNySak';
     logger.debug(label, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
     return (valid) ? res.status(204).json('') : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
@@ -71,14 +71,14 @@ module.exports.sendOpprettNySak = (req, res) => {
  * @returns {*}
  */
 module.exports.sendTilordneSak = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('journalforing-tilordne-schema.json');
+  const schemaNavn = 'journalforing-tilordne-schema.json';
 
   const body = req.body;
   try {
     let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = 'Journalforing:sendTilordneSak';
     logger.debug(label, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
     return (valid) ? res.status(204).json('') : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

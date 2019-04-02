@@ -21,17 +21,17 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
-
-module.exports.test = (label, schema, data) => {
+module.exports.test2 = (label, schemaNavn, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
     return false;
   }
-  if (!schema) {
-    console.log(colors.bgYellow('schema:test, mangler schema'));
+  if (!schemaNavn) {
+    console.log(colors.bgYellow('schema:test, mangler schemaNavn'));
     return false;
   }
 
+  const schema = Schema.lesSchemaFileSync(schemaNavn);
   const ajv = new Ajv({allErrors: true});
   const validate = ajv.addSchema(definitions).compile(schema);
   const valid = validate(data);
@@ -47,6 +47,7 @@ module.exports.test = (label, schema, data) => {
   }
   return valid;
 };
+/*
 module.exports.test2 = (label, defs, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
@@ -74,7 +75,7 @@ module.exports.test2 = (label, defs, schema, data) => {
   }
   return valid;
 };
-
+*/
 module.exports.testAsync = async (label, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));

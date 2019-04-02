@@ -2,7 +2,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 const _ = require('lodash');
 
-const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../../mock.config');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
@@ -73,9 +73,8 @@ module.exports.sendKontaktopplysninger = (req, res) => {
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
   try {
-    const schemajson = `${SCHEMA_DIR}/kontaktopplysninger-post-schema.json`;
-    const schema = Schema.lesSchemaSync(schemajson);
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const schemaNavn = 'kontaktopplysninger-post-schema.json';
+    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
