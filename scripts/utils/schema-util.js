@@ -1,4 +1,5 @@
 const Ajv = require('ajv');
+const { JSONPath } = require('jsonpath-plus');
 const glob = require('glob');
 const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
@@ -96,11 +97,35 @@ module.exports.lesKatalogElement = path => {
     document,
   };
 };
+const lesEmbeddedSchemas = schemaNavn => {
+  const SCHEMA_URI = 'http://melosys.nav.no/schemas/';
+  const refs = JSONPath({ path: '$..$ref', json: schemaNavn });
+  const defs = refs.filter(item => item.startsWith(SCHEMA_URI));
+  const embeddedSchemas = [];
+  const schemaNames = [];
+
+  if (defs && defs.length > 0) {
+    defs.forEach (def => {
+      const hashPos = def.indexOf('#');
+      const name = def.substring(SCHEMA_URI.length, hashPos);
+      if (name.startsWith('definitions-schema.json')) return;
+      if(schemaNames.includes(name)) return;
+      schemaNames.push(name);
+      const embeddedSchema = lesSchemaFileSync(name);
+      embeddedSchemas.push(embeddedSchema);
+    });
+  }
+  return embeddedSchemas;
+};
+module.exports.lesEmbeddedSchemas = lesEmbeddedSchemas;
+
 const schemaValidator = schemaNavn => {
   const definitions = lesSchemaDefinitonsSync();
+
+  const embeddedSchemas = lesEmbeddedSchemas(schemaNavn);
   const schema = lesSchemaFileSync(schemaNavn);
   const ajv = new Ajv({allErrors: true});
-  return ajv.addSchema(definitions).compile(schema);
+  return ajv.addSchema([definitions, ...embeddedSchemas]).compile(schema);
 };
 module.exports.schemaValidator = schemaValidator;
 
@@ -120,24 +145,6 @@ module.exports.runTest = (data, validate) => {
     });
   }
 };
-/*
-module.exports.runTest2 = (data, validate) => {
-  const { navn, document } = data;
-  const valid = validate(document);
-  if (valid) {
-    incSuccess();
-    console.log(' ',emoji.get('ballot_box_with_check'),' ',colors.green(navn));
-  }
-  else {
-    incFailure();
-    console.log(colors.red('\tInvalid: '+navn));
-    humanReadableErrors(validate.errors).forEach((msg, index) => {
-      console.log('\t', (index < 10 ? ` ${index}` : index), msg);
-      logger.error(`${navn} ${msg}`);
-    });
-  }
-};
-*/
 module.exports.prettyTittel = label => {
   console.log(colors.white(label));
 };

@@ -19,6 +19,7 @@
     "get-installed-path": "^4.0.8",
     "glob": "^7.1.2",
     "jsdoc": "^3.5.5",
+    "jsonpath-plus": "^0.18.0",
     "lodash": "^4.17.11",
     "log4js": "^3.0.5",
     "melosys-schema": "^1.11.0",
