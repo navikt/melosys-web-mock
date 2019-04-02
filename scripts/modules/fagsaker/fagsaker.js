@@ -23,12 +23,12 @@ module.exports.hentFagsak = async (req, res) => {
 };
 
 module.exports.henleggFagsak = async (req, res) => {
-  const schema = Schema.lesSchemaFileSync('henlegg-fagsak-schema.json');
+  const schemaNavn = 'henlegg-fagsak-schema.json';
   const label = 'Fagsaker::fagsak:henlegg';
   try {
     const body = req.body;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch(err) {

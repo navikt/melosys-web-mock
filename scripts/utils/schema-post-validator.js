@@ -21,46 +21,16 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
-
-module.exports.test = (label, schema, data) => {
+module.exports.test = (label, schemaNavn, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
     return false;
   }
-  if (!schema) {
-    console.log(colors.bgYellow('schema:test, mangler schema'));
+  if (!schemaNavn) {
+    console.log(colors.bgYellow('schema:test, mangler schemaNavn'));
     return false;
   }
-
-  const ajv = new Ajv({allErrors: true});
-  const validate = ajv.addSchema(definitions).compile(schema);
-  const valid = validate(data);
-
-  if (valid) {
-    console.log(emoji.get('white_check_mark'), `[POST] ${label}`);
-  }
-  else {
-    console.dir(validate.errors);
-    const errmsgs = humanReadableErrors(validate.errors);
-    console.log(emoji.get('x'),`${label}`, colors.bgRed(`Invalid post.body:`));
-    errmsgs.forEach((msg) => {console.log(' ',msg)});
-  }
-  return valid;
-};
-module.exports.test2 = (label, defs, schema, data) => {
-  if (!label) {
-    console.log(colors.bgYellow('schema:test, mangler label'));
-    return false;
-  }
-  if (!schema) {
-    console.log(colors.bgYellow('schema:test, mangler schema'));
-    return false;
-  }
-
-  const ajv = new Ajv({allErrors: true});
-  const extraDefintions = Schema.lesSchemaFilesSync(defs);
-
-  const validate = ajv.addSchema([definitions, ...extraDefintions]).compile(schema);
+  const validate = Schema.schemaValidator(schemaNavn);
   const valid = validate(data);
 
   if (valid) {

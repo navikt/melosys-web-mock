@@ -61,13 +61,8 @@ module.exports.send = (req, res) => {
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
   try {
-    /*
-    const schema = Schema.lesSchemaFileSync('avklartefakta-post-schema.json');
-    const defs = ['definitions-avklartefakta-schema.json'];
-    const valid = SchemaPostValidator.test2(label, defs, schema, jsBody);
-    */
-    const schema = Schema.lesSchemaFileSync('avklartefakta-schema.json');
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const schemaNavn = 'avklartefakta-post-schema.json';
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

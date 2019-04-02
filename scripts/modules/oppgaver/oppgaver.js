@@ -114,14 +114,14 @@ module.exports.reset = (req, res) => {
  * @param res
  */
 module.exports.tilbakelegg = (req, res) => {
-  const schema = Schema.lesSchemaFileSync('oppgaver-tilbakelegge-schema.json');
+  const schemaNavn = 'oppgaver-tilbakelegge-schema.json';
 
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   const label = 'Oppgaver:tilbakelegg';
   logger.debug(label, JSON.stringify(jsBody));
   try {
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

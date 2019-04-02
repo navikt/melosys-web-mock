@@ -12,7 +12,7 @@ const Schema = require('../utils/schema-util');
 const logger = log4js.getLogger('mock');
 const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/dokumenter`;
 
-const schema = Schema.lesSchemaFileSync('dokumenter-post-schema.json');
+const schemaNavn = 'dokumenter-post-schema.json';
 
 const isRestParamsInValid = req => {
   const url = URL.parse(req.url);
@@ -105,7 +105,7 @@ module.exports.lagPdfUtkast = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = "Dokument:lagPdfUtkast";
     logger.debug(`${label}`, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     if (!valid) {
       return SchemaPostValidator.valideringFeil(req, res);
     }
@@ -146,7 +146,7 @@ module.exports.opprettDokument = (req, res) => {
       const label = "Dokument:opprettDokument";
       logger.debug(`${label}`, JSON.stringify(jsBody));
 
-      const valid = SchemaPostValidator.test(label, schema, jsBody);
+      const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
       if (!valid) {
         return SchemaPostValidator.valideringFeil(req, res);

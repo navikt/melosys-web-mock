@@ -1,7 +1,7 @@
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
-const { MOCK_DATA_DIR, SCHEMA_DIR } = require('../../../mock.config');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
@@ -83,9 +83,8 @@ module.exports.sendAktoer = async (req, res) => {
       return Mock.manglerParamSaksnummer(req, res);
     }
 
-    const schemajson = `${SCHEMA_DIR}/aktoer-post-schema.json`;
-    const schema = Schema.lesSchemaSync(schemajson);
-    const valid = SchemaPostValidator.test(label, schema, jsBody);
+    const schemaNavn = 'aktoer-post-schema.json';
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
     if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
