@@ -61,7 +61,7 @@ module.exports.send = (req, res) => {
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
   try {
-    const schemaNavn = 'avklartefakta-schema.json';
+    const schemaNavn = 'avklartefakta-post-schema.json';
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }

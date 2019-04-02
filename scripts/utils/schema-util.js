@@ -97,9 +97,9 @@ module.exports.lesKatalogElement = path => {
     document,
   };
 };
-const lesEmbeddedSchemas = schemaNavn => {
+const lesEmbeddedSchemas = schema => {
   const SCHEMA_URI = 'http://melosys.nav.no/schemas/';
-  const refs = JSONPath({ path: '$..$ref', json: schemaNavn });
+  const refs = JSONPath({ path: '$..$ref', json: schema });
   const defs = refs.filter(item => item.startsWith(SCHEMA_URI));
   const embeddedSchemas = [];
   const schemaNames = [];
@@ -122,8 +122,8 @@ module.exports.lesEmbeddedSchemas = lesEmbeddedSchemas;
 const schemaValidator = schemaNavn => {
   const definitions = lesSchemaDefinitonsSync();
 
-  const embeddedSchemas = lesEmbeddedSchemas(schemaNavn);
   const schema = lesSchemaFileSync(schemaNavn);
+  const embeddedSchemas = lesEmbeddedSchemas(schema);
   const ajv = new Ajv({allErrors: true});
   return ajv.addSchema([definitions, ...embeddedSchemas]).compile(schema);
 };
