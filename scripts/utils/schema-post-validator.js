@@ -21,7 +21,7 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
-module.exports.test2 = (label, schemaNavn, data) => {
+module.exports.test = (label, schemaNavn, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
     return false;

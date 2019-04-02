@@ -105,7 +105,7 @@ module.exports.lagPdfUtkast = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = "Dokument:lagPdfUtkast";
     logger.debug(`${label}`, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     if (!valid) {
       return SchemaPostValidator.valideringFeil(req, res);
     }
@@ -146,7 +146,7 @@ module.exports.opprettDokument = (req, res) => {
       const label = "Dokument:opprettDokument";
       logger.debug(`${label}`, JSON.stringify(jsBody));
 
-      const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+      const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
       if (!valid) {
         return SchemaPostValidator.valideringFeil(req, res);

@@ -20,7 +20,7 @@ module.exports.status = (req, res) => {
     const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = 'Behandlinger:status';
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
@@ -47,7 +47,7 @@ module.exports.perioder = (req, res) => {
     const label = 'Behandlinger:perioder';
     const schemaNavn = 'behandlinger-perioder-post-schema.json';
 
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

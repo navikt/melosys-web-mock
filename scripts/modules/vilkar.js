@@ -52,6 +52,6 @@ module.exports.send = (req, res) => {
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug(label, JSON.stringify(jsBody));
 
-  const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+  const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
   return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
 };

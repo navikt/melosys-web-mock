@@ -121,7 +121,7 @@ module.exports.tilbakelegg = (req, res) => {
   const label = 'Oppgaver:tilbakelegg';
   logger.debug(label, JSON.stringify(jsBody));
   try {
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

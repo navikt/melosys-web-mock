@@ -74,7 +74,7 @@ module.exports.sendKontaktopplysninger = (req, res) => {
 
   try {
     const schemaNavn = 'kontaktopplysninger-post-schema.json';
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

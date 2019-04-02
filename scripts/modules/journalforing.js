@@ -56,7 +56,7 @@ module.exports.sendOpprettNySak = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = 'Journalforing:sendOpprettNySak';
     logger.debug(label, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return (valid) ? res.status(204).json('') : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
@@ -78,7 +78,7 @@ module.exports.sendTilordneSak = (req, res) => {
     let jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const label = 'Journalforing:sendTilordneSak';
     logger.debug(label, JSON.stringify(jsBody));
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return (valid) ? res.status(204).json('') : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {

@@ -6,7 +6,7 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 const postValidator = (req, res, label, schemaNavn) => {
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+  const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
   return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
 };
 

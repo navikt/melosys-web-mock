@@ -84,7 +84,7 @@ module.exports.sendAktoer = async (req, res) => {
     }
 
     const schemaNavn = 'aktoer-post-schema.json';
-    const valid = SchemaPostValidator.test2(label, schemaNavn, jsBody);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
     if (!valid) return SchemaPostValidator.valideringFeil(req, res);
 
