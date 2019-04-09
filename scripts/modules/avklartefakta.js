@@ -2,26 +2,34 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ERR = require('../utils/errors');
+const Mock = require('../utils/mock-util');
 const Utils = require('../utils/utils');
 const Schema = require('../utils/schema-util');
 
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 const AVKLARTEFAKTA_MOCK_DIR = `${MOCK_DATA_DIR}/avklartefakta`;
 
+/**
+ * lesAvklartefaktaKatalog
+ */
 module.exports.lesAvklartefaktaKatalog = () => {
   return Schema.lesKatalogSync(AVKLARTEFAKTA_MOCK_DIR);
 };
 
+/**
+ * lesAvklartefaktaPostMock
+ * @returns {{document, navn}}
+ */
 module.exports.lesAvklartefaktaPostMock = () => {
   const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/post/avklartefakta-post.json`;
   return Schema.lesKatalogElement(mockfile);
 };
 
-const lesAvklaring = async (behandlingID) => {
+const lesAvklaring = behandlingID => {
   const mockfile = `${AVKLARTEFAKTA_MOCK_DIR}/avklartefakta-bid-${behandlingID}.json`;
-  return (await Utils.existsAsync(mockfile)) ? JSON.parse(await Utils.readFileAsync(mockfile)) : {}
+  return Utils.readJsonAndParseAsync(mockfile);
 };
+
 /**
  * Hent faktavklaring
  * @param req
@@ -35,10 +43,7 @@ module.exports.hent = async (req, res) => {
     return res.json(avklaring);
   }
   catch (err) {
-    console.error(err);
-    logger.error(err);
-    const melding = ERR.serverError500(req.originalUrl, err);
-    res.status(500).send(melding);
+    Mock.serverError(req, res, err);
   }
 };
 
@@ -55,7 +60,12 @@ module.exports.send = (req, res) => {
   const label = 'Avklartefakta:send';
   logger.debug(`${label}`, JSON.stringify(jsBody));
 
-  const schema = Schema.lesSchemaFileSync('avklartefakta-schema.json');
-  const valid = SchemaPostValidator.test(label, schema, jsBody);
-  return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
+  try {
+    const schemaNavn = 'avklartefakta-post-schema.json';
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
+    return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };

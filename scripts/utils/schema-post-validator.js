@@ -21,8 +21,31 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
+module.exports.test = (label, schemaNavn, data) => {
+  if (!label) {
+    console.log(colors.bgYellow('schema:test, mangler label'));
+    return false;
+  }
+  if (!schemaNavn) {
+    console.log(colors.bgYellow('schema:test, mangler schemaNavn'));
+    return false;
+  }
+  const validate = Schema.schemaValidator(schemaNavn);
+  const valid = validate(data);
 
-module.exports.test = (label, schema, data) => {
+  if (valid) {
+    console.log(emoji.get('white_check_mark'), `[POST] ${label}`);
+  }
+  else {
+    console.dir(validate.errors);
+    const errmsgs = humanReadableErrors(validate.errors);
+    console.log(emoji.get('x'),`${label}`, colors.bgRed(`Invalid post.body:`));
+    errmsgs.forEach((msg) => {console.log(' ',msg)});
+  }
+  return valid;
+};
+
+module.exports.testAsync = async (label, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
     return false;
@@ -33,8 +56,9 @@ module.exports.test = (label, schema, data) => {
   }
 
   const ajv = new Ajv({allErrors: true});
+  require('ajv-async')(ajv);
   const validate = ajv.addSchema(definitions).compile(schema);
-  const valid = validate(data);
+  const valid = await validate(data);
 
   if (valid) {
     console.log(emoji.get('white_check_mark'), `[POST] ${label}`);

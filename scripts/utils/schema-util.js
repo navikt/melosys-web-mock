@@ -1,3 +1,5 @@
+const Ajv = require('ajv');
+const { JSONPath } = require('jsonpath-plus');
 const glob = require('glob');
 const log4js = require('log4js');
 const logger = log4js.getLogger('schema');
@@ -26,13 +28,28 @@ module.exports.oppsummering = () => {
 module.exports.lesSchemaSync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
 };
-module.exports.lesSchemaFileSync = schemafile => {
+module.exports.lesSchemaASync = schemapath => {
+  return Utils.readJsonAndParseSync(schemapath);
+};
+const lesSchemaFileSync = schemafile => {
   const schemapath = `${SCHEMA_DIR}/${schemafile}`;
   return Utils.readJsonAndParseSync(schemapath);
 };
-module.exports.lesSchemaDefinitonsSync = () => {
+module.exports.lesSchemaFileSync = lesSchemaFileSync;
+
+module.exports.lesSchemaFilesSync = schemafiles => {
+  console.log(schemafiles);
+  let schemas = [];
+  schemafiles.forEach(filename => {
+    const schema = lesSchemaFileSync(filename);
+    schemas.push(schema);
+  });
+  return schemas;
+};
+const lesSchemaDefinitonsSync = () => {
   return Utils.readJsonAndParseSync(DEFINITION_SCHEMA);
 };
+module.exports.lesSchemaDefinitonsSync = lesSchemaDefinitonsSync;
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
@@ -80,8 +97,39 @@ module.exports.lesKatalogElement = path => {
     document,
   };
 };
+const lesEmbeddedSchemas = schema => {
+  const SCHEMA_URI = 'http://melosys.nav.no/schemas/';
+  const refs = JSONPath({ path: '$..$ref', json: schema });
+  const defs = refs.filter(item => item.startsWith(SCHEMA_URI));
+  const embeddedSchemas = [];
+  const schemaNames = [];
 
-module.exports.runTest = (data, ajv, validate) => {
+  if (defs && defs.length > 0) {
+    defs.forEach (def => {
+      const hashPos = def.indexOf('#');
+      const name = def.substring(SCHEMA_URI.length, hashPos);
+      if (name.startsWith('definitions-schema.json')) return;
+      if(schemaNames.includes(name)) return;
+      schemaNames.push(name);
+      const embeddedSchema = lesSchemaFileSync(name);
+      embeddedSchemas.push(embeddedSchema);
+    });
+  }
+  return embeddedSchemas;
+};
+module.exports.lesEmbeddedSchemas = lesEmbeddedSchemas;
+
+const schemaValidator = schemaNavn => {
+  const definitions = lesSchemaDefinitonsSync();
+
+  const schema = lesSchemaFileSync(schemaNavn);
+  const embeddedSchemas = lesEmbeddedSchemas(schema);
+  const ajv = new Ajv({allErrors: true});
+  return ajv.addSchema([definitions, ...embeddedSchemas]).compile(schema);
+};
+module.exports.schemaValidator = schemaValidator;
+
+module.exports.runTest = (data, validate) => {
   const { navn, document } = data;
   const valid = validate(document);
   if (valid) {
@@ -97,7 +145,6 @@ module.exports.runTest = (data, ajv, validate) => {
     });
   }
 };
-
 module.exports.prettyTittel = label => {
   console.log(colors.white(label));
 };

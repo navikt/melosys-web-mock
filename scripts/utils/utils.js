@@ -42,6 +42,13 @@ module.exports.readJsonAndParseSync = (path) => {
   return JSON.parse(readFileSync(path));
 };
 
+module.exports.readJsonAndParseAsync = async (path) => {
+  const json = await readFileSync(path);
+  return JSON.parse(json);
+};
+
+module.exports.existsSync = (path) => fs.existsSync(path);
+
 module.exports.existsAsync = async (path) => {
   return new Promise((resolve) => {
     fs.access(path, fs.constants.F_OK, (err) => {
