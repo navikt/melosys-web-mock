@@ -9,9 +9,6 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 const Mock = require('../utils/mock-util');
 const MOCK_SOKNAD_DIR = `${MOCK_DATA_DIR}/soknader`;
 
-
-const schema = Schema.lesSchemaFileSync('soknad-post-schema.json');
-
 const lesSoknad = (behandlingID) => {
   const mockfileSoknad = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return JSON.parse(Utils.readFileSync(mockfileSoknad));
@@ -66,7 +63,8 @@ module.exports.send = async (req, res) => {
   logger.debug(`${label}`, body);
 
   try {
-    const valid = await SchemaPostValidator.testAsync(label, schema, jsBody);
+    const schemaNavn = 'soknad-post-schema.json';
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
     return valid ? res.json(body) : SchemaPostValidator.valideringFeil(req, res);
   }
