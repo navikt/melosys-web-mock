@@ -12,7 +12,7 @@ module.exports.lesSokFagsakerKatalog = () => {
   return Schema.lesKatalogSync(MOCK_FAGFSAKER_SOK_DIR);
 };
 
-const lesFagsakAsync = async (path) => {
+const lesFagsakAsync = (path) => {
   return Utils.readJsonAndParseAsync(path);
 };
 
