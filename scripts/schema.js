@@ -9,6 +9,7 @@ const { behandlingsresultat } = require('./test/behandlingsresultat');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { lovvalgsperioder } = require('./test/lovvalgsperioder');
+const { opprinneligLovvalgsperiode } = require('./test/opprinneligLovvalgsperiode');
 const { inngang } = require('./test/inngang');
 const { journalforing } = require('./test/journalforing');
 const Oppgaver = require('./test/oppgaver');
@@ -40,6 +41,7 @@ const katalogMap = new Map([
   ['saksbehandler', Saksbehandler],
   ['organisasjoner', organisasjon],
   ['lovvalgsperioder', lovvalgsperioder],
+  ['opprinneligLovvalgsperiode', opprinneligLovvalgsperiode],
   ['inngang', inngang],
   ['journalforing', journalforing],
   ['oppgaver', Oppgaver.oppgaver],
