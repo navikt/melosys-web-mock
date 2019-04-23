@@ -16,6 +16,7 @@ const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
 const journalforing = require('./modules/journalforing');
 const lovvalgsperioder = require('./modules/lovvalgsperioder');
+const opprinneligLovvalgsperiode = require('./modules/opprinneligLovvalgsperiode');
 const Oppgaver = require('./modules/oppgaver');
 const organisasjoner = require('./modules/organisasjoner');
 const personer = require('./modules/personer');
@@ -125,6 +126,11 @@ router.get('/inngang/:snr', inngang.hent);
  * SAKSBEHANDLER
  */
 router.get('/saksbehandler', saksbehandler.hent);
+/**
+ * OPPRINNELIG LOVVALGS PERIODE
+ * ---------------------------------------------------------------
+ */
+router.get('/opprinneligLovvalgsperiode/:behandlingID', opprinneligLovvalgsperiode.hent);
 
 /**
  * LOVVALGSPERIODER
@@ -132,6 +138,7 @@ router.get('/saksbehandler', saksbehandler.hent);
  */
 router.get('/lovvalgsperioder/:behandlingID', lovvalgsperioder.hent);
 router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
+
 
 /**
  * OPPGAVEBEHANDLING

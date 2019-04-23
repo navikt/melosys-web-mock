@@ -15,7 +15,7 @@ module.exports.lesVilkarsKatalog = () => {
 
 const lesVilkar = async (behandlingID) => {
   const mockfile = `${VILKAR_MOCK_DATA_DIR}/vilkar-bid-${behandlingID}.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfile));
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
 /**

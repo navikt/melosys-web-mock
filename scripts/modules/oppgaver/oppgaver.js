@@ -11,7 +11,7 @@ const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
 
 const lesOversikt = async () => {
   const mockfil = `${MOCK_DATA_OPPGAVER_DIR}/oversikt.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfil));
+  return Utils.readJsonAndParseAsync(mockfil);
 };
 
 /**

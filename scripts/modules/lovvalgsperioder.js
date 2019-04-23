@@ -15,7 +15,7 @@ module.exports.lesLovvalgsperiodersKatalog = () => {
 
 const lesLovvalgsperioder = async (behandlingID) => {
   const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
-  return JSON.parse(await Utils.readFileAsync(mockfile));
+  return Utils.readJsonAndParseAsync(mockfile);
 };
 
 /**

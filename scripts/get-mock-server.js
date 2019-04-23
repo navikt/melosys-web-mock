@@ -44,6 +44,7 @@ const testAlleEndepunkter = async () => {
     await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
     await instance.get('/inngang/4').then(printresult).catch(printerror);
     await instance.get('/lovvalgsperioder/4').then(printresult).catch(printerror);
+    await instance.get('/opprinneligLovvalgsperiode/4').then(printresult).catch(printerror);
     await instance.get('/oppgaver/sok').then(printresult).catch(printerror);
     await instance.get('/oppgaver/plukk').then(printresult).catch(printerror);
     await instance.get('/oppgaver/oversikt').then(printresult).catch(printerror);
