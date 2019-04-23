@@ -14,7 +14,7 @@ module.exports.hentFagsak = async (req, res) => {
   try {
     let { saksnummer } = req.params;
     const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${saksnummer}.json`;
-    const fagsaker = Utils.readJsonAndParseAsync(mockfile);
+    const fagsaker = await Utils.readJsonAndParseAsync(mockfile);
     res.json(fagsaker);
   }
   catch (err) {

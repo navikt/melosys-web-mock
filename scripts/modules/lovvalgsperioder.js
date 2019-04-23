@@ -13,7 +13,7 @@ module.exports.lesLovvalgsperiodersKatalog = () => {
   return Schema.lesKatalogSync(LOVVALGSPERIODER_MOCK_DATA_DIR);
 };
 
-const lesLovvalgsperioder = async (behandlingID) => {
+const lesLovvalgsperioder = (behandlingID) => {
   const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
