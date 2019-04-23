@@ -3,6 +3,9 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const Mock = require('../utils/mock-util');
 
+const { MOCK_DATA_DIR } = require('../../mock.config');
+const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
+
 /**
  * status
  * @param req
@@ -29,13 +32,29 @@ module.exports.status = (req, res) => {
   }
 };
 
+module.exports.hentPerioder = async (req, res) => {
+  try {
+    const { behandlingID } = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
+    const mockfile = `${BEHANDLINGER_MOCK_DIR}/get/behandlinger-perioder-${behandlingID}.json`;
+    const mockData = await Utils.readJsonAndParseAsync(mockfile);
+
+    return res.json(mockData);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
+};
+
 /**
  * perioder
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.perioder = (req, res) => {
+module.exports.settPerioder = (req, res) => {
   try {
     const { behandlingID } = req.params;
     if (!behandlingID) {
@@ -44,7 +63,7 @@ module.exports.perioder = (req, res) => {
     const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
 
-    const label = 'Behandlinger:perioder';
+    const label = 'Behandlinger:perioder:sett';
     const schemaNavn = 'behandlinger-perioder-post-schema.json';
 
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
