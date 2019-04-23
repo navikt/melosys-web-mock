@@ -13,7 +13,7 @@ module.exports.lesSokFagsakerKatalog = () => {
 };
 
 const lesFagsakAsync = async (path) => {
-  return JSON.parse(await Utils.readFileAsync(path));
+  return Utils.readJsonAndParseAsync(path);
 };
 
 const lesSokFagsakAsync = async (fnr) => {
