@@ -61,6 +61,7 @@ const router = express.Router();
 /**
  * BEHANDLINGER
  */
+router.get('/behandlinger/:behandlingID', behandlinger.hentBehandling);
 router.post('/behandlinger/:behandlingID/status', behandlinger.status);
 router.get('/behandlinger/:behandlingID/perioder', behandlinger.hentPerioder);
 router.post('/behandlinger/:behandlingID/perioder', behandlinger.settPerioder);
@@ -80,7 +81,11 @@ router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
  *
  */
 router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
+
+// '/fagsaker/sok/:saksnummer/behandling/:behandlingID'
+// router.get('/fagsaker/:saksnummer/behandlinger/:behandlingID', Fagsaker.fagsak.hentFagsak);
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
+//         '/fagsaker/:saksnummer/?behandling=behandlingID'
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
