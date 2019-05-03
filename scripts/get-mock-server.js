@@ -35,6 +35,8 @@ const printerror = res => {
 const testAlleEndepunkter = async () => {
   try {
     await instance.get('/saksbehandler').then(printresult).catch(printerror);
+    await instance.get('/behandlinger/4').then(printresult).catch(printerror);
+    await instance.get('/behandlinger/4/perioder').then(printresult).catch(printerror);
     await instance.get('/fagsaker/sok/').then(printresult).catch(printerror);
     await instance.get('/fagsaker/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/3/kontaktopplysninger/810072512').then(printresult).catch(printerror);
@@ -43,6 +45,7 @@ const testAlleEndepunkter = async () => {
     await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
     await instance.get('/inngang/4').then(printresult).catch(printerror);
     await instance.get('/lovvalgsperioder/4').then(printresult).catch(printerror);
+    await instance.get('/opprinneligLovvalgsperiode/4').then(printresult).catch(printerror);
     await instance.get('/oppgaver/sok').then(printresult).catch(printerror);
     await instance.get('/oppgaver/plukk').then(printresult).catch(printerror);
     await instance.get('/oppgaver/oversikt').then(printresult).catch(printerror);
