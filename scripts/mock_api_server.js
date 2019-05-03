@@ -61,9 +61,10 @@ const router = express.Router();
 /**
  * BEHANDLINGER
  */
-router.post('/behandlinger/:behandlingID/status', behandlinger.status);
+router.get('/behandlinger/:behandlingID', behandlinger.hentBehandling);
 router.get('/behandlinger/:behandlingID/perioder', behandlinger.hentPerioder);
 router.post('/behandlinger/:behandlingID/perioder', behandlinger.settPerioder);
+router.post('/behandlinger/:behandlingID/status', behandlinger.status);
 
 /**
  * BEHANDLINGSRESULTAT
