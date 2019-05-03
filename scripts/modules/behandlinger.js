@@ -1,11 +1,32 @@
 const Utils = require('../utils/utils');
+const Schema = require('../utils/schema-util');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const Mock = require('../utils/mock-util');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
+const BEHANDLINGER_PERIODER_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/perioder`;
 
+module.exports.lesBehandlingerKatalog = () => {
+  return Schema.lesKatalogSync(BEHANDLINGER_MOCK_DIR);
+};
+
+module.exports.hentBehandling = async (req, res) => {
+  try {
+    const { behandlingID } = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
+    const mockfile = `${BEHANDLINGER_MOCK_DIR}/behandling-bid-${behandlingID}.json`;
+    const mockData = await Utils.readJsonAndParseAsync(mockfile);
+
+    return res.json(mockData);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
+};
 /**
  * status
  * @param req
@@ -25,11 +46,18 @@ module.exports.status = (req, res) => {
     const label = 'Behandlinger:status';
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
+    // TODO: Send 'behandlinger-status-post.json' tilbake
     return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
     Mock.serverError(req, res, err);
   }
+};
+/**
+ * lesPeriodeKatalog
+ */
+module.exports.lesPerioderKatalog = () => {
+  return Schema.lesKatalogSync(BEHANDLINGER_PERIODER_MOCK_DIR);
 };
 
 module.exports.hentPerioder = async (req, res) => {
@@ -38,7 +66,7 @@ module.exports.hentPerioder = async (req, res) => {
     if (!behandlingID) {
       return Mock.manglerParamBehandlingsID(req, res);
     }
-    const mockfile = `${BEHANDLINGER_MOCK_DIR}/get/behandlinger-perioder-${behandlingID}.json`;
+    const mockfile = `${BEHANDLINGER_PERIODER_MOCK_DIR}/behandlinger-perioder-${behandlingID}.json`;
     const mockData = await Utils.readJsonAndParseAsync(mockfile);
 
     return res.json(mockData);
