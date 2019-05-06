@@ -2,7 +2,7 @@ const colors = require('colors/safe');
 const axios = require('axios');
 const { printerror, printresult } = require('./helpers');
 
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Content-Type'] = 'text/plain';
 
 const instance = axios.create({
   baseURL: 'http://localhost:3002/api',
