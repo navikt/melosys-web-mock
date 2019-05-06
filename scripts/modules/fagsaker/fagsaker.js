@@ -41,5 +41,5 @@ module.exports.bortfall = async (req, res) => {
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
 
-  return res.status(200).send();
+  return res.status(204).send();
 };
