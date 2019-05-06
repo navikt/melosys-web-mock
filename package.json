@@ -46,6 +46,7 @@
     "mock:get": "node scripts/get-mock-server",
     "mock:post": "node scripts/post-mock-server",
     "mock:delete": "node scripts/delete-mock-server",
+    "mock:put": "node scripts/put-mock-server",
     "mock": "npm-run-all -s mock:*",
     "post-mock:dbg": "node $NODE_DEBUG_OPTION scripts/post-mock-server",
     "semver": "node_modules/semver/bin/semver",
