@@ -14,18 +14,18 @@ const oppsummering = {
   failure: 0,
 };
 
-const handleresult = res => {
+const reportResult = res => {
   oppsummering.success += 1;
   printresult(res);
 };
 
-const handleerror = res => {
+const reportError = res => {
   oppsummering.failure += 1;
   printerror(res);
 };
 
 const testAlleEndepunkter = async () => {
-  await instance.put('/fagsaker/4/avsluttsaksombortfalt').then(handleresult).catch(handleerror);
+  await instance.put('/fagsaker/4/avsluttsaksombortfalt').then(reportResult).catch(reportError);
 
   console.log('[PUT]',colors.green('yarn mock:put'));
   console.dir(oppsummering);

@@ -14,12 +14,12 @@ const oppsummering = {
   failure: 0,
 };
 
-const handleresult = res => {
+const reportResult = res => {
   oppsummering.success += 1;
   printresult(res);
 };
 
-const handleerror = res => {
+const reportError = res => {
   oppsummering.failure += 1;
   printerror(res);
 };
@@ -27,9 +27,9 @@ const handleerror = res => {
 const testAlleEndepunkter = async () => {
   try {
     const databaseid = 955006279357058;
-    await instance.delete(`/fagsaker/aktoerer/${databaseid}`).then(handleresult).catch(handleerror);
+    await instance.delete(`/fagsaker/aktoerer/${databaseid}`).then(reportResult).catch(reportError);
     const saksnummer = '4', juridiskorgnr = '810072512';
-    await instance.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(handleresult).catch(handleerror);
+    await instance.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
 
     console.log('[DELETE]',colors.green('yarn mock:delete'));
     console.dir(oppsummering);
