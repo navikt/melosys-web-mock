@@ -33,7 +33,7 @@ const testAlleEndepunkter = async () => {
     const aktoer = require(`${MOCK_DATA_DIR}/fagsaker/aktoerer/post/aktoer`);
     await instance.post('/fagsaker/4/aktoerer', aktoer).then(reportResult).catch(reportError);
     const kontaktopplysninger = require(`${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger/post/kontaktopplysninger`);
-    await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(reportResult).catch(reportError)
+    await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(reportResult).catch(reportError);
 
     // Behandlinger
     const behandinger_status = require(`${MOCK_DATA_DIR}/behandlinger/status/post/behandlinger-status`);
@@ -48,7 +48,7 @@ const testAlleEndepunkter = async () => {
 
     // Avklartefakta
     //const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/avklartefakta-bid-4`);
-    //await instance.post('/avklartefakta/4', avklartefakta4).then(handleresult).catch(handleerror);
+    //await instance.post('/avklartefakta/4', avklartefakta4).then(reportResult).catch(reportError);
 
     // Lovvalgsperioder
     const lovvalgsperioder = require(`${MOCK_DATA_DIR}/lovvalgsperioder/lovvalgsperiode-bid-4`);
