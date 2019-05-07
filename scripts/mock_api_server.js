@@ -83,6 +83,7 @@ router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
 router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.bortfall);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
