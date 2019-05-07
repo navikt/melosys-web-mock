@@ -9,7 +9,7 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const avklartefakta = require('./modules/avklartefakta');
-const behandlinger = require('./modules/behandlinger');
+const behandlingsperioder = require('./modules/behandlingsperioder');
 const behandlingsresultat = require('./modules/behandlingsresultat');
 const dokumenter = require('./modules/dokumenter');
 const Fagsaker = require('./modules/fagsaker');
@@ -59,12 +59,16 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
- * BEHANDLINGER
+ * BEHANDLING
  */
-router.get('/behandlinger/:behandlingID', behandlinger.hentBehandling);
-router.post('/behandlinger/:behandlingID/status', behandlinger.status);
-router.get('/behandlinger/:behandlingID/perioder', behandlinger.hentPerioder);
-router.post('/behandlinger/:behandlingID/perioder', behandlinger.settPerioder);
+// router.get('/behandling/:behandlingID', behandling.hentBehandling);
+
+/**
+ * BEHANDLINGSPERIODER
+ */
+router.post('/behandlingsperioder/:behandlingID/status', behandlingsperioder.status);
+router.get('/behandlingsperioder/:behandlingID/perioder', behandlingsperioder.hentPerioder);
+router.post('/behandlingsperioder/:behandlingID/perioder', behandlingsperioder.settPerioder);
 
 /**
  * BEHANDLINGSRESULTAT

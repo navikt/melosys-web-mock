@@ -35,7 +35,7 @@ const printerror = res => {
 const testAlleEndepunkter = async () => {
   try {
     await instance.get('/saksbehandler').then(printresult).catch(printerror);
-    await instance.get('/behandlinger/4/perioder').then(printresult).catch(printerror);
+    await instance.get('/behandlingsperioder/4/perioder').then(printresult).catch(printerror);
     await instance.get('/fagsaker/sok/').then(printresult).catch(printerror);
     await instance.get('/fagsaker/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/3/kontaktopplysninger/810072512').then(printresult).catch(printerror);
