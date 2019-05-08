@@ -35,23 +35,24 @@ const printerror = res => {
 const testAlleEndepunkter = async () => {
   try {
     await instance.get('/saksbehandler').then(printresult).catch(printerror);
-    await instance.get('/behandlinger/4/perioder').then(printresult).catch(printerror);
+    await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
+    await instance.get('/behandlinger/4/medlemsperioder').then(printresult).catch(printerror);
+    await instance.get('/behandlingsresultat/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/sok/').then(printresult).catch(printerror);
     await instance.get('/fagsaker/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/3/kontaktopplysninger/810072512').then(printresult).catch(printerror);
     await instance.get('/fagsaker/3/aktoerer/?rolle=BRUKER&presenterer=BRUKER').then(printresult).catch(printerror);
     await instance.get('/soknader/4').then(printresult).catch(printerror);
-    await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
     await instance.get('/inngang/4').then(printresult).catch(printerror);
+    await instance.get('/journalforing/4').then(printresult).catch(printerror);
     await instance.get('/lovvalgsperioder/4').then(printresult).catch(printerror);
     await instance.get('/opprinneligLovvalgsperiode/4').then(printresult).catch(printerror);
     await instance.get('/oppgaver/sok').then(printresult).catch(printerror);
     await instance.get('/oppgaver/plukk').then(printresult).catch(printerror);
     await instance.get('/oppgaver/oversikt').then(printresult).catch(printerror);
     await instance.get('/oppgaver/reset').then(printresult).catch(printerror);
-    await instance.get('/journalforing/4').then(printresult).catch(printerror);
-    await instance.get('/personer/?fnr=17117802280').then(printresult).catch(printerror);
     await instance.get('/organisasjoner/?orgnr=810072512').then(printresult).catch(printerror);
+    await instance.get('/personer/?fnr=17117802280').then(printresult).catch(printerror);
     await instance.get('/saksopplysninger/oppfriskning/4/status').then(printresult).catch(printerror);
     await instance.get('/saksopplysninger/oppfriskning/4').then(printresult).catch(printerror);
     await instance.get('/vilkaar/4').then(printresult).catch(printerror);

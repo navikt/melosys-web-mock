@@ -64,12 +64,12 @@ const router = express.Router();
  */
 // router.get('/behandlinger/:behandlingID', behandling.hentBehandling);
 
-/**
- * BEHANDLINGSPERIODER
- */
+// BEHANDLINGS STATUS
 router.post('/behandlinger/:behandlingID/status', behandlingsstatus.status);
-router.get('/behandlinger/:behandlingID/perioder', behandlingsperioder.hentPerioder);
-router.post('/behandlinger/:behandlingID/perioder', behandlingsperioder.settPerioder);
+
+// BEHANDLINGS PERIODER MEDLEMSPERIODER
+router.get('/behandlinger/:behandlingID/medlemsperioder', behandlingsperioder.hentMedlemsPerioder);
+router.post('/behandlinger/:behandlingID/medlemsperioder', behandlingsperioder.settMedlemsPerioder);
 
 /**
  * BEHANDLINGSRESULTAT

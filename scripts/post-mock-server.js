@@ -49,7 +49,7 @@ const testAlleEndepunkter = async () => {
     await instance.post('/behandlinger/4/status', behandinger_status).then(printresult).catch(printerror);
 
     const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlingsperioder/post/perioder`);
-    await instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(printresult).catch(printerror);
+    await instance.post('/behandlinger/4/medlemsperioder', behandlinger_perioder).then(printresult).catch(printerror);
 
     // Soknader
     const soknad = require(`${MOCK_DATA_DIR}/soknader/post/soknad-post`);
