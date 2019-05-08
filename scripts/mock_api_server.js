@@ -9,9 +9,9 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const avklartefakta = require('./modules/avklartefakta');
-const behandlingsstatus = require('./modules/behandlingsstatus');
-const behandlingsperioder = require('./modules/behandlingsperioder');
-const behandlingsresultat = require('./modules/behandlingsresultat');
+const behandlingsstatus = require('./modules/behandlinger/behandlingsstatus');
+const behandlingsperioder = require('./modules/behandlinger/behandlingsperioder');
+const behandlingsresultat = require('./modules/behandlinger/behandlingsresultat');
 const dokumenter = require('./modules/dokumenter');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');

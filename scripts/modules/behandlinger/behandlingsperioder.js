@@ -1,9 +1,9 @@
-const Utils = require('../utils/utils');
-const SchemaPostValidator  = require('../utils/schema-post-validator');
+const Utils = require('../../utils/utils');
+const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
-const Mock = require('../utils/mock-util');
+const Mock = require('../../utils/mock-util');
 
-const { MOCK_DATA_DIR } = require('../../mock.config');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
 const BEHANDLINGPERIODER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsperioder`;
 
 module.exports.hentMedlemsPerioder = async (req, res) => {

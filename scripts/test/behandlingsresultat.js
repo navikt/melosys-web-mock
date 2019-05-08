@@ -1,5 +1,5 @@
 const Schema = require('../utils/schema-util');
-const { lesBehandlingsresultatKatalog } = require('../modules/behandlingsresultat');
+const { lesBehandlingsresultatKatalog } = require('../modules/behandlinger/behandlingsresultat');
 
 const catalog = lesBehandlingsresultatKatalog();
 

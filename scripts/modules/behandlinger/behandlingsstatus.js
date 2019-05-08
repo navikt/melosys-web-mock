@@ -1,7 +1,7 @@
-const Utils = require('../utils/utils');
-const SchemaPostValidator  = require('../utils/schema-post-validator');
+const Utils = require('../../utils/utils');
+const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
-const Mock = require('../utils/mock-util');
+const Mock = require('../../utils/mock-util');
 /*
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const BEHANDLINGSSTATUS_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsstatus`;
