@@ -36,6 +36,7 @@ const testAlleEndepunkter = async () => {
   try {
     await instance.get('/saksbehandler').then(printresult).catch(printerror);
     await instance.get('/avklartefakta/4').then(printresult).catch(printerror);
+    await instance.get('/behandlinger/4').then(printresult).catch(printerror);
     await instance.get('/behandlinger/4/medlemsperioder').then(printresult).catch(printerror);
     await instance.get('/behandlingsresultat/4').then(printresult).catch(printerror);
     await instance.get('/fagsaker/sok/').then(printresult).catch(printerror);

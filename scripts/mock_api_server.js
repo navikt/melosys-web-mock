@@ -9,6 +9,7 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const avklartefakta = require('./modules/avklartefakta');
+const behandling = require('./modules/behandlinger/behandling');
 const behandlingsstatus = require('./modules/behandlinger/behandlingsstatus');
 const behandlingsperioder = require('./modules/behandlinger/behandlingsperioder');
 const behandlingsresultat = require('./modules/behandlinger/behandlingsresultat');
@@ -62,7 +63,7 @@ const router = express.Router();
 /**
  * BEHANDLING
  */
-// router.get('/behandlinger/:behandlingID', behandling.hentBehandling);
+ router.get('/behandlinger/:behandlingID', behandling.hentBehandling);
 
 // BEHANDLINGS STATUS
 router.post('/behandlinger/:behandlingID/status', behandlingsstatus.status);
