@@ -5,7 +5,8 @@ const { demo } = require('./test/demo');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
 const Fagsaker = require('./test/fagsaker');
-const { behandlingsresultat } = require('./test/behandlingsresultat');
+const { behandling } = require('./test/behandlinger/behandling');
+const { behandlingsresultat } = require('./test/behandlinger/behandlingsresultat');
 const { Saksbehandler } = require('./test/saksbehandler');
 const { organisasjon } = require('./test/organsisasjon');
 const { lovvalgsperioder } = require('./test/lovvalgsperioder');
@@ -50,6 +51,7 @@ const katalogMap = new Map([
   ['vilkar', vilkar],
   ['dokumenter', dokumenter],
   ['behandlingsresultat', behandlingsresultat],
+  ['behandling', behandling],
 ]);
 
 const testAll = () => {
