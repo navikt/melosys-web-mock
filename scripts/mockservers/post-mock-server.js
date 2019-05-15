@@ -47,8 +47,8 @@ const testAlleEndepunkter = async () => {
     await instance.post('/soknader/4', soknad).then(reportResult).catch(reportError);
 
     // Avklartefakta
-    //const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/avklartefakta-bid-4`);
-    //await instance.post('/avklartefakta/4', avklartefakta4).then(reportResult).catch(reportError);
+    const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/post/avklartefakta-post`);
+    await instance.post('/avklartefakta/4', avklartefakta4).then(reportResult).catch(reportError);
 
     // Lovvalgsperioder
     const lovvalgsperioder = require(`${MOCK_DATA_DIR}/lovvalgsperioder/lovvalgsperiode-bid-4`);
