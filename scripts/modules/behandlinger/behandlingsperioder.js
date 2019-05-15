@@ -1,10 +1,17 @@
 const Utils = require('../../utils/utils');
+const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
 const Mock = require('../../utils/mock-util');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 const BEHANDLINGPERIODER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsperioder`;
+/**
+ * lesBehandlingKatalog
+ */
+module.exports.lesBehandlingsPerioderKatalog = () => {
+  return Schema.lesKatalogSync(BEHANDLINGPERIODER_MOCK_DIR);
+};
 
 module.exports.hentMedlemsPerioder = async (req, res) => {
   try {

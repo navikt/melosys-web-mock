@@ -9,10 +9,7 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const avklartefakta = require('./modules/avklartefakta');
-const behandling = require('./modules/behandlinger/behandling');
-const behandlingsstatus = require('./modules/behandlinger/behandlingsstatus');
-const behandlingsperioder = require('./modules/behandlinger/behandlingsperioder');
-const behandlingsresultat = require('./modules/behandlinger/behandlingsresultat');
+const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
@@ -63,19 +60,19 @@ const router = express.Router();
 /**
  * BEHANDLING
  */
- router.get('/behandlinger/:behandlingID', behandling.hentBehandling);
+ router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hentBehandling);
 
 // BEHANDLINGS STATUS
-router.post('/behandlinger/:behandlingID/status', behandlingsstatus.status);
+router.post('/behandlinger/:behandlingID/status', Behandlinger.status.sendStatus);
 
 // BEHANDLINGS PERIODER MEDLEMSPERIODER
-router.get('/behandlinger/:behandlingID/medlemsperioder', behandlingsperioder.hentMedlemsPerioder);
-router.post('/behandlinger/:behandlingID/medlemsperioder', behandlingsperioder.settMedlemsPerioder);
+router.get('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.hentMedlemsPerioder);
+router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.settMedlemsPerioder);
 
 /**
  * BEHANDLINGSRESULTAT
  */
-router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
+router.get('/behandlingsresultat/:behandlingID', Behandlinger.resultat.hentBehandlingsResultat);
 
 /**
  * FAGSAKER
@@ -87,12 +84,9 @@ router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
  *
  */
 router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
-
-// '/fagsaker/sok/:saksnummer/behandling/:behandlingID'
-// router.get('/fagsaker/:saksnummer/behandlinger/:behandlingID', Fagsaker.fagsak.hentFagsak);
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
-//         '/fagsaker/:saksnummer/?behandling=behandlingID'
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.bortfall);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);

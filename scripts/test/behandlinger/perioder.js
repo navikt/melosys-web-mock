@@ -1,26 +1,27 @@
 const Schema = require('../../utils/schema-util');
+
 const Behandlinger = require('../../modules/behandlinger');
 
-const catalog = Behandlinger.lesBehandlingKatalog();
+const catalog = Behandlinger.lesBehandlingsPerioderKatalog();
 
-const validate = Schema.schemaValidator('behandling-schema.json');
+
+const validate = Schema.schemaValidator('behandlinger-perioder-schema.json');
+const printTitle = () => Schema.prettyTittel('Behandlinger Perioder');
 
 const testAll = () => {
-  Schema.prettyTittel('Behandling');
+  printTitle();
   catalog.forEach(elem => Schema.runTest(elem, validate));
 };
 
 const testOne = (path) => {
-  const tittel = Schema.katalogTittel(path);
-  Schema.prettyTittel(tittel);
+  printTitle();
   const elem = Schema.lesKatalogElement(path);
   return Schema.runTest(elem, validate);
 };
 
-const behandling = {
+const perioder = {
   testAll,
   testOne,
 };
-
-module.exports.behandling = behandling;
+module.exports.perioder = perioder;
 

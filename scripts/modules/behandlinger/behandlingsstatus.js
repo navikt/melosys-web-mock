@@ -12,7 +12,7 @@ const BEHANDLINGSSTATUS_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsstatus`;
  * @param res
  * @returns {*}
  */
-module.exports.status = (req, res) => {
+module.exports.sendStatus = (req, res) => {
   const schemaNavn = 'behandlinger-status-post-schema.json';
 
   try {

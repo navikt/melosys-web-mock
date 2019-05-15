@@ -23,7 +23,7 @@ module.exports.lesBehandlingsresultatKatalog = () => {
  * @param res
  * @returns {Promise<*>}
  */
-module.exports.hent = async (req, res) => {
+module.exports.hentBehandlingsResultat = async (req, res) => {
   try {
     const { behandlingID } = req.params;
     if (!behandlingID) {

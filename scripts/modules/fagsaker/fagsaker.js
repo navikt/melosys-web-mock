@@ -35,3 +35,11 @@ module.exports.henleggFagsak = async (req, res) => {
     Mock.serverError(req, res, err);
   }
 };
+
+module.exports.bortfall = async (req, res) => {
+  let { saksnummer } = req.params;
+
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+
+  return res.status(204).send();
+};
