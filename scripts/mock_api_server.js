@@ -9,8 +9,7 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const avklartefakta = require('./modules/avklartefakta');
-const behandlinger = require('./modules/behandlinger');
-const behandlingsresultat = require('./modules/behandlingsresultat');
+const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
@@ -59,17 +58,21 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 /**
- * BEHANDLINGER
+ * BEHANDLING
  */
-router.get('/behandlinger/:behandlingID', behandlinger.hentBehandling);
-router.get('/behandlinger/:behandlingID/perioder', behandlinger.hentPerioder);
-router.post('/behandlinger/:behandlingID/perioder', behandlinger.settPerioder);
-router.post('/behandlinger/:behandlingID/status', behandlinger.status);
+ router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hentBehandling);
+
+// BEHANDLINGS STATUS
+router.post('/behandlinger/:behandlingID/status', Behandlinger.status.sendStatus);
+
+// BEHANDLINGS PERIODER MEDLEMSPERIODER
+router.get('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.hentMedlemsPerioder);
+router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.settMedlemsPerioder);
 
 /**
  * BEHANDLINGSRESULTAT
  */
-router.get('/behandlingsresultat/:behandlingID', behandlingsresultat.hent);
+router.get('/behandlingsresultat/:behandlingID', Behandlinger.resultat.hentBehandlingsResultat);
 
 /**
  * FAGSAKER

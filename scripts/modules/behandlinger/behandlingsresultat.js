@@ -1,8 +1,8 @@
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('../utils/utils');
-const Schema = require('../utils/schema-util');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
+const Utils = require('../../utils/utils');
+const Schema = require('../../utils/schema-util');
 
-const Mock = require('../utils/mock-util');
+const Mock = require('../../utils/mock-util');
 const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/behandlingsresultat`;
 
 const lesBehandlingsresultat = bid => {
@@ -23,7 +23,7 @@ module.exports.lesBehandlingsresultatKatalog = () => {
  * @param res
  * @returns {Promise<*>}
  */
-module.exports.hent = async (req, res) => {
+module.exports.hentBehandlingsResultat = async (req, res) => {
   try {
     const { behandlingID } = req.params;
     if (!behandlingID) {

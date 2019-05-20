@@ -36,19 +36,19 @@ const testAlleEndepunkter = async () => {
     await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(reportResult).catch(reportError);
 
     // Behandlinger
-    const behandinger_status = require(`${MOCK_DATA_DIR}/behandlinger/status/post/behandlinger-status`);
+    const behandinger_status = require(`${MOCK_DATA_DIR}/behandlingsstatus/post/status`);
     await instance.post('/behandlinger/4/status', behandinger_status).then(reportResult).catch(reportError);
 
-    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlinger/perioder/post/behandlinger-perioder`);
-    await instance.post('/behandlinger/4/perioder', behandlinger_perioder).then(reportResult).catch(reportError);
+    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlingsperioder/post/perioder`);
+    await instance.post('/behandlinger/4/medlemsperioder', behandlinger_perioder).then(reportResult).catch(reportError);
 
     // Soknader
     const soknad = require(`${MOCK_DATA_DIR}/soknader/post/soknad-post`);
     await instance.post('/soknader/4', soknad).then(reportResult).catch(reportError);
 
     // Avklartefakta
-    //const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/avklartefakta-bid-4`);
-    //await instance.post('/avklartefakta/4', avklartefakta4).then(reportResult).catch(reportError);
+    const avklartefakta4 = require(`${MOCK_DATA_DIR}/avklartefakta/post/avklartefakta-post`);
+    await instance.post('/avklartefakta/4', avklartefakta4).then(reportResult).catch(reportError);
 
     // Lovvalgsperioder
     const lovvalgsperioder = require(`${MOCK_DATA_DIR}/lovvalgsperioder/lovvalgsperiode-bid-4`);

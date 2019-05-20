@@ -2,10 +2,10 @@ const Schema = require('../../utils/schema-util');
 
 const Behandlinger = require('../../modules/behandlinger');
 
-const catalog = Behandlinger.lesPerioderKatalog();
+const catalog = Behandlinger.lesBehandlingsPerioderKatalog();
 
 
-const validate = Schema.schemaValidator('behandlinger-perioder-get-schema.json');
+const validate = Schema.schemaValidator('behandlinger-perioder-schema.json');
 const printTitle = () => Schema.prettyTittel('Behandlinger Perioder');
 
 const testAll = () => {
