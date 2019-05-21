@@ -1,7 +1,7 @@
-const Schema = require('../utils/schema-util');
-const { lesBehandlingsresultatKatalog } = require('../modules/behandlingsresultat');
+const Schema = require('../../utils/schema-util');
+const Behandlinger = require('../../modules/behandlinger');
 
-const catalog = lesBehandlingsresultatKatalog();
+const catalog = Behandlinger.lesBehandlingsresultatKatalog();
 
 const validate = Schema.schemaValidator('behandlingsresultat-schema.json');
 
