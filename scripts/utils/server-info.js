@@ -2,6 +2,7 @@ const os = require('os');
 const _ = require('lodash');
 const moment = require('moment');
 const branch = require('git-branch');
+const shell = require('shelljs');
 
 moment.locale('nb');
 
@@ -26,7 +27,9 @@ module.exports.getIpAdress = () => {
   return ipv4.address;
 };
 
-
+const environment = "MOCK SERVER";
+const gitShellExec = shell.exec('git rev-parse --short HEAD');
+const shortVersionHash = gitShellExec.stdout.trim();
 const buildNumber = process.env.BUILD_NUMBER || 'local';
 const version = `${process.env.npm_package_version}`;
 let branchName = process.env.BRANCH_NAME || 'unknown';
@@ -36,9 +39,11 @@ if (branchName === 'unknown') {
 
 const build_date_time = moment().format('DD/MM/YYYY HH:mm');
 const serverInfo = {
+  environment,
   build_date_time,
   buildNumber,
   version,
+  shortVersionHash,
   branchName
 };
 

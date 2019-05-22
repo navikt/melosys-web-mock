@@ -2,11 +2,11 @@ const Schema = require('../../utils/schema-util');
 
 const Behandlinger = require('../../modules/behandlinger');
 
-const catalog = Behandlinger.lesBehandlingsPerioderKatalog();
+const catalog = Behandlinger.lesTidligereMedlemsPerioderKatalog();
 
 
 const validate = Schema.schemaValidator('behandlinger-perioder-schema.json');
-const printTitle = () => Schema.prettyTittel('Behandlinger Perioder');
+const printTitle = () => Schema.prettyTittel('Behandlinger Tidligere MedlemsPerioder');
 
 const testAll = () => {
   printTitle();
@@ -19,9 +19,9 @@ const testOne = (path) => {
   return Schema.runTest(elem, validate);
 };
 
-const perioder = {
+const tidligereMedlemsPerioder = {
   testAll,
   testOne,
 };
-module.exports.perioder = perioder;
+module.exports.tidligereMedlemsPerioder = tidligereMedlemsPerioder;
 

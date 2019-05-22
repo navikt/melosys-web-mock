@@ -67,8 +67,8 @@ router.get('/serverinfo', serverinfo.hentInfo);
 router.post('/behandlinger/:behandlingID/status', Behandlinger.status.sendStatus);
 
 // BEHANDLINGS PERIODER MEDLEMSPERIODER
-router.get('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.hentMedlemsPerioder);
-router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.perioder.settMedlemsPerioder);
+router.get('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.medlemsperioder.hentMedlemsPerioder);
+router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.medlemsperioder.settMedlemsPerioder);
 
 /**
  * BEHANDLINGSRESULTAT
