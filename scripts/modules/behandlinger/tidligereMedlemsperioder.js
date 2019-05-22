@@ -9,11 +9,11 @@ const BEHANDLINGPERIODER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsperioder`;
 /**
  * lesBehandlingKatalog
  */
-module.exports.lesBehandlingsPerioderKatalog = () => {
+module.exports.lesTidligereMedlemsPerioderKatalog = () => {
   return Schema.lesKatalogSync(BEHANDLINGPERIODER_MOCK_DIR);
 };
 
-module.exports.hentMedlemsPerioder = async (req, res) => {
+module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
   try {
     const { behandlingID } = req.params;
     if (!behandlingID) {
@@ -35,7 +35,7 @@ module.exports.hentMedlemsPerioder = async (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.settMedlemsPerioder = (req, res) => {
+module.exports.settTidligereMedlemsPerioder = (req, res) => {
   try {
     const { behandlingID } = req.params;
     if (!behandlingID) {
@@ -44,7 +44,7 @@ module.exports.settMedlemsPerioder = (req, res) => {
     const { body } = req;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
 
-    const label = 'Behandlinger:settPerioder';
+    const label = 'Behandlinger:settTidligereMedlemsPerioder';
     const schemaNavn = 'behandlinger-perioder-post-schema.json';
 
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);

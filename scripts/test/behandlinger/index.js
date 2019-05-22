@@ -1,9 +1,9 @@
 const { behandling } = require('./behandling');
 const { behandlingsresultat } = require('./behandlingsresultat');
-const { perioder } = require('./perioder');
+const { tidligereMedlemsPerioder } = require('./tidligereMedlemsperioder');
 
 module.exports = {
   behandling,
   resultat: behandlingsresultat,
-  perioder,
+  medlemsperioder: tidligereMedlemsPerioder,
 };

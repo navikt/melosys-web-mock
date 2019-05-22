@@ -50,7 +50,7 @@ const katalogMap = new Map([
   ['vilkar', vilkar],
   ['dokumenter', dokumenter],
   ['behandlinger/behandling', Behandlinger.behandling],
-  ['behandlinger/perioder', Behandlinger.perioder],
+  ['behandlinger/medlemsperioder', Behandlinger.medlemsperioder],
   ['behandlinger/resultat', Behandlinger.resultat],
 ]);
 
