@@ -5,7 +5,7 @@ const Behandlinger = require('../../modules/behandlinger');
 const catalog = Behandlinger.lesTidligereMedlemsPerioderKatalog();
 
 
-const validate = Schema.schemaValidator('behandlinger-perioder-schema.json');
+const validate = Schema.schemaValidator('behandlinger-medlemsperioder-schema.json');
 const printTitle = () => Schema.prettyTittel('Behandlinger Tidligere MedlemsPerioder');
 
 const testAll = () => {

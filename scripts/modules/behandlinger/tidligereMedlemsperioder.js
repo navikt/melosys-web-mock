@@ -5,7 +5,8 @@ const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Mock = require('../../utils/mock-util');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
-const BEHANDLINGPERIODER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsperioder`;
+const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
+const BEHANDLINGPERIODER_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/tidligeremedlemsperioder`;
 /**
  * lesBehandlingKatalog
  */

@@ -3,7 +3,8 @@ const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 
 const Mock = require('../../utils/mock-util');
-const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/behandlingsresultat`;
+const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
+const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${BEHANDLINGER_MOCK_DIR}/resultat`;
 
 const lesBehandlingsresultat = bid => {
   const mockfile = `${BEHANDLINGSRESULTAT_MOCK_DATA_DIR}/bid-${bid}.json`;
