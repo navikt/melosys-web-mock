@@ -20,7 +20,7 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
     if (!behandlingID) {
       return Mock.manglerParamBehandlingsID(req, res);
     }
-    const mockfile = `${BEHANDLINGPERIODER_MOCK_DIR}/perioder-bid-${behandlingID}.json`;
+    const mockfile = `${BEHANDLINGPERIODER_MOCK_DIR}/medlemsperioder-bid-${behandlingID}.json`;
     const mockData = await Utils.readJsonAndParseAsync(mockfile);
 
     return res.json(mockData);
@@ -46,7 +46,7 @@ module.exports.settTidligereMedlemsPerioder = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
 
     const label = 'Behandlinger:settTidligereMedlemsPerioder';
-    const schemaNavn = 'behandlinger-perioder-post-schema.json';
+    const schemaNavn = 'behandlinger-medlemsperioder-post-schema.json';
 
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
     return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
