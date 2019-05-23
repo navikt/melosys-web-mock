@@ -23,7 +23,7 @@ const registrering = require('./modules/registrering');
 const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
-const vedtak = require('./modules/vedtak');
+const Saksflyt = require('./modules/saksflyt');
 const vilkar = require('./modules/vilkar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
@@ -208,8 +208,12 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  * VEDTAK
  *  * ---------------------------------------------------------------
  */
-router.post('/vedtak/:behandlingID', vedtak.fattet);
-router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
+router.post('/saksflyt/vedtak/:behandlingID', Saksflyt.vedtak.fattet);
+router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode);
+
+router.post('/saksflyt/unntaksperiode/:behandlingID/godkjenn', Saksflyt.unntaksperiode.godkjenn);
+router.post('/saksflyt/unntaksperiode/:behandlingID/innhentinfo', Saksflyt.unntaksperiode.innhentinfo);
+router.post('/saksflyt/unntaksperiode/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperiode.ikkegodkjenn);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
