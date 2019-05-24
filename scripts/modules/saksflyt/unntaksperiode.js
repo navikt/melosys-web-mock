@@ -24,7 +24,7 @@ module.exports.ikkegodkjenn = async (req, res) => {
 
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
 
-  const schemaNavn = 'unntaksperiode-post-schema.json';
+  const schemaNavn = 'saksflyt-unntaksperiode-post-schema.json';
   const label = 'Saksflyt::Unntaksperiode:ikkeGodkjenn';
 
   try {

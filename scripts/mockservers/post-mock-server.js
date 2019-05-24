@@ -68,9 +68,13 @@ const testAlleEndepunkter = async () => {
     const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(reportResult).catch(reportError);
 
-    // Vedtak
-    const vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/vedtak-post`);
-    await instance.post('/saksflyt/vedtak/4', vedtak_post).then(reportResult).catch(reportError);
+    // Saksflyt - Vedtak
+    const saksflyt_vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
+    await instance.post('/saksflyt/vedtak/4', saksflyt_vedtak_post).then(reportResult).catch(reportError);
+
+    // Saksflyt - unntaksperiode
+    const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperiode/post/saksflyt-unntaksperiode-post`);
+    await instance.post('/saksflyt/unntaksperiode/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
 
     // Vilkar
     const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);
