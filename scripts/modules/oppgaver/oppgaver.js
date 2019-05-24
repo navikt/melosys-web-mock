@@ -50,8 +50,8 @@ module.exports.sendPlukk = (req, res) => {
   try {
     const { oppgavetype } = jsBody;
     let oppgave;
-    if (oppgavetype === 'BEH_SAK') {
-      oppgave = { oppgaveID:'1', oppgavetype, saksnummer:'4', journalpostID: null };
+    if (oppgavetype === 'BEH_SAK_MK') {
+      oppgave = { oppgaveID: '1', behandlingID: '4', oppgavetype, saksnummer: '4', journalpostID: null };
     }
     else { // JFR
       // saknummer optional
