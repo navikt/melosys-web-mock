@@ -16,7 +16,7 @@ const postValidator = (req, res, label, schemaNavn) => {
  * @param res
  */
 module.exports.fattet = (req, res) => {
-  const schemaNavn = 'vedtak-post-schema.json';
+  const schemaNavn = 'saksflyt-vedtak-post-schema.json';
 
   const label = 'Vedtak:fattet';
   try {
