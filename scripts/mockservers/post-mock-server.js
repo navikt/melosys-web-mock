@@ -61,6 +61,9 @@ const testAlleEndepunkter = async () => {
     const tilbakelegg = require(`${MOCK_DATA_DIR}/oppgaver/post/tilbakelegge`);
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(reportResult).catch(reportError);
 
+    const plukk = require(`${MOCK_DATA_DIR}/oppgaver/plukk/post/oppgaver-plukk-post`);
+    await instance.post('/oppgaver/plukk', plukk).then(reportResult).catch(reportError);
+
     // Journalforing
     const journal_post_opprett = require(`${MOCK_DATA_DIR}/journalforing/post/opprett`);
     await instance.post('/journalforing/opprett', journal_post_opprett).then(reportResult).catch(reportError);
