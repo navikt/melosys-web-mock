@@ -8,6 +8,7 @@ const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Mock = require('../../utils/mock-util');
 const MOCK_DATA_OPPGAVER_DIR = `${MOCK_DATA_DIR}/oppgaver`;
+const MOCK_DATA_PLUKK_OPPGAVER_DIR = `${MOCK_DATA_OPPGAVER_DIR}/plukk`;
 
 const lesOversikt = () => {
   const mockfil = `${MOCK_DATA_OPPGAVER_DIR}/oversikt.json`;
@@ -42,22 +43,19 @@ module.exports.hentPlukk = async (req, res) => {
  * @param req
  * @param res
  */
-module.exports.sendPlukk = (req, res) => {
+module.exports.sendPlukk = async (req, res) => {
+  const schemaNavn = 'oppgaver-plukk-post-schema.json';
+  const mock_post_response_file = `${MOCK_DATA_PLUKK_OPPGAVER_DIR}/post/oppgaver-plukk-post-response.json`;
+  const mock_response = await Utils.readJsonAndParseAsync(mock_post_response_file);
+  const label = 'Oppgaver:plukk';
+
   const body = req.body;
   const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
   logger.debug("oppgaver:sendPlukk", JSON.stringify(jsBody));
 
   try {
-    const { oppgavetype } = jsBody;
-    let oppgave;
-    if (oppgavetype === 'BEH_SAK_MK') {
-      oppgave = { oppgaveID: '1', behandlingID: '4', oppgavetype, saksnummer: '4', journalpostID: null };
-    }
-    else { // JFR
-      // saknummer optional
-      oppgave = { oppgaveID:'2', oppgavetype, saksnummer: undefined, journalpostID:'DOK_321' };
-    }
-    res.json(oppgave);
+    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
+    return valid ? res.json(mock_response) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
     Mock.serverError(req, res, err);

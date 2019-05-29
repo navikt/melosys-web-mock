@@ -61,6 +61,9 @@ const testAlleEndepunkter = async () => {
     const tilbakelegg = require(`${MOCK_DATA_DIR}/oppgaver/post/tilbakelegge`);
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(reportResult).catch(reportError);
 
+    const plukk = require(`${MOCK_DATA_DIR}/oppgaver/plukk/post/oppgaver-plukk-post`);
+    await instance.post('/oppgaver/plukk', plukk).then(reportResult).catch(reportError);
+
     // Journalforing
     const journal_post_opprett = require(`${MOCK_DATA_DIR}/journalforing/post/opprett`);
     await instance.post('/journalforing/opprett', journal_post_opprett).then(reportResult).catch(reportError);
@@ -68,8 +71,8 @@ const testAlleEndepunkter = async () => {
     const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(reportResult).catch(reportError);
 
-    // Vedtak
-    const vedtak_post = require(`${MOCK_DATA_DIR}/vedtak/post/vedtak-post`);
+    // Saksflyt
+    const vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
     await instance.post('/vedtak/4', vedtak_post).then(reportResult).catch(reportError);
 
     // Vilkar

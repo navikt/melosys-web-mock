@@ -16,7 +16,7 @@ const postValidator = (req, res, label, schemaNavn) => {
  * @param res
  */
 module.exports.fattet = (req, res) => {
-  const schemaNavn = 'vedtak-post-schema.json';
+  const schemaNavn = 'saksflyt-vedtak-post-schema.json';
 
   const label = 'Vedtak:fattet';
   try {
@@ -33,7 +33,7 @@ module.exports.fattet = (req, res) => {
  * @param res
  */
 module.exports.endreperiode = (req, res) => {
-  const schemaNavn = 'vedtak-endre-periode-schema.json';
+  const schemaNavn = 'saksflyt-vedtak-endre-periode-schema.json';
   const label = 'Vedtak:endre';
 
   try {
