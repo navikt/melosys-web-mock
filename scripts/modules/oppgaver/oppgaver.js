@@ -45,8 +45,8 @@ module.exports.hentPlukk = async (req, res) => {
  */
 module.exports.sendPlukk = async (req, res) => {
   const schemaNavn = 'oppgaver-plukk-post-schema.json';
-  const mockdata = `${MOCK_DATA_PLUKK_OPPGAVER_DIR}/post/oppgaver-plukk-post-response.json`;
-  const response = await Utils.readJsonAndParseAsync(mockdata);
+  const mock_post_response_file = `${MOCK_DATA_PLUKK_OPPGAVER_DIR}/post/oppgaver-plukk-post-response.json`;
+  const mock_response = await Utils.readJsonAndParseAsync(mock_post_response_file);
   const label = 'Oppgaver:plukk';
 
   const body = req.body;
@@ -55,7 +55,7 @@ module.exports.sendPlukk = async (req, res) => {
 
   try {
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.json(response) : SchemaPostValidator.valideringFeil(req, res);
+    return valid ? res.json(mock_response) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch (err) {
     Mock.serverError(req, res, err);

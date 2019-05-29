@@ -71,7 +71,7 @@ const testAlleEndepunkter = async () => {
     const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(reportResult).catch(reportError);
 
-    // Vedtak
+    // Saksflyt
     const vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
     await instance.post('/vedtak/4', vedtak_post).then(reportResult).catch(reportError);
 
