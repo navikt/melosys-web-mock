@@ -27,10 +27,10 @@ module.exports.getIpAdress = () => {
   return ipv4.address;
 };
 
-const environment = "MOCK SERVER";
-const gitShellExec = shell.exec('git rev-parse --short HEAD');
-const shortVersionHash = gitShellExec.stdout.trim();
-const buildNumber = process.env.BUILD_NUMBER || 'local';
+const namespace = 'MOCK SERVER';
+const cluster = `NodeJS ${process.version}`;
+const gitShellExec = shell.exec('git rev-parse HEAD');
+const longVersionHash = gitShellExec.stdout.trim();
 const version = `${process.env.npm_package_version}`;
 let branchName = process.env.BRANCH_NAME || 'unknown';
 if (branchName === 'unknown') {
@@ -39,15 +39,15 @@ if (branchName === 'unknown') {
 
 const build_date_time = moment().format('DD/MM/YYYY HH:mm');
 const serverInfo = {
-  environment,
+  namespace,
+  cluster,
   build_date_time,
-  buildNumber,
   version,
-  shortVersionHash,
+  longVersionHash,
   branchName
 };
 
-module.exports.hentInfo = (req, res) => {
+module.exports.hentServerInfo = (req, res) => {
   res.json(serverInfo)
 };
 

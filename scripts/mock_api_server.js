@@ -57,7 +57,7 @@ app.use(bodyParser.raw());
 const port = process.env.PORT || 3002;
 const router = express.Router();
 
-router.get('/serverinfo', serverinfo.hentInfo);
+router.get('/serverinfo', serverinfo.hentServerInfo);
 /**
  * BEHANDLING
  */
