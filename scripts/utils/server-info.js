@@ -31,18 +31,16 @@ const namespace = 'MOCK SERVER';
 const cluster = `NodeJS ${process.version}`;
 const gitShellExec = shell.exec('git rev-parse HEAD');
 const longVersionHash = gitShellExec.stdout.trim();
-const version = `${process.env.npm_package_version}`;
+const veraUrl = 'https://vera.adeo.no/#/log?application=melosys';
 let branchName = process.env.BRANCH_NAME || 'unknown';
 if (branchName === 'unknown') {
   branchName = branch.sync(process.cwd());
 }
 
-const build_date_time = moment().format('DD/MM/YYYY HH:mm');
 const serverInfo = {
   namespace,
   cluster,
-  build_date_time,
-  version,
+  veraUrl,
   longVersionHash,
   branchName
 };
