@@ -16,6 +16,7 @@ const Oppgaver = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
+const { sed } = require('./test/sed');
 
 const Schema = require('./utils/schema-util');
 
@@ -52,6 +53,7 @@ const katalogMap = new Map([
   ['behandlinger/behandling', Behandlinger.behandling],
   ['behandlinger/medlemsperioder', Behandlinger.medlemsperioder],
   ['behandlinger/resultat', Behandlinger.resultat],
+  ['sed', sed],
 ]);
 
 const testAll = () => {

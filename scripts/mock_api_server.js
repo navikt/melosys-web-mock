@@ -25,6 +25,7 @@ const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
 const vedtak = require('./modules/vedtak');
 const vilkar = require('./modules/vilkar');
+const sed = require('./modules/sed');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -210,6 +211,14 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  */
 router.post('/vedtak/:behandlingID', vedtak.fattet);
 router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
+
+/**
+ * SED
+ *  * ----------------------------------------------------------------
+ */
+router.get('/sed/mottakerinstitusjoner/:bucType', sed.mottakerinstitusjoner);
+router.post('/sed/opprettbuc/:behandlingID', sed.opprettbuc);
+router.get('/sed/sedunderarbeid/:behandlingID', sed.sedunderarbeid);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
