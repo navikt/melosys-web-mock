@@ -86,6 +86,10 @@ const testAlleEndepunkter = async () => {
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
 
+    // Sed
+    const opprettbuc_post = require(`${MOCK_DATA_DIR}/sed/post/opprettbuc`);
+    await instance.post(`/sed/opprettbuc/${behandlingID}`, opprettbuc_post).then(reportResult).catch(reportError);
+
     console.log('[POST]',colors.green('yarn mock:post'));
     console.dir(oppsummering);
   }

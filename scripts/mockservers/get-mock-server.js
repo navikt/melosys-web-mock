@@ -48,6 +48,8 @@ const testAlleEndepunkter = async () => {
     await instance.get('/saksopplysninger/oppfriskning/4/status').then(reportResult).catch(reportError);
     await instance.get('/saksopplysninger/oppfriskning/4').then(reportResult).catch(reportError);
     await instance.get('/vilkaar/4').then(reportResult).catch(reportError);
+    await instance.get('/sed/mottakerinstitusjoner/LA_BUC_01').then(reportResult).catch(reportError);
+    await instance.get('/sed/sedunderarbeid/4').then(reportResult).catch(reportError);
   }
   catch (e) {
     console.log(e);
