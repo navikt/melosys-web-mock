@@ -205,14 +205,14 @@ router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.op
 router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
 
 /**
- * VEDTAK
+ * SAKSFLYT
  *  * ---------------------------------------------------------------
  */
 router.post('/saksflyt/vedtak/:behandlingID', Saksflyt.vedtak.fattet);
 router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode);
 
-router.post('/saksflyt/unntaksperiode/:behandlingID/godkjenn', Saksflyt.unntaksperiode.godkjenn);
-router.post('/saksflyt/unntaksperiode/:behandlingID/innhentinfo', Saksflyt.unntaksperiode.innhentinfo);
+router.put('/saksflyt/unntaksperiode/:behandlingID/godkjenn', Saksflyt.unntaksperiode.godkjenn);
+router.put('/saksflyt/unntaksperiode/:behandlingID/innhentinfo', Saksflyt.unntaksperiode.innhentinfo);
 router.post('/saksflyt/unntaksperiode/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperiode.ikkegodkjenn);
 
 // router.post('/logger/trace', logging.trace);
