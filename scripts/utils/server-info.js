@@ -27,27 +27,25 @@ module.exports.getIpAdress = () => {
   return ipv4.address;
 };
 
-const environment = "MOCK SERVER";
-const gitShellExec = shell.exec('git rev-parse --short HEAD');
-const shortVersionHash = gitShellExec.stdout.trim();
-const buildNumber = process.env.BUILD_NUMBER || 'local';
-const version = `${process.env.npm_package_version}`;
+const namespace = 'MOCK SERVER';
+const cluster = `NodeJS ${process.version}`;
+const gitShellExec = shell.exec('git rev-parse HEAD');
+const longVersionHash = gitShellExec.stdout.trim();
+const veraUrl = 'https://vera.adeo.no/#/log?application=melosys';
 let branchName = process.env.BRANCH_NAME || 'unknown';
 if (branchName === 'unknown') {
   branchName = branch.sync(process.cwd());
 }
 
-const build_date_time = moment().format('DD/MM/YYYY HH:mm');
 const serverInfo = {
-  environment,
-  build_date_time,
-  buildNumber,
-  version,
-  shortVersionHash,
+  namespace,
+  cluster,
+  veraUrl,
+  longVersionHash,
   branchName
 };
 
-module.exports.hentInfo = (req, res) => {
+module.exports.hentServerInfo = (req, res) => {
   res.json(serverInfo)
 };
 
