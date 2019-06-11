@@ -25,6 +25,7 @@ const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
 const vedtak = require('./modules/vedtak');
 const vilkar = require('./modules/vilkar');
+const eessi = require('./modules/eessi');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -210,6 +211,14 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  */
 router.post('/vedtak/:behandlingID', vedtak.fattet);
 router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
+
+/**
+ * EESSI
+ *  * ----------------------------------------------------------------
+ */
+router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
+router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
+router.get('/eessi/seder/:behandlingID', eessi.sedunderarbeid);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
