@@ -7,7 +7,7 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 const {  MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
 
-const MOCK_SED_DATA_DIR = `${MOCK_DATA_DIR}/sed`;
+const MOCK_SED_DATA_DIR = `${MOCK_DATA_DIR}/eessi`;
 
 const lesMottakerinstitusjoner = () => {
   const mockfile = `${MOCK_SED_DATA_DIR}/mottakerinstitusjoner/mottakerinstitusjoner.json`;
@@ -29,7 +29,7 @@ module.exports.mottakerinstitusjoner = async (req, res) => {
 
 module.exports.opprettbuc = async (req, res) => {
   const schemaNavn = 'opprettbuc-post-schema.json';
-  const label = 'Sed:opprettbuc';
+  const label = 'Eessi:opprettbuc';
 
   try {
     const body = req.body;
