@@ -211,9 +211,10 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
 router.post('/saksflyt/vedtak/:behandlingID', Saksflyt.vedtak.fattet);
 router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode);
 
-router.put('/saksflyt/unntaksperiode/:behandlingID/godkjenn', Saksflyt.unntaksperiode.godkjenn);
-router.put('/saksflyt/unntaksperiode/:behandlingID/innhentinfo', Saksflyt.unntaksperiode.innhentinfo);
-router.post('/saksflyt/unntaksperiode/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperiode.ikkegodkjenn);
+router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperiode.godkjenn);
+router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperiode.innhentinfo);
+router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperiode.ikkegodkjenn);
+router.post('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperiode.anmodning);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
