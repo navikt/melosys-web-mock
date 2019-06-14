@@ -209,8 +209,8 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  * VEDTAK
  *  * ---------------------------------------------------------------
  */
-router.post('/vedtak/:behandlingID', vedtak.fattet);
-router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
+router.post('/saksflyt/vedtak/:behandlingID', vedtak.fattet);
+router.post('/saksflyt/vedtak/endre/:behandlingID', vedtak.endreperiode);
 
 /**
  * EESSI
