@@ -36,5 +36,12 @@ module.exports.ikkegodkjenn = async (req, res) => {
   catch(err) {
     Mock.serverError(req, res, err);
   }
+};
 
+module.exports.anmodning = (req, res) => {
+  const { behandlingID } = req.params;
+
+  if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
+
+  return res.status(204).send();
 };

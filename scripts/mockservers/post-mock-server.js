@@ -75,9 +75,9 @@ const testAlleEndepunkter = async () => {
     const saksflyt_vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
     await instance.post('/saksflyt/vedtak/4', saksflyt_vedtak_post).then(reportResult).catch(reportError);
 
-    // Saksflyt - unntaksperiode
-    const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperiode/post/saksflyt-unntaksperiode-post`);
-    await instance.post('/saksflyt/unntaksperiode/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
+    // Saksflyt - unntaksperioder
+    const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperioder/post/saksflyt-unntaksperioder-post`);
+    await instance.post('/saksflyt/unntaksperioder/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
 
     // Vilkar
     const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);

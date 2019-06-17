@@ -25,7 +25,13 @@ const reportError = res => {
 };
 
 const testAlleEndepunkter = async () => {
+  // Fagsaker
   await instance.put('/fagsaker/4/avsluttsaksombortfalt').then(reportResult).catch(reportError);
+
+  // Saksflyt - unntaksperioder
+  await instance.put('/saksflyt/unntaksperioder/4/godkjenn').then(reportResult).catch(reportError);
+  await instance.put('/saksflyt/unntaksperioder/4/innhentinfo').then(reportResult).catch(reportError);
+  await instance.put('/saksflyt/unntaksperioder/4/anmodning').then(reportResult).catch(reportError);
 
   console.log('[PUT]',colors.green('yarn mock:put'));
   console.dir(oppsummering);
