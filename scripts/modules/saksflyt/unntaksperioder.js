@@ -45,3 +45,4 @@ module.exports.anmodning = (req, res) => {
 
   return res.status(204).send();
 };
+

@@ -216,6 +216,9 @@ router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unnta
 router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
 
+router.get('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.hent);
+router.post('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.send);
+
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
