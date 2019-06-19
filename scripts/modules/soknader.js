@@ -1,3 +1,4 @@
+const assert = require('assert');
 const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
@@ -19,6 +20,7 @@ const lesSoknad = (behandlingID) => {
  * @returns {Promise<*>}
  */
 const lesSoknadAsync = behandlingID => {
+  assert.ok(behandlingID, 'behandlingID må ha verdi!!');
   const mockfile = `${MOCK_SOKNAD_DIR}/soknad-bid-${behandlingID}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };

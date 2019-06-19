@@ -6,12 +6,12 @@ const Mock = require('../../utils/mock-util');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
-const BEHANDLINGPERIODER_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/tidligeremedlemsperioder`;
+const MEDLEMSPERIODER_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/tidligeremedlemsperioder`;
 /**
  * lesBehandlingKatalog
  */
 module.exports.lesTidligereMedlemsPerioderKatalog = () => {
-  return Schema.lesKatalogSync(BEHANDLINGPERIODER_MOCK_DIR);
+  return Schema.lesKatalogSync(MEDLEMSPERIODER_MOCK_DIR);
 };
 
 module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
@@ -20,7 +20,7 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
     if (!behandlingID) {
       return Mock.manglerParamBehandlingsID(req, res);
     }
-    const mockfile = `${BEHANDLINGPERIODER_MOCK_DIR}/medlemsperioder-bid-${behandlingID}.json`;
+    const mockfile = `${MEDLEMSPERIODER_MOCK_DIR}/medlemsperioder-bid-${behandlingID}.json`;
     const mockData = await Utils.readJsonAndParseAsync(mockfile);
 
     return res.json(mockData);

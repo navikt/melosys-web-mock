@@ -39,8 +39,8 @@ const testAlleEndepunkter = async () => {
     const behandinger_status = require(`${MOCK_DATA_DIR}/behandlinger/status/post/behandlings-status-post`);
     await instance.post('/behandlinger/4/status', behandinger_status).then(reportResult).catch(reportError);
 
-    const medlems_perioder = require(`${MOCK_DATA_DIR}/behandlinger/tidligeremedlemsperioder/post/medlemsperioder-post`);
-    await instance.post('/behandlinger/4/medlemsperioder', medlems_perioder).then(reportResult).catch(reportError);
+    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlinger/tidligeremedlemsperioder/post/medlemsperioder-post`);
+    await instance.post('/behandlinger/4/medlemsperioder', behandlinger_perioder).then(reportResult).catch(reportError);
 
     // Soknader
     const soknad = require(`${MOCK_DATA_DIR}/soknader/post/soknad-post`);
@@ -71,9 +71,13 @@ const testAlleEndepunkter = async () => {
     const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(reportResult).catch(reportError);
 
-    // Saksflyt
-    const vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
-    await instance.post('/vedtak/4', vedtak_post).then(reportResult).catch(reportError);
+    // Saksflyt - Vedtak
+    const saksflyt_vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
+    await instance.post('/saksflyt/vedtak/4', saksflyt_vedtak_post).then(reportResult).catch(reportError);
+
+    // Saksflyt - unntaksperioder
+    const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperioder/post/saksflyt-unntaksperioder-post`);
+    await instance.post('/saksflyt/unntaksperioder/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
 
     // Vilkar
     const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);

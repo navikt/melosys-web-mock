@@ -2,6 +2,7 @@ const Schema = require('../../utils/schema-util');
 const Behandlinger = require('../../modules/behandlinger');
 
 const catalog = Behandlinger.lesBehandlingKatalog();
+
 const validate = Schema.schemaValidator('behandlinger-behandling-schema.json');
 
 const testAll = () => {
