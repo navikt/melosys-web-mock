@@ -11,6 +11,7 @@ const logging = require('./utils/logging');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
+const eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
 const journalforing = require('./modules/journalforing');
@@ -23,7 +24,7 @@ const registrering = require('./modules/registrering');
 const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
-const vedtak = require('./modules/vedtak');
+const Saksflyt = require('./modules/saksflyt');
 const vilkar = require('./modules/vilkar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
@@ -57,7 +58,7 @@ app.use(bodyParser.raw());
 const port = process.env.PORT || 3002;
 const router = express.Router();
 
-router.get('/serverinfo', serverinfo.hentInfo);
+router.get('/serverinfo', serverinfo.hentServerInfo);
 /**
  * BEHANDLING
  */
@@ -205,11 +206,23 @@ router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.op
 router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
 
 /**
- * VEDTAK
+ * SAKSFLYT
  *  * ---------------------------------------------------------------
  */
-router.post('/vedtak/:behandlingID', vedtak.fattet);
-router.post('/vedtak/endre/:behandlingID', vedtak.endreperiode);
+router.post('/saksflyt/vedtak/:behandlingID', Saksflyt.vedtak.fattet);
+router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode);
+
+router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
+router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
+router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
+router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+/**
+ * EESSI
+ *  * ----------------------------------------------------------------
+ */
+router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
+router.get('/eessi/seder/:behandlingID', eessi.sedunderarbeid);
+router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

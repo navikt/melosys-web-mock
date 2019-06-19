@@ -1,7 +1,7 @@
-const Utils = require('../utils/utils');
-const Mock = require('../utils/mock-util');
+const Utils = require('../../utils/utils');
+const Mock = require('../../utils/mock-util');
 
-const SchemaPostValidator  = require('../utils/schema-post-validator');
+const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
 const postValidator = (req, res, label, schemaNavn) => {
   const body = req.body;
@@ -16,9 +16,9 @@ const postValidator = (req, res, label, schemaNavn) => {
  * @param res
  */
 module.exports.fattet = (req, res) => {
-  const schemaNavn = 'vedtak-post-schema.json';
+  const schemaNavn = 'saksflyt-vedtak-post-schema.json';
 
-  const label = 'Vedtak:fattet';
+  const label = 'Saksflyt::Vedtak:fattet';
   try {
     postValidator(req, res, label, schemaNavn);
   }
@@ -33,8 +33,8 @@ module.exports.fattet = (req, res) => {
  * @param res
  */
 module.exports.endreperiode = (req, res) => {
-  const schemaNavn = 'vedtak-endre-periode-schema.json';
-  const label = 'Vedtak:endre';
+  const schemaNavn = 'saksflyt-vedtak-endre-periode-schema.json';
+  const label = 'Saksflyt::Vedtak:endre';
 
   try {
     postValidator(req, res, label, schemaNavn);

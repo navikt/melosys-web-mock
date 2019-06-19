@@ -36,10 +36,10 @@ const testAlleEndepunkter = async () => {
     await instance.post('/fagsaker/4/kontaktopplysninger/810072512', kontaktopplysninger).then(reportResult).catch(reportError);
 
     // Behandlinger
-    const behandinger_status = require(`${MOCK_DATA_DIR}/behandlingsstatus/post/status`);
+    const behandinger_status = require(`${MOCK_DATA_DIR}/behandlinger/status/post/behandlings-status-post`);
     await instance.post('/behandlinger/4/status', behandinger_status).then(reportResult).catch(reportError);
 
-    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlingsperioder/post/perioder`);
+    const behandlinger_perioder = require(`${MOCK_DATA_DIR}/behandlinger/tidligeremedlemsperioder/post/medlemsperioder-post`);
     await instance.post('/behandlinger/4/medlemsperioder', behandlinger_perioder).then(reportResult).catch(reportError);
 
     // Soknader
@@ -61,6 +61,9 @@ const testAlleEndepunkter = async () => {
     const tilbakelegg = require(`${MOCK_DATA_DIR}/oppgaver/post/tilbakelegge`);
     await instance.post('/oppgaver/tilbakelegge', tilbakelegg).then(reportResult).catch(reportError);
 
+    const plukk = require(`${MOCK_DATA_DIR}/oppgaver/plukk/post/oppgaver-plukk-post`);
+    await instance.post('/oppgaver/plukk', plukk).then(reportResult).catch(reportError);
+
     // Journalforing
     const journal_post_opprett = require(`${MOCK_DATA_DIR}/journalforing/post/opprett`);
     await instance.post('/journalforing/opprett', journal_post_opprett).then(reportResult).catch(reportError);
@@ -68,9 +71,13 @@ const testAlleEndepunkter = async () => {
     const journal_post_tilordne = require(`${MOCK_DATA_DIR}/journalforing/post/tilordne`);
     await instance.post('/journalforing/tilordne', journal_post_tilordne).then(reportResult).catch(reportError);
 
-    // Vedtak
-    const vedtak_post = require(`${MOCK_DATA_DIR}/vedtak/post/vedtak-post`);
-    await instance.post('/vedtak/4', vedtak_post).then(reportResult).catch(reportError);
+    // Saksflyt - Vedtak
+    const saksflyt_vedtak_post = require(`${MOCK_DATA_DIR}/saksflyt/vedtak/post/saksflyt-vedtak-post`);
+    await instance.post('/saksflyt/vedtak/4', saksflyt_vedtak_post).then(reportResult).catch(reportError);
+
+    // Saksflyt - unntaksperioder
+    const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperioder/post/saksflyt-unntaksperioder-post`);
+    await instance.post('/saksflyt/unntaksperioder/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
 
     // Vilkar
     const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);
@@ -82,6 +89,10 @@ const testAlleEndepunkter = async () => {
     const produserbartDokument = 'MELDING_MANGLENDE_OPPLYSNINGER';
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
+
+    // Eessi
+    const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);
+    await instance.post(`/eessi/bucer/${behandlingID}/opprett`, opprettbuc_post).then(reportResult).catch(reportError);
 
     console.log('[POST]',colors.green('yarn mock:post'));
     console.dir(oppsummering);
