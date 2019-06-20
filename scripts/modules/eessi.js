@@ -7,15 +7,15 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 const {  MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
 
-const MOCK_SED_DATA_DIR = `${MOCK_DATA_DIR}/eessi`;
+const MOCK_EESSI_DATA_DIR = `${MOCK_DATA_DIR}/eessi`;
 
 const lesMottakerinstitusjoner = () => {
-  const mockfile = `${MOCK_SED_DATA_DIR}/mottakerinstitusjoner/mottakerinstitusjoner.json`;
+  const mockfile = `${MOCK_EESSI_DATA_DIR}/mottakerinstitusjoner/mottakerinstitusjoner.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
 
 module.exports.lesMottakerinstitusjonerKatalog = () => {
-  return Schema.lesKatalogSync(`${MOCK_SED_DATA_DIR}/mottakerinstitusjoner`);
+  return Schema.lesKatalogSync(`${MOCK_EESSI_DATA_DIR}/mottakerinstitusjoner`);
 };
 
 module.exports.mottakerinstitusjoner = async (req, res) => {
@@ -42,18 +42,18 @@ module.exports.opprettbuc = async (req, res) => {
   }
 };
 
-const lesSedunderarbeid = () => {
-  const mockfile = `${MOCK_SED_DATA_DIR}/sedunderarbeid/sedunderarbeid.json`;
+const lesBucerunderarbeid = () => {
+  const mockfile = `${MOCK_EESSI_DATA_DIR}/bucerunderarbeid/bucerunderarbeid.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
 
-module.exports.lesSedunderarbeidKatalog = () => {
-  return Schema.lesKatalogSync(`${MOCK_SED_DATA_DIR}/sedunderarbeid`);
+module.exports.lesBucerunderarbeidKatalog = () => {
+  return Schema.lesKatalogSync(`${MOCK_EESSI_DATA_DIR}/bucerunderarbeid`);
 };
 
-module.exports.sedunderarbeid = async (req, res) => {
+module.exports.bucerunderarbeid = async (req, res) => {
   try {
-    const info = await lesSedunderarbeid();
+    const info = await lesBucerunderarbeid();
     res.json(info);
   } catch (err) {
     Mock.serverError(req, res, err);

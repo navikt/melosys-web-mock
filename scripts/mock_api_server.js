@@ -221,7 +221,7 @@ router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unn
  *  * ----------------------------------------------------------------
  */
 router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
-router.get('/eessi/seder/:behandlingID', eessi.sedunderarbeid);
+router.get('/eessi/bucer/:behandlingID', eessi.bucerunderarbeid);
 router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 
 // router.post('/logger/trace', logging.trace);
