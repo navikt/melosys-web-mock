@@ -62,8 +62,10 @@ module.exports.oversikt = async (req, res) => {
  * @param res
  */
 module.exports.hentPdf = (req, res) => {
-  //const { journalforingID, dokumentID } = req.params;
-  const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/dokumenttest.pdf`;
+  const { journalforingID, dokumentID } = req.params;
+  console.log('hentPdf',journalforingID, dokumentID);
+  const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/${journalforingID}-${dokumentID}.pdf`;
+
   logger.trace(mockfile);
   res.type('application/pdf');
   res.sendFile(mockfile);
