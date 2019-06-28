@@ -8,6 +8,8 @@ global.nodeCache = nodeCache;
 const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
+const anmodningsperioder = require('./modules/anmodningsperioder');
+const anmodningsperiodersvar = require('./modules/anmodningsperiodersvar');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
@@ -216,8 +218,12 @@ router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unnta
 router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
 
-router.get('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.hent);
 router.post('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.send);
+
+router.get('/anmodningsperioder/:behandlingID', anmodningsperioder.hent);
+router.post('/anmodningsperioder/:behandlingID', anmodningsperioder.send);
+router.get('/anmodningsperiode/:anmodningsperiodeID/svar', anmodningsperiodersvar.hent);
+router.post('/anmodningsperiode/:anmodningsperiodeID/svar', anmodningsperiodersvar.send);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
