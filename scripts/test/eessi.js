@@ -1,24 +1,24 @@
 const Schema = require('../utils/schema-util');
 
-const { lesSedunderarbeidKatalog, lesMottakerinstitusjonerKatalog } = require('../modules/eessi');
+const { lesBucerunderarbeidKatalog, lesMottakerinstitusjonerKatalog } = require('../modules/eessi');
 
-const sedunderarbeid = lesSedunderarbeidKatalog();
+const bucerunderarbeid = lesBucerunderarbeidKatalog();
 const mottakerinstitusjoner = lesMottakerinstitusjonerKatalog();
 
-const sedunderarbeidValidator = Schema.schemaValidator('sedunderarbeid-schema.json');
+const bucerunderarbeidValidator = Schema.schemaValidator('bucerunderarbeid-schema.json');
 const mottakerinstitusjonerValidator = Schema.schemaValidator('mottakerinstitusjoner-schema.json');
 
 const testAll = () => {
-  testAllSedunderarbeid();
+  testAllBucerunderarbeid();
   testAllMottakerinstitusjoner();
 };
 
 const testOne = (path) => {
   const elem = Schema.lesKatalogElement(path);
 
-  if (path.includes('sedunderarbeid')) {
-    Schema.prettyTittel('Eessi SedUnderArbeid');
-    return Schema.runTest(elem, sedunderarbeidValidator);
+  if (path.includes('bucerunderarbeid')) {
+    Schema.prettyTittel('Eessi BucerUnderArbeid');
+    return Schema.runTest(elem, bucerunderarbeidValidator);
   } else if (path.includes('mottakerinstitusjoner')) {
     Schema.prettyTittel('Eessi Mottakerinstitusjoner');
     return Schema.runTest(elem, mottakerinstitusjonerValidator);
@@ -27,10 +27,10 @@ const testOne = (path) => {
   return false;
 };
 
-const testAllSedunderarbeid = () => {
-  Schema.prettyTittel('Eessi SedUnderArbeid');
-  sedunderarbeid.forEach(el =>
-    Schema.runTest(el, sedunderarbeidValidator)
+const testAllBucerunderarbeid = () => {
+  Schema.prettyTittel('Eessi BucerUnderArbeid');
+  bucerunderarbeid.forEach(el =>
+    Schema.runTest(el, bucerunderarbeidValidator)
   );
 };
 

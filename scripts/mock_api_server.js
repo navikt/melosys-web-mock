@@ -198,7 +198,7 @@ router.post('/vilkaar/:behandlingID', vilkar.send);
  *  * ---------------------------------------------------------------
  */
 // Henter et eksisterende dokument fra dokumentarkiv
-router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 // Oppretter en bestilling av dokument i dokumentproduksjon
@@ -221,7 +221,7 @@ router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unn
  *  * ----------------------------------------------------------------
  */
 router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
-router.get('/eessi/seder/:behandlingID', eessi.sedunderarbeid);
+router.get('/eessi/bucer/:behandlingID', eessi.bucerunderarbeid);
 router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 
 // router.post('/logger/trace', logging.trace);
