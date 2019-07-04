@@ -69,7 +69,6 @@ module.exports.hentPdf = (req, res) => {
   if (!dokumentID) {
     return Mock.badRequstParam(req, res, 'Mangler dokumentID');
   }
-  console.log('hentPdf',journalpostID, dokumentID);
   const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/${journalpostID}-${dokumentID}.pdf`;
 
   logger.trace(mockfile);
