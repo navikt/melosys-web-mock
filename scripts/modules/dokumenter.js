@@ -62,9 +62,15 @@ module.exports.oversikt = async (req, res) => {
  * @param res
  */
 module.exports.hentPdf = (req, res) => {
-  const { journalforingID, dokumentID } = req.params;
-  console.log('hentPdf',journalforingID, dokumentID);
-  const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/${journalforingID}-${dokumentID}.pdf`;
+  const { journalpostID, dokumentID } = req.params;
+  if (!journalpostID) {
+    return Mock.badRequstParam(req, res, 'Mangler journalpostID');
+  }
+  if (!dokumentID) {
+    return Mock.badRequstParam(req, res, 'Mangler dokumentID');
+  }
+  console.log('hentPdf',journalpostID, dokumentID);
+  const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/${journalpostID}-${dokumentID}.pdf`;
 
   logger.trace(mockfile);
   res.type('application/pdf');
@@ -79,13 +85,13 @@ Body required onlyif; :dokumenttypeKode='000074' => 'Innhente manglende opplysni
   "mottaker": "ARBEIDSGIVER|MOTTAKER",
   "fritekst": "blahbalh"
 }
-return {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`};
+return {location: `/dokumenter/pdf/${journalpostID}/${dokumentID}`};
 */
 /**
  * lagPdfUkast
  * @param req
  * @param res
- * returns {location: `/dokumenter/pdf/${journalforingID}/${dokumentID}`}
+ * returns {location: `/dokumenter/pdf/${journalpostID}/${dokumentID}`}
  */
 module.exports.lagPdfUtkast = (req, res) => {
   if(!req.accepts('application/pdf')) {
