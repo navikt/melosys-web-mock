@@ -1,19 +1,17 @@
 const colors = require('colors');
 
-module.exports.printresult = (res) => {
-  const { method, url} = res.config;
+module.exports.printresult = res => {
+  const {method, url, status, statusText} = res.response;
   console.log(`[${method.toUpperCase()}]`, url);
-  console.log(res.status, res.statusText);
+  console.log(status, statusText);
   console.log("-------------------------------------------------------\n");
 };
 
 module.exports.printerror = (res) => {
-  const { request, response } = res;
+  const {message: errorMessage, path, response} = res;
+  const {method, status, statusText} = response;
 
-  const { method, path } = request;
-  const { status, statusText, data } = response;
-
-  const message = (data && data.message) ? data.message : 'Ukjent validering feil';
+  const message = (errorMessage) ? errorMessage : 'Ukjent validering feil';
   console.error(`[${method.toUpperCase()}]`, path);
   console.error(colors.bgRed(`${status} ${statusText}`));
   console.error(message);

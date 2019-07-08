@@ -81,6 +81,7 @@ if (argv.watch) {
 }
 
 testAll();
-console.log();
-console.dir(Schema.oppsummering());
+
+console.log('\n================================');
+Schema.printOppsummering();
 console.log('\nSchema validation completed.\n');

@@ -1,13 +1,7 @@
 const colors = require('colors/safe');
-const axios = require('axios');
+const { deleteAsJson} = require('./http-client-api');
+const { API_BASE_URL} = require('../../mock.config');
 const { printerror, printresult } = require('./helpers');
-
-axios.defaults.headers.delete['Content-Type'] = 'application/json';
-
-const instance = axios.create({
-  baseURL: 'http://localhost:3002/api',
-  timeout: 1000
-});
 
 const oppsummering = {
   success: 0,
@@ -24,12 +18,18 @@ const reportError = res => {
   printerror(res);
 };
 
-const testAlleEndepunkter = async () => {
+const slett = url => {
+  const URI_SLETT = `${API_BASE_URL}${url}`;
+  return deleteAsJson(URI_SLETT);
+};
+
+const testAlleEndepunkter = () => {
   try {
     const databaseid = 955006279357058;
-    await instance.delete(`/fagsaker/aktoerer/${databaseid}`).then(reportResult).catch(reportError);
+    slett(`/fagsaker/aktoerer/${databaseid}`, true).then(reportResult).catch(reportError);
+
     const saksnummer = '4', juridiskorgnr = '810072512';
-    await instance.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
+    slett(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
 
     console.log('[DELETE]',colors.green('yarn mock:delete'));
     console.dir(oppsummering);

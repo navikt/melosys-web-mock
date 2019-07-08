@@ -24,6 +24,12 @@ const incFailure = () => {
 module.exports.oppsummering = () => {
   return oppsummering;
 };
+module.exports.printOppsummering = () => {
+  const successText = `Success: ${colors.green(oppsummering.success)}`;
+  let failureText = oppsummering.failure > 0 ? `Failure: ${colors.bgRed(oppsummering.failure)}`: `Failure: ${colors.green(oppsummering.failure)}`;
+  const oppsummeringText = `{ ${successText}, ${failureText} }`;
+  console.log(oppsummeringText);
+};
 
 module.exports.lesSchemaSync = schemapath => {
   return Utils.readJsonAndParseSync(schemapath);
