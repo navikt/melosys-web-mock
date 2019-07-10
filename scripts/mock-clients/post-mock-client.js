@@ -1,6 +1,5 @@
-const colors = require('colors/safe');
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const { httpClient, printerror, printresult } = require('./helpers');
+const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
 
 const client = httpClient();
 
@@ -18,6 +17,8 @@ const reportError = res => {
   oppsummering.failure += 1;
   printerror(res);
 };
+
+printheader('POST');
 
 const testAlleEndepunkter = async () => {
   try {
@@ -88,17 +89,12 @@ const testAlleEndepunkter = async () => {
     const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);
     await client.post(`/eessi/bucer/${behandlingID}/opprett`, opprettbuc_post).then(reportResult).catch(reportError);
 
-    console.log('[POST]',colors.green('yarn mock:post'));
-    console.dir(oppsummering);
+    printoppsummering(oppsummering, 'POST');
   }
   catch (e) {
     console.error(e);
   }
 };
-
-console.log('\n=======================================================');
-console.log('[POST] Mock client');
-console.log('---------------------------------------------------------');
 
 testAlleEndepunkter();
 /*

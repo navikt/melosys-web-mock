@@ -1,6 +1,4 @@
-const colors = require('colors/safe');
-
-const { httpClient, printerror, printresult } = require('./helpers');
+const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
 
 const client = httpClient();
 
@@ -19,6 +17,8 @@ const reportError = res => {
   printerror(res);
 };
 
+printheader('PUT');
+
 const testAlleEndepunkter = async () => {
   // Fagsaker
   await client.put('/fagsaker/4/avsluttsaksombortfalt').then(reportResult).catch(reportError);
@@ -27,13 +27,7 @@ const testAlleEndepunkter = async () => {
   await client.put('/saksflyt/unntaksperioder/4/godkjenn').then(reportResult).catch(reportError);
   await client.put('/saksflyt/unntaksperioder/4/innhentinfo').then(reportResult).catch(reportError);
   await client.put('/saksflyt/unntaksperioder/4/anmodning').then(reportResult).catch(reportError);
-
-  console.log('[PUT]',colors.green('yarn mock:put'));
-  console.dir(oppsummering);
+  printoppsummering(oppsummering,'PUT')
 };
-
-console.log('\n=======================================================');
-console.log('[PUT] Mock client');
-console.log('---------------------------------------------------------');
 
 testAlleEndepunkter();

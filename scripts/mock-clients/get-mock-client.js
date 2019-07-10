@@ -1,5 +1,4 @@
-const colors = require('colors/safe');
-const { httpClient, printerror, printresult } = require('./helpers');
+const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
 
 const client = httpClient();
 
@@ -48,12 +47,8 @@ const testAlleEndepunkter = async () => {
   catch (e) {
     console.log(e);
   }
-  console.log('[GET]',colors.green('yarn mock:get'));
-  console.dir(oppsummering);
+  printoppsummering(oppsummering, 'GET');
 };
 
-
-console.log('\n=======================================================');
-console.log('[GET] Mock client');
-console.log("-------------------------------------------------------");
+printheader('GET');
 testAlleEndepunkter();

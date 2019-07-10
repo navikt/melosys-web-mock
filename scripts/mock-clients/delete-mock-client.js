@@ -1,5 +1,4 @@
-const colors = require('colors/safe');
-const { httpClient, printerror, printresult } = require('./helpers');
+const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
 
 const client = httpClient();
 const oppsummering = {
@@ -17,6 +16,8 @@ const reportError = res => {
   printerror(res);
 };
 
+printheader('DELETE');
+
 const testAlleEndepunkter = async () => {
   try {
     const databaseid = 955006279357058;
@@ -24,16 +25,11 @@ const testAlleEndepunkter = async () => {
     const saksnummer = '4', juridiskorgnr = '810072512';
     await client.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
 
-    console.log('[DELETE]',colors.green('yarn mock:delete'));
-    console.dir(oppsummering);
+    printoppsummering(oppsummering, 'DELETE');
   }
   catch (e) {
     console.error(e);
   }
 };
-
-console.log('\n=======================================================');
-console.log('[DELETE] Mock client');
-console.log('---------------------------------------------------------');
 
 testAlleEndepunkter();

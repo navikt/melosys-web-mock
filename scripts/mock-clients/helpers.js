@@ -15,6 +15,13 @@ module.exports.httpClient = () => {
   });
 };
 
+module.exports.printheader = method => {
+  console.log('\n');
+  console.log('=======================================================');
+  console.log(`[${method.toUpperCase()}] Mock client`);
+  console.log("-------------------------------------------------------");
+};
+
 module.exports.printresult = (res) => {
   const { method, url} = res.config;
   console.log(`[${method.toUpperCase()}]`, url);
@@ -33,4 +40,11 @@ module.exports.printerror = (res) => {
   console.error(colors.bgRed(`${status} ${statusText}`));
   console.error(message);
   console.error("-------------------------------------------------------\n");
+};
+
+module.exports.printoppsummering = (oppsummering, method) => {
+  console.log(`[${method.toUpperCase()}]`, colors.green(`yarn mock:${method.toLowerCase()}`));
+  const successText = `Success: ${colors.green(oppsummering.success)}`;
+  let failureText = oppsummering.failure > 0 ? `Failure: ${colors.bgRed(oppsummering.failure)}`: `Failure: ${colors.white(oppsummering.failure)}`;
+  console.log(`{ ${successText}, ${failureText} }`);
 };
