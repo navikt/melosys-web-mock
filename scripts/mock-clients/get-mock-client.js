@@ -1,16 +1,7 @@
 const colors = require('colors/safe');
-const axios = require("axios");
+const { httpClient, printerror, printresult } = require('./helpers');
 
-const { API_BASE_URL}  = require('../../mock.config');
-const { printerror, printresult } = require('./helpers');
-
-axios.defaults.headers.get['Content-Type'] = 'application/json';
-axios.defaults.crossdomain = true;
-
-const instance = axios.create({
-  baseURL: `${API_BASE_URL}`,
-  timeout: 1000
-});
+const client = httpClient();
 
 const oppsummering = {
   success: 0,
@@ -29,40 +20,40 @@ const reportError = res => {
 
 const testAlleEndepunkter = async () => {
   try {
-    await instance.get('/saksbehandler').then(reportResult).catch(reportError);
-    await instance.get('/behandlinger/4').then(reportResult).catch(reportError);
-    await instance.get('/behandlinger/4/medlemsperioder').then(reportResult).catch(reportError);
-    await instance.get('/fagsaker/sok/').then(reportResult).catch(reportError);
-    await instance.get('/fagsaker/4').then(reportResult).catch(reportError);
-    await instance.get('/fagsaker/3/kontaktopplysninger/810072512').then(reportResult).catch(reportError);
-    await instance.get('/fagsaker/3/aktoerer/?rolle=BRUKER&presenterer=BRUKER').then(reportResult).catch(reportError);
-    await instance.get('/soknader/4').then(reportResult).catch(reportError);
-    await instance.get('/avklartefakta/4').then(reportResult).catch(reportError);
-    await instance.get('/inngang/4').then(reportResult).catch(reportError);
-    await instance.get('/lovvalgsperioder/4').then(reportResult).catch(reportError);
-    await instance.get('/opprinneligLovvalgsperiode/4').then(reportResult).catch(reportError);
-    await instance.get('/oppgaver/sok').then(reportResult).catch(reportError);
-    await instance.get('/oppgaver/plukk').then(reportResult).catch(reportError);
-    await instance.get('/oppgaver/oversikt').then(reportResult).catch(reportError);
-    await instance.get('/oppgaver/reset').then(reportResult).catch(reportError);
-    await instance.get('/journalforing/4').then(reportResult).catch(reportError);
-    await instance.get('/personer/?fnr=17117802280').then(reportResult).catch(reportError);
-    await instance.get('/organisasjoner/?orgnr=810072512').then(reportResult).catch(reportError);
-    await instance.get('/saksopplysninger/oppfriskning/4/status').then(reportResult).catch(reportError);
-    await instance.get('/saksopplysninger/oppfriskning/4').then(reportResult).catch(reportError);
-    await instance.get('/vilkaar/4').then(reportResult).catch(reportError);
-    await instance.get('/eessi/mottakerinstitusjoner/LA_BUC_01').then(reportResult).catch(reportError);
-    await instance.get('/eessi/bucer/4?status=utkast').then(reportResult).catch(reportError);
+    await client.get('/saksbehandler').then(reportResult).catch(reportError);
+    await client.get('/behandlinger/4').then(reportResult).catch(reportError);
+    await client.get('/behandlinger/4/medlemsperioder').then(reportResult).catch(reportError);
+    await client.get('/fagsaker/sok/').then(reportResult).catch(reportError);
+    await client.get('/fagsaker/4').then(reportResult).catch(reportError);
+    await client.get('/fagsaker/3/kontaktopplysninger/810072512').then(reportResult).catch(reportError);
+    await client.get('/fagsaker/3/aktoerer/?rolle=BRUKER&presenterer=BRUKER').then(reportResult).catch(reportError);
+    await client.get('/soknader/4').then(reportResult).catch(reportError);
+    await client.get('/avklartefakta/4').then(reportResult).catch(reportError);
+    await client.get('/inngang/4').then(reportResult).catch(reportError);
+    await client.get('/lovvalgsperioder/4').then(reportResult).catch(reportError);
+    await client.get('/opprinneligLovvalgsperiode/4').then(reportResult).catch(reportError);
+    await client.get('/oppgaver/sok').then(reportResult).catch(reportError);
+    await client.get('/oppgaver/plukk').then(reportResult).catch(reportError);
+    await client.get('/oppgaver/oversikt').then(reportResult).catch(reportError);
+    await client.get('/oppgaver/reset').then(reportResult).catch(reportError);
+    await client.get('/journalforing/4').then(reportResult).catch(reportError);
+    await client.get('/personer/?fnr=17117802280').then(reportResult).catch(reportError);
+    await client.get('/organisasjoner/?orgnr=810072512').then(reportResult).catch(reportError);
+    await client.get('/saksopplysninger/oppfriskning/4/status').then(reportResult).catch(reportError);
+    await client.get('/saksopplysninger/oppfriskning/4').then(reportResult).catch(reportError);
+    await client.get('/vilkaar/4').then(reportResult).catch(reportError);
+    await client.get('/eessi/mottakerinstitusjoner/LA_BUC_01').then(reportResult).catch(reportError);
+    await client.get('/eessi/bucer/4?status=utkast').then(reportResult).catch(reportError);
   }
   catch (e) {
     console.log(e);
   }
-  console.log('[GET]',colors.green('yarn get-mock'));
+  console.log('[GET]',colors.green('yarn mock:get'));
   console.dir(oppsummering);
 };
 
 
 console.log('\n=======================================================');
-console.log('[GET] Mock server');
+console.log('[GET] Mock client');
 console.log("-------------------------------------------------------");
 testAlleEndepunkter();

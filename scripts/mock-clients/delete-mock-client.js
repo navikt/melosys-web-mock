@@ -1,17 +1,7 @@
 const colors = require('colors/safe');
-const axios = require('axios');
+const { httpClient, printerror, printresult } = require('./helpers');
 
-const { API_BASE_URL}  = require('../../mock.config');
-const { printerror, printresult } = require('./helpers');
-
-axios.defaults.headers.delete['Content-Type'] = 'application/json';
-axios.defaults.crossdomain = true;
-
-const instance = axios.create({
-  baseURL: `${API_BASE_URL}`,
-  timeout: 1000
-});
-
+const client = httpClient();
 const oppsummering = {
   success: 0,
   failure: 0,
@@ -30,9 +20,9 @@ const reportError = res => {
 const testAlleEndepunkter = async () => {
   try {
     const databaseid = 955006279357058;
-    await instance.delete(`/fagsaker/aktoerer/${databaseid}`).then(reportResult).catch(reportError);
+    await client.delete(`/fagsaker/aktoerer/${databaseid}`).then(reportResult).catch(reportError);
     const saksnummer = '4', juridiskorgnr = '810072512';
-    await instance.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
+    await client.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
 
     console.log('[DELETE]',colors.green('yarn mock:delete'));
     console.dir(oppsummering);
@@ -43,7 +33,7 @@ const testAlleEndepunkter = async () => {
 };
 
 console.log('\n=======================================================');
-console.log('[DELETE] Mock server');
+console.log('[DELETE] Mock client');
 console.log('---------------------------------------------------------');
 
 testAlleEndepunkter();
