@@ -1,12 +1,14 @@
 const colors = require('colors/safe');
 const axios = require("axios");
+
+const { API_BASE_URL}  = require('../../mock.config');
 const { printerror, printresult } = require('./helpers');
 
 axios.defaults.headers.get['Content-Type'] = 'application/json';
 axios.defaults.crossdomain = true;
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3002/api',
+  baseURL: `${API_BASE_URL}`,
   timeout: 1000
 });
 
