@@ -3,6 +3,7 @@ const axios = require("axios");
 const { printerror, printresult } = require('./helpers');
 
 axios.defaults.headers.get['Content-Type'] = 'application/json';
+axios.defaults.crossdomain = true;
 
 const instance = axios.create({
   baseURL: 'http://localhost:3002/api',

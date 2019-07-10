@@ -4,6 +4,7 @@ const { MOCK_DATA_DIR } = require('../../mock.config');
 const { printerror, printresult } = require('./helpers');
 
 axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.crossdomain = true;
 
 const instance = axios.create({
   baseURL: 'http://localhost:3002/api',
