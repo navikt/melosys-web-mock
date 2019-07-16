@@ -26,6 +26,8 @@ const reportError = res => {
 
 const testAlleEndepunkter = async () => {
   try {
+    await instance.get('/anmodningsperioder/4').then(reportResult).catch(reportError);
+    await instance.get('/anmodningsperiode/4/svar').then(reportResult).catch(reportError);
     await instance.get('/saksbehandler').then(reportResult).catch(reportError);
     await instance.get('/behandlinger/4').then(reportResult).catch(reportError);
     await instance.get('/behandlinger/4/medlemsperioder').then(reportResult).catch(reportError);

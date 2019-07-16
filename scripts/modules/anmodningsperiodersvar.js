@@ -3,7 +3,7 @@ const SchemaPostValidator  = require('../utils/schema-post-validator');
 const Utils = require('../utils/utils');
 
 const { MOCK_DATA_DIR } = require('../../mock.config');
-const ANMODNINGSPERIODERSVAR_MOCK_DIR = `${MOCK_DATA_DIR}/anmodningsperiodersvar`;
+const ANMODNINGSPERIODERSVAR_MOCK_DIR = `${MOCK_DATA_DIR}/anmodningsperioder/svar`;
 
 module.exports.send = (req, res) => {
   const { anmodningsperiodeID } = req.params;
@@ -18,7 +18,7 @@ module.exports.send = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
 
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+    return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
   }
   catch(err) {
     Mock.serverError(req, res, err);

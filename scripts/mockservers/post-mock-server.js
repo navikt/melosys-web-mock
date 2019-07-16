@@ -90,6 +90,12 @@ const testAlleEndepunkter = async () => {
     await instance.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
     await instance.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
 
+    // Anmodningsperioder
+    const anmodningsperioder = require(`${MOCK_DATA_DIR}/anmodningsperioder/post/anmodningsperioder-post.json`);
+    const anmodningsperiodeSvar = require(`${MOCK_DATA_DIR}/anmodningsperioder/svar/post/anmodningsperiodersvar-post.json`);
+    await instance.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
+    await instance.post('/anmodningsperiode/4/svar', anmodningsperiodeSvar).then(reportResult).catch(reportError);
+
     console.log('[POST]',colors.green('yarn mock:post'));
     console.dir(oppsummering);
   }
