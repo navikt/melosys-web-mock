@@ -99,6 +99,10 @@ const testAlleEndepunkter = async () => {
     const anmodningsperiodeSvar = require(`${MOCK_DATA_DIR}/anmodningsperioder/svar/post/anmodningsperiodersvar-post.json`);
     await instance.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
     await instance.post('/anmodningsperiode/4/svar', anmodningsperiodeSvar).then(reportResult).catch(reportError);
+    
+    // Eessi
+    const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);
+    await instance.post(`/eessi/bucer/${behandlingID}/opprett`, opprettbuc_post).then(reportResult).catch(reportError);
 
     console.log('[POST]',colors.green('yarn mock:post'));
     console.dir(oppsummering);

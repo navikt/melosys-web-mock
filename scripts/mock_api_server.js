@@ -13,6 +13,7 @@ const anmodningsperiodersvar = require('./modules/anmodningsperiodersvar');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
+const eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
 const journalforing = require('./modules/journalforing');
@@ -199,7 +200,7 @@ router.post('/vilkaar/:behandlingID', vilkar.send);
  *  * ---------------------------------------------------------------
  */
 // Henter et eksisterende dokument fra dokumentarkiv
-router.get('/dokumenter/pdf/:journalforingID/:dokumentID', dokumenter.hentPdf);
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 // Oppretter en bestilling av dokument i dokumentproduksjon
@@ -217,6 +218,13 @@ router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksp
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
 router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+/**
+ * EESSI
+ *  * ----------------------------------------------------------------
+ */
+router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
+router.get('/eessi/bucer/:behandlingID', eessi.bucerunderarbeid);
+router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 
 router.post('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.send);
 
