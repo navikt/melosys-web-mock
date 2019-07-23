@@ -74,10 +74,6 @@ const testAlleEndepunkter = async () => {
     const saksflyt_unntaksperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/unntaksperioder/post/saksflyt-unntaksperioder-post`);
     await client.post('/saksflyt/unntaksperioder/4/ikkegodkjenn', saksflyt_unntaksperiode_post).then(reportResult).catch(reportError);
 
-    // Saksflyt - anmodningsperiode
-    const saksflyt_anmodningsperiode_post = require(`${MOCK_DATA_DIR}/saksflyt/anmodningsperioder/post/saksflyt-anmodningsperioder-post`);
-    await instance.post('/saksflyt/anmodningsperioder/4/', saksflyt_anmodningsperiode_post).then(reportResult).catch(reportError);
-
     // Vilkar
     const vilkar_post = require(`${MOCK_DATA_DIR}/vilkar/post/vilkar-post`);
     await client.post('/vilkaar/4', vilkar_post).then(reportResult).catch(reportError);
@@ -92,8 +88,8 @@ const testAlleEndepunkter = async () => {
     // Anmodningsperioder
     const anmodningsperioder = require(`${MOCK_DATA_DIR}/anmodningsperioder/post/anmodningsperioder-post.json`);
     const anmodningsperiodeSvar = require(`${MOCK_DATA_DIR}/anmodningsperioder/svar/post/anmodningsperiodersvar-post.json`);
-    await instance.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
-    await instance.post('/anmodningsperiode/4/svar', anmodningsperiodeSvar).then(reportResult).catch(reportError);
+    await client.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
+    await client.post('/anmodningsperiode/4/svar', anmodningsperiodeSvar).then(reportResult).catch(reportError);
     
     // Eessi
     const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);

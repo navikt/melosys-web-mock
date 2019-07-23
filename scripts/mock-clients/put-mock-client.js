@@ -27,6 +27,7 @@ const testAlleEndepunkter = async () => {
   await client.put('/saksflyt/unntaksperioder/4/godkjenn').then(reportResult).catch(reportError);
   await client.put('/saksflyt/unntaksperioder/4/innhentinfo').then(reportResult).catch(reportError);
   await client.put('/saksflyt/unntaksperioder/4/anmodning').then(reportResult).catch(reportError);
+  await client.put('/saksflyt/anmodningsperioder/4/bestill').then(reportResult).catch(reportError);
   printoppsummering(oppsummering,'PUT')
 };
 
