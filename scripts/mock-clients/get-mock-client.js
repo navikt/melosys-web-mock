@@ -20,6 +20,9 @@ const reportError = res => {
 const testAlleEndepunkter = async () => {
   try {
     await client.get('/saksbehandler').then(reportResult).catch(reportError);
+    await client.get('/anmodningsperioder/4').then(reportResult).catch(reportError);
+    await client.get('/anmodningsperioder/svar/4').then(reportResult).catch(reportError);
+
     await client.get('/behandlinger/4').then(reportResult).catch(reportError);
     await client.get('/behandlinger/4/medlemsperioder').then(reportResult).catch(reportError);
     await client.get('/fagsaker/sok/').then(reportResult).catch(reportError);

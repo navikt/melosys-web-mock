@@ -85,6 +85,12 @@ const testAlleEndepunkter = async () => {
     await client.post(`/dokumenter/utkast/pdf/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
     await client.post(`/dokumenter/opprett/${behandlingID}/${produserbartDokument}`, dokument_post_utkast).then(reportResult).catch(reportError);
 
+    // Anmodningsperioder
+    const anmodningsperioder = require(`${MOCK_DATA_DIR}/anmodningsperioder/post/anmodningsperioder-post.json`);
+    const anmodningsperiodeSvar = require(`${MOCK_DATA_DIR}/anmodningsperioder/svar/post/anmodningsperiodersvar-post.json`);
+    await client.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
+    await client.post('/anmodningsperioder/svar/4', anmodningsperiodeSvar).then(reportResult).catch(reportError);
+    
     // Eessi
     const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);
     await client.post(`/eessi/bucer/${behandlingID}/opprett`, opprettbuc_post).then(reportResult).catch(reportError);

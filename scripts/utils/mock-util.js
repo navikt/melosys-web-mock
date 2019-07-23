@@ -69,3 +69,10 @@ module.exports.manglerParamOrgnr = (req, res) => badRequstParam(req, res, 'Organ
  * @returns {*}
  */
 module.exports.manglerParamFnr = (req, res) => badRequstParam(req, res, 'Fødselsnummer mangler');
+/**
+ * manglerParamAnmodningsperiodeID
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+module.exports.manglerParamAnmodningsperiodeID = (req, res) => badRequstParam(req, res, 'AnmodningsperiodeID mangler');

@@ -2,6 +2,7 @@ const argv = require('yargs').argv;
 const fs = require('fs');
 
 const { demo } = require('./test/demo');
+const Anmodningsperioder = require('./test/anmodningsperioder');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
 const Fagsaker = require('./test/fagsaker');
@@ -33,6 +34,8 @@ log4js.configure({
 
 const katalogMap = new Map([
   ['demo', demo],
+  ['anmodningsperioder', Anmodningsperioder.anmodningsperioder],
+  ['anmodningsperioder/svar', Anmodningsperioder.svar],
   ['personer', person],
   ['soknader', soknad],
   ['fagsaker', Fagsaker.fagsak],
