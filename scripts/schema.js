@@ -17,7 +17,7 @@ const Oppgaver = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
-// TODO const { eessi } = require('./test/eessi');
+const { eessi } = require('./test/eessi');
 
 const Schema = require('./utils/schema-util');
 
@@ -56,7 +56,7 @@ const katalogMap = new Map([
   ['behandlinger/behandling', Behandlinger.behandling],
   ['behandlinger/medlemsperioder', Behandlinger.medlemsperioder],
   ['behandlinger/resultat', Behandlinger.resultat],
-  // TODO ['eessi', eessi],
+  ['eessi', eessi],
 ]);
 
 const testAll = () => {
