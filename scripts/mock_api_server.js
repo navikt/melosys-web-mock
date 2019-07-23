@@ -8,8 +8,9 @@ global.nodeCache = nodeCache;
 const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
-const anmodningsperioder = require('./modules/anmodningsperioder');
-const anmodningsperiodersvar = require('./modules/anmodningsperiodersvar');
+//const anmodningsperioder = require('./modules/anmodningsperioder');
+//const anmodningsperiodersvar = require('./modules/anmodningsperiodersvar');
+const Anmodningsperioder = require('./modules/anmodningsperioder');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
@@ -217,7 +218,9 @@ router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode
 router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
 router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
-router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+router.post('/saksflyt/unntaksperioder/behandlingsresultat/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill);
+
 /**
  * EESSI
  *  * ----------------------------------------------------------------
@@ -226,12 +229,13 @@ router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner)
 router.get('/eessi/bucer/:behandlingID', eessi.bucerunderarbeid);
 router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 
-router.post('/saksflyt/anmodningsperioder/:behandlingID', Saksflyt.anmodningsperioder.send);
-
-router.get('/anmodningsperioder/:behandlingID', anmodningsperioder.hent);
-router.post('/anmodningsperioder/:behandlingID', anmodningsperioder.send);
-router.get('/anmodningsperiode/:anmodningsperiodeID/svar', anmodningsperiodersvar.hent);
-router.post('/anmodningsperiode/:anmodningsperiodeID/svar', anmodningsperiodersvar.send);
+/**
+ * ANMODNINGSPERIODER
+ */
+router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
+router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
+router.get('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.hentSvar);
+router.post('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.sendSvar);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

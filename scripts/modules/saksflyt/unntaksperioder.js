@@ -3,6 +3,7 @@ const Mock = require('../../utils/mock-util');
 
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 
+// [PUT] '/saksflyt/unntaksperioder/:behandlingID/godkjenn'
 module.exports.godkjenn = async (req, res) => {
   let { behandlingID } = req.params;
 
@@ -11,6 +12,7 @@ module.exports.godkjenn = async (req, res) => {
   return res.status(204).send();
 };
 
+// [PUT] '/saksflyt/unntaksperioder/:behandlingID/innhentinfo'
 module.exports.innhentinfo = async (req, res) => {
   let { behandlingID } = req.params;
 
@@ -19,6 +21,15 @@ module.exports.innhentinfo = async (req, res) => {
   return res.status(204).send();
 };
 
+// [PUT ]'/saksflyt/unntaksperioder/:behandlingID/anmodning'
+module.exports.anmodning = (req, res) => {
+  const { behandlingID } = req.params;
+
+  if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
+
+  return res.status(204).send();
+};
+// [POST] '/saksflyt/unntaksperioder/behandlingsresultat/:behandlingID/ikkegodkjenn'
 module.exports.ikkegodkjenn = async (req, res) => {
   let { behandlingID } = req.params;
 
@@ -36,13 +47,5 @@ module.exports.ikkegodkjenn = async (req, res) => {
   catch(err) {
     Mock.serverError(req, res, err);
   }
-};
-
-module.exports.anmodning = (req, res) => {
-  const { behandlingID } = req.params;
-
-  if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
-
-  return res.status(204).send();
 };
 

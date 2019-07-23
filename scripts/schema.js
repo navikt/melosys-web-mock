@@ -2,6 +2,7 @@ const argv = require('yargs').argv;
 const fs = require('fs');
 
 const { demo } = require('./test/demo');
+const Anmodningsperioder = require('./test/anmodningsperioder');
 const { person } = require('./test/person');
 const { soknad } = require('./test/soknad');
 const Fagsaker = require('./test/fagsaker');
@@ -16,7 +17,7 @@ const Oppgaver = require('./test/oppgaver');
 const { avklartefakta } = require('./test/avklartefakta');
 const { vilkar } = require('./test/vilkar');
 const { dokumenter } = require('./test/dokumenter');
-const { eessi } = require('./test/eessi');
+// TODO const { eessi } = require('./test/eessi');
 
 const Schema = require('./utils/schema-util');
 
@@ -33,6 +34,8 @@ log4js.configure({
 
 const katalogMap = new Map([
   ['demo', demo],
+  ['anmodningsperioder', Anmodningsperioder.anmodningsperioder],
+  ['anmodningsperioder/svar', Anmodningsperioder.svar],
   ['personer', person],
   ['soknader', soknad],
   ['fagsaker', Fagsaker.fagsak],
@@ -53,7 +56,7 @@ const katalogMap = new Map([
   ['behandlinger/behandling', Behandlinger.behandling],
   ['behandlinger/medlemsperioder', Behandlinger.medlemsperioder],
   ['behandlinger/resultat', Behandlinger.resultat],
-  ['eessi', eessi],
+  // TODO ['eessi', eessi],
 ]);
 
 const testAll = () => {
