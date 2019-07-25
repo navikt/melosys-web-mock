@@ -1,8 +1,8 @@
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
-
+const Schema = require('../utils/schema-util');
 const client = httpClient();
-
+const Katalog = require('../katalog');
 const oppsummering = {
   success: 0,
   failure: 0,
@@ -17,8 +17,45 @@ const reportError = res => {
   oppsummering.failure += 1;
   printerror(res);
 };
-
 printheader('POST');
+
+const pathname2String = (pathname, params) => {
+  const paths = pathname.split('/');
+  let path = paths.shift();
+  console.log(paths);
+  paths.forEach(item => {
+    if (item.startsWith(':')) {
+      const param = params[item.slice(1)];
+      path += `/${param}`;
+    }
+    else {
+      const param = params[item] ? params[item] : item;
+      path += `/${param}`;
+    }
+  });
+  return path;
+};
+const pathObject2String = pathobject => {
+  const { pathname, params } = pathobject;
+  return pathname2String(pathname, params);
+};
+const testAll = () => {
+  Katalog.katalogMap.forEach((uri, navn) => {
+    if (uri && uri.post) {
+      const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${navn}/post`;
+      const katalog = Schema.lesKatalogSync(POST_MOCK_DIR);
+      katalog.forEach(item => console.dir(item));
+      const document = katalog[0].document;
+      const pathname = pathObject2String(uri.post);
+      // console.log('post',pathname);
+      // console.log(document);
+      // console.log();
+      //client.post(pathname, document).then(reportResult).catch(reportError);
+    }
+  });
+};
+
+testAll();
 
 const testAlleEndepunkter = async () => {
   try {
@@ -90,7 +127,7 @@ const testAlleEndepunkter = async () => {
     const anmodningsperiodeSvar = require(`${MOCK_DATA_DIR}/anmodningsperioder/svar/post/anmodningsperiodersvar-post.json`);
     await client.post('/anmodningsperioder/4', anmodningsperioder).then(reportResult).catch(reportError);
     await client.post('/anmodningsperioder/svar/4', anmodningsperiodeSvar).then(reportResult).catch(reportError);
-    
+
     // Eessi
     const opprettbuc_post = require(`${MOCK_DATA_DIR}/eessi/post/opprettbuc`);
     await client.post(`/eessi/bucer/${behandlingID}/opprett`, opprettbuc_post).then(reportResult).catch(reportError);
@@ -102,7 +139,7 @@ const testAlleEndepunkter = async () => {
   }
 };
 
-testAlleEndepunkter();
+//testAlleEndepunkter();
 /*
 PUT vs POST for Creation
 In short, favor using POST for resource creation.

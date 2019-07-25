@@ -7,11 +7,12 @@ const ERR = require('./errors');
 const Schema = require('./schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
 
-module.exports.valideringFeil = (req, res) => {
+const valideringFeil = (req, res) => {
   const status = 400;
   const melding = ERR.errorMessage(400,'Bad Request', 'Invalid schema', req.originalUrl);
   res.status(status).send(melding);
 };
+module.exports.valideringFeil = valideringFeil;
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
@@ -21,7 +22,7 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
-module.exports.test = (label, schemaNavn, data) => {
+const test = (label, schemaNavn, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
     return false;
@@ -44,7 +45,22 @@ module.exports.test = (label, schemaNavn, data) => {
   }
   return valid;
 };
+module.exports.test = test;
+module.exports.post = (moduleName, req, res) => {
+  const schemaNavn = `${moduleName}-post-schema.json`;
+  const label = `${moduleName}:send`;
 
+  try {
+    const body = req.body;
+    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+
+    const valid = test(label, schemaNavn, jsBody);
+    return valid ? res.json(jsBody) : valideringFeil(req, res);
+  }
+  catch(err) {
+    Mock.serverError(req, res, err);
+  }
+};
 module.exports.testAsync = async (label, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));

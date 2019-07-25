@@ -1,11 +1,7 @@
-const Utils = require('../../utils/utils');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
-
 const Mock = require('../../utils/mock-util');
-/*
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const BEHANDLINGSSTATUS_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsstatus`;
-*/
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap["anmodningsperioder-svar"];
 /**
  * status
  * @param req
@@ -13,21 +9,9 @@ const BEHANDLINGSSTATUS_MOCK_DIR = `${MOCK_DATA_DIR}/behandlingsstatus`;
  * @returns {*}
  */
 module.exports.sendStatus = (req, res) => {
-  const schemaNavn = 'behandlinger-status-post-schema.json';
-
-  try {
-    const { behandlingID } = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const { body } = req;
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const label = 'Behandlinger:status';
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaPostValidator.post(moduleName, req, res);
 };

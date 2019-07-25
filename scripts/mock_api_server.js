@@ -8,8 +8,6 @@ global.nodeCache = nodeCache;
 const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
-//const anmodningsperioder = require('./modules/anmodningsperioder');
-//const anmodningsperiodersvar = require('./modules/anmodningsperiodersvar');
 const Anmodningsperioder = require('./modules/anmodningsperioder');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
@@ -29,6 +27,8 @@ const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
 const vilkar = require('./modules/vilkar');
+const Katalog = require('./katalog');
+
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -232,8 +232,10 @@ router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
 /**
  * ANMODNINGSPERIODER
  */
+
 router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
-router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
+//router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
+router.post(Katalog.pathnameMap.anmodningsperioder.post.pathname, Anmodningsperioder.sendPerioder);
 router.get('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.hentSvar);
 router.post('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.sendSvar);
 

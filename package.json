@@ -50,7 +50,7 @@
     "mock:post": "node scripts/mock-clients/post-mock-client",
     "mock:delete": "node scripts/mock-clients/delete-mock-client",
     "mock": "npm-run-all -s mock:*",
-    "post-mock:dbg": "node $NODE_DEBUG_OPTION scripts/post-mock-client",
+    "post-mock:dbg": "node scripts/mock-clients/post-mock-client",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",
     "eslint": "eslint scripts --ext .js",
