@@ -12,7 +12,7 @@ const Anmodningsperioder = require('./modules/anmodningsperioder');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const dokumenter = require('./modules/dokumenter');
-const eessi = require('./modules/eessi');
+const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
 const journalforing = require('./modules/journalforing');
@@ -225,17 +225,17 @@ router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodn
  * EESSI
  *  * ----------------------------------------------------------------
  */
-router.get('/eessi/mottakerinstitusjoner/:bucType', eessi.mottakerinstitusjoner);
-router.get('/eessi/bucer/:behandlingID', eessi.bucerunderarbeid);
-router.post('/eessi/bucer/:behandlingID/opprett', eessi.opprettbuc);
+router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
+router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
+router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
 
 /**
  * ANMODNINGSPERIODER
  */
 
 router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
-//router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
-router.post(Katalog.pathnameMap.anmodningsperioder.post.pathname, Anmodningsperioder.sendPerioder);
+router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
+//router.post(Katalog.pathnameMap.anmodningsperioder.post.pathname, Anmodningsperioder.sendPerioder);
 router.get('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.hentSvar);
 router.post('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.sendSvar);
 

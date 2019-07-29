@@ -42,15 +42,16 @@ const pathObject2String = pathobject => {
 const testAll = () => {
   Katalog.katalogMap.forEach((uri, navn) => {
     if (uri && uri.post) {
+      console.log(navn);
       const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${navn}/post`;
       const katalog = Schema.lesKatalogSync(POST_MOCK_DIR);
-      katalog.forEach(item => console.dir(item));
+
       const document = katalog[0].document;
       const pathname = pathObject2String(uri.post);
-      // console.log('post',pathname);
-      // console.log(document);
-      // console.log();
-      //client.post(pathname, document).then(reportResult).catch(reportError);
+      console.log('post',pathname);
+      console.log(JSON.stringify(document, null, 2));
+      console.log();
+      client.post(pathname, document).then(reportResult).catch(reportError);
     }
   });
 };

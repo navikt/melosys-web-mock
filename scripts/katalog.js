@@ -2,7 +2,7 @@ const pathnameMap = {
   anmodningsperioder: {
     moduleName: 'anmodningsperioder',
     post: {
-      pathname: '/anmodningsperioder/svar/:behandlingID',
+      pathname: '/anmodningsperioder/:behandlingID',
       params: {behandlingID: 4}
     }
   },
@@ -48,9 +48,28 @@ const pathnameMap = {
       pathname: '/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode',
       params: {behandlingID: 4, dokumenttypeKode:'MELDING_MANGLENDE_OPPLYSNINGER'},
     }
+  },
+  'eessi-bucer': {
+    moduleName: 'eessi-bucer',
+    post: {
+      pathname: '/eessi/bucer/:behandlingID/opprett',
+      params: {behandlingID: 4},
+    },
+    get: {
+      pathname: '/eessi/bucer/:behandlingID',
+      params: {behandlingID: 4},
+    }
+  },
+  'eessi-mottakerinstitusjoner': {
+    moduleName: 'eessi-mottakerinstitusjoner',
+    get: {
+      pathname: '/eessi/mottakerinstitusjoner/:bucType',
+      params: {bucType: 'LA_BUC_01'},
+    }
   }
 };
 const katalogMap = new Map([
+  /*
   ['anmodningsperioder', pathnameMap.anmodningsperioder],
   ['anmodningsperioder-svar', pathnameMap["anmodningsperioder-svar"]],
   ['avklartefakta', pathnameMap.avklartefakta],
@@ -59,6 +78,10 @@ const katalogMap = new Map([
   ['behandlinger-status', pathnameMap["behandlinger-status"]],
   ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
   ['dokumenter', pathnameMap.dokumenter],
+  */
+  ['eessi-bucer', pathnameMap["eessi-bucer"]],
+  ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
+  /*
   ['eessi', {}],
   ['eessi-bucerunderarbeid',{}],
   ['eessi-mottakerinstitusjoner', {}],
@@ -84,6 +107,7 @@ const katalogMap = new Map([
   ['saksflyt-vedtak', {}],
   ['soknader', {}],
   ['vilkar', {}],
+  */
 ]);
 
 module.exports = {

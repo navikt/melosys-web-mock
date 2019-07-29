@@ -3,6 +3,8 @@ const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
 const ERR = require('./errors');
+const Mock = require('./mock-util');
+const Utils = require('./utils');
 
 const Schema = require('./schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
@@ -46,16 +48,16 @@ const test = (label, schemaNavn, data) => {
   return valid;
 };
 module.exports.test = test;
-module.exports.post = (moduleName, req, res) => {
+module.exports.post = (moduleName, req, res, customResponse = null) => {
   const schemaNavn = `${moduleName}-post-schema.json`;
   const label = `${moduleName}:send`;
 
   try {
     const body = req.body;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-
     const valid = test(label, schemaNavn, jsBody);
-    return valid ? res.json(jsBody) : valideringFeil(req, res);
+    const response = customResponse ? customResponse : jsBody;
+    return valid ? res.json(response) : valideringFeil(req, res);
   }
   catch(err) {
     Mock.serverError(req, res, err);

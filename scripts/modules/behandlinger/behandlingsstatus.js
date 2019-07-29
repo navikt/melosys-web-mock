@@ -1,7 +1,7 @@
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
-const { moduleName } = Katalog.pathnameMap["anmodningsperioder-svar"];
+const { moduleName } = Katalog.pathnameMap["behandlinger-status"];
 /**
  * status
  * @param req
