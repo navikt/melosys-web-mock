@@ -2,8 +2,11 @@ const { MOCK_DATA_DIR } = require('../../mock.config');
 const Schema = require('../utils/schema-util');
 const Utils = require('../utils/utils');
 
+
+const Katalog = require('../katalog');
+const { moduleName } = Katalog.pathnameMap.inngang;
 const Mock = require('../utils/mock-util');
-const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/inngang`;
+const INNGANG_MOCK_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 /**
  * lesInngangKatalog

@@ -77,6 +77,50 @@ const pathnameMap = {
       pathname: '/fagsaker/:fnr/henlegg',
       params: {fnr: '17117802280'}
     }
+  },
+  'fagsaker-aktoerer': {
+    moduleName: 'fagsaker-aktoerer',
+    get: {
+      pathname: '/fagsaker/:saksnummer/aktoerer/?rolle=BRUKER&presenterer=BRUKER',
+      params: {saksnummer: 4},
+    },
+    post: {
+      pathname: '/fagsaker/:saksnummer/aktoerer',
+      params: {saksnummer: 4},
+    },
+    delete: {
+      pathname: '/fagsaker/aktoerer/:databaseid',
+      params: { databaseid: 955006279357058}
+    }
+  },
+  'fagsaker-kontaktopplysninger': {
+    moduleName: 'fagsaker-kontaktopplysninger',
+    get: {
+      pathname: '/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr',
+      params: {saksnummer: 3, juridiskorgnr: 810072512},
+    },
+    post: {
+      pathname: '/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr',
+      params: {saksnummer: 3, juridiskorgnr: 810072512},
+    },
+    delete: {
+      pathname: '/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr',
+      params: {saksnummer: 4, juridiskorgnr: 810072512}
+    }
+  },
+  'fagsaker-sok': {
+    moduleName: 'fagsaker-sok',
+    get: {
+      pathname: '/fagsaker/sok/?fnr=17117802280',
+      params: {}
+    }
+  },
+  inngang: {
+    moduleName: 'inngang',
+    get: {
+      pathname: '/inngang/:snr',
+      params: {snr: 4}
+    }
   }
 };
 const katalogMap = new Map([
@@ -92,13 +136,12 @@ const katalogMap = new Map([
   ['eessi-bucer', pathnameMap["eessi-bucer"]],
   ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
   */
-  ['fagsaker', pathnameMap.fagsaker],
+  //['fagsaker', pathnameMap.fagsaker],
+  //['fagsaker-aktoerer', pathnameMap["fagsaker-aktoerer"]],
+  //['fagsaker-kontaktopplysninger', pathnameMap["fagsaker-kontaktopplysninger"]],
+  //['fagsaker-sok', pathnameMap["fagsaker-sok"]],
+  //['inngang', pathnameMap.inngang],
   /*
-  ['fagsaker', {}],
-  ['fagsaker-aktoerer', {}],
-  ['fagsaker-kontaktopplysninger', {}],
-  ['fagsaker-sok', {}],
-  ['inngang', {}],
   ['journalforing', {}],
   ['journalforing-opprett', {}],
   ['journalforing-tilordne', {}],

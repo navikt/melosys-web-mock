@@ -8,7 +8,10 @@ const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const Mock = require('../../utils/mock-util');
 
-const KONTAKT_OPPLYSNINGER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/kontaktopplysninger`;
+
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap["fagsaker-kontaktopplysninger"];
+const KONTAKT_OPPLYSNINGER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 const lesKontaktopplysning = async (saksnummer, juridiskorgnr) => {
   const mockfile = `${KONTAKT_OPPLYSNINGER_DATA_DIR }/kontaktopplysninger-snr-${saksnummer}.json`;
@@ -66,20 +69,7 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
  */
 module.exports.sendKontaktopplysninger = (req, res) => {
   if (manglerParamSakEllerOrgNummer(req, res)) return;
-
-  const body = req.body;
-  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  const label = 'Fagsaker::Kontaktopplysninger:sendKontaktopplysninger';
-  logger.debug(`${label}`, JSON.stringify(jsBody));
-
-  try {
-    const schemaNavn = 'kontaktopplysninger-post-schema.json';
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaPostValidator.post(moduleName, req, res);
 };
 
 /**

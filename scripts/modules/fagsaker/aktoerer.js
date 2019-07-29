@@ -7,9 +7,11 @@ const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const Mock = require('../../utils/mock-util');
 
-const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
-const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap["fagsaker-aktoerer"]
 
+const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
 
 /**
  * lesAktoer
@@ -83,7 +85,7 @@ module.exports.sendAktoer = async (req, res) => {
       return Mock.manglerParamSaksnummer(req, res);
     }
 
-    const schemaNavn = 'aktoer-post-schema.json';
+    const schemaNavn = `${moduleName}-post-schema.json`;
     const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
 
     if (!valid) return SchemaPostValidator.valideringFeil(req, res);
