@@ -3,7 +3,8 @@ const Utils = require('../../utils/utils');
 const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Mock = require('../../utils/mock-util');
-
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap.fagsaker;
 const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
 
 module.exports.lesFagsakerKatalog = () => {
@@ -13,7 +14,8 @@ module.exports.lesFagsakerKatalog = () => {
 module.exports.hentFagsak = async (req, res) => {
   try {
     let { saksnummer } = req.params;
-    const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${saksnummer}.json`;
+    const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+    const mockfile = `${GET_DIR}/snr-${saksnummer}.json`;
     const fagsaker = await Utils.readJsonAndParseAsync(mockfile);
     res.json(fagsaker);
   }
@@ -23,7 +25,7 @@ module.exports.hentFagsak = async (req, res) => {
 };
 
 module.exports.henleggFagsak = async (req, res) => {
-  const schemaNavn = 'henlegg-fagsak-schema.json';
+  const schemaNavn = 'fagsaker-post-schema.json';
   const label = 'Fagsaker::fagsak:henlegg';
   try {
     const body = req.body;

@@ -66,6 +66,17 @@ const pathnameMap = {
       pathname: '/eessi/mottakerinstitusjoner/:bucType',
       params: {bucType: 'LA_BUC_01'},
     }
+  },
+  fagsaker: {
+    moduleName: 'fagsaker',
+    get: {
+      pathname: '/fagsaker/:saksnummer',
+      params: {saksnummer: 4}
+    },
+    post: {
+      pathname: '/fagsaker/:fnr/henlegg',
+      params: {fnr: '17117802280'}
+    }
   }
 };
 const katalogMap = new Map([
@@ -78,13 +89,11 @@ const katalogMap = new Map([
   ['behandlinger-status', pathnameMap["behandlinger-status"]],
   ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
   ['dokumenter', pathnameMap.dokumenter],
-  */
   ['eessi-bucer', pathnameMap["eessi-bucer"]],
   ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
+  */
+  ['fagsaker', pathnameMap.fagsaker],
   /*
-  ['eessi', {}],
-  ['eessi-bucerunderarbeid',{}],
-  ['eessi-mottakerinstitusjoner', {}],
   ['fagsaker', {}],
   ['fagsaker-aktoerer', {}],
   ['fagsaker-kontaktopplysninger', {}],
