@@ -26,9 +26,7 @@ const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
 const soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
-const vilkar = require('./modules/vilkar');
-const Katalog = require('./katalog');
-
+const Vilkaar = require('./modules/vilkaar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -194,8 +192,8 @@ router.get('/saksopplysninger/oppfriskning/:behandlingID', saksopplysninger.oppf
  * VILKÅR
  * ---------------------------------------------------------------
  */
-router.get('/vilkaar/:behandlingID', vilkar.hent);
-router.post('/vilkaar/:behandlingID', vilkar.send);
+router.get('/vilkaar/:behandlingID', Vilkaar.hent);
+router.post('/vilkaar/:behandlingID', Vilkaar.send);
 
 /**
  * DOKUMENTER

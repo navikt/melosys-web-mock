@@ -4,17 +4,15 @@ const logger = log4js.getLogger('mock');
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const ERR = require('../utils/errors');
 const Utils = require('../utils/utils');
-const Schema = require('../utils/schema-util');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
-const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/vilkar`;
+const Katalog = require('../katalog');
 
-module.exports.lesVilkarsKatalog = () => {
-  return Schema.lesKatalogSync(VILKAR_MOCK_DATA_DIR);
-};
+const { moduleName } = Katalog.pathnameMap.vilkaar;
+const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 const lesVilkar = (behandlingID) => {
-  const mockfile = `${VILKAR_MOCK_DATA_DIR}/vilkar-bid-${behandlingID}.json`;
+  const mockfile = `${VILKAR_MOCK_DATA_DIR}/${moduleName}-bid-${behandlingID}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
 
@@ -25,8 +23,11 @@ const lesVilkar = (behandlingID) => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
+  const behandlingID = req.params.behandlingID;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
+  }
   try {
-    const behandlingID = req.params.behandlingID;
     const vilkar = await lesVilkar(behandlingID);
     res.json(vilkar);
   }
@@ -45,13 +46,9 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const schemaNavn = 'vilkar-post-schema.json';
-
-  const label = 'Vilkar:send';
-  const body = req.body;
-  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug(label, JSON.stringify(jsBody));
-
-  const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-  return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
+  const behandlingID = req.params.behandlingID;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
+  }
+  SchemaPostValidator.post(moduleName, req, res);
 };
