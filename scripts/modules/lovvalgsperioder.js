@@ -38,24 +38,7 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  /*
-  const schema = Schema.lesSchemaFileSync('lovvalgsperioder-schema.json');
-
-  const label = 'Lovvalgsperioder:send';
-  const body = req.body;
-  const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-  logger.debug(label, JSON.stringify(jsBody));
-  try {
-    const valid = await SchemaPostValidator.testAsync(label, schema, jsBody);
-    return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
-  */
-
   const { behandlingID } = req.params;
-
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
   SchemaPostValidator.post(moduleName, req, res);
 };
