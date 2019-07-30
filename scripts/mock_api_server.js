@@ -21,10 +21,10 @@ const opprinneligLovvalgsperiode = require('./modules/opprinneligLovvalgsperiode
 const Oppgaver = require('./modules/oppgaver');
 const organisasjoner = require('./modules/organisasjoner');
 const personer = require('./modules/personer');
-const registrering = require('./modules/registrering');
+const Registrering = require('./modules/registrering');
 const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
-const soknader = require('./modules/soknader');
+const Soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
 const Vilkaar = require('./modules/vilkaar');
 
@@ -100,7 +100,7 @@ router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
-router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksperioder);
+router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder);
 /**
  * SØKNAD
  * ----------------------------------------------------------
@@ -109,8 +109,8 @@ router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksp
  * POST /soknader Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/soknader/:behandlingID', soknader.hent);
-router.post('/soknader/:behandlingID', soknader.send);
+router.get('/soknader/:behandlingID', Soknader.hent);
+router.post('/soknader/:behandlingID', Soknader.send);
 
 /**
  * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
