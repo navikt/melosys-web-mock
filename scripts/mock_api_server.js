@@ -21,14 +21,12 @@ const opprinneligLovvalgsperiode = require('./modules/opprinneligLovvalgsperiode
 const Oppgaver = require('./modules/oppgaver');
 const organisasjoner = require('./modules/organisasjoner');
 const personer = require('./modules/personer');
-const registrering = require('./modules/registrering');
+const Registrering = require('./modules/registrering');
 const saksbehandler = require('./modules/saksbehandler');
 const saksopplysninger = require('./modules/saksopplysninger');
-const soknader = require('./modules/soknader');
+const Soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
-const vilkar = require('./modules/vilkar');
-const Katalog = require('./katalog');
-
+const Vilkaar = require('./modules/vilkaar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
 const LOGDIR = `${process.cwd()}/logdir`;
@@ -102,7 +100,7 @@ router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
-router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksperioder);
+router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder);
 /**
  * SØKNAD
  * ----------------------------------------------------------
@@ -111,8 +109,8 @@ router.post('/registrering/:behandlingID/unntaksperioder', registrering.unntaksp
  * POST /soknader Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/soknader/:behandlingID', soknader.hent);
-router.post('/soknader/:behandlingID', soknader.send);
+router.get('/soknader/:behandlingID', Soknader.hent);
+router.post('/soknader/:behandlingID', Soknader.send);
 
 /**
  * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
@@ -194,8 +192,8 @@ router.get('/saksopplysninger/oppfriskning/:behandlingID', saksopplysninger.oppf
  * VILKÅR
  * ---------------------------------------------------------------
  */
-router.get('/vilkaar/:behandlingID', vilkar.hent);
-router.post('/vilkaar/:behandlingID', vilkar.send);
+router.get('/vilkaar/:behandlingID', Vilkaar.hent);
+router.post('/vilkaar/:behandlingID', Vilkaar.send);
 
 /**
  * DOKUMENTER
@@ -213,14 +211,16 @@ router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
  * SAKSFLYT
  *  * ---------------------------------------------------------------
  */
-router.post('/saksflyt/vedtak/:behandlingID', Saksflyt.vedtak.fattet);
-router.post('/saksflyt/vedtak/endre/:behandlingID', Saksflyt.vedtak.endreperiode);
 
-router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
-router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
-router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
-router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
 router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill);
+
+router.post('/saksflyt/vedtak/:behandlingID/fatte', Saksflyt.vedtak.fatte);
+router.post('/saksflyt/vedtak/:behandlingID/endreperiode', Saksflyt.vedtak.endreperiode);
+
+router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
+router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
+router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
 
 /**
  * EESSI
