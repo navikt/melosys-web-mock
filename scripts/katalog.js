@@ -122,6 +122,16 @@ const pathnameMap = {
       params: {snr: 4}
     }
   },
+  saksbehandler: {
+    moduleName: 'saksbehandler',
+    get: {
+      pathname: '/saksbehandler'
+    }
+  },
+  /* TODO
+  saksopplysninger: {
+    moduleName: 'saksopplysninger',
+  },*/
   soknader: {
     moduleName: 'soknader',
     get: {
