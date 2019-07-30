@@ -121,8 +121,18 @@ const pathnameMap = {
       pathname: '/inngang/:snr',
       params: {snr: 4}
     }
-  }
-  ,
+  },
+  soknader: {
+    moduleName: 'soknader',
+    get: {
+      pathname: '/soknader/:behandlingID',
+      params: {behandlingID: 4}
+    },
+    post: {
+      pathname: '/soknader/:behandlingID',
+      params: {behandlingID: 4}
+    }
+  },
   vilkaar: {
     moduleName: 'vilkaar',
     get: {
@@ -169,9 +179,9 @@ const katalogMap = new Map([
   ['saksflyt-anmodningsperioder', {}],
   ['saksflyt-unntaksperioder', {}],
   ['saksflyt-vedtak', {}],
-  ['soknader', {}],
   */
-  ['vilkaar', pathnameMap.vilkaar],
+  //['soknader', pathnameMap.soknader],
+  //['vilkaar', pathnameMap.vilkaar],
 ]);
 
 module.exports = {

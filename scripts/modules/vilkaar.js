@@ -7,7 +7,6 @@ const Utils = require('../utils/utils');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const Katalog = require('../katalog');
-
 const { moduleName } = Katalog.pathnameMap.vilkaar;
 const VILKAR_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
@@ -23,7 +22,7 @@ const lesVilkar = (behandlingID) => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
-  const behandlingID = req.params.behandlingID;
+  const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
@@ -46,7 +45,7 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  const behandlingID = req.params.behandlingID;
+  const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
