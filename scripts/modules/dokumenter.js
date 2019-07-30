@@ -125,7 +125,7 @@ module.exports.lagPdfUtkast = (req, res) => {
       res.sendFile(mockfile);
     }
     else {
-      const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/dokumenttest.pdf`;
+      const mockfile = `${MOCK_DOKUMENTER_DATA_DIR}/hoveddokument.pdf`;
       logger.trace(mockfile);
       res.type('application/pdf');
       res.sendFile(mockfile);
