@@ -135,6 +135,55 @@ const pathnameMap = {
       pathname: '/saksbehandler'
     }
   },
+  'saksflyt-anmodningsperioder-bestill': {
+    moduleName: 'saksflyt-anmodningsperioder-bestill',
+    put: {
+      pathname: '/saksflyt/anmodningsperioder/:behandlingID/bestill',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-unntaksperioder-anmodning': {
+    moduleName: 'saksflyt-unntaksperioder-anmodning',
+    put: {
+      pathname: '/saksflyt/unntaksperioder/:behandlingID/anmodning',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-unntaksperioder-godkjenn': {
+    moduleName: 'saksflyt-unntaksperioder-godkjenn',
+    put: {
+      pathname: '/saksflyt/unntaksperioder/:behandlingID/godkjenn',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-unntaksperioder-ikkegodkjenn': {
+    moduleName: 'saksflyt-unntaksperioder-ikkegodkjenn',
+    post: {
+      pathname: '/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-unntaksperioder-innhentinfo': {
+    moduleName: 'saksflyt-unntaksperioder-innhentinfo',
+    put: {
+      pathname: '/saksflyt/unntaksperioder/:behandlingID/innhentinfo',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-vedtak-fatte': {
+    moduleName: 'saksflyt-vedtak-fatte',
+    post: {
+      pathname: '/saksflyt/vedtak/:behandlingID/fatte',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksflyt-vedtak-endreperiode': {
+    moduleName: 'saksflyt-vedtak-endreperiode',
+    post: {
+      pathname: '/saksflyt/vedtak/:behandlingID/endreperiode',
+      params: {behandlingID: 4}
+    }
+  },
   /* TODO
   saksopplysninger: {
     moduleName: 'saksopplysninger',
@@ -195,9 +244,13 @@ const katalogMap = new Map([
   ['saksbehandler', {}],
   ['saksflyt-anmodningsperioder', {}],
   ['saksflyt-unntaksperioder', {}],
-  ['saksflyt-vedtak', {}],
   */
+  ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-unntaksperioder-bestill']],
   ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
+  ['saksflyt-unntaksperioder-anmodning', pathnameMap['saksflyt-unntaksperioder-anmodning']],
+  ['saksflyt-unntaksperioder-godkjenn', pathnameMap['saksflyt-unntaksperioder-godkjenn']],
+  ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
+  ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
   //['soknader', pathnameMap.soknader],
   //['vilkaar', pathnameMap.vilkaar],
 ]);
