@@ -122,6 +122,13 @@ const pathnameMap = {
       params: {snr: 4}
     }
   },
+  'registrering-unntaksperioder': {
+    moduleName: 'registrering-unntaksperioder',
+    post: {
+      pathname: '/registrering/:behandlingID/unntaksperioder',
+      params: {behandlingID: 4}
+    }
+  },
   saksbehandler: {
     moduleName: 'saksbehandler',
     get: {
@@ -190,6 +197,7 @@ const katalogMap = new Map([
   ['saksflyt-unntaksperioder', {}],
   ['saksflyt-vedtak', {}],
   */
+  ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
   //['soknader', pathnameMap.soknader],
   //['vilkaar', pathnameMap.vilkaar],
 ]);
