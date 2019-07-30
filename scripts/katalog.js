@@ -82,7 +82,7 @@ const pathnameMap = {
     moduleName: 'fagsaker-aktoerer',
     get: {
       pathname: '/fagsaker/:saksnummer/aktoerer/?rolle=BRUKER&presenterer=BRUKER',
-      params: {saksnummer: 4},
+      params: {saksnummer: 4}
     },
     post: {
       pathname: '/fagsaker/:saksnummer/aktoerer',
@@ -121,6 +121,36 @@ const pathnameMap = {
       pathname: '/inngang/:snr',
       params: {snr: 4}
     }
+  },
+  journalforing: {
+    moduleName: 'journalforing',
+    get: {
+      pathname: '/journalforing/:journalpostID',
+      params: {journalpostID: 4}
+    }
+  },
+  'journalforing-opprett': {
+    moduleName: 'journalforing-opprett',
+    post: {
+      pathname: '/journalforing/opprett?a=a&b=b',
+    }
+  },
+  'journalforing-tilordne': {
+    moduleName: 'journalforing-tilordne',
+    post: {
+      pathname: '/journalforing/tilordne'
+    }
+  },
+  'lovvalgsperioder': {
+    moduleName: 'lovvalgsperioder',
+    get: {
+      pathname: '/lovvalgsperioder/:behandlingID',
+      params: {behandlingID: 4}
+    },
+    post: {
+      pathname: '/lovvalgsperioder/:behandlingID',
+      params: {behandlingID: 4}
+    }
   }
 };
 const katalogMap = new Map([
@@ -141,11 +171,11 @@ const katalogMap = new Map([
   //['fagsaker-kontaktopplysninger', pathnameMap["fagsaker-kontaktopplysninger"]],
   //['fagsaker-sok', pathnameMap["fagsaker-sok"]],
   //['inngang', pathnameMap.inngang],
+  // ['journalforing', pathnameMap.journalforing],
+  // ['journalforing-opprett', pathnameMap["journalforing-opprett"]],
+  // ['journalforing-tilordne', pathnameMap["journalforing-tilordne"]],
+  ['lovvalgsperioder', pathnameMap.lovvalgsperioder],
   /*
-  ['journalforing', {}],
-  ['journalforing-opprett', {}],
-  ['journalforing-tilordne', {}],
-  ['lovvalgsperioder', {}],
   ['oppgaver', {}],
   ['oppgaver-plukk', {}],
   ['oppgaver-plukk-response', {}],

@@ -63,6 +63,20 @@ module.exports.post = (moduleName, req, res, customResponse = null) => {
     Mock.serverError(req, res, err);
   }
 };
+module.exports.post204 = (moduleName, req, res) => {
+  const schemaNavn = `${moduleName}-post-schema.json`;
+  const label = `${moduleName}:send`;
+
+  try {
+    const body = req.body;
+    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    const valid = test(label, schemaNavn, jsBody);
+    return valid ? res.status(204).json() : valideringFeil(req, res);
+  }
+  catch(err) {
+    Mock.serverError(req, res, err);
+  }
+};
 module.exports.testAsync = async (label, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));
