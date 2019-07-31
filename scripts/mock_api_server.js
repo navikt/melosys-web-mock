@@ -153,13 +153,10 @@ router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
  * OPPGAVEBEHANDLING
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/sok', Oppgaver.sok);
-router.get('/oppgaver/plukk', Oppgaver.hentPlukk);
-router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
 router.get('/oppgaver/oversikt', Oppgaver.oversikt);
-router.post('/oppgaver/opprett', Oppgaver.opprett);
-router.get('/oppgaver/reset', Oppgaver.reset);
-router.post('/oppgaver/tilbakelegge', Oppgaver.tilbakelegg);
+router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
+router.get('/oppgaver/sok', Oppgaver.sok);
+router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg);
 
 /**
  * JOURNALFORING
