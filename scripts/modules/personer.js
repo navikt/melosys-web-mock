@@ -1,19 +1,12 @@
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const Utils = require('../utils/utils');
-const Schema = require('../utils/schema-util');
 const Mock = require('../utils/mock-util');
-const PERSON_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/personer`;
+const Katalog = require('../katalog');
 
 const lesPerson = fnr => {
-  const mockfile = `${PERSON_MOCK_DATA_DIR}/fnr-${fnr}.json`;
+  const { moduleName } = Katalog.pathnameMap.personer;
+  const mockfile = `${MOCK_DATA_DIR}/${moduleName}/fnr-${fnr}.json`;
   return Utils.readJsonAndParseAsync(mockfile)
-};
-
-/**
- * lesPersonKatalog
- */
-module.exports.lesPersonKatalog = () => {
-  return Schema.lesKatalogSync(PERSON_MOCK_DATA_DIR);
 };
 
 /**

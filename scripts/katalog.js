@@ -192,6 +192,12 @@ const pathnameMap = {
       pathname: '/organisasjoner'
     }
   },
+  'personer': {
+    moduleName: 'personer',
+    get: {
+      pathname: '/personer'
+    }
+  },
   'registrering-unntaksperioder': {
     moduleName: 'registrering-unntaksperioder',
     post: {
@@ -304,8 +310,8 @@ const katalogMap = new Map([
   ['lovvalgsperioder-opprinnelig', pathnameMap['lovvalgsperioder-opprinnelig']],
 
   ['organisasjoner', pathnameMap.organisasjoner],
+  ['personer', pathnameMap.personer],
   /*
-  ['personer', {}],
   ['saksbehandler', {}],
   */
   // ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
