@@ -152,6 +152,13 @@ const pathnameMap = {
       params: {behandlingID: 4}
     }
   },
+  'lovvalgsperioder-opprinnelig': {
+    moduleName: 'lovvalgsperioder-opprinnelig',
+    get: {
+      pathname: '/lovvalgsperioder/:behandlingID/opprinnelig',
+      params: {behandlingID: 4}
+    }
+  },
   'oppgaver-oversikt': {
     moduleName: 'oppgaver-oversikt',
     get: {
@@ -287,17 +294,18 @@ const katalogMap = new Map([
   // ['journalforing', pathnameMap.journalforing],
   // ['journalforing-opprett', pathnameMap["journalforing-opprett"]],
   // ['journalforing-tilordne', pathnameMap["journalforing-tilordne"]],
-  // ['lovvalgsperioder', pathnameMap.lovvalgsperioder],
+  ['lovvalgsperioder', pathnameMap.lovvalgsperioder],
+  ['lovvalgsperioder-opprinnelig', pathnameMap['lovvalgsperioder-opprinnelig']],
   /*
   ['opprinneligLovvalgsperiode', {}],
   ['organisasjoner', {}],
   ['personer', {}],
   ['saksbehandler', {}],
   */
-  ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
-  ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
-  ['oppgaver-reset', pathnameMap["oppgaver-reset"]],
-  ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
+  // ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
+  // ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
+  // ['oppgaver-reset', pathnameMap["oppgaver-reset"]],
+  // ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
 
   // ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-unntaksperioder-bestill']],
   // ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],

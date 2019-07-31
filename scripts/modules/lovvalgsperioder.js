@@ -3,11 +3,17 @@ const Utils = require('../utils/utils');
 const Mock = require('../utils/mock-util');
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 const Katalog = require('../katalog');
-const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
-const LOVVALGSPERIODER_MOCK_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 const lesLovvalgsperioder = (behandlingID) => {
-  const mockfile = `${LOVVALGSPERIODER_MOCK_DATA_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
+  const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
+  const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+  const mockfile = `${GET_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
+  return Utils.readJsonAndParseAsync(mockfile);
+};
+const lesOpprinneligPeriode = (behandlingID) => {
+  const { moduleName } = Katalog.pathnameMap['lovvalgsperioder-opprinnelig'];
+  const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+  const mockfile = `${GET_DIR}/opprinneligPeriode-bid-${behandlingID}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
 
@@ -38,7 +44,22 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
+  const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
   const { behandlingID } = req.params;
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
   SchemaPostValidator.post(moduleName, req, res);
+};
+
+module.exports.opprinnelig = async (req, res) => {
+  try {
+    const { behandlingID} = req.params;
+    if (!behandlingID) {
+      return Mock.manglerParamBehandlingsID(req, res);
+    }
+    const data = await lesOpprinneligPeriode(behandlingID);
+    return res.json(data);
+  }
+  catch (err) {
+    Mock.serverError(req, res, err);
+  }
 };
