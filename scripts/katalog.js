@@ -20,9 +20,12 @@ const pathnameMap = {
       params: {behandlingID: 4},
     }
   },
-  'behandlinger-behandling': {
-    moduleName: 'behandlinger-behandling',
-    post: null,
+  'behandlinger': {
+    moduleName: 'behandlinger',
+    get: {
+      pathname:'/behandlinger/:behandlingID',
+      params: {behandlingID: 4},
+    },
   },
   'behandlinger-resultat': {
     moduleName: 'behandlinger-resultat',
@@ -42,8 +45,29 @@ const pathnameMap = {
       params: {behandlingID: 4},
     }
   },
-  dokumenter: {
-    moduleName: 'dokumenter',
+  'dokumenter-opprett': {
+    moduleName: 'dokumenter-opprett',
+    post: {
+      pathname: '/dokumenter/opprett/:behandlingID/:dokumenttypeKode',
+      params: {behandlingID: 4, dokumentID: 4}
+    }
+  },
+  'dokumenter-oversikt': {
+    moduleName: 'dokumenter-oversikt',
+    get: {
+      pathname: '/dokumenter/oversikt/:saksnummer',
+      params: {saksnummer: 4}
+    }
+  },
+  'dokumenter-pdf': {
+    moduleName: 'dokumenter-pdf',
+    get: {
+      pathname: '/dokumenter/pdf/:journalpostID/:dokumentID',
+      params: {journalpostID: 4, dokumentID: 4}
+    }
+  },
+  'dokumenter-utkast-pdf': {
+    moduleName: 'dokumenter-utkast-pdf',
     post: {
       pathname: '/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode',
       params: {behandlingID: 4, dokumenttypeKode:'MELDING_MANGLENDE_OPPLYSNINGER'},
@@ -51,12 +75,15 @@ const pathnameMap = {
   },
   'eessi-bucer': {
     moduleName: 'eessi-bucer',
-    post: {
-      pathname: '/eessi/bucer/:behandlingID/opprett',
-      params: {behandlingID: 4},
-    },
     get: {
       pathname: '/eessi/bucer/:behandlingID',
+      params: {behandlingID: 4},
+    }
+  },
+  'eessi-bucer-opprett': {
+    moduleName: 'eessi-bucer',
+    post: {
+      pathname: '/eessi/bucer/:behandlingID/opprett',
       params: {behandlingID: 4},
     }
   },
@@ -92,6 +119,14 @@ const pathnameMap = {
       pathname: '/fagsaker/aktoerer/:databaseid',
       params: { databaseid: 955006279357058}
     }
+  },
+  'fagsaker-avsluttsaksombortfalt': {
+    moduleName: 'fagsaker-avsluttsaksombortfalt',
+    put: {
+      pathname: '/fagsaker/:saksnummer/avsluttsaksombortfalt',
+      params: {saksnummer: 4}
+    }
+
   },
   'fagsaker-kontaktopplysninger': {
     moduleName: 'fagsaker-kontaktopplysninger',
@@ -260,7 +295,7 @@ const pathnameMap = {
       params: {behandlingID: 4}
     }
   },
-  /* TODO
+  /* NOTE! saksopplysninger does have a mocked endpoint with static mock data.
   saksopplysninger: {
     moduleName: 'saksopplysninger',
   },*/
@@ -288,45 +323,48 @@ const pathnameMap = {
   }
 };
 const katalogMap = new Map([
-  // ['anmodningsperioder', pathnameMap.anmodningsperioder],
-  // ['anmodningsperioder-svar', pathnameMap["anmodningsperioder-svar"]],
-  // ['avklartefakta', pathnameMap.avklartefakta],
-  // ['behandlinger-behandling', pathnameMap["behandlinger-behandling"]],
-  // ['behandlinger-resultat', pathnameMap["behandlinger-resultat"]],
-  // ['behandlinger-status', pathnameMap["behandlinger-status"]],
-  // ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
-  // ['dokumenter', pathnameMap.dokumenter],
-  // ['eessi-bucer', pathnameMap["eessi-bucer"]],
-  // ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
-  // ['fagsaker', pathnameMap.fagsaker],
-  // ['fagsaker-aktoerer', pathnameMap["fagsaker-aktoerer"]],
-  // ['fagsaker-kontaktopplysninger', pathnameMap["fagsaker-kontaktopplysninger"]],
-  // ['fagsaker-sok', pathnameMap["fagsaker-sok"]],
-  // ['inngang', pathnameMap.inngang],
-  // ['journalforing', pathnameMap.journalforing],
-  // ['journalforing-opprett', pathnameMap["journalforing-opprett"]],
-  // ['journalforing-tilordne', pathnameMap["journalforing-tilordne"]],
+  ['anmodningsperioder', pathnameMap.anmodningsperioder],
+  ['anmodningsperioder-svar', pathnameMap["anmodningsperioder-svar"]],
+  ['avklartefakta', pathnameMap.avklartefakta],
+  ['behandlinger', pathnameMap["behandlinger"]],
+  ['behandlinger-resultat', pathnameMap["behandlinger-resultat"]],
+  ['behandlinger-status', pathnameMap["behandlinger-status"]],
+  ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
+  ['dokumenter-opprett', pathnameMap['dokumenter-opprett']],
+  ['dokumenter-oversikt', pathnameMap['dokumenter-oversikt@']],
+  ['dokumenter-pdf', pathnameMap['dokumenter-pdf']],
+  ['dokumenter-utkast-pdf', pathnameMap['dokumenter-utkast-pdf']],
+
+  ['eessi-bucer', pathnameMap["eessi-bucer"]],
+  ['eessi-bucer-opprett', pathnameMap["eessi-bucer-opprett"]],
+  ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
+  ['fagsaker', pathnameMap.fagsaker],
+  ['fagsaker-aktoerer', pathnameMap["fagsaker-aktoerer"]],
+  ['fagsaker-avsluttsaksombortfalt', pathnameMap["fagsaker-avsluttsaksombortfalt"]],
+  ['fagsaker-kontaktopplysninger', pathnameMap["fagsaker-kontaktopplysninger"]],
+  ['fagsaker-sok', pathnameMap["fagsaker-sok"]],
+  ['inngang', pathnameMap.inngang],
+  ['journalforing', pathnameMap.journalforing],
+  ['journalforing-opprett', pathnameMap["journalforing-opprett"]],
+  ['journalforing-tilordne', pathnameMap["journalforing-tilordne"]],
   ['lovvalgsperioder', pathnameMap.lovvalgsperioder],
   ['lovvalgsperioder-opprinnelig', pathnameMap['lovvalgsperioder-opprinnelig']],
-
   ['organisasjoner', pathnameMap.organisasjoner],
   ['personer', pathnameMap.personer],
-  /*
-  ['saksbehandler', {}],
-  */
-  // ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
-  // ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
-  // ['oppgaver-reset', pathnameMap["oppgaver-reset"]],
-  // ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
-
-  // ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-unntaksperioder-bestill']],
-  // ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
-  // ['saksflyt-unntaksperioder-anmodning', pathnameMap['saksflyt-unntaksperioder-anmodning']],
-  // ['saksflyt-unntaksperioder-godkjenn', pathnameMap['saksflyt-unntaksperioder-godkjenn']],
-  // ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
-  // ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
-  // ['soknader', pathnameMap.soknader],
-  // ['vilkaar', pathnameMap.vilkaar],
+  ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
+  ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
+  ['oppgaver-reset', pathnameMap["oppgaver-reset"]],
+  ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
+  ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
+  ['saksbehandler', pathnameMap.saksbehandler],
+  ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-anmodningsperioder-bestill']],
+  ['saksflyt-unntaksperioder-anmodning', pathnameMap['saksflyt-unntaksperioder-anmodning']],
+  ['saksflyt-unntaksperioder-godkjenn', pathnameMap['saksflyt-unntaksperioder-godkjenn']],
+  ['saksflyt-unntaksperioder-innhentinfo', pathnameMap['saksflyt-unntaksperioder-innhentinfo']],
+  ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
+  ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
+  ['soknader', pathnameMap.soknader],
+  ['vilkaar', pathnameMap.vilkaar],
 ]);
 
 module.exports = {

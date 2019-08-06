@@ -3,7 +3,7 @@ const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 
-const { moduleName } = Katalog.pathnameMap["behandlinger-behandling"];
+const { moduleName } = Katalog.pathnameMap["behandlinger"];
 
 module.exports.hentBehandling = async (req, res) => {
   const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;

@@ -11,7 +11,7 @@ const logging = require('./utils/logging');
 const Anmodningsperioder = require('./modules/anmodningsperioder');
 const avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
-const dokumenter = require('./modules/dokumenter');
+const Dokumenter = require('./modules/dokumenter');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const inngang = require('./modules/inngang');
@@ -88,6 +88,7 @@ router.get('/behandlingsresultat/:behandlingID', Behandlinger.resultat.hentBehan
 router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
 
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
+//TODO :fnr skal være :saksnummer
 router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
 router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.bortfall);
 
@@ -191,13 +192,16 @@ router.post('/vilkaar/:behandlingID', Vilkaar.send);
  * DOKUMENTER
  *  * ---------------------------------------------------------------
  */
-// Henter et eksisterende dokument fra dokumentarkiv
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', dokumenter.hentPdf);
-// Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', dokumenter.lagPdfUtkast);
 // Oppretter en bestilling av dokument i dokumentproduksjon
-router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', dokumenter.opprettDokument);
-router.get('/dokumenter/oversikt/:snr', dokumenter.oversikt);
+router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett);
+
+router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt);
+
+// Henter et eksisterende dokument fra dokumentarkiv
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
+
+// Henter forhåndsvisning som byte stream fra dokumentproduksjon
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast);
 
 /**
  * SAKSFLYT
@@ -228,7 +232,6 @@ router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
 
 router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
 router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
-//router.post(Katalog.pathnameMap.anmodningsperioder.post.pathname, Anmodningsperioder.sendPerioder);
 router.get('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.hentSvar);
 router.post('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.sendSvar);
 

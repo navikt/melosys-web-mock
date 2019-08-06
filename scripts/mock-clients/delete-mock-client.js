@@ -1,4 +1,6 @@
 const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
+const { pathObject2String } = require('../utils/pathnames');
+const Katalog = require('../katalog');
 
 const client = httpClient();
 const oppsummering = {
@@ -17,19 +19,15 @@ const reportError = res => {
 };
 
 printheader('DELETE');
-
-const testAlleEndepunkter = async () => {
-  try {
-    const databaseid = 955006279357058;
-    await client.delete(`/fagsaker/aktoerer/${databaseid}`).then(reportResult).catch(reportError);
-    const saksnummer = '4', juridiskorgnr = '810072512';
-    await client.delete(`/fagsaker/${saksnummer}/kontaktopplysninger/${juridiskorgnr}`).then(reportResult).catch(reportError);
-
-    printoppsummering(oppsummering, 'DELETE');
+const testAll = async () => {
+  for (const key of Katalog.katalogMap.keys()) {
+    const endepunkt = Katalog.katalogMap.get(key);
+    if (endepunkt && endepunkt.delete) {
+      const { delete: verb } = endepunkt;
+      const pathname = pathObject2String(verb);
+      await client.delete(pathname).then(reportResult).catch(reportError);
+    }
   }
-  catch (e) {
-    console.error(e);
-  }
+  printoppsummering(oppsummering, 'DELETE');
 };
-
-testAlleEndepunkter();
+testAll();
