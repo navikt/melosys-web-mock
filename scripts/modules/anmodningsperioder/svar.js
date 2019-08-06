@@ -13,7 +13,7 @@ module.exports.hent = async (req, res) => {
 
   if (!anmodningsperiodeID) return Mock.manglerParamAnmodningsperiodeID(req, res);
 
-  const mockfile = `${GET_DIR}/anmodningsperiodersvar-get.json`;
+  const mockfile = `${GET_DIR}/${moduleName}.json`;
   const anmodningsperiodersvar = await Utils.readJsonAndParseAsync(mockfile);
 
   return res.json(anmodningsperiodersvar);

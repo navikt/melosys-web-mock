@@ -1,6 +1,10 @@
 const pathnameMap = {
   anmodningsperioder: {
     moduleName: 'anmodningsperioder',
+    get: {
+      pathname: '/anmodningsperioder/:behandlingID',
+      params: {behandlingID: 4}
+    },
     post: {
       pathname: '/anmodningsperioder/:behandlingID',
       params: {behandlingID: 4}
@@ -8,8 +12,12 @@ const pathnameMap = {
   },
   'anmodningsperioder-svar': {
     moduleName: 'anmodningsperioder-svar',
+    get: {
+      pathname: '/anmodningsperioder/:anmodningsperiodeID/svar',
+      params: {anmodningsperiodeID: 4}
+    },
     post: {
-      pathname: '/anmodningsperioder/svar/:anmodningsperiodeID',
+      pathname: '/anmodningsperioder/:anmodningsperiodeID/svar',
       params: {anmodningsperiodeID: 4}
     }
   },
@@ -17,7 +25,7 @@ const pathnameMap = {
     moduleName: 'avklartefakta',
     post: {
       pathname: '/avklartefakta/:behandlingID',
-      params: {behandlingID: 4},
+      params: {behandlingID: 3},
     }
   },
   'behandlinger': {
@@ -63,7 +71,7 @@ const pathnameMap = {
     moduleName: 'dokumenter-pdf',
     get: {
       pathname: '/dokumenter/pdf/:journalpostID/:dokumentID',
-      params: {journalpostID: 4, dokumentID: 4}
+      params: {journalpostID: 321, dokumentID: 123}
     }
   },
   'dokumenter-utkast-pdf': {
@@ -76,7 +84,7 @@ const pathnameMap = {
   'eessi-bucer': {
     moduleName: 'eessi-bucer',
     get: {
-      pathname: '/eessi/bucer/:behandlingID',
+      pathname: '/eessi/bucer/:behandlingID/?status=utkast',
       params: {behandlingID: 4},
     }
   },
@@ -202,9 +210,6 @@ const pathnameMap = {
   },
   'oppgaver-plukk': {
     moduleName: 'oppgaver-plukk',
-    get: {
-      pathname: '/oppgaver/plukk',
-    },
     post: {
       pathname: '/oppgaver/plukk',
     }
@@ -212,7 +217,7 @@ const pathnameMap = {
   'oppgaver-sok': {
     moduleName: 'oppgaver-sok',
     get: {
-      pathname: '/oppgaver/sok',
+      pathname: '/oppgaver/sok/?fnr=17117802280',
     }
   },
   'oppgaver-tilbakelegg': {
@@ -224,13 +229,13 @@ const pathnameMap = {
   'organisasjoner': {
     moduleName: 'organisasjoner',
     get: {
-      pathname: '/organisasjoner'
+      pathname: '/organisasjoner/?orgnr=810072512'
     }
   },
   'personer': {
     moduleName: 'personer',
     get: {
-      pathname: '/personer'
+      pathname: '/personer/?fnr=17117802280'
     }
   },
   'registrering-unntaksperioder': {
@@ -295,10 +300,20 @@ const pathnameMap = {
       params: {behandlingID: 4}
     }
   },
-  /* NOTE! saksopplysninger does have a mocked endpoint with static mock data.
-  saksopplysninger: {
-    moduleName: 'saksopplysninger',
-  },*/
+  'saksopplysninger-oppfriskning': {
+    moduleName: 'saksopplysninger-oppfriskning',
+    get: {
+      pathname: '/saksopplysninger/oppfriskning/:behandlingID',
+      params: {behandlingID: 4}
+    }
+  },
+  'saksopplysninger-oppfriskning-status': {
+    moduleName: 'saksopplysninger-oppfriskning-status',
+    get: {
+      pathname: '/saksopplysninger/oppfriskning/:behandlingID/status',
+      params: {behandlingID: 4}
+    }
+  },
   soknader: {
     moduleName: 'soknader',
     get: {
@@ -363,6 +378,8 @@ const katalogMap = new Map([
   ['saksflyt-unntaksperioder-innhentinfo', pathnameMap['saksflyt-unntaksperioder-innhentinfo']],
   ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
   ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
+  ['saksopplysninger-oppfriskning', pathnameMap['saksopplysninger-oppfriskning']],
+  ['saksopplysninger-oppfriskning-status', pathnameMap['saksopplysninger-oppfriskning-status']],
   ['soknader', pathnameMap.soknader],
   ['vilkaar', pathnameMap.vilkaar],
 ]);

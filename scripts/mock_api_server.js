@@ -232,8 +232,8 @@ router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
 
 router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
 router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
-router.get('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.hentSvar);
-router.post('/anmodningsperioder/svar/:anmodningsperiodeID', Anmodningsperioder.sendSvar);
+router.get('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.hentSvar);
+router.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.sendSvar);
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);

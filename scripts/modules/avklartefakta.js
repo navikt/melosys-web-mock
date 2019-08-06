@@ -1,13 +1,13 @@
 const Mock = require('../utils/mock-util');
 const Utils = require('../utils/utils');
-
+const { MOCK_DATA_DIR } = require('../../mock.config');
 const Katalog = require('../katalog');
 const { moduleName } = Katalog.pathnameMap.avklartefakta;
 
 const SchemaPostValidator  = require('../utils/schema-post-validator');
 
 const lesAvklaring = behandlingID => {
-  const mockfile = `${moduleName}/avklartefakta-bid-${behandlingID}.json`;
+  const mockfile = `${MOCK_DATA_DIR}/${moduleName}/avklartefakta-bid-${behandlingID}.json`;
   return Utils.readJsonAndParseAsync(mockfile);
 };
 
@@ -18,8 +18,11 @@ const lesAvklaring = behandlingID => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
+  }
   try {
-    const behandlingID = req.params.behandlingID;
     const avklaring = await lesAvklaring(behandlingID);
     return res.json(avklaring);
   }
