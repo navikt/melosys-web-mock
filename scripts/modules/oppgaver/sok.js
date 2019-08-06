@@ -1,8 +1,7 @@
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const Utils = require('../../utils/utils');
+const SchemaGetValidator  = require('../../utils/schema-get-validator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
-
+const { moduleName } = Katalog.pathnameMap['oppgaver-sok'];
 /**
  * Oppgaver sok
  * @param req
@@ -13,13 +12,9 @@ module.exports.sok = async (req, res) => {
   const { fnr } = req.query;
   if (!fnr) return Mock.manglerParamFnr(req, res);
 
-  const { moduleName } = Katalog.pathnameMap['oppgaver-sok'];
-  const mockfile = `${MOCK_DATA_DIR}/${moduleName}/fnr-${fnr}.json`;
-  try {
-    const oppgaver = await Utils.readJsonAndParseAsync(mockfile);
-    res.json(oppgaver);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const pathObject = {
+    pathname: '/fnr-:fnr',
+    params: {fnr},
+  };
+  return SchemaGetValidator.get(moduleName, req, res, pathObject);
 };

@@ -1,25 +1,15 @@
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaGetValidator  = require('../../utils/schema-get-validator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
-const Utils = require('../../utils/utils');
-const { MOCK_DATA_DIR } = require('../../../mock.config');
 const { moduleName } = Katalog.pathnameMap["eessi-bucer"];
 
 module.exports.hentBucerUnderArbeid = async (req, res) => {
-  const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  try {
-    const mockfile = `${GET_DIR}/${moduleName}.json`;
-    const mockData = await Utils.readJsonAndParseAsync(mockfile);
-
-    return res.json(mockData);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  return SchemaGetValidator.get(moduleName, req, res);
 };
 /**
  * status

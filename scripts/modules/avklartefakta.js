@@ -1,15 +1,9 @@
 const Mock = require('../utils/mock-util');
-const Utils = require('../utils/utils');
-const { MOCK_DATA_DIR } = require('../../mock.config');
 const Katalog = require('../katalog');
 const { moduleName } = Katalog.pathnameMap.avklartefakta;
 
 const SchemaPostValidator  = require('../utils/schema-post-validator');
-
-const lesAvklaring = behandlingID => {
-  const mockfile = `${MOCK_DATA_DIR}/${moduleName}/avklartefakta-bid-${behandlingID}.json`;
-  return Utils.readJsonAndParseAsync(mockfile);
-};
+const SchemaGetValidator  = require('../utils/schema-get-validator');
 
 /**
  * Hent faktavklaring
@@ -22,13 +16,11 @@ module.exports.hent = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  try {
-    const avklaring = await lesAvklaring(behandlingID);
-    return res.json(avklaring);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const pathObject = {
+    pathname: '/avklartefakta-bid-:behandlingID',
+    params: {behandlingID},
+  };
+  return SchemaGetValidator.get(moduleName, req, res, pathObject);
 };
 
 

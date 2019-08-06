@@ -4,11 +4,10 @@ const logger = log4js.getLogger('mock');
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
 const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
 const Mock = require('../../utils/mock-util');
 
 const Katalog = require('../../katalog');
-const { moduleName } = Katalog.pathnameMap["fagsaker-aktoerer"]
+const { moduleName } = Katalog.pathnameMap["fagsaker-aktoerer"];
 
 const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
@@ -38,13 +37,6 @@ const lesAktoer = async (saksnummer, rolle, representerer) => {
 };
 
 /**
- * lesAktoerKatalog
- */
-module.exports.lesAktoerKatalog = () => {
-  return Schema.lesKatalogSync(AKTOER_DATA_DIR);
-};
-
-/**
  * hentAktoerer
  * @param req
  * @param res
@@ -57,7 +49,6 @@ module.exports.hentAktoerer = async (req, res) => {
   if (!saksnummer) {
     return Mock.manglerParamSaksnummer(req, res);
   }
-
   try {
     const aktoer = await lesAktoer(saksnummer, rolle, representerer);
     res.json(aktoer);

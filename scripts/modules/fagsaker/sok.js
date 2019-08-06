@@ -4,13 +4,8 @@ const _ = require('lodash');
 const { MOCK_DATA_DIR } = require('../../../mock.config');
 const Mock = require('../../utils/mock-util');
 const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
 
 const MOCK_FAGFSAKER_SOK_DIR = `${MOCK_DATA_DIR}/fagsaker/sok`;
-
-module.exports.lesSokFagsakerKatalog = () => {
-  return Schema.lesKatalogSync(MOCK_FAGFSAKER_SOK_DIR);
-};
 
 const lesFagsakAsync = (path) => {
   return Utils.readJsonAndParseAsync(path);

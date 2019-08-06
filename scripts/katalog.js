@@ -349,7 +349,6 @@ const katalogMap = new Map([
   ['dokumenter-oversikt', pathnameMap['dokumenter-oversikt@']],
   ['dokumenter-pdf', pathnameMap['dokumenter-pdf']],
   ['dokumenter-utkast-pdf', pathnameMap['dokumenter-utkast-pdf']],
-
   ['eessi-bucer', pathnameMap["eessi-bucer"]],
   ['eessi-bucer-opprett', pathnameMap["eessi-bucer-opprett"]],
   ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],

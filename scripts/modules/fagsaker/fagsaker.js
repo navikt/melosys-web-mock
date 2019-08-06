@@ -1,45 +1,26 @@
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
 const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaGetValidator  = require('../../utils/schema-get-validator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap.fagsaker;
-const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
-
-module.exports.lesFagsakerKatalog = () => {
-  return Schema.lesKatalogSync(MOCK_DATA_FAGSAK_DIR);
-};
 
 module.exports.hentFagsak = async (req, res) => {
-  try {
-    let { saksnummer } = req.params;
-    const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
-    const mockfile = `${GET_DIR}/snr-${saksnummer}.json`;
-    const fagsaker = await Utils.readJsonAndParseAsync(mockfile);
-    res.json(fagsaker);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const { saksnummer } = req.params;
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+
+  const pathObject = {
+    pathname: '/snr-:saksnummer',
+    params: {saksnummer},
+  };
+  return SchemaGetValidator.get(moduleName, req, res, pathObject);
 };
 
 module.exports.henleggFagsak = async (req, res) => {
-  const schemaNavn = 'fagsaker-post-schema.json';
-  const label = 'Fagsaker::fagsak:henlegg';
-  try {
-    const body = req.body;
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
-  }
-  catch(err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaPostValidator.post204(moduleName, req, res);
 };
 
 module.exports.bortfall = async (req, res) => {
-  let { saksnummer } = req.params;
+  const { saksnummer } = req.params;
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
 
