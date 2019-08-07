@@ -37,12 +37,14 @@ const pathnameMap = {
   },
   'behandlinger-resultat': {
     moduleName: 'behandlinger-resultat',
-    post: null,
+    get: {
+      pathname: '/behandlinger/:behandlingID/resultat',
+    },
   },
   'behandlinger-status': {
     moduleName: 'behandlinger-status',
     post: {
-      pathname:'/behandlinger/:behandlingID/status',
+      pathname: '/behandlinger/:behandlingID/status',
       params: {behandlingID: 4},
     }
   },
@@ -175,7 +177,7 @@ const pathnameMap = {
   'journalforing-opprett': {
     moduleName: 'journalforing-opprett',
     post: {
-      pathname: '/journalforing/opprett?a=a&b=b',
+      pathname: '/journalforing/opprett',
     }
   },
   'journalforing-tilordne': {

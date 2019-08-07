@@ -16,8 +16,9 @@ module.exports.hent = (req, res) => {
   if (!dokumentID) {
     return Mock.manglerParamDokumentID(req, res);
   }
+
   try {
-    const mockfile = `${MOCK_DATA_DIR}/${moduleName}/DOK_${journalpostID}-${dokumentID}.pdf`;
+    const mockfile = `${MOCK_DATA_DIR}/${moduleName}/DOK_321-123.pdf`;
     res.type('application/pdf');
     res.sendFile(mockfile);
   }
