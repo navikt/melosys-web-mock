@@ -1,63 +1,14 @@
 const Katalog = require('./katalog');
-const Utils = require('./utils/utils');
+const Swagger = require('./utils/swagger');
 const ROOT_DIR = `${process.cwd()}`;
-console.log(ROOT_DIR);
+const SWAGGER_FILE = `${ROOT_DIR}/swagger.json`;
 
-const swagger = JSON.parse(Utils.readFileSync(`${ROOT_DIR}/swagger.json`));
+console.log('\nSwagger file:', SWAGGER_FILE);
 
-let pathnames = [];
-for (path in swagger.paths) {
-  pathnames.push(path);
-}
-
-pathnames = [...pathnames.sort()];
-const pathnameMap = {};
-
-pathnames.forEach(path => {
-  const pathObj = swagger.paths[path];
-  const splits = path.split('/');
-  splits.shift(); // remove prefix "/"
-
-  let keyName = '';
-  let pathName = '';
-  splits.forEach(split => {
-    if (split.startsWith('{')) {
-      const param = split.substring(1, split.length - 1);
-      pathName += `/:${param}`;
-    } else {
-      pathName += `/${split}`;
-      keyName += `${split}-`;
-    }
-  });
-  keyName = keyName.substring(0, keyName.length - 1);  // Strip off last "-"
-
-
-  let oPath = {
-    moduleName: keyName,
-  };
-  if (pathObj.delete) {
-    oPath.delete = {
-      pathname: pathName
-    }
-  } else if (pathObj.get) {
-    oPath.get = {
-      pathname: pathName
-    }
-  } else if (pathObj.post) {
-    oPath.post = {
-      pathname: pathName
-    }
-  } else if (pathObj.put) {
-    oPath.put = {
-      pathname: pathName
-    }
-  }
-  pathnameMap[keyName] = {...oPath}
-});
-
+const swaggerPaths = Swagger.parseSwagger2ExpressPaths(SWAGGER_FILE);
 console.log();
 console.log('==== SERVER definerte stier som ikke matcher FRONTEND');
-for (path in pathnameMap) {
+for (path in swaggerPaths) {
   if (path.startsWith('logger')) continue;
   if (path.startsWith('adresser')) continue;
   if (path.startsWith('arbeidsforholdhistorikk')) continue;
@@ -69,7 +20,7 @@ for (path in pathnameMap) {
 }
 console.log();
 const hasServerVerb = (spath, kpath, verb) => {
-  const VERB = `[${verb.toUpperCase()}]`.padEnd('delete'.length + 2, ' ');
+  const VERB = `[${verb.toUpperCase()}]`.padEnd('delete'.length + 2, ' '); // string display formatting
   if (spath[verb]) {
     if (kpath) {
       if (!kpath[verb]) {
@@ -84,9 +35,9 @@ const hasServerVerb = (spath, kpath, verb) => {
 };
 
 console.log('==== SERVER definerte stier med mismatch i parameters');
-for (path in pathnameMap) {
+for (path in swaggerPaths) {
   const kpath = Katalog.pathnameMap[path];
-  const spath = pathnameMap[path];
+  const spath = swaggerPaths[path];
   ['get', 'put', 'post', 'delete'].forEach(verb => {
     if (spath[verb]) {
       hasServerVerb(spath, kpath, verb);
@@ -98,7 +49,7 @@ console.log('\n**************************************************\n');
 console.log('==== Mock definerte stier som ikke matcher BACKEND');
 
 for (pathname in Katalog.pathnameMap) {
-  if (!pathnameMap[pathname]) {
+  if (!swaggerPaths[pathname]) {
     console.log(pathname);
   }
 }
@@ -120,7 +71,7 @@ const hasKlientVerb = (spath, kpath, verb) => {
 };
 for (path in Katalog.pathnameMap) {
   const kpath = Katalog.pathnameMap[path];
-  const spath = pathnameMap[path];
+  const spath = swaggerPaths[path];
 
   ['get', 'put', 'post', 'delete'].forEach(verb => {
     if (kpath[verb]) {

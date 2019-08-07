@@ -52,6 +52,7 @@
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",
     "eslint": "eslint scripts --ext .js",
+    "swag": "node scripts/swag",
     "swagger-jsdoc": "node_modules/swagger-jsdoc/bin/swagger-jsdoc.js",
     "disabled-swagger": "npm run swagger-jsdoc -d swaggerDef.js scripts/modules/**/*.js",
     "jsdoc": "node_modules/.bin/jsdoc -P ./package.json -R ./README.md -X -r scripts/modules/"
