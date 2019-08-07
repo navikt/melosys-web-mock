@@ -1,6 +1,6 @@
 const Mock = require('../../utils/mock-util');
 
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 
 /**
@@ -14,7 +14,7 @@ module.exports.fatte = (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };
 
 /**
@@ -28,5 +28,5 @@ module.exports.endreperiode = (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };

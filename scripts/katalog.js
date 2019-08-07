@@ -39,6 +39,7 @@ const pathnameMap = {
     moduleName: 'behandlinger-resultat',
     get: {
       pathname: '/behandlinger/:behandlingID/resultat',
+      params: {behandlingID: 4},
     },
   },
   'behandlinger-status': {
@@ -164,7 +165,7 @@ const pathnameMap = {
     moduleName: 'inngang',
     get: {
       pathname: '/inngang/:snr',
-      params: {snr: 4}
+      params: {snr: 3}
     }
   },
   journalforing: {

@@ -1,5 +1,4 @@
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap["behandlinger-tidligeremedlemsperioder"];
@@ -13,7 +12,7 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
     pathname: 'medlemsperioder-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaGetValidator.get(moduleName, req, res, pathObject );
+  return SchemaValidator.get(moduleName, req, res, pathObject );
 };
 
 /**
@@ -27,5 +26,5 @@ module.exports.settTidligereMedlemsPerioder = (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };

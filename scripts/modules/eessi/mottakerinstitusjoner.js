@@ -1,5 +1,5 @@
 const ERR = require('../../utils/errors');
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap["eessi-mottakerinstitusjoner"];
 
@@ -8,5 +8,5 @@ module.exports.hent = async (req, res) => {
   if (!bucType) {
     return ERR.badRequest400(req, res, 'Mangler bucType');
   }
-  return SchemaGetValidator.get(moduleName, req, res);
+  return SchemaValidator.get(moduleName, req, res);
 };

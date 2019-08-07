@@ -48,6 +48,7 @@
     "mock:post": "node scripts/mock-clients/post-mock-client",
     "mock:delete": "node scripts/mock-clients/delete-mock-client",
     "mock": "npm-run-all -s mock:*",
+    "get-mock:dbg": "node $NODE_DEBUG_OPTION scripts/mock-clients/get-mock-client",
     "post-mock:dbg": "node scripts/mock-clients/post-mock-client",
     "semver": "node_modules/semver/bin/semver",
     "semver-comp": "node scripts/semver-comp",

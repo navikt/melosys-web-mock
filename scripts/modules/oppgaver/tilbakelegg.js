@@ -1,4 +1,4 @@
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 
 /**
@@ -8,5 +8,5 @@ const Katalog = require('../../katalog');
  */
 module.exports.tilbakelegg = (req, res) => {
   const { moduleName } = Katalog.pathnameMap['oppgaver-tilbakelegg'];
-  SchemaPostValidator.post204(moduleName, req, res);
+  SchemaValidator.post204(moduleName, req, res);
 };

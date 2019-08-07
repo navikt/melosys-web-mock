@@ -1,5 +1,5 @@
 const Mock = require('../../utils/mock-util');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap['dokumenter-opprett'];
 
@@ -17,7 +17,7 @@ module.exports.opprett = (req, res) => {
     return Mock.manglerParamDokumenttypeKode(req, res);
   }
   if (erMangelBrevMedFritekst(dokumenttypeKode)) {
-    SchemaPostValidator.post204(moduleName, req, res);
+    SchemaValidator.post204(moduleName, req, res);
   }
   else {
     res.status(204).json();

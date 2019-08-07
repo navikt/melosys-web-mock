@@ -1,4 +1,4 @@
-const Mock = require('../utils/mock-util');
+const Mock = require('../../utils/mock-util');
 
 module.exports.put204 = async (req, res) => {
   try {

@@ -1,15 +1,6 @@
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('../utils/utils');
-const SchemaPostValidator  = require('../utils/schema-post-validator');
-
+const SchemaValidator  = require('../utils/schemavalidator');
 const Mock = require('../utils/mock-util');
 const Katalog = require('../katalog');
-
-const lesOppgave = () => { // eslint-disable-line no-unused-vars
-  const { moduleName } = Katalog.pathnameMap.journalforing;
-  const mockfile = `${MOCK_DATA_DIR}/${moduleName}/DOK_3789-30098000492.json`;
-  return Utils.readJsonAndParseAsync(mockfile);
-};
 
 /**
  * hent
@@ -18,17 +9,15 @@ const lesOppgave = () => { // eslint-disable-line no-unused-vars
  * @returns {Promise<*>}
  */
 module.exports.hent = async (req, res) => {
-  try {
-    const journalpostID = req.params.journalpostID;
-    if (!journalpostID) {
-      Mock.manglerParamjournalpostID(req, res);
-    }
-    const journalpost = await lesOppgave(journalpostID);
-    return res.json(journalpost);
+  const { journalpostID } = req.params;
+  if (!journalpostID) {
+    Mock.manglerParamjournalpostID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const { moduleName } = Katalog.pathnameMap.journalforing;
+  const pathObject = {
+    pathname: '/DOK_3789-30098000492',
+  };
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };
 
 /**
@@ -39,7 +28,7 @@ module.exports.hent = async (req, res) => {
  */
 module.exports.sendOpprettNySak = (req, res) => {
   const { moduleName } = Katalog.pathnameMap["journalforing-opprett"];
-  SchemaPostValidator.post204(moduleName, req, res);
+  SchemaValidator.post204(moduleName, req, res);
 };
 
 /**
@@ -50,6 +39,6 @@ module.exports.sendOpprettNySak = (req, res) => {
  */
 module.exports.sendTilordneSak = (req, res) => {
   const { moduleName } = Katalog.pathnameMap["journalforing-tilordne"];
-  SchemaPostValidator.post204(moduleName, req, res);
+  SchemaValidator.post204(moduleName, req, res);
 };
 

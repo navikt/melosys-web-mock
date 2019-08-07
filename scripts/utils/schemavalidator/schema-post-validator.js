@@ -2,10 +2,10 @@ const Ajv = require('ajv');
 const colors = require('colors/safe');
 const emoji = require('node-emoji');
 
-const ERR = require('./errors');
-const Mock = require('./mock-util');
-const Utils = require('./utils');
-const Schema = require('./schema-util');
+const ERR = require('../errors');
+const Mock = require('../mock-util');
+const Utils = require('../utils');
+const Schema = require('../schema-util');
 const definitions = Schema.lesSchemaDefinitonsSync();
 
 const valideringFeil = (req, res) => {

@@ -1,7 +1,7 @@
 const _ = require('lodash');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Utils = require('../../utils/utils');
 const Mock = require('../../utils/mock-util');
 
@@ -58,7 +58,7 @@ module.exports.hentKontaktopplysninger = async (req, res) => {
  */
 module.exports.sendKontaktopplysninger = (req, res) => {
   if (manglerParamSakEllerOrgNummer(req, res)) return;
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };
 
 /**

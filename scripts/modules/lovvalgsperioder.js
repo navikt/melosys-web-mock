@@ -1,21 +1,6 @@
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const Utils = require('../utils/utils');
 const Mock = require('../utils/mock-util');
-const SchemaPostValidator  = require('../utils/schema-post-validator');
+const SchemaValidator  = require('../utils/schemavalidator');
 const Katalog = require('../katalog');
-
-const lesLovvalgsperioder = (behandlingID) => {
-  const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
-  const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
-  const mockfile = `${GET_DIR}/lovvalgsperiode-bid-${behandlingID}.json`;
-  return Utils.readJsonAndParseAsync(mockfile);
-};
-const lesOpprinneligPeriode = (behandlingID) => {
-  const { moduleName } = Katalog.pathnameMap['lovvalgsperioder-opprinnelig'];
-  const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
-  const mockfile = `${GET_DIR}/opprinneligPeriode-bid-${behandlingID}.json`;
-  return Utils.readJsonAndParseAsync(mockfile);
-};
 
 /**
  * Hent lovvalgsperioder
@@ -24,17 +9,16 @@ const lesOpprinneligPeriode = (behandlingID) => {
  * @returns {*}
  */
 module.exports.hent = async (req, res) => {
-  try {
-    const { behandlingID} = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const data = await lesLovvalgsperioder(behandlingID);
-    return res.json(data);
+  const { behandlingID} = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const pathObj = {
+    pathname: '/lovvalgsperiode-bid-:behandlingID',
+    params: {behandlingID}
+  };
+  const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
+  return SchemaValidator.get(moduleName, req, res, pathObj);
 };
 
 /**
@@ -47,19 +31,18 @@ module.exports.send = (req, res) => {
   const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
   const { behandlingID } = req.params;
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };
 
 module.exports.opprinnelig = async (req, res) => {
-  try {
-    const { behandlingID} = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const data = await lesOpprinneligPeriode(behandlingID);
-    return res.json(data);
+  const { moduleName } = Katalog.pathnameMap['lovvalgsperioder-opprinnelig'];
+  const { behandlingID} = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const pathObject = {
+    pathname: '/opprinneligPeriode-bid-:behandlingID',
+    params: {behandlingID}
+  };
+  SchemaValidator.get(moduleName, req, res, pathObject);
 };

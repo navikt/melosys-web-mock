@@ -2,8 +2,7 @@ const Mock = require('../utils/mock-util');
 const Katalog = require('../katalog');
 const { moduleName } = Katalog.pathnameMap.avklartefakta;
 
-const SchemaPostValidator  = require('../utils/schema-post-validator');
-const SchemaGetValidator  = require('../utils/schema-get-validator');
+const SchemaValidator = require('../utils/schemavalidator');
 
 /**
  * Hent faktavklaring
@@ -20,7 +19,7 @@ module.exports.hent = async (req, res) => {
     pathname: '/avklartefakta-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaGetValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };
 
 
@@ -31,5 +30,5 @@ module.exports.hent = async (req, res) => {
  * @returns {*}
  */
 module.exports.send = (req, res) => {
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };

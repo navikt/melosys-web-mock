@@ -74,7 +74,7 @@ router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.medlemsp
 /**
  * BEHANDLINGSRESULTAT
  */
-router.get('/behandlingsresultat/:behandlingID', Behandlinger.resultat.hentBehandlingsResultat);
+router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hentBehandlingsResultat);
 
 /**
  * FAGSAKER

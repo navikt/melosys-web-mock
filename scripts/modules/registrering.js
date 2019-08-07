@@ -1,4 +1,4 @@
-const SchemaPostValidator  = require('../utils/schema-post-validator');
+const SchemaValidator  = require('../utils/schemavalidator');
 const Mock = require('../utils/mock-util');
 const Katalog = require('../katalog');
 const { moduleName } = Katalog.pathnameMap['registrering-unntaksperioder'];
@@ -12,5 +12,5 @@ module.exports.unntaksperioder = (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaPostValidator.post(moduleName, req, res);
+  SchemaValidator.post(moduleName, req, res);
 };

@@ -1,5 +1,4 @@
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap["eessi-bucer"];
@@ -9,7 +8,7 @@ module.exports.hentBucerUnderArbeid = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  return SchemaGetValidator.get(moduleName, req, res);
+  return SchemaValidator.get(moduleName, req, res);
 };
 /**
  * status
@@ -23,5 +22,5 @@ module.exports.opprett = (req, res) => {
     return Mock.manglerParamBehandlingsID(req, res);
   }
   const rinaUrl = { rinaUrl: 'https://rina-oppl-utv004.adeo.no/portal/#/caseManagement/226792' };
-  SchemaPostValidator.post(moduleName, req, res, rinaUrl);
+  SchemaValidator.post(moduleName, req, res, rinaUrl);
 };

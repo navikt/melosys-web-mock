@@ -2,7 +2,7 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Utils = require('../../utils/utils');
 const Mock = require('../../utils/mock-util');
 
@@ -77,9 +77,9 @@ module.exports.sendAktoer = async (req, res) => {
     }
 
     const schemaNavn = `${moduleName}-post-schema.json`;
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
+    const valid = SchemaValidator.test(label, schemaNavn, jsBody);
 
-    if (!valid) return SchemaPostValidator.valideringFeil(req, res);
+    if (!valid) return SchemaValidator.valideringFeil(req, res);
 
     const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json`;
     const response = await Utils.readJsonAndParseAsync(mockfile);

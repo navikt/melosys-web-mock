@@ -1,7 +1,7 @@
 const Utils = require('../../utils/utils');
 const ERR = require('../../utils/errors');
 const Mock = require('../../utils/mock-util');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 const {  MOCK_DATA_DIR } = require('../../../mock.config');
 const { moduleName } = Katalog.pathnameMap['dokumenter-utkast-pdf'];
@@ -33,6 +33,6 @@ module.exports.utkast = (req, res) => {
     const { mottaker } = jsBody;
     pdfmockfile = `${MOCK_DOKUMENTER_DATA_DIR}/mangelbrev_${mottaker}.pdf`;
   }
-  SchemaPostValidator.postSendPDF(moduleName, req, res, pdfmockfile);
+  SchemaValidator.postSendPDF(moduleName, req, res, pdfmockfile);
 
 };

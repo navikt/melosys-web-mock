@@ -1,5 +1,5 @@
 const Mock = require('../../utils/mock-util');
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 
 const { moduleName } = Katalog.pathnameMap["behandlinger"];
@@ -13,5 +13,5 @@ module.exports.hentBehandling = async (req, res) => {
     pathname: 'behandling-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaGetValidator.get(moduleName, req, res, pathObject );
+  return SchemaValidator.get(moduleName, req, res, pathObject );
 };

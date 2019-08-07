@@ -1,4 +1,4 @@
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap['oppgaver-sok'];
@@ -16,5 +16,5 @@ module.exports.sok = async (req, res) => {
     pathname: '/fnr-:fnr',
     params: {fnr},
   };
-  return SchemaGetValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };

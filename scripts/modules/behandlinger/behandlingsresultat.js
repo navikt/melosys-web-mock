@@ -1,4 +1,4 @@
-const SchemaGetValidator  = require('../../utils/schema-get-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
 const Katalog = require('../../katalog');
 
@@ -18,5 +18,5 @@ module.exports.hentBehandlingsResultat = async (req, res) => {
     pathname: '/behandlingsresultat-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaGetValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };
