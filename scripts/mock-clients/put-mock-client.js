@@ -18,22 +18,6 @@ const reportError = res => {
   oppsummering.failure += 1;
   printerror(res);
 };
-/*
-
-const testAlleEndepunkter = async () => {
-  // Fagsaker
-  await client.put('/fagsaker/4/avsluttsaksombortfalt').then(reportResult).catch(reportError);
-
-  // Saksflyt - unntaksperioder
-  await client.put('/saksflyt/unntaksperioder/4/godkjenn').then(reportResult).catch(reportError);
-  await client.put('/saksflyt/unntaksperioder/4/innhentinfo').then(reportResult).catch(reportError);
-  await client.put('/saksflyt/unntaksperioder/4/anmodning').then(reportResult).catch(reportError);
-  await client.put('/saksflyt/anmodningsperioder/4/bestill').then(reportResult).catch(reportError);
-  printoppsummering(oppsummering,'PUT')
-};
-
-testAlleEndepunkter();
-*/
 
 printheader('PUT');
 const testAll = async () => {
@@ -42,7 +26,12 @@ const testAll = async () => {
     if (endepunkt && endepunkt.put) {
       const { put: verb } = endepunkt;
       const pathname = pathObject2String(verb);
-      await client.put(pathname).then(reportResult).catch(reportError);
+      try {
+        await client.put(pathname).then(reportResult).catch(reportError);
+      }
+      catch (e) {
+        console.log(e);
+      }
     }
   }
   printoppsummering(oppsummering, 'PUT');

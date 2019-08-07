@@ -26,7 +26,6 @@ const testAll = async () => {
     if (endepunkt && endepunkt.get) {
       const { get: verb } = endepunkt;
       const pathname = pathObject2String(verb);
-      console.log(pathname);
       try {
         await client.get(pathname).then(reportResult).catch(reportError);
       }

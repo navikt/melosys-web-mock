@@ -25,7 +25,12 @@ const testAll = async () => {
     if (endepunkt && endepunkt.delete) {
       const { delete: verb } = endepunkt;
       const pathname = pathObject2String(verb);
-      await client.delete(pathname).then(reportResult).catch(reportError);
+      try {
+        await client.delete(pathname).then(reportResult).catch(reportError);
+      }
+      catch (e) {
+        console.log(e);
+      }
     }
   }
   printoppsummering(oppsummering, 'DELETE');
