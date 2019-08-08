@@ -15,8 +15,7 @@ const lesMockPostDoc = async dirname => {
     }
     const filenames = await Utils.readDirSync(POST_MOCK_DIR);
     const mockfile = `${POST_MOCK_DIR}/${filenames[0]}`;
-    const jsondata = await Utils.readJsonAndParseAsync(mockfile);
-    return jsondata;
+    return await Utils.readJsonAndParseAsync(mockfile);
   }
   catch (e) {
     console.log('Reading POST directory failed', e);
@@ -45,8 +44,7 @@ const testAll = async (verb, oppsummering) => {
         url: pathname,
       };
       if (VERB === 'POST') {
-        const document = await lesMockPostDoc(endepunkt.moduleName);
-        config.data = document;
+        config.data = await lesMockPostDoc(endepunkt.moduleName);
       }
       try {
         await client(config).then(reportResult).catch(reportError);
