@@ -8,11 +8,11 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  const pathObject = {
+  const mockpathObject = {
     pathname: 'medlemsperioder-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaValidator.get(moduleName, req, res, pathObject );
+  return SchemaValidator.get(moduleName, req, res, mockpathObject );
 };
 
 /**

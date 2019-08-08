@@ -23,6 +23,10 @@ const pathnameMap = {
   },
   avklartefakta: {
     moduleName: 'avklartefakta',
+    get: {
+      pathname: '/avklartefakta/:behandlingID',
+      params: {behandlingID: 3},
+    },
     post: {
       pathname: '/avklartefakta/:behandlingID',
       params: {behandlingID: 3},
@@ -51,8 +55,12 @@ const pathnameMap = {
   },
   'behandlinger-tidligeremedlemsperioder': {
     moduleName: 'behandlinger-tidligeremedlemsperioder',
+    get: {
+      pathname: '/behandlinger/:behandlingID/tidligeremedlemsperioder',
+      params: {behandlingID: 4},
+    },
     post: {
-      pathname: '/behandlinger/:behandlingID/medlemsperioder',
+      pathname: '/behandlinger/:behandlingID/tidligeremedlemsperioder',
       params: {behandlingID: 4},
     }
   },
@@ -340,6 +348,14 @@ const pathnameMap = {
     }
   }
 };
+
+const katalog = [];
+for (path in pathnameMap) {
+  const strings = [path, pathnameMap[path]];
+  katalog.push(strings);
+}
+const katalogMap = new Map(katalog);
+/*
 const katalogMap = new Map([
   ['anmodningsperioder', pathnameMap.anmodningsperioder],
   ['anmodningsperioder-svar', pathnameMap["anmodningsperioder-svar"]],
@@ -349,7 +365,7 @@ const katalogMap = new Map([
   ['behandlinger-status', pathnameMap["behandlinger-status"]],
   ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
   ['dokumenter-opprett', pathnameMap['dokumenter-opprett']],
-  ['dokumenter-oversikt', pathnameMap['dokumenter-oversikt@']],
+  ['dokumenter-oversikt', pathnameMap['dokumenter-oversikt']],
   ['dokumenter-pdf', pathnameMap['dokumenter-pdf']],
   ['dokumenter-utkast-pdf', pathnameMap['dokumenter-utkast-pdf']],
   ['eessi-bucer', pathnameMap["eessi-bucer"]],
@@ -370,13 +386,14 @@ const katalogMap = new Map([
   ['personer', pathnameMap.personer],
   ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
   ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
-  ['oppgaver-reset', pathnameMap["oppgaver-reset"]],
+  ['oppgaver-sok', pathnameMap["oppgaver-sok"]],
   ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
   ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
   ['saksbehandler', pathnameMap.saksbehandler],
   ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-anmodningsperioder-bestill']],
   ['saksflyt-unntaksperioder-anmodning', pathnameMap['saksflyt-unntaksperioder-anmodning']],
   ['saksflyt-unntaksperioder-godkjenn', pathnameMap['saksflyt-unntaksperioder-godkjenn']],
+  ['saksflyt-unntaksperioder-ikkegodkjenn', pathnameMap['saksflyt-unntaksperioder-ikkegodkjenn']],
   ['saksflyt-unntaksperioder-innhentinfo', pathnameMap['saksflyt-unntaksperioder-innhentinfo']],
   ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
   ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
@@ -385,7 +402,7 @@ const katalogMap = new Map([
   ['soknader', pathnameMap.soknader],
   ['vilkaar', pathnameMap.vilkaar],
 ]);
-
+*/
 module.exports = {
   pathnameMap,
   katalogMap,

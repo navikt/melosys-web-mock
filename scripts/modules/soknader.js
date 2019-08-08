@@ -15,11 +15,11 @@ module.exports.hent = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  const pathObject = {
-    pathname: '/soknad-bid-:behandlingID',
+  const mockpathObject = {
+    pathname: 'soknad-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
 
 /**

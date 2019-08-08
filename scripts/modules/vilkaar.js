@@ -13,12 +13,12 @@ module.exports.hent = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  const pathObj = {
-    pathname: '/vilkaar-bid-:behandlingID',
+  const mockpathObj = {
+    pathname: 'vilkaar-bid-:behandlingID',
     params: {behandlingID}
   };
   const { moduleName } = Katalog.pathnameMap.vilkaar;
-  SchemaValidator.get(moduleName, req, res, pathObj);
+  SchemaValidator.get(moduleName, req, res, mockpathObj);
 };
 
 /**

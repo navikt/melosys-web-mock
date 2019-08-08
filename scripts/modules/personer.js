@@ -17,9 +17,9 @@ module.exports.hent = async (req, res) => {
     return Mock.badRequstParam(req, res, 'Fnr må ha 11 siffer')
   }
   const { moduleName } = Katalog.pathnameMap.personer;
-  const pathObj = {
-    pathname: '/fnr-:fnr',
-    params: {fnr}
+  const mockpathObject = {
+    pathname: 'fnr-:fnrdnr',
+    params: {fnrdnr: fnr}
   };
-  SchemaValidator.get(moduleName, req, res, pathObj);
+  SchemaValidator.get(moduleName, req, res, mockpathObject);
 };

@@ -13,9 +13,9 @@ module.exports.hent = async (req, res) => {
   if (!snr) {
     Mock.manglerParamSaksnummer(req, res);
   }
-  const pathObj = {
-    pathname: '/inngang-snr-:saksnummer',
+  const mockpathObj = {
+    pathname: 'inngang-snr-:saksnummer',
     params: {saksnummer: snr},
   };
-  return SchemaValidator.get(moduleName, req, res, pathObj);
+  return SchemaValidator.get(moduleName, req, res, mockpathObj);
 };

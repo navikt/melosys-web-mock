@@ -18,9 +18,9 @@ module.exports.hent = async (req, res) => {
   }
 
   const { moduleName } = Katalog.pathnameMap.organisasjoner;
-  const pathObj = {
-    pathname: '/orgnr-:orgnr',
-    params: {orgnr}
+  const mockpathObj = {
+    pathname: 'orgnr-:orgnummer',
+    params: {orgnummer: orgnr}
   };
-  return SchemaValidator.get(moduleName, req, res, pathObj);
+  return SchemaValidator.get(moduleName, req, res, mockpathObj);
 };

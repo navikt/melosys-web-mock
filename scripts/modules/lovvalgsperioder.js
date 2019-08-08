@@ -13,12 +13,12 @@ module.exports.hent = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  const pathObj = {
-    pathname: '/lovvalgsperiode-bid-:behandlingID',
+  const mockpathObj = {
+    pathname: 'lovvalgsperiode-bid-:behandlingID',
     params: {behandlingID}
   };
   const { moduleName } = Katalog.pathnameMap.lovvalgsperioder;
-  return SchemaValidator.get(moduleName, req, res, pathObj);
+  return SchemaValidator.get(moduleName, req, res, mockpathObj);
 };
 
 /**
@@ -40,9 +40,9 @@ module.exports.opprinnelig = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  const pathObject = {
-    pathname: '/opprinneligPeriode-bid-:behandlingID',
+  const mockpathObject = {
+    pathname: 'opprinneligPeriode-bid-:behandlingID',
     params: {behandlingID}
   };
-  SchemaValidator.get(moduleName, req, res, pathObject);
+  SchemaValidator.get(moduleName, req, res, mockpathObject);
 };

@@ -12,9 +12,9 @@ module.exports.sok = async (req, res) => {
   const { fnr } = req.query;
   if (!fnr) return Mock.manglerParamFnr(req, res);
 
-  const pathObject = {
-    pathname: '/fnr-:fnr',
-    params: {fnr},
+  const mockpathObject = {
+    pathname: 'fnr-:fnrdnr',
+    params: {fnrdnr: fnr},
   };
-  return SchemaValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };

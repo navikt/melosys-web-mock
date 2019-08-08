@@ -8,13 +8,15 @@ module.exports.hentFagsak = async (req, res) => {
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
 
   const pathObject = {
-    pathname: '/snr-:saksnummer',
+    pathname: 'snr-:saksnummer',
     params: {saksnummer},
   };
   return SchemaValidator.get(moduleName, req, res, pathObject);
 };
 
 module.exports.henleggFagsak = async (req, res) => {
+  const { saksnummer } = req.params;
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
   SchemaValidator.post204(moduleName, req, res);
 };
 

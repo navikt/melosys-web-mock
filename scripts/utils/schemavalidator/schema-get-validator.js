@@ -10,7 +10,6 @@ module.exports.get = async (moduleName, req, res, pathObject = {}) => {
     if (pathObject.pathname) {
       const pathname = pathObject2String(pathObject, '-');
       mockfile = `${GET_DIR}/${pathname}.json`;
-      console.log(mockfile);
     }
     const data = await Utils.readJsonAndParseAsync(mockfile);
     return res.json(data);

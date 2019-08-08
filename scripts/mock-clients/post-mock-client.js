@@ -1,47 +1,11 @@
-const { MOCK_DATA_DIR } = require('../../mock.config');
-const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
-const { pathObject2String } = require('../utils/pathnames');
-const Schema = require('../utils/schema-util');
-const client = httpClient();
-const Katalog = require('../katalog');
+const MockClient = require('./mock-client');
+
 const oppsummering = {
   success: 0,
   failure: 0,
 };
 
-const reportResult = res => {
-  oppsummering.success += 1;
-  printresult(res);
-};
-
-const reportError = res => {
-  oppsummering.failure += 1;
-  printerror(res);
-};
-
-printheader('POST');
-const testAll = async () => {
-  for (const key of Katalog.katalogMap.keys()) {
-    const endepunkt = Katalog.katalogMap.get(key);
-    if (endepunkt && endepunkt.post) {
-      const { moduleName: navn, post } = endepunkt;
-
-      const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${navn}/post`;
-      console.log(POST_MOCK_DIR);
-      const katalog = Schema.lesKatalogSync(POST_MOCK_DIR);
-      const document = katalog[0].document;
-      const pathname = pathObject2String(post);
-      try {
-        await client.post(pathname, document).then(reportResult).catch(reportError);
-      }
-      catch (e) {
-        console.log(e);
-      }
-    }
-  }
-  printoppsummering(oppsummering, 'POST');
-};
-testAll();
+MockClient.testAll('post', oppsummering);
 
 /*
 PUT vs POST for Creation

@@ -96,15 +96,9 @@ module.exports.sendAktoer = async (req, res) => {
 };
 
 module.exports.slettAktoer = (req, res) => {
-  try {
-    const { databaseid } = req.params;
-    if (!databaseid) {
-      return Mock.badRequstParam(req, res, 'Mangler databaseid');
-    }
-    console.log('slettAktoer', databaseid);
-    res.status(204).send();
+  const { databaseid } = req.params;
+  if (!databaseid) {
+    return Mock.badRequstParam(req, res, 'Mangler databaseid');
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaValidator.slett(moduleName, req, res);
 };

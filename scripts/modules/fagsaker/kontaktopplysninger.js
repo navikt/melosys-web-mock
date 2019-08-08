@@ -68,12 +68,5 @@ module.exports.sendKontaktopplysninger = (req, res) => {
  */
 module.exports.slettKontaktopplysninger = (req, res) => {
   if (manglerParamSakEllerOrgNummer(req, res)) return;
-  try {
-    const { saksnummer, juridiskorgnr } = req.params;
-    console.log('slettKontaktopplysninger', saksnummer, juridiskorgnr);
-    res.status(204).send();
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaValidator.slett(moduleName, req, res);
 };

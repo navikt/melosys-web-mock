@@ -14,10 +14,10 @@ module.exports.hent = async (req, res) => {
     Mock.manglerParamjournalpostID(req, res);
   }
   const { moduleName } = Katalog.pathnameMap.journalforing;
-  const pathObject = {
-    pathname: '/DOK_3789-30098000492',
+  const mockpathObject = {
+    pathname: 'DOK_3789-30098000492',
   };
-  return SchemaValidator.get(moduleName, req, res, pathObject);
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
 
 /**

@@ -1,6 +1,6 @@
 const Mock = require('../../utils/mock-util');
 
-module.exports.put204 = async (moduleName, req, res) => {
+module.exports.slett = async (moduleName, req, res) => {
   try {
     return res.status(204).send();
   }

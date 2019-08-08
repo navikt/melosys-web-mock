@@ -3,8 +3,8 @@ const { hentTidligereMedlemsPerioder, settTidligereMedlemsPerioder} = require('.
 const { hentBehandlingsResultat} = require('./behandlingsresultat');
 const { sendStatus } = require('./behandlingsstatus');
 module.exports = {
-  behandling: { hentBehandling },
-  medlemsperioder: { hentMedlemsPerioder: hentTidligereMedlemsPerioder, settMedlemsPerioder: settTidligereMedlemsPerioder },
-  resultat: { hentBehandlingsResultat },
-  status: { sendStatus }
+  behandling: { hent: hentBehandling },
+  tidligeremedlemsperioder: { hent: hentTidligereMedlemsPerioder, send: settTidligereMedlemsPerioder },
+  resultat: { hent: hentBehandlingsResultat },
+  status: { send: sendStatus }
 };

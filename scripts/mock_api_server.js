@@ -62,19 +62,11 @@ router.get('/serverinfo', serverinfo.hentServerInfo);
 /**
  * BEHANDLING
  */
- router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hentBehandling);
-
-// BEHANDLINGS STATUS
-router.post('/behandlinger/:behandlingID/status', Behandlinger.status.sendStatus);
-
-// BEHANDLINGS PERIODER MEDLEMSPERIODER
-router.get('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.medlemsperioder.hentMedlemsPerioder);
-router.post('/behandlinger/:behandlingID/medlemsperioder', Behandlinger.medlemsperioder.settMedlemsPerioder);
-
-/**
- * BEHANDLINGSRESULTAT
- */
-router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hentBehandlingsResultat);
+ router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
+router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
+router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
+router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
+router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
 
 /**
  * FAGSAKER
@@ -82,14 +74,11 @@ router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hentBeh
  * Henter fagsak med alle behandlinger for en enkelt søknad, basert på "snr" som backend omtales som "fagsak_id".
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
- * GET /f/:snr
- *
  */
-router.get('/fagsaker/sok/', Fagsaker.sok.sokFagsak);
+router.get('/fagsaker/sok/', Fagsaker.sok.fagsak);
 
-router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hentFagsak);
-//TODO :fnr skal være :saksnummer
-router.post('/fagsaker/:fnr/henlegg', Fagsaker.fagsak.henleggFagsak);
+router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
+router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg);
 router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.bortfall);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);

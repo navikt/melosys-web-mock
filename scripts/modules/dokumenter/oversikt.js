@@ -12,8 +12,8 @@ const { moduleName } = Katalog.pathnameMap['dokumenter-oversikt'];
 module.exports.oversikt = async (req, res) => {
   const { snr } = req.params;
   if (!snr) return Mock.manglerParamSaksnummer(req, res);
-  const pathObj = {
-    pathname: '/oversikt',
+  const mockpathObject = {
+    pathname: 'oversikt',
   };
-  return SchemaValidator.get(moduleName, req, res, pathObj);
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };

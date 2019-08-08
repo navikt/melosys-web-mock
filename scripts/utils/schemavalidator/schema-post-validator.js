@@ -23,30 +23,6 @@ const humanReadableErrors = (allErrors = []) => {
     return additionalProperty ? `${baseText}: '${colors.bgRed(additionalProperty)}'` : baseText;
   })
 };
-const test = (label, schemaNavn, data) => {
-  if (!label) {
-    console.log(colors.bgYellow('schema:test, mangler label'));
-    return false;
-  }
-  if (!schemaNavn) {
-    console.log(colors.bgYellow('schema:test, mangler schemaNavn'));
-    return false;
-  }
-  const validate = Schema.schemaValidator(schemaNavn);
-  const valid = validate(data);
-
-  if (valid) {
-    console.log(emoji.get('white_check_mark'), `[POST] ${label}`);
-  }
-  else {
-    console.dir(validate.errors);
-    const errmsgs = humanReadableErrors(validate.errors);
-    console.log(emoji.get('x'),`${label}`, colors.bgRed(`Invalid post.body:`));
-    errmsgs.forEach((msg) => {console.log(' ',msg)});
-  }
-  return valid;
-};
-module.exports.test = test;
 module.exports.post = (moduleName, req, res, customResponse = null) => {
   const schemaNavn = `${moduleName}-post-schema.json`;
   const label = `${moduleName}:send`;
@@ -98,6 +74,31 @@ module.exports.postSendPDF = (moduleName, req, res, pdfpath) => {
     Mock.serverError(req, res, err);
   }
 };
+
+const test = (label, schemaNavn, data) => {
+  if (!label) {
+    console.log(colors.bgYellow('schema:test, mangler label'));
+    return false;
+  }
+  if (!schemaNavn) {
+    console.log(colors.bgYellow('schema:test, mangler schemaNavn'));
+    return false;
+  }
+  const validate = Schema.schemaValidator(schemaNavn);
+  const valid = validate(data);
+
+  if (valid) {
+    console.log(emoji.get('white_check_mark'), `[POST] ${label}`);
+  }
+  else {
+    console.dir(validate.errors);
+    const errmsgs = humanReadableErrors(validate.errors);
+    console.log(emoji.get('x'),`${label}`, colors.bgRed(`Invalid post.body:`));
+    errmsgs.forEach((msg) => {console.log(' ',msg)});
+  }
+  return valid;
+};
+module.exports.test = test;
 module.exports.testAsync = async (label, schema, data) => {
   if (!label) {
     console.log(colors.bgYellow('schema:test, mangler label'));

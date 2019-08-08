@@ -4,9 +4,9 @@ const { sokFagsak }  = require('./sok');
 const { hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
 
 module.exports = {
-  fagsak: { hentFagsak, henleggFagsak, bortfall },
+  fagsak: { hent: hentFagsak, henlegg: henleggFagsak, bortfall },
   aktoer: { hentAktoerer, sendAktoer, slettAktoer },
-  sok: { sokFagsak },
+  sok: { fagsak: sokFagsak },
   kontaktopplysninger: {
     hent: hentKontaktopplysninger,
     send: sendKontaktopplysninger,

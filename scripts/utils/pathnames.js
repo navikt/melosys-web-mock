@@ -13,7 +13,7 @@ const pathname2String = (pathname, params, sepChar) => {
       path += `${sepChar}${param}`;
     }
   });
-  return path;
+  return path.startsWith('/') ? path.slice(1) : path;
 };
 const pathObject2String = (pathobject, sepChar = '/') => {
   const { pathname, params } = pathobject;
