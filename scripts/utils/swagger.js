@@ -27,7 +27,7 @@ const transformSwaggerPaths = swagger => {
   const expressPaths = {};
   let pathnames = [];
   // Collect swagger path properties from paths object
-  for (path in swagger.paths) { // NOTE! paths is a object with each path has nested objects
+  for (const path in swagger.paths) { // NOTE! paths is a object with each path has nested objects
     pathnames.push(path);
   }
   // Sort pathnames in acending order

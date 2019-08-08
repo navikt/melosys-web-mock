@@ -350,59 +350,11 @@ const pathnameMap = {
 };
 
 const katalog = [];
-for (path in pathnameMap) {
+for (const path in pathnameMap) {
   const strings = [path, pathnameMap[path]];
   katalog.push(strings);
 }
 const katalogMap = new Map(katalog);
-/*
-const katalogMap = new Map([
-  ['anmodningsperioder', pathnameMap.anmodningsperioder],
-  ['anmodningsperioder-svar', pathnameMap["anmodningsperioder-svar"]],
-  ['avklartefakta', pathnameMap.avklartefakta],
-  ['behandlinger', pathnameMap["behandlinger"]],
-  ['behandlinger-resultat', pathnameMap["behandlinger-resultat"]],
-  ['behandlinger-status', pathnameMap["behandlinger-status"]],
-  ['behandlinger-tidligeremedlemsperioder', pathnameMap["behandlinger-tidligeremedlemsperioder"]],
-  ['dokumenter-opprett', pathnameMap['dokumenter-opprett']],
-  ['dokumenter-oversikt', pathnameMap['dokumenter-oversikt']],
-  ['dokumenter-pdf', pathnameMap['dokumenter-pdf']],
-  ['dokumenter-utkast-pdf', pathnameMap['dokumenter-utkast-pdf']],
-  ['eessi-bucer', pathnameMap["eessi-bucer"]],
-  ['eessi-bucer-opprett', pathnameMap["eessi-bucer-opprett"]],
-  ['eessi-mottakerinstitusjoner', pathnameMap["eessi-mottakerinstitusjoner"]],
-  ['fagsaker', pathnameMap.fagsaker],
-  ['fagsaker-aktoerer', pathnameMap["fagsaker-aktoerer"]],
-  ['fagsaker-avsluttsaksombortfalt', pathnameMap["fagsaker-avsluttsaksombortfalt"]],
-  ['fagsaker-kontaktopplysninger', pathnameMap["fagsaker-kontaktopplysninger"]],
-  ['fagsaker-sok', pathnameMap["fagsaker-sok"]],
-  ['inngang', pathnameMap.inngang],
-  ['journalforing', pathnameMap.journalforing],
-  ['journalforing-opprett', pathnameMap["journalforing-opprett"]],
-  ['journalforing-tilordne', pathnameMap["journalforing-tilordne"]],
-  ['lovvalgsperioder', pathnameMap.lovvalgsperioder],
-  ['lovvalgsperioder-opprinnelig', pathnameMap['lovvalgsperioder-opprinnelig']],
-  ['organisasjoner', pathnameMap.organisasjoner],
-  ['personer', pathnameMap.personer],
-  ['oppgaver-oversikt', pathnameMap["oppgaver-oversikt"]],
-  ['oppgaver-plukk', pathnameMap["oppgaver-plukk"]],
-  ['oppgaver-sok', pathnameMap["oppgaver-sok"]],
-  ['oppgaver-tilbakelegg', pathnameMap["oppgaver-tilbakelegg"]],
-  ['registrering-unntaksperioder', pathnameMap['registrering-unntaksperioder']],
-  ['saksbehandler', pathnameMap.saksbehandler],
-  ['saksflyt-anmodningsperioder-bestill', pathnameMap['saksflyt-anmodningsperioder-bestill']],
-  ['saksflyt-unntaksperioder-anmodning', pathnameMap['saksflyt-unntaksperioder-anmodning']],
-  ['saksflyt-unntaksperioder-godkjenn', pathnameMap['saksflyt-unntaksperioder-godkjenn']],
-  ['saksflyt-unntaksperioder-ikkegodkjenn', pathnameMap['saksflyt-unntaksperioder-ikkegodkjenn']],
-  ['saksflyt-unntaksperioder-innhentinfo', pathnameMap['saksflyt-unntaksperioder-innhentinfo']],
-  ['saksflyt-vedtak-fatte', pathnameMap['saksflyt-vedtak-fatte']],
-  ['saksflyt-vedtak-endreperiode', pathnameMap['saksflyt-vedtak-endreperiode']],
-  ['saksopplysninger-oppfriskning', pathnameMap['saksopplysninger-oppfriskning']],
-  ['saksopplysninger-oppfriskning-status', pathnameMap['saksopplysninger-oppfriskning-status']],
-  ['soknader', pathnameMap.soknader],
-  ['vilkaar', pathnameMap.vilkaar],
-]);
-*/
 module.exports = {
   pathnameMap,
   katalogMap,

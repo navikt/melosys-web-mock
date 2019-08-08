@@ -8,7 +8,7 @@ console.log('\nSwagger file:', SWAGGER_FILE);
 const swaggerPaths = Swagger.parseSwagger2ExpressPaths(SWAGGER_FILE);
 console.log();
 console.log('==== SERVER definerte stier som ikke matcher FRONTEND');
-for (path in swaggerPaths) {
+for (const path in swaggerPaths) {
   if (path.startsWith('logger')) continue;
   if (path.startsWith('adresser')) continue;
   if (path.startsWith('arbeidsforholdhistorikk')) continue;
@@ -35,7 +35,7 @@ const hasServerVerb = (spath, kpath, verb) => {
 };
 
 console.log('==== SERVER definerte stier med mismatch i parameters');
-for (path in swaggerPaths) {
+for (const path in swaggerPaths) {
   const kpath = Katalog.pathnameMap[path];
   const spath = swaggerPaths[path];
   ['get', 'put', 'post', 'delete'].forEach(verb => {
@@ -48,7 +48,7 @@ for (path in swaggerPaths) {
 console.log('\n**************************************************\n');
 console.log('==== Mock definerte stier som ikke matcher BACKEND');
 
-for (pathname in Katalog.pathnameMap) {
+for (const pathname in Katalog.pathnameMap) {
   if (!swaggerPaths[pathname]) {
     console.log(pathname);
   }
@@ -69,7 +69,7 @@ const hasKlientVerb = (spath, kpath, verb) => {
     }
   }
 };
-for (path in Katalog.pathnameMap) {
+for (const path in Katalog.pathnameMap) {
   const kpath = Katalog.pathnameMap[path];
   const spath = swaggerPaths[path];
 

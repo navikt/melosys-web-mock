@@ -1,5 +1,5 @@
 
-const pathname2String = (pathname, params, sepChar) => {
+const pathname2Filename = (pathname, params, sepChar) => {
   if (pathname.indexOf(':') === -1) return pathname;
   const paths = pathname.split(sepChar);
   let path = paths.shift();
@@ -15,14 +15,14 @@ const pathname2String = (pathname, params, sepChar) => {
   });
   return path.startsWith('/') ? path.slice(1) : path;
 };
-const pathObject2String = (pathobject, sepChar = '/') => {
+const pathObject2Filename = (pathobject, sepChar = '/') => {
   const { pathname, params } = pathobject;
   const queryStartIndex = pathname.indexOf('?');
   if (queryStartIndex > 0) {
     const path = pathname.substring(0, queryStartIndex);
     const queryString = pathname.substr(queryStartIndex);
-    return pathname2String(path, params, sepChar) + queryString;
+    return pathname2Filename(path, params, sepChar) + queryString;
   }
-  return pathname2String(pathname, params, sepChar);
+  return pathname2Filename(pathname, params, sepChar);
 };
-module.exports.pathObject2String = pathObject2String;
+module.exports.pathObject2Filename = pathObject2Filename;

@@ -1,7 +1,7 @@
+const Mock = require('../utils/mock-util');
 const SchemaValidator  = require('../utils/schemavalidator');
 const Katalog = require('../katalog');
 const { moduleName } = Katalog.pathnameMap.vilkaar;
-
 /**
  * Hent vilkar
  * @param req

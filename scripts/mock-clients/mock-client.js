@@ -1,14 +1,26 @@
 const { MOCK_DATA_DIR } = require('../../mock.config');
 const { httpClient, printheader, printoppsummering, printerror, printresult } = require('./helpers');
-const { pathObject2String } = require('../utils/pathnames');
+const { pathObject2Filename } = require('../utils/pathnames');
 const Katalog = require('../katalog');
-const Schema = require('../utils/schema-util');
+const Utils = require('../utils/utils');
 const client = httpClient();
 
-const lesMockPostDoc = navn => {
-  const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${navn}/post`;
-  const katalog = Schema.lesKatalogSync(POST_MOCK_DIR);
-  return katalog[0].document;
+const lesMockPostDoc = async dirname => {
+  const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${dirname}/post`;
+  try {
+    const exists = await Utils.existsAsync(POST_MOCK_DIR);
+    if (!exists) {
+      console.log('Invalid file path:', POST_MOCK_DIR);
+      return {};
+    }
+    const filenames = await Utils.readDirSync(POST_MOCK_DIR);
+    const mockfile = `${POST_MOCK_DIR}/${filenames[0]}`;
+    const jsondata = await Utils.readJsonAndParseAsync(mockfile);
+    return jsondata;
+  }
+  catch (e) {
+    console.log('Reading POST directory failed', e);
+  }
 };
 
 const testAll = async (verb, oppsummering) => {
@@ -27,15 +39,17 @@ const testAll = async (verb, oppsummering) => {
     const endepunkt = Katalog.katalogMap.get(key);
     if (endepunkt && endepunkt[verb]) {
       const pathObject = endepunkt[verb];
-      const pathname = pathObject2String(pathObject);
+      const pathname = pathObject2Filename(pathObject);
+      const config = {
+        method: verb,
+        url: pathname,
+      };
+      if (VERB === 'POST') {
+        const document = await lesMockPostDoc(endepunkt.moduleName);
+        config.data = document;
+      }
       try {
-        if (VERB === 'POST') {
-          const dokument = lesMockPostDoc(endepunkt.moduleName);
-          await client.post(pathname, dokument).then(reportResult).catch(reportError);
-        }
-        else {
-          await client[verb](pathname).then(reportResult).catch(reportError);
-        }
+        await client(config).then(reportResult).catch(reportError);
       }
       catch (e) {
         oppsummering.failure += 1;
