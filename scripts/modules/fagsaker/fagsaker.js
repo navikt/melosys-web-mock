@@ -25,5 +25,5 @@ module.exports.bortfall = async (req, res) => {
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
 
-  return res.status(204).send();
+  SchemaValidator.put204(moduleName, req, res);
 };
