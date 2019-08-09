@@ -5,11 +5,11 @@ const { hent } = require('./pdf');
 
 module.exports = {
   dokument: {
-    opprett,
-    oversikt,
+    opprett: { send: opprett},
+    oversikt: { hent: oversikt},
   },
   pdf: {
-    utkast,
+    utkast: { send: utkast },
     hent,
   }
 };

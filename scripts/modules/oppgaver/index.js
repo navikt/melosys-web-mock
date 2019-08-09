@@ -4,8 +4,8 @@ const { sok } = require('./sok');
 const { tilbakelegg } = require('./tilbakelegg');
 
 module.exports = {
-  oversikt,
-  sendPlukk,
-  sok,
-  tilbakelegg,
+  oversikt: { hent: oversikt },
+  plukk: { send: sendPlukk },
+  sok: { hent: sok },
+  tilbakelegg: { send: tilbakelegg },
 };

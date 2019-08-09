@@ -101,12 +101,12 @@ router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
  * ---------------------------------------------------------------
  */
 // Oppretter en bestilling av dokument i dokumentproduksjon
-router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett);
-router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt);
+router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett.send);
+router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
 // Henter et eksisterende dokument fra dokumentarkiv
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast);
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast.send);
 // TODO '/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode'
 /**
  * EESSI
@@ -114,7 +114,7 @@ router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter
  */
 router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
 router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
-router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
+router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
 
 /**
  * FAGSAKER
@@ -123,11 +123,11 @@ router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  */
-router.get('/fagsaker/sok/', Fagsaker.sok.fagsak);
+router.get('/fagsaker/sok/', Fagsaker.sok.hent);
 
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
-router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg);
-router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt);
+router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
+router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
@@ -163,10 +163,10 @@ router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.oppri
  * OPPGAVER
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/oversikt', Oppgaver.oversikt);
-router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
-router.get('/oppgaver/sok', Oppgaver.sok);
-router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg);
+router.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
+router.post('/oppgaver/plukk', Oppgaver.plukk.send);
+router.get('/oppgaver/sok', Oppgaver.sok.hent);
+router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
 
 /**
  * ORGANISASJONER
@@ -195,19 +195,19 @@ router.get('/saksbehandler', Saksbehandler.hent);
  * SAKSFLYT
  * ---------------------------------------------------------------
  */
-router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill);
-router.post('/saksflyt/vedtak/:behandlingID/fatte', Saksflyt.vedtak.fatte);
-router.post('/saksflyt/vedtak/:behandlingID/endreperiode', Saksflyt.vedtak.endreperiode);
-router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
-router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
-router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
-router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
+router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.put);
+router.post('/saksflyt/vedtak/:behandlingID/fatte', Saksflyt.vedtak.fatte.send);
+router.post('/saksflyt/vedtak/:behandlingID/endreperiode', Saksflyt.vedtak.endreperiode.send);
+router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning.put);
+router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.put);
+router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
+router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
 
 /**
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfriskning/:behandlingID/status', Saksopplysninger.oppfriskning.status);
+router.get('/saksopplysninger/oppfriskning/:behandlingID/status', Saksopplysninger.oppfriskning.status.hent);
 router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
 
 /**

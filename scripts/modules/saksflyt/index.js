@@ -3,7 +3,17 @@ const { anmodning, godkjenn, innhentinfo, ikkegodkjenn } = require('./unntaksper
 const { bestill } = require('./anmodningsperioder');
 
 module.exports = {
-  vedtak: { endreperiode, fatte },
-  unntaksperioder: { anmodning, godkjenn, innhentinfo, ikkegodkjenn },
-  anmodningsperioder: { bestill }
+  vedtak: {
+    endreperiode: {send: endreperiode},
+    fatte: {send: fatte},
+  },
+  unntaksperioder: {
+    anmodning: {put: anmodning},
+    godkjenn: {put: godkjenn},
+    innhentinfo: {put: innhentinfo},
+    ikkegodkjenn: {send: ikkegodkjenn},
+  },
+  anmodningsperioder: {
+    bestill: {put: bestill},
+  },
 };
