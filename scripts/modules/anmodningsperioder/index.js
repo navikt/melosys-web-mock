@@ -1,7 +1,7 @@
-const { hent: hentPerioder, send: sendPerioder, lesAnmodningsKatalog } = require('./anmodningsperioder');
-const { hent: hentSvar, send: sendSvar, lesAnmodningsSvarKatalog } = require('./svar');
+const { hent: hentPerioder, send: sendPerioder } = require('./anmodningsperioder');
+const { hent, send } = require('./svar');
 
 module.exports = {
-  hentPerioder, sendPerioder, lesAnmodningsKatalog,
-  hentSvar, sendSvar, lesAnmodningsSvarKatalog
+  hent: hentPerioder, send: sendPerioder,
+  svar: {hent, send}
 };

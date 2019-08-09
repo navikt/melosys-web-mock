@@ -1,5 +1,5 @@
-const memcache = require('../utils/memcache');
-const Mock = require('../utils/mock-util');
+const memcache = require('../../../utils/memcache');
+const Mock = require('../../../utils/mock-util');
 
 /**
  * oppfrisk

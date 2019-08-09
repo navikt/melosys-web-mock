@@ -9,20 +9,20 @@ const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
 
 const Anmodningsperioder = require('./modules/anmodningsperioder');
-const avklartefakta = require('./modules/avklartefakta');
+const Avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const Dokumenter = require('./modules/dokumenter');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
-const inngang = require('./modules/inngang');
-const journalforing = require('./modules/journalforing');
-const lovvalgsperioder = require('./modules/lovvalgsperioder');
+const Inngang = require('./modules/inngang');
+const Journalforing = require('./modules/journalforing');
+const Lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
-const organisasjoner = require('./modules/organisasjoner');
-const personer = require('./modules/personer');
+const Organisasjoner = require('./modules/organisasjoner');
+const Personer = require('./modules/personer');
 const Registrering = require('./modules/registrering');
-const saksbehandler = require('./modules/saksbehandler');
-const saksopplysninger = require('./modules/saksopplysninger');
+const Saksbehandler = require('./modules/saksbehandler');
+const Saksopplysninger = require('./modules/saksopplysninger');
 const Soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
 const Vilkaar = require('./modules/vilkaar');
@@ -46,7 +46,7 @@ const app = express();
 
 const allowCrossDomain = (req, res, next)  => {
   res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,POST');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
 };
@@ -59,14 +59,62 @@ const port = process.env.PORT || 3002;
 const router = express.Router();
 
 router.get('/serverinfo', serverinfo.hentServerInfo);
+// router.post('/logger/trace', logging.trace);
+// router.post('/logger/debug', logging.debug);
+router.post('/logger/info', logging.info);
+router.post('/logger/warn', logging.warn);
+router.post('/logger/error', logging.error);
+
 /**
- * BEHANDLING
+ * ANMODNINGSPERIODER
  */
- router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
+router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hent);
+router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.send);
+router.get('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.hent);
+router.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.send);
+
+/**
+ * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
+ * ----------------------------------------------------------
+ * avklartefakta for soknaden. Inneholder datagrunnlag fra saksbehandlers avklartefakta som ikke direkte
+ * kommer fra søknad eller registere men som saksbehandler kan trekke slutninger rundt.
+ * GET /avklartefakta Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
+ * POST /avklartefakta Sender alle avklartefaktaer som saksbehandler har gjort. Se Confluence
+ * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
+ *
+ */
+router.get('/avklartefakta/:behandlingID', Avklartefakta.hent);
+router.post('/avklartefakta/:behandlingID', Avklartefakta.send);
+
+/**
+ * BEHANDLINGER
+ * ----------------------------------------------------------------
+ */
+router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
 router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
 router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
 router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
 router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
+
+/**
+ * DOKUMENTER
+ * ---------------------------------------------------------------
+ */
+// Oppretter en bestilling av dokument i dokumentproduksjon
+router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett);
+router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt);
+// Henter et eksisterende dokument fra dokumentarkiv
+router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
+// Henter forhåndsvisning som byte stream fra dokumentproduksjon
+router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast);
+// TODO '/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode'
+/**
+ * EESSI
+ * ----------------------------------------------------------------
+ */
+router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
+router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
+router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
 
 /**
  * FAGSAKER
@@ -79,19 +127,91 @@ router.get('/fagsaker/sok/', Fagsaker.sok.fagsak);
 
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
 router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg);
-router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.bortfall);
+router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt);
 
-router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hentAktoerer);
-router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.sendAktoer);
-router.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slettAktoer);
+router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
+router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
+router.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slett);
 
 router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
-router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder);
 /**
- * SØKNAD
+ * INNGANG (Første steg i STEGVELGEREN)
+ * ----------------------------------------------------------
+ */
+router.get('/inngang/:snr', Inngang.hent);
+
+/**
+ * JOURNALFORING
+ * ---------------------------------------------------------------
+ */
+router.get('/journalforing/:journalpostID', Journalforing.hent);
+router.post('/journalforing/opprett', Journalforing.opprett.send);
+router.post('/journalforing/tilordne', Journalforing.tilordne.send);
+
+/**
+ * LOVVALGSPERIODER
+ * ---------------------------------------------------------------
+ */
+router.get('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.hent);
+router.post('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.send);
+router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.opprinnelig.hent);
+
+/**
+ * OPPGAVER
+ * ---------------------------------------------------------------
+ */
+router.get('/oppgaver/oversikt', Oppgaver.oversikt);
+router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
+router.get('/oppgaver/sok', Oppgaver.sok);
+router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg);
+
+/**
+ * ORGANISASJONER
+ * ---------------------------------------------------------------
+ */
+router.get('/organisasjoner', Organisasjoner.hent);
+
+/**
+ * PERSONER
+ * ---------------------------------------------------------------
+ */
+router.get('/personer', Personer.hent);
+
+/**
+ * REGISTRERING av UNNTAKSPERIODER
+ * ---------------------------------------------------------------
+ */
+router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder.send);
+
+/**
+ * SAKSBEHANDLER
+ */
+router.get('/saksbehandler', Saksbehandler.hent);
+
+/**
+ * SAKSFLYT
+ * ---------------------------------------------------------------
+ */
+router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill);
+router.post('/saksflyt/vedtak/:behandlingID/fatte', Saksflyt.vedtak.fatte);
+router.post('/saksflyt/vedtak/:behandlingID/endreperiode', Saksflyt.vedtak.endreperiode);
+router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
+router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
+router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
+router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
+
+/**
+ * SAKSOPPLYSNINGER
+ * ---------------------------------------------------------------
+ */
+router.get('/saksopplysninger/oppfriskning/:behandlingID/status', Saksopplysninger.oppfriskning.status);
+router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
+
+/**
+ * SOKNADER
  * ----------------------------------------------------------
  * Endpoint for søknaden, enten den registreres manuelt eller kommer inn elektronisk.
  * GET /soknader Returnerer evt. tidligere registrerte data fra søknaden eller elektronisk søknad.
@@ -102,133 +222,12 @@ router.get('/soknader/:behandlingID', Soknader.hent);
 router.post('/soknader/:behandlingID', Soknader.send);
 
 /**
- * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
- * ----------------------------------------------------------
- * avklartefakta for soknaden. Inneholder datagrunnlag fra saksbehandlers avklartefakta som ikke direkte
- * kommer fra søknad eller registere men som saksbehandler kan trekke slutninger rundt.
- * GET /avklartefakta Returnerer evt. tidligere vurderinger for aktuell sak slik at disse kan settes inn i grensesnittet.
- * POST /avklartefakta Sender alle avklartefaktaer som saksbehandler har gjort. Se Confluence
- * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
- *
- */
-router.get('/avklartefakta/:behandlingID', avklartefakta.hent);
-router.post('/avklartefakta/:behandlingID', avklartefakta.send);
-
-/**
- * INNGANG (Første steg i STEGVELGEREN)
- * ----------------------------------------------------------
- */
-router.get('/inngang/:snr', inngang.hent);
-
-/**
- * SAKSBEHANDLER
- */
-router.get('/saksbehandler', saksbehandler.hent);
-
-/**
- * LOVVALGSPERIODER
- * ---------------------------------------------------------------
- */
-router.get('/lovvalgsperioder/:behandlingID', lovvalgsperioder.hent);
-router.post('/lovvalgsperioder/:behandlingID', lovvalgsperioder.send);
-router.get('/lovvalgsperioder/:behandlingID/opprinnelig', lovvalgsperioder.opprinnelig);
-
-
-/**
- * OPPGAVEBEHANDLING
- * ---------------------------------------------------------------
- */
-router.get('/oppgaver/oversikt', Oppgaver.oversikt);
-router.post('/oppgaver/plukk', Oppgaver.sendPlukk);
-router.get('/oppgaver/sok', Oppgaver.sok);
-router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg);
-
-/**
- * JOURNALFORING
- * ---------------------------------------------------------------
- */
-router.get('/journalforing/:journalpostID', journalforing.hent);
-router.post('/journalforing/opprett', journalforing.sendOpprettNySak);
-router.post('/journalforing/tilordne', journalforing.sendTilordneSak);
-
-/**
- * PERSON
- * ---------------------------------------------------------------
- */
-router.get('/personer', personer.hent);
-
-/**
- * ORGANISASJON
- * ---------------------------------------------------------------
- */
-router.get('/organisasjoner', organisasjoner.hent);
-
-/**
- * SAKSOPPLYSNINGER
- * ---------------------------------------------------------------
- */
-router.get('/saksopplysninger/oppfriskning/:behandlingID/status', saksopplysninger.status);
-router.get('/saksopplysninger/oppfriskning/:behandlingID', saksopplysninger.oppfrisk);
-
-/**
  * VILKÅR
  * ---------------------------------------------------------------
  */
 router.get('/vilkaar/:behandlingID', Vilkaar.hent);
 router.post('/vilkaar/:behandlingID', Vilkaar.send);
 
-/**
- * DOKUMENTER
- *  * ---------------------------------------------------------------
- */
-// Oppretter en bestilling av dokument i dokumentproduksjon
-router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett);
-
-router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt);
-
-// Henter et eksisterende dokument fra dokumentarkiv
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
-
-// Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast);
-
-/**
- * SAKSFLYT
- *  * ---------------------------------------------------------------
- */
-
-router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill);
-
-router.post('/saksflyt/vedtak/:behandlingID/fatte', Saksflyt.vedtak.fatte);
-router.post('/saksflyt/vedtak/:behandlingID/endreperiode', Saksflyt.vedtak.endreperiode);
-
-router.put('/saksflyt/unntaksperioder/:behandlingID/anmodning', Saksflyt.unntaksperioder.anmodning);
-router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn);
-router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn);
-router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo);
-
-/**
- * EESSI
- *  * ----------------------------------------------------------------
- */
-router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
-router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
-router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett);
-
-/**
- * ANMODNINGSPERIODER
- */
-
-router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hentPerioder);
-router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.sendPerioder);
-router.get('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.hentSvar);
-router.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.sendSvar);
-
-// router.post('/logger/trace', logging.trace);
-// router.post('/logger/debug', logging.debug);
-router.post('/logger/info', logging.info);
-router.post('/logger/warn', logging.warn);
-router.post('/logger/error', logging.error);
 
 app.use(allowCrossDomain);
 app.use('/api', router);

@@ -20,7 +20,7 @@ module.exports.henleggFagsak = async (req, res) => {
   SchemaValidator.post204(moduleName, req, res);
 };
 
-module.exports.bortfall = async (req, res) => {
+module.exports.avsluttsaksombortfalt = async (req, res) => {
   const { saksnummer } = req.params;
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);

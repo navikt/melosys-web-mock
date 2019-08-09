@@ -1,7 +1,6 @@
-const Mock = require('../utils/mock-util');
-const SchemaValidator  = require('../utils/schemavalidator');
-const Katalog = require('../katalog');
-
+const Mock = require('../../utils/mock-util');
+const SchemaValidator  = require('../../utils/schemavalidator');
+const Katalog = require('../../katalog');
 /**
  * Hent lovvalgsperioder
  * @param req
@@ -32,17 +31,4 @@ module.exports.send = (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
   SchemaValidator.post(moduleName, req, res);
-};
-
-module.exports.opprinnelig = async (req, res) => {
-  const { moduleName } = Katalog.pathnameMap['lovvalgsperioder-opprinnelig'];
-  const { behandlingID} = req.params;
-  if (!behandlingID) {
-    return Mock.manglerParamBehandlingsID(req, res);
-  }
-  const mockpathObject = {
-    pathname: 'opprinneligPeriode-bid-:behandlingID',
-    params: {behandlingID}
-  };
-  SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
