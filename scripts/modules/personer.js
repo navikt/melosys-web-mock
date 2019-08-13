@@ -9,7 +9,7 @@ const SchemaValidator = require('../utils/schemavalidator');
  * @returns {Promise<*>}
  */
 module.exports.hent = async (req, res) => {
-  const { fnr } = req.query;
+  const { fnr } = req.params;
   if (!fnr) {
     return Mock.manglerParamFnr(req, res);
   }

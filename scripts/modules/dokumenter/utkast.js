@@ -4,7 +4,7 @@ const Mock = require('../../utils/mock-util');
 const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 const {  MOCK_DATA_DIR } = require('../../../mock.config');
-const { moduleName } = Katalog.pathnameMap['dokumenter-utkast-pdf'];
+const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast'];
 
 // Body is only required for '000074' => 'Innhente manglende opplysninger'
 const erMangelBrevMedFritekst = (dokumenttypeKode) => {

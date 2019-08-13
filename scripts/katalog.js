@@ -85,10 +85,10 @@ const pathnameMap = {
       params: {journalpostID: 321, dokumentID: 123}
     }
   },
-  'dokumenter-utkast-pdf': {
-    moduleName: 'dokumenter-utkast-pdf',
+  'dokumenter-pdf-utkast': {
+    moduleName: 'dokumenter-pdf-utkast',
     post: {
-      pathname: '/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode',
+      pathname: '/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode',
       params: {behandlingID: 4, dokumenttypeKode:'MELDING_MANGLENDE_OPPLYSNINGER'},
     }
   },
@@ -240,13 +240,15 @@ const pathnameMap = {
   'organisasjoner': {
     moduleName: 'organisasjoner',
     get: {
-      pathname: '/organisasjoner/?orgnr=810072512'
+      pathname: '/organisasjoner/:orgnr',
+      params: {orgnr: '810072512'}
     }
   },
   'personer': {
     moduleName: 'personer',
     get: {
-      pathname: '/personer/?fnr=17117802280'
+      pathname: '/personer/:fnr',
+      params: {fnr: '17117802280'}
     }
   },
   'registrering-unntaksperioder': {

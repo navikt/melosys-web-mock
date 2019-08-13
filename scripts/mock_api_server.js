@@ -103,11 +103,12 @@ router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
 // Oppretter en bestilling av dokument i dokumentproduksjon
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett.send);
 router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
+
 // Henter et eksisterende dokument fra dokumentarkiv
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
+
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/utkast/pdf/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast.send);
-// TODO '/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode'
+router.post('/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast.send);
 /**
  * EESSI
  * ----------------------------------------------------------------
@@ -141,6 +142,7 @@ router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsak
  * INNGANG (Første steg i STEGVELGEREN)
  * ----------------------------------------------------------
  */
+// TODO Rename to inngangsvilkaar
 router.get('/inngang/:snr', Inngang.hent);
 
 /**
@@ -172,13 +174,13 @@ router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
  * ORGANISASJONER
  * ---------------------------------------------------------------
  */
-router.get('/organisasjoner', Organisasjoner.hent);
+router.get('/organisasjoner/:orgnr', Organisasjoner.hent);
 
 /**
  * PERSONER
  * ---------------------------------------------------------------
  */
-router.get('/personer', Personer.hent);
+router.get('/personer/:fnr', Personer.hent);
 
 /**
  * REGISTRERING av UNNTAKSPERIODER
