@@ -118,10 +118,6 @@ const pathnameMap = {
     get: {
       pathname: '/fagsaker/:saksnummer',
       params: {saksnummer: 4}
-    },
-    post: {
-      pathname: '/fagsaker/:fnr/henlegg',
-      params: {fnr: '17117802280'}
     }
   },
   'fagsaker-aktoerer': {
@@ -146,6 +142,13 @@ const pathnameMap = {
       params: {saksnummer: 4}
     }
 
+  },
+  'fagsaker-henlegg': {
+    moduleName: 'fagsaker-henlegg',
+    post: {
+      pathname: '/fagsaker/:fnr/henlegg',
+      params: {fnr: '17117802280'}
+    }
   },
   'fagsaker-kontaktopplysninger': {
     moduleName: 'fagsaker-kontaktopplysninger',

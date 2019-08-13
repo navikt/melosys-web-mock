@@ -1,5 +1,6 @@
-const { hentFagsak, henleggFagsak, avsluttsaksombortfalt } = require('./fagsaker');
+const { hentFagsak, avsluttsaksombortfalt } = require('./fagsaker');
 const { hentAktoerer, sendAktoer, slettAktoer } = require('./aktoerer');
+const { henleggFagsak } = require('./henlegg');
 const { sokFagsak }  = require('./sok');
 const { hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
 
