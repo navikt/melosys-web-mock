@@ -1,23 +1,8 @@
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
-
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
-const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
-const BEHANDLINGSRESULTAT_MOCK_DATA_DIR = `${BEHANDLINGER_MOCK_DIR}/resultat`;
+const Katalog = require('../../katalog');
 
-const lesBehandlingsresultat = bid => {
-  const mockfile = `${BEHANDLINGSRESULTAT_MOCK_DATA_DIR}/behandlingsresultat-bid-${bid}.json`;
-  return Utils.readJsonAndParseAsync(mockfile);
-};
-
-/**
- * lesBehandlingsresultatKatalog
- */
-module.exports.lesBehandlingsresultatKatalog = () => {
-  return Schema.lesKatalogSync(BEHANDLINGSRESULTAT_MOCK_DATA_DIR);
-};
-
+const { moduleName } = Katalog.pathnameMap["behandlinger-resultat"];
 /**
  * hent
  * @param req
@@ -25,15 +10,13 @@ module.exports.lesBehandlingsresultatKatalog = () => {
  * @returns {Promise<*>}
  */
 module.exports.hentBehandlingsResultat = async (req, res) => {
-  try {
-    const { behandlingID } = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const resultat = await lesBehandlingsresultat(behandlingID);
-    return res.json(resultat);
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.badRequstParam(req, res, err);
-  }
+  const mockpathObject = {
+    pathname: 'behandlingsresultat-bid-:behandlingID',
+    params: {behandlingID},
+  };
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };

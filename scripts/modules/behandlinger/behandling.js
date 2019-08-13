@@ -1,30 +1,17 @@
-const Schema = require('../../utils/schema-util');
-const Utils = require('../../utils/utils');
-
 const Mock = require('../../utils/mock-util');
+const SchemaValidator  = require('../../utils/schemavalidator');
+const Katalog = require('../../katalog');
 
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
-const BEHANDLING_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/behandling`;
-/**
- * lesBehandlingKatalog
- */
-module.exports.lesBehandlingKatalog = () => {
-  return Schema.lesKatalogSync(BEHANDLING_MOCK_DIR);
-};
+const { moduleName } = Katalog.pathnameMap["behandlinger"];
 
 module.exports.hentBehandling = async (req, res) => {
-  try {
-    const { behandlingID } = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const mockfile = `${BEHANDLING_MOCK_DIR}/behandling-bid-${behandlingID}.json`;
-    const mockData = await Utils.readJsonAndParseAsync(mockfile);
-
-    return res.json(mockData);
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const pathObject = {
+    pathname: 'behandling-bid-:behandlingID',
+    params: {behandlingID},
+  };
+  return SchemaValidator.get(moduleName, req, res, pathObject );
 };

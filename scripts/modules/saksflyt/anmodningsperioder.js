@@ -1,16 +1,13 @@
 const Mock = require('../../utils/mock-util');
+const SchemaValidator = require('../../utils/schemavalidator');
+const Katalog = require('../../katalog');
 
 // [PUT] '/saksflyt/anmodningsperioder/:behandlingID/bestill'
 module.exports.bestill = (req, res) => {
   const { behandlingID } = req.params;
 
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
-
-  try {
-    return res.status(204).send();
-  }
-  catch(err) {
-    Mock.serverError(req, res, err);
-  }
+  const { moduleName } = Katalog.pathnameMap['saksflyt-anmodningsperioder-bestill'];
+  SchemaValidator.put204(moduleName,req, res);
 };
 

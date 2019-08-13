@@ -32,7 +32,6 @@ module.exports.printresult = (res) => {
 
 module.exports.printerror = (res) => {
   const { request, response } = res;
-
   const { method, path } = request;
   const { status, statusText, data } = response;
 
