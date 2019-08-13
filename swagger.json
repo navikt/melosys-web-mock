@@ -87,40 +87,6 @@
     "https"
   ],
   "paths": {
-    "/adresser/myndigheter": {
-      "get": {
-        "tags": [
-          "adresser"
-        ],
-        "summary": "Henter adresser til alle utenlandske myndigheter",
-        "description": "",
-        "operationId": "hentMyndigheter",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UtenlandskMyndighet"
-              }
-            },
-            "responseSchema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/UtenlandskMyndighet"
-              }
-            }
-          }
-        }
-      }
-    },
     "/adresser/myndigheter/{landkode}": {
       "get": {
         "tags": [
@@ -189,6 +155,40 @@
             },
             "responseSchema": {
               "$ref": "#/definitions/UtenlandskMyndighet"
+            }
+          }
+        }
+      }
+    },
+    "/adresser/myndigheter": {
+      "get": {
+        "tags": [
+          "adresser"
+        ],
+        "summary": "Henter adresser til alle utenlandske myndigheter",
+        "description": "",
+        "operationId": "hentMyndigheter",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UtenlandskMyndighet"
+              }
+            },
+            "responseSchema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/UtenlandskMyndighet"
+              }
             }
           }
         }
@@ -324,101 +324,7 @@
         }
       }
     },
-    "/anmodningsperioder/{behandlingID}": {
-      "get": {
-        "tags": [
-          "anmodningsperioder"
-        ],
-        "summary": "Henter en anmodningsperiode for en gitt behandling",
-        "description": "",
-        "operationId": "hentAnmodningsperioder",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/AnmodningsperiodeDto"
-            },
-            "responseSchema": {
-              "$ref": "#/definitions/AnmodningsperiodeDto"
-            }
-          },
-          "404": {
-            "description": "Dersom behandlingID-en ikke fins."
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "anmodningsperioder"
-        ],
-        "summary": "Lagrer en anmodningsperiode for en gitt behandling.",
-        "description": "",
-        "operationId": "lagreAnmodningsperioder",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "En liste av anmodningsperioder å lagre.",
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/AnmodningsperiodeDto"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/AnmodningsperiodeDto"
-              }
-            },
-            "responseSchema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/AnmodningsperiodeDto"
-              }
-            }
-          },
-          "404": {
-            "description": "Dersom behandlingID-en ikke fins."
-          }
-        }
-      }
-    },
-    "/anmodningsperiode/{anmodningperiodeID}/svar": {
+    "/anmodningsperioder/{anmodningperiodeID}/svar": {
       "get": {
         "tags": [
           "anmodningsperioder"
@@ -499,6 +405,91 @@
           },
           "404": {
             "description": "Dersom anmodningsperioden ikke fins."
+          }
+        }
+      }
+    },
+    "/anmodningsperioder/{behandlingID}": {
+      "get": {
+        "tags": [
+          "anmodningsperioder"
+        ],
+        "summary": "Henter anmodningsperioder for en gitt behandling",
+        "description": "",
+        "operationId": "hentAnmodningsperioder",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/AnmodningsperiodeSkrivDto"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/AnmodningsperiodeSkrivDto"
+            }
+          },
+          "404": {
+            "description": "Dersom behandlingID-en ikke fins."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "anmodningsperioder"
+        ],
+        "summary": "Lagrer anmodningsperioder for en gitt behandling.",
+        "description": "",
+        "operationId": "lagreAnmodningsperioder",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "En liste av anmodningsperioder å lagre.",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/AnmodningsperiodePostDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/AnmodningsperiodeGetDto"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/AnmodningsperiodeGetDto"
+            }
+          },
+          "404": {
+            "description": "Dersom behandlingID-en ikke fins."
           }
         }
       }
@@ -638,42 +629,6 @@
         }
       }
     },
-    "/behandlinger/{behandlingID}": {
-      "get": {
-        "tags": [
-          "behandlinger"
-        ],
-        "summary": "Hent en spesifikk behandling",
-        "description": "",
-        "operationId": "hentBehandling",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/TidligereMedlemsperioderDto"
-            },
-            "responseSchema": {
-              "$ref": "#/definitions/TidligereMedlemsperioderDto"
-            }
-          }
-        }
-      }
-    },
     "/behandlinger/{behandlingID}/status": {
       "post": {
         "tags": [
@@ -713,7 +668,43 @@
         }
       }
     },
-    "/behandlinger/{behandlingID}/medlemsperioder": {
+    "/behandlinger/{behandlingID}": {
+      "get": {
+        "tags": [
+          "behandlinger"
+        ],
+        "summary": "Hent en spesifikk behandling",
+        "description": "",
+        "operationId": "hentBehandling",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/TidligereMedlemsperioderDto"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/TidligereMedlemsperioderDto"
+            }
+          }
+        }
+      }
+    },
+    "/behandlinger/{behandlingID}/tidligeremedlemsperioder": {
       "get": {
         "tags": [
           "behandlinger"
@@ -791,7 +782,7 @@
         }
       }
     },
-    "/behandlingsresultater/{behandlingID}": {
+    "/behandlinger/{behandlingID}/resultat": {
       "get": {
         "tags": [
           "behandlingsresultat"
@@ -822,6 +813,160 @@
             },
             "responseSchema": {
               "$ref": "#/definitions/BehandlingsresultatDto"
+            }
+          }
+        }
+      }
+    },
+    "/dokumenter/opprett/{behandlingID}/{produserbartDokument}": {
+      "post": {
+        "tags": [
+          "dokumenter"
+        ],
+        "operationId": "produserDokument",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "produserbartDokument",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "AVSLAG_ARBEIDSGIVER",
+              "AVSLAG_YRKESAKTIV",
+              "AVSLAG_MANGLENDE_OPPLYSNINGER",
+              "MELDING_FORVENTET_SAKSBEHANDLINGSTID",
+              "MELDING_MANGLENDE_OPPLYSNINGER",
+              "MELDING_HENLAGT_SAK",
+              "ATTEST_A1",
+              "INNVILGELSE_YRKESAKTIV",
+              "INNVILGELSE_YRKESAKTIV_FLERE_LAND",
+              "INNVILGELSE_ARBEIDSGIVER",
+              "ORIENTERING_ANMODNING_UNNTAK",
+              "ANMODNING_UNNTAK"
+            ]
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/BrevbestillingDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/dokumenter/pdf/utkast/{behandlingID}/{produserbartDokument}": {
+      "post": {
+        "tags": [
+          "dokumenter"
+        ],
+        "operationId": "produserUtkast",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/pdf",
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "produserbartDokument",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "AVSLAG_ARBEIDSGIVER",
+              "AVSLAG_YRKESAKTIV",
+              "AVSLAG_MANGLENDE_OPPLYSNINGER",
+              "MELDING_FORVENTET_SAKSBEHANDLINGSTID",
+              "MELDING_MANGLENDE_OPPLYSNINGER",
+              "MELDING_HENLAGT_SAK",
+              "ATTEST_A1",
+              "INNVILGELSE_YRKESAKTIV",
+              "INNVILGELSE_YRKESAKTIV_FLERE_LAND",
+              "INNVILGELSE_ARBEIDSGIVER",
+              "ORIENTERING_ANMODNING_UNNTAK",
+              "ANMODNING_UNNTAK"
+            ]
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/BrevbestillingDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/dokumenter/oversikt/{saksnummer}": {
+      "get": {
+        "tags": [
+          "dokumenter"
+        ],
+        "summary": "Henter alle dokumenter knyttet til en fagsak",
+        "description": "",
+        "operationId": "hentDokumenter",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "saksnummer",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalpostInfoDto"
+              }
+            },
+            "responseSchema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/JournalpostInfoDto"
+              }
             }
           }
         }
@@ -871,199 +1016,6 @@
               "items": {
                 "type": "string",
                 "format": "byte"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/dokumenter/oversikt/{saksnummer}": {
-      "get": {
-        "tags": [
-          "dokumenter"
-        ],
-        "summary": "Henter alle dokumenter knyttet til en fagsak",
-        "description": "",
-        "operationId": "hentDokumenter",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "saksnummer",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/JournalpostInfoDto"
-              }
-            },
-            "responseSchema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/JournalpostInfoDto"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/dokumenter/utkast/pdf/{behandlingID}/{produserbartDokument}": {
-      "post": {
-        "tags": [
-          "dokumenter"
-        ],
-        "operationId": "produserUtkast",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/pdf",
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "produserbartDokument",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "AVSLAG_ARBEIDSGIVER",
-              "AVSLAG_YRKESAKTIV",
-              "AVSLAG_MANGLENDE_OPPLYSNINGER",
-              "MELDING_FORVENTET_SAKSBEHANDLINGSTID",
-              "MELDING_MANGLENDE_OPPLYSNINGER",
-              "MELDING_HENLAGT_SAK",
-              "ATTEST_A1",
-              "INNVILGELSE_YRKESAKTIV",
-              "ORIENTERING_ANMODNING_UNNTAK",
-              "ANMODNING_UNNTAK",
-              "INNVILGELSE_ARBEIDSGIVER"
-            ]
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/BrevbestillingDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/dokumenter/opprett/{behandlingID}/{produserbartDokument}": {
-      "post": {
-        "tags": [
-          "dokumenter"
-        ],
-        "operationId": "produserDokument",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "name": "produserbartDokument",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "AVSLAG_ARBEIDSGIVER",
-              "AVSLAG_YRKESAKTIV",
-              "AVSLAG_MANGLENDE_OPPLYSNINGER",
-              "MELDING_FORVENTET_SAKSBEHANDLINGSTID",
-              "MELDING_MANGLENDE_OPPLYSNINGER",
-              "MELDING_HENLAGT_SAK",
-              "ATTEST_A1",
-              "INNVILGELSE_YRKESAKTIV",
-              "ORIENTERING_ANMODNING_UNNTAK",
-              "ANMODNING_UNNTAK",
-              "INNVILGELSE_ARBEIDSGIVER"
-            ]
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/BrevbestillingDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/eessi/mottakerinstitusjoner/{bucType}": {
-      "get": {
-        "tags": [
-          "eessi"
-        ],
-        "summary": "Henter mottakerinstitusjoner for alle land for den oppgitte BUC-typen.",
-        "description": "",
-        "operationId": "hentMottakerinstitusjoner",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "bucType",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Institusjon"
-              }
-            },
-            "responseSchema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Institusjon"
               }
             }
           }
@@ -1151,6 +1103,47 @@
             },
             "responseSchema": {
               "$ref": "#/definitions/BucerTilknyttetBehandlingDto"
+            }
+          }
+        }
+      }
+    },
+    "/eessi/mottakerinstitusjoner/{bucType}": {
+      "get": {
+        "tags": [
+          "eessi"
+        ],
+        "summary": "Henter mottakerinstitusjoner for alle land for den oppgitte BUC-typen.",
+        "description": "",
+        "operationId": "hentMottakerinstitusjoner",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "bucType",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Institusjon"
+              }
+            },
+            "responseSchema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Institusjon"
+              }
             }
           }
         }
@@ -1331,14 +1324,14 @@
         }
       }
     },
-    "/logger/debug": {
+    "/logger/error": {
       "post": {
         "tags": [
           "frontend-logger"
         ],
-        "summary": "Logger debug-melding.",
-        "description": "Logger debug-melding.",
-        "operationId": "frontendDebugLogging",
+        "summary": "Logger error-melding.",
+        "description": "Logger error-melding.",
+        "operationId": "frontendErrorLogging",
         "consumes": [
           "application/json"
         ],
@@ -1393,6 +1386,37 @@
         }
       }
     },
+    "/logger/debug": {
+      "post": {
+        "tags": [
+          "frontend-logger"
+        ],
+        "summary": "Logger debug-melding.",
+        "description": "Logger debug-melding.",
+        "operationId": "frontendDebugLogging",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/logger/warn": {
       "post": {
         "tags": [
@@ -1424,38 +1448,7 @@
         }
       }
     },
-    "/logger/error": {
-      "post": {
-        "tags": [
-          "frontend-logger"
-        ],
-        "summary": "Logger error-melding.",
-        "description": "Logger error-melding.",
-        "operationId": "frontendErrorLogging",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/inngang/{saksnr}": {
+    "/inngangsvilkaar/{saksnr}": {
       "get": {
         "tags": [
           "inngangsvilkår"
@@ -1486,68 +1479,6 @@
             "responseSchema": {
               "type": "string"
             }
-          }
-        }
-      }
-    },
-    "/journalforing/tilordne": {
-      "post": {
-        "tags": [
-          "journalforing"
-        ],
-        "summary": "Tilordne sak og journalfør.",
-        "description": "",
-        "operationId": "tilordneSakOgJournalfør",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/JournalfoeringTilordneDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/journalforing/opprett": {
-      "post": {
-        "tags": [
-          "journalforing"
-        ],
-        "summary": "Opprett sak og journalfør.",
-        "description": "",
-        "operationId": "opprettSakOgJournalfør",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/JournalfoeringOpprettDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
           }
         }
       }
@@ -1583,6 +1514,68 @@
             "responseSchema": {
               "$ref": "#/definitions/JournalpostDto"
             }
+          }
+        }
+      }
+    },
+    "/journalforing/opprett": {
+      "post": {
+        "tags": [
+          "journalforing"
+        ],
+        "summary": "Opprett sak og journalfør.",
+        "description": "",
+        "operationId": "opprettSakOgJournalfør",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/JournalfoeringOpprettDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/journalforing/tilordne": {
+      "post": {
+        "tags": [
+          "journalforing"
+        ],
+        "summary": "Tilordne sak og journalfør.",
+        "description": "",
+        "operationId": "tilordneSakOgJournalfør",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/JournalfoeringTilordneDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
           }
         }
       }
@@ -1708,7 +1701,7 @@
         }
       }
     },
-    "/opprinneligLovvalgsperiode/{behandlingsid}": {
+    "/lovvalgsperioder/{behandlingID}/opprinnelig": {
       "get": {
         "tags": [
           "lovvalgsperioder"
@@ -1724,7 +1717,7 @@
         ],
         "parameters": [
           {
-            "name": "behandlingsid",
+            "name": "behandlingID",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -1747,7 +1740,7 @@
         }
       }
     },
-    "/lovvalgsperioder/{behandlingsid}": {
+    "/lovvalgsperioder/{behandlingID}": {
       "get": {
         "tags": [
           "lovvalgsperioder"
@@ -1763,7 +1756,7 @@
         ],
         "parameters": [
           {
-            "name": "behandlingsid",
+            "name": "behandlingID",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -1800,7 +1793,7 @@
         ],
         "parameters": [
           {
-            "name": "behandlingsid",
+            "name": "behandlingID",
             "in": "path",
             "required": true,
             "type": "integer",
@@ -1837,74 +1830,6 @@
           },
           "404": {
             "description": "Dersom behandlingsid-en ikke fins."
-          }
-        }
-      }
-    },
-    "/oppgaver/plukk": {
-      "post": {
-        "tags": [
-          "oppgaver"
-        ],
-        "summary": "Plukker fra GSAK neste oppgave som saksbehandler skal arbeide med.",
-        "description": "",
-        "operationId": "plukkOppgave",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/PlukkOppgaveInnDto"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/PlukketOppgaveDto"
-            },
-            "responseSchema": {
-              "$ref": "#/definitions/PlukketOppgaveDto"
-            }
-          }
-        }
-      }
-    },
-    "/oppgaver/tilbakelegge": {
-      "post": {
-        "tags": [
-          "oppgaver"
-        ],
-        "summary": "Legger tilbake oppgave knyttet til gitt behandlingID i GSAK.",
-        "description": "",
-        "operationId": "leggTilbakeOppgave",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/TilbakeleggingDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
           }
         }
       }
@@ -1979,7 +1904,75 @@
         }
       }
     },
-    "/organisasjoner": {
+    "/oppgaver/plukk": {
+      "post": {
+        "tags": [
+          "oppgaver"
+        ],
+        "summary": "Plukker fra GSAK neste oppgave som saksbehandler skal arbeide med.",
+        "description": "",
+        "operationId": "plukkOppgave",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/PlukkOppgaveInnDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/PlukketOppgaveDto"
+            },
+            "responseSchema": {
+              "$ref": "#/definitions/PlukketOppgaveDto"
+            }
+          }
+        }
+      }
+    },
+    "/oppgaver/tilbakelegg": {
+      "post": {
+        "tags": [
+          "oppgaver"
+        ],
+        "summary": "Legger tilbake oppgave knyttet til gitt behandlingID i GSAK.",
+        "description": "",
+        "operationId": "leggTilbakeOppgave",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/TilbakeleggingDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/organisasjoner/{orgnr}": {
       "get": {
         "tags": [
           "organisasjoner"
@@ -1996,9 +1989,9 @@
         "parameters": [
           {
             "name": "orgnr",
-            "in": "query",
+            "in": "path",
             "description": "Organisasjonsnummer.",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -2015,7 +2008,7 @@
         }
       }
     },
-    "/personer": {
+    "/personer/{fnr}": {
       "get": {
         "tags": [
           "personer"
@@ -2032,9 +2025,9 @@
         "parameters": [
           {
             "name": "fnr",
-            "in": "query",
+            "in": "path",
             "description": "Fødselsnummer eller D-nummer.",
-            "required": false,
+            "required": true,
             "type": "string"
           }
         ],
@@ -2079,6 +2072,36 @@
         }
       }
     },
+    "/saksopplysninger/oppfriskning/{behandlingID}/status": {
+      "get": {
+        "tags": [
+          "saksopplysninger"
+        ],
+        "summary": "Status på oppfrisking av behandling ",
+        "description": "Returnerer status (Progress/Done) på oppfrisking av behandling",
+        "operationId": "hentOppfriskingStatusForBehandling",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
     "/saksopplysninger/oppfriskning/{behandlingID}": {
       "get": {
         "tags": [
@@ -2112,36 +2135,6 @@
           },
           "500": {
             "description": "Uventet teknisk Feil"
-          }
-        }
-      }
-    },
-    "/saksopplysninger/oppfriskning/{behandlingID}/status": {
-      "get": {
-        "tags": [
-          "saksopplysninger"
-        ],
-        "summary": "Status på oppfrisking av behandling ",
-        "description": "Returnerer status (Progress/Done) på oppfrisking av behandling",
-        "operationId": "hentOppfriskingStatusForBehandling",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
           }
         }
       }
@@ -2332,8 +2325,8 @@
         }
       }
     },
-    "/saksflyt/anmodningsperioder/{behandlingID}": {
-      "post": {
+    "/saksflyt/anmodningsperioder/{behandlingID}/bestill": {
+      "put": {
         "tags": [
           "saksflyt",
           "anmodningsperioder"
@@ -2341,6 +2334,35 @@
         "summary": "Anmodning om unntak for en gitt behandling",
         "description": "",
         "operationId": "anmodningOmUnntak",
+        "consumes": [
+          "text/plain"
+        ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/saksflyt/unntaksperioder/{behandlingID}/ikkegodkjenn": {
+      "post": {
+        "tags": [
+          "saksflyt",
+          "unntaksperioder"
+        ],
+        "operationId": "ikkeGodkjennUnntaksperiode",
         "consumes": [
           "application/json"
         ],
@@ -2358,10 +2380,10 @@
           {
             "in": "body",
             "name": "body",
-            "description": "fattVedtakDto",
+            "description": "vurderUnntaksperiodeDto",
             "required": false,
             "schema": {
-              "$ref": "#/definitions/FattVedtakDto"
+              "$ref": "#/definitions/VurderUnntaksperiodeDto"
             }
           }
         ],
@@ -2430,85 +2452,7 @@
         }
       }
     },
-    "/saksflyt/unntaksperioder/{behandlingID}/ikkegodkjenn": {
-      "post": {
-        "tags": [
-          "saksflyt",
-          "unntaksperioder"
-        ],
-        "operationId": "ikkeGodkjennUnntaksperiode",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "vurderUnntaksperiodeDto",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/VurderUnntaksperiodeDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/saksflyt/vedtak/{behandlingID}": {
-      "post": {
-        "tags": [
-          "saksflyt",
-          "vedtak"
-        ],
-        "summary": "Fatter et vedtak for en gitt behandling",
-        "description": "",
-        "operationId": "fattVedtak",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json; charset=UTF-8"
-        ],
-        "parameters": [
-          {
-            "name": "behandlingID",
-            "in": "path",
-            "required": true,
-            "type": "integer",
-            "format": "int64"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "fattVedtakDto",
-            "required": false,
-            "schema": {
-              "$ref": "#/definitions/FattVedtakDto"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/saksflyt/vedtak/endre/{behandlingID}": {
+    "/saksflyt/vedtak/{behandlingID}/endreperiode": {
       "post": {
         "tags": [
           "saksflyt",
@@ -2538,6 +2482,46 @@
             "required": false,
             "schema": {
               "$ref": "#/definitions/EndreVedtakDto"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "successful operation"
+          }
+        }
+      }
+    },
+    "/saksflyt/vedtak/{behandlingID}/fatt": {
+      "post": {
+        "tags": [
+          "saksflyt",
+          "vedtak"
+        ],
+        "summary": "Fatter et vedtak for en gitt behandling",
+        "description": "",
+        "operationId": "fattVedtak",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json; charset=UTF-8"
+        ],
+        "parameters": [
+          {
+            "name": "behandlingID",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "fattVedtakDto",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/FattVedtakDto"
             }
           }
         ],
@@ -2659,7 +2643,34 @@
         }
       }
     },
-    "AnmodningsperiodeDto": {
+    "AnmodningsperiodeSvarDto": {
+      "type": "object",
+      "properties": {
+        "anmodningsperiodeSvarType": {
+          "type": "string"
+        },
+        "endretPeriode": {
+          "$ref": "#/definitions/PeriodeDto"
+        },
+        "begrunnelseFritekst": {
+          "type": "string"
+        }
+      }
+    },
+    "PeriodeDto": {
+      "type": "object",
+      "properties": {
+        "fom": {
+          "type": "string",
+          "format": "date"
+        },
+        "tom": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "AnmodningsperiodeSkrivDto": {
       "type": "object",
       "properties": {
         "id": {
@@ -2688,35 +2699,73 @@
         "unntakFraLovvalgsland": {
           "type": "string"
         },
+        "trygdeDekning": {
+          "type": "string"
+        },
         "medlemskapsperiodeID": {
           "type": "string"
         }
       }
     },
-    "PeriodeDto": {
+    "AnmodningsperiodeGetDto": {
       "type": "object",
       "properties": {
-        "fom": {
-          "type": "string",
-          "format": "date"
-        },
-        "tom": {
-          "type": "string",
-          "format": "date"
+        "anmodningsperioder": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AnmodningsperiodeLesDto"
+          }
         }
       }
     },
-    "AnmodningsperiodeSvarDto": {
+    "AnmodningsperiodeLesDto": {
       "type": "object",
       "properties": {
-        "anmodningsperiodeSvarType": {
+        "id": {
           "type": "string"
         },
-        "endretPeriode": {
-          "$ref": "#/definitions/PeriodeDto"
+        "fomDato": {
+          "type": "string",
+          "format": "date"
         },
-        "begrunnelseFritekst": {
+        "tomDato": {
+          "type": "string",
+          "format": "date"
+        },
+        "lovvalgBestemmelse": {
           "type": "string"
+        },
+        "tilleggBestemmelse": {
+          "type": "string"
+        },
+        "lovvalgsland": {
+          "type": "string"
+        },
+        "unntakFraBestemmelse": {
+          "type": "string"
+        },
+        "unntakFraLovvalgsland": {
+          "type": "string"
+        },
+        "trygdeDekning": {
+          "type": "string"
+        },
+        "medlemskapsperiodeID": {
+          "type": "string"
+        },
+        "sendtUtland": {
+          "type": "boolean"
+        }
+      }
+    },
+    "AnmodningsperiodePostDto": {
+      "type": "object",
+      "properties": {
+        "anmodningsperioder": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AnmodningsperiodeSkrivDto"
+          }
         }
       }
     },
@@ -2988,12 +3037,12 @@
             "DECEMBER"
           ]
         },
-        "leapYear": {
-          "type": "boolean"
-        },
         "monthValue": {
           "type": "integer",
           "format": "int32"
+        },
+        "leapYear": {
+          "type": "boolean"
         }
       }
     },
@@ -3004,6 +3053,35 @@
           "type": "string"
         },
         "term": {
+          "type": "string"
+        }
+      }
+    },
+    "AvklartefaktaDto": {
+      "type": "object",
+      "properties": {
+        "fakta": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "referanse": {
+          "type": "string"
+        },
+        "subjektID": {
+          "type": "string"
+        },
+        "begrunnelseKoder": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "begrunnelseFritekst": {
+          "type": "string"
+        },
+        "avklartefaktaKode": {
           "type": "string"
         }
       }
@@ -3060,6 +3138,166 @@
             "ARBEIDSGIVER",
             "BEGGE"
           ]
+        }
+      }
+    },
+    "Anmodningsperiode": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "behandlingsresultat": {
+          "$ref": "#/definitions/Behandlingsresultat"
+        },
+        "fom": {
+          "type": "string",
+          "format": "date"
+        },
+        "tom": {
+          "type": "string",
+          "format": "date"
+        },
+        "lovvalgsland": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "BE",
+            "BG",
+            "CZ",
+            "DK",
+            "EE",
+            "FI",
+            "FO",
+            "FR",
+            "GL",
+            "GR",
+            "IE",
+            "IS",
+            "IT",
+            "HR",
+            "CY",
+            "LV",
+            "LI",
+            "LT",
+            "LU",
+            "MT",
+            "NL",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "SK",
+            "SI",
+            "ES",
+            "GB",
+            "SE",
+            "DE",
+            "HU",
+            "AT",
+            "AX",
+            "SJ"
+          ]
+        },
+        "bestemmelse": {
+          "$ref": "#/definitions/LovvalgBestemmelse"
+        },
+        "tilleggsbestemmelse": {
+          "$ref": "#/definitions/LovvalgBestemmelse"
+        },
+        "unntakFraLovvalgsland": {
+          "type": "string",
+          "enum": [
+            "CH",
+            "BE",
+            "BG",
+            "CZ",
+            "DK",
+            "EE",
+            "FI",
+            "FO",
+            "FR",
+            "GL",
+            "GR",
+            "IE",
+            "IS",
+            "IT",
+            "HR",
+            "CY",
+            "LV",
+            "LI",
+            "LT",
+            "LU",
+            "MT",
+            "NL",
+            "NO",
+            "PL",
+            "PT",
+            "RO",
+            "SK",
+            "SI",
+            "ES",
+            "GB",
+            "SE",
+            "DE",
+            "HU",
+            "AT",
+            "AX",
+            "SJ"
+          ]
+        },
+        "unntakFraBestemmelse": {
+          "$ref": "#/definitions/LovvalgBestemmelse"
+        },
+        "dekning": {
+          "type": "string",
+          "enum": [
+            "UTEN_DEKNING",
+            "FULL_DEKNING_EOSFO"
+          ]
+        },
+        "medlPeriodeID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "anmodningsperiodeSvar": {
+          "$ref": "#/definitions/AnmodningsperiodeSvar"
+        }
+      }
+    },
+    "AnmodningsperiodeSvar": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "anmodningsperiode": {
+          "$ref": "#/definitions/Anmodningsperiode"
+        },
+        "anmodningsperiodeSvarType": {
+          "type": "string",
+          "enum": [
+            "INNVILGELSE",
+            "DELVIS_INNVILGELSE",
+            "AVSLAG"
+          ]
+        },
+        "registrertDato": {
+          "type": "string",
+          "format": "date"
+        },
+        "begrunnelseFritekst": {
+          "type": "string"
+        },
+        "innvilgetFom": {
+          "type": "string",
+          "format": "date"
+        },
+        "innvilgetTom": {
+          "type": "string",
+          "format": "date"
         }
       }
     },
@@ -3214,12 +3452,12 @@
         "opprinneligBehandling": {
           "$ref": "#/definitions/Behandling"
         },
+        "aktiv": {
+          "type": "boolean"
+        },
         "sistOpplysningerHentetDato": {
           "type": "integer",
           "format": "int64"
-        },
-        "aktiv": {
-          "type": "boolean"
         }
       }
     },
@@ -3341,6 +3579,13 @@
             "$ref": "#/definitions/Lovvalgsperiode"
           }
         },
+        "anmodningsperioder": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/Anmodningsperiode"
+          }
+        },
         "vilkaarsresultater": {
           "type": "array",
           "uniqueItems": true,
@@ -3430,6 +3675,9 @@
         "aktivBehandling": {
           "$ref": "#/definitions/Behandling"
         },
+        "sistOppdaterteBehandling": {
+          "$ref": "#/definitions/Behandling"
+        },
         "tidligsteInaktiveBehandling": {
           "$ref": "#/definitions/Behandling"
         }
@@ -3438,10 +3686,10 @@
     "LovvalgBestemmelse": {
       "type": "object",
       "properties": {
-        "kode": {
+        "beskrivelse": {
           "type": "string"
         },
-        "beskrivelse": {
+        "kode": {
           "type": "string"
         }
       }
@@ -3509,50 +3757,6 @@
           "$ref": "#/definitions/LovvalgBestemmelse"
         },
         "tilleggsbestemmelse": {
-          "$ref": "#/definitions/LovvalgBestemmelse"
-        },
-        "unntakFraLovvalgsland": {
-          "type": "string",
-          "enum": [
-            "CH",
-            "BE",
-            "BG",
-            "CZ",
-            "DK",
-            "EE",
-            "FI",
-            "FO",
-            "FR",
-            "GL",
-            "GR",
-            "IE",
-            "IS",
-            "IT",
-            "HR",
-            "CY",
-            "LV",
-            "LI",
-            "LT",
-            "LU",
-            "MT",
-            "NL",
-            "NO",
-            "PL",
-            "PT",
-            "RO",
-            "SK",
-            "SI",
-            "ES",
-            "GB",
-            "SE",
-            "DE",
-            "HU",
-            "AT",
-            "AX",
-            "SJ"
-          ]
-        },
-        "unntakFraBestemmelse": {
           "$ref": "#/definitions/LovvalgBestemmelse"
         },
         "innvilgelsesresultat": {
@@ -3731,47 +3935,6 @@
         }
       }
     },
-    "AvklartefaktaDto": {
-      "type": "object",
-      "properties": {
-        "fakta": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "referanse": {
-          "type": "string"
-        },
-        "subjektID": {
-          "type": "string"
-        },
-        "begrunnelseKoder": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "begrunnelseFritekst": {
-          "type": "string"
-        },
-        "avklartefaktaKode": {
-          "type": "string"
-        }
-      }
-    },
-    "TidligereMedlemsperioderDto": {
-      "type": "object",
-      "properties": {
-        "tidligere_medlemsperiode_ids": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "int64"
-          }
-        }
-      }
-    },
     "BehandlingsstatusDto": {
       "type": "object",
       "properties": {
@@ -3792,6 +3955,18 @@
         }
       }
     },
+    "TidligereMedlemsperioderDto": {
+      "type": "object",
+      "properties": {
+        "tidligere_medlemsperiode_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
     "BehandlingsresultatDto": {
       "type": "object",
       "properties": {
@@ -3805,6 +3980,26 @@
           }
         },
         "begrunnelseFritekst": {
+          "type": "string"
+        }
+      }
+    },
+    "BrevbestillingDto": {
+      "type": "object",
+      "properties": {
+        "mottaker": {
+          "type": "string",
+          "enum": [
+            "BRUKER",
+            "ARBEIDSGIVER",
+            "REPRESENTANT",
+            "MYNDIGHET"
+          ]
+        },
+        "fritekst": {
+          "type": "string"
+        },
+        "begrunnelseKode": {
           "type": "string"
         }
       }
@@ -3853,40 +4048,6 @@
           "items": {
             "$ref": "#/definitions/DokumentDto"
           }
-        }
-      }
-    },
-    "BrevbestillingDto": {
-      "type": "object",
-      "properties": {
-        "mottaker": {
-          "type": "string",
-          "enum": [
-            "BRUKER",
-            "ARBEIDSGIVER",
-            "REPRESENTANT",
-            "MYNDIGHET"
-          ]
-        },
-        "fritekst": {
-          "type": "string"
-        },
-        "begrunnelseKode": {
-          "type": "string"
-        }
-      }
-    },
-    "Institusjon": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "navn": {
-          "type": "string"
-        },
-        "landkode": {
-          "type": "string"
         }
       }
     },
@@ -3960,6 +4121,20 @@
           "type": "string"
         },
         "rinaUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "Institusjon": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "navn": {
+          "type": "string"
+        },
+        "landkode": {
           "type": "string"
         }
       }
@@ -4066,17 +4241,12 @@
         }
       }
     },
-    "JournalfoeringTilordneDto": {
+    "JournalpostDto": {
       "type": "object",
       "properties": {
-        "behandlingstypeKode": {
-          "type": "string"
-        },
-        "journalpostID": {
-          "type": "string"
-        },
-        "oppgaveID": {
-          "type": "string"
+        "mottattDato": {
+          "type": "integer",
+          "format": "int64"
         },
         "brukerID": {
           "type": "string"
@@ -4084,29 +4254,17 @@
         "avsenderID": {
           "type": "string"
         },
-        "avsenderNavn": {
-          "type": "string"
+        "erBrukerAvsender": {
+          "type": "boolean"
         },
-        "dokumentID": {
-          "type": "string"
-        },
-        "hoveddokumentTittel": {
-          "type": "string"
+        "hoveddokument": {
+          "$ref": "#/definitions/DokumentDto"
         },
         "vedlegg": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/DokumentDto"
           }
-        },
-        "skalTilordnes": {
-          "type": "boolean"
-        },
-        "saksnummer": {
-          "type": "string"
-        },
-        "ingenVurdering": {
-          "type": "boolean"
         }
       }
     },
@@ -4177,12 +4335,17 @@
         }
       }
     },
-    "JournalpostDto": {
+    "JournalfoeringTilordneDto": {
       "type": "object",
       "properties": {
-        "mottattDato": {
-          "type": "integer",
-          "format": "int64"
+        "behandlingstypeKode": {
+          "type": "string"
+        },
+        "journalpostID": {
+          "type": "string"
+        },
+        "oppgaveID": {
+          "type": "string"
         },
         "brukerID": {
           "type": "string"
@@ -4190,17 +4353,29 @@
         "avsenderID": {
           "type": "string"
         },
-        "erBrukerAvsender": {
-          "type": "boolean"
+        "avsenderNavn": {
+          "type": "string"
         },
-        "hoveddokument": {
-          "$ref": "#/definitions/DokumentDto"
+        "dokumentID": {
+          "type": "string"
+        },
+        "hoveddokumentTittel": {
+          "type": "string"
         },
         "vedlegg": {
           "type": "array",
           "items": {
             "$ref": "#/definitions/DokumentDto"
           }
+        },
+        "skalTilordnes": {
+          "type": "boolean"
+        },
+        "saksnummer": {
+          "type": "string"
+        },
+        "ingenVurdering": {
+          "type": "boolean"
         }
       }
     },
@@ -4260,12 +4435,6 @@
         "lovvalgsland": {
           "type": "string"
         },
-        "unntakFraBestemmelse": {
-          "type": "string"
-        },
-        "unntakFraLovvalgsland": {
-          "type": "string"
-        },
         "innvilgelsesResultat": {
           "type": "string"
         },
@@ -4277,62 +4446,6 @@
         },
         "medlemskapsperiodeID": {
           "type": "string"
-        }
-      }
-    },
-    "PlukketOppgaveDto": {
-      "type": "object",
-      "properties": {
-        "oppgaveID": {
-          "type": "string"
-        },
-        "oppgavetype": {
-          "type": "string"
-        },
-        "saksnummer": {
-          "type": "string"
-        },
-        "journalpostID": {
-          "type": "string"
-        },
-        "behandlingID": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
-    "PlukkOppgaveInnDto": {
-      "type": "object",
-      "properties": {
-        "oppgavetype": {
-          "type": "string"
-        },
-        "sakstyper": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "behandlingstyper": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "TilbakeleggingDto": {
-      "type": "object",
-      "properties": {
-        "behandlingID": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "begrunnelse": {
-          "type": "string"
-        },
-        "venterPaaDokumentasjon": {
-          "type": "boolean"
         }
       }
     },
@@ -4492,6 +4605,62 @@
           "items": {
             "$ref": "#/definitions/BehandlingsoppgaveDto"
           }
+        }
+      }
+    },
+    "PlukketOppgaveDto": {
+      "type": "object",
+      "properties": {
+        "oppgaveID": {
+          "type": "string"
+        },
+        "oppgavetype": {
+          "type": "string"
+        },
+        "saksnummer": {
+          "type": "string"
+        },
+        "journalpostID": {
+          "type": "string"
+        },
+        "behandlingID": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "PlukkOppgaveInnDto": {
+      "type": "object",
+      "properties": {
+        "oppgavetype": {
+          "type": "string"
+        },
+        "sakstyper": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "behandlingstyper": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "TilbakeleggingDto": {
+      "type": "object",
+      "properties": {
+        "behandlingID": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "begrunnelse": {
+          "type": "string"
+        },
+        "venterPaaDokumentasjon": {
+          "type": "boolean"
         }
       }
     },
@@ -5295,23 +5464,6 @@
         }
       }
     },
-    "FattVedtakDto": {
-      "type": "object",
-      "properties": {
-        "behandlingsresultatTypeKode": {
-          "type": "string",
-          "enum": [
-            "FASTSATT_LOVVALGSLAND",
-            "AVSLAG_MANGLENDE_OPPL",
-            "FORELOEPIG_FASTSATT_LOVVALGSLAND",
-            "HENLEGGELSE",
-            "ANMODNING_OM_UNNTAK",
-            "IKKE_FASTSATT",
-            "REGISTRERT_UNNTAK"
-          ]
-        }
-      }
-    },
     "VurderUnntaksperiodeDto": {
       "type": "object",
       "properties": {
@@ -5336,6 +5488,23 @@
             "RETURNERT_NORGE",
             "ARBEIDSFORHOLD_AVSLUTTET",
             "ENDRINGER_ARBEIDSSITUASJON"
+          ]
+        }
+      }
+    },
+    "FattVedtakDto": {
+      "type": "object",
+      "properties": {
+        "behandlingsresultatTypeKode": {
+          "type": "string",
+          "enum": [
+            "FASTSATT_LOVVALGSLAND",
+            "AVSLAG_MANGLENDE_OPPL",
+            "FORELOEPIG_FASTSATT_LOVVALGSLAND",
+            "HENLEGGELSE",
+            "ANMODNING_OM_UNNTAK",
+            "IKKE_FASTSATT",
+            "REGISTRERT_UNNTAK"
           ]
         }
       }
