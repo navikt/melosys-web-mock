@@ -8,8 +8,8 @@ const Katalog = require('../../katalog');
  * @param req
  * @param res
  */
-module.exports.fatte = (req, res) => {
-  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-fatte'];
+module.exports.fatt = (req, res) => {
+  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-fatt'];
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);

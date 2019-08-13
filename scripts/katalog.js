@@ -271,13 +271,6 @@ const pathnameMap = {
       params: {behandlingID: 4}
     }
   },
-  'saksflyt-unntaksperioder-anmodning': {
-    moduleName: 'saksflyt-unntaksperioder-anmodning',
-    put: {
-      pathname: '/saksflyt/unntaksperioder/:behandlingID/anmodning',
-      params: {behandlingID: 4}
-    }
-  },
   'saksflyt-unntaksperioder-godkjenn': {
     moduleName: 'saksflyt-unntaksperioder-godkjenn',
     put: {
@@ -299,10 +292,10 @@ const pathnameMap = {
       params: {behandlingID: 4}
     }
   },
-  'saksflyt-vedtak-fatte': {
-    moduleName: 'saksflyt-vedtak-fatte',
+  'saksflyt-vedtak-fatt': {
+    moduleName: 'saksflyt-vedtak-fatt',
     post: {
-      pathname: '/saksflyt/vedtak/:behandlingID/fatte',
+      pathname: '/saksflyt/vedtak/:behandlingID/fatt',
       params: {behandlingID: 4}
     }
   },
