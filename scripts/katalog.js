@@ -169,10 +169,10 @@ const pathnameMap = {
       params: {}
     }
   },
-  inngang: {
-    moduleName: 'inngang',
+  inngangsvilkaar: {
+    moduleName: 'inngangsvilkaar',
     get: {
-      pathname: '/inngang/:snr',
+      pathname: '/inngangsvilkaar/:snr',
       params: {snr: 3}
     }
   },

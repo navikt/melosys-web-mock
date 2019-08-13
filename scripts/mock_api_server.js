@@ -14,7 +14,7 @@ const Behandlinger = require('./modules/behandlinger');
 const Dokumenter = require('./modules/dokumenter');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
-const Inngang = require('./modules/inngang');
+const Inngangsvilkaar = require('./modules/inngangsvilkaar');
 const Journalforing = require('./modules/journalforing');
 const Lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
@@ -139,11 +139,10 @@ router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
 /**
- * INNGANG (Første steg i STEGVELGEREN)
+ * INNGANGSVILKAAR (Første steg i STEGVELGEREN)
  * ----------------------------------------------------------
  */
-// TODO Rename to inngangsvilkaar
-router.get('/inngang/:snr', Inngang.hent);
+router.get('/inngangsvilkaar/:snr', Inngangsvilkaar.hent);
 
 /**
  * JOURNALFORING
