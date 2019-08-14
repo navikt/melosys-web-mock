@@ -24,7 +24,24 @@ module.exports.utkast = (req, res) => {
   else if (!dokumenttypeKode) {
     return Mock.manglerParamDokumenttypeKode(req, res);
   }
-
+  console.log(dokumenttypeKode);
+  // TODO Add pdf docs that reflect dokumenttypeKode aka produserbartDokument !!
+  switch (dokumenttypeKode) {
+    case 'ATTEST_A1':
+      break;
+    case 'INNVILGELSE_YRKESAKTIV':
+      break;
+    case 'AVSLAG_YRKESAKTIV':
+      break;
+    case 'AVSLAG_ARBEIDSGIVER':
+      break;
+    case 'ORIENTERING_ANMODNING_UNNTAK':
+      break;
+    case 'MELDING_MANGLENDE_OPPLYSNINGER': // i.e. erMangelBrevMedFritekst(...)
+      break;
+    default:
+      break;
+  }
   const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
   let pdfmockfile = `${MOCK_DOKUMENTER_DATA_DIR}/hoveddokument.pdf`;
 

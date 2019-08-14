@@ -101,6 +101,7 @@ router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
  * ---------------------------------------------------------------
  */
 // Oppretter en bestilling av dokument i dokumentproduksjon
+//TODO Rename :dokumenttypeKode => :produserbartDokument
 router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett.send);
 router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
 
