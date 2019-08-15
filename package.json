@@ -21,6 +21,7 @@
     "jsonpath-plus": "^0.20.1",
     "lodash": "^4.17.15",
     "log4js": "^5.0.0",
+    "melosys-kodeverk": "^5.11.2-434",
     "melosys-schema": "^1.28.0",
     "moment": "^2.24.0",
     "node-cache": "^4.2.1",

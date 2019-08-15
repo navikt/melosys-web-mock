@@ -77,6 +77,6 @@ module.exports.manglerParamFnr = (req, res) => badRequstParam(req, res, 'Fødsel
  */
 module.exports.manglerParamAnmodningsperiodeID = (req, res) => badRequstParam(req, res, 'AnmodningsperiodeID mangler');
 
-module.exports.manglerParamDokumenttypeKode = (req, res) => badRequstParam(req, res, 'DokumenttypeKode mangler');
+module.exports.manglerParamProduserbartDokument = (req, res) => badRequstParam(req, res, 'ProduserbartDokument mangler');
 
 module.exports.manglerParamDokumentID = (req, res) => badRequstParam(req, res, 'DokumentID mangler');
