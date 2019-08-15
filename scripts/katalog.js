@@ -68,7 +68,7 @@ const pathnameMap = {
     moduleName: 'dokumenter-opprett',
     post: {
       pathname: '/dokumenter/opprett/:behandlingID/:produserbartDokument',
-      params: { behandlingID: 4, dokumentID: 4 },
+      params: { behandlingID: 4, produserbartDokument: 'ATTEST_A1' },
     },
   },
   'dokumenter-oversikt': {
