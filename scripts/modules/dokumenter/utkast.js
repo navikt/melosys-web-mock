@@ -10,22 +10,35 @@ const {  MOCK_DATA_DIR } = require('../../../mock.config');
 const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast'];
 
 const {
-  ATTEST_A1, INNVILGELSE_YRKESAKTIV, AVSLAG_YRKESAKTIV, AVSLAG_ARBEIDSGIVER, ORIENTERING_ANMODNING_UNNTAK, MELDING_MANGLENDE_OPPLYSNINGER
+  ATTEST_A1,
+  AVSLAG_YRKESAKTIV,
+  AVSLAG_ARBEIDSGIVER,
+  AVSLAG_MANGLENDE_OPPLYSNINGER,
+  INNVILGELSE_ARBEIDSGIVER,
+  INNVILGELSE_YRKESAKTIV,
+  MELDING_MANGLENDE_OPPLYSNINGER,
+  ORIENTERING_ANMODNING_UNNTAK
 } = MKV.Koder.brev.produserbaredokumenter;
 
 const pdfnameLookup = produserbartDokument => {
   let pdfname = '';
   switch (produserbartDokument) {
     case ATTEST_A1:
-      pdfname = 'hoveddokument';
-      break;
-    case MELDING_MANGLENDE_OPPLYSNINGER: // i.e. erMangelBrevMedFritekst(...)
-      break;
-    case INNVILGELSE_YRKESAKTIV:
-      pdfname = 'vedtaksbrevforkortetperiode';
+      pdfname = 'attest_a1';
       break;
     case AVSLAG_YRKESAKTIV:
     case AVSLAG_ARBEIDSGIVER:
+      pdfname = 'avslagarbeidsgiver';
+      break;
+    case AVSLAG_MANGLENDE_OPPLYSNINGER:
+      pdfname = 'avslagmanglendeopplysninger';
+      break;
+    case MELDING_MANGLENDE_OPPLYSNINGER: // i.e. erMangelBrevMedFritekst(...)
+      break;
+    case INNVILGELSE_ARBEIDSGIVER:
+    case INNVILGELSE_YRKESAKTIV:
+      pdfname = 'innvilgelseyrkesaktiv';
+      break;
     case ORIENTERING_ANMODNING_UNNTAK:
     default:
       pdfname = 'hoveddokument';
