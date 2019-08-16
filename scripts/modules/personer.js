@@ -14,7 +14,7 @@ module.exports.hent = async (req, res) => {
     return Mock.manglerParamFnr(req, res);
   }
   else if (fnr.length !== 11) {
-    return Mock.badRequstParam(req, res, 'Fnr må ha 11 siffer')
+    return Mock.badRequestParam(req, res, 'Fnr må ha 11 siffer')
   }
   const { moduleName } = Katalog.pathnameMap.personer;
   const mockpathObject = {

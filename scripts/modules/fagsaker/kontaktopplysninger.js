@@ -23,7 +23,7 @@ const manglerParamSakEllerOrgNummer = (req, res,) => {
     return MANGLER;
   }
   else if (!juridiskorgnr) {
-    Mock.badRequstParam(req, res, 'Mangler juridiskorgnr');
+    Mock.badRequestParam(req, res, 'Mangler juridiskorgnr');
     return MANGLER
   }
   return false;

@@ -101,15 +101,14 @@ router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
  * ---------------------------------------------------------------
  */
 // Oppretter en bestilling av dokument i dokumentproduksjon
-//TODO Rename :dokumenttypeKode => :produserbartDokument
-router.post('/dokumenter/opprett/:behandlingID/:dokumenttypeKode', Dokumenter.dokument.opprett.send);
+router.post('/dokumenter/opprett/:behandlingID/:produserbartDokument', Dokumenter.dokument.opprett.send);
 router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
 
 // Henter et eksisterende dokument fra dokumentarkiv
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode', Dokumenter.pdf.utkast.send);
+router.post('/dokumenter/pdf/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.utkast.send);
 /**
  * EESSI
  * ----------------------------------------------------------------

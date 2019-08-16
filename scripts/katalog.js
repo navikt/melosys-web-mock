@@ -67,8 +67,8 @@ const pathnameMap = {
   'dokumenter-opprett': {
     moduleName: 'dokumenter-opprett',
     post: {
-      pathname: '/dokumenter/opprett/:behandlingID/:dokumenttypeKode',
-      params: { behandlingID: 4, dokumentID: 4 },
+      pathname: '/dokumenter/opprett/:behandlingID/:produserbartDokument',
+      params: { behandlingID: 4, produserbartDokument: 'ATTEST_A1' },
     },
   },
   'dokumenter-oversikt': {
@@ -88,8 +88,8 @@ const pathnameMap = {
   'dokumenter-pdf-utkast': {
     moduleName: 'dokumenter-pdf-utkast',
     post: {
-      pathname: '/dokumenter/pdf/utkast/:behandlingID/:dokumenttypeKode',
-      params: { behandlingID: 4, dokumenttypeKode: 'MELDING_MANGLENDE_OPPLYSNINGER' },
+      pathname: '/dokumenter/pdf/utkast/:behandlingID/:produserbartDokument',
+      params: { behandlingID: 4, produserbartDokument: 'MELDING_MANGLENDE_OPPLYSNINGER' },
     },
   },
   'eessi-bucer': {
