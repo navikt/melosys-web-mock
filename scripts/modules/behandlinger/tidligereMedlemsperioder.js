@@ -1,33 +1,18 @@
-const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
-
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
-
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const BEHANDLINGER_MOCK_DIR = `${MOCK_DATA_DIR}/behandlinger`;
-const MEDLEMSPERIODER_MOCK_DIR = `${BEHANDLINGER_MOCK_DIR}/tidligeremedlemsperioder`;
-/**
- * lesBehandlingKatalog
- */
-module.exports.lesTidligereMedlemsPerioderKatalog = () => {
-  return Schema.lesKatalogSync(MEDLEMSPERIODER_MOCK_DIR);
-};
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap["behandlinger-tidligeremedlemsperioder"];
 
 module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
-  try {
-    const { behandlingID } = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const mockfile = `${MEDLEMSPERIODER_MOCK_DIR}/medlemsperioder-bid-${behandlingID}.json`;
-    const mockData = await Utils.readJsonAndParseAsync(mockfile);
-
-    return res.json(mockData);
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const mockpathObject = {
+    pathname: 'medlemsperioder-bid-:behandlingID',
+    params: {behandlingID},
+  };
+  return SchemaValidator.get(moduleName, req, res, mockpathObject );
 };
 
 /**
@@ -37,21 +22,9 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
  * @returns {*}
  */
 module.exports.settTidligereMedlemsPerioder = (req, res) => {
-  try {
-    const { behandlingID } = req.params;
-    if (!behandlingID) {
-      return Mock.manglerParamBehandlingsID(req, res);
-    }
-    const { body } = req;
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-
-    const label = 'Behandlinger:settTidligereMedlemsPerioder';
-    const schemaNavn = 'behandlinger-medlemsperioder-post-schema.json';
-
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.json(jsBody) : SchemaPostValidator.valideringFeil(req, res);
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaValidator.post(moduleName, req, res);
 };

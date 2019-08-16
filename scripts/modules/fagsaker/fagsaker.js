@@ -1,45 +1,29 @@
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
-
-const MOCK_DATA_FAGSAK_DIR = `${MOCK_DATA_DIR}/fagsaker`;
-
-module.exports.lesFagsakerKatalog = () => {
-  return Schema.lesKatalogSync(MOCK_DATA_FAGSAK_DIR);
-};
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap.fagsaker;
 
 module.exports.hentFagsak = async (req, res) => {
-  try {
-    let { saksnummer } = req.params;
-    const mockfile = `${MOCK_DATA_DIR}/fagsaker/snr-${saksnummer}.json`;
-    const fagsaker = await Utils.readJsonAndParseAsync(mockfile);
-    res.json(fagsaker);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const { saksnummer } = req.params;
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+
+  const pathObject = {
+    pathname: 'snr-:saksnummer',
+    params: {saksnummer},
+  };
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };
 
 module.exports.henleggFagsak = async (req, res) => {
-  const schemaNavn = 'henlegg-fagsak-schema.json';
-  const label = 'Fagsaker::fagsak:henlegg';
-  try {
-    const body = req.body;
-    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
-    return valid ? res.status(204).send() : SchemaPostValidator.valideringFeil(req, res);
-  }
-  catch(err) {
-    Mock.serverError(req, res, err);
-  }
+  const { saksnummer } = req.params;
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+  SchemaValidator.post204(moduleName, req, res);
 };
 
-module.exports.bortfall = async (req, res) => {
-  let { saksnummer } = req.params;
+module.exports.avsluttsaksombortfalt = async (req, res) => {
+  const { saksnummer } = req.params;
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
 
-  return res.status(204).send();
+  SchemaValidator.put204(moduleName, req, res);
 };

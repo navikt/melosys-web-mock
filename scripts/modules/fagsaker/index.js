@@ -1,14 +1,16 @@
-const { lesFagsakerKatalog, hentFagsak, henleggFagsak, oppfriskFagsak , bortfall } = require('./fagsaker');
-const { lesAktoerKatalog, hentAktoerer, sendAktoer, slettAktoer } = require('./aktoerer');
-const { lesSokFagsakerKatalog, sokFagsak}  = require('./sok');
-const { lesKontaktopplysningerKatalog, hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
+const { hentFagsak, avsluttsaksombortfalt } = require('./fagsaker');
+const { hentAktoerer, sendAktoer, slettAktoer } = require('./aktoerer');
+const { henleggFagsak } = require('./henlegg');
+const { sokFagsak }  = require('./sok');
+const { hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
+
 module.exports = {
-  lesFagsakerKatalog,
-  lesAktoerKatalog,
-  lesSokFagsakerKatalog,
-  lesKontaktopplysningerKatalog,
-  fagsak: { hentFagsak, henleggFagsak, oppfriskFagsak, bortfall },
-  aktoer: { hentAktoerer, sendAktoer, slettAktoer },
-  sok: { sokFagsak },
-  kontaktopplysninger: { hent: hentKontaktopplysninger, send: sendKontaktopplysninger, slett: slettKontaktopplysninger }
+  fagsak: { hent: hentFagsak, henlegg: { send: henleggFagsak}, avsluttsaksombortfalt: {put: avsluttsaksombortfalt} },
+  aktoer: { hent: hentAktoerer, send: sendAktoer, slett: slettAktoer },
+  sok: { hent: sokFagsak },
+  kontaktopplysninger: {
+    hent: hentKontaktopplysninger,
+    send: sendKontaktopplysninger,
+    slett: slettKontaktopplysninger
+  },
 };

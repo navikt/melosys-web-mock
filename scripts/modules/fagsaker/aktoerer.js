@@ -2,14 +2,15 @@ const log4js = require('log4js');
 const logger = log4js.getLogger('mock');
 
 const { MOCK_DATA_DIR } = require('../../../mock.config');
-const SchemaPostValidator  = require('../../utils/schema-post-validator');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Utils = require('../../utils/utils');
-const Schema = require('../../utils/schema-util');
 const Mock = require('../../utils/mock-util');
 
-const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/fagsaker/aktoerer`;
-const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap["fagsaker-aktoerer"];
 
+const AKTOER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
 
 /**
  * lesAktoer
@@ -36,13 +37,6 @@ const lesAktoer = async (saksnummer, rolle, representerer) => {
 };
 
 /**
- * lesAktoerKatalog
- */
-module.exports.lesAktoerKatalog = () => {
-  return Schema.lesKatalogSync(AKTOER_DATA_DIR);
-};
-
-/**
  * hentAktoerer
  * @param req
  * @param res
@@ -55,7 +49,6 @@ module.exports.hentAktoerer = async (req, res) => {
   if (!saksnummer) {
     return Mock.manglerParamSaksnummer(req, res);
   }
-
   try {
     const aktoer = await lesAktoer(saksnummer, rolle, representerer);
     res.json(aktoer);
@@ -83,10 +76,10 @@ module.exports.sendAktoer = async (req, res) => {
       return Mock.manglerParamSaksnummer(req, res);
     }
 
-    const schemaNavn = 'aktoer-post-schema.json';
-    const valid = SchemaPostValidator.test(label, schemaNavn, jsBody);
+    const schemaNavn = `${moduleName}-post-schema.json`;
+    const valid = SchemaValidator.test(label, schemaNavn, jsBody);
 
-    if (!valid) return SchemaPostValidator.valideringFeil(req, res);
+    if (!valid) return SchemaValidator.valideringFeil(req, res);
 
     const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json`;
     const response = await Utils.readJsonAndParseAsync(mockfile);
@@ -103,15 +96,9 @@ module.exports.sendAktoer = async (req, res) => {
 };
 
 module.exports.slettAktoer = (req, res) => {
-  try {
-    const { databaseid } = req.params;
-    if (!databaseid) {
-      return Mock.badRequstParam(req, res, 'Mangler databaseid');
-    }
-    console.log('slettAktoer', databaseid);
-    res.status(204).send();
+  const { databaseid } = req.params;
+  if (!databaseid) {
+    return Mock.badRequestParam(req, res, 'Mangler databaseid');
   }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  SchemaValidator.slett(moduleName, req, res);
 };

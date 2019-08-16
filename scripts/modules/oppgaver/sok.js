@@ -1,31 +1,20 @@
-const { MOCK_DATA_DIR } = require('../../../mock.config');
-const Utils = require('../../utils/utils');
+const SchemaValidator = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
-const Schema = require('../../utils/schema-util');
-const MOCK_DATA_OPPGAVE_SOK_DIR = `${MOCK_DATA_DIR}/oppgaver/sok`;
-
-
-module.exports.lesSokOppgaveKatalog = () => {
-  return Schema.lesKatalogSync(MOCK_DATA_OPPGAVE_SOK_DIR);
-};
-
-const lesOppgave = async (fnr) => {
-  const mockfile = `${MOCK_DATA_OPPGAVE_SOK_DIR}/fnr-${fnr}.json`;
-  return await Utils.existsAsync(mockfile) ? Utils.readJsonAndParseAsync(mockfile) : [];
-};
+const Katalog = require('../../katalog');
+const { moduleName } = Katalog.pathnameMap['oppgaver-sok'];
 /**
- * Sok oppgaver
+ * Oppgaver sok
  * @param req
  * @param res
  * @returns {*}
  */
 module.exports.sok = async (req, res) => {
-  try {
-    const fnr = req.query.fnr;
-    const oppgaver = await lesOppgave(fnr);
-    res.json(oppgaver);
-  }
-  catch (err) {
-    Mock.serverError(req, res, err);
-  }
+  const { fnr } = req.query;
+  if (!fnr) return Mock.manglerParamFnr(req, res);
+
+  const mockpathObject = {
+    pathname: 'fnr-:fnrdnr',
+    params: {fnrdnr: fnr},
+  };
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
