@@ -13,7 +13,7 @@ module.exports.opprett = (req, res) => {
     return Mock.manglerParamProduserbartDokument(req, res);
   }
   if (DocUtils.erGyldigProduserbartDokumentKode(produserbartDokument) === false) {
-    return Mock.badRequstParam(req, res, `Ugylding kode for produserbartDokument: ${produserbartDokument}`);
+    return Mock.badRequestParam(req, res, `Ugylding kode for produserbartDokument: ${produserbartDokument}`);
   }
   // Body is only required for '000074' => 'Innhente manglende opplysninger'
   if (DocUtils.erMangelBrevMedFritekst(produserbartDokument)) {

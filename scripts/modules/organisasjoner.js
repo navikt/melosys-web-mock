@@ -14,7 +14,7 @@ module.exports.hent = async (req, res) => {
     return Mock.manglerParamOrgnr(req, res);
   }
   else if (orgnr.length !== 9)  {
-    return Mock.badRequstParam(req, res, 'Orgnr må ha 9 siffer');
+    return Mock.badRequestParam(req, res, 'Orgnr må ha 9 siffer');
   }
 
   const { moduleName } = Katalog.pathnameMap.organisasjoner;

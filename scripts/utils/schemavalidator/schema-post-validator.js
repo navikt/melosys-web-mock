@@ -37,7 +37,7 @@ module.exports.postSendPDF = (moduleName, req, res, pdfpath) => {
   const schemaNavn = `${moduleName}-post-schema.json`;
   const label = `${moduleName}:pdf`;
   if (!pdfpath) {
-    return Mock.badRequstParam(req, res, 'Mangler pdfpath');
+    return Mock.badRequestParam(req, res, 'Mangler pdfpath');
   }
   try {
     const body = req.body;

@@ -62,7 +62,7 @@ module.exports.utkast = (req, res) => {
     return Mock.manglerParamProduserbartDokument(req, res);
   }
   else if (DocUtils.erGyldigProduserbartDokumentKode(produserbartDokument) === false) {
-    return Mock.badRequstParam(req, res, `Ugylding kode for produserbartDokument: ${produserbartDokument}`);
+    return Mock.badRequestParam(req, res, `Ugylding kode for produserbartDokument: ${produserbartDokument}`);
   }
 
   const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
@@ -73,7 +73,7 @@ module.exports.utkast = (req, res) => {
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
     const { mottaker } = jsBody;
     if (DocUtils.erGyldigMottakerKode(mottaker) === false) {
-      return Mock.badRequstParam(req, res, `Ugyldig mottaker: ${mottaker}, i post-body`);
+      return Mock.badRequestParam(req, res, `Ugyldig mottaker: ${mottaker}, i post-body`);
     }
     pdfmockfile = `${MOCK_DOKUMENTER_DATA_DIR}/mangelbrev_${mottaker}.pdf`;
   }

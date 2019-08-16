@@ -8,17 +8,17 @@ module.exports.notFound = (req, res, message) => {
 
 };
 /**
- * badRequstParam
+ * badRequestParam
  * @param req
  * @param res
  * @param message
  * @returns {*}
  */
-const badRequstParam = (req, res, message) => {
+const badRequestParam = (req, res, message) => {
   const melding = ERR.badRequest400(req.originalUrl, message);
   return res.status(400).send(melding);
 };
-module.exports.badRequstParam = badRequstParam;
+module.exports.badRequestParam = badRequestParam;
 
 /**
  * serverError
@@ -40,43 +40,43 @@ module.exports.serverError = (req, res, e) => {
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamSaksnummer = (req, res) => badRequstParam(req, res, 'Mangler saksnummer');
+module.exports.manglerParamSaksnummer = (req, res) => badRequestParam(req, res, 'Mangler saksnummer');
 /**
  * manglerParamBehandlingsID
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamBehandlingsID = (req, res) => badRequstParam(req, res, 'behandlingID mangler');
+module.exports.manglerParamBehandlingsID = (req, res) => badRequestParam(req, res, 'behandlingID mangler');
 /**
  * manglerParamjournalpostID
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamjournalpostID = (req, res) => badRequstParam(req, res, 'journalpostID mangler');
+module.exports.manglerParamjournalpostID = (req, res) => badRequestParam(req, res, 'journalpostID mangler');
 /**
  * manglerParamOrgnr
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamOrgnr = (req, res) => badRequstParam(req, res, 'Organisasjons nummer mangler');
+module.exports.manglerParamOrgnr = (req, res) => badRequestParam(req, res, 'Organisasjons nummer mangler');
 /**
  * manglerParamFnr
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamFnr = (req, res) => badRequstParam(req, res, 'Fødselsnummer mangler');
+module.exports.manglerParamFnr = (req, res) => badRequestParam(req, res, 'Fødselsnummer mangler');
 /**
  * manglerParamAnmodningsperiodeID
  * @param req
  * @param res
  * @returns {*}
  */
-module.exports.manglerParamAnmodningsperiodeID = (req, res) => badRequstParam(req, res, 'AnmodningsperiodeID mangler');
+module.exports.manglerParamAnmodningsperiodeID = (req, res) => badRequestParam(req, res, 'AnmodningsperiodeID mangler');
 
-module.exports.manglerParamProduserbartDokument = (req, res) => badRequstParam(req, res, 'ProduserbartDokument mangler');
+module.exports.manglerParamProduserbartDokument = (req, res) => badRequestParam(req, res, 'ProduserbartDokument mangler');
 
-module.exports.manglerParamDokumentID = (req, res) => badRequstParam(req, res, 'DokumentID mangler');
+module.exports.manglerParamDokumentID = (req, res) => badRequestParam(req, res, 'DokumentID mangler');
