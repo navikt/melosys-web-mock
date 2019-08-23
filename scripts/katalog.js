@@ -273,6 +273,13 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'saksflyt-soknader-videresend': {
+    moduleName:'saksflyt-soknader-videresend',
+    put: {
+      pathname: '/saksflyt/soknader/:behandlingID/videresend',
+      params: { behandlingID: 4 },
+    },
+  } ,
   'saksflyt-unntaksperioder-godkjenn': {
     moduleName: 'saksflyt-unntaksperioder-godkjenn',
     put: {
