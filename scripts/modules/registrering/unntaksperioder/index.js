@@ -1,5 +1,5 @@
-const { send } = require('./unntaksperioder');
+const { sendUnntaksperiode } = require('./unntaksperioder');
 
 module.exports = {
-  send,
+  sendUnntaksperiode,
 };

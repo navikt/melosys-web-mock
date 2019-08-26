@@ -1,13 +1,13 @@
 const SchemaValidator  = require('../../../utils/schemavalidator');
 const Mock = require('../../../utils/mock-util');
 const Katalog = require('../../../katalog');
-const { moduleName } = Katalog.pathnameMap['registrering-unntaksperioder'];
+const { moduleName } = Katalog.pathnameMap['registrering-anmodningunntak'];
 /**
  * unntaksperioder
  * @param req
  * @param res
  */
-module.exports.sendUnntaksperiode = (req, res) => {
+module.exports.sendAnmodningunntak = (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
