@@ -185,6 +185,7 @@ router.get('/personer/:fnr', Personer.hent);
  * REGISTRERING av UNNTAKSPERIODER
  * ---------------------------------------------------------------
  */
+router.post('/registrering/:behandlingID/anmodningunntak', Registrering.anmodningunntak.send);
 router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder.send);
 
 /**
