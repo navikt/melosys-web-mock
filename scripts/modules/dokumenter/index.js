@@ -1,6 +1,6 @@
 const { opprett } = require('./opprett');
 const { oversikt } = require('./oversikt');
-const { utkast } = require('./utkast');
+const { utkast, sedPdf } = require('./utkast');
 const { hent } = require('./pdf');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
     oversikt: { hent: oversikt},
   },
   pdf: {
-    utkast: { send: utkast },
+    utkast: { send: utkast, hentSed: sedPdf },
     hent,
   }
 };
