@@ -110,8 +110,6 @@ router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/pdf/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.utkast.send);
 
-// Henter forhåndsvisning av sed som byte stream fra rina
-router.get('/dokumenter/pdf/sed/:behandlingID/:sedType', Dokumenter.pdf.utkast.hentSed);
 /**
  * EESSI
  * ----------------------------------------------------------------
@@ -119,6 +117,7 @@ router.get('/dokumenter/pdf/sed/:behandlingID/:sedType', Dokumenter.pdf.utkast.h
 router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
 router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
 router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
+router.get('/eessi/seder/:behandlingID/pdf/:sedType', Eessi.seder.pdf);
 
 /**
  * FAGSAKER
