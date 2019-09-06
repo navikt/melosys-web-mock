@@ -109,6 +109,9 @@ router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
 router.post('/dokumenter/pdf/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.utkast.send);
+
+// Henter forhåndsvisning av sed som byte stream fra rina
+router.get('/dokumenter/pdf/sed/:behandlingID/:sedType', Dokumenter.pdf.utkast.hentSed);
 /**
  * EESSI
  * ----------------------------------------------------------------
