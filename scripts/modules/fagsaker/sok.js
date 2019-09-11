@@ -5,7 +5,7 @@ const { MOCK_DATA_DIR } = require('../../../mock.config');
 const Mock = require('../../utils/mock-util');
 const Utils = require('../../utils/utils');
 
-const MOCK_FAGFSAKER_SOK_DIR = `${MOCK_DATA_DIR}/fagsaker/sok`;
+const MOCK_FAGFSAKER_SOK_DIR = `${MOCK_DATA_DIR}/fagsaker-sok`;
 
 const lesFagsakAsync = (path) => {
   return Utils.readJsonAndParseAsync(path);
