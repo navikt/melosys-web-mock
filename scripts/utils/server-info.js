@@ -27,7 +27,7 @@ module.exports.getIpAdress = () => {
   return ipv4.address;
 };
 
-const namespace = 'MOCK SERVER';
+const namespace = 't8';
 const cluster = `NodeJS ${process.version}`;
 const gitShellExec = shell.exec('git rev-parse HEAD');
 const longVersionHash = gitShellExec.stdout.trim();
