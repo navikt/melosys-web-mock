@@ -280,6 +280,13 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'saksflyt-anmodningsperioder-svar': {
+    moduleName: 'saksflyt-anmodningsperioder-svar',
+    put: {
+      pathname: '/saksflyt/anmodningsperioder/:behandlingID/svar',
+      params: { behandlingID: 4 },
+    },
+  },
   'saksflyt-soknader-videresend': {
     moduleName:'saksflyt-soknader-videresend',
     put: {
