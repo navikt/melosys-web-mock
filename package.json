@@ -1,6 +1,6 @@
 {
   "name": "melosys-web-mock",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "description": "express mock server",
   "author": "Are Bjølseth, Knowit Dataess as",
   "license": "MIT",
@@ -11,8 +11,8 @@
     "body-parser": "^1.19.0",
     "chokidar": "^3.0.2",
     "colors": "^1.3.3",
-    "concurrently": "^4.1.1",
-    "cross-env": "^5.2.0",
+    "concurrently": "^4.1.2",
+    "cross-env": "^5.2.1",
     "express": "^4.17.1",
     "get-installed-path": "^4.0.8",
     "git-branch": "^2.0.1",
@@ -20,9 +20,9 @@
     "jsdoc": "^3.6.3",
     "jsonpath-plus": "^0.20.1",
     "lodash": "^4.17.15",
-    "log4js": "^5.0.0",
-    "melosys-kodeverk": "^5.11.2-434",
-    "melosys-schema": "^1.28.0",
+    "log4js": "^5.1.0",
+    "melosys-kodeverk": "^5.12.1",
+    "melosys-schema": "^1.31.0",
     "moment": "^2.24.0",
     "node-cache": "^4.2.1",
     "node-emoji": "^1.10.0",
@@ -36,7 +36,7 @@
     "yargs": "^13.3.0"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "scripts": {
     "happycase": "node scripts/mock_api_server.js",
@@ -61,6 +61,6 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^9.1.0"
+    "eslint-plugin-node": "^9.2.0"
   }
 }
