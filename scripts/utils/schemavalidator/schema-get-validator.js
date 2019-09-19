@@ -18,3 +18,16 @@ module.exports.get = async (moduleName, req, res, pathObject = {}) => {
     Mock.serverError(req, res, err);
   }
 };
+
+module.exports.getPDF = (moduleName, req, res, pdfpath) => {
+  if (!pdfpath) {
+    return Mock.badRequestParam(req, res, 'Mangler pdfpath');
+  }
+  try {
+    res.type('application/pdf');
+    res.sendFile(pdfpath);
+  }
+  catch(err) {
+    Mock.serverError(req, res, err);
+  }
+};
