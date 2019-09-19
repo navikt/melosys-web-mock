@@ -85,12 +85,19 @@ const pathnameMap = {
       params: { journalpostID: 321, dokumentID: 123 },
     },
   },
-  'dokumenter-pdf-utkast': {
-    moduleName: 'dokumenter-pdf-utkast',
+  'dokumenter-pdf-brev-utkast': {
+    moduleName: 'dokumenter-pdf-brev-utkast',
     post: {
-      pathname: '/dokumenter/pdf/utkast/:behandlingID/:produserbartDokument',
+      pathname: '/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument',
       params: { behandlingID: 4, produserbartDokument: 'MELDING_MANGLENDE_OPPLYSNINGER' },
     },
+  },
+  'dokumenter-pdf-sed-utkast': {
+    moduleName: 'dokumenter-pdf-sed-utkast',
+    get: {
+      pathname: '/dokumenter/pdf/sed/utkast/:behandlingID/:sedType',
+      params: { behandlingID: 4, sedType: 'A001' },
+    }
   },
   'eessi-bucer': {
     moduleName: 'eessi-bucer',

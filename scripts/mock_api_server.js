@@ -108,10 +108,10 @@ router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
 router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.utkast.send);
+router.post('/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.brev.utkast.send);
 
 // Henter forhåndsvisning av sed som byte stream fra rina
-router.get('/dokumenter/pdf/sed/utkast/:behandlingID/:sedType', Dokumenter.pdf.utkast.hentSed);
+router.get('/dokumenter/pdf/sed/utkast/:behandlingID/:sedType', Dokumenter.pdf.sed.utkast.hent);
 
 /**
  * EESSI
