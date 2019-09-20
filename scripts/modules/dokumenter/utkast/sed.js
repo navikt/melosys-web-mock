@@ -4,7 +4,7 @@ const SchemaValidator  = require('../../../utils/schemavalidator');
 const Katalog = require('../../../katalog');
 
 const {  MOCK_DATA_DIR } = require('../../../../mock.config');
-const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-sed-utkast'];
+const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast-sed'];
 const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 module.exports.sedPdf = (req, res) => {

@@ -7,7 +7,7 @@ const Katalog = require('../../../katalog');
 
 const DocUtils = require('./../docutils');
 const {  MOCK_DATA_DIR } = require('../../../../mock.config');
-const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-brev-utkast'];
+const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast-brev'];
 
 const {
   ATTEST_A1,

@@ -85,15 +85,15 @@ const pathnameMap = {
       params: { journalpostID: 321, dokumentID: 123 },
     },
   },
-  'dokumenter-pdf-brev-utkast': {
-    moduleName: 'dokumenter-pdf-brev-utkast',
+  'dokumenter-pdf-utkast-brev': {
+    moduleName: 'dokumenter-pdf-utkast-brev',
     post: {
       pathname: '/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument',
       params: { behandlingID: 4, produserbartDokument: 'MELDING_MANGLENDE_OPPLYSNINGER' },
     },
   },
-  'dokumenter-pdf-sed-utkast': {
-    moduleName: 'dokumenter-pdf-sed-utkast',
+  'dokumenter-pdf-utkast-sed': {
+    moduleName: 'dokumenter-pdf-utkast-sed',
     get: {
       pathname: '/dokumenter/pdf/sed/utkast/:behandlingID/:sedType',
       params: { behandlingID: 4, sedType: 'A001' },
