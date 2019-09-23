@@ -20,7 +20,6 @@ const Lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const Organisasjoner = require('./modules/organisasjoner');
 const Personer = require('./modules/personer');
-const Registrering = require('./modules/registrering');
 const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Soknader = require('./modules/soknader');
@@ -183,12 +182,6 @@ router.get('/organisasjoner/:orgnr', Organisasjoner.hent);
 router.get('/personer/:fnr', Personer.hent);
 
 /**
- * REGISTRERING av UNNTAKSPERIODER
- * ---------------------------------------------------------------
- */
-router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder.send);
-
-/**
  * SAKSBEHANDLER
  */
 router.get('/saksbehandler', Saksbehandler.hent);
@@ -198,6 +191,7 @@ router.get('/saksbehandler', Saksbehandler.hent);
  * ---------------------------------------------------------------
  */
 router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.put);
+router.put('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.put);
 router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.put);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);

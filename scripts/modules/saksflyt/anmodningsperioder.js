@@ -11,3 +11,11 @@ module.exports.bestill = (req, res) => {
   SchemaValidator.put204(moduleName,req, res);
 };
 
+// [PUT] '/saksflyt/anmodningsperioder/:behandlingID/svar'
+module.exports.svar = (req, res) => {
+  const { behandlingID } = req.params;
+
+  if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
+  const { moduleName } = Katalog.pathnameMap['saksflyt-anmodningsperioder-svar'];
+  SchemaValidator.put204(moduleName,req, res);
+};

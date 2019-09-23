@@ -253,13 +253,6 @@ const pathnameMap = {
       params: { fnr: '17117802280' },
     },
   },
-  'registrering-unntaksperioder': {
-    moduleName: 'registrering-unntaksperioder',
-    post: {
-      pathname: '/registrering/:behandlingID/unntaksperioder',
-      params: { behandlingID: 4 },
-    },
-  },
   saksbehandler: {
     moduleName: 'saksbehandler',
     get: {
@@ -270,6 +263,13 @@ const pathnameMap = {
     moduleName: 'saksflyt-anmodningsperioder-bestill',
     put: {
       pathname: '/saksflyt/anmodningsperioder/:behandlingID/bestill',
+      params: { behandlingID: 4 },
+    },
+  },
+  'saksflyt-anmodningsperioder-svar': {
+    moduleName: 'saksflyt-anmodningsperioder-svar',
+    put: {
+      pathname: '/saksflyt/anmodningsperioder/:behandlingID/svar',
       params: { behandlingID: 4 },
     },
   },
