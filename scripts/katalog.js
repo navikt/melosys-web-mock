@@ -273,11 +273,11 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'saksflyt-soknader-videresend': {
-    moduleName:'saksflyt-soknader-videresend',
+  'fagsaker-henleggvideresend': {
+    moduleName:'fagsaker-videresend',
     put: {
-      pathname: '/saksflyt/soknader/:behandlingID/videresend',
-      params: { behandlingID: 4 },
+      pathname: '/fagsaker/:saksnummer/henlegg-videresend',
+      params: { saksnummer: 4 },
     },
   } ,
   'saksflyt-unntaksperioder-godkjenn': {
