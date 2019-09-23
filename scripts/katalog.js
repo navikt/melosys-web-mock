@@ -135,18 +135,25 @@ const pathnameMap = {
       params: { databaseid: 955006279357058 },
     },
   },
-  'fagsaker-avsluttsaksombortfalt': {
-    moduleName: 'fagsaker-avsluttsaksombortfalt',
-    put: {
-      pathname: '/fagsaker/:saksnummer/avsluttsaksombortfalt',
-      params: { saksnummer: 4 },
-    },
-  },
   'fagsaker-henlegg': {
     moduleName: 'fagsaker-henlegg',
     post: {
       pathname: '/fagsaker/:fnr/henlegg',
       params: { fnr: '17117802280' },
+    },
+  },
+  'fagsaker-henlegg-avsluttsaksombortfalt': {
+    moduleName: 'fagsaker-henlegg-avsluttsaksombortfalt',
+    put: {
+      pathname: '/fagsaker/:saksnummer/avsluttsaksombortfalt',
+      params: { saksnummer: 4 },
+    },
+  },
+  'fagsaker-henlegg-videresend': {
+    moduleName:'fagsaker-henlegg-videresend',
+    put: {
+      pathname: '/fagsaker/:saksnummer/henlegg-videresend',
+      params: { saksnummer: 4 },
     },
   },
   'fagsaker-kontaktopplysninger': {
@@ -273,13 +280,6 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'fagsaker-henleggvideresend': {
-    moduleName:'fagsaker-videresend',
-    put: {
-      pathname: '/fagsaker/:saksnummer/henlegg-videresend',
-      params: { saksnummer: 4 },
-    },
-  } ,
   'saksflyt-unntaksperioder-godkjenn': {
     moduleName: 'saksflyt-unntaksperioder-godkjenn',
     put: {

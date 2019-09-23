@@ -128,8 +128,8 @@ router.get('/fagsaker/sok/', Fagsaker.sok.hent);
 
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
 router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
-router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
-router.put('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.put);
+router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.henlegg.avsluttsaksombortfalt.put);
+router.put('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henlegg.videresend.put);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
