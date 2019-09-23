@@ -253,20 +253,6 @@ const pathnameMap = {
       params: { fnr: '17117802280' },
     },
   },
-  'registrering-anmodningunntak': {
-    moduleName: 'registrering-anmodningunntak',
-    post: {
-      pathname: '/registrering/:behandlingID/anmodningunntak',
-      params: { behandlingID: 4 },
-    },
-  },
-  'registrering-unntaksperioder': {
-    moduleName: 'registrering-unntaksperioder',
-    post: {
-      pathname: '/registrering/:behandlingID/unntaksperioder',
-      params: { behandlingID: 4 },
-    },
-  },
   saksbehandler: {
     moduleName: 'saksbehandler',
     get: {

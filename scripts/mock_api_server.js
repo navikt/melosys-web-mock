@@ -20,7 +20,6 @@ const Lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const Organisasjoner = require('./modules/organisasjoner');
 const Personer = require('./modules/personer');
-const Registrering = require('./modules/registrering');
 const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Soknader = require('./modules/soknader');
@@ -180,13 +179,6 @@ router.get('/organisasjoner/:orgnr', Organisasjoner.hent);
  * ---------------------------------------------------------------
  */
 router.get('/personer/:fnr', Personer.hent);
-
-/**
- * REGISTRERING av UNNTAKSPERIODER
- * ---------------------------------------------------------------
- */
-router.post('/registrering/:behandlingID/anmodningunntak', Registrering.anmodningunntak.send);
-router.post('/registrering/:behandlingID/unntaksperioder', Registrering.unntaksperioder.send);
 
 /**
  * SAKSBEHANDLER
