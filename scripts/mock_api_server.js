@@ -128,6 +128,7 @@ router.get('/fagsaker/sok/', Fagsaker.sok.hent);
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
 router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
 router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
+router.put('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.put);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
@@ -191,7 +192,6 @@ router.get('/saksbehandler', Saksbehandler.hent);
  */
 router.put('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.put);
 router.put('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.put);
-router.put('/saksflyt/soknader/:behandlingID/videresend', Saksflyt.soknader.videresend.put);
 router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.put);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
