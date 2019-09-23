@@ -27,3 +27,11 @@ module.exports.avsluttsaksombortfalt = async (req, res) => {
 
   SchemaValidator.put204(moduleName, req, res);
 };
+
+module.exports.henleggVideresend = (req, res) => {
+  const { saksnummer } = req.params;
+
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+  const { moduleName } = Katalog.pathnameMap['fagsaker-henleggvideresend'];
+  SchemaValidator.put204(moduleName,req, res);
+};
