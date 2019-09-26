@@ -1,13 +1,13 @@
 const MKV = require('melosys-kodeverk');
-const Utils = require('../../utils/utils');
-const ERR = require('../../utils/errors');
-const Mock = require('../../utils/mock-util');
-const SchemaValidator  = require('../../utils/schemavalidator');
-const Katalog = require('../../katalog');
+const Utils = require('../../../utils/utils');
+const ERR = require('../../../utils/errors');
+const Mock = require('../../../utils/mock-util');
+const SchemaValidator  = require('../../../utils/schemavalidator');
+const Katalog = require('../../../katalog');
 
-const DocUtils = require('./docutils');
-const {  MOCK_DATA_DIR } = require('../../../mock.config');
-const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast'];
+const DocUtils = require('./../docutils');
+const {  MOCK_DATA_DIR } = require('../../../../mock.config');
+const { moduleName } = Katalog.pathnameMap['dokumenter-pdf-utkast-brev'];
 
 const {
   ATTEST_A1,
@@ -19,6 +19,8 @@ const {
   MELDING_MANGLENDE_OPPLYSNINGER,
   ORIENTERING_ANMODNING_UNNTAK
 } = MKV.Koder.brev.produserbaredokumenter;
+
+const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
 
 const pdfnameLookup = produserbartDokument => {
   let pdfname = '';
@@ -65,7 +67,6 @@ module.exports.utkast = (req, res) => {
     return Mock.badRequestParam(req, res, `Ugylding kode for produserbartDokument: ${produserbartDokument}`);
   }
 
-  const MOCK_DOKUMENTER_DATA_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
   let pdfmockfile = '';
 
   // Body is only required for '000074' => 'Innhente manglende opplysninger'
