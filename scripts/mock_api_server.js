@@ -170,7 +170,6 @@ router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.oppri
  */
 router.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
 router.post('/oppgaver/plukk', Oppgaver.plukk.send);
-router.get('/oppgaver/sok', Oppgaver.sok.hent);
 router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
 
 /**
