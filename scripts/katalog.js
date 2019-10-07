@@ -234,12 +234,6 @@ const pathnameMap = {
       pathname: '/oppgaver/plukk',
     },
   },
-  'oppgaver-sok': {
-    moduleName: 'oppgaver-sok',
-    get: {
-      pathname: '/oppgaver/sok/?fnr=17117802280',
-    },
-  },
   'oppgaver-tilbakelegg': {
     moduleName: 'oppgaver-tilbakelegg',
     post: {
