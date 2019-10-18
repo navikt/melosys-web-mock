@@ -154,6 +154,7 @@ router.get('/inngangsvilkaar/:snr', Inngangsvilkaar.hent);
  */
 router.get('/journalforing/:journalpostID', Journalforing.hent);
 router.post('/journalforing/opprett', Journalforing.opprett.send);
+router.post('/journalforing/sed', Journalforing.sed.send);
 router.post('/journalforing/tilordne', Journalforing.tilordne.send);
 
 /**
