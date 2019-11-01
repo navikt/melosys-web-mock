@@ -198,6 +198,12 @@ const pathnameMap = {
       pathname: '/journalforing/opprett',
     },
   },
+  'journalforing-sed': {
+    moduleName: 'journalforing-sed',
+    post: {
+      pathname: '/journalforing/sed',
+    },
+  },
   'journalforing-tilordne': {
     moduleName: 'journalforing-tilordne',
     post: {
