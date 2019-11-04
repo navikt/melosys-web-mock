@@ -18,12 +18,12 @@ module.exports.fatt = (req, res) => {
 };
 
 /**
- * endreperiode
+ * endre
  * @param req
  * @param res
  */
-module.exports.endreperiode = (req, res) => {
-  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-endreperiode'];
+module.exports.endre = (req, res) => {
+  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-endre'];
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);

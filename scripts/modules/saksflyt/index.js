@@ -1,6 +1,6 @@
 const { bestill, svar } = require('./anmodningsperioder');
 const { anmodning, godkjenn, innhentinfo, ikkegodkjenn } = require('./unntaksperioder');
-const { endreperiode, fatt } = require('./vedtak');
+const { endre, fatt } = require('./vedtak');
 
 module.exports = {
   anmodningsperioder: {
@@ -8,7 +8,7 @@ module.exports = {
     svar: { put: svar },
   },
   vedtak: {
-    endreperiode: {send: endreperiode},
+    endre: {send: endre},
     fatt: {send: fatt},
   },
   unntaksperioder: {

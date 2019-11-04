@@ -315,10 +315,10 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'saksflyt-vedtak-endreperiode': {
-    moduleName: 'saksflyt-vedtak-endreperiode',
+  'saksflyt-vedtak-endre': {
+    moduleName: 'saksflyt-vedtak-endre',
     post: {
-      pathname: '/saksflyt/vedtak/:behandlingID/endreperiode',
+      pathname: '/saksflyt/vedtak/:behandlingID/endre',
       params: { behandlingID: 4 },
     },
   },
