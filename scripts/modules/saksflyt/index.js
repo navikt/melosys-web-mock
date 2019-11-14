@@ -4,7 +4,7 @@ const { endreperiode, fatt } = require('./vedtak');
 
 module.exports = {
   anmodningsperioder: {
-    bestill: { put: bestill },
+    bestill: { post: bestill },
     svar: { put: svar },
   },
   vedtak: {
