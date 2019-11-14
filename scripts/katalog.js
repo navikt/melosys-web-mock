@@ -268,7 +268,7 @@ const pathnameMap = {
   },
   'saksflyt-anmodningsperioder-bestill': {
     moduleName: 'saksflyt-anmodningsperioder-bestill',
-    put: {
+    post: {
       pathname: '/saksflyt/anmodningsperioder/:behandlingID/bestill',
       params: { behandlingID: 4 },
     },
