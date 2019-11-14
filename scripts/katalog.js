@@ -281,8 +281,8 @@ const pathnameMap = {
     },
   },
   'fagsaker-henleggvideresend': {
-    moduleName:'fagsaker-henleggvideresend',
-    post: {
+    moduleName:'fagsaker-videresend',
+    put: {
       pathname: '/fagsaker/:saksnummer/henlegg-videresend',
       params: { saksnummer: 4 },
     },
