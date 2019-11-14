@@ -189,7 +189,7 @@ const pathnameMap = {
     moduleName: 'journalforing',
     get: {
       pathname: '/journalforing/:journalpostID',
-      params: { journalpostID: 4 },
+      params: { journalpostID: 'DOK_3789' },
     },
   },
   'journalforing-opprett': {
