@@ -33,5 +33,5 @@ module.exports.henleggVideresend = (req, res) => {
 
   if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
   const { moduleName } = Katalog.pathnameMap['fagsaker-henleggvideresend'];
-  SchemaValidator.post204(moduleName,req, res);
+  SchemaValidator.put204(moduleName,req, res);
 };

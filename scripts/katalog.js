@@ -189,7 +189,7 @@ const pathnameMap = {
     moduleName: 'journalforing',
     get: {
       pathname: '/journalforing/:journalpostID',
-      params: { journalpostID: 4 },
+      params: { journalpostID: 'DOK_3789' },
     },
   },
   'journalforing-opprett': {
@@ -281,8 +281,8 @@ const pathnameMap = {
     },
   },
   'fagsaker-henleggvideresend': {
-    moduleName:'fagsaker-henleggvideresend',
-    post: {
+    moduleName:'fagsaker-videresend',
+    put: {
       pathname: '/fagsaker/:saksnummer/henlegg-videresend',
       params: { saksnummer: 4 },
     },
