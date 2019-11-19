@@ -6,10 +6,10 @@ const { MOCK_DATA_DIR } = require('../../../mock.config');
 module.exports.get = async (moduleName, req, res, pathObject = {}) => {
   try {
     const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
-    let mockfile = `${GET_DIR}/${moduleName}.json`;
+    let mockfile = `${GET_DIR}/${moduleName}.json5`;
     if (pathObject.pathname) {
       const filename = pathObject2Filename(pathObject, '-');
-      mockfile = `${GET_DIR}/${filename}.json`;
+      mockfile = `${GET_DIR}/${filename}.json5`;
     }
     const data = await Utils.readJsonAndParseAsync(mockfile);
     return res.json(data);
