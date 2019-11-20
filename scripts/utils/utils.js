@@ -52,7 +52,6 @@ module.exports.readJsonAndParseSync = (path) => {
 
 module.exports.readJsonAndParseAsync = async (path) => {
   const json = await readFileSync(path);
-  console.log(json);
   return JSON5.parse(json);
 };
 
