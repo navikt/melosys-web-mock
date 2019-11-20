@@ -20,7 +20,7 @@ const AKTOER_DATA_POST_DIR = `${AKTOER_DATA_DIR}/post`;
  * @returns {Promise<*>}
  */
 const lesAktoer = async (saksnummer, rolle, representerer) => {
-  const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json`;
+  const mockfile = `${AKTOER_DATA_DIR}/aktoer-snr-${saksnummer}.json5`;
   const aktoerer = await Utils.readJsonAndParseAsync(mockfile);
   if (rolle && representerer) {
     return aktoerer
@@ -81,7 +81,7 @@ module.exports.sendAktoer = async (req, res) => {
 
     if (!valid) return SchemaValidator.valideringFeil(req, res);
 
-    const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json`;
+    const mockfile = `${AKTOER_DATA_POST_DIR}/response-snr-${saksnummer}.json5`;
     const response = await Utils.readJsonAndParseAsync(mockfile);
     const { orgnr } = jsBody;
     const aktoer = {
