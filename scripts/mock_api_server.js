@@ -201,6 +201,7 @@ router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unn
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
 router.post('/saksflyt/vedtak/:behandlingID/fatt', Saksflyt.vedtak.fatt.send);
 router.post('/saksflyt/vedtak/:behandlingID/endre', Saksflyt.vedtak.endre.send);
+router.post('/saksflyt/vedtak/:behandlingID/revurder', Saksflyt.vedtak.revurder.send);
 
 /**
  * SAKSOPPLYSNINGER
