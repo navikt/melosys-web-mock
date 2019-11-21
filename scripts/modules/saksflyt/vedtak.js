@@ -32,7 +32,7 @@ module.exports.endre = (req, res) => {
 };
 
 /**
- * endre
+ * revurder
  * @param req
  * @param res
  */
