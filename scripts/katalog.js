@@ -171,6 +171,12 @@ const pathnameMap = {
       params: { saksnummer: 4, juridiskorgnr: 810072512 },
     },
   },
+  'fagsaker-opprett': {
+    moduleName: 'fagsaker-opprett',
+    post: {
+      pathname: '/fagsaker/opprett',
+    },
+  },
   'fagsaker-sok': {
     moduleName: 'fagsaker-sok',
     get: {
