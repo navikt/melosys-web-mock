@@ -171,6 +171,12 @@ const pathnameMap = {
       params: { saksnummer: 4, juridiskorgnr: 810072512 },
     },
   },
+  'fagsaker-opprett': {
+    moduleName: 'fagsaker-opprett',
+    post: {
+      pathname: '/fagsaker/opprett',
+    },
+  },
   'fagsaker-sok': {
     moduleName: 'fagsaker-sok',
     get: {
@@ -189,7 +195,7 @@ const pathnameMap = {
     moduleName: 'journalforing',
     get: {
       pathname: '/journalforing/:journalpostID',
-      params: { journalpostID: 4 },
+      params: { journalpostID: 'DOK_3789' },
     },
   },
   'journalforing-opprett': {
@@ -281,8 +287,8 @@ const pathnameMap = {
     },
   },
   'fagsaker-henleggvideresend': {
-    moduleName:'fagsaker-videresend',
-    put: {
+    moduleName:'fagsaker-henleggvideresend',
+    post: {
       pathname: '/fagsaker/:saksnummer/henlegg-videresend',
       params: { saksnummer: 4 },
     },
@@ -315,10 +321,17 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'saksflyt-vedtak-endreperiode': {
-    moduleName: 'saksflyt-vedtak-endreperiode',
+  'saksflyt-vedtak-endre': {
+    moduleName: 'saksflyt-vedtak-endre',
     post: {
-      pathname: '/saksflyt/vedtak/:behandlingID/endreperiode',
+      pathname: '/saksflyt/vedtak/:behandlingID/endre',
+      params: { behandlingID: 4 },
+    },
+  },
+  'saksflyt-vedtak-revurder': {
+    moduleName: 'saksflyt-vedtak-revurder',
+    post: {
+      pathname: '/saksflyt/vedtak/:behandlingID/revurder',
       params: { behandlingID: 4 },
     },
   },

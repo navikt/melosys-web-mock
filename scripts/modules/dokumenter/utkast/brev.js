@@ -52,7 +52,7 @@ const pdfnameLookup = produserbartDokument => {
 module.exports.utkast = (req, res) => {
   const { body, params } = req;
   const { behandlingID, produserbartDokument } = params;
-  console.log(params);
+
   if(!req.accepts('application/pdf')) {
     const melding = ERR.notAcceptable406();
     return res.status(406).send(melding);
