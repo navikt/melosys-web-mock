@@ -1,0 +1,56 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.3.1'
+          registry-url: https://npm.pkg.github.com/
+          scope: '@navikt'
+
+      - name: npm install
+        run: npm i
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Create Docker tag
+        env:
+          NAME: melosys-web-mock
+        run: |
+          echo "docker.pkg.github.com"/"$GITHUB_REPOSITORY"/"$NAME" > .docker_image
+          echo "$(node -p "require('./package.json').version")-$(git rev-parse --short HEAD)" > .docker_tag
+
+      - name: build docker image
+        run: docker build --build-arg GITHUB_TOKEN=${GITHUB_TOKEN} -t $(cat .docker_image):$(cat .docker_tag) .
+
+      - name: test
+        env:
+          CONTAINER_NAME: melosyswebmock
+        run: |
+          docker run -d -p 3002:3002 --name=$CONTAINER_NAME $(cat .docker_image):$(cat .docker_tag)
+          # Venter på at containeren blir klar
+          until [ "`/usr/bin/docker inspect -f {{.State.Running}} $CONTAINER_NAME`"=="true" ]; do
+              sleep 4;
+          done;
+          # Tester
+          npm run mock
+          # Stopper containeren
+          docker stop $(docker ps -a -q)
+
+      - name: Login to Github Package Registry
+        run: docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+
+      - name: Push Docker image
+        run: "docker push $(cat .docker_image):$(cat .docker_tag)"

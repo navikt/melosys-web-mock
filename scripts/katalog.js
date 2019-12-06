@@ -322,13 +322,6 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'saksflyt-vedtak-revurder': {
-    moduleName: 'saksflyt-vedtak-revurder',
-    post: {
-      pathname: '/saksflyt/vedtak/:behandlingID/revurder',
-      params: { behandlingID: 4 },
-    },
-  },
   'saksopplysninger-oppfriskning': {
     moduleName: 'saksopplysninger-oppfriskning',
     get: {
