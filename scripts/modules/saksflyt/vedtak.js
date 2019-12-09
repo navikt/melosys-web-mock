@@ -37,9 +37,12 @@ module.exports.endre = (req, res) => {
  * @param res
  */
 module.exports.revurder = (req, res) => {
+  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-revurder'];
+
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  setTimeout(() => res.json({ behandlingID: 12 }), 1000);
+
+  SchemaValidator.post(moduleName, req, res, { behandlingID: 12 });
 };
