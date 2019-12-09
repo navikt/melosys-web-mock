@@ -5,10 +5,9 @@ WORKDIR /usr/src/app
 ARG GITHUB_TOKEN
 COPY .npmrc .npmrc
 RUN echo //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN >> .npmrc
-COPY package*.json ./
 
+COPY package*.json ./
 RUN npm install
-RUN rm -f .npmrc
 
 COPY . .
 
