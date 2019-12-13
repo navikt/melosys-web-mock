@@ -171,6 +171,7 @@ router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.oppri
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
+router.get('/oppgaver/sok', Oppgaver.sok.hent);
 router.post('/oppgaver/plukk', Oppgaver.plukk.send);
 router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
 

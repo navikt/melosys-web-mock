@@ -252,6 +252,12 @@ const pathnameMap = {
       pathname: '/oppgaver/tilbakelegg',
     },
   },
+  'oppgaver-sok': {
+    moduleName: 'oppgaver-sok',
+    get: {
+      pathname: '/oppgaver/sok/?fnr=17117802280',
+    },
+  },
   organisasjoner: {
     moduleName: 'organisasjoner',
     get: {
