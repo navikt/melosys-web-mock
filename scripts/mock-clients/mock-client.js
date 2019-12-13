@@ -56,5 +56,7 @@ const testAll = async (verb, oppsummering) => {
     }
   }
   printoppsummering(oppsummering, VERB);
+
+  if (oppsummering.failure > 0) process.exitCode = 1;
 };
 module.exports.testAll = testAll;
