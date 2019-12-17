@@ -28,6 +28,14 @@ module.exports.avsluttsaksombortfalt = async (req, res) => {
   SchemaValidator.put204(moduleName, req, res);
 };
 
+module.exports.avslutt = async (req, res) => {
+  const { saksnummer } = req.params;
+
+  if (!saksnummer) return Mock.manglerParamSaksnummer(req, res);
+
+  SchemaValidator.put204(moduleName, req, res);
+};
+
 module.exports.henleggVideresend = (req, res) => {
   const { saksnummer } = req.params;
 

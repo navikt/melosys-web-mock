@@ -149,6 +149,13 @@ const pathnameMap = {
       params: { saksnummer: 4 },
     },
   },
+  'fagsaker-avslutt': {
+    moduleName: 'fagsaker-avslutt',
+    put: {
+      pathname: '/fagsaker/:saksnummer/avslutt',
+      params: { saksnummer: 4 },
+    },
+  },
   'fagsaker-henlegg': {
     moduleName: 'fagsaker-henlegg',
     post: {
