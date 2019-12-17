@@ -171,6 +171,12 @@ const pathnameMap = {
       params: { saksnummer: 4, juridiskorgnr: 810072512 },
     },
   },
+  'fagsaker-opprett': {
+    moduleName: 'fagsaker-opprett',
+    post: {
+      pathname: '/fagsaker/opprett',
+    },
+  },
   'fagsaker-sok': {
     moduleName: 'fagsaker-sok',
     get: {
@@ -244,6 +250,12 @@ const pathnameMap = {
     moduleName: 'oppgaver-tilbakelegg',
     post: {
       pathname: '/oppgaver/tilbakelegg',
+    },
+  },
+  'oppgaver-sok': {
+    moduleName: 'oppgaver-sok',
+    get: {
+      pathname: '/oppgaver/sok/?fnr=17117802280',
     },
   },
   organisasjoner: {
