@@ -134,6 +134,7 @@ router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
 router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
 router.put('/fagsaker/:saksnummer/avslutt', Fagsaker.fagsak.avslutt.put);
 router.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.send);
+router.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
@@ -171,6 +172,7 @@ router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.oppri
  * ---------------------------------------------------------------
  */
 router.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
+router.get('/oppgaver/sok', Oppgaver.sok.hent);
 router.post('/oppgaver/plukk', Oppgaver.plukk.send);
 router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
 
