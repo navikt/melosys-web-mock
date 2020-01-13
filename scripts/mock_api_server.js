@@ -134,6 +134,7 @@ router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
 router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
 router.put('/fagsaker/:saksnummer/avslutt', Fagsaker.fagsak.avslutt.put);
 router.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.send);
+router.post('/fagsaker/:saksnummer/utpek', Fagsaker.fagsak.utpek.send);
 router.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
 
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);

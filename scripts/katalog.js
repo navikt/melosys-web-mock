@@ -191,6 +191,13 @@ const pathnameMap = {
       params: {},
     },
   },
+  'fagsaker-utpek': {
+    moduleName: 'fagsaker-utpek',
+    post: {
+      pathname: '/fagsaker/:saksnummer/utpek',
+      params: {},
+    },
+  },
   inngangsvilkaar: {
     moduleName: 'inngangsvilkaar',
     get: {
