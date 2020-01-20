@@ -191,6 +191,13 @@ const pathnameMap = {
       params: {},
     },
   },
+  'fagsaker-utpek': {
+    moduleName: 'fagsaker-utpek',
+    post: {
+      pathname: '/fagsaker/:saksnummer/utpek',
+      params: {},
+    },
+  },
   inngangsvilkaar: {
     moduleName: 'inngangsvilkaar',
     get: {
@@ -370,6 +377,17 @@ const pathnameMap = {
     },
     post: {
       pathname: '/soknader/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+  },
+  utpekingsperioder: {
+    moduleName: 'utpekingsperioder',
+    get: {
+      pathname: '/utpekingsperioder/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+    post: {
+      pathname: '/utpekingsperioder/:behandlingID',
       params: { behandlingID: 4 },
     },
   },
