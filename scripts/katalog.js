@@ -149,6 +149,13 @@ const pathnameMap = {
       params: { saksnummer: 4 },
     },
   },
+  'fagsaker-avslutt': {
+    moduleName: 'fagsaker-avslutt',
+    put: {
+      pathname: '/fagsaker/:saksnummer/avslutt',
+      params: { saksnummer: 4 },
+    },
+  },
   'fagsaker-henlegg': {
     moduleName: 'fagsaker-henlegg',
     post: {
@@ -250,6 +257,12 @@ const pathnameMap = {
     moduleName: 'oppgaver-tilbakelegg',
     post: {
       pathname: '/oppgaver/tilbakelegg',
+    },
+  },
+  'oppgaver-sok': {
+    moduleName: 'oppgaver-sok',
+    get: {
+      pathname: '/oppgaver/sok/?fnr=17117802280',
     },
   },
   organisasjoner: {
