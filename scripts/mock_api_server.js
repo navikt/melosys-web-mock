@@ -24,7 +24,7 @@ const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
-const Utpekningsperioder = require('./modules/utpekningsperioder');
+const Utpekingsperioder = require('./modules/utpekingsperioder');
 const Vilkaar = require('./modules/vilkaar');
 
 const createLogDirIfnotExists = (dir) => !fs.existsSync(dir) && fs.mkdirSync(dir);
@@ -76,8 +76,8 @@ router.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.
 /**
  * UTPEKNINGSPERIOER
  */
-router.get('/utpekningsperioder/:behandlingID', Utpekningsperioder.hent);
-router.post('/utpekningsperioder/:behandlingID', Utpekningsperioder.send);
+router.get('/utpekingsperioder/:behandlingID', Utpekingsperioder.hent);
+router.post('/utpekingsperioder/:behandlingID', Utpekingsperioder.send);
 
 /**
  * AVKLARTEFAKTA (FRA STEGVELGEREN ++)

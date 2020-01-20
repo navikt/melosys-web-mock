@@ -2,14 +2,14 @@ const Mock = require('../../utils/mock-util');
 const SchemaValidator  = require('../../utils/schemavalidator');
 
 const Katalog = require('../../katalog');
-const { moduleName } = Katalog.pathnameMap['utpekningsperioder'];
+const { moduleName } = Katalog.pathnameMap['utpekingsperioder'];
 
 module.exports.hent = (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
 
   const pathObject = {
-    pathname: 'utpekningsperioder-bid-:behandlingID',
+    pathname: 'utpekingsperioder-bid-:behandlingID',
     params: { behandlingID },
   };
 

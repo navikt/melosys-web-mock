@@ -380,14 +380,14 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  utpekningsperioder: {
-    moduleName: 'utpekningsperioder',
+  utpekingsperioder: {
+    moduleName: 'utpekingsperioder',
     get: {
-      pathname: '/utpekningsperioder/:behandlingID',
+      pathname: '/utpekingsperioder/:behandlingID',
       params: { behandlingID: 4 },
     },
     post: {
-      pathname: '/utpekningsperioder/:behandlingID',
+      pathname: '/utpekingsperioder/:behandlingID',
       params: { behandlingID: 4 },
     },
   },
