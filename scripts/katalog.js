@@ -334,6 +334,13 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'saksflyt-utpeking-avvis': {
+    moduleName: 'saksflyt-utpeking-avvis',
+    post: {
+      pathname: '/saksflyt/utpeking/:behandlingID/avvis',
+      params: { behandlingID: 4 },
+    },
+  },
   'saksflyt-vedtak-fatt': {
     moduleName: 'saksflyt-vedtak-fatt',
     post: {
