@@ -64,6 +64,17 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  behandlingsgrunnlag: {
+    moduleName: 'behandlingsgrunnlag',
+    get: {
+      pathname: '/behandlingsgrunnlag/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+    post: {
+      pathname: '/behandlingsgrunnlag/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+  },
   'dokumenter-opprett': {
     moduleName: 'dokumenter-opprett',
     post: {
@@ -373,17 +384,6 @@ const pathnameMap = {
     moduleName: 'saksopplysninger-oppfriskning-status',
     get: {
       pathname: '/saksopplysninger/oppfriskning/:behandlingID/status',
-      params: { behandlingID: 4 },
-    },
-  },
-  soknader: {
-    moduleName: 'soknader',
-    get: {
-      pathname: '/soknader/:behandlingID',
-      params: { behandlingID: 4 },
-    },
-    post: {
-      pathname: '/soknader/:behandlingID',
       params: { behandlingID: 4 },
     },
   },
