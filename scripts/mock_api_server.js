@@ -11,6 +11,7 @@ const logging = require('./utils/logging');
 const Anmodningsperioder = require('./modules/anmodningsperioder');
 const Avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
+const Behandlingsgrunnlag = require('./modules/behandlingsgrunnlag');
 const Dokumenter = require('./modules/dokumenter');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
@@ -22,7 +23,6 @@ const Organisasjoner = require('./modules/organisasjoner');
 const Personer = require('./modules/personer');
 const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
-const Soknader = require('./modules/soknader');
 const Saksflyt = require('./modules/saksflyt');
 const Utpekingsperioder = require('./modules/utpekingsperioder');
 const Vilkaar = require('./modules/vilkaar');
@@ -223,15 +223,15 @@ router.get('/saksopplysninger/oppfriskning/:behandlingID/status', Saksopplysning
 router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
 
 /**
- * SOKNADER
+ * BEHANDLINGSGRUNNLAG
  * ----------------------------------------------------------
  * Endpoint for søknaden, enten den registreres manuelt eller kommer inn elektronisk.
- * GET /soknader Returnerer evt. tidligere registrerte data fra søknaden eller elektronisk søknad.
- * POST /soknader Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
+ * GET /behandlingsgrunnlag Returnerer evt. tidligere registrerte data fra søknaden eller elektronisk søknad.
+ * POST /behandlingsgrunnlag Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/soknader/:behandlingID', Soknader.hent);
-router.post('/soknader/:behandlingID', Soknader.send);
+router.get('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.hent);
+router.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
 
 /**
  * VILKÅR
