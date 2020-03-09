@@ -1,11 +1,11 @@
 const Katalog = require('../katalog');
-const { moduleName } = Katalog.pathnameMap.soknader;
+const { moduleName } = Katalog.pathnameMap.behandlingsgrunnlag;
 const SchemaValidator  = require('../utils/schemavalidator');
 
 const Mock = require('../utils/mock-util');
 
 /**
- * Hent soknad
+ * Hent behandlingsgrunnlag
  * @param req
  * @param res
  * @returns {*}
@@ -16,14 +16,14 @@ module.exports.hent = async (req, res) => {
     return Mock.manglerParamBehandlingsID(req, res);
   }
   const mockpathObject = {
-    pathname: 'soknad-bid-:behandlingID',
+    pathname: 'behandlingsgrunnlag-bid-:behandlingID',
     params: {behandlingID},
   };
   return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
 
 /**
- * Send soknad
+ * Send behandlingsgrunnlag
  * @param req
  * @param res
  * @returns {*}
