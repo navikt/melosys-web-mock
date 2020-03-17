@@ -81,3 +81,5 @@ module.exports.manglerParamProduserbartDokument = (req, res) => badRequestParam(
 
 module.exports.manglerParamDokumentID = (req, res) => badRequestParam(req, res, 'DokumentID mangler');
 module.exports.manglerParamJuridiskOrgnr = (req, res) => badRequestParam(req, res, 'Juridisk Orgnr mangler');
+
+module.exports.manglerParamNotatID = (req, res) => badRequestParam(req, res, 'NotatID mangler');

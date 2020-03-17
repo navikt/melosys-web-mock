@@ -144,6 +144,10 @@ router.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggV
 router.post('/fagsaker/:saksnummer/utpek', Fagsaker.fagsak.utpek.send);
 router.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
 
+router.get('/fagsaker/:saksnummer/notater', Fagsaker.notater.hent);
+router.post('/fagsaker/:saksnummer/notater', Fagsaker.notater.send);
+router.put('/fagsaker/:saksnummer/notater/:notatid', Fagsaker.notater.put);
+
 router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
 router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
 router.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slett);
