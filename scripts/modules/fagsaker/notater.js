@@ -28,7 +28,6 @@ module.exports.opprettNotat = (req, res) => {
     registrertDato: "2019-04-23T10:02:52.031Z",
     endretDato: "2019-04-23T10:58:23.899Z",
     registrertAvNavn: "LILLA HEST",
-    sistEndretAvNavn: "LILLA HEST",
     behandlingstypeKode: "SOEKNAD"
   };
 
@@ -51,7 +50,6 @@ module.exports.oppdaterNotat = (req, res) => {
     registrertDato: "2019-04-23T10:02:52.031Z",
     endretDato: "2019-04-30T10:58:23.899Z",
     registrertAvNavn: "LILLA HEST",
-    sistEndretAvNavn: "LILLA HEST",
     behandlingstypeKode: "SOEKNAD"
   };
 
