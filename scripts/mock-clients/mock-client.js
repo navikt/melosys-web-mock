@@ -5,20 +5,20 @@ const Katalog = require('../katalog');
 const Utils = require('../utils/utils');
 const client = httpClient();
 
-const lesMockPostDoc = async dirname => {
-  const POST_MOCK_DIR = `${MOCK_DATA_DIR}/${dirname}/post`;
+const lesMockDoc = async (dirname, verb) => {
+  const MOCK_DIR = `${MOCK_DATA_DIR}/${dirname}/${verb}`;
   try {
-    const exists = await Utils.existsAsync(POST_MOCK_DIR);
+    const exists = await Utils.existsAsync(MOCK_DIR);
     if (!exists) {
-      console.log('Invalid file path:', POST_MOCK_DIR);
+      console.log('Invalid file path:', MOCK_DIR);
       return {};
     }
-    const filenames = await Utils.readDirSync(POST_MOCK_DIR);
-    const mockfile = `${POST_MOCK_DIR}/${filenames[0]}`;
+    const filenames = await Utils.readDirSync(MOCK_DIR);
+    const mockfile = `${MOCK_DIR}/${filenames[0]}`;
     return await Utils.readJsonAndParseAsync(mockfile);
   }
   catch (e) {
-    console.log('Reading POST directory failed', e);
+    console.log(`Reading ${verb} directory failed`, e);
   }
 };
 
@@ -44,7 +44,10 @@ const testAll = async (verb, oppsummering) => {
         url: pathname,
       };
       if (VERB === 'POST') {
-        config.data = await lesMockPostDoc(endepunkt.moduleName);
+        config.data = await lesMockDoc(endepunkt.moduleName, 'post');
+      }
+      if(VERB === 'PUT') {
+        config.data = await lesMockDoc(endepunkt.moduleName, 'put');
       }
       try {
         await client(config).then(reportResult).catch(reportError);
