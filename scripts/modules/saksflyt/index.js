@@ -15,7 +15,7 @@ module.exports = {
   },
   unntaksperioder: {
     anmodning: {put: anmodning},
-    godkjenn: {put: godkjenn},
+    godkjenn: {send: godkjenn},
     innhentinfo: {put: innhentinfo},
     ikkegodkjenn: {send: ikkegodkjenn},
   },

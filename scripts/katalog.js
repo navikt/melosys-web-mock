@@ -341,7 +341,7 @@ const pathnameMap = {
   } ,
   'saksflyt-unntaksperioder-godkjenn': {
     moduleName: 'saksflyt-unntaksperioder-godkjenn',
-    put: {
+    post: {
       pathname: '/saksflyt/unntaksperioder/:behandlingID/godkjenn',
       params: { behandlingID: 4 },
     },

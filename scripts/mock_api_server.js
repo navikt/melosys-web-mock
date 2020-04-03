@@ -211,7 +211,7 @@ router.get('/saksbehandler', Saksbehandler.hent);
  */
 router.post('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.post);
 router.put('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.put);
-router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.put);
+router.post('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.send);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
 router.post('/saksflyt/vedtak/:behandlingID/fatt', Saksflyt.vedtak.fatt.send);
