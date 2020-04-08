@@ -6,7 +6,7 @@ module.exports.sendPlukk = async (req, res) => {
 
   const customResponse = {
     oppgaveID: "123456789",
-    behandlingstype: "SOEKNAD",
+    behandlingstema: "UTSENDT_ARBEIDSTAKER",
     saksnummer: "4",
     journalpostID: "DOK_123",
     behandlingID: 4,
