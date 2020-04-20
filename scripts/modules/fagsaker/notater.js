@@ -28,7 +28,8 @@ module.exports.opprettNotat = (req, res) => {
     registrertDato: "2019-04-23T10:02:52.031Z",
     endretDato: "2019-04-23T10:58:23.899Z",
     registrertAvNavn: "LILLA HEST",
-    behandlingstypeKode: "SOEKNAD"
+    behandlingstypeKode: "SOEKNAD",
+    behandlingstemaKode: "UTSENDT_ARBEIDSTAKER"
   };
 
   SchemaValidator.post(moduleName, req, res, customResponse);
@@ -50,7 +51,8 @@ module.exports.oppdaterNotat = (req, res) => {
     registrertDato: "2019-04-23T10:02:52.031Z",
     endretDato: "2019-04-30T10:58:23.899Z",
     registrertAvNavn: "LILLA HEST",
-    behandlingstypeKode: "SOEKNAD"
+    behandlingstypeKode: "SOEKNAD",
+    behandlingstemaKode: "UTSENDT_ARBEIDSTAKER"
   };
 
   SchemaValidator.put(moduleName, req, res, customResponse);
