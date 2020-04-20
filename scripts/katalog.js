@@ -210,6 +210,13 @@ const pathnameMap = {
       pathname: '/fagsaker/opprett',
     },
   },
+  'fagsaker-revurder': {
+    moduleName: 'fagsaker-revurder',
+    post: {
+      pathname: '/fagsaker/:saksnummer/revurder',
+      params: { saksnummer: 4 },
+    },
+  },
   'fagsaker-sok': {
     moduleName: 'fagsaker-sok',
     get: {
@@ -378,13 +385,6 @@ const pathnameMap = {
     moduleName: 'saksflyt-vedtak-endre',
     post: {
       pathname: '/saksflyt/vedtak/:behandlingID/endre',
-      params: { behandlingID: 4 },
-    },
-  },
-  'saksflyt-vedtak-revurder': {
-    moduleName: 'saksflyt-vedtak-revurder',
-    post: {
-      pathname: '/saksflyt/vedtak/:behandlingID/revurder',
       params: { behandlingID: 4 },
     },
   },
