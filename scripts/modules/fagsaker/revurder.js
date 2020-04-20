@@ -11,5 +11,5 @@ module.exports.revurder = (req, res) => {
     return Mock.manglerParamSaksnummer(req, res);
   }
 
-  SchemaValidator.post(moduleName, req, res, { saksnummer: 12 });
+  SchemaValidator.post(moduleName, req, res, { behandlingID: 12 });
 };
