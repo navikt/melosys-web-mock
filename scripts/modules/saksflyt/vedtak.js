@@ -30,19 +30,3 @@ module.exports.endre = (req, res) => {
   }
   SchemaValidator.post(moduleName, req, res);
 };
-
-/**
- * revurder
- * @param req
- * @param res
- */
-module.exports.revurder = (req, res) => {
-  const { moduleName } = Katalog.pathnameMap['saksflyt-vedtak-revurder'];
-
-  const { behandlingID } = req.params;
-  if (!behandlingID) {
-    return Mock.manglerParamBehandlingsID(req, res);
-  }
-
-  SchemaValidator.post(moduleName, req, res, { behandlingID: 12 });
-};
