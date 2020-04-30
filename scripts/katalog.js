@@ -395,13 +395,6 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
-  'saksopplysninger-oppfriskning-status': {
-    moduleName: 'saksopplysninger-oppfriskning-status',
-    get: {
-      pathname: '/saksopplysninger/oppfriskning/:behandlingID/status',
-      params: { behandlingID: 4 },
-    },
-  },
   utpekingsperioder: {
     moduleName: 'utpekingsperioder',
     get: {
