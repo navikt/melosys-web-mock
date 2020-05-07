@@ -143,6 +143,7 @@ router.put('/fagsaker/:saksnummer/avslutt', Fagsaker.fagsak.avslutt.put);
 router.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.send);
 router.post('/fagsaker/:saksnummer/utpek', Fagsaker.fagsak.utpek.send);
 router.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
+router.post('/fagsaker/:saksnummer/revurder', Fagsaker.fagsak.revurder.send);
 
 router.get('/fagsaker/:saksnummer/notater', Fagsaker.notater.hent);
 router.post('/fagsaker/:saksnummer/notater', Fagsaker.notater.send);
@@ -211,12 +212,11 @@ router.get('/saksbehandler', Saksbehandler.hent);
  */
 router.post('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.post);
 router.put('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.put);
-router.put('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.put);
+router.post('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.send);
 router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
 router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
 router.post('/saksflyt/vedtak/:behandlingID/fatt', Saksflyt.vedtak.fatt.send);
 router.post('/saksflyt/vedtak/:behandlingID/endre', Saksflyt.vedtak.endre.send);
-router.post('/saksflyt/vedtak/:behandlingID/revurder', Saksflyt.vedtak.revurder.send);
 router.post('/saksflyt/utpeking/:behandlingID/avvis', Saksflyt.utpeking.avvis.send);
 
 /**

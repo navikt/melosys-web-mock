@@ -11,13 +11,13 @@ module.exports.anmodning = async (req, res) => {
   SchemaValidator.put204(moduleName, req, res);
 };
 
-// [PUT] '/saksflyt/unntaksperioder/:behandlingID/godkjenn'
+// [POST] '/saksflyt/unntaksperioder/:behandlingID/godkjenn'
 module.exports.godkjenn = async (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) return Mock.manglerParamBehandlingsID(req, res);
 
   const { moduleName } = Katalog.pathnameMap['saksflyt-unntaksperioder-godkjenn'];
-  return SchemaValidator.put204(moduleName, req, res);
+  return SchemaValidator.post204(moduleName, req, res);
 };
 
 // [PUT] '/saksflyt/unntaksperioder/:behandlingID/innhentinfo'

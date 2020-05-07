@@ -6,6 +6,7 @@ const { sokFagsak }  = require('./sok');
 const { hentKontaktopplysninger, sendKontaktopplysninger, slettKontaktopplysninger } = require('./kontaktopplysninger');
 const { opprett } = require('./opprett');
 const { utpek } = require('./utpek');
+const { revurder } = require('./revurder');
 
 module.exports = {
   fagsak: {
@@ -15,6 +16,7 @@ module.exports = {
     avslutt: { put: avslutt },
     henleggVideresend: { send: henleggVideresend },
     opprett: { send: opprett },
+    revurder: { send: revurder },
     utpek: { send: utpek },
   },
   aktoer: { hent: hentAktoerer, send: sendAktoer, slett: slettAktoer },
