@@ -12,7 +12,7 @@ module.exports.oppfrisk = async (req, res) => {
     if (!behandlingID) {
       return Mock.manglerParamBehandlingsID(req, res);
     }
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 1500));
     return res.status(204).send();
   } catch (err) {
     Mock.serverError(req, res, err);

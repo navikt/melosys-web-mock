@@ -11,7 +11,7 @@ module.exports.httpClient = () => {
   axios.defaults.headers.put['Content-Type'] = 'text/plain';
   return axios.create({
     baseURL: `${API_BASE_URL}`,
-    timeout: 1000,
+    timeout: 2000,
     proxy: false,
   });
 };
