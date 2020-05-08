@@ -105,7 +105,7 @@ const pathnameMap = {
   },
   'dokumenter-pdf-utkast-sed': {
     moduleName: 'dokumenter-pdf-utkast-sed',
-    get: {
+    post: {
       pathname: '/dokumenter/pdf/sed/utkast/:behandlingID/:sedType',
       params: { behandlingID: 4, sedType: 'A001' },
     }

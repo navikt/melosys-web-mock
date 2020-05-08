@@ -18,5 +18,5 @@ module.exports.sedPdf = (req, res) => {
   }
 
   const pdfmockfile = `${MOCK_DOKUMENTER_DATA_DIR}/SED_A001.pdf`;
-  SchemaValidator.getPDF(moduleName, req, res, pdfmockfile);
+  SchemaValidator.postSendPDF(moduleName, req, res, pdfmockfile);
 };
