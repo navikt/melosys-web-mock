@@ -223,7 +223,6 @@ router.post('/saksflyt/utpeking/:behandlingID/avvis', Saksflyt.utpeking.avvis.se
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfriskning/:behandlingID/status', Saksopplysninger.oppfriskning.status.hent);
 router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
 
 /**

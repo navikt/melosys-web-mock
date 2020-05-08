@@ -1,5 +1,5 @@
-const { oppfrisk, status}  = require('./oppfriskning');
+const { oppfrisk }  = require('./oppfriskning');
 
 module.exports = {
-  oppfriskning: { hent: oppfrisk, status: {hent: status} },
+  oppfriskning: { hent: oppfrisk },
 };
