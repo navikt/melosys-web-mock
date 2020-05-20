@@ -48,7 +48,7 @@ module.exports.send = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  if (req.body.includes(MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR)) {
+  if (req.body.find(enkeltVilkaar => enkeltVilkaar.vilkaar === MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR)) {
     return Mock.forsokerAaSkriveTilInngangsvilkaar(req, res);
   }
 
