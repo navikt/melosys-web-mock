@@ -83,3 +83,5 @@ module.exports.manglerParamDokumentID = (req, res) => badRequestParam(req, res, 
 module.exports.manglerParamJuridiskOrgnr = (req, res) => badRequestParam(req, res, 'Juridisk Orgnr mangler');
 
 module.exports.manglerParamNotatID = (req, res) => badRequestParam(req, res, 'NotatID mangler');
+
+module.exports.forsokerAaSkriveTilInngangsvilkaar = (req, res) => badRequestParam(req, res, 'Inngangsvilkaar er read-only');

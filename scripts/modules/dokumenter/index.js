@@ -14,7 +14,7 @@ module.exports = {
       utkast: { send: utkast }
     },
     sed: {
-      utkast: { hent: sedPdf }
+      utkast: { send: sedPdf }
     },
     hent,
   }

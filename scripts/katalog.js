@@ -105,7 +105,7 @@ const pathnameMap = {
   },
   'dokumenter-pdf-utkast-sed': {
     moduleName: 'dokumenter-pdf-utkast-sed',
-    get: {
+    post: {
       pathname: '/dokumenter/pdf/sed/utkast/:behandlingID/:sedType',
       params: { behandlingID: 4, sedType: 'A001' },
     }
@@ -392,13 +392,6 @@ const pathnameMap = {
     moduleName: 'saksopplysninger-oppfriskning',
     get: {
       pathname: '/saksopplysninger/oppfriskning/:behandlingID',
-      params: { behandlingID: 4 },
-    },
-  },
-  'saksopplysninger-oppfriskning-status': {
-    moduleName: 'saksopplysninger-oppfriskning-status',
-    get: {
-      pathname: '/saksopplysninger/oppfriskning/:behandlingID/status',
       params: { behandlingID: 4 },
     },
   },
