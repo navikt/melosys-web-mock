@@ -21,7 +21,7 @@ module.exports = {
   },
   aktoer: { hent: hentAktoerer, send: sendAktoer, slett: slettAktoer },
   notater: { hent: hentNotater, send: opprettNotat, put: oppdaterNotat },
-  sok: { hent: sokFagsak },
+  sok: { send: sokFagsak },
   kontaktopplysninger: {
     hent: hentKontaktopplysninger,
     send: sendKontaktopplysninger,

@@ -134,7 +134,7 @@ router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  */
-router.get('/fagsaker/sok/', Fagsaker.sok.hent);
+router.post('/fagsaker/sok', Fagsaker.sok.send);
 
 router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
 router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
