@@ -219,9 +219,12 @@ const pathnameMap = {
   },
   'fagsaker-sok': {
     moduleName: 'fagsaker-sok',
-    get: {
-      pathname: '/fagsaker/sok/?fnr=17117802280',
-      params: {},
+    post: {
+      pathname: '/fagsaker/sok',
+      params: {
+        ident: 17117802280,
+        saksnummer: 4,
+      },
     },
   },
   'fagsaker-utpek': {
