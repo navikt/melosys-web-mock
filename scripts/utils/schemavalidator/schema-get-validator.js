@@ -15,7 +15,7 @@ module.exports.get = async (moduleName, req, res, pathObject = {}) => {
     return res.json(data);
   }
   catch(err) {
-    Mock.serverError(req, res, err);
+    Mock.notFound(req, res, err);
   }
 };
 
