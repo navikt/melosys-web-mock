@@ -398,6 +398,12 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  statistikk: {
+    moduleName: 'statistikk',
+    get: {
+      pathname: '/statistikk',
+    },
+  },
   utpekingsperioder: {
     moduleName: 'utpekingsperioder',
     get: {

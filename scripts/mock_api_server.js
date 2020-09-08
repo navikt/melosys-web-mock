@@ -24,6 +24,7 @@ const Personer = require('./modules/personer');
 const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Saksflyt = require('./modules/saksflyt');
+const Statistikk = require('./modules/statistikk');
 const Utpekingsperioder = require('./modules/utpekingsperioder');
 const Vilkaar = require('./modules/vilkaar');
 
@@ -224,6 +225,11 @@ router.post('/saksflyt/utpeking/:behandlingID/avvis', Saksflyt.utpeking.avvis.se
  * ---------------------------------------------------------------
  */
 router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
+
+/**
+ * STATISTIKK
+ */
+router.get('/statistikk', Statistikk.hent);
 
 /**
  * BEHANDLINGSGRUNNLAG
