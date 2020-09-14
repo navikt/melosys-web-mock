@@ -2,7 +2,7 @@ const Mock = require('../../utils/mock-util');
 const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
 
-const { moduleName } = Katalog.pathnameMap["behandlinger"];
+const { moduleName } = Katalog.pathnameMap["behandlinger-behandling"];
 
 module.exports.hentBehandling = async (req, res) => {
   const { behandlingID } = req.params;

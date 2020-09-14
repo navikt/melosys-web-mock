@@ -32,8 +32,8 @@ const pathnameMap = {
       params: { behandlingID: 3 },
     },
   },
-  behandlinger: {
-    moduleName: 'behandlinger',
+  'behandlinger-behandling': {
+    moduleName: 'behandlinger-behandling',
     get: {
       pathname: '/behandlinger/:behandlingID',
       params: { behandlingID: 4 },
