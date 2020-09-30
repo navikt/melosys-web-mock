@@ -1,6 +1,10 @@
 # melosys-web-mock
 Mock-api av https://github.com/navikt/melosys-api for lokal testing/kjøring av https://github.com/navikt/melosys-web.
 
+## Autentisering til github packages
+Github packages krever et token ved npm install. Det kan settes slik:
+https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages#authenticating-to-github-packages
+
 ## Kjøring
 ```
 npm install
