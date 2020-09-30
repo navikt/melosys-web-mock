@@ -1,5 +1,5 @@
 # melosys-web-mock
-Melosys-web-mock er et mock-api av https://github.com/navikt/melosys-api for lokal testing/kjøring av https://github.com/navikt/melosys-web.
+Mock-api av https://github.com/navikt/melosys-api for lokal testing/kjøring av https://github.com/navikt/melosys-web.
 
 ### Kjøring
 ```
