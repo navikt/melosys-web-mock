@@ -102,6 +102,8 @@ router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
 router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
 router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
 router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
+router.get('/behandlinger/:behandlingID/muligeBehandlingstema', Behandlinger.endreBehandlingstema.hent);
+router.post('/behandlinger/:behandlingID/endreBehandlingstema', Behandlinger.endreBehandlingstema.send);
 
 /**
  * DOKUMENTER
