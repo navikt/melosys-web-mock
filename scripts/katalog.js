@@ -64,6 +64,17 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'behandlinger-endrebehandlingstema': {
+    moduleName: 'behandlinger-endrebehandlingstema',
+    get: {
+      pathname: '/behandlinger/:behandlingID/muligeBehandlingstema',
+      params: {behandlingID: 4},
+    },
+    post: {
+      pathname: '/behandlinger/:behandlingID/endreBehandlingstema',
+      params: {behandlingID: 4},
+    },
+  },
   behandlingsgrunnlag: {
     moduleName: 'behandlingsgrunnlag',
     get: {

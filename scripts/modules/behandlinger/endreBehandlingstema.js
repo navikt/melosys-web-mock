@@ -1,15 +1,16 @@
-const SchemaValidator  = require('../../utils/schemavalidator');
 const Mock = require('../../utils/mock-util');
+const SchemaValidator  = require('../../utils/schemavalidator');
 const Katalog = require('../../katalog');
-const { moduleName } = Katalog.pathnameMap["behandlinger-tidligeremedlemsperioder"];
+const { moduleName } = Katalog.pathnameMap["behandlinger-endrebehandlingstema"];
 
-module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
+
+module.exports.hentMuligeBehandlingstema = async (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
   const mockpathObject = {
-    pathname: 'medlemsperioder-bid-:behandlingID',
+    pathname: 'muligebehandlingstema-bid-:behandlingID',
     params: {behandlingID},
   };
   return SchemaValidator.get(moduleName, req, res, mockpathObject);
@@ -21,7 +22,7 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.settTidligereMedlemsPerioder = (req, res) => {
+module.exports.endreBehandlingstema = (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);

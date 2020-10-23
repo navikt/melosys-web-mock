@@ -13,5 +13,5 @@ module.exports.hentBehandling = async (req, res) => {
     pathname: 'behandling-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaValidator.get(moduleName, req, res, pathObject );
+  return SchemaValidator.get(moduleName, req, res, pathObject);
 };
