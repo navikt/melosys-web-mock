@@ -12,7 +12,7 @@ module.exports.hentTidligereMedlemsPerioder = async (req, res) => {
     pathname: 'medlemsperioder-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaValidator.get(moduleName, req, res, mockpathObject );
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
 
 /**

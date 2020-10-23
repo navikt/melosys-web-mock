@@ -13,7 +13,7 @@ module.exports.hentMuligeBehandlingstema = async (req, res) => {
     pathname: 'muligebehandlingstema-bid-:behandlingID',
     params: {behandlingID},
   };
-  return SchemaValidator.get(moduleName, req, res, mockpathObject );
+  return SchemaValidator.get(moduleName, req, res, mockpathObject);
 };
 
 /**
