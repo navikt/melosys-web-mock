@@ -1,4 +1,4 @@
-const MKV = require('melosys-kodeverk');
+const MKV = require('@navikt/melosys-kodeverk');
 const Utils = require('../../../utils/utils');
 const ERR = require('../../../utils/errors');
 const Mock = require('../../../utils/mock-util');

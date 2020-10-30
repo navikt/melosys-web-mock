@@ -1,4 +1,4 @@
-const MKV = require('melosys-kodeverk');
+const MKV = require('@navikt/melosys-kodeverk');
 
 const Mock = require('../utils/mock-util');
 const { MOCK_DATA_DIR } = require('../../mock.config');

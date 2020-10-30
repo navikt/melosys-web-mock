@@ -1,4 +1,4 @@
-const MKV = require('melosys-kodeverk');
+const MKV = require('@navikt/melosys-kodeverk');
 
 const erGyldigMottakerKode = mottaker => Object.values(MKV.Koder.aktoersroller).includes(mottaker);
 const erGyldigProduserbartDokumentKode = produserbartDokument => Object.values(MKV.Koder.brev.produserbaredokumenter).includes(produserbartDokument);
