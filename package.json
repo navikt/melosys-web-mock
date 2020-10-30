@@ -23,7 +23,7 @@
     "jsonpath-plus": "^0.20.1",
     "lodash": "^4.17.15",
     "log4js": "^5.1.0",
-    "melosys-kodeverk": "^5.12.24",
+    "@navikt/melosys-kodeverk": "^5.15.45",
     "moment": "^2.24.0",
     "node-cache": "^4.2.1",
     "node-emoji": "^1.10.0",
