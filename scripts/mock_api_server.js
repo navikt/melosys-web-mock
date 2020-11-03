@@ -15,6 +15,7 @@ const Behandlingsgrunnlag = require('./modules/behandlingsgrunnlag');
 const Dokumenter = require('./modules/dokumenter');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
+const FeatureToggle = require('./modules/featuretoggle');
 const Inngangsvilkaar = require('./modules/inngangsvilkaar');
 const Journalforing = require('./modules/journalforing');
 const Lovvalgsperioder = require('./modules/lovvalgsperioder');
@@ -159,6 +160,12 @@ router.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slett);
 router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
 router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
 router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
+
+/**
+ * FEATURETOGGLE
+ * ----------------------------------------------------------
+ */
+router.get('/featuretoggle', FeatureToggle.hent);
 
 /**
  * INNGANGSVILKAAR (Første steg i STEGVELGEREN)
