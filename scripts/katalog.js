@@ -277,6 +277,19 @@ const pathnameMap = {
       pathname: '/journalforing/tilordne',
     },
   },
+  'kodeverk-melosys-internt-folketrygden': {
+    moduleName: 'kodeverk-melosys-internt-folketrygden',
+    get: {
+      pathname: '/kodeverk/melosys-internt/folketrygden',
+    },
+  },
+  'kodeverk-nav-felles-hentkodeverk': {
+    moduleName: 'kodeverk-nav-felles-hentkodeverk',
+    get: {
+      pathname: '/kodeverk/nav-felles/:kodeverknavn',
+      params: { kodeverknavn: 'LANDKODERISO2' },
+    },
+  },
   lovvalgsperioder: {
     moduleName: 'lovvalgsperioder',
     get: {

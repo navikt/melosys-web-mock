@@ -18,6 +18,7 @@ const Fagsaker = require('./modules/fagsaker');
 const FeatureToggle = require('./modules/featuretoggle');
 const Inngangsvilkaar = require('./modules/inngangsvilkaar');
 const Journalforing = require('./modules/journalforing');
+const Kodeverk = require('./modules/kodeverk');
 const Lovvalgsperioder = require('./modules/lovvalgsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const Organisasjoner = require('./modules/organisasjoner');
@@ -182,6 +183,12 @@ router.post('/journalforing/opprett', Journalforing.opprett.send);
 router.post('/journalforing/sed', Journalforing.sed.send);
 router.post('/journalforing/tilordne', Journalforing.tilordne.send);
 
+/**
+ * KODEVERK
+ * ---------------------------------------------------------------
+ */
+router.get('/kodeverk/nav-felles/:kodeverknavn', Kodeverk.hentKodeverk);
+router.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.navFelles.folketrygden);
 /**
  * LOVVALGSPERIODER
  * ---------------------------------------------------------------
