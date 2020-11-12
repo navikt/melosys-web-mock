@@ -85,3 +85,10 @@ module.exports.manglerParamJuridiskOrgnr = (req, res) => badRequestParam(req, re
 module.exports.manglerParamNotatID = (req, res) => badRequestParam(req, res, 'NotatID mangler');
 
 module.exports.forsokerAaSkriveTilInngangsvilkaar = (req, res) => badRequestParam(req, res, 'Inngangsvilkaar er read-only');
+/**
+ * manglerParamKodeverknavn
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+module.exports.manglerParamKodeverknavn = (req, res) => badRequestParam(req, res, 'Mangler kodeverknavn');
