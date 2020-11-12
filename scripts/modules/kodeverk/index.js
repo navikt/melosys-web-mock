@@ -3,7 +3,7 @@ const { hentKodeverk} = require('./nav-felleskodeverk');
 
 
 module.exports = {
-  hentKodeverk,
-  navFelles: { folketrygden: hentFolketrygden },
+  navFelles: { hentKodeverk },
+  melosysInternt: { folketrygden: hentFolketrygden },
 
 };

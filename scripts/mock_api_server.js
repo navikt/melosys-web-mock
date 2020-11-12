@@ -187,8 +187,8 @@ router.post('/journalforing/tilordne', Journalforing.tilordne.send);
  * KODEVERK
  * ---------------------------------------------------------------
  */
-router.get('/kodeverk/nav-felles/:kodeverknavn', Kodeverk.hentKodeverk);
-router.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.navFelles.folketrygden);
+router.get('/kodeverk/nav-felles/:kodeverknavn', Kodeverk.navFelles.hentKodeverk);
+router.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.melosysInternt.folketrygden);
 /**
  * LOVVALGSPERIODER
  * ---------------------------------------------------------------
