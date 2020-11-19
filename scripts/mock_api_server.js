@@ -92,8 +92,10 @@ router.post('/utpekingsperioder/:behandlingID', Utpekingsperioder.send);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/avklartefakta/:behandlingID', Avklartefakta.hent);
-router.post('/avklartefakta/:behandlingID', Avklartefakta.send);
+router.get('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.hent);
+router.post('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.send);
+router.get('/avklartefakta/:behandlingID/oppsummering', Avklartefakta.oppsummering.hent);
+router.post('/avklartefakta/:behandlingID/virksomheter', Avklartefakta.virksomhet.send);
 
 /**
  * BEHANDLINGER
