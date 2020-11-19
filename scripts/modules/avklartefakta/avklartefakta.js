@@ -1,8 +1,8 @@
-const Mock = require('../utils/mock-util');
-const Katalog = require('../katalog');
+const Mock = require('../../utils/mock-util');
+const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap.avklartefakta;
 
-const SchemaValidator = require('../utils/schemavalidator');
+const SchemaValidator = require('../../utils/schemavalidator');
 
 /**
  * Hent faktavklaring
@@ -10,7 +10,7 @@ const SchemaValidator = require('../utils/schemavalidator');
  * @param res
  * @returns {*}
  */
-module.exports.hent = async (req, res) => {
+module.exports.hentAvklartefakta = async (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
@@ -29,6 +29,6 @@ module.exports.hent = async (req, res) => {
  * @param res
  * @returns {*}
  */
-module.exports.send = (req, res) => {
+module.exports.sendAvklartefakta = (req, res) => {
   SchemaValidator.post(moduleName, req, res);
 };
