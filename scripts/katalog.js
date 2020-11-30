@@ -325,19 +325,19 @@ const pathnameMap = {
   'medlemskapsperioder': {
     moduleName: 'medlemskapsperioder',
     get: {
-      pathname: '/behandlinger/{behandlingID}/medlemskapsperioder',
+      pathname: '/behandlinger/:behandlingID/medlemskapsperioder',
       params: { behandlingID: 2 },
     },
     post: {
-      pathname: '/behandlinger/{behandlingID}/medlemskapsperioder',
+      pathname: '/behandlinger/:behandlingID/medlemskapsperioder',
       params: { behandlingID: 2 },
     },
     put: {
-      pathname: '/behandlinger/{behandlingID}/medlemskapsperioder/{medlemskapsperiodeID}',
+      pathname: '/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID',
       params: { behandlingID: 2, medlemskapsperiodeID: 2 },
     },
     delete: {
-      pathname: '/behandlinger/{behandlingID}/medlemskapsperioder/{medlemskapsperiodeID}',
+      pathname: '/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID',
       params: { behandlingID: 2, medlemskapsperiodeID: 2 },
     },
   },
@@ -347,7 +347,7 @@ const pathnameMap = {
       pathname: '/behandlinger/medlemskapsperioder/bestemmelser',
     },
     post: {
-      pathname: '/behandlinger/{behandlingID}/medlemskapsperioder/bestemmelser',
+      pathname: '/behandlinger/:behandlingID/medlemskapsperioder/bestemmelser',
       params: { behandlingID: 2},
     },
   },
