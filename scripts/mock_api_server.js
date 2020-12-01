@@ -20,6 +20,7 @@ const Inngangsvilkaar = require('./modules/inngangsvilkaar');
 const Journalforing = require('./modules/journalforing');
 const Kodeverk = require('./modules/kodeverk');
 const Lovvalgsperioder = require('./modules/lovvalgsperioder');
+const Medlemskapsperioder = require('./modules/medlemskapsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const Organisasjoner = require('./modules/organisasjoner');
 const Personer = require('./modules/personer');
@@ -198,7 +199,16 @@ router.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.melosysInternt.fol
 router.get('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.hent);
 router.post('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.send);
 router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.opprinnelig.hent);
-
+/**
+ * MEDLEMSKAPSPERIODER
+ * ---------------------------------------------------------------
+ */
+router.get('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.hent);
+router.post('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.post);
+router.put('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.put);
+router.delete('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.delete);
+router.get('/behandlinger/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.hent);
+router.post('/behandlinger/:behandlingID/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.opprettMedlemskap);
 /**
  * OPPGAVER
  * ---------------------------------------------------------------

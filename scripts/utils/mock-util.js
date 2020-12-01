@@ -92,3 +92,10 @@ module.exports.forsokerAaSkriveTilInngangsvilkaar = (req, res) => badRequestPara
  * @returns {*}
  */
 module.exports.manglerParamKodeverknavn = (req, res) => badRequestParam(req, res, 'Mangler kodeverknavn');
+/**
+ * manglerParamMedlemskapsperiodeID
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+module.exports.manglerParamMedlemskapsperiodeID = (req, res) => badRequestParam(req, res, 'MedlemskapsperiodeID mangler');
