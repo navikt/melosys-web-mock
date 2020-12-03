@@ -22,8 +22,18 @@ module.exports.postMedlemskapsperiode = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
+  const customResponse = {
+    id: 6,
+    arbeidsland: "US",
+    fomDato: req.body.fomDato,
+    tomDato: req.body.tomDato,
+    bestemmelse: "FTRL_KAP2_2_8_FØRSTE_LEDD_A",
+    innvilgelsesResultat: req.body.innvilgelsesResultat,
+    trygdedekning: req.body.trygdedekning,
+    medlemskapstype: "FRIVILLIG",
+  };
 
-  return SchemaValidator.post(moduleName, req, res);
+  return SchemaValidator.post(moduleName, req, res, customResponse);
 };
 
 module.exports.putMedlemskapsperiode = async (req, res) => {

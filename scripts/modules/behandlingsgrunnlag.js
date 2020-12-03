@@ -33,6 +33,11 @@ module.exports.send = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaValidator.post(moduleName, req, res);
+  const mockpathObject = {
+    pathname: 'behandlingsgrunnlag-bid-:behandlingID',
+    params: {behandlingID},
+  };
+
+  SchemaValidator.postFromFile(moduleName, req, res, mockpathObject, moduleName);
 };
 
