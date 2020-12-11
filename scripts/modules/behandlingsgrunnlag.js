@@ -33,6 +33,14 @@ module.exports.send = async (req, res) => {
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
-  SchemaValidator.post(moduleName, req, res);
+
+  const customObject = {
+    mottaksdato: "2020-03-10",
+    data: {
+      ...req.body.data
+    }
+  };
+
+  SchemaValidator.post(moduleName, req, res, customObject);
 };
 
