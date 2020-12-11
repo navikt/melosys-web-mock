@@ -471,6 +471,28 @@ const pathnameMap = {
       pathname: '/statistikk',
     },
   },
+  'trygdeavgift-beregning': {
+    moduleName: 'trygdeavgift-beregning',
+    get: {
+      pathname: '/behandlinger/:behandlingID/trygdeavgift/beregning',
+      params: { behandlingID: 4 },
+    },
+    put: {
+      pathname: '/behandlinger/:behandlingID/trygdeavgift/beregning',
+      params: { behandlingID: 4 },
+    },
+  },
+  'trygdeavgift-grunnlag': {
+    moduleName: 'trygdeavgift-grunnlag',
+    get: {
+      pathname: '/behandlinger/:behandlingID/trygdeavgift/grunnlag',
+      params: { behandlingID: 4 },
+    },
+    put: {
+      pathname: '/behandlinger/:behandlingID/trygdeavgift/grunnlag',
+      params: { behandlingID: 4 },
+    },
+  },
   utpekingsperioder: {
     moduleName: 'utpekingsperioder',
     get: {
