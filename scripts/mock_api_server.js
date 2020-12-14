@@ -28,6 +28,7 @@ const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Saksflyt = require('./modules/saksflyt');
 const Statistikk = require('./modules/statistikk');
+const Trygdeavgift = require('./modules/trygdeavgift');
 const Utpekingsperioder = require('./modules/utpekingsperioder');
 const Vilkaar = require('./modules/vilkaar');
 
@@ -258,6 +259,14 @@ router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppf
  * STATISTIKK
  */
 router.get('/statistikk', Statistikk.hent);
+
+/**
+ * TRYGDEAVGIFT
+ */
+router.get('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.hent);
+router.put('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.send);
+router.get('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.hent);
+router.put('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.send);
 
 /**
  * BEHANDLINGSGRUNNLAG
