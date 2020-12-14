@@ -23,5 +23,12 @@ module.exports.sendGrunnlag = async (req, res) => {
     return Mock.manglerParamBehandlingsID(req, res);
   }
 
-  return SchemaValidator.put(moduleName, req, res);
+  const custom = {
+    "lønnsforhold": req.body.lønnsforhold,
+    "trygdeavgiftsgrunnlagNorge": req.body.trygdeavgiftsgrunnlagNorge,
+    "trygdeavgiftsgrunnlagUtland": req.body.trygdeavgiftsgrunnlagUtland,
+    "vurderingTrygdeavgiftNorskInntekt": "NORSK_INNTEKT_INGEN_TRYGDEAVGIFT_NAV",
+    "vurderingTrygdeavgiftUtenlandskInntekt": "UTENLANDSK_INNTEKT_TRYGDEAVGIFT_NAV",
+  };
+  return SchemaValidator.put(moduleName, req, res, custom);
 };
