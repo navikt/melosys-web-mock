@@ -25,5 +25,5 @@ npm link
 ```
 I melosys-web-mock directory:
 ```
-npm link melosys-schema
+npm link @navikt/melosys-schema
 ```
