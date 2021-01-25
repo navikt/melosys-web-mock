@@ -98,6 +98,7 @@ router.get('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.hent);
 router.post('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.send);
 router.get('/avklartefakta/:behandlingID/oppsummering', Avklartefakta.oppsummering.hent);
 router.post('/avklartefakta/:behandlingID/virksomheter', Avklartefakta.virksomhet.send);
+router.post('/avklartefakta/:behandlingID/medfolgendeFamilie', Avklartefakta.medfolgendeFamilie.send);
 
 /**
  * BEHANDLINGER

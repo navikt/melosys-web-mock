@@ -46,6 +46,13 @@ const pathnameMap = {
       params: { behandlingID: 2 },
     }
   },
+  'avklartefakta-medfolgendefamilie' : {
+    moduleName: 'avklartefakta-medfolgendefamilie',
+    post: {
+      pathname: '/avklartefakta/:behandlingID/medfolgendeFamilie',
+      params: { behandlingID: 2 },
+    }
+  },
   'behandlinger-behandling': {
     moduleName: 'behandlinger-behandling',
     get: {

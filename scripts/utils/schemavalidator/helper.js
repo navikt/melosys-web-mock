@@ -2,6 +2,24 @@ const colors = require('colors/safe');
 const emoji = require('node-emoji');
 const Schema = require('../schema-util');
 const ERR = require('../errors');
+const Utils = require('../utils');
+const { pathObject2Filename } = require('../../utils/pathnames');
+const { MOCK_DATA_DIR } = require('../../../mock.config');
+
+module.exports.getFile = async (moduleName, pathObject = {}) => {
+  try {
+    const GET_DIR = `${MOCK_DATA_DIR}/${moduleName}`;
+    let mockfile = `${GET_DIR}/${moduleName}.json5`;
+    if (pathObject.pathname) {
+      const filename = pathObject2Filename(pathObject, '-');
+      mockfile = `${GET_DIR}/${filename}.json5`;
+    }
+    return await Utils.readJsonAndParseAsync(mockfile);
+  }
+  catch(err) {
+    console.error(err)
+  }
+};
 
 const humanReadableErrors = (allErrors = []) => {
   return allErrors.map(singleError => {
