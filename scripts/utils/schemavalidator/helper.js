@@ -5,6 +5,7 @@ const ERR = require('../errors');
 const Utils = require('../utils');
 const { pathObject2Filename } = require('../../utils/pathnames');
 const { MOCK_DATA_DIR } = require('../../../mock.config');
+const Mock = require('../../utils/mock-util');
 
 module.exports.getFile = async (moduleName, pathObject = {}) => {
   try {
@@ -18,6 +19,18 @@ module.exports.getFile = async (moduleName, pathObject = {}) => {
   }
   catch(err) {
     console.error(err)
+  }
+};
+
+module.exports.validate = (moduleName, req, res, schemaNavn, label) => {
+  try {
+    const body = req.body;
+    const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
+    const valid = test(label, schemaNavn, jsBody);
+    if (!valid) return valideringFeil(req, res);
+  }
+  catch(err) {
+    Mock.serverError(req, res, err);
   }
 };
 
