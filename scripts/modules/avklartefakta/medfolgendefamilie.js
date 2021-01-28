@@ -20,7 +20,7 @@ module.exports.sendMedfolgendeFamilie = async (req, res) => {
     params: {behandlingID},
   };
   let customResponse = await SchemaValidator.getFile(moduleName, mockpathObject);
-  customResponse = {...customResponse, medfolgendeFamilie: req.body};
+  customResponse = {...customResponse, medfolgendeFamilie: req.body.medfolgendeFamilie};
 
   return res.json(customResponse);
 };
