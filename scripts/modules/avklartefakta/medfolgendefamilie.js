@@ -10,7 +10,7 @@ module.exports.sendMedfolgendeFamilie = async (req, res) => {
     return Mock.manglerParamBehandlingsID(req, res);
   }
 
-  const moduleNameForValidering = "avklartefakta-medfolgendeFamilie";
+  const moduleNameForValidering = "avklartefakta-medfolgendefamilie";
   const schemaNavn = `${moduleNameForValidering}-post-schema.json`;
   const label = `${moduleNameForValidering}:send`;
   SchemaValidator.validateReqBody(moduleNameForValidering, req, res, schemaNavn, label);
