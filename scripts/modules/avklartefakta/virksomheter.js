@@ -13,7 +13,7 @@ module.exports.sendVirksomhet = async (req, res) => {
   const moduleNameForValidering = "avklartefakta-virksomheter";
   const schemaNavn = `${moduleNameForValidering}-post-schema.json`;
   const label = `${moduleNameForValidering}:send`;
-  SchemaValidator.validate(moduleNameForValidering, req, res, schemaNavn, label);
+  SchemaValidator.validateReqBody(moduleNameForValidering, req, res, schemaNavn, label);
 
   const mockpathObject = {
     pathname: 'avklartefakta-oppsummering-bid-:behandlingID',

@@ -22,7 +22,7 @@ module.exports.getFile = async (moduleName, pathObject = {}) => {
   }
 };
 
-module.exports.validate = (moduleName, req, res, schemaNavn, label) => {
+module.exports.validateReqBody = (moduleName, req, res, schemaNavn, label) => {
   try {
     const body = req.body;
     const jsBody = Utils.isJSON(body) ? JSON.parse(body) : body;
