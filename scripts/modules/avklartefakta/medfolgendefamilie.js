@@ -4,13 +4,13 @@ const { moduleName } = Katalog.pathnameMap["avklartefakta-oppsummering"];
 
 const SchemaValidator = require('../../utils/schemavalidator');
 
-module.exports.sendVirksomhet = async (req, res) => {
+module.exports.sendMedfolgendeFamilie = async (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);
   }
 
-  const moduleNameForValidering = "avklartefakta-virksomheter";
+  const moduleNameForValidering = "avklartefakta-medfolgendefamilie";
   const schemaNavn = `${moduleNameForValidering}-post-schema.json`;
   const label = `${moduleNameForValidering}:send`;
   SchemaValidator.validateReqBody(moduleNameForValidering, req, res, schemaNavn, label);
@@ -20,7 +20,7 @@ module.exports.sendVirksomhet = async (req, res) => {
     params: {behandlingID},
   };
   let customResponse = await SchemaValidator.getFile(moduleName, mockpathObject);
-  customResponse = {...customResponse, virksomheter: req.body};
+  customResponse = {...customResponse, medfolgendeFamilie: req.body.medfolgendeFamilie};
 
   return res.json(customResponse);
 };
