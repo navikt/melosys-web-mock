@@ -36,6 +36,7 @@ module.exports.send = async (req, res) => {
 
   const customObject = {
     mottaksdato: "2020-03-10",
+    type: "SØKNAD_A1_YRKESAKTIVE_EØS",
     data: {
       ...req.body.data
     }
