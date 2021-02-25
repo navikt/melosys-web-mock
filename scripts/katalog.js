@@ -396,6 +396,30 @@ const pathnameMap = {
       params: { fnr: '17117802280' },
     },
   },
+  'representant-liste': {
+    moduleName: 'representant-liste',
+    get: {
+      pathname: '/representant/liste',
+    },
+  },
+  'representant-representant': {
+    moduleName: 'representant-representant',
+    get: {
+      pathname: '/representant/:representantID',
+      params: { representantID: '99999' },
+    },
+  },
+  'representant-valgt': {
+    moduleName: 'representant-valgt',
+    get: {
+      pathname: '/representant/valgt/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+    post: {
+      pathname: '/representant/valgt/:behandlingID',
+      params: { behandlingID: 4 },
+    },
+  },
   saksbehandler: {
     moduleName: 'saksbehandler',
     get: {
