@@ -99,3 +99,10 @@ module.exports.manglerParamKodeverknavn = (req, res) => badRequestParam(req, res
  * @returns {*}
  */
 module.exports.manglerParamMedlemskapsperiodeID = (req, res) => badRequestParam(req, res, 'MedlemskapsperiodeID mangler');
+/**
+ * manglerParamRepresentantID
+ * @param req
+ * @param res
+ * @returns {*}
+ */
+module.exports.manglerParamRepresentantID = (req, res) => badRequestParam(req, res, 'RepresentantID mangler');

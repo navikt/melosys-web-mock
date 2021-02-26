@@ -24,6 +24,7 @@ const Medlemskapsperioder = require('./modules/medlemskapsperioder');
 const Oppgaver = require('./modules/oppgaver');
 const Organisasjoner = require('./modules/organisasjoner');
 const Personer = require('./modules/personer');
+const Representant = require('./modules/representant');
 const Saksbehandler = require('./modules/saksbehandler');
 const Saksopplysninger = require('./modules/saksopplysninger');
 const Saksflyt = require('./modules/saksflyt');
@@ -231,6 +232,15 @@ router.get('/organisasjoner/:orgnr', Organisasjoner.hent);
  * ---------------------------------------------------------------
  */
 router.get('/personer/:fnr', Personer.hent);
+
+/**
+ * REPRESENTANT
+ * ---------------------------------------------------------------
+ */
+router.get('/representant/liste', Representant.liste.hent);
+router.get('/representant/:representantID', Representant.representant.hent);
+router.get('/representant/valgt/:behandlingID', Representant.valgt.hent);
+router.post('/representant/valgt/:behandlingID', Representant.valgt.send);
 
 /**
  * SAKSBEHANDLER
