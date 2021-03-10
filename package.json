@@ -5,6 +5,7 @@
   "author": "Are Bjølseth, Knowit Dataess as",
   "license": "MIT",
   "dependencies": {
+    "@navikt/melosys-kodeverk": "^5.15.45",
     "@navikt/melosys-schema": "^1.35.100",
     "ajv": "^6.10.2",
     "ajv-async": "^1.0.1",
@@ -23,7 +24,6 @@
     "jsonpath-plus": "^0.20.1",
     "lodash": "^4.17.15",
     "log4js": "^5.1.0",
-    "@navikt/melosys-kodeverk": "^5.15.45",
     "moment": "^2.24.0",
     "node-cache": "^4.2.1",
     "node-emoji": "^1.10.0",
