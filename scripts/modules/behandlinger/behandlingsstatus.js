@@ -4,7 +4,7 @@ const Katalog = require('../../katalog');
 const { moduleName } = Katalog.pathnameMap["behandlinger-status"];
 
 
-module.exports.hentMuligeBehandlingsstatuser = async (req, res) => {
+module.exports.hentMuligeStatuser = async (req, res) => {
   const { behandlingID } = req.params;
   if (!behandlingID) {
     return Mock.manglerParamBehandlingsID(req, res);

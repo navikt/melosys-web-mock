@@ -107,7 +107,7 @@ router.post('/avklartefakta/:behandlingID/medfolgendeFamilie', Avklartefakta.med
  */
 router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
 router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
-router.get('/behandlinger/:behandlingID/muligeBehandlingsstatuser', Behandlinger.status.hent);
+router.get('/behandlinger/:behandlingID/muligeStatuser', Behandlinger.status.hent);
 router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
 router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
 router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);

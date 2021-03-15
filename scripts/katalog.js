@@ -99,7 +99,7 @@ const pathnameMap = {
   'behandlinger-behandlingsstatus': {
     moduleName: 'behandlinger-behandlingsstatus',
     get: {
-      pathname: '/behandlinger/:behandlingID/muligeBehandlingsstatuser',
+      pathname: '/behandlinger/:behandlingID/muligeStatuser',
       params: {behandlingID: 4},
     },
   },
