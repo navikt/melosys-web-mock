@@ -31,12 +31,11 @@ module.exports.printresult = (res) => {
 };
 
 module.exports.printerror = (res) => {
-  const { request, response } = res;
-  const { method, path } = request;
-  const { status, statusText, data } = response;
+  const { method, url } = res.config;
+  const { status, statusText, data } = res.response;
 
   const message = (data && data.message) ? data.message : 'Ukjent validering feil';
-  console.error(`[${method.toUpperCase()}]`, path);
+  console.error(`[${method.toUpperCase()}]`, url);
   console.error(colors.bgRed(`${status} ${statusText}`));
   console.error(message);
   console.error("-------------------------------------------------------\n");
