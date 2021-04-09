@@ -142,6 +142,34 @@ const pathnameMap = {
       params: { behandlingID: 4, sedType: 'A001' },
     }
   },
+  'dokumenter-v2-mulige-mottakere': {
+    moduleName: 'dokumenter-v2-mulige-mottakere',
+    post: {
+      pathname: '/dokumenter/v2/mulige-mottakere/:behandlingID',
+      params: { behandlingID: 2 }
+    },
+  },
+  'dokumenter-v2-tilgjengelige-maler': {
+    moduleName: 'dokumenter-v2-tilgjengelige-maler',
+    get: {
+      pathname: '/dokumenter/v2/tilgjengelige-maler/:behandlingID',
+      params: { behandlingID: 2 }
+    },
+  },
+  'dokumenter-v2-opprett': {
+    moduleName: 'dokumenter-v2-opprett',
+    post: {
+      pathname: '/dokumenter/v2/opprett/:behandlingID',
+      params: { behandlingID: 2 },
+    },
+  },
+  'dokumenter-v2-utkast': {
+    moduleName: 'dokumenter-v2-utkast',
+    post: {
+      pathname: '/dokumenter/v2/pdf/brev/utkast/:behandlingID',
+      params: { behandlingID: 2 },
+    },
+  },
   'eessi-bucer': {
     moduleName: 'eessi-bucer',
     get: {

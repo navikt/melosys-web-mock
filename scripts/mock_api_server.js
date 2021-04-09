@@ -13,6 +13,7 @@ const Avklartefakta = require('./modules/avklartefakta');
 const Behandlinger = require('./modules/behandlinger');
 const Behandlingsgrunnlag = require('./modules/behandlingsgrunnlag');
 const Dokumenter = require('./modules/dokumenter');
+const DokumenterV2 = require('./modules/dokumenter-v2');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const FeatureToggle = require('./modules/featuretoggle');
@@ -129,6 +130,15 @@ router.post('/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument', D
 
 // Henter forhåndsvisning av sed som byte stream fra rina
 router.post('/dokumenter/pdf/sed/utkast/:behandlingID/:sedType', Dokumenter.pdf.sed.utkast.send);
+
+/**
+ * DOKUMENTER-V2
+ * ---------------------------------------------------------------
+ */
+router.post('/dokumenter/v2/opprett/:behandlingID', DokumenterV2.opprett.send);
+router.post('/dokumenter/v2/pdf/brev/utkast/:behandlingID', DokumenterV2.utkast.send);
+router.get('/dokumenter/v2/tilgjengelige-maler/:behandlingID', DokumenterV2.tilgjengeligemaler.hent);
+router.post('/dokumenter/v2/mulige-mottakere/:behandlingID', DokumenterV2.muligeMottakere.send);
 
 /**
  * EESSI
