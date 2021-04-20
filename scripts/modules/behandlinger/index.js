@@ -1,3 +1,4 @@
+const {endreBehandlingsfrist} = require("./endreBehandlingsfrist");
 const { hentBehandling } = require('./behandling');
 const { hentTidligereMedlemsPerioder, settTidligereMedlemsPerioder} = require('./tidligereMedlemsperioder');
 const { hentBehandlingsResultat} = require('./behandlingsresultat');
@@ -9,5 +10,6 @@ module.exports = {
   tidligeremedlemsperioder: { hent: hentTidligereMedlemsPerioder, send: settTidligereMedlemsPerioder },
   resultat: { hent: hentBehandlingsResultat },
   status: { hent: hentMuligeStatuser, send: sendStatus },
-  endreBehandlingstema: {hent: hentMuligeBehandlingstema, send: endreBehandlingstema}
+  endreBehandlingstema: { hent: hentMuligeBehandlingstema, send: endreBehandlingstema },
+  endreBehandlngsfrist: { send: endreBehandlingsfrist }
 };
