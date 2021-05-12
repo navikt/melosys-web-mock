@@ -74,6 +74,13 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'behandlinger-endrebehandlingsfrist': {
+    moduleName: 'behandlinger-endrebehandlingsfrist',
+    post: {
+      pathname: '/behandlinger/:behandlingID/behandlingsfrist',
+      params: { behandlingID: 4 },
+    },
+  },
   'behandlinger-tidligeremedlemsperioder': {
     moduleName: 'behandlinger-tidligeremedlemsperioder',
     get: {
@@ -93,6 +100,13 @@ const pathnameMap = {
     },
     post: {
       pathname: '/behandlinger/:behandlingID/endreBehandlingstema',
+      params: {behandlingID: 4},
+    },
+  },
+  'behandlinger-behandlingsstatus': {
+    moduleName: 'behandlinger-behandlingsstatus',
+    get: {
+      pathname: '/behandlinger/:behandlingID/muligeStatuser',
       params: {behandlingID: 4},
     },
   },

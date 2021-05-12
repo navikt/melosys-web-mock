@@ -108,11 +108,13 @@ router.post('/avklartefakta/:behandlingID/medfolgendeFamilie', Avklartefakta.med
  */
 router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
 router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
+router.get('/behandlinger/:behandlingID/muligeStatuser', Behandlinger.status.hent);
 router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
 router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
 router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
 router.get('/behandlinger/:behandlingID/muligeBehandlingstema', Behandlinger.endreBehandlingstema.hent);
 router.post('/behandlinger/:behandlingID/endreBehandlingstema', Behandlinger.endreBehandlingstema.send);
+router.post('/behandlinger/:behandlingID/behandlingsfrist', Behandlinger.endreBehandlngsfrist.send);
 
 /**
  * DOKUMENTER
