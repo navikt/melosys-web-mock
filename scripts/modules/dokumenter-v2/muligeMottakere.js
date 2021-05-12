@@ -16,9 +16,8 @@ const {
 const getPathname = produserbartDokument => {
   switch (produserbartDokument) {
     case MELDING_FORVENTET_SAKSBEHANDLINGSTID_SOKNAD:
-      return 'mulige-mottakere-saksbehandlingstid_soknad';
     case MELDING_FORVENTET_SAKSBEHANDLINGSTID_KLAGE:
-      return 'mulige-mottakere-saksbehandlingstid_klage';
+      return 'mulige-mottakere-saksbehandlingstid';
     case MANGELBREV_BRUKER:
       return 'mulige-mottakere-mangelbrev_bruker';
     case MANGELBREV_ARBEIDSGIVER:
