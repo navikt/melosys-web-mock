@@ -6,7 +6,7 @@ const { endre, fatt } = require('./vedtak');
 module.exports = {
   anmodningsperioder: {
     bestill: { post: bestill },
-    svar: { post: svar },
+    svar: { send: svar },
   },
   vedtak: {
     endre: {send: endre},
