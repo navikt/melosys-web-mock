@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@navikt/melosys-kodeverk": "^5.15.45",
-    "@navikt/melosys-schema": "^1.35.125",
+    "@navikt/melosys-schema": "^1.35.127",
     "ajv": "^6.10.2",
     "ajv-async": "^1.0.1",
     "axios": "^0.21.1",
