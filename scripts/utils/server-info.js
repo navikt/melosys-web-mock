@@ -1,8 +1,6 @@
 const os = require('os');
 const _ = require('lodash');
 const moment = require('moment');
-const branch = require('git-branch');
-const shell = require('shelljs');
 
 moment.locale('nb');
 
@@ -28,26 +26,3 @@ module.exports.getIpAdress = () => {
   });
   return ipv4.address;
 };
-
-const namespace = 't8';
-const cluster = `NodeJS ${process.version}`;
-const gitShellExec = shell.exec('git rev-parse HEAD');
-const longVersionHash = gitShellExec.stdout.trim();
-const veraUrl = 'https://vera.adeo.no/#/log?application=melosys';
-let branchName = process.env.BRANCH_NAME || 'unknown';
-if (branchName === 'unknown') {
-  branchName = branch.sync(process.cwd());
-}
-
-const serverInfo = {
-  namespace,
-  cluster,
-  veraUrl,
-  longVersionHash,
-  branchName
-};
-
-module.exports.hentServerInfo = (req, res) => {
-  res.json(serverInfo)
-};
-
