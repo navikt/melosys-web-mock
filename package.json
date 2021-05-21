@@ -40,8 +40,8 @@
     "node": ">=12.0.0"
   },
   "scripts": {
-    "happycase": "nodemon scripts/mock_api_server.js",
-    "happycase:dbg": "node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
+    "start": "nodemon scripts/mock_api_server.js",
+    "start:dbg": "node $NODE_DEBUG_OPTION scripts/mock_api_server.js",
     "mock:get": "node scripts/mock-clients/get-mock-client",
     "mock:put": "node scripts/mock-clients/put-mock-client",
     "mock:post": "node scripts/mock-clients/post-mock-client",

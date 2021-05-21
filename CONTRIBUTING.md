@@ -1,6 +1,6 @@
 # User Guide
 ## Mock web server
-Serveren startes med: `npm run happycase`
+Serveren startes med: `npm start`
 
 To request typer er støttet
 * [GET] mock data filer fra `mock_data` katalogen
@@ -18,7 +18,7 @@ Schema skriptet enumerer alle importerte schema, kartlegger alle kataloger i moc
 Itererer og validerer alle mock data filer hver katalog med assosiert schema.
 
 ## Testing av [POST] body data
-* Start mock serveren `npm run happycase`
+* Start mock serveren `npm start`
 * Åpnet nytt shell og kjør `npm run post`
 
 Skriptet post, enumerer alle endepunkter med [POST] actions, og leser post mock data, og sender dem til mock serveren og rapporterer success eller failed schema validering.
