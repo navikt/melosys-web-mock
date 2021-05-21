@@ -13,7 +13,7 @@ npm start
 
 ## Tester
 Tester kjøres i github actions ved push på alle brancher.
-De kan kjøres lokalt ved å først starte en instanse av mocken med `npm start`, deretter `npm run mock` i nytt terminalvindu.
+De kan kjøres lokalt ved å først starte en instanse av mocken med `npm start`, deretter `npm test` i nytt terminalvindu.
 
 ## Lokal versjon av melosys-schema
 Når man jobber med melosys-schema, er det nyttig å kunne teste schema-endringer man har gjort lokalt, uten å måtte publisere schemaet til et registry først.
