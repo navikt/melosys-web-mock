@@ -306,7 +306,6 @@ router.post('/vilkaar/:behandlingID', Vilkaar.send);
 app.use(allowCrossDomain);
 app.use('/api', router);
 app.use('/melosys/api', router);
-app.use('/frontendlogger', express.static('static'));
 
 app.listen(port);
 
