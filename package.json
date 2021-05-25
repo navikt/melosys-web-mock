@@ -5,7 +5,7 @@
   "author": "Are Bjølseth, Knowit Dataess as",
   "license": "MIT",
   "dependencies": {
-    "@navikt/melosys-kodeverk": "^5.15.45",
+    "@navikt/melosys-kodeverk": "^5.15.70",
     "@navikt/melosys-schema": "^1.35.129",
     "ajv": "^6.10.2",
     "axios": "^0.21.1",

@@ -93,6 +93,10 @@ module.exports.overstyrinngangsvilkaar = async (req, res) => {
     if (!inngangsvilkaar) return Mock.serverError(req, res, finnerIkkeInngangsvilkaarError);
 
     inngangsvilkaar.oppfylt = true;
+    inngangsvilkaar.begrunnelseKoder = [
+      ...inngangsvilkaar.begrunnelseKoder,
+      MKV.Koder.begrunnelser.inngangsvilkaar.OVERSTYRT_AV_SAKSBEHANDLER
+    ];
     overskrivVilkaar(behandlingID, MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR, inngangsvilkaar);
 
     res.status(200).send();
