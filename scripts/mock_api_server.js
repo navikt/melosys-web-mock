@@ -300,6 +300,7 @@ router.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
  */
 router.get('/vilkaar/:behandlingID', Vilkaar.hent);
 router.post('/vilkaar/:behandlingID', Vilkaar.send);
+router.put('/vilkaar/:behandlingID/inngangsvilkaar/overstyr', Vilkaar.overstyrinngangsvilkaar);
 
 /**
  * HEALTH

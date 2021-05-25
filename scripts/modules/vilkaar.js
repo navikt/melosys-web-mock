@@ -25,17 +25,37 @@ module.exports.hent = async (req, res) => {
     pathname: 'vilkaar-bid-:behandlingID',
     params: {behandlingID}
   };
-  const { moduleName } = Katalog.pathnameMap.vilkaar;
+
   SchemaValidator.get(moduleName, req, res, mockpathObj);
 };
 
-const lesVilkaar = async (behandlingID, vilkaarKode) => {
-  const mockfile = `${VILKAAR_DATA_DIR}/vilkaar-bid-${behandlingID}.json5`;
-  const vilkaarListe = await Utils.readJsonAndParseAsync(mockfile);
-  const vilkaar = vilkaarListe.find(enkeltVilkaar => enkeltVilkaar.vilkaar === vilkaarKode);
+const mockfileForBehandlingID = (behandlingID) => `${VILKAAR_DATA_DIR}/vilkaar-bid-${behandlingID}.json5`;
 
-  return vilkaar;
+const lesVilkaarListe = (behandlingID) => {
+  const mockfile = mockfileForBehandlingID(behandlingID);
+  return Utils.readJsonAndParseAsync(mockfile);
+}
+
+const lesVilkaar = async (behandlingID, vilkaarKode) => {
+  const vilkaarListe = await lesVilkaarListe(behandlingID)
+  return vilkaarListe.find(enkeltVilkaar => enkeltVilkaar.vilkaar === vilkaarKode);
 };
+
+const skrivVilkaarListe = (behandlingID, vilkaarListe) => {
+  const mockfile = mockfileForBehandlingID(behandlingID);
+  return Utils.writeFileAsync(mockfile, JSON.stringify(vilkaarListe));
+}
+
+const overskrivVilkaar = async (behandlingID, vilkaarKode, nyttVilkaar) => {
+  const vilkaarListe = await lesVilkaarListe(behandlingID);
+  const nyVilkaarListe = vilkaarListe.map((enkeltVilkaar) => (
+    enkeltVilkaar.vilkaar === vilkaarKode ? nyttVilkaar : enkeltVilkaar
+  ));
+
+  return skrivVilkaarListe(behandlingID, nyVilkaarListe);
+}
+
+const finnerIkkeInngangsvilkaarError = new Error('Finner ikke inngangsvilkaar i lagrede vilkaar!');
 
 /**
  * Send vilkar
@@ -54,9 +74,28 @@ module.exports.send = async (req, res) => {
 
   try {
     const inngangsvilkaar = await lesVilkaar(behandlingID, MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR);
-    if (!inngangsvilkaar) return Mock.serverError(req, res, new Error('Finner ikke inngangsvilkaar i lagrede vilkaar!'));
+    if (!inngangsvilkaar) return Mock.serverError(req, res, finnerIkkeInngangsvilkaarError);
     const customResponse = [...req.body, inngangsvilkaar];
     SchemaValidator.post(moduleName, req, res, customResponse);
+  } catch (e) {
+    Mock.serverError(e);
+  }
+};
+
+module.exports.overstyrinngangsvilkaar = async (req, res) => {
+  const { behandlingID } = req.params;
+  if (!behandlingID) {
+    return Mock.manglerParamBehandlingsID(req, res);
+  }
+
+  try {
+    const inngangsvilkaar = await lesVilkaar(behandlingID, MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR);
+    if (!inngangsvilkaar) return Mock.serverError(req, res, finnerIkkeInngangsvilkaarError);
+
+    inngangsvilkaar.oppfylt = true;
+    overskrivVilkaar(behandlingID, MKV.Koder.vilkaar.FO_883_2004_INNGANGSVILKAAR, inngangsvilkaar);
+
+    res.status(200).send();
   } catch (e) {
     Mock.serverError(e);
   }

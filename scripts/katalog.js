@@ -581,6 +581,13 @@ const pathnameMap = {
       params: { behandlingID: 4 },
     },
   },
+  'vilkaar-inngangsvilkaar-overstyr': {
+    moduleName: 'vilkaar-inngangsvilkaar-overstyr',
+    put: {
+      pathname: 'vilkaar/:behandlingID/inngangsvilkaar/overstyr',
+      params: { behandlingID: 4 },
+    },
+  }
 };
 
 const katalog = [];
