@@ -64,7 +64,6 @@ app.use(bodyParser.raw());
 const port = process.env.PORT || 3002;
 const router = express.Router();
 
-router.get('/serverinfo', serverinfo.hentServerInfo);
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
@@ -302,6 +301,11 @@ router.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
 router.get('/vilkaar/:behandlingID', Vilkaar.hent);
 router.post('/vilkaar/:behandlingID', Vilkaar.send);
 
+/**
+ * HEALTH
+ * ---------------------------------------------------------------
+ */
+router.get('/health', (__, res) => res.status(200).send());
 
 app.use(allowCrossDomain);
 app.use('/api', router);
