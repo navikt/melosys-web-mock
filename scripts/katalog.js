@@ -308,13 +308,6 @@ const pathnameMap = {
       params: {},
     },
   },
-  inngangsvilkaar: {
-    moduleName: 'inngangsvilkaar',
-    get: {
-      pathname: '/inngangsvilkaar/:snr',
-      params: { snr: 3 },
-    },
-  },
   journalforing: {
     moduleName: 'journalforing',
     get: {

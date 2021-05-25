@@ -17,7 +17,6 @@ const DokumenterV2 = require('./modules/dokumenter-v2');
 const Eessi = require('./modules/eessi');
 const Fagsaker = require('./modules/fagsaker');
 const FeatureToggle = require('./modules/featuretoggle');
-const Inngangsvilkaar = require('./modules/inngangsvilkaar');
 const Journalforing = require('./modules/journalforing');
 const Kodeverk = require('./modules/kodeverk');
 const Lovvalgsperioder = require('./modules/lovvalgsperioder');
@@ -65,7 +64,6 @@ app.use(bodyParser.raw());
 const port = process.env.PORT || 3002;
 const router = express.Router();
 
-router.get('/serverinfo', serverinfo.hentServerInfo);
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
 router.post('/logger/info', logging.info);
@@ -187,12 +185,6 @@ router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsak
 router.get('/featuretoggle', FeatureToggle.hent);
 
 /**
- * INNGANGSVILKAAR (Første steg i STEGVELGEREN)
- * ----------------------------------------------------------
- */
-router.get('/inngangsvilkaar/:snr', Inngangsvilkaar.hent);
-
-/**
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
@@ -309,11 +301,15 @@ router.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
 router.get('/vilkaar/:behandlingID', Vilkaar.hent);
 router.post('/vilkaar/:behandlingID', Vilkaar.send);
 
+/**
+ * HEALTH
+ * ---------------------------------------------------------------
+ */
+router.get('/health', (__, res) => res.status(200).send());
 
 app.use(allowCrossDomain);
 app.use('/api', router);
 app.use('/melosys/api', router);
-app.use('/frontendlogger', express.static('static'));
 
 app.listen(port);
 
