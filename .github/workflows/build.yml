@@ -41,7 +41,7 @@ jobs:
         run: |
           docker run -d -p 3002:3002 --name=$CONTAINER_NAME $(cat .docker_image):$(cat .docker_tag)
           # Venter på at containeren blir klar og kjører tester
-          npx wait-on http://localhost:3002/api/health && npm run mock
+          npx wait-on http://localhost:3002/api/health && npm test
           # Stopper containeren
           docker stop $(docker ps -a -q)
 

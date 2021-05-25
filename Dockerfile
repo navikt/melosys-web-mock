@@ -12,4 +12,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3002
-CMD ["npm", "run", "happycase"]
+CMD ["npm", "start"]
