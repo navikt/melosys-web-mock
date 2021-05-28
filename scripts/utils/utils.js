@@ -23,7 +23,7 @@ module.exports.isJSON5 = (str) => {
 };
 module.exports.writeFileAsync = async (path, text) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(path, 'utf8', text, err => {
+    fs.writeFile(path, text, 'utf8', err => {
       if (err) reject(err);
       else resolve();
     });
