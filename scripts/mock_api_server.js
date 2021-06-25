@@ -63,27 +63,27 @@ app.use(bodyParser.json());
 app.use(bodyParser.raw());
 
 const port = process.env.PORT || 3002;
-const router = express.Router();
+const restRouter = express.Router();
 
 // router.post('/logger/trace', logging.trace);
 // router.post('/logger/debug', logging.debug);
-router.post('/logger/info', logging.info);
-router.post('/logger/warn', logging.warn);
-router.post('/logger/error', logging.error);
+restRouter.post('/logger/info', logging.info);
+restRouter.post('/logger/warn', logging.warn);
+restRouter.post('/logger/error', logging.error);
 
 /**
  * ANMODNINGSPERIODER
  */
-router.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hent);
-router.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.send);
-router.get('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.hent);
-router.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.send);
+restRouter.get('/anmodningsperioder/:behandlingID', Anmodningsperioder.hent);
+restRouter.post('/anmodningsperioder/:behandlingID', Anmodningsperioder.send);
+restRouter.get('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.hent);
+restRouter.post('/anmodningsperioder/:anmodningsperiodeID/svar', Anmodningsperioder.svar.send);
 
 /**
  * UTPEKNINGSPERIOER
  */
-router.get('/utpekingsperioder/:behandlingID', Utpekingsperioder.hent);
-router.post('/utpekingsperioder/:behandlingID', Utpekingsperioder.send);
+restRouter.get('/utpekingsperioder/:behandlingID', Utpekingsperioder.hent);
+restRouter.post('/utpekingsperioder/:behandlingID', Utpekingsperioder.send);
 
 /**
  * AVKLARTEFAKTA (FRA STEGVELGEREN ++)
@@ -95,59 +95,59 @@ router.post('/utpekingsperioder/:behandlingID', Utpekingsperioder.send);
  * (https://confluence.adeo.no/pages/viewpage.action?pageId=257676957)
  *
  */
-router.get('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.hent);
-router.post('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.send);
-router.get('/avklartefakta/:behandlingID/oppsummering', Avklartefakta.oppsummering.hent);
-router.post('/avklartefakta/:behandlingID/virksomheter', Avklartefakta.virksomhet.send);
-router.post('/avklartefakta/:behandlingID/medfolgendeFamilie', Avklartefakta.medfolgendeFamilie.send);
+restRouter.get('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.hent);
+restRouter.post('/avklartefakta/:behandlingID', Avklartefakta.avklartefakta.send);
+restRouter.get('/avklartefakta/:behandlingID/oppsummering', Avklartefakta.oppsummering.hent);
+restRouter.post('/avklartefakta/:behandlingID/virksomheter', Avklartefakta.virksomhet.send);
+restRouter.post('/avklartefakta/:behandlingID/medfolgendeFamilie', Avklartefakta.medfolgendeFamilie.send);
 
 /**
  * BEHANDLINGER
  * ----------------------------------------------------------------
  */
-router.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
-router.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
-router.get('/behandlinger/:behandlingID/muligeStatuser', Behandlinger.status.hent);
-router.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
-router.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
-router.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
-router.get('/behandlinger/:behandlingID/muligeBehandlingstema', Behandlinger.endreBehandlingstema.hent);
-router.post('/behandlinger/:behandlingID/endreBehandlingstema', Behandlinger.endreBehandlingstema.send);
-router.post('/behandlinger/:behandlingID/behandlingsfrist', Behandlinger.endreBehandlngsfrist.send);
+restRouter.get('/behandlinger/:behandlingID', Behandlinger.behandling.hent);
+restRouter.post('/behandlinger/:behandlingID/status', Behandlinger.status.send);
+restRouter.get('/behandlinger/:behandlingID/muligeStatuser', Behandlinger.status.hent);
+restRouter.get('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.hent);
+restRouter.post('/behandlinger/:behandlingID/tidligeremedlemsperioder', Behandlinger.tidligeremedlemsperioder.send);
+restRouter.get('/behandlinger/:behandlingID/resultat', Behandlinger.resultat.hent);
+restRouter.get('/behandlinger/:behandlingID/muligeBehandlingstema', Behandlinger.endreBehandlingstema.hent);
+restRouter.post('/behandlinger/:behandlingID/endreBehandlingstema', Behandlinger.endreBehandlingstema.send);
+restRouter.post('/behandlinger/:behandlingID/behandlingsfrist', Behandlinger.endreBehandlngsfrist.send);
 
 /**
  * DOKUMENTER
  * ---------------------------------------------------------------
  */
 // Oppretter en bestilling av dokument i dokumentproduksjon
-router.post('/dokumenter/opprett/:behandlingID/:produserbartDokument', Dokumenter.dokument.opprett.send);
-router.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
+restRouter.post('/dokumenter/opprett/:behandlingID/:produserbartDokument', Dokumenter.dokument.opprett.send);
+restRouter.get('/dokumenter/oversikt/:snr', Dokumenter.dokument.oversikt.hent);
 
 // Henter et eksisterende dokument fra dokumentarkiv
-router.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
+restRouter.get('/dokumenter/pdf/:journalpostID/:dokumentID', Dokumenter.pdf.hent);
 
 // Henter forhåndsvisning som byte stream fra dokumentproduksjon
-router.post('/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.brev.utkast.send);
+restRouter.post('/dokumenter/pdf/brev/utkast/:behandlingID/:produserbartDokument', Dokumenter.pdf.brev.utkast.send);
 
 // Henter forhåndsvisning av sed som byte stream fra rina
-router.post('/dokumenter/pdf/sed/utkast/:behandlingID/:sedType', Dokumenter.pdf.sed.utkast.send);
+restRouter.post('/dokumenter/pdf/sed/utkast/:behandlingID/:sedType', Dokumenter.pdf.sed.utkast.send);
 
 /**
  * DOKUMENTER-V2
  * ---------------------------------------------------------------
  */
-router.post('/dokumenter/v2/opprett/:behandlingID', DokumenterV2.opprett.send);
-router.post('/dokumenter/v2/pdf/brev/utkast/:behandlingID', DokumenterV2.utkast.send);
-router.get('/dokumenter/v2/tilgjengelige-maler/:behandlingID', DokumenterV2.tilgjengeligemaler.hent);
-router.post('/dokumenter/v2/mulige-mottakere/:behandlingID', DokumenterV2.muligeMottakere.send);
+restRouter.post('/dokumenter/v2/opprett/:behandlingID', DokumenterV2.opprett.send);
+restRouter.post('/dokumenter/v2/pdf/brev/utkast/:behandlingID', DokumenterV2.utkast.send);
+restRouter.get('/dokumenter/v2/tilgjengelige-maler/:behandlingID', DokumenterV2.tilgjengeligemaler.hent);
+restRouter.post('/dokumenter/v2/mulige-mottakere/:behandlingID', DokumenterV2.muligeMottakere.send);
 
 /**
  * EESSI
  * ----------------------------------------------------------------
  */
-router.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
-router.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
-router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
+restRouter.get('/eessi/mottakerinstitusjoner/:bucType', Eessi.mottakerinstitusjoner.hent);
+restRouter.get('/eessi/bucer/:behandlingID', Eessi.bucer.hentBucerUnderArbeid);
+restRouter.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
 
 /**
  * FAGSAKER
@@ -156,133 +156,133 @@ router.post('/eessi/bucer/:behandlingID/opprett', Eessi.bucer.opprett.send);
  * Data som returneres som en del av fagsaken er data som kommer fra registre.
  *
  */
-router.post('/fagsaker/sok', Fagsaker.sok.send);
+restRouter.post('/fagsaker/sok', Fagsaker.sok.send);
 
-router.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
-router.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
-router.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
-router.put('/fagsaker/:saksnummer/avslutt', Fagsaker.fagsak.avslutt.put);
-router.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.send);
-router.post('/fagsaker/:saksnummer/utpek', Fagsaker.fagsak.utpek.send);
-router.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
-router.post('/fagsaker/:saksnummer/revurder', Fagsaker.fagsak.revurder.send);
+restRouter.get('/fagsaker/:saksnummer', Fagsaker.fagsak.hent);
+restRouter.post('/fagsaker/:saksnummer/henlegg', Fagsaker.fagsak.henlegg.send);
+restRouter.put('/fagsaker/:saksnummer/avsluttsaksombortfalt', Fagsaker.fagsak.avsluttsaksombortfalt.put);
+restRouter.put('/fagsaker/:saksnummer/avslutt', Fagsaker.fagsak.avslutt.put);
+restRouter.post('/fagsaker/:saksnummer/henlegg-videresend', Fagsaker.fagsak.henleggVideresend.send);
+restRouter.post('/fagsaker/:saksnummer/utpek', Fagsaker.fagsak.utpek.send);
+restRouter.post('/fagsaker/opprett', Fagsaker.fagsak.opprett.send);
+restRouter.post('/fagsaker/:saksnummer/revurder', Fagsaker.fagsak.revurder.send);
 
-router.get('/fagsaker/:saksnummer/notater', Fagsaker.notater.hent);
-router.post('/fagsaker/:saksnummer/notater', Fagsaker.notater.send);
-router.put('/fagsaker/:saksnummer/notater/:notatid', Fagsaker.notater.put);
+restRouter.get('/fagsaker/:saksnummer/notater', Fagsaker.notater.hent);
+restRouter.post('/fagsaker/:saksnummer/notater', Fagsaker.notater.send);
+restRouter.put('/fagsaker/:saksnummer/notater/:notatid', Fagsaker.notater.put);
 
-router.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
-router.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
-router.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slett);
+restRouter.get('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.hent);
+restRouter.post('/fagsaker/:saksnummer/aktoerer', Fagsaker.aktoer.send);
+restRouter.delete('/fagsaker/aktoerer/:databaseid', Fagsaker.aktoer.slett);
 
-router.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
-router.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
-router.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
+restRouter.get('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.hent);
+restRouter.post('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.send);
+restRouter.delete('/fagsaker/:saksnummer/kontaktopplysninger/:juridiskorgnr', Fagsaker.kontaktopplysninger.slett);
 
 /**
  * FEATURETOGGLE
  * ----------------------------------------------------------
  */
-router.get('/featuretoggle', FeatureToggle.hent);
+restRouter.get('/featuretoggle', FeatureToggle.hent);
 
 /**
  * JOURNALFORING
  * ---------------------------------------------------------------
  */
-router.get('/journalforing/:journalpostID', Journalforing.hent);
-router.post('/journalforing/opprett', Journalforing.opprett.send);
-router.post('/journalforing/sed', Journalforing.sed.send);
-router.post('/journalforing/tilordne', Journalforing.tilordne.send);
+restRouter.get('/journalforing/:journalpostID', Journalforing.hent);
+restRouter.post('/journalforing/opprett', Journalforing.opprett.send);
+restRouter.post('/journalforing/sed', Journalforing.sed.send);
+restRouter.post('/journalforing/tilordne', Journalforing.tilordne.send);
 
 /**
  * KODEVERK
  * ---------------------------------------------------------------
  */
-router.get('/kodeverk/nav-felles/:kodeverknavn', Kodeverk.navFelles.hentKodeverk);
-router.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.melosysInternt.folketrygden);
+restRouter.get('/kodeverk/nav-felles/:kodeverknavn', Kodeverk.navFelles.hentKodeverk);
+restRouter.get('/kodeverk/melosys-internt/folketrygden', Kodeverk.melosysInternt.folketrygden);
 /**
  * LOVVALGSPERIODER
  * ---------------------------------------------------------------
  */
-router.get('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.hent);
-router.post('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.send);
-router.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.opprinnelig.hent);
+restRouter.get('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.hent);
+restRouter.post('/lovvalgsperioder/:behandlingID', Lovvalgsperioder.send);
+restRouter.get('/lovvalgsperioder/:behandlingID/opprinnelig', Lovvalgsperioder.opprinnelig.hent);
 /**
  * MEDLEMSKAPSPERIODER
  * ---------------------------------------------------------------
  */
-router.get('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.hent);
-router.post('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.post);
-router.put('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.put);
-router.delete('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.delete);
-router.get('/behandlinger/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.hent);
-router.post('/behandlinger/:behandlingID/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.opprettMedlemskap);
+restRouter.get('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.hent);
+restRouter.post('/behandlinger/:behandlingID/medlemskapsperioder', Medlemskapsperioder.medlemskapsperioder.post);
+restRouter.put('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.put);
+restRouter.delete('/behandlinger/:behandlingID/medlemskapsperioder/:medlemskapsperiodeID', Medlemskapsperioder.medlemskapsperioder.delete);
+restRouter.get('/behandlinger/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.hent);
+restRouter.post('/behandlinger/:behandlingID/medlemskapsperioder/bestemmelser', Medlemskapsperioder.bestemmelser.opprettMedlemskap);
 /**
  * OPPGAVER
  * ---------------------------------------------------------------
  */
-router.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
-router.get('/oppgaver/sok', Oppgaver.sok.hent);
-router.post('/oppgaver/plukk', Oppgaver.plukk.send);
-router.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
+restRouter.get('/oppgaver/oversikt', Oppgaver.oversikt.hent);
+restRouter.get('/oppgaver/sok', Oppgaver.sok.hent);
+restRouter.post('/oppgaver/plukk', Oppgaver.plukk.send);
+restRouter.post('/oppgaver/tilbakelegg', Oppgaver.tilbakelegg.send);
 
 /**
  * ORGANISASJONER
  * ---------------------------------------------------------------
  */
-router.get('/organisasjoner/:orgnr', Organisasjoner.hent);
+restRouter.get('/organisasjoner/:orgnr', Organisasjoner.hent);
 
 /**
  * PERSONER
  * ---------------------------------------------------------------
  */
-router.get('/personer/:fnr', Personer.hent);
+restRouter.get('/personer/:fnr', Personer.hent);
 
 /**
  * REPRESENTANT
  * ---------------------------------------------------------------
  */
-router.get('/representant/liste', Representant.liste.hent);
-router.get('/representant/:representantID', Representant.representant.hent);
-router.get('/representant/valgt/:behandlingID', Representant.valgt.hent);
-router.post('/representant/valgt/:behandlingID', Representant.valgt.send);
+restRouter.get('/representant/liste', Representant.liste.hent);
+restRouter.get('/representant/:representantID', Representant.representant.hent);
+restRouter.get('/representant/valgt/:behandlingID', Representant.valgt.hent);
+restRouter.post('/representant/valgt/:behandlingID', Representant.valgt.send);
 
 /**
  * SAKSBEHANDLER
  */
-router.get('/saksbehandler', Saksbehandler.hent);
+restRouter.get('/saksbehandler', Saksbehandler.hent);
 
 /**
  * SAKSFLYT
  * ---------------------------------------------------------------
  */
-router.post('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.post);
-router.post('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.send);
-router.post('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.send);
-router.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
-router.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
-router.post('/saksflyt/vedtak/:behandlingID/fatt', Saksflyt.vedtak.fatt.send);
-router.post('/saksflyt/vedtak/:behandlingID/endre', Saksflyt.vedtak.endre.send);
-router.post('/saksflyt/utpeking/:behandlingID/avvis', Saksflyt.utpeking.avvis.send);
+restRouter.post('/saksflyt/anmodningsperioder/:behandlingID/bestill', Saksflyt.anmodningsperioder.bestill.post);
+restRouter.post('/saksflyt/anmodningsperioder/:behandlingID/svar', Saksflyt.anmodningsperioder.svar.send);
+restRouter.post('/saksflyt/unntaksperioder/:behandlingID/godkjenn', Saksflyt.unntaksperioder.godkjenn.send);
+restRouter.post('/saksflyt/unntaksperioder/:behandlingID/ikkegodkjenn', Saksflyt.unntaksperioder.ikkegodkjenn.send);
+restRouter.put('/saksflyt/unntaksperioder/:behandlingID/innhentinfo', Saksflyt.unntaksperioder.innhentinfo.put);
+restRouter.post('/saksflyt/vedtak/:behandlingID/fatt', Saksflyt.vedtak.fatt.send);
+restRouter.post('/saksflyt/vedtak/:behandlingID/endre', Saksflyt.vedtak.endre.send);
+restRouter.post('/saksflyt/utpeking/:behandlingID/avvis', Saksflyt.utpeking.avvis.send);
 
 /**
  * SAKSOPPLYSNINGER
  * ---------------------------------------------------------------
  */
-router.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
+restRouter.get('/saksopplysninger/oppfriskning/:behandlingID', Saksopplysninger.oppfriskning.hent);
 
 /**
  * STATISTIKK
  */
-router.get('/statistikk', Statistikk.hent);
+restRouter.get('/statistikk', Statistikk.hent);
 
 /**
  * TRYGDEAVGIFT
  */
-router.get('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.hent);
-router.put('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.send);
-router.get('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.hent);
-router.put('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.send);
+restRouter.get('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.hent);
+restRouter.put('/behandlinger/:behandlingID/trygdeavgift/beregning', Trygdeavgift.beregning.send);
+restRouter.get('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.hent);
+restRouter.put('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.grunnlag.send);
 
 /**
  * BEHANDLINGSGRUNNLAG
@@ -292,26 +292,26 @@ router.put('/behandlinger/:behandlingID/trygdeavgift/grunnlag', Trygdeavgift.gru
  * POST /behandlingsgrunnlag Poster dataene i søknaden DERSOM det dreier seg om en manuell registrert søknad.
  *
  */
-router.get('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.hent);
-router.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
+restRouter.get('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.hent);
+restRouter.post('/behandlingsgrunnlag/:behandlingID', Behandlingsgrunnlag.send);
 
 /**
  * VILKÅR
  * ---------------------------------------------------------------
  */
-router.get('/vilkaar/:behandlingID', Vilkaar.hent);
-router.post('/vilkaar/:behandlingID', Vilkaar.send);
-router.put('/vilkaar/:behandlingID/inngangsvilkaar/overstyr', Vilkaar.overstyrinngangsvilkaar);
+restRouter.get('/vilkaar/:behandlingID', Vilkaar.hent);
+restRouter.post('/vilkaar/:behandlingID', Vilkaar.send);
+restRouter.put('/vilkaar/:behandlingID/inngangsvilkaar/overstyr', Vilkaar.overstyrinngangsvilkaar);
 
 /**
  * HEALTH
  * ---------------------------------------------------------------
  */
-router.get('/health', (__, res) => res.status(200).send());
+restRouter.get('/health', (__, res) => res.status(200).send());
 
 app.use(allowCrossDomain);
-app.use('/api', router);
-app.use('/melosys/api', router);
+app.use('/api', restRouter);
+app.use('/melosys/api', restRouter);
 app.use("/graphql", graphqlRouter);
 app.use("/melosys/graphql", graphqlRouter);
 
