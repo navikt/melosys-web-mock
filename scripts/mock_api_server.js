@@ -7,6 +7,7 @@ global.nodeCache = nodeCache;
 
 const serverinfo = require('./utils/server-info');
 const logging = require('./utils/logging');
+const { graphqlRouter } = require('./graphql');
 
 const Anmodningsperioder = require('./modules/anmodningsperioder');
 const Avklartefakta = require('./modules/avklartefakta');
@@ -311,6 +312,8 @@ router.get('/health', (__, res) => res.status(200).send());
 app.use(allowCrossDomain);
 app.use('/api', router);
 app.use('/melosys/api', router);
+app.use("/graphql", graphqlRouter);
+app.use("/melosys/graphql", graphqlRouter);
 
 app.listen(port);
 
